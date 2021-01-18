@@ -1,5 +1,5 @@
 # SAMYCore
-  This Repository contains all files to compile and run the SAMYCore.
+  This Repository contains all files to compile and run the SAMYCore. At this moment the main files include ad hoc functions code for testing purposes.
 
 ## Build
 
