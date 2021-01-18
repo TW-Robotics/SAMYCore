@@ -1,5 +1,21 @@
 # SAMYCore
-  This Repository contains all files to compile and run the SAMYCore. At this moment the main files include ad hoc functions code for testing purposes.
+This Repository contains all files to compile and run the SAMYCore.
+The basic SAMYCore includes mainly two functional modules, one for configuration (configuration of the robotic environment, including production services), and one for communication. 
+On top of that, it allows easily integrating a custom logic module, which can access within the SAMYCore to the information about the updated status of the robots, make inferences, and request  
+configured services to the robots.
+ 
+The communication module implements two OPC UA Servers. One of them contains standard information of the robots (SAMYRobots variables), the other OPC UA Server contains other external information, 
+such as sensors, alarms... The communication between SAMYCore and SAMYPlugIns can be done through raw Ethernet (with TSN), TCP, UDP or MQTT. The idea is using TSN, so hard real time requeriments could be satisfied.
+The instructions to the SAMYPlugIns are sent as Cannonical Robot Command Language commands. The status of the robots are retrieved as CRCL Status. Both the required CRCL Commands for a robot and the 
+associated CRCL Status are stored in a same structure, the so called SAMYRobot. The SAMYRobot contains the information regarding the status of the robot, the status of the requested commands, 
+the requested commands, the network configuration information...
+
+The configuration module allows describing the robotic environment and defining custom services. The custom services are defined in terms of the parameters they require and the CRCL commands the required. 
+The description of the Robotic Environment allows describing the robots present in the system and their capabilities.
+
+At this moment, the Communication module is more or less finished, although an error in the Open62541 stack regarding unions does not make it yet usable.
+
+ At this moment the main files include ad hoc functions code for testing purposes.
 
 ## Build
 
