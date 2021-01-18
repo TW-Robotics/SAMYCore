@@ -8,6 +8,11 @@ mkdir build && cd build
 cmake ..
 make -j6 
 
+# Dependencies
+
+The SAMYCore requires:
+- Open62541 v1.2 (at this moment not working yet due to a Bug in the Unions DataType). Further instructions about exact build requeriments will be included when everything is fixed.
+- yaml-cpp (included in Third Parties). Nothing to do required
 
 ## Structure
 
