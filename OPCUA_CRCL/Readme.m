@@ -1,4 +1,4 @@
-This folder contains the OPCUA/open62541 (v1.1.3) related files.
+This folder contains the OPCUA/open62541 (v1.2 with unions patch) related files.
 
 Both PlugIns and SAMYCore share this code, since both have a Publisher and a Subscriber managed by Open62541 luvrary.
 - model folder contains the CRCL-OPC UA NodeSet that will be used by the nodeset_compiler for generetaing the CRCL model information in Open62541 code. These files are copied from folders in OPCUAModel
