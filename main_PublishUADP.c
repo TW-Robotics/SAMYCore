@@ -221,7 +221,6 @@ addUnionExampleVariable(UA_Server *server) {
     }
 }
 
-
 static void
 writeUnionVariable(UA_Server *server, void* data) {
     UA_CRCLCommandsUnionDataType u;
@@ -825,6 +824,10 @@ int main(int argc, char** argv) {
         addFiveCRCLCommands(server);
         addCRCLSkill(server);
         addSAMYRobotNode(server);
+
+	addUnionExampleVariable(server);
+	
+        UA_Server_addRepeatedCallback( server, writeUnionVariable, NULL, 10000, NULL );
         UA_Server_addRepeatedCallback( server, readSAMYRobotNode, NULL, 10000, NULL );
         SAMYRobot robot;
         robot.id = 4567; /* IT MUST BE A UNINT16 number, otherwise it changes the number when compiling due to overflow!!! Compile with pedantic?*/
