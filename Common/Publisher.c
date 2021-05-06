@@ -1,5 +1,6 @@
 #include "Publisher.h"
 
+#if pubsub
 /* Publisher_UADP functions begin*/
 /*Setting PublisherUADP PubSubConnection and adding it to the server*/
 void setPublisherUADP_PubSubConnection(Publisher_UADP* publisher){
@@ -460,3 +461,4 @@ UA_StatusCode addPublisherMQTT_ToServer(UA_Server* server, Publisher_MQTT* publi
 /* Publisher_MQTT functions end*/
 
 
+#endif

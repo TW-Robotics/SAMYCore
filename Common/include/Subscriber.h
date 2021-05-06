@@ -4,8 +4,8 @@
 #include <open62541/plugin/log_stdout.h>
 /* Files namespace_foo_flt_generated.h and namespace_foo_flt_generated.c are created from FooFlt.NodeSet2.xml in the
  * /src_generated directory by CMake */
-#include "crcl_opcua_nodeids.h"
-#include "namespace_crcl_opcua_generated.h"
+#include "crcl_nodeids.h"
+#include "namespace_crcl_generated.h"
 #include <signal.h>
 #include <stdlib.h>
 

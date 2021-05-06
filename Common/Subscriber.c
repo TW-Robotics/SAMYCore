@@ -1,5 +1,7 @@
 #include "Subscriber.h"
 
+
+#if pubsub
 /* Publisher_UADP functions begin*/
 /*Setting PublisherUADP PubSubConnection and adding it to the server*/
 void setSubscriberUADP_PubSubConnection(Subscriber_UADP* subscriber){
@@ -131,7 +133,7 @@ void setDataSetMetaData(UA_DataSetMetaDataType *pMetaData, UA_String name) {
 
     /* CRCL Vector DataType for test purposes */
     UA_FieldMetaData_init (&pMetaData->fields[0]);
-    UA_NodeId_copy(&UA_TYPES_CRCL_OPCUA[UA_TYPES_CRCL_OPCUA_SAMYROBOTDATATYPE].typeId,
+    UA_NodeId_copy(&UA_TYPES_CRCL[UA_TYPES_CRCLSAMYROBOTDATATYPE].typeId,
                     &pMetaData->fields[0].dataType);
     pMetaData->fields[0].builtInType = UA_NS0ID_STRUCTURE;
     pMetaData->fields[0].name =  name;
@@ -314,5 +316,8 @@ UA_StatusCode addSubscriberMQTT_ToServer(UA_Server* server, Subscriber_MQTT* sub
     retval |= addSubscriberMQTT_SubscribedVariablesToServer(server, subscriber);
     return retval;
 }
+
+#endif
+
 
 #endif
