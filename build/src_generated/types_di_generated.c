@@ -1,5 +1,5 @@
 /* Generated from Opc.Ua.Di.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py
- * on host jbg by user jbg at 2021-05-06 04:24:59 */
+ * on host jbg by user jbg at 2021-05-11 12:50:17 */
 
 #include "types_di_generated.h"
 
@@ -84,8 +84,8 @@ static UA_DataTypeMember TransferResultDataDataType_members[3] = {
 const UA_DataType UA_TYPES_DI[UA_TYPES_DI_COUNT] = {
 /* FetchResultDataType */
 {
-    {1, UA_NODEIDTYPE_NUMERIC, {6522LU}}, /* .typeId */
-    {1, UA_NODEIDTYPE_NUMERIC, {6551LU}}, /* .binaryEncodingId */
+    {2, UA_NODEIDTYPE_NUMERIC, {6522LU}}, /* .typeId */
+    {2, UA_NODEIDTYPE_NUMERIC, {6551LU}}, /* .binaryEncodingId */
     sizeof(UA_FetchResultDataType), /* .memSize */
     UA_TYPES_DI_FETCHRESULTDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -97,8 +97,8 @@ const UA_DataType UA_TYPES_DI[UA_TYPES_DI_COUNT] = {
 },
 /* DeviceHealthEnumeration */
 {
-    {1, UA_NODEIDTYPE_NUMERIC, {6244LU}}, /* .typeId */
-    {1, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
+    {2, UA_NODEIDTYPE_NUMERIC, {6244LU}}, /* .typeId */
+    {2, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
     sizeof(UA_DeviceHealthEnumeration), /* .memSize */
     UA_TYPES_INT32, /* .typeIndex */
     UA_DATATYPEKIND_ENUM, /* .typeKind */
@@ -110,8 +110,8 @@ const UA_DataType UA_TYPES_DI[UA_TYPES_DI_COUNT] = {
 },
 /* ParameterResultDataType */
 {
-    {1, UA_NODEIDTYPE_NUMERIC, {6525LU}}, /* .typeId */
-    {1, UA_NODEIDTYPE_NUMERIC, {6554LU}}, /* .binaryEncodingId */
+    {2, UA_NODEIDTYPE_NUMERIC, {6525LU}}, /* .typeId */
+    {2, UA_NODEIDTYPE_NUMERIC, {6554LU}}, /* .binaryEncodingId */
     sizeof(UA_ParameterResultDataType), /* .memSize */
     UA_TYPES_DI_PARAMETERRESULTDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -123,8 +123,8 @@ const UA_DataType UA_TYPES_DI[UA_TYPES_DI_COUNT] = {
 },
 /* TransferResultErrorDataType */
 {
-    {1, UA_NODEIDTYPE_NUMERIC, {15888LU}}, /* .typeId */
-    {1, UA_NODEIDTYPE_NUMERIC, {15891LU}}, /* .binaryEncodingId */
+    {2, UA_NODEIDTYPE_NUMERIC, {15888LU}}, /* .typeId */
+    {2, UA_NODEIDTYPE_NUMERIC, {15891LU}}, /* .binaryEncodingId */
     sizeof(UA_TransferResultErrorDataType), /* .memSize */
     UA_TYPES_DI_TRANSFERRESULTERRORDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -136,8 +136,8 @@ const UA_DataType UA_TYPES_DI[UA_TYPES_DI_COUNT] = {
 },
 /* TransferResultDataDataType */
 {
-    {1, UA_NODEIDTYPE_NUMERIC, {15889LU}}, /* .typeId */
-    {1, UA_NODEIDTYPE_NUMERIC, {15892LU}}, /* .binaryEncodingId */
+    {2, UA_NODEIDTYPE_NUMERIC, {15889LU}}, /* .typeId */
+    {2, UA_NODEIDTYPE_NUMERIC, {15892LU}}, /* .binaryEncodingId */
     sizeof(UA_TransferResultDataDataType), /* .memSize */
     UA_TYPES_DI_TRANSFERRESULTDATADATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */

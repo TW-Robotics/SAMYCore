@@ -1,5 +1,5 @@
 /* Generated from CRCL.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py
- * on host jbg by user jbg at 2021-05-06 04:24:59 */
+ * on host jbg by user jbg at 2021-05-11 12:50:17 */
 
 #include "types_crcl_generated.h"
 
@@ -5652,8 +5652,8 @@ static UA_DataTypeMember SAMYRobotDataType_members[7] = {
 const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 /* MessageParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15338LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15984LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15338LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15984LU}}, /* .binaryEncodingId */
     sizeof(UA_MessageParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_MESSAGEPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5665,8 +5665,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_PositiveDecimalDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15014LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15014LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_PositiveDecimalDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_POSITIVEDECIMALDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_BYTESTRING, /* .typeKind */
@@ -5678,8 +5678,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_PointDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15011LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15107LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15011LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15107LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_PointDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_POINTDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5691,8 +5691,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_PoseToleranceDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15019LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15112LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15019LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15112LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_PoseToleranceDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_POSETOLERANCEDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5704,8 +5704,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetMotionCoordinationParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15959LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16338LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15959LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16338LU}}, /* .binaryEncodingId */
     sizeof(UA_SetMotionCoordinationParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5717,8 +5717,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_ActuateJointDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15059LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15991LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15059LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15991LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_ActuateJointDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5730,8 +5730,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* DisableGripperParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15972LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16345LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15972LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16345LU}}, /* .binaryEncodingId */
     sizeof(UA_DisableGripperParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_DISABLEGRIPPERPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5743,8 +5743,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_JointDetailsDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15044LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15135LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15044LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15135LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_JointDetailsDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5756,8 +5756,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCLCommandParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15150LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15975LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15150LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15975LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCLCommandParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_CRCLCOMMANDPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5769,8 +5769,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* DisableRobotParameterStatusParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15974LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16347LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15974LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16347LU}}, /* .binaryEncodingId */
     sizeof(UA_DisableRobotParameterStatusParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5782,8 +5782,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_TransAccelAbsoluteDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15027LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15120LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15027LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15120LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_TransAccelAbsoluteDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_TRANSACCELABSOLUTEDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5795,8 +5795,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* OpenToolChangerParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15337LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15983LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15337LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15983LU}}, /* .binaryEncodingId */
     sizeof(UA_OpenToolChangerParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_OPENTOOLCHANGERPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5808,8 +5808,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_FractionDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15007LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15105LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15007LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15105LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_FractionDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_FRACTIONDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5821,8 +5821,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_JointSpeedAccelDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15047LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15138LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15047LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15138LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_JointSpeedAccelDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_JOINTSPEEDACCELDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5834,8 +5834,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_JointLimitDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15097LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15186LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15097LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15186LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_JointLimitDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_JOINTLIMITDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5847,8 +5847,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* EnableRobotParameterStatusParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15973LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16346LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15973LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16346LU}}, /* .binaryEncodingId */
     sizeof(UA_EnableRobotParameterStatusParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5860,8 +5860,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* ConfigureStatusReportParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15965LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16341LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15965LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16341LU}}, /* .binaryEncodingId */
     sizeof(UA_ConfigureStatusReportParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5873,8 +5873,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_DataThingDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15010LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15106LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15010LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15106LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_DataThingDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_DATATHINGDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5886,8 +5886,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_TorqueUnitEnumDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15015LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15015LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_TorqueUnitEnumDataType), /* .memSize */
     UA_TYPES_INT32, /* .typeIndex */
     UA_DATATYPEKIND_ENUM, /* .typeKind */
@@ -5899,8 +5899,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_AngleUnitEnumDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15003LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15003LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_AngleUnitEnumDataType), /* .memSize */
     UA_TYPES_INT32, /* .typeIndex */
     UA_DATATYPEKIND_ENUM, /* .typeKind */
@@ -5912,8 +5912,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_JointStatusDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15098LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15187LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15098LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15187LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_JointStatusDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_JOINTSTATUSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5925,8 +5925,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_TransSpeedAbsoluteDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15030LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15123LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15030LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15123LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_TransSpeedAbsoluteDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_TRANSSPEEDABSOLUTEDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5938,8 +5938,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CloseToolChangerParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15336LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15981LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15336LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15981LU}}, /* .binaryEncodingId */
     sizeof(UA_CloseToolChangerParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5951,8 +5951,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_ParameterSettingDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15020LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15113LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15020LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15113LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_ParameterSettingDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_PARAMETERSETTINGDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5964,8 +5964,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_ConfigureJointReportDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15033LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15126LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15033LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15126LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_ConfigureJointReportDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_CONFIGUREJOINTREPORTDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5977,8 +5977,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetEndeffectorParametersParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15934LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16327LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15934LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16327LU}}, /* .binaryEncodingId */
     sizeof(UA_SetEndeffectorParametersParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -5990,8 +5990,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_JointPositionToleranceSettingDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15037LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15128LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15037LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15128LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_JointPositionToleranceSettingDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_JOINTPOSITIONTOLERANCESETTINGDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6003,8 +6003,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_RotAccelAbsoluteDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15021LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15114LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15021LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15114LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_RotAccelAbsoluteDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_ROTACCELABSOLUTEDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6016,8 +6016,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetRobotParametersParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15871LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16326LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15871LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16326LU}}, /* .binaryEncodingId */
     sizeof(UA_SetRobotParametersParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETROBOTPARAMETERSPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6029,8 +6029,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_CommandStateEnumDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15082LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15082LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_CommandStateEnumDataType), /* .memSize */
     UA_TYPES_INT32, /* .typeIndex */
     UA_DATATYPEKIND_ENUM, /* .typeKind */
@@ -6042,8 +6042,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_LengthUnitEnumDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15008LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15008LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_LengthUnitEnumDataType), /* .memSize */
     UA_TYPES_INT32, /* .typeIndex */
     UA_DATATYPEKIND_ENUM, /* .typeKind */
@@ -6055,8 +6055,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetAngleUnitsParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15949LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16333LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15949LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16333LU}}, /* .binaryEncodingId */
     sizeof(UA_SetAngleUnitsParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETANGLEUNITSPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6068,8 +6068,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_VectorDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15012LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15108LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15012LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15108LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_VectorDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_VECTORDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6081,8 +6081,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_GripperStatusDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15091LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15180LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15091LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15180LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_GripperStatusDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_GRIPPERSTATUSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6094,8 +6094,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetLengthUnitsParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15957LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16337LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15957LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16337LU}}, /* .binaryEncodingId */
     sizeof(UA_SetLengthUnitsParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETLENGTHUNITSPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6107,8 +6107,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_JointForceTorqueDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15046LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15137LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15046LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15137LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_JointForceTorqueDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_JOINTFORCETORQUEDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6120,8 +6120,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetTorqueUnitsParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15961LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16339LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15961LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16339LU}}, /* .binaryEncodingId */
     sizeof(UA_SetTorqueUnitsParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETTORQUEUNITSPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6133,8 +6133,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_GuardLimitEnumDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15034LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15034LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_GuardLimitEnumDataType), /* .memSize */
     UA_TYPES_INT32, /* .typeIndex */
     UA_DATATYPEKIND_ENUM, /* .typeKind */
@@ -6146,8 +6146,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_RotSpeedRelativeDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15025LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15118LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15025LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15118LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_RotSpeedRelativeDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_ROTSPEEDRELATIVEDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6159,8 +6159,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_RotAccelRelativeDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15022LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15115LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15022LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15115LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_RotAccelRelativeDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_ROTACCELRELATIVEDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6172,8 +6172,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_ThreeFingerGripperStatusDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15093LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15182LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15093LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15182LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_ThreeFingerGripperStatusDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_THREEFINGERGRIPPERSTATUSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6185,8 +6185,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_RotAccelDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15023LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15116LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15023LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15116LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_RotAccelDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_ROTACCELDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_UNION, /* .typeKind */
@@ -6198,8 +6198,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* DisableSensorParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15969LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16343LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15969LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16343LU}}, /* .binaryEncodingId */
     sizeof(UA_DisableSensorParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_DISABLESENSORPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6211,8 +6211,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_ScalarSensorStatusDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15088LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15177LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15088LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15177LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_ScalarSensorStatusDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_SCALARSENSORSTATUSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6224,8 +6224,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* DwellParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15694LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16322LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15694LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16322LU}}, /* .binaryEncodingId */
     sizeof(UA_DwellParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_DWELLPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6237,8 +6237,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_ForceUnitEnumDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15005LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15005LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_ForceUnitEnumDataType), /* .memSize */
     UA_TYPES_INT32, /* .typeIndex */
     UA_DATATYPEKIND_ENUM, /* .typeKind */
@@ -6250,8 +6250,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* GetStatusParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15334LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15979LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15334LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15979LU}}, /* .binaryEncodingId */
     sizeof(UA_GetStatusParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_GETSTATUSPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6263,8 +6263,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetIntermediatePoseToleranceParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15955LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16336LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15955LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16336LU}}, /* .binaryEncodingId */
     sizeof(UA_SetIntermediatePoseToleranceParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6276,8 +6276,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetEndPoseToleranceParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15951LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16334LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15951LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16334LU}}, /* .binaryEncodingId */
     sizeof(UA_SetEndPoseToleranceParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6289,8 +6289,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* PubSubIPAddresses */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15101LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15190LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15101LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15190LU}}, /* .binaryEncodingId */
     sizeof(UA_PubSubIPAddresses), /* .memSize */
     UA_TYPES_CRCL_PUBSUBIPADDRESSES, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6302,8 +6302,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_JointStatusesDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15099LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15188LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15099LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15188LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_JointStatusesDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_JOINTSTATUSESDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6315,8 +6315,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_StopConditionEnumDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15001LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15001LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_StopConditionEnumDataType), /* .memSize */
     UA_TYPES_INT32, /* .typeIndex */
     UA_DATATYPEKIND_ENUM, /* .typeKind */
@@ -6328,8 +6328,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* EndCanonParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15333LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15978LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15333LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15978LU}}, /* .binaryEncodingId */
     sizeof(UA_EndCanonParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_ENDCANONPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6341,8 +6341,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_RotSpeedAbsoluteDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15024LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15117LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15024LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15117LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_RotSpeedAbsoluteDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_ROTSPEEDABSOLUTEDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6354,8 +6354,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* InitCanonParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15293LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15976LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15293LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15976LU}}, /* .binaryEncodingId */
     sizeof(UA_InitCanonParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_INITCANONPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6367,8 +6367,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_GuardDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15036LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15127LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15036LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15127LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_GuardDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_GUARDDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6380,8 +6380,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* ConfigureStatusReportDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15069LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15160LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15069LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15160LU}}, /* .binaryEncodingId */
     sizeof(UA_ConfigureStatusReportDataType), /* .memSize */
     UA_TYPES_CRCL_CONFIGURESTATUSREPORTDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6393,8 +6393,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* RunProgramDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15057LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15148LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15057LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15148LU}}, /* .binaryEncodingId */
     sizeof(UA_RunProgramDataType), /* .memSize */
     UA_TYPES_CRCL_RUNPROGRAMDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6406,8 +6406,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_ParallelGripperStatusDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15092LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15181LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15092LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15181LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_ParallelGripperStatusDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_PARALLELGRIPPERSTATUSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6419,8 +6419,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetRotAccelParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15947LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16332LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15947LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16332LU}}, /* .binaryEncodingId */
     sizeof(UA_SetRotAccelParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETROTACCELPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6432,8 +6432,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCLCommandDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15040LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15131LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15040LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15131LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCLCommandDataType), /* .memSize */
     UA_TYPES_CRCL_CRCLCOMMANDDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6445,8 +6445,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetEndeffectorParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15939LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16328LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15939LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16328LU}}, /* .binaryEncodingId */
     sizeof(UA_SetEndeffectorParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6458,8 +6458,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetIntermediatePoseToleranceDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15063LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15154LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15063LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15154LU}}, /* .binaryEncodingId */
     sizeof(UA_SetIntermediatePoseToleranceDataType), /* .memSize */
     UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6471,8 +6471,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetRobotParametersDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15066LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15157LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15066LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15157LU}}, /* .binaryEncodingId */
     sizeof(UA_SetRobotParametersDataType), /* .memSize */
     UA_TYPES_CRCL_SETROBOTPARAMETERSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6484,8 +6484,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_ForceTorqueSensorStatusDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15089LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15178LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15089LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15178LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_ForceTorqueSensorStatusDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_FORCETORQUESENSORSTATUSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6497,8 +6497,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_OnOffSensorStatusDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15087LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15176LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15087LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15176LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_OnOffSensorStatusDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_ONOFFSENSORSTATUSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6510,8 +6510,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* EnableSensorParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15967LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16342LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15967LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16342LU}}, /* .binaryEncodingId */
     sizeof(UA_EnableSensorParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_ENABLESENSORPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6523,8 +6523,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_SensorStatusDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15085LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15174LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15085LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15174LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_SensorStatusDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_SENSORSTATUSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6536,8 +6536,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_TransAccelRelativeDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15028LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15121LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15028LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15121LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_TransAccelRelativeDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_TRANSACCELRELATIVEDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6549,8 +6549,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_TransSpeedRelativeDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15031LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15124LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15031LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15124LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_TransSpeedRelativeDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_TRANSSPEEDRELATIVEDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6562,8 +6562,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_TwistDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15017LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15110LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15017LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15110LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_TwistDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_TWISTDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6575,8 +6575,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_SettingsStatusDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15095LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15184LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15095LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15184LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_SettingsStatusDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_SETTINGSSTATUSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6588,8 +6588,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* StopMotionDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15068LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15159LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15068LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15159LU}}, /* .binaryEncodingId */
     sizeof(UA_StopMotionDataType), /* .memSize */
     UA_TYPES_CRCL_STOPMOTIONDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6601,8 +6601,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* OpenToolChangerDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15056LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15147LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15056LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15147LU}}, /* .binaryEncodingId */
     sizeof(UA_OpenToolChangerDataType), /* .memSize */
     UA_TYPES_CRCL_OPENTOOLCHANGERDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6614,8 +6614,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetForceUnitsDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15062LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15153LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15062LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15153LU}}, /* .binaryEncodingId */
     sizeof(UA_SetForceUnitsDataType), /* .memSize */
     UA_TYPES_CRCL_SETFORCEUNITSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6627,8 +6627,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetEndeffectorDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15915LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15917LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15915LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15917LU}}, /* .binaryEncodingId */
     sizeof(UA_SetEndeffectorDataType), /* .memSize */
     UA_TYPES_CRCL_SETENDEFFECTORDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6640,8 +6640,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* EnableGripperParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15971LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16344LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15971LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16344LU}}, /* .binaryEncodingId */
     sizeof(UA_EnableGripperParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_ENABLEGRIPPERPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6653,8 +6653,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* ConfigureJointReportsDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15081LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15172LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15081LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15172LU}}, /* .binaryEncodingId */
     sizeof(UA_ConfigureJointReportsDataType), /* .memSize */
     UA_TYPES_CRCL_CONFIGUREJOINTREPORTSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6666,8 +6666,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CloseToolChangerDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15050LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15141LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15050LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15141LU}}, /* .binaryEncodingId */
     sizeof(UA_CloseToolChangerDataType), /* .memSize */
     UA_TYPES_CRCL_CLOSETOOLCHANGERDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6679,8 +6679,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* GetStatusDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15052LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15143LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15052LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15143LU}}, /* .binaryEncodingId */
     sizeof(UA_GetStatusDataType), /* .memSize */
     UA_TYPES_CRCL_GETSTATUSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6692,8 +6692,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_WrenchDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15018LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15111LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15018LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15111LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_WrenchDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_WRENCHDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6705,8 +6705,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_CommandStatusDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15084LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15173LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15084LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15173LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_CommandStatusDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_COMMANDSTATUSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6718,8 +6718,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* InitCanonDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15043LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15134LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15043LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15134LU}}, /* .binaryEncodingId */
     sizeof(UA_InitCanonDataType), /* .memSize */
     UA_TYPES_CRCL_INITCANONDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6731,8 +6731,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* DisableRobotParameterStatusDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15075LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15166LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15075LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15166LU}}, /* .binaryEncodingId */
     sizeof(UA_DisableRobotParameterStatusDataType), /* .memSize */
     UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6744,8 +6744,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* ConfigureJointReportsParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15696LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16324LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15696LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16324LU}}, /* .binaryEncodingId */
     sizeof(UA_ConfigureJointReportsParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_CONFIGUREJOINTREPORTSPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6757,8 +6757,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_PoseDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15013LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15109LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15013LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15109LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_PoseDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_POSEDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6770,8 +6770,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_TransSpeedDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15032LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15125LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15032LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15125LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_TransSpeedDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_TRANSSPEEDDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_UNION, /* .typeKind */
@@ -6783,8 +6783,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* MoveToDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15049LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15140LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15049LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15140LU}}, /* .binaryEncodingId */
     sizeof(UA_MoveToDataType), /* .memSize */
     UA_TYPES_CRCL_MOVETODATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6796,8 +6796,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* MoveToParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15496LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15986LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15496LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15986LU}}, /* .binaryEncodingId */
     sizeof(UA_MoveToParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_MOVETOPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6809,8 +6809,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_VacuumGripperStatusDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15094LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15183LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15094LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15183LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_VacuumGripperStatusDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_VACUUMGRIPPERSTATUSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6822,8 +6822,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_RotSpeedDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15026LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15119LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15026LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15119LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_RotSpeedDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_ROTSPEEDDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_UNION, /* .typeKind */
@@ -6835,8 +6835,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetMotionCoordinationDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15065LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15156LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15065LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15156LU}}, /* .binaryEncodingId */
     sizeof(UA_SetMotionCoordinationDataType), /* .memSize */
     UA_TYPES_CRCL_SETMOTIONCOORDINATIONDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6848,8 +6848,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* DwellDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15051LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15142LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15051LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15142LU}}, /* .binaryEncodingId */
     sizeof(UA_DwellDataType), /* .memSize */
     UA_TYPES_CRCL_DWELLDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6861,8 +6861,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_CountSensorStatusDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15086LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15175LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15086LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15175LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_CountSensorStatusDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_COUNTSENSORSTATUSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6874,8 +6874,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetRotAccelDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15077LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15168LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15077LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15168LU}}, /* .binaryEncodingId */
     sizeof(UA_SetRotAccelDataType), /* .memSize */
     UA_TYPES_CRCL_SETROTACCELDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6887,8 +6887,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* EnableGripperDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15072LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15163LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15072LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15163LU}}, /* .binaryEncodingId */
     sizeof(UA_EnableGripperDataType), /* .memSize */
     UA_TYPES_CRCL_ENABLEGRIPPERDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6900,8 +6900,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* MiddleCommandDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15041LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15132LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15041LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15132LU}}, /* .binaryEncodingId */
     sizeof(UA_MiddleCommandDataType), /* .memSize */
     UA_TYPES_CRCL_MIDDLECOMMANDDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6913,8 +6913,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetRotSpeedDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15079LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15170LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15079LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15170LU}}, /* .binaryEncodingId */
     sizeof(UA_SetRotSpeedDataType), /* .memSize */
     UA_TYPES_CRCL_SETROTSPEEDDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6926,8 +6926,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_SensorStatusesDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15090LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15179LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15090LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15179LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_SensorStatusesDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_SENSORSTATUSESDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6939,8 +6939,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetForceUnitsParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15953LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16335LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15953LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16335LU}}, /* .binaryEncodingId */
     sizeof(UA_SetForceUnitsParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETFORCEUNITSPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6952,8 +6952,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* DisableSensorDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15071LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15162LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15071LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15162LU}}, /* .binaryEncodingId */
     sizeof(UA_DisableSensorDataType), /* .memSize */
     UA_TYPES_CRCL_DISABLESENSORDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6965,8 +6965,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_JointPositionsTolerancesDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15038LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15129LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15038LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15129LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_JointPositionsTolerancesDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_JOINTPOSITIONSTOLERANCESDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6978,8 +6978,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* EnableSensorDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15070LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15161LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15070LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15161LU}}, /* .binaryEncodingId */
     sizeof(UA_EnableSensorDataType), /* .memSize */
     UA_TYPES_CRCL_ENABLESENSORDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -6991,8 +6991,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetRotSpeedParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15945LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16331LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15945LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16331LU}}, /* .binaryEncodingId */
     sizeof(UA_SetRotSpeedParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETROTSPEEDPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7004,8 +7004,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* ActuateJointsDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15048LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15139LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15048LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15139LU}}, /* .binaryEncodingId */
     sizeof(UA_ActuateJointsDataType), /* .memSize */
     UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7017,8 +7017,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetEndeffectorParametersDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15914LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15916LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15914LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15916LU}}, /* .binaryEncodingId */
     sizeof(UA_SetEndeffectorParametersDataType), /* .memSize */
     UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7030,8 +7030,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* EnableRobotParameterStatusDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15074LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15165LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15074LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15165LU}}, /* .binaryEncodingId */
     sizeof(UA_EnableRobotParameterStatusDataType), /* .memSize */
     UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7043,8 +7043,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* EndCanonDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15042LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15133LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15042LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15133LU}}, /* .binaryEncodingId */
     sizeof(UA_EndCanonDataType), /* .memSize */
     UA_TYPES_CRCL_ENDCANONDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7056,8 +7056,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetAngleUnitsDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15058LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15149LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15058LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15149LU}}, /* .binaryEncodingId */
     sizeof(UA_SetAngleUnitsDataType), /* .memSize */
     UA_TYPES_CRCL_SETANGLEUNITSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7069,8 +7069,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* MoveScrewParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15510LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15988LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15510LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15988LU}}, /* .binaryEncodingId */
     sizeof(UA_MoveScrewParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_MOVESCREWPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7082,8 +7082,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetTorqueUnitsDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15067LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15158LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15067LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15158LU}}, /* .binaryEncodingId */
     sizeof(UA_SetTorqueUnitsDataType), /* .memSize */
     UA_TYPES_CRCL_SETTORQUEUNITSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7095,8 +7095,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* StopMotionParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15963LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16340LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15963LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16340LU}}, /* .binaryEncodingId */
     sizeof(UA_StopMotionParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_STOPMOTIONPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7108,8 +7108,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetEndPoseToleranceDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15061LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15152LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15061LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15152LU}}, /* .binaryEncodingId */
     sizeof(UA_SetEndPoseToleranceDataType), /* .memSize */
     UA_TYPES_CRCL_SETENDPOSETOLERANCEDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7121,8 +7121,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* MessageDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15053LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15144LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15053LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15144LU}}, /* .binaryEncodingId */
     sizeof(UA_MessageDataType), /* .memSize */
     UA_TYPES_CRCL_MESSAGEDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7134,8 +7134,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_PoseStatusDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15096LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15185LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15096LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15185LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_PoseStatusDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_POSESTATUSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7147,8 +7147,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* MoveThroughToDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15055LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15146LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15055LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15146LU}}, /* .binaryEncodingId */
     sizeof(UA_MoveThroughToDataType), /* .memSize */
     UA_TYPES_CRCL_MOVETHROUGHTODATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7160,8 +7160,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* ActuateJointsParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15695LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16323LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15695LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16323LU}}, /* .binaryEncodingId */
     sizeof(UA_ActuateJointsParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7173,8 +7173,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* DisableGripperDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15073LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15164LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15073LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15164LU}}, /* .binaryEncodingId */
     sizeof(UA_DisableGripperDataType), /* .memSize */
     UA_TYPES_CRCL_DISABLEGRIPPERDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7186,8 +7186,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetLengthUnitsDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15064LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15155LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15064LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15155LU}}, /* .binaryEncodingId */
     sizeof(UA_SetLengthUnitsDataType), /* .memSize */
     UA_TYPES_CRCL_SETLENGTHUNITSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7199,8 +7199,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* MoveThroughToParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15511LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15990LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15511LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15990LU}}, /* .binaryEncodingId */
     sizeof(UA_MoveThroughToParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_MOVETHROUGHTOPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7212,8 +7212,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_TransAccelDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15029LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15122LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15029LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15122LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_TransAccelDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_TRANSACCELDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_UNION, /* .typeKind */
@@ -7225,8 +7225,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* MoveScrewDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15054LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15145LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15054LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15145LU}}, /* .binaryEncodingId */
     sizeof(UA_MoveScrewDataType), /* .memSize */
     UA_TYPES_CRCL_MOVESCREWDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7238,8 +7238,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetDefaultJointPositionsTolerancesDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15076LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15167LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15076LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15167LU}}, /* .binaryEncodingId */
     sizeof(UA_SetDefaultJointPositionsTolerancesDataType), /* .memSize */
     UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7251,8 +7251,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetTransSpeedParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15941LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16329LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15941LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16329LU}}, /* .binaryEncodingId */
     sizeof(UA_SetTransSpeedParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETTRANSSPEEDPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7264,8 +7264,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetDefaultJointPositionsTolerancesParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15698LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16325LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15698LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16325LU}}, /* .binaryEncodingId */
     sizeof(UA_SetDefaultJointPositionsTolerancesParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7277,8 +7277,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCLStatusDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15100LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15189LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15100LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15189LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCLStatusDataType), /* .memSize */
     UA_TYPES_CRCL_CRCLSTATUSDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7290,8 +7290,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetTransSpeedDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15080LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15171LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15080LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15171LU}}, /* .binaryEncodingId */
     sizeof(UA_SetTransSpeedDataType), /* .memSize */
     UA_TYPES_CRCL_SETTRANSSPEEDDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7303,8 +7303,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCL_PoseAndSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15039LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15130LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15039LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15130LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCL_PoseAndSetDataType), /* .memSize */
     UA_TYPES_CRCL_CRCL_POSEANDSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7316,8 +7316,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetTransAccelParametersSetDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15943LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {16330LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15943LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16330LU}}, /* .binaryEncodingId */
     sizeof(UA_SetTransAccelParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETTRANSACCELPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7329,8 +7329,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SetTransAccelDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15078LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15169LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15078LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15169LU}}, /* .binaryEncodingId */
     sizeof(UA_SetTransAccelDataType), /* .memSize */
     UA_TYPES_CRCL_SETTRANSACCELDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7342,8 +7342,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCLCommandsUnionDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15103LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15192LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15103LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15192LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCLCommandsUnionDataType), /* .memSize */
     UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_UNION, /* .typeKind */
@@ -7355,8 +7355,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* CRCLSkillDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15104LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15193LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15104LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15193LU}}, /* .binaryEncodingId */
     sizeof(UA_CRCLSkillDataType), /* .memSize */
     UA_TYPES_CRCL_CRCLSKILLDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
@@ -7368,8 +7368,8 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
 },
 /* SAMYRobotDataType */
 {
-    {5, UA_NODEIDTYPE_NUMERIC, {15102LU}}, /* .typeId */
-    {5, UA_NODEIDTYPE_NUMERIC, {15191LU}}, /* .binaryEncodingId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15102LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15191LU}}, /* .binaryEncodingId */
     sizeof(UA_SAMYRobotDataType), /* .memSize */
     UA_TYPES_CRCL_SAMYROBOTDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */

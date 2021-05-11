@@ -3942,196 +3942,6 @@ namespace CRCL
     }
     #endregion
 
-    #region VariableType Identifiers
-    /// <summary>
-    /// A class that declares constants for all VariableTypes in the Model Design.
-    /// </summary>
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public static partial class VariableTypes
-    {
-        /// <summary>
-        /// The identifier for the CRCLCommandParameters VariableType.
-        /// </summary>
-        public const uint CRCLCommandParameters = 15291;
-
-        /// <summary>
-        /// The identifier for the InitCanonParameters VariableType.
-        /// </summary>
-        public const uint InitCanonParameters = 15651;
-
-        /// <summary>
-        /// The identifier for the EndCanonParameters VariableType.
-        /// </summary>
-        public const uint EndCanonParameters = 15652;
-
-        /// <summary>
-        /// The identifier for the GetStatusParameters VariableType.
-        /// </summary>
-        public const uint GetStatusParameters = 15653;
-
-        /// <summary>
-        /// The identifier for the CloseToolChangerParameters VariableType.
-        /// </summary>
-        public const uint CloseToolChangerParameters = 15856;
-
-        /// <summary>
-        /// The identifier for the OpenToolChangerParameters VariableType.
-        /// </summary>
-        public const uint OpenToolChangerParameters = 15935;
-
-        /// <summary>
-        /// The identifier for the MessageParameters VariableType.
-        /// </summary>
-        public const uint MessageParameters = 15060;
-
-        /// <summary>
-        /// The identifier for the MoveToParameters VariableType.
-        /// </summary>
-        public const uint MoveToParameters = 15151;
-
-        /// <summary>
-        /// The identifier for the MoveScrewParameters VariableType.
-        /// </summary>
-        public const uint MoveScrewParameters = 15335;
-
-        /// <summary>
-        /// The identifier for the MoveThroughToParameters VariableType.
-        /// </summary>
-        public const uint MoveThroughToParameters = 15693;
-
-        /// <summary>
-        /// The identifier for the DwellParameters VariableType.
-        /// </summary>
-        public const uint DwellParameters = 15697;
-
-        /// <summary>
-        /// The identifier for the ActuateJointsParameters VariableType.
-        /// </summary>
-        public const uint ActuateJointsParameters = 15870;
-
-        /// <summary>
-        /// The identifier for the ConfigureJointReportsParameters VariableType.
-        /// </summary>
-        public const uint ConfigureJointReportsParameters = 15292;
-
-        /// <summary>
-        /// The identifier for the SetDefaultJointPositionsTolerancesParameters VariableType.
-        /// </summary>
-        public const uint SetDefaultJointPositionsTolerancesParameters = 15938;
-
-        /// <summary>
-        /// The identifier for the SetRobotParametersParameters VariableType.
-        /// </summary>
-        public const uint SetRobotParametersParameters = 15940;
-
-        /// <summary>
-        /// The identifier for the SetEndeffectorParametersParameters VariableType.
-        /// </summary>
-        public const uint SetEndeffectorParametersParameters = 15942;
-
-        /// <summary>
-        /// The identifier for the SetEndeffectorParameters VariableType.
-        /// </summary>
-        public const uint SetEndeffectorParameters = 15944;
-
-        /// <summary>
-        /// The identifier for the SetTransSpeedParameters VariableType.
-        /// </summary>
-        public const uint SetTransSpeedParameters = 15946;
-
-        /// <summary>
-        /// The identifier for the SetTransAccelParameters VariableType.
-        /// </summary>
-        public const uint SetTransAccelParameters = 15948;
-
-        /// <summary>
-        /// The identifier for the SetRotSpeedParameters VariableType.
-        /// </summary>
-        public const uint SetRotSpeedParameters = 15950;
-
-        /// <summary>
-        /// The identifier for the SetRotAccelParameters VariableType.
-        /// </summary>
-        public const uint SetRotAccelParameters = 15952;
-
-        /// <summary>
-        /// The identifier for the SetAngleUnitsParameters VariableType.
-        /// </summary>
-        public const uint SetAngleUnitsParameters = 15954;
-
-        /// <summary>
-        /// The identifier for the SetEndPoseToleranceParameters VariableType.
-        /// </summary>
-        public const uint SetEndPoseToleranceParameters = 15956;
-
-        /// <summary>
-        /// The identifier for the SetForceUnitsParameters VariableType.
-        /// </summary>
-        public const uint SetForceUnitsParameters = 15958;
-
-        /// <summary>
-        /// The identifier for the SetIntermediatePoseToleranceParameters VariableType.
-        /// </summary>
-        public const uint SetIntermediatePoseToleranceParameters = 15960;
-
-        /// <summary>
-        /// The identifier for the SetLengthUnitsParameters VariableType.
-        /// </summary>
-        public const uint SetLengthUnitsParameters = 15962;
-
-        /// <summary>
-        /// The identifier for the SetMotionCoordinationParameters VariableType.
-        /// </summary>
-        public const uint SetMotionCoordinationParameters = 15964;
-
-        /// <summary>
-        /// The identifier for the SetTorqueUnitsParameters VariableType.
-        /// </summary>
-        public const uint SetTorqueUnitsParameters = 15966;
-
-        /// <summary>
-        /// The identifier for the StopMotionParameters VariableType.
-        /// </summary>
-        public const uint StopMotionParameters = 15968;
-
-        /// <summary>
-        /// The identifier for the ConfigureStatusReportParameters VariableType.
-        /// </summary>
-        public const uint ConfigureStatusReportParameters = 15970;
-
-        /// <summary>
-        /// The identifier for the EnableSensorParameters VariableType.
-        /// </summary>
-        public const uint EnableSensorParameters = 15977;
-
-        /// <summary>
-        /// The identifier for the DisableSensorParameters VariableType.
-        /// </summary>
-        public const uint DisableSensorParameters = 15980;
-
-        /// <summary>
-        /// The identifier for the EnableGripperParameters VariableType.
-        /// </summary>
-        public const uint EnableGripperParameters = 15982;
-
-        /// <summary>
-        /// The identifier for the DisableGripperParameters VariableType.
-        /// </summary>
-        public const uint DisableGripperParameters = 15985;
-
-        /// <summary>
-        /// The identifier for the EnableRobotParameterStatusParameters VariableType.
-        /// </summary>
-        public const uint EnableRobotParameterStatusParameters = 15987;
-
-        /// <summary>
-        /// The identifier for the DisableRobotParameterStatusParameters VariableType.
-        /// </summary>
-        public const uint DisableRobotParameterStatusParameters = 15989;
-    }
-    #endregion
-
     #region DataType Node Identifiers
     /// <summary>
     /// A class that declares constants for all DataTypes in the Model Design.
@@ -8037,196 +7847,6 @@ namespace CRCL
     }
     #endregion
 
-    #region VariableType Node Identifiers
-    /// <summary>
-    /// A class that declares constants for all VariableTypes in the Model Design.
-    /// </summary>
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public static partial class VariableTypeIds
-    {
-        /// <summary>
-        /// The identifier for the CRCLCommandParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId CRCLCommandParameters = new ExpandedNodeId(CRCL.VariableTypes.CRCLCommandParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the InitCanonParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId InitCanonParameters = new ExpandedNodeId(CRCL.VariableTypes.InitCanonParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the EndCanonParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId EndCanonParameters = new ExpandedNodeId(CRCL.VariableTypes.EndCanonParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the GetStatusParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId GetStatusParameters = new ExpandedNodeId(CRCL.VariableTypes.GetStatusParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the CloseToolChangerParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId CloseToolChangerParameters = new ExpandedNodeId(CRCL.VariableTypes.CloseToolChangerParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the OpenToolChangerParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId OpenToolChangerParameters = new ExpandedNodeId(CRCL.VariableTypes.OpenToolChangerParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the MessageParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId MessageParameters = new ExpandedNodeId(CRCL.VariableTypes.MessageParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the MoveToParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId MoveToParameters = new ExpandedNodeId(CRCL.VariableTypes.MoveToParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the MoveScrewParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId MoveScrewParameters = new ExpandedNodeId(CRCL.VariableTypes.MoveScrewParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the MoveThroughToParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId MoveThroughToParameters = new ExpandedNodeId(CRCL.VariableTypes.MoveThroughToParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the DwellParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId DwellParameters = new ExpandedNodeId(CRCL.VariableTypes.DwellParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the ActuateJointsParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId ActuateJointsParameters = new ExpandedNodeId(CRCL.VariableTypes.ActuateJointsParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the ConfigureJointReportsParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId ConfigureJointReportsParameters = new ExpandedNodeId(CRCL.VariableTypes.ConfigureJointReportsParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the SetDefaultJointPositionsTolerancesParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId SetDefaultJointPositionsTolerancesParameters = new ExpandedNodeId(CRCL.VariableTypes.SetDefaultJointPositionsTolerancesParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the SetRobotParametersParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId SetRobotParametersParameters = new ExpandedNodeId(CRCL.VariableTypes.SetRobotParametersParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the SetEndeffectorParametersParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId SetEndeffectorParametersParameters = new ExpandedNodeId(CRCL.VariableTypes.SetEndeffectorParametersParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the SetEndeffectorParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId SetEndeffectorParameters = new ExpandedNodeId(CRCL.VariableTypes.SetEndeffectorParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the SetTransSpeedParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId SetTransSpeedParameters = new ExpandedNodeId(CRCL.VariableTypes.SetTransSpeedParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the SetTransAccelParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId SetTransAccelParameters = new ExpandedNodeId(CRCL.VariableTypes.SetTransAccelParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the SetRotSpeedParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId SetRotSpeedParameters = new ExpandedNodeId(CRCL.VariableTypes.SetRotSpeedParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the SetRotAccelParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId SetRotAccelParameters = new ExpandedNodeId(CRCL.VariableTypes.SetRotAccelParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the SetAngleUnitsParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId SetAngleUnitsParameters = new ExpandedNodeId(CRCL.VariableTypes.SetAngleUnitsParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the SetEndPoseToleranceParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId SetEndPoseToleranceParameters = new ExpandedNodeId(CRCL.VariableTypes.SetEndPoseToleranceParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the SetForceUnitsParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId SetForceUnitsParameters = new ExpandedNodeId(CRCL.VariableTypes.SetForceUnitsParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the SetIntermediatePoseToleranceParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId SetIntermediatePoseToleranceParameters = new ExpandedNodeId(CRCL.VariableTypes.SetIntermediatePoseToleranceParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the SetLengthUnitsParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId SetLengthUnitsParameters = new ExpandedNodeId(CRCL.VariableTypes.SetLengthUnitsParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the SetMotionCoordinationParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId SetMotionCoordinationParameters = new ExpandedNodeId(CRCL.VariableTypes.SetMotionCoordinationParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the SetTorqueUnitsParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId SetTorqueUnitsParameters = new ExpandedNodeId(CRCL.VariableTypes.SetTorqueUnitsParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the StopMotionParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId StopMotionParameters = new ExpandedNodeId(CRCL.VariableTypes.StopMotionParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the ConfigureStatusReportParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId ConfigureStatusReportParameters = new ExpandedNodeId(CRCL.VariableTypes.ConfigureStatusReportParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the EnableSensorParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId EnableSensorParameters = new ExpandedNodeId(CRCL.VariableTypes.EnableSensorParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the DisableSensorParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId DisableSensorParameters = new ExpandedNodeId(CRCL.VariableTypes.DisableSensorParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the EnableGripperParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId EnableGripperParameters = new ExpandedNodeId(CRCL.VariableTypes.EnableGripperParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the DisableGripperParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId DisableGripperParameters = new ExpandedNodeId(CRCL.VariableTypes.DisableGripperParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the EnableRobotParameterStatusParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId EnableRobotParameterStatusParameters = new ExpandedNodeId(CRCL.VariableTypes.EnableRobotParameterStatusParameters, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the DisableRobotParameterStatusParameters VariableType.
-        /// </summary>
-        public static readonly ExpandedNodeId DisableRobotParameterStatusParameters = new ExpandedNodeId(CRCL.VariableTypes.DisableRobotParameterStatusParameters, CRCL.Namespaces.CRCL);
-    }
-    #endregion
-
     #region BrowseName Declarations
     /// <summary>
     /// Declares all of the BrowseNames used in the Model Design.
@@ -8240,11 +7860,6 @@ namespace CRCL
         public const string ActuateJointsDataType = "ActuateJointsDataType";
 
         /// <summary>
-        /// The BrowseName for the ActuateJointsParameters component.
-        /// </summary>
-        public const string ActuateJointsParameters = "ActuateJointsParameters";
-
-        /// <summary>
         /// The BrowseName for the ActuateJointsParametersSetDataType component.
         /// </summary>
         public const string ActuateJointsParametersSetDataType = "ActuateJointsParametersSetDataType";
@@ -8253,11 +7868,6 @@ namespace CRCL
         /// The BrowseName for the CloseToolChangerDataType component.
         /// </summary>
         public const string CloseToolChangerDataType = "CloseToolChangerDataType";
-
-        /// <summary>
-        /// The BrowseName for the CloseToolChangerParameters component.
-        /// </summary>
-        public const string CloseToolChangerParameters = "CloseToolChangerParameters";
 
         /// <summary>
         /// The BrowseName for the CloseToolChangerParametersSetDataType component.
@@ -8270,11 +7880,6 @@ namespace CRCL
         public const string ConfigureJointReportsDataType = "ConfigureJointReportsDataType";
 
         /// <summary>
-        /// The BrowseName for the ConfigureJointReportsParameters component.
-        /// </summary>
-        public const string ConfigureJointReportsParameters = "ConfigureJointReportsParameters";
-
-        /// <summary>
         /// The BrowseName for the ConfigureJointReportsParametersSetDataType component.
         /// </summary>
         public const string ConfigureJointReportsParametersSetDataType = "ConfigureJointReportsParametersSetDataType";
@@ -8283,11 +7888,6 @@ namespace CRCL
         /// The BrowseName for the ConfigureStatusReportDataType component.
         /// </summary>
         public const string ConfigureStatusReportDataType = "ConfigureStatusReportDataType";
-
-        /// <summary>
-        /// The BrowseName for the ConfigureStatusReportParameters component.
-        /// </summary>
-        public const string ConfigureStatusReportParameters = "ConfigureStatusReportParameters";
 
         /// <summary>
         /// The BrowseName for the ConfigureStatusReportParametersSetDataType component.
@@ -8580,11 +8180,6 @@ namespace CRCL
         public const string CRCLCommandDataType = "CRCLCommandDataType";
 
         /// <summary>
-        /// The BrowseName for the CRCLCommandParameters component.
-        /// </summary>
-        public const string CRCLCommandParameters = "CRCLCommandParameters";
-
-        /// <summary>
         /// The BrowseName for the CRCLCommandParametersSetDataType component.
         /// </summary>
         public const string CRCLCommandParametersSetDataType = "CRCLCommandParametersSetDataType";
@@ -8610,11 +8205,6 @@ namespace CRCL
         public const string DisableGripperDataType = "DisableGripperDataType";
 
         /// <summary>
-        /// The BrowseName for the DisableGripperParameters component.
-        /// </summary>
-        public const string DisableGripperParameters = "DisableGripperParameters";
-
-        /// <summary>
         /// The BrowseName for the DisableGripperParametersSetDataType component.
         /// </summary>
         public const string DisableGripperParametersSetDataType = "DisableGripperParametersSetDataType";
@@ -8623,11 +8213,6 @@ namespace CRCL
         /// The BrowseName for the DisableRobotParameterStatusDataType component.
         /// </summary>
         public const string DisableRobotParameterStatusDataType = "DisableRobotParameterStatusDataType";
-
-        /// <summary>
-        /// The BrowseName for the DisableRobotParameterStatusParameters component.
-        /// </summary>
-        public const string DisableRobotParameterStatusParameters = "DisableRobotParameterStatusParameters";
 
         /// <summary>
         /// The BrowseName for the DisableRobotParameterStatusParametersSetDataType component.
@@ -8640,11 +8225,6 @@ namespace CRCL
         public const string DisableSensorDataType = "DisableSensorDataType";
 
         /// <summary>
-        /// The BrowseName for the DisableSensorParameters component.
-        /// </summary>
-        public const string DisableSensorParameters = "DisableSensorParameters";
-
-        /// <summary>
         /// The BrowseName for the DisableSensorParametersSetDataType component.
         /// </summary>
         public const string DisableSensorParametersSetDataType = "DisableSensorParametersSetDataType";
@@ -8653,11 +8233,6 @@ namespace CRCL
         /// The BrowseName for the DwellDataType component.
         /// </summary>
         public const string DwellDataType = "DwellDataType";
-
-        /// <summary>
-        /// The BrowseName for the DwellParameters component.
-        /// </summary>
-        public const string DwellParameters = "DwellParameters";
 
         /// <summary>
         /// The BrowseName for the DwellParametersSetDataType component.
@@ -8670,11 +8245,6 @@ namespace CRCL
         public const string EnableGripperDataType = "EnableGripperDataType";
 
         /// <summary>
-        /// The BrowseName for the EnableGripperParameters component.
-        /// </summary>
-        public const string EnableGripperParameters = "EnableGripperParameters";
-
-        /// <summary>
         /// The BrowseName for the EnableGripperParametersSetDataType component.
         /// </summary>
         public const string EnableGripperParametersSetDataType = "EnableGripperParametersSetDataType";
@@ -8683,11 +8253,6 @@ namespace CRCL
         /// The BrowseName for the EnableRobotParameterStatusDataType component.
         /// </summary>
         public const string EnableRobotParameterStatusDataType = "EnableRobotParameterStatusDataType";
-
-        /// <summary>
-        /// The BrowseName for the EnableRobotParameterStatusParameters component.
-        /// </summary>
-        public const string EnableRobotParameterStatusParameters = "EnableRobotParameterStatusParameters";
 
         /// <summary>
         /// The BrowseName for the EnableRobotParameterStatusParametersSetDataType component.
@@ -8700,11 +8265,6 @@ namespace CRCL
         public const string EnableSensorDataType = "EnableSensorDataType";
 
         /// <summary>
-        /// The BrowseName for the EnableSensorParameters component.
-        /// </summary>
-        public const string EnableSensorParameters = "EnableSensorParameters";
-
-        /// <summary>
         /// The BrowseName for the EnableSensorParametersSetDataType component.
         /// </summary>
         public const string EnableSensorParametersSetDataType = "EnableSensorParametersSetDataType";
@@ -8713,11 +8273,6 @@ namespace CRCL
         /// The BrowseName for the EndCanonDataType component.
         /// </summary>
         public const string EndCanonDataType = "EndCanonDataType";
-
-        /// <summary>
-        /// The BrowseName for the EndCanonParameters component.
-        /// </summary>
-        public const string EndCanonParameters = "EndCanonParameters";
 
         /// <summary>
         /// The BrowseName for the EndCanonParametersSetDataType component.
@@ -8730,11 +8285,6 @@ namespace CRCL
         public const string GetStatusDataType = "GetStatusDataType";
 
         /// <summary>
-        /// The BrowseName for the GetStatusParameters component.
-        /// </summary>
-        public const string GetStatusParameters = "GetStatusParameters";
-
-        /// <summary>
         /// The BrowseName for the GetStatusParametersSetDataType component.
         /// </summary>
         public const string GetStatusParametersSetDataType = "GetStatusParametersSetDataType";
@@ -8743,11 +8293,6 @@ namespace CRCL
         /// The BrowseName for the InitCanonDataType component.
         /// </summary>
         public const string InitCanonDataType = "InitCanonDataType";
-
-        /// <summary>
-        /// The BrowseName for the InitCanonParameters component.
-        /// </summary>
-        public const string InitCanonParameters = "InitCanonParameters";
 
         /// <summary>
         /// The BrowseName for the InitCanonParametersSetDataType component.
@@ -8765,11 +8310,6 @@ namespace CRCL
         public const string MessageDataType = "MessageDataType";
 
         /// <summary>
-        /// The BrowseName for the MessageParameters component.
-        /// </summary>
-        public const string MessageParameters = "MessageParameters";
-
-        /// <summary>
         /// The BrowseName for the MessageParametersSetDataType component.
         /// </summary>
         public const string MessageParametersSetDataType = "MessageParametersSetDataType";
@@ -8785,11 +8325,6 @@ namespace CRCL
         public const string MoveScrewDataType = "MoveScrewDataType";
 
         /// <summary>
-        /// The BrowseName for the MoveScrewParameters component.
-        /// </summary>
-        public const string MoveScrewParameters = "MoveScrewParameters";
-
-        /// <summary>
         /// The BrowseName for the MoveScrewParametersSetDataType component.
         /// </summary>
         public const string MoveScrewParametersSetDataType = "MoveScrewParametersSetDataType";
@@ -8798,11 +8333,6 @@ namespace CRCL
         /// The BrowseName for the MoveThroughToDataType component.
         /// </summary>
         public const string MoveThroughToDataType = "MoveThroughToDataType";
-
-        /// <summary>
-        /// The BrowseName for the MoveThroughToParameters component.
-        /// </summary>
-        public const string MoveThroughToParameters = "MoveThroughToParameters";
 
         /// <summary>
         /// The BrowseName for the MoveThroughToParametersSetDataType component.
@@ -8815,11 +8345,6 @@ namespace CRCL
         public const string MoveToDataType = "MoveToDataType";
 
         /// <summary>
-        /// The BrowseName for the MoveToParameters component.
-        /// </summary>
-        public const string MoveToParameters = "MoveToParameters";
-
-        /// <summary>
         /// The BrowseName for the MoveToParametersSetDataType component.
         /// </summary>
         public const string MoveToParametersSetDataType = "MoveToParametersSetDataType";
@@ -8828,11 +8353,6 @@ namespace CRCL
         /// The BrowseName for the OpenToolChangerDataType component.
         /// </summary>
         public const string OpenToolChangerDataType = "OpenToolChangerDataType";
-
-        /// <summary>
-        /// The BrowseName for the OpenToolChangerParameters component.
-        /// </summary>
-        public const string OpenToolChangerParameters = "OpenToolChangerParameters";
 
         /// <summary>
         /// The BrowseName for the OpenToolChangerParametersSetDataType component.
@@ -8865,11 +8385,6 @@ namespace CRCL
         public const string SetAngleUnitsDataType = "SetAngleUnitsDataType";
 
         /// <summary>
-        /// The BrowseName for the SetAngleUnitsParameters component.
-        /// </summary>
-        public const string SetAngleUnitsParameters = "SetAngleUnitsParameters";
-
-        /// <summary>
         /// The BrowseName for the SetAngleUnitsParametersSetDataType component.
         /// </summary>
         public const string SetAngleUnitsParametersSetDataType = "SetAngleUnitsParametersSetDataType";
@@ -8878,11 +8393,6 @@ namespace CRCL
         /// The BrowseName for the SetDefaultJointPositionsTolerancesDataType component.
         /// </summary>
         public const string SetDefaultJointPositionsTolerancesDataType = "SetDefaultJointPositionsTolerancesDataType";
-
-        /// <summary>
-        /// The BrowseName for the SetDefaultJointPositionsTolerancesParameters component.
-        /// </summary>
-        public const string SetDefaultJointPositionsTolerancesParameters = "SetDefaultJointPositionsTolerancesParameters";
 
         /// <summary>
         /// The BrowseName for the SetDefaultJointPositionsTolerancesParametersSetDataType component.
@@ -8895,19 +8405,9 @@ namespace CRCL
         public const string SetEndeffectorDataType = "SetEndeffectorDataType";
 
         /// <summary>
-        /// The BrowseName for the SetEndeffectorParameters component.
-        /// </summary>
-        public const string SetEndeffectorParameters = "SetEndeffectorParameters";
-
-        /// <summary>
         /// The BrowseName for the SetEndeffectorParametersDataType component.
         /// </summary>
         public const string SetEndeffectorParametersDataType = "SetEndeffectorParametersDataType";
-
-        /// <summary>
-        /// The BrowseName for the SetEndeffectorParametersParameters component.
-        /// </summary>
-        public const string SetEndeffectorParametersParameters = "SetEndeffectorParametersParameters";
 
         /// <summary>
         /// The BrowseName for the SetEndeffectorParametersParametersSetDataType component.
@@ -8925,11 +8425,6 @@ namespace CRCL
         public const string SetEndPoseToleranceDataType = "SetEndPoseToleranceDataType";
 
         /// <summary>
-        /// The BrowseName for the SetEndPoseToleranceParameters component.
-        /// </summary>
-        public const string SetEndPoseToleranceParameters = "SetEndPoseToleranceParameters";
-
-        /// <summary>
         /// The BrowseName for the SetEndPoseToleranceParametersSetDataType component.
         /// </summary>
         public const string SetEndPoseToleranceParametersSetDataType = "SetEndPoseToleranceParametersSetDataType";
@@ -8938,11 +8433,6 @@ namespace CRCL
         /// The BrowseName for the SetForceUnitsDataType component.
         /// </summary>
         public const string SetForceUnitsDataType = "SetForceUnitsDataType";
-
-        /// <summary>
-        /// The BrowseName for the SetForceUnitsParameters component.
-        /// </summary>
-        public const string SetForceUnitsParameters = "SetForceUnitsParameters";
 
         /// <summary>
         /// The BrowseName for the SetForceUnitsParametersSetDataType component.
@@ -8955,11 +8445,6 @@ namespace CRCL
         public const string SetIntermediatePoseToleranceDataType = "SetIntermediatePoseToleranceDataType";
 
         /// <summary>
-        /// The BrowseName for the SetIntermediatePoseToleranceParameters component.
-        /// </summary>
-        public const string SetIntermediatePoseToleranceParameters = "SetIntermediatePoseToleranceParameters";
-
-        /// <summary>
         /// The BrowseName for the SetIntermediatePoseToleranceParametersSetDataType component.
         /// </summary>
         public const string SetIntermediatePoseToleranceParametersSetDataType = "SetIntermediatePoseToleranceParametersSetDataType";
@@ -8968,11 +8453,6 @@ namespace CRCL
         /// The BrowseName for the SetLengthUnitsDataType component.
         /// </summary>
         public const string SetLengthUnitsDataType = "SetLengthUnitsDataType";
-
-        /// <summary>
-        /// The BrowseName for the SetLengthUnitsParameters component.
-        /// </summary>
-        public const string SetLengthUnitsParameters = "SetLengthUnitsParameters";
 
         /// <summary>
         /// The BrowseName for the SetLengthUnitsParametersSetDataType component.
@@ -8985,11 +8465,6 @@ namespace CRCL
         public const string SetMotionCoordinationDataType = "SetMotionCoordinationDataType";
 
         /// <summary>
-        /// The BrowseName for the SetMotionCoordinationParameters component.
-        /// </summary>
-        public const string SetMotionCoordinationParameters = "SetMotionCoordinationParameters";
-
-        /// <summary>
         /// The BrowseName for the SetMotionCoordinationParametersSetDataType component.
         /// </summary>
         public const string SetMotionCoordinationParametersSetDataType = "SetMotionCoordinationParametersSetDataType";
@@ -8998,11 +8473,6 @@ namespace CRCL
         /// The BrowseName for the SetRobotParametersDataType component.
         /// </summary>
         public const string SetRobotParametersDataType = "SetRobotParametersDataType";
-
-        /// <summary>
-        /// The BrowseName for the SetRobotParametersParameters component.
-        /// </summary>
-        public const string SetRobotParametersParameters = "SetRobotParametersParameters";
 
         /// <summary>
         /// The BrowseName for the SetRobotParametersParametersSetDataType component.
@@ -9015,11 +8485,6 @@ namespace CRCL
         public const string SetRotAccelDataType = "SetRotAccelDataType";
 
         /// <summary>
-        /// The BrowseName for the SetRotAccelParameters component.
-        /// </summary>
-        public const string SetRotAccelParameters = "SetRotAccelParameters";
-
-        /// <summary>
         /// The BrowseName for the SetRotAccelParametersSetDataType component.
         /// </summary>
         public const string SetRotAccelParametersSetDataType = "SetRotAccelParametersSetDataType";
@@ -9028,11 +8493,6 @@ namespace CRCL
         /// The BrowseName for the SetRotSpeedDataType component.
         /// </summary>
         public const string SetRotSpeedDataType = "SetRotSpeedDataType";
-
-        /// <summary>
-        /// The BrowseName for the SetRotSpeedParameters component.
-        /// </summary>
-        public const string SetRotSpeedParameters = "SetRotSpeedParameters";
 
         /// <summary>
         /// The BrowseName for the SetRotSpeedParametersSetDataType component.
@@ -9045,11 +8505,6 @@ namespace CRCL
         public const string SetTorqueUnitsDataType = "SetTorqueUnitsDataType";
 
         /// <summary>
-        /// The BrowseName for the SetTorqueUnitsParameters component.
-        /// </summary>
-        public const string SetTorqueUnitsParameters = "SetTorqueUnitsParameters";
-
-        /// <summary>
         /// The BrowseName for the SetTorqueUnitsParametersSetDataType component.
         /// </summary>
         public const string SetTorqueUnitsParametersSetDataType = "SetTorqueUnitsParametersSetDataType";
@@ -9058,11 +8513,6 @@ namespace CRCL
         /// The BrowseName for the SetTransAccelDataType component.
         /// </summary>
         public const string SetTransAccelDataType = "SetTransAccelDataType";
-
-        /// <summary>
-        /// The BrowseName for the SetTransAccelParameters component.
-        /// </summary>
-        public const string SetTransAccelParameters = "SetTransAccelParameters";
 
         /// <summary>
         /// The BrowseName for the SetTransAccelParametersSetDataType component.
@@ -9075,11 +8525,6 @@ namespace CRCL
         public const string SetTransSpeedDataType = "SetTransSpeedDataType";
 
         /// <summary>
-        /// The BrowseName for the SetTransSpeedParameters component.
-        /// </summary>
-        public const string SetTransSpeedParameters = "SetTransSpeedParameters";
-
-        /// <summary>
         /// The BrowseName for the SetTransSpeedParametersSetDataType component.
         /// </summary>
         public const string SetTransSpeedParametersSetDataType = "SetTransSpeedParametersSetDataType";
@@ -9088,11 +8533,6 @@ namespace CRCL
         /// The BrowseName for the StopMotionDataType component.
         /// </summary>
         public const string StopMotionDataType = "StopMotionDataType";
-
-        /// <summary>
-        /// The BrowseName for the StopMotionParameters component.
-        /// </summary>
-        public const string StopMotionParameters = "StopMotionParameters";
 
         /// <summary>
         /// The BrowseName for the StopMotionParametersSetDataType component.

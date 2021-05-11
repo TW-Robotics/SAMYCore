@@ -1,5 +1,5 @@
 /* Generated from Opc.Ua.Robotics.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py
- * on host jbg by user jbg at 2021-05-06 04:24:59 */
+ * on host jbg by user jbg at 2021-05-11 12:50:17 */
 
 #include "types_robotics_generated.h"
 
@@ -17,8 +17,8 @@
 const UA_DataType UA_TYPES_ROBOTICS[UA_TYPES_ROBOTICS_COUNT] = {
 /* OperationalModeEnumeration */
 {
-    {2, UA_NODEIDTYPE_NUMERIC, {3006LU}}, /* .typeId */
-    {2, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
+    {3, UA_NODEIDTYPE_NUMERIC, {3006LU}}, /* .typeId */
+    {3, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
     sizeof(UA_OperationalModeEnumeration), /* .memSize */
     UA_TYPES_INT32, /* .typeIndex */
     UA_DATATYPEKIND_ENUM, /* .typeKind */
@@ -30,8 +30,8 @@ const UA_DataType UA_TYPES_ROBOTICS[UA_TYPES_ROBOTICS_COUNT] = {
 },
 /* ExecutionModeEnumeration */
 {
-    {2, UA_NODEIDTYPE_NUMERIC, {18191LU}}, /* .typeId */
-    {2, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
+    {3, UA_NODEIDTYPE_NUMERIC, {18191LU}}, /* .typeId */
+    {3, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
     sizeof(UA_ExecutionModeEnumeration), /* .memSize */
     UA_TYPES_INT32, /* .typeIndex */
     UA_DATATYPEKIND_ENUM, /* .typeKind */
@@ -43,8 +43,8 @@ const UA_DataType UA_TYPES_ROBOTICS[UA_TYPES_ROBOTICS_COUNT] = {
 },
 /* AxisMotionProfileEnumeration */
 {
-    {2, UA_NODEIDTYPE_NUMERIC, {3008LU}}, /* .typeId */
-    {2, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
+    {3, UA_NODEIDTYPE_NUMERIC, {3008LU}}, /* .typeId */
+    {3, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
     sizeof(UA_AxisMotionProfileEnumeration), /* .memSize */
     UA_TYPES_INT32, /* .typeIndex */
     UA_DATATYPEKIND_ENUM, /* .typeKind */
@@ -56,8 +56,8 @@ const UA_DataType UA_TYPES_ROBOTICS[UA_TYPES_ROBOTICS_COUNT] = {
 },
 /* MotionDeviceCategoryEnumeration */
 {
-    {2, UA_NODEIDTYPE_NUMERIC, {18193LU}}, /* .typeId */
-    {2, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
+    {3, UA_NODEIDTYPE_NUMERIC, {18193LU}}, /* .typeId */
+    {3, UA_NODEIDTYPE_NUMERIC, {0}}, /* .binaryEncodingId */
     sizeof(UA_MotionDeviceCategoryEnumeration), /* .memSize */
     UA_TYPES_INT32, /* .typeIndex */
     UA_DATATYPEKIND_ENUM, /* .typeKind */

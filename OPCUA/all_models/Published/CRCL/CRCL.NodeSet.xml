@@ -4306,51 +4306,6 @@
       <IsAbstract>false</IsAbstract>
       <DataTypeDefinition i:nil="true" />
     </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15060</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>MessageParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>MessageParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a Message Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15338</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
         <Identifier>ns=1;i=15061</Identifier>
@@ -8796,8 +8751,8 @@
       </DataType>
       <ValueRank>-1</ValueRank>
       <ArrayDimensions />
-      <AccessLevel>3</AccessLevel>
-      <UserAccessLevel>3</UserAccessLevel>
+      <AccessLevel>1</AccessLevel>
+      <UserAccessLevel>1</UserAccessLevel>
       <MinimumSamplingInterval>0</MinimumSamplingInterval>
       <Historizing>false</Historizing>
       <AccessLevelEx>0</AccessLevelEx>
@@ -9829,51 +9784,6 @@
       </References>
       <IsAbstract>true</IsAbstract>
       <DataTypeDefinition i:nil="true" />
-    </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15151</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>MoveToParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>MoveToParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a MoveToCommand.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15496</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
     </Node>
     <Node i:type="ObjectNode">
       <NodeId>
@@ -16586,411 +16496,6 @@ L29wYzpTdHJ1Y3R1cmVkVHlwZT4NCg0KPC9vcGM6VHlwZURpY3Rpb25hcnk+</ByteString>
       <Historizing>false</Historizing>
       <AccessLevelEx>0</AccessLevelEx>
     </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15291</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>CRCLCommandParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>CRCLCommandParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a CRCL Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>i=63</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15651</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15652</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15653</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15856</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15935</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15060</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15151</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15335</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15693</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15697</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15870</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15292</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15938</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15940</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15942</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15944</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15946</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15948</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15950</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15952</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15954</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15956</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15958</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15960</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15962</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15964</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15966</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15968</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15970</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15977</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15980</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15982</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15985</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15987</Identifier>
-          </TargetId>
-        </ReferenceNode>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>false</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15989</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15150</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>true</IsAbstract>
-    </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15292</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>ConfigureJointReportsParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>ConfigureJointReportsParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a ConfigureJointreports Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15696</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
         <Identifier>ns=1;i=15293</Identifier>
@@ -17894,51 +17399,6 @@ L29wYzpTdHJ1Y3R1cmVkVHlwZT4NCg0KPC9vcGM6VHlwZURpY3Rpb25hcnk+</ByteString>
       </References>
       <IsAbstract>false</IsAbstract>
       <DataTypeDefinition i:nil="true" />
-    </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15335</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>MoveScrewParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>MoveScrewParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a MoveScrew Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15510</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
     </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
@@ -30493,141 +29953,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       <Historizing>false</Historizing>
       <AccessLevelEx>0</AccessLevelEx>
     </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15651</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>InitCanonParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>InitCanonParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of an Init Command (does not require parameters).</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15293</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15652</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>EndCanonParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>EndCanonParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of an EndCanon Command (does not require parameters).</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15333</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15653</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>GetStatusParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>GetStatusParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a GetStatus Command (does not require parameters).</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15334</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
     <Node i:type="VariableNode">
       <NodeId>
         <Identifier>ns=1;i=15654</Identifier>
@@ -31343,51 +30668,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       <Historizing>false</Historizing>
       <AccessLevelEx>0</AccessLevelEx>
     </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15693</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>MoveThroughToParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>MoveThroughToParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a MoveThroughTo Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15511</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
         <Identifier>ns=1;i=15694</Identifier>
@@ -31576,51 +30856,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       </References>
       <IsAbstract>false</IsAbstract>
       <DataTypeDefinition i:nil="true" />
-    </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15697</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>DwellParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>DwellParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a Dwell Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15694</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
     </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
@@ -35266,51 +34501,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       </References>
       <EventNotifier>0</EventNotifier>
     </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15856</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>CloseToolChangerParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>CloseToolChangerParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a CloseToolChanger Command (does not require parameters).</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15336</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
     <Node i:type="ObjectNode">
       <NodeId>
         <Identifier>ns=1;i=15857</Identifier>
@@ -35843,51 +35033,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
         </ReferenceNode>
       </References>
       <EventNotifier>0</EventNotifier>
-    </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15870</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>ActuateJointsParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>ActuateJointsParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a ActuateJoints Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15695</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
     </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
@@ -38365,96 +37510,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       <IsAbstract>false</IsAbstract>
       <DataTypeDefinition i:nil="true" />
     </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15935</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>OpenToolChangerParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>OpenToolChangerParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a OpenToolChanger Command (does not require parameters).</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15337</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15938</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>SetDefaultJointPositionsTolerancesParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>SetDefaultJointPositionsTolerancesParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a SetDefaultJointPositionsTolerances Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15698</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
         <Identifier>ns=1;i=15939</Identifier>
@@ -38517,51 +37572,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       </References>
       <IsAbstract>false</IsAbstract>
       <DataTypeDefinition i:nil="true" />
-    </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15940</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>SetRobotParametersParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>SetRobotParametersParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a SetRobotParameters Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15871</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
     </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
@@ -38626,51 +37636,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       <IsAbstract>false</IsAbstract>
       <DataTypeDefinition i:nil="true" />
     </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15942</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>SetEndeffectorParametersParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>SetEndeffectorParametersParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a SetEndeffectorParameters Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15934</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
         <Identifier>ns=1;i=15943</Identifier>
@@ -38733,51 +37698,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       </References>
       <IsAbstract>false</IsAbstract>
       <DataTypeDefinition i:nil="true" />
-    </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15944</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>SetEndeffectorParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>SetEndeffectorParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a SetEndeffector Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15939</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
     </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
@@ -38842,51 +37762,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       <IsAbstract>false</IsAbstract>
       <DataTypeDefinition i:nil="true" />
     </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15946</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>SetTransSpeedParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>SetTransSpeedParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a SetTransSpeed Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15941</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
         <Identifier>ns=1;i=15947</Identifier>
@@ -38949,51 +37824,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       </References>
       <IsAbstract>false</IsAbstract>
       <DataTypeDefinition i:nil="true" />
-    </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15948</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>SetTransAccelParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>SetTransAccelParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a SetTransAccel Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15943</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
     </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
@@ -39058,51 +37888,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       <IsAbstract>false</IsAbstract>
       <DataTypeDefinition i:nil="true" />
     </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15950</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>SetRotSpeedParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>SetRotSpeedParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a SetrotSpeed Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15945</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
         <Identifier>ns=1;i=15951</Identifier>
@@ -39165,51 +37950,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       </References>
       <IsAbstract>false</IsAbstract>
       <DataTypeDefinition i:nil="true" />
-    </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15952</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>SetRotAccelParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>SetRotAccelParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a SetRotAccel Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15947</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
     </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
@@ -39274,51 +38014,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       <IsAbstract>false</IsAbstract>
       <DataTypeDefinition i:nil="true" />
     </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15954</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>SetAngleUnitsParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>SetAngleUnitsParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a SetAngleUnits Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15949</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
         <Identifier>ns=1;i=15955</Identifier>
@@ -39381,51 +38076,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       </References>
       <IsAbstract>false</IsAbstract>
       <DataTypeDefinition i:nil="true" />
-    </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15956</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>SetEndPoseToleranceParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>SetEndPoseToleranceParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a SetEndPoseTolerance Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15951</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
     </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
@@ -39490,51 +38140,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       <IsAbstract>false</IsAbstract>
       <DataTypeDefinition i:nil="true" />
     </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15958</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>SetForceUnitsParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>SetForceUnitsParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a SetForceUnits Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15953</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
         <Identifier>ns=1;i=15959</Identifier>
@@ -39597,51 +38202,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       </References>
       <IsAbstract>false</IsAbstract>
       <DataTypeDefinition i:nil="true" />
-    </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15960</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>SetIntermediatePoseToleranceParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>SetIntermediatePoseToleranceParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a SetIntermediatePoseTolerance Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15955</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
     </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
@@ -39706,51 +38266,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       <IsAbstract>false</IsAbstract>
       <DataTypeDefinition i:nil="true" />
     </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15962</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>SetLengthUnitsParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>SetLengthUnitsParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a SetLengthUnits Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15957</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
         <Identifier>ns=1;i=15963</Identifier>
@@ -39813,51 +38328,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       </References>
       <IsAbstract>false</IsAbstract>
       <DataTypeDefinition i:nil="true" />
-    </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15964</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>SetMotionCoordinationParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>SetMotionCoordinationParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a SetMotionCoordination Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15959</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
     </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
@@ -39922,51 +38392,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       <IsAbstract>false</IsAbstract>
       <DataTypeDefinition i:nil="true" />
     </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15966</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>SetTorqueUnitsParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>SetTorqueUnitsParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a SetTorqueUnits Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15961</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
         <Identifier>ns=1;i=15967</Identifier>
@@ -40030,51 +38455,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       <IsAbstract>false</IsAbstract>
       <DataTypeDefinition i:nil="true" />
     </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15968</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>StopMotionParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>StopMotionParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a StopMotion Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15963</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
         <Identifier>ns=1;i=15969</Identifier>
@@ -40137,51 +38517,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       </References>
       <IsAbstract>false</IsAbstract>
       <DataTypeDefinition i:nil="true" />
-    </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15970</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>ConfigureStatusReportParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>ConfigureStatusReportParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a ConfigureStatusReport Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15965</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
     </Node>
     <Node i:type="DataTypeNode">
       <NodeId>
@@ -40535,51 +38870,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       </References>
       <EventNotifier>0</EventNotifier>
     </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15977</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>EnableSensorParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>EnableSensorParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a EnableSensor Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15967</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
     <Node i:type="ObjectNode">
       <NodeId>
         <Identifier>ns=1;i=15978</Identifier>
@@ -40680,51 +38970,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       </References>
       <EventNotifier>0</EventNotifier>
     </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15980</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>DisableSensorParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>DisableSensorParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a DisableSensor Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15969</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
     <Node i:type="ObjectNode">
       <NodeId>
         <Identifier>ns=1;i=15981</Identifier>
@@ -40774,51 +39019,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
         </ReferenceNode>
       </References>
       <EventNotifier>0</EventNotifier>
-    </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15982</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>EnableGripperParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>EnableGripperParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a EnableGripper Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15971</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
     </Node>
     <Node i:type="ObjectNode">
       <NodeId>
@@ -40920,51 +39120,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       </References>
       <EventNotifier>0</EventNotifier>
     </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15985</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>DisableGripperParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>DisableGripperParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a DisableGripper Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15972</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
     <Node i:type="ObjectNode">
       <NodeId>
         <Identifier>ns=1;i=15986</Identifier>
@@ -41015,51 +39170,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
       </References>
       <EventNotifier>0</EventNotifier>
     </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15987</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>EnableRobotParameterStatusParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>EnableRobotParameterStatusParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a EnableRobotParameterStatus Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15973</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
-    </Node>
     <Node i:type="ObjectNode">
       <NodeId>
         <Identifier>ns=1;i=15988</Identifier>
@@ -41109,51 +39219,6 @@ RGF0YVR5cGUiIG5pbGxhYmxlPSJ0cnVlIj48L3hzOmVsZW1lbnQ+DQoNCjwveHM6c2NoZW1hPg==</By
         </ReferenceNode>
       </References>
       <EventNotifier>0</EventNotifier>
-    </Node>
-    <Node i:type="VariableTypeNode">
-      <NodeId>
-        <Identifier>ns=1;i=15989</Identifier>
-      </NodeId>
-      <NodeClass>VariableType_16</NodeClass>
-      <BrowseName>
-        <NamespaceIndex>1</NamespaceIndex>
-        <Name>DisableRobotParameterStatusParameters</Name>
-      </BrowseName>
-      <DisplayName>
-        <Locale></Locale>
-        <Text>DisableRobotParameterStatusParameters</Text>
-      </DisplayName>
-      <Description>
-        <Locale></Locale>
-        <Text>Parameters of a DisableRobotParameterStatus Command.</Text>
-      </Description>
-      <WriteMask>0</WriteMask>
-      <UserWriteMask>0</UserWriteMask>
-      <RolePermissions />
-      <UserRolePermissions />
-      <AccessRestrictions>0</AccessRestrictions>
-      <References>
-        <ReferenceNode>
-          <ReferenceTypeId>
-            <Identifier>i=45</Identifier>
-          </ReferenceTypeId>
-          <IsInverse>true</IsInverse>
-          <TargetId>
-            <Identifier>ns=1;i=15291</Identifier>
-          </TargetId>
-        </ReferenceNode>
-      </References>
-      <Value>
-        <Value>
-          <Null xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd" />
-        </Value>
-      </Value>
-      <DataType>
-        <Identifier>ns=1;i=15974</Identifier>
-      </DataType>
-      <ValueRank>-1</ValueRank>
-      <ArrayDimensions />
-      <IsAbstract>false</IsAbstract>
     </Node>
     <Node i:type="ObjectNode">
       <NodeId>

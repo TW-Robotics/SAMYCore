@@ -164,6 +164,8 @@ namespace SAMY{
     }
 
     UA_NodeId AdderParameterNodesToSkillType::findSkillParameterSetObject( const char *skillName ){
+        std::cout << "findSkillParameterSetObject!!!!!!!!!!!!!!!!!!!!!!!!" << std::endl;
+
         UA_NodeId initNode = findSkillType( skillName );
         UA_Int16 diNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/DI/");
 
@@ -189,10 +191,14 @@ namespace SAMY{
 
         UA_NodeId objectNodeId = res.targets->targetId.nodeId;
 
+        std::cout << "findSkillParameterSetObject!!!!!!!!!!!!!!!!!!!!!!!!---->FINAL" << std::endl;
+
         return objectNodeId;
     }
 
     UA_NodeId AdderParameterNodesToSkillType::findSkillParameterSetRealTimeObject( const char *skillName ){
+        std::cout << "findSkillParameterSetRealTimeObject!!!!!!!!!!!!!!!!!!!!!!!!" << std::endl;
+
         UA_UInt32 length = 1;
         char *paths[length] = { "ParameterSetRealTime" };
         UA_UInt32 ids[length] = {UA_NS0ID_HASCOMPONENT};
@@ -215,11 +221,15 @@ namespace SAMY{
 
         UA_NodeId objectNodeId = res.targets->targetId.nodeId;
 
-        return objectNodeId;
+        std::cout << "findSkillParameterSetRealTimeObject!!!!!!!!!!!!!!!!!!!!!!!!------>FINAL" << std::endl;
 
+        return objectNodeId;
     }
 
     UA_NodeId findCommandParameterType( UA_Server* server, char* parameterTypeName ){
+
+        std::cout << "findCommandParameterType!!!!!!!!!!!!!!!!!!!!!!!!" << std::endl;
+
         UA_Int16 crclNS = UA_Server_addNamespace( server, "https://crcl.org" );
 
         UA_UInt32 length = 2;
@@ -247,19 +257,29 @@ namespace SAMY{
         return typeNodeId;
     }
 
+
+
+
+/*
     UA_StatusCode AdderParameterNodesToSkillType::addParameterNodesToServer(
-                                                    std::string parameterTypeName, UA_NodeId variableTypeNode ){
+                                                    const std::string& parameterTypeName,
+                                                            const UA_NodeId& variableTypeNode ){
+
+        UA_Int16 crclNS = UA_Server_addNamespace( server, "https://crcl.org" );
         std::string name = std::to_string(numberOfCommandInSkill) + "_" + parameterTypeName;
 
-        UA_NodeId paramNodeId = UA_NODEID_NUMERIC(skillsNS, 0);
-        UA_NodeId paramNodeIdRT = UA_NODEID_NUMERIC(skillsNS, 0);
+        UA_NodeId paramNodeId = UA_NODEID_NULL;
+        UA_NodeId paramNodeIdRT = UA_NODEID_NULL;
 
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
         UA_VariableAttributes attr = UA_VariableAttributes_default;
+        attr.accessLevel = UA_ACCESSLEVELMASK_READ | UA_ACCESSLEVELMASK_WRITE;
         attr.displayName = UA_LOCALIZEDTEXT("", (char*)name.c_str());
+ //       attr.dataType = variableTypeNode;
+        attr.valueRank = UA_VALUERANK_SCALAR;
 
         retVal |= UA_Server_addNode_begin( server, UA_NODECLASS_VARIABLE,
-        paramNodeId,
+        UA_NODEID_NUMERIC(skillsNS, 0),
         skillParametersSetNode,
         UA_NODEID_NUMERIC(0, 47LU),
         UA_QUALIFIEDNAME(skillsNS, const_cast<char*>( name.c_str() ) ),
@@ -269,14 +289,17 @@ namespace SAMY{
         retVal |= UA_Server_addReference( server, paramNodeId,
                 UA_NODEID_NUMERIC(0, 37LU), UA_EXPANDEDNODEID_NUMERIC(0, 78LU), true);
 
+        retVal |= UA_Server_addNode_finish(server, paramNodeId );
 
         name = name + "_RealTime";
 
         UA_VariableAttributes attr2 = UA_VariableAttributes_default;
+        attr2.accessLevel = UA_ACCESSLEVELMASK_READ | UA_ACCESSLEVELMASK_WRITE;
         attr2.displayName = UA_LOCALIZEDTEXT("", (char*)name.c_str());
+        attr2.valueRank = UA_VALUERANK_SCALAR;
 
         retVal |= UA_Server_addNode_begin( server, UA_NODECLASS_VARIABLE,
-        paramNodeIdRT,
+        UA_NODEID_NUMERIC(skillsNS, 0),
         skillRealTimeParametersSetNode,
         UA_NODEID_NUMERIC(0, 47LU),
         UA_QUALIFIEDNAME(skillsNS, const_cast<char*>( name.c_str() ) ),
@@ -285,6 +308,91 @@ namespace SAMY{
 
         retVal |= UA_Server_addReference( server, paramNodeIdRT,
                 UA_NODEID_NUMERIC(0, 37LU), UA_EXPANDEDNODEID_NUMERIC(0, 78LU), true);
+
+        retVal |= UA_Server_addNode_finish(server, paramNodeIdRT );
+
+        return retVal;
+    }*/
+
+    UA_StatusCode AdderParameterNodesToSkillType::addParameterNodesToServer(
+                                                    const std::string& parameterTypeName ){
+
+        UA_Int16 crclNS = UA_Server_addNamespace( server, "https://crcl.org" );
+        std::string name = std::to_string(numberOfCommandInSkill) + "_" + parameterTypeName;
+
+        UA_NodeId paramNodeId = UA_NODEID_NULL;
+        UA_NodeId paramNodeIdRT = UA_NODEID_NULL;
+
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+
+        UA_VariableAttributes vattr = UA_VariableAttributes_default;
+        vattr.description = UA_LOCALIZEDTEXT("", (char*)name.c_str());
+        vattr.displayName = UA_LOCALIZEDTEXT("", (char*)name.c_str());
+
+        auto it = crclParameterName_DataTypeNodeId_Map.find( parameterTypeName );
+        if( it != crclParameterName_DataTypeNodeId_Map.end()){
+            UA_NodeId aux = it->second;
+            std::cout << aux.namespaceIndex << "  " << aux.identifier.numeric << std::endl;
+            vattr.dataType =  it->second;
+        }else{
+            throw "PARAMETER FOR SKILL COMMAND NOT FOUND";
+        }
+
+        vattr.valueRank = UA_VALUERANK_SCALAR;
+        vattr.accessLevel = UA_ACCESSLEVELMASK_READ | UA_ACCESSLEVELMASK_WRITE;
+/*
+        retVal |= UA_Server_addVariableNode(server, UA_NODEID_NUMERIC(skillsNS, 0),
+                                  skillParametersSetNode,
+                                  UA_NODEID_NUMERIC(0, 47LU),
+                                  UA_QUALIFIEDNAME(skillsNS, const_cast<char*>( name.c_str() ) ),
+                                  UA_NODEID_NUMERIC(0, UA_NS0ID_BASEDATAVARIABLETYPE), vattr, NULL, &paramNodeId);
+*/
+        retVal |= UA_Server_addNode_begin( server, UA_NODECLASS_VARIABLE,
+        UA_NODEID_NUMERIC(skillsNS, 0),
+        skillParametersSetNode,
+        UA_NODEID_NUMERIC(0, 47LU),
+        UA_QUALIFIEDNAME(skillsNS, const_cast<char*>( name.c_str() ) ),
+        UA_NODEID_NUMERIC(0, UA_NS0ID_BASEDATAVARIABLETYPE), (const UA_NodeAttributes*)&vattr, &UA_TYPES[UA_TYPES_VARIABLEATTRIBUTES],
+        NULL, &paramNodeId);
+
+        retVal |= UA_Server_addReference( server, paramNodeId,
+                UA_NODEID_NUMERIC(0, 37LU), UA_EXPANDEDNODEID_NUMERIC(0, 78LU), true);
+
+        retVal |= UA_Server_addNode_finish(server, paramNodeId );
+
+        name = name + "_RealTime";
+
+        UA_VariableAttributes attr2 = UA_VariableAttributes_default;
+        attr2.description = UA_LOCALIZEDTEXT("", (char*)name.c_str());
+        attr2.displayName = UA_LOCALIZEDTEXT("", (char*)name.c_str());
+        auto it2 = crclParameterName_DataTypeNodeId_Map.find( parameterTypeName );
+        if( it2 != crclParameterName_DataTypeNodeId_Map.end()){
+            attr2.dataType =  it2->second;
+        }else{
+            throw "PARAMETER FOR SKILL COMMAND NOT FOUND";
+        }
+        attr2.valueRank = UA_VALUERANK_SCALAR;
+        attr2.accessLevel = UA_ACCESSLEVELMASK_READ | UA_ACCESSLEVELMASK_WRITE;
+/*
+        retVal |= UA_Server_addVariableNode(server, UA_NODEID_NUMERIC(skillsNS, 0),
+                                  skillRealTimeParametersSetNode,
+                                  UA_NODEID_NUMERIC(0, 47LU),
+                                  UA_QUALIFIEDNAME(skillsNS, const_cast<char*>( name.c_str() ) ),
+                                  UA_NODEID_NUMERIC(0, UA_NS0ID_BASEDATAVARIABLETYPE), attr2, NULL, &paramNodeIdRT);
+*/
+
+        retVal |= UA_Server_addNode_begin( server, UA_NODECLASS_VARIABLE,
+        UA_NODEID_NUMERIC(skillsNS, 0),
+        skillRealTimeParametersSetNode,
+        UA_NODEID_NUMERIC(0, 47LU),
+        UA_QUALIFIEDNAME(skillsNS, const_cast<char*>( name.c_str() ) ),
+        UA_NODEID_NUMERIC(0, UA_NS0ID_BASEDATAVARIABLETYPE), (const UA_NodeAttributes*)&attr2, &UA_TYPES[UA_TYPES_VARIABLEATTRIBUTES],
+        NULL, &paramNodeIdRT);
+
+        retVal |= UA_Server_addReference( server, paramNodeIdRT,
+                UA_NODEID_NUMERIC(0, 37LU), UA_EXPANDEDNODEID_NUMERIC(0, 78LU), true);
+
+        retVal |= UA_Server_addNode_finish(server, paramNodeIdRT );
 
         return retVal;
     }

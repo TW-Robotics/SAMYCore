@@ -1,5 +1,5 @@
 /* Generated from Opc.Ua.Di.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py
- * on host jbg by user jbg at 2021-05-06 04:24:59 */
+ * on host jbg by user jbg at 2021-05-11 12:50:17 */
 
 #ifndef TYPES_DI_GENERATED_ENCODING_BINARY_H_
 #define TYPES_DI_GENERATED_ENCODING_BINARY_H_

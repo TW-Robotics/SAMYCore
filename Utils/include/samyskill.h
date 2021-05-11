@@ -18,7 +18,7 @@
 namespace SAMY{
 
 /* Variant for dealing with the polymorphy of the parameters required by the polymorphic CRCL commands.
-* Since polymorphy "cannot be sent over the network", I use a union of CRCL commands for that purpose.
+* Since polymorphy "cannot be sent over the wire", I use a union of CRCL commands for that purpose.
 * Due to this I use a similar approach with the parameters required by the commands, to keep symmetry between
 * SAMYCore code and open62541 code. Due to this I do not use inheritance or alike construcs, but
 * the pattern I use for polymorphism is a c++17 variant equipped with different visitors.*/
@@ -110,6 +110,46 @@ static const std::map<int, CRCLCommandsParametersVariant> crclCommandSwitchfield
                            CRCLCommandsParametersVariant( UA_DisableRobotParameterStatusParametersSetDataType() )}
 };
 
+
+static const std::map<std::string, UA_NodeId> crclParameterName_DataTypeNodeId_Map = {
+    { "InitCanonParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONPARAMETERSSETDATATYPE].typeId },
+    { "EndCanonParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONPARAMETERSSETDATATYPE].typeId },
+    { "MessageParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_MESSAGEPARAMETERSSETDATATYPE].typeId },
+    { "MoveToParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETOPARAMETERSSETDATATYPE].typeId },
+    { "MoveScrewParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_MOVESCREWPARAMETERSSETDATATYPE].typeId },
+    { "MoveThroughToParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTOPARAMETERSSETDATATYPE].typeId },
+    { "DwellParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_DWELLPARAMETERSSETDATATYPE].typeId },
+    { "ActuateJointsParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE].typeId },
+    { "ConfigureJointReportsParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGUREJOINTREPORTSPARAMETERSSETDATATYPE].typeId },
+    { "SetDefaultJointPositionsTolerancesParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESPARAMETERSSETDATATYPE].typeId },
+    { "GetStatusParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSPARAMETERSSETDATATYPE].typeId },
+    { "CloseToolChangerParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMETERSSETDATATYPE].typeId },
+    { "OpenToolChangerParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_OPENTOOLCHANGERPARAMETERSSETDATATYPE].typeId },
+    { "SetRobotParametersParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETROBOTPARAMETERSPARAMETERSSETDATATYPE].typeId },
+    { "SetEndeffectorParametersParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSPARAMETERSSETDATATYPE].typeId },
+    { "SetEndeffectorParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSSETDATATYPE].typeId },
+    { "SetTransAccelParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELPARAMETERSSETDATATYPE].typeId },
+    { "SetTransSpeedParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDPARAMETERSSETDATATYPE].typeId },
+    { "SetRotAccelParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTACCELPARAMETERSSETDATATYPE].typeId },
+    { "SetRotSpeedParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDPARAMETERSSETDATATYPE].typeId },
+    { "SetAngleUnitsParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSPARAMETERSSETDATATYPE].typeId },
+    { "SetEndPoseToleranceParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMETERSSETDATATYPE].typeId },
+    { "SetForceUnitsParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSPARAMETERSSETDATATYPE].typeId },
+    { "SetIntermediatePoseToleranceParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEDATATYPE].typeId },
+    { "SetLengthUnitsParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSPARAMETERSSETDATATYPE].typeId },
+    { "SetMotionCoordinationParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMETERSSETDATATYPE].typeId },
+    { "SetTorqueUnitsParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSPARAMETERSSETDATATYPE].typeId },
+    { "StopMotionParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_STOPMOTIONPARAMETERSSETDATATYPE].typeId },
+    { "ConfigureStatusReportParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMETERSSETDATATYPE].typeId },
+    { "EnableSensorParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORPARAMETERSSETDATATYPE].typeId },
+    { "DisableSensorParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLESENSORPARAMETERSSETDATATYPE].typeId },
+    { "EnableGripperParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERPARAMETERSSETDATATYPE].typeId },
+    { "DisableGripperParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERPARAMETERSSETDATATYPE].typeId },
+    { "EnableRobotParameterStatusParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE].typeId },
+    { "DisableRobotParameterStatusParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE].typeId }
+};
+
+
 /* Visitor for the CRCLCommandParametersVariant instantiating a specific UA_CRCLCommandsUnionDataType
 * for a skill command given the corresponding parameter. It reads the corresponding parameter in the server
 * and generates the UA_CRCLCommandsUnionDataType with the read values. */
@@ -124,7 +164,6 @@ struct InstantiateCRCLCommandFromServerParameters{
 public:
    UA_NodeId realTimeParameterNodeId;
    UA_NodeId normalParameterNodeId;
-
 
    UA_CRCLCommandsUnionDataType operator()(const std::monostate& param)const{
        UA_CRCLCommandsUnionDataType command;
@@ -1051,7 +1090,7 @@ private:
    UA_NodeId findSkillType( const char *skillName );
    UA_NodeId findSkillParameterSetObject( const char *skillName );
    UA_NodeId findSkillParameterSetRealTimeObject( const char *skillName );
-   UA_StatusCode addParameterNodesToServer( std::string parameterTypeName, UA_NodeId variableTypeNode );
+   UA_StatusCode addParameterNodesToServer(const std::string &parameterTypeName);
 
 public:
    int numberOfCommandInSkill;
@@ -1078,212 +1117,212 @@ public:
    }
    UA_StatusCode operator()(const UA_InitCanonParametersSetDataType& param){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "InitCanonParameters" );
-       retVal |= addParameterNodesToServer( "InitCanonParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "InitCanonParameters" );
+       retVal |= addParameterNodesToServer( "InitCanonParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_EndCanonParametersSetDataType& param){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "EndCanonParameters" );
-       retVal |= addParameterNodesToServer( "EndCanonParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "EndCanonParameters" );
+       retVal |= addParameterNodesToServer( "EndCanonParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_MessageParametersSetDataType& param){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "MessageParameters" );
-       retVal |= addParameterNodesToServer( "MessageParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "MessageParameters" );
+       retVal |= addParameterNodesToServer( "MessageParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_MoveToParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "MoveToParameters" );
-       retVal |= addParameterNodesToServer( "MoveToParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "MoveToParameters" );
+       retVal |= addParameterNodesToServer( "MoveToParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_MoveScrewParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "MoveScrewParameters" );
-       retVal |= addParameterNodesToServer( "MoveScrewParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "MoveScrewParameters" );
+       retVal |= addParameterNodesToServer( "MoveScrewParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_MoveThroughToParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "MoveThroughToParameters" );
-       retVal |= addParameterNodesToServer( "MoveThroughToParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "MoveThroughToParameters" );
+       retVal |= addParameterNodesToServer( "MoveThroughToParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_DwellParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "DwellParameters" );
-       retVal |= addParameterNodesToServer( "DwellParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "DwellParameters" );
+       retVal |= addParameterNodesToServer( "DwellParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_ActuateJointsParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "ActuateJointsParameters" );
-       retVal |= addParameterNodesToServer( "ActuateJointsParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "ActuateJointsParameters" );
+       retVal |= addParameterNodesToServer( "ActuateJointsParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_ConfigureJointReportsParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "ConfigureJointReportsParameters" );
-       retVal |= addParameterNodesToServer( "ConfigureJointReportsParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "ConfigureJointReportsParameters" );
+       retVal |= addParameterNodesToServer( "ConfigureJointReportsParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetDefaultJointPositionsTolerancesParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "SetDefaultJointPositionsTolerancesParameters" );
-       retVal |= addParameterNodesToServer( "SetDefaultJointPositionsTolerancesParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetDefaultJointPositionsTolerancesParameters" );
+       retVal |= addParameterNodesToServer( "SetDefaultJointPositionsTolerancesParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_GetStatusParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "GetStatusParameters" );
-       retVal |= addParameterNodesToServer( "GetStatusParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "GetStatusParameters" );
+       retVal |= addParameterNodesToServer( "GetStatusParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_CloseToolChangerParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "CloseToolChangerParameters" );
-       retVal |= addParameterNodesToServer( "CloseToolChangerParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "CloseToolChangerParameters" );
+       retVal |= addParameterNodesToServer( "CloseToolChangerParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_OpenToolChangerParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "OpenToolChangerParameters" );
-       retVal |= addParameterNodesToServer( "OpenToolChangerParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "OpenToolChangerParameters" );
+       retVal |= addParameterNodesToServer( "OpenToolChangerParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetRobotParametersParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "SetRobotParametersParameters" );
-       retVal |= addParameterNodesToServer( "SetRobotParametersParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetRobotParametersParameters" );
+       retVal |= addParameterNodesToServer( "SetRobotParametersParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetEndeffectorParametersParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "SetEndeffectorParametersParameters" );
-       retVal |= addParameterNodesToServer( "SetEndeffectorParametersParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetEndeffectorParametersParameters" );
+       retVal |= addParameterNodesToServer( "SetEndeffectorParametersParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetEndeffectorParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "SetEndeffectorParameters" );
-       retVal |= addParameterNodesToServer( "SetEndeffectorParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetEndeffectorParameters" );
+       retVal |= addParameterNodesToServer( "SetEndeffectorParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetTransAccelParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "SetTransAccelParameters" );
-       retVal |= addParameterNodesToServer( "SetTransAccelParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetTransAccelParameters" );
+       retVal |= addParameterNodesToServer( "SetTransAccelParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetTransSpeedParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "SetTransSpeedParameters" );
-       retVal |= addParameterNodesToServer( "SetTransSpeedParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetTransSpeedParameters" );
+       retVal |= addParameterNodesToServer( "SetTransSpeedParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetRotAccelParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "SetRotAccelParameters" );
-       retVal |= addParameterNodesToServer( "SetRotAccelParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetRotAccelParameters" );
+       retVal |= addParameterNodesToServer( "SetRotAccelParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetRotSpeedParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "SetRotSpeedParameters" );
-       retVal |= addParameterNodesToServer( "SetRotSpeedParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetRotSpeedParameters" );
+       retVal |= addParameterNodesToServer( "SetRotSpeedParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetAngleUnitsParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "SetAngleUnitsParameters" );
-       retVal |= addParameterNodesToServer( "SetAngleUnitsParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetAngleUnitsParameters" );
+       retVal |= addParameterNodesToServer( "SetAngleUnitsParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetEndPoseToleranceParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "SetEndPoseToleranceParameters" );
-       retVal |= addParameterNodesToServer( "SetEndPoseToleranceParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetEndPoseToleranceParameters" );
+       retVal |= addParameterNodesToServer( "SetEndPoseToleranceParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetForceUnitsParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "SetForceUnitsParameters" );
-       retVal |= addParameterNodesToServer( "SetForceUnitsParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetForceUnitsParameters" );
+       retVal |= addParameterNodesToServer( "SetForceUnitsParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetIntermediatePoseToleranceParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "SetIntermediatePoseToleranceParameters" );
-       retVal |= addParameterNodesToServer( "SetIntermediatePoseToleranceParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetIntermediatePoseToleranceParameters" );
+       retVal |= addParameterNodesToServer( "SetIntermediatePoseToleranceParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetLengthUnitsParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "SetLengthUnitsParameters" );
-       retVal |= addParameterNodesToServer( "SetLengthUnitsParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetLengthUnitsParameters" );
+       retVal |= addParameterNodesToServer( "SetLengthUnitsParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetMotionCoordinationParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "SetMotionCoordinationParameters" );
-       retVal |= addParameterNodesToServer( "SetMotionCoordinationParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetMotionCoordinationParameters" );
+       retVal |= addParameterNodesToServer( "SetMotionCoordinationParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetTorqueUnitsParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "SetTorqueUnitsParameters" );
-       retVal |= addParameterNodesToServer( "SetTorqueUnitsParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetTorqueUnitsParameters" );
+       retVal |= addParameterNodesToServer( "SetTorqueUnitsParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_StopMotionParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "StopMotionParameters" );
-       retVal |= addParameterNodesToServer( "StopMotionParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "StopMotionParameters" );
+       retVal |= addParameterNodesToServer( "StopMotionParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_ConfigureStatusReportParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "ConfigureStatusReportParameters" );
-       retVal |= addParameterNodesToServer( "ConfigureStatusReportParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "ConfigureStatusReportParameters" );
+       retVal |= addParameterNodesToServer( "ConfigureStatusReportParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_EnableSensorParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "EnableSensorParameters" );
-       retVal |= addParameterNodesToServer( "EnableSensorParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "EnableSensorParameters" );
+       retVal |= addParameterNodesToServer( "EnableSensorParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_DisableSensorParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "DisableSensorParameters" );
-       retVal |= addParameterNodesToServer( "DisableSensorParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "DisableSensorParameters" );
+       retVal |= addParameterNodesToServer( "DisableSensorParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_EnableGripperParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "EnableGripperParameters" );
-       retVal |= addParameterNodesToServer( "EnableGripperParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "EnableGripperParameters" );
+       retVal |= addParameterNodesToServer( "EnableGripperParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_DisableGripperParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "DisableGripperParameters" );
-       retVal |= addParameterNodesToServer( "DisableGripperParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "DisableGripperParameters" );
+       retVal |= addParameterNodesToServer( "DisableGripperParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_EnableRobotParameterStatusParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "EnableRobotParameterStatusParameters" );
-       retVal |= addParameterNodesToServer( "EnableRobotParameterStatusParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "EnableRobotParameterStatusParameters" );
+       retVal |= addParameterNodesToServer( "EnableRobotParameterStatusParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_DisableRobotParameterStatusParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       UA_NodeId parameterTypeId = findCommandParameterType( server, "DisableRobotParameterStatusParameters" );
-       retVal |= addParameterNodesToServer( "DisableRobotParameterStatusParameters", parameterTypeId);
+       // UA_NodeId parameterTypeId = findCommandParameterType( server, "DisableRobotParameterStatusParameters" );
+       retVal |= addParameterNodesToServer( "DisableRobotParameterStatusParameters" );
        return retVal;
    }
 };
