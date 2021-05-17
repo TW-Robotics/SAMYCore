@@ -490,8 +490,9 @@ bool Parsers::RobotsConfigurationParser::parse(const std::string& filepath, std:
                 robotAux.lastRequestedSkill = 0;
                 robotAux.SAMYRobotVariableNodeId = UA_NODEID_STRING(2, const_cast<char*>(auxName.c_str()));
                 robotAux.robotSkills = parsedRobotSkills;
+                robotAux.address = auxAddress;
 
-                parsedRobots.emplace_back(robotAux);
+                parsedRobots.emplace_back( std::move( robotAux ) );
 
                 alreadyParsedRobotNames.emplace_back(auxName);
                 alreadyParsedRobotIDs.emplace_back(auxID);

@@ -1,5 +1,5 @@
 /* Generated from CRCL.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py
- * on host jbg by user jbg at 2021-05-11 12:50:17 */
+ * on host jbg by user jbg at 2021-05-17 06:32:08 */
 
 #ifndef TYPES_CRCL_GENERATED_HANDLING_H_
 #define TYPES_CRCL_GENERATED_HANDLING_H_
@@ -170,37 +170,6 @@ UA_SetMotionCoordinationParametersSetDataType_delete(UA_SetMotionCoordinationPar
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMETERSSETDATATYPE]);
 }
 
-/* CRCL_ActuateJointDataType */
-static UA_INLINE void
-UA_CRCL_ActuateJointDataType_init(UA_CRCL_ActuateJointDataType *p) {
-    memset(p, 0, sizeof(UA_CRCL_ActuateJointDataType));
-}
-
-static UA_INLINE UA_CRCL_ActuateJointDataType *
-UA_CRCL_ActuateJointDataType_new(void) {
-    return (UA_CRCL_ActuateJointDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_CRCL_ActuateJointDataType_copy(const UA_CRCL_ActuateJointDataType *src, UA_CRCL_ActuateJointDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_CRCL_ActuateJointDataType_deleteMembers(UA_CRCL_ActuateJointDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE]);
-}
-
-static UA_INLINE void
-UA_CRCL_ActuateJointDataType_clear(UA_CRCL_ActuateJointDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE]);
-}
-
-static UA_INLINE void
-UA_CRCL_ActuateJointDataType_delete(UA_CRCL_ActuateJointDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE]);
-}
-
 /* DisableGripperParametersSetDataType */
 static UA_INLINE void
 UA_DisableGripperParametersSetDataType_init(UA_DisableGripperParametersSetDataType *p) {
@@ -230,37 +199,6 @@ UA_DisableGripperParametersSetDataType_clear(UA_DisableGripperParametersSetDataT
 static UA_INLINE void
 UA_DisableGripperParametersSetDataType_delete(UA_DisableGripperParametersSetDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERPARAMETERSSETDATATYPE]);
-}
-
-/* CRCL_JointDetailsDataType */
-static UA_INLINE void
-UA_CRCL_JointDetailsDataType_init(UA_CRCL_JointDetailsDataType *p) {
-    memset(p, 0, sizeof(UA_CRCL_JointDetailsDataType));
-}
-
-static UA_INLINE UA_CRCL_JointDetailsDataType *
-UA_CRCL_JointDetailsDataType_new(void) {
-    return (UA_CRCL_JointDetailsDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_CRCL_JointDetailsDataType_copy(const UA_CRCL_JointDetailsDataType *src, UA_CRCL_JointDetailsDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_CRCL_JointDetailsDataType_deleteMembers(UA_CRCL_JointDetailsDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE]);
-}
-
-static UA_INLINE void
-UA_CRCL_JointDetailsDataType_clear(UA_CRCL_JointDetailsDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE]);
-}
-
-static UA_INLINE void
-UA_CRCL_JointDetailsDataType_delete(UA_CRCL_JointDetailsDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE]);
 }
 
 /* CRCLCommandParametersSetDataType */
@@ -2092,6 +2030,37 @@ UA_EnableSensorParametersSetDataType_delete(UA_EnableSensorParametersSetDataType
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORPARAMETERSSETDATATYPE]);
 }
 
+/* CRCL_JointDetailsDataType */
+static UA_INLINE void
+UA_CRCL_JointDetailsDataType_init(UA_CRCL_JointDetailsDataType *p) {
+    memset(p, 0, sizeof(UA_CRCL_JointDetailsDataType));
+}
+
+static UA_INLINE UA_CRCL_JointDetailsDataType *
+UA_CRCL_JointDetailsDataType_new(void) {
+    return (UA_CRCL_JointDetailsDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_CRCL_JointDetailsDataType_copy(const UA_CRCL_JointDetailsDataType *src, UA_CRCL_JointDetailsDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_CRCL_JointDetailsDataType_deleteMembers(UA_CRCL_JointDetailsDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE]);
+}
+
+static UA_INLINE void
+UA_CRCL_JointDetailsDataType_clear(UA_CRCL_JointDetailsDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE]);
+}
+
+static UA_INLINE void
+UA_CRCL_JointDetailsDataType_delete(UA_CRCL_JointDetailsDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE]);
+}
+
 /* CRCL_SensorStatusDataType */
 static UA_INLINE void
 UA_CRCL_SensorStatusDataType_init(UA_CRCL_SensorStatusDataType *p) {
@@ -3239,37 +3208,6 @@ UA_SetRotSpeedParametersSetDataType_delete(UA_SetRotSpeedParametersSetDataType *
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDPARAMETERSSETDATATYPE]);
 }
 
-/* ActuateJointsDataType */
-static UA_INLINE void
-UA_ActuateJointsDataType_init(UA_ActuateJointsDataType *p) {
-    memset(p, 0, sizeof(UA_ActuateJointsDataType));
-}
-
-static UA_INLINE UA_ActuateJointsDataType *
-UA_ActuateJointsDataType_new(void) {
-    return (UA_ActuateJointsDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_ActuateJointsDataType_copy(const UA_ActuateJointsDataType *src, UA_ActuateJointsDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_ActuateJointsDataType_deleteMembers(UA_ActuateJointsDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE]);
-}
-
-static UA_INLINE void
-UA_ActuateJointsDataType_clear(UA_ActuateJointsDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE]);
-}
-
-static UA_INLINE void
-UA_ActuateJointsDataType_delete(UA_ActuateJointsDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE]);
-}
-
 /* SetEndeffectorParametersDataType */
 static UA_INLINE void
 UA_SetEndeffectorParametersDataType_init(UA_SetEndeffectorParametersDataType *p) {
@@ -3611,37 +3549,6 @@ UA_MoveThroughToDataType_delete(UA_MoveThroughToDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTODATATYPE]);
 }
 
-/* ActuateJointsParametersSetDataType */
-static UA_INLINE void
-UA_ActuateJointsParametersSetDataType_init(UA_ActuateJointsParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_ActuateJointsParametersSetDataType));
-}
-
-static UA_INLINE UA_ActuateJointsParametersSetDataType *
-UA_ActuateJointsParametersSetDataType_new(void) {
-    return (UA_ActuateJointsParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_ActuateJointsParametersSetDataType_copy(const UA_ActuateJointsParametersSetDataType *src, UA_ActuateJointsParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_ActuateJointsParametersSetDataType_deleteMembers(UA_ActuateJointsParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_ActuateJointsParametersSetDataType_clear(UA_ActuateJointsParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_ActuateJointsParametersSetDataType_delete(UA_ActuateJointsParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE]);
-}
-
 /* DisableGripperDataType */
 static UA_INLINE void
 UA_DisableGripperDataType_init(UA_DisableGripperDataType *p) {
@@ -3702,6 +3609,37 @@ UA_SetLengthUnitsDataType_clear(UA_SetLengthUnitsDataType *p) {
 static UA_INLINE void
 UA_SetLengthUnitsDataType_delete(UA_SetLengthUnitsDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSDATATYPE]);
+}
+
+/* CRCL_ActuateJointDataType */
+static UA_INLINE void
+UA_CRCL_ActuateJointDataType_init(UA_CRCL_ActuateJointDataType *p) {
+    memset(p, 0, sizeof(UA_CRCL_ActuateJointDataType));
+}
+
+static UA_INLINE UA_CRCL_ActuateJointDataType *
+UA_CRCL_ActuateJointDataType_new(void) {
+    return (UA_CRCL_ActuateJointDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_CRCL_ActuateJointDataType_copy(const UA_CRCL_ActuateJointDataType *src, UA_CRCL_ActuateJointDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_CRCL_ActuateJointDataType_deleteMembers(UA_CRCL_ActuateJointDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE]);
+}
+
+static UA_INLINE void
+UA_CRCL_ActuateJointDataType_clear(UA_CRCL_ActuateJointDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE]);
+}
+
+static UA_INLINE void
+UA_CRCL_ActuateJointDataType_delete(UA_CRCL_ActuateJointDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE]);
 }
 
 /* MoveThroughToParametersSetDataType */
@@ -3952,6 +3890,37 @@ UA_SetTransSpeedDataType_delete(UA_SetTransSpeedDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDDATATYPE]);
 }
 
+/* ActuateJointsDataType */
+static UA_INLINE void
+UA_ActuateJointsDataType_init(UA_ActuateJointsDataType *p) {
+    memset(p, 0, sizeof(UA_ActuateJointsDataType));
+}
+
+static UA_INLINE UA_ActuateJointsDataType *
+UA_ActuateJointsDataType_new(void) {
+    return (UA_ActuateJointsDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_ActuateJointsDataType_copy(const UA_ActuateJointsDataType *src, UA_ActuateJointsDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_ActuateJointsDataType_deleteMembers(UA_ActuateJointsDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE]);
+}
+
+static UA_INLINE void
+UA_ActuateJointsDataType_clear(UA_ActuateJointsDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE]);
+}
+
+static UA_INLINE void
+UA_ActuateJointsDataType_delete(UA_ActuateJointsDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE]);
+}
+
 /* CRCL_PoseAndSetDataType */
 static UA_INLINE void
 UA_CRCL_PoseAndSetDataType_init(UA_CRCL_PoseAndSetDataType *p) {
@@ -4012,6 +3981,37 @@ UA_SetTransAccelParametersSetDataType_clear(UA_SetTransAccelParametersSetDataTyp
 static UA_INLINE void
 UA_SetTransAccelParametersSetDataType_delete(UA_SetTransAccelParametersSetDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELPARAMETERSSETDATATYPE]);
+}
+
+/* ActuateJointsParametersSetDataType */
+static UA_INLINE void
+UA_ActuateJointsParametersSetDataType_init(UA_ActuateJointsParametersSetDataType *p) {
+    memset(p, 0, sizeof(UA_ActuateJointsParametersSetDataType));
+}
+
+static UA_INLINE UA_ActuateJointsParametersSetDataType *
+UA_ActuateJointsParametersSetDataType_new(void) {
+    return (UA_ActuateJointsParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_ActuateJointsParametersSetDataType_copy(const UA_ActuateJointsParametersSetDataType *src, UA_ActuateJointsParametersSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_ActuateJointsParametersSetDataType_deleteMembers(UA_ActuateJointsParametersSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_ActuateJointsParametersSetDataType_clear(UA_ActuateJointsParametersSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_ActuateJointsParametersSetDataType_delete(UA_ActuateJointsParametersSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE]);
 }
 
 /* SetTransAccelDataType */

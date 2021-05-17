@@ -6,6 +6,7 @@
 #include "samyskill.h"
 #include <algorithm>
 #include <mutex>
+#include <memory>
 
 #ifndef PubSub
 #include <vector>
@@ -25,6 +26,10 @@ namespace SAMY{
 namespace SAMY{
 
     struct SAMYRobot{
+        struct ClientDeleter {
+          void operator()(UA_Client* client) { UA_Client_delete(client); }
+        };
+
         /*The same fields than the SAMYRobot modelled in OPC UA (UA_SAMYRobot)*/
         UA_UInt16 id = 0;
         UA_String name = UA_STRING_NULL;
@@ -32,13 +37,15 @@ namespace SAMY{
         UA_CRCLSkillDataType requested_skill;
         UA_CRCLStatusDataType robot_status;
         UA_PubSubIPAddresses ipAddresses;
+        std::string address;
         std::vector<UA_CRCLSkillDataType> robotPlan;
         UA_UInt32 lastRequestedSkill = 0;
         UA_NodeId SAMYRobotVariableNodeId = UA_NODEID_NULL;
-        UA_Client* client;
+        std::unique_ptr< UA_Client, ClientDeleter > client;
+
+        UA_StatusCode createConnectionToPlugin( );
   //      std::shared_ptr<spdlog::logger> logger;
   //      std::mutex planMutex;
-//        UA_StatusCode addSkillToRobotPlan( UA_Server* server, const UA_NodeId &serverCallerSkillNode );
     };
 
 }

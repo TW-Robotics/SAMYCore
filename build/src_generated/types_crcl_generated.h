@@ -1,4 +1,4 @@
-/* Generated from CRCL.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py * on host jbg by user jbg at 2021-05-11 12:50:17 */
+/* Generated from CRCL.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py * on host jbg by user jbg at 2021-05-17 06:32:08 */
 
 #ifndef TYPES_CRCL_GENERATED_H_
 #define TYPES_CRCL_GENERATED_H_
@@ -82,20 +82,6 @@ typedef struct {
 #define UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMETERSSETDATATYPE 4
 
 /**
- * CRCL_ActuateJointDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^
- * CRCL ActuateJointType */
-typedef struct {
-    UA_UInt32 id;
-    UA_String name;
-    UA_Int32 jointNumber;
-    UA_Double cRCLJointPosition;
-    UA_Variant cRCLJointDetails;
-} UA_CRCL_ActuateJointDataType;
-
-#define UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE 5
-
-/**
  * DisableGripperParametersSetDataType
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a DisableGripper Command. */
@@ -104,18 +90,7 @@ typedef struct {
     UA_String cRCLGripperName;
 } UA_DisableGripperParametersSetDataType;
 
-#define UA_TYPES_CRCL_DISABLEGRIPPERPARAMETERSSETDATATYPE 6
-
-/**
- * CRCL_JointDetailsDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^
- * CRCL JointDetailsType */
-typedef struct {
-    UA_UInt32 id;
-    UA_String name;
-} UA_CRCL_JointDetailsDataType;
-
-#define UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE 7
+#define UA_TYPES_CRCL_DISABLEGRIPPERPARAMETERSSETDATATYPE 5
 
 /**
  * CRCLCommandParametersSetDataType
@@ -125,7 +100,7 @@ typedef struct {
     UA_Boolean cRCLRealTimeParameter;
 } UA_CRCLCommandParametersSetDataType;
 
-#define UA_TYPES_CRCL_CRCLCOMMANDPARAMETERSSETDATATYPE 8
+#define UA_TYPES_CRCL_CRCLCOMMANDPARAMETERSSETDATATYPE 6
 
 /**
  * DisableRobotParameterStatusParametersSetDataType
@@ -136,7 +111,7 @@ typedef struct {
     UA_String cRCLRobotParameterName;
 } UA_DisableRobotParameterStatusParametersSetDataType;
 
-#define UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE 9
+#define UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE 7
 
 /**
  * CRCL_TransAccelAbsoluteDataType
@@ -148,7 +123,7 @@ typedef struct {
     UA_Double setting;
 } UA_CRCL_TransAccelAbsoluteDataType;
 
-#define UA_TYPES_CRCL_CRCL_TRANSACCELABSOLUTEDATATYPE 10
+#define UA_TYPES_CRCL_CRCL_TRANSACCELABSOLUTEDATATYPE 8
 
 /**
  * OpenToolChangerParametersSetDataType
@@ -158,7 +133,7 @@ typedef struct {
     UA_Boolean cRCLRealTimeParameter;
 } UA_OpenToolChangerParametersSetDataType;
 
-#define UA_TYPES_CRCL_OPENTOOLCHANGERPARAMETERSSETDATATYPE 11
+#define UA_TYPES_CRCL_OPENTOOLCHANGERPARAMETERSSETDATATYPE 9
 
 /**
  * CRCL_FractionDataType
@@ -170,7 +145,7 @@ typedef struct {
     UA_Double fractionMin;
 } UA_CRCL_FractionDataType;
 
-#define UA_TYPES_CRCL_CRCL_FRACTIONDATATYPE 12
+#define UA_TYPES_CRCL_CRCL_FRACTIONDATATYPE 10
 
 /**
  * CRCL_JointSpeedAccelDataType
@@ -183,7 +158,7 @@ typedef struct {
     UA_Double cRCLJointAccel;
 } UA_CRCL_JointSpeedAccelDataType;
 
-#define UA_TYPES_CRCL_CRCL_JOINTSPEEDACCELDATATYPE 13
+#define UA_TYPES_CRCL_CRCL_JOINTSPEEDACCELDATATYPE 11
 
 /**
  * CRCL_JointLimitDataType
@@ -199,7 +174,7 @@ typedef struct {
     UA_Double jointMaxVelocity;
 } UA_CRCL_JointLimitDataType;
 
-#define UA_TYPES_CRCL_CRCL_JOINTLIMITDATATYPE 14
+#define UA_TYPES_CRCL_CRCL_JOINTLIMITDATATYPE 12
 
 /**
  * EnableRobotParameterStatusParametersSetDataType
@@ -210,7 +185,7 @@ typedef struct {
     UA_String cRCLRobotParameterName;
 } UA_EnableRobotParameterStatusParametersSetDataType;
 
-#define UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE 15
+#define UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE 13
 
 /**
  * ConfigureStatusReportParametersSetDataType
@@ -226,7 +201,7 @@ typedef struct {
     UA_Boolean cRCLReportGuardsStatus;
 } UA_ConfigureStatusReportParametersSetDataType;
 
-#define UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMETERSSETDATATYPE 16
+#define UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMETERSSETDATATYPE 14
 
 /**
  * CRCL_DataThingDataType
@@ -237,7 +212,7 @@ typedef struct {
     UA_String name;
 } UA_CRCL_DataThingDataType;
 
-#define UA_TYPES_CRCL_CRCL_DATATHINGDATATYPE 17
+#define UA_TYPES_CRCL_CRCL_DATATHINGDATATYPE 15
 
 /**
  * CRCL_TorqueUnitEnumDataType
@@ -250,7 +225,7 @@ typedef enum {
 } UA_CRCL_TorqueUnitEnumDataType;
 UA_STATIC_ASSERT(sizeof(UA_CRCL_TorqueUnitEnumDataType) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_CRCL_CRCL_TORQUEUNITENUMDATATYPE 18
+#define UA_TYPES_CRCL_CRCL_TORQUEUNITENUMDATATYPE 16
 
 /**
  * CRCL_AngleUnitEnumDataType
@@ -263,7 +238,7 @@ typedef enum {
 } UA_CRCL_AngleUnitEnumDataType;
 UA_STATIC_ASSERT(sizeof(UA_CRCL_AngleUnitEnumDataType) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_CRCL_CRCL_ANGLEUNITENUMDATATYPE 19
+#define UA_TYPES_CRCL_CRCL_ANGLEUNITENUMDATATYPE 17
 
 /**
  * CRCL_JointStatusDataType
@@ -278,7 +253,7 @@ typedef struct {
     UA_Double jointVelocity;
 } UA_CRCL_JointStatusDataType;
 
-#define UA_TYPES_CRCL_CRCL_JOINTSTATUSDATATYPE 20
+#define UA_TYPES_CRCL_CRCL_JOINTSTATUSDATATYPE 18
 
 /**
  * CRCL_TransSpeedAbsoluteDataType
@@ -290,7 +265,7 @@ typedef struct {
     UA_Double setting;
 } UA_CRCL_TransSpeedAbsoluteDataType;
 
-#define UA_TYPES_CRCL_CRCL_TRANSSPEEDABSOLUTEDATATYPE 21
+#define UA_TYPES_CRCL_CRCL_TRANSSPEEDABSOLUTEDATATYPE 19
 
 /**
  * CloseToolChangerParametersSetDataType
@@ -300,7 +275,7 @@ typedef struct {
     UA_Boolean cRCLRealTimeParameter;
 } UA_CloseToolChangerParametersSetDataType;
 
-#define UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMETERSSETDATATYPE 22
+#define UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMETERSSETDATATYPE 20
 
 /**
  * CRCL_ParameterSettingDataType
@@ -313,7 +288,7 @@ typedef struct {
     UA_String parameterValue;
 } UA_CRCL_ParameterSettingDataType;
 
-#define UA_TYPES_CRCL_CRCL_PARAMETERSETTINGDATATYPE 23
+#define UA_TYPES_CRCL_CRCL_PARAMETERSETTINGDATATYPE 21
 
 /**
  * CRCL_ConfigureJointReportDataType
@@ -328,7 +303,7 @@ typedef struct {
     UA_Boolean reportVelocity;
 } UA_CRCL_ConfigureJointReportDataType;
 
-#define UA_TYPES_CRCL_CRCL_CONFIGUREJOINTREPORTDATATYPE 24
+#define UA_TYPES_CRCL_CRCL_CONFIGUREJOINTREPORTDATATYPE 22
 
 /**
  * SetEndeffectorParametersParametersSetDataType
@@ -340,7 +315,7 @@ typedef struct {
     UA_CRCL_ParameterSettingDataType *cRCLParameterSetting;
 } UA_SetEndeffectorParametersParametersSetDataType;
 
-#define UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSPARAMETERSSETDATATYPE 25
+#define UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSPARAMETERSSETDATATYPE 23
 
 /**
  * CRCL_JointPositionToleranceSettingDataType
@@ -353,7 +328,7 @@ typedef struct {
     UA_Double jointPositionTolerance;
 } UA_CRCL_JointPositionToleranceSettingDataType;
 
-#define UA_TYPES_CRCL_CRCL_JOINTPOSITIONTOLERANCESETTINGDATATYPE 26
+#define UA_TYPES_CRCL_CRCL_JOINTPOSITIONTOLERANCESETTINGDATATYPE 24
 
 /**
  * CRCL_RotAccelAbsoluteDataType
@@ -365,7 +340,7 @@ typedef struct {
     UA_Double setting;
 } UA_CRCL_RotAccelAbsoluteDataType;
 
-#define UA_TYPES_CRCL_CRCL_ROTACCELABSOLUTEDATATYPE 27
+#define UA_TYPES_CRCL_CRCL_ROTACCELABSOLUTEDATATYPE 25
 
 /**
  * SetRobotParametersParametersSetDataType
@@ -377,7 +352,7 @@ typedef struct {
     UA_CRCL_ParameterSettingDataType *cRCLParameterSetting;
 } UA_SetRobotParametersParametersSetDataType;
 
-#define UA_TYPES_CRCL_SETROBOTPARAMETERSPARAMETERSSETDATATYPE 28
+#define UA_TYPES_CRCL_SETROBOTPARAMETERSPARAMETERSSETDATATYPE 26
 
 /**
  * CRCL_CommandStateEnumDataType
@@ -392,7 +367,7 @@ typedef enum {
 } UA_CRCL_CommandStateEnumDataType;
 UA_STATIC_ASSERT(sizeof(UA_CRCL_CommandStateEnumDataType) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_CRCL_CRCL_COMMANDSTATEENUMDATATYPE 29
+#define UA_TYPES_CRCL_CRCL_COMMANDSTATEENUMDATATYPE 27
 
 /**
  * CRCL_LengthUnitEnumDataType
@@ -406,7 +381,7 @@ typedef enum {
 } UA_CRCL_LengthUnitEnumDataType;
 UA_STATIC_ASSERT(sizeof(UA_CRCL_LengthUnitEnumDataType) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_CRCL_CRCL_LENGTHUNITENUMDATATYPE 30
+#define UA_TYPES_CRCL_CRCL_LENGTHUNITENUMDATATYPE 28
 
 /**
  * SetAngleUnitsParametersSetDataType
@@ -417,7 +392,7 @@ typedef struct {
     UA_CRCL_AngleUnitEnumDataType cRCLUnitName;
 } UA_SetAngleUnitsParametersSetDataType;
 
-#define UA_TYPES_CRCL_SETANGLEUNITSPARAMETERSSETDATATYPE 31
+#define UA_TYPES_CRCL_SETANGLEUNITSPARAMETERSSETDATATYPE 29
 
 /**
  * CRCL_VectorDataType
@@ -431,7 +406,7 @@ typedef struct {
     UA_Double k;
 } UA_CRCL_VectorDataType;
 
-#define UA_TYPES_CRCL_CRCL_VECTORDATATYPE 32
+#define UA_TYPES_CRCL_CRCL_VECTORDATATYPE 30
 
 /**
  * CRCL_GripperStatusDataType
@@ -446,7 +421,7 @@ typedef struct {
     UA_Boolean holdingObject;
 } UA_CRCL_GripperStatusDataType;
 
-#define UA_TYPES_CRCL_CRCL_GRIPPERSTATUSDATATYPE 33
+#define UA_TYPES_CRCL_CRCL_GRIPPERSTATUSDATATYPE 31
 
 /**
  * SetLengthUnitsParametersSetDataType
@@ -457,7 +432,7 @@ typedef struct {
     UA_CRCL_LengthUnitEnumDataType cRCLUnitName;
 } UA_SetLengthUnitsParametersSetDataType;
 
-#define UA_TYPES_CRCL_SETLENGTHUNITSPARAMETERSSETDATATYPE 34
+#define UA_TYPES_CRCL_SETLENGTHUNITSPARAMETERSSETDATATYPE 32
 
 /**
  * CRCL_JointForceTorqueDataType
@@ -470,7 +445,7 @@ typedef struct {
     UA_Double cRCLChangeRate;
 } UA_CRCL_JointForceTorqueDataType;
 
-#define UA_TYPES_CRCL_CRCL_JOINTFORCETORQUEDATATYPE 35
+#define UA_TYPES_CRCL_CRCL_JOINTFORCETORQUEDATATYPE 33
 
 /**
  * SetTorqueUnitsParametersSetDataType
@@ -481,7 +456,7 @@ typedef struct {
     UA_CRCL_TorqueUnitEnumDataType cRCLUnitName;
 } UA_SetTorqueUnitsParametersSetDataType;
 
-#define UA_TYPES_CRCL_SETTORQUEUNITSPARAMETERSSETDATATYPE 36
+#define UA_TYPES_CRCL_SETTORQUEUNITSPARAMETERSSETDATATYPE 34
 
 /**
  * CRCL_GuardLimitEnumDataType
@@ -496,7 +471,7 @@ typedef enum {
 } UA_CRCL_GuardLimitEnumDataType;
 UA_STATIC_ASSERT(sizeof(UA_CRCL_GuardLimitEnumDataType) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_CRCL_CRCL_GUARDLIMITENUMDATATYPE 37
+#define UA_TYPES_CRCL_CRCL_GUARDLIMITENUMDATATYPE 35
 
 /**
  * CRCL_RotSpeedRelativeDataType
@@ -508,7 +483,7 @@ typedef struct {
     UA_CRCL_FractionDataType fraction;
 } UA_CRCL_RotSpeedRelativeDataType;
 
-#define UA_TYPES_CRCL_CRCL_ROTSPEEDRELATIVEDATATYPE 38
+#define UA_TYPES_CRCL_CRCL_ROTSPEEDRELATIVEDATATYPE 36
 
 /**
  * CRCL_RotAccelRelativeDataType
@@ -520,7 +495,7 @@ typedef struct {
     UA_CRCL_FractionDataType fraction;
 } UA_CRCL_RotAccelRelativeDataType;
 
-#define UA_TYPES_CRCL_CRCL_ROTACCELRELATIVEDATATYPE 39
+#define UA_TYPES_CRCL_CRCL_ROTACCELRELATIVEDATATYPE 37
 
 /**
  * CRCL_ThreeFingerGripperStatusDataType
@@ -541,7 +516,7 @@ typedef struct {
     UA_Double finger3Force;
 } UA_CRCL_ThreeFingerGripperStatusDataType;
 
-#define UA_TYPES_CRCL_CRCL_THREEFINGERGRIPPERSTATUSDATATYPE 40
+#define UA_TYPES_CRCL_CRCL_THREEFINGERGRIPPERSTATUSDATATYPE 38
 
 /**
  * CRCL_RotAccelDataType
@@ -563,7 +538,7 @@ typedef struct {
     } fields;
 } UA_CRCL_RotAccelDataType;
 
-#define UA_TYPES_CRCL_CRCL_ROTACCELDATATYPE 41
+#define UA_TYPES_CRCL_CRCL_ROTACCELDATATYPE 39
 
 /**
  * DisableSensorParametersSetDataType
@@ -574,7 +549,7 @@ typedef struct {
     UA_String cRCLSensorID;
 } UA_DisableSensorParametersSetDataType;
 
-#define UA_TYPES_CRCL_DISABLESENSORPARAMETERSSETDATATYPE 42
+#define UA_TYPES_CRCL_DISABLESENSORPARAMETERSSETDATATYPE 40
 
 /**
  * CRCL_ScalarSensorStatusDataType
@@ -591,7 +566,7 @@ typedef struct {
     UA_Double scalarValue;
 } UA_CRCL_ScalarSensorStatusDataType;
 
-#define UA_TYPES_CRCL_CRCL_SCALARSENSORSTATUSDATATYPE 43
+#define UA_TYPES_CRCL_CRCL_SCALARSENSORSTATUSDATATYPE 41
 
 /**
  * DwellParametersSetDataType
@@ -602,7 +577,7 @@ typedef struct {
     UA_Boolean cRCLDwellTime;
 } UA_DwellParametersSetDataType;
 
-#define UA_TYPES_CRCL_DWELLPARAMETERSSETDATATYPE 44
+#define UA_TYPES_CRCL_DWELLPARAMETERSSETDATATYPE 42
 
 /**
  * CRCL_ForceUnitEnumDataType
@@ -616,7 +591,7 @@ typedef enum {
 } UA_CRCL_ForceUnitEnumDataType;
 UA_STATIC_ASSERT(sizeof(UA_CRCL_ForceUnitEnumDataType) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_CRCL_CRCL_FORCEUNITENUMDATATYPE 45
+#define UA_TYPES_CRCL_CRCL_FORCEUNITENUMDATATYPE 43
 
 /**
  * GetStatusParametersSetDataType
@@ -626,7 +601,7 @@ typedef struct {
     UA_Boolean cRCLRealTimeParameter;
 } UA_GetStatusParametersSetDataType;
 
-#define UA_TYPES_CRCL_GETSTATUSPARAMETERSSETDATATYPE 46
+#define UA_TYPES_CRCL_GETSTATUSPARAMETERSSETDATATYPE 44
 
 /**
  * SetIntermediatePoseToleranceParametersSetDataType
@@ -637,7 +612,7 @@ typedef struct {
     UA_CRCL_PoseToleranceDataType cRCLTolerance;
 } UA_SetIntermediatePoseToleranceParametersSetDataType;
 
-#define UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEPARAMETERSSETDATATYPE 47
+#define UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEPARAMETERSSETDATATYPE 45
 
 /**
  * SetEndPoseToleranceParametersSetDataType
@@ -648,7 +623,7 @@ typedef struct {
     UA_CRCL_PoseToleranceDataType cRCLTolerance;
 } UA_SetEndPoseToleranceParametersSetDataType;
 
-#define UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMETERSSETDATATYPE 48
+#define UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMETERSSETDATATYPE 46
 
 /**
  * PubSubIPAddresses
@@ -659,7 +634,7 @@ typedef struct {
     UA_String iPAddress_Status;
 } UA_PubSubIPAddresses;
 
-#define UA_TYPES_CRCL_PUBSUBIPADDRESSES 49
+#define UA_TYPES_CRCL_PUBSUBIPADDRESSES 47
 
 /**
  * CRCL_JointStatusesDataType
@@ -672,7 +647,7 @@ typedef struct {
     UA_CRCL_JointStatusDataType *jointStatus;
 } UA_CRCL_JointStatusesDataType;
 
-#define UA_TYPES_CRCL_CRCL_JOINTSTATUSESDATATYPE 50
+#define UA_TYPES_CRCL_CRCL_JOINTSTATUSESDATATYPE 48
 
 /**
  * CRCL_StopConditionEnumDataType
@@ -686,7 +661,7 @@ typedef enum {
 } UA_CRCL_StopConditionEnumDataType;
 UA_STATIC_ASSERT(sizeof(UA_CRCL_StopConditionEnumDataType) == sizeof(UA_Int32), enum_must_be_32bit);
 
-#define UA_TYPES_CRCL_CRCL_STOPCONDITIONENUMDATATYPE 51
+#define UA_TYPES_CRCL_CRCL_STOPCONDITIONENUMDATATYPE 49
 
 /**
  * EndCanonParametersSetDataType
@@ -696,7 +671,7 @@ typedef struct {
     UA_Boolean cRCLRealTimeParameter;
 } UA_EndCanonParametersSetDataType;
 
-#define UA_TYPES_CRCL_ENDCANONPARAMETERSSETDATATYPE 52
+#define UA_TYPES_CRCL_ENDCANONPARAMETERSSETDATATYPE 50
 
 /**
  * CRCL_RotSpeedAbsoluteDataType
@@ -708,7 +683,7 @@ typedef struct {
     UA_Double setting;
 } UA_CRCL_RotSpeedAbsoluteDataType;
 
-#define UA_TYPES_CRCL_CRCL_ROTSPEEDABSOLUTEDATATYPE 53
+#define UA_TYPES_CRCL_CRCL_ROTSPEEDABSOLUTEDATATYPE 51
 
 /**
  * InitCanonParametersSetDataType
@@ -718,7 +693,7 @@ typedef struct {
     UA_Boolean cRCLRealTimeParameter;
 } UA_InitCanonParametersSetDataType;
 
-#define UA_TYPES_CRCL_INITCANONPARAMETERSSETDATATYPE 54
+#define UA_TYPES_CRCL_INITCANONPARAMETERSSETDATATYPE 52
 
 /**
  * CRCL_GuardDataType
@@ -737,7 +712,7 @@ typedef struct {
     UA_Double lastCheckValue;
 } UA_CRCL_GuardDataType;
 
-#define UA_TYPES_CRCL_CRCL_GUARDDATATYPE 55
+#define UA_TYPES_CRCL_CRCL_GUARDDATATYPE 53
 
 /**
  * ConfigureStatusReportDataType
@@ -759,7 +734,7 @@ typedef struct {
     UA_Boolean reportGuardsStatus;
 } UA_ConfigureStatusReportDataType;
 
-#define UA_TYPES_CRCL_CONFIGURESTATUSREPORTDATATYPE 56
+#define UA_TYPES_CRCL_CONFIGURESTATUSREPORTDATATYPE 54
 
 /**
  * RunProgramDataType
@@ -776,7 +751,7 @@ typedef struct {
     UA_String programText;
 } UA_RunProgramDataType;
 
-#define UA_TYPES_CRCL_RUNPROGRAMDATATYPE 57
+#define UA_TYPES_CRCL_RUNPROGRAMDATATYPE 55
 
 /**
  * CRCL_ParallelGripperStatusDataType
@@ -792,7 +767,7 @@ typedef struct {
     UA_Double seperation;
 } UA_CRCL_ParallelGripperStatusDataType;
 
-#define UA_TYPES_CRCL_CRCL_PARALLELGRIPPERSTATUSDATATYPE 58
+#define UA_TYPES_CRCL_CRCL_PARALLELGRIPPERSTATUSDATATYPE 56
 
 /**
  * SetRotAccelParametersSetDataType
@@ -803,7 +778,7 @@ typedef struct {
     UA_CRCL_RotAccelDataType cRCLRotAccel;
 } UA_SetRotAccelParametersSetDataType;
 
-#define UA_TYPES_CRCL_SETROTACCELPARAMETERSSETDATATYPE 59
+#define UA_TYPES_CRCL_SETROTACCELPARAMETERSSETDATATYPE 57
 
 /**
  * CRCLCommandDataType
@@ -819,7 +794,7 @@ typedef struct {
     UA_CRCL_GuardDataType *guard;
 } UA_CRCLCommandDataType;
 
-#define UA_TYPES_CRCL_CRCLCOMMANDDATATYPE 60
+#define UA_TYPES_CRCL_CRCLCOMMANDDATATYPE 58
 
 /**
  * SetEndeffectorParametersSetDataType
@@ -830,7 +805,7 @@ typedef struct {
     UA_CRCL_FractionDataType cRCLSetting;
 } UA_SetEndeffectorParametersSetDataType;
 
-#define UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSSETDATATYPE 61
+#define UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSSETDATATYPE 59
 
 /**
  * SetIntermediatePoseToleranceDataType
@@ -847,7 +822,7 @@ typedef struct {
     UA_CRCL_PoseToleranceDataType tolerance;
 } UA_SetIntermediatePoseToleranceDataType;
 
-#define UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEDATATYPE 62
+#define UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEDATATYPE 60
 
 /**
  * SetRobotParametersDataType
@@ -865,7 +840,7 @@ typedef struct {
     UA_CRCL_ParameterSettingDataType *parameterSetting;
 } UA_SetRobotParametersDataType;
 
-#define UA_TYPES_CRCL_SETROBOTPARAMETERSDATATYPE 63
+#define UA_TYPES_CRCL_SETROBOTPARAMETERSDATATYPE 61
 
 /**
  * CRCL_ForceTorqueSensorStatusDataType
@@ -887,7 +862,7 @@ typedef struct {
     UA_Double tz;
 } UA_CRCL_ForceTorqueSensorStatusDataType;
 
-#define UA_TYPES_CRCL_CRCL_FORCETORQUESENSORSTATUSDATATYPE 64
+#define UA_TYPES_CRCL_CRCL_FORCETORQUESENSORSTATUSDATATYPE 62
 
 /**
  * CRCL_OnOffSensorStatusDataType
@@ -904,7 +879,7 @@ typedef struct {
     UA_Boolean on;
 } UA_CRCL_OnOffSensorStatusDataType;
 
-#define UA_TYPES_CRCL_CRCL_ONOFFSENSORSTATUSDATATYPE 65
+#define UA_TYPES_CRCL_CRCL_ONOFFSENSORSTATUSDATATYPE 63
 
 /**
  * EnableSensorParametersSetDataType
@@ -917,7 +892,29 @@ typedef struct {
     UA_CRCL_ParameterSettingDataType *cRCLSensorOption;
 } UA_EnableSensorParametersSetDataType;
 
-#define UA_TYPES_CRCL_ENABLESENSORPARAMETERSSETDATATYPE 66
+#define UA_TYPES_CRCL_ENABLESENSORPARAMETERSSETDATATYPE 64
+
+/**
+ * CRCL_JointDetailsDataType
+ * ^^^^^^^^^^^^^^^^^^^^^^^^^
+ * CRCL JointDetailsType */
+typedef enum {
+    UA_CRCL_JOINTDETAILSDATATYPESWITCH_NONE = 0,
+    UA_CRCL_JOINTDETAILSDATATYPESWITCH_JOINTSPEEDACCEL = 1,
+    UA_CRCL_JOINTDETAILSDATATYPESWITCH_JOINTFORCETORQUE = 2,
+    __UA_CRCL_JOINTDETAILSDATATYPESWITCH_FORCE32BIT = 0x7fffffff
+} UA_CRCL_JointDetailsDataTypeSwitch;
+UA_STATIC_ASSERT(sizeof(UA_CRCL_JointDetailsDataTypeSwitch) == sizeof(UA_Int32), enum_must_be_32bit);
+
+typedef struct {
+    UA_CRCL_JointDetailsDataTypeSwitch switchField;
+    union {
+        UA_CRCL_JointSpeedAccelDataType jointSpeedAccel;
+        UA_CRCL_JointForceTorqueDataType jointForceTorque;
+    } fields;
+} UA_CRCL_JointDetailsDataType;
+
+#define UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE 65
 
 /**
  * CRCL_SensorStatusDataType
@@ -933,7 +930,7 @@ typedef struct {
     UA_CRCL_ParameterSettingDataType *sensorParameterSetting;
 } UA_CRCL_SensorStatusDataType;
 
-#define UA_TYPES_CRCL_CRCL_SENSORSTATUSDATATYPE 67
+#define UA_TYPES_CRCL_CRCL_SENSORSTATUSDATATYPE 66
 
 /**
  * CRCL_TransAccelRelativeDataType
@@ -945,7 +942,7 @@ typedef struct {
     UA_CRCL_FractionDataType fraction;
 } UA_CRCL_TransAccelRelativeDataType;
 
-#define UA_TYPES_CRCL_CRCL_TRANSACCELRELATIVEDATATYPE 68
+#define UA_TYPES_CRCL_CRCL_TRANSACCELRELATIVEDATATYPE 67
 
 /**
  * CRCL_TransSpeedRelativeDataType
@@ -957,7 +954,7 @@ typedef struct {
     UA_CRCL_FractionDataType fraction;
 } UA_CRCL_TransSpeedRelativeDataType;
 
-#define UA_TYPES_CRCL_CRCL_TRANSSPEEDRELATIVEDATATYPE 69
+#define UA_TYPES_CRCL_CRCL_TRANSSPEEDRELATIVEDATATYPE 68
 
 /**
  * CRCL_TwistDataType
@@ -970,7 +967,7 @@ typedef struct {
     UA_CRCL_VectorDataType angularVelocity;
 } UA_CRCL_TwistDataType;
 
-#define UA_TYPES_CRCL_CRCL_TWISTDATATYPE 70
+#define UA_TYPES_CRCL_CRCL_TWISTDATATYPE 69
 
 /**
  * CRCL_SettingsStatusDataType
@@ -1005,7 +1002,7 @@ typedef struct {
     UA_CRCL_TransSpeedRelativeDataType transSpeedRelative;
 } UA_CRCL_SettingsStatusDataType;
 
-#define UA_TYPES_CRCL_CRCL_SETTINGSSTATUSDATATYPE 71
+#define UA_TYPES_CRCL_CRCL_SETTINGSSTATUSDATATYPE 70
 
 /**
  * StopMotionDataType
@@ -1022,7 +1019,7 @@ typedef struct {
     UA_CRCL_StopConditionEnumDataType stopCondition;
 } UA_StopMotionDataType;
 
-#define UA_TYPES_CRCL_STOPMOTIONDATATYPE 72
+#define UA_TYPES_CRCL_STOPMOTIONDATATYPE 71
 
 /**
  * OpenToolChangerDataType
@@ -1038,7 +1035,7 @@ typedef struct {
     UA_CRCL_GuardDataType *guard;
 } UA_OpenToolChangerDataType;
 
-#define UA_TYPES_CRCL_OPENTOOLCHANGERDATATYPE 73
+#define UA_TYPES_CRCL_OPENTOOLCHANGERDATATYPE 72
 
 /**
  * SetForceUnitsDataType
@@ -1055,7 +1052,7 @@ typedef struct {
     UA_CRCL_ForceUnitEnumDataType unitName;
 } UA_SetForceUnitsDataType;
 
-#define UA_TYPES_CRCL_SETFORCEUNITSDATATYPE 74
+#define UA_TYPES_CRCL_SETFORCEUNITSDATATYPE 73
 
 /**
  * SetEndeffectorDataType
@@ -1072,7 +1069,7 @@ typedef struct {
     UA_CRCL_FractionDataType setting;
 } UA_SetEndeffectorDataType;
 
-#define UA_TYPES_CRCL_SETENDEFFECTORDATATYPE 75
+#define UA_TYPES_CRCL_SETENDEFFECTORDATATYPE 74
 
 /**
  * EnableGripperParametersSetDataType
@@ -1085,7 +1082,7 @@ typedef struct {
     UA_CRCL_ParameterSettingDataType *cRCLGripperOption;
 } UA_EnableGripperParametersSetDataType;
 
-#define UA_TYPES_CRCL_ENABLEGRIPPERPARAMETERSSETDATATYPE 76
+#define UA_TYPES_CRCL_ENABLEGRIPPERPARAMETERSSETDATATYPE 75
 
 /**
  * ConfigureJointReportsDataType
@@ -1094,12 +1091,17 @@ typedef struct {
 typedef struct {
     UA_UInt32 id;
     UA_String name;
-    UA_Boolean reset;
+    UA_UInt32 commandID;
+    UA_Boolean cRCLRealTimeCommand;
+    UA_NodeId cRCLRealTimeParameterNode;
+    size_t guardSize;
+    UA_CRCL_GuardDataType *guard;
+    UA_Boolean resetAll;
     size_t configureJointReportSize;
     UA_CRCL_ConfigureJointReportDataType *configureJointReport;
 } UA_ConfigureJointReportsDataType;
 
-#define UA_TYPES_CRCL_CONFIGUREJOINTREPORTSDATATYPE 77
+#define UA_TYPES_CRCL_CONFIGUREJOINTREPORTSDATATYPE 76
 
 /**
  * CloseToolChangerDataType
@@ -1115,7 +1117,7 @@ typedef struct {
     UA_CRCL_GuardDataType *guard;
 } UA_CloseToolChangerDataType;
 
-#define UA_TYPES_CRCL_CLOSETOOLCHANGERDATATYPE 78
+#define UA_TYPES_CRCL_CLOSETOOLCHANGERDATATYPE 77
 
 /**
  * GetStatusDataType
@@ -1131,7 +1133,7 @@ typedef struct {
     UA_CRCL_GuardDataType *guard;
 } UA_GetStatusDataType;
 
-#define UA_TYPES_CRCL_GETSTATUSDATATYPE 79
+#define UA_TYPES_CRCL_GETSTATUSDATATYPE 78
 
 /**
  * CRCL_WrenchDataType
@@ -1144,7 +1146,7 @@ typedef struct {
     UA_CRCL_VectorDataType moment;
 } UA_CRCL_WrenchDataType;
 
-#define UA_TYPES_CRCL_CRCL_WRENCHDATATYPE 80
+#define UA_TYPES_CRCL_CRCL_WRENCHDATATYPE 79
 
 /**
  * CRCL_CommandStatusDataType
@@ -1163,7 +1165,7 @@ typedef struct {
     UA_UInt32 overridePercent;
 } UA_CRCL_CommandStatusDataType;
 
-#define UA_TYPES_CRCL_CRCL_COMMANDSTATUSDATATYPE 81
+#define UA_TYPES_CRCL_CRCL_COMMANDSTATUSDATATYPE 80
 
 /**
  * InitCanonDataType
@@ -1179,7 +1181,7 @@ typedef struct {
     UA_CRCL_GuardDataType *guard;
 } UA_InitCanonDataType;
 
-#define UA_TYPES_CRCL_INITCANONDATATYPE 82
+#define UA_TYPES_CRCL_INITCANONDATATYPE 81
 
 /**
  * DisableRobotParameterStatusDataType
@@ -1196,7 +1198,7 @@ typedef struct {
     UA_String robotParameterName;
 } UA_DisableRobotParameterStatusDataType;
 
-#define UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSDATATYPE 83
+#define UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSDATATYPE 82
 
 /**
  * ConfigureJointReportsParametersSetDataType
@@ -1204,13 +1206,12 @@ typedef struct {
  * Parameters of a ConfigureJointreports Command. */
 typedef struct {
     UA_Boolean cRCLRealTimeParameter;
-    size_t cRCLResetAllSize;
-    UA_Boolean *cRCLResetAll;
+    UA_Boolean cRCLResetAll;
     size_t cRCLConfigureJointReportSize;
     UA_CRCL_ConfigureJointReportDataType *cRCLConfigureJointReport;
 } UA_ConfigureJointReportsParametersSetDataType;
 
-#define UA_TYPES_CRCL_CONFIGUREJOINTREPORTSPARAMETERSSETDATATYPE 84
+#define UA_TYPES_CRCL_CONFIGUREJOINTREPORTSPARAMETERSSETDATATYPE 83
 
 /**
  * CRCL_PoseDataType
@@ -1224,7 +1225,7 @@ typedef struct {
     UA_CRCL_VectorDataType zAxis;
 } UA_CRCL_PoseDataType;
 
-#define UA_TYPES_CRCL_CRCL_POSEDATATYPE 85
+#define UA_TYPES_CRCL_CRCL_POSEDATATYPE 84
 
 /**
  * CRCL_TransSpeedDataType
@@ -1246,7 +1247,7 @@ typedef struct {
     } fields;
 } UA_CRCL_TransSpeedDataType;
 
-#define UA_TYPES_CRCL_CRCL_TRANSSPEEDDATATYPE 86
+#define UA_TYPES_CRCL_CRCL_TRANSSPEEDDATATYPE 85
 
 /**
  * MoveToDataType
@@ -1264,7 +1265,7 @@ typedef struct {
     UA_CRCL_PoseDataType endPosition;
 } UA_MoveToDataType;
 
-#define UA_TYPES_CRCL_MOVETODATATYPE 87
+#define UA_TYPES_CRCL_MOVETODATATYPE 86
 
 /**
  * MoveToParametersSetDataType
@@ -1276,7 +1277,7 @@ typedef struct {
     UA_CRCL_PoseDataType cRCLEndPosition;
 } UA_MoveToParametersSetDataType;
 
-#define UA_TYPES_CRCL_MOVETOPARAMETERSSETDATATYPE 88
+#define UA_TYPES_CRCL_MOVETOPARAMETERSSETDATATYPE 87
 
 /**
  * CRCL_VacuumGripperStatusDataType
@@ -1292,7 +1293,7 @@ typedef struct {
     UA_Boolean isPowered;
 } UA_CRCL_VacuumGripperStatusDataType;
 
-#define UA_TYPES_CRCL_CRCL_VACUUMGRIPPERSTATUSDATATYPE 89
+#define UA_TYPES_CRCL_CRCL_VACUUMGRIPPERSTATUSDATATYPE 88
 
 /**
  * CRCL_RotSpeedDataType
@@ -1314,7 +1315,7 @@ typedef struct {
     } fields;
 } UA_CRCL_RotSpeedDataType;
 
-#define UA_TYPES_CRCL_CRCL_ROTSPEEDDATATYPE 90
+#define UA_TYPES_CRCL_CRCL_ROTSPEEDDATATYPE 89
 
 /**
  * SetMotionCoordinationDataType
@@ -1331,7 +1332,7 @@ typedef struct {
     UA_Boolean coordinated;
 } UA_SetMotionCoordinationDataType;
 
-#define UA_TYPES_CRCL_SETMOTIONCOORDINATIONDATATYPE 91
+#define UA_TYPES_CRCL_SETMOTIONCOORDINATIONDATATYPE 90
 
 /**
  * DwellDataType
@@ -1348,7 +1349,7 @@ typedef struct {
     UA_Double dwellTime;
 } UA_DwellDataType;
 
-#define UA_TYPES_CRCL_DWELLDATATYPE 92
+#define UA_TYPES_CRCL_DWELLDATATYPE 91
 
 /**
  * CRCL_CountSensorStatusDataType
@@ -1365,7 +1366,7 @@ typedef struct {
     UA_UInt32 countValue;
 } UA_CRCL_CountSensorStatusDataType;
 
-#define UA_TYPES_CRCL_CRCL_COUNTSENSORSTATUSDATATYPE 93
+#define UA_TYPES_CRCL_CRCL_COUNTSENSORSTATUSDATATYPE 92
 
 /**
  * SetRotAccelDataType
@@ -1382,7 +1383,7 @@ typedef struct {
     UA_CRCL_RotAccelDataType rotAccel;
 } UA_SetRotAccelDataType;
 
-#define UA_TYPES_CRCL_SETROTACCELDATATYPE 94
+#define UA_TYPES_CRCL_SETROTACCELDATATYPE 93
 
 /**
  * EnableGripperDataType
@@ -1401,7 +1402,7 @@ typedef struct {
     UA_CRCL_ParameterSettingDataType *gripperOption;
 } UA_EnableGripperDataType;
 
-#define UA_TYPES_CRCL_ENABLEGRIPPERDATATYPE 95
+#define UA_TYPES_CRCL_ENABLEGRIPPERDATATYPE 94
 
 /**
  * MiddleCommandDataType
@@ -1417,7 +1418,7 @@ typedef struct {
     UA_CRCL_GuardDataType *guard;
 } UA_MiddleCommandDataType;
 
-#define UA_TYPES_CRCL_MIDDLECOMMANDDATATYPE 96
+#define UA_TYPES_CRCL_MIDDLECOMMANDDATATYPE 95
 
 /**
  * SetRotSpeedDataType
@@ -1434,7 +1435,7 @@ typedef struct {
     UA_CRCL_RotSpeedDataType rotSpeed;
 } UA_SetRotSpeedDataType;
 
-#define UA_TYPES_CRCL_SETROTSPEEDDATATYPE 97
+#define UA_TYPES_CRCL_SETROTSPEEDDATATYPE 96
 
 /**
  * CRCL_SensorStatusesDataType
@@ -1453,7 +1454,7 @@ typedef struct {
     UA_CRCL_ForceTorqueSensorStatusDataType *forceTorqueSensorStatus;
 } UA_CRCL_SensorStatusesDataType;
 
-#define UA_TYPES_CRCL_CRCL_SENSORSTATUSESDATATYPE 98
+#define UA_TYPES_CRCL_CRCL_SENSORSTATUSESDATATYPE 97
 
 /**
  * SetForceUnitsParametersSetDataType
@@ -1464,7 +1465,7 @@ typedef struct {
     UA_CRCL_ForceUnitEnumDataType cRCLUnitName;
 } UA_SetForceUnitsParametersSetDataType;
 
-#define UA_TYPES_CRCL_SETFORCEUNITSPARAMETERSSETDATATYPE 99
+#define UA_TYPES_CRCL_SETFORCEUNITSPARAMETERSSETDATATYPE 98
 
 /**
  * DisableSensorDataType
@@ -1481,7 +1482,7 @@ typedef struct {
     UA_String sensorID;
 } UA_DisableSensorDataType;
 
-#define UA_TYPES_CRCL_DISABLESENSORDATATYPE 100
+#define UA_TYPES_CRCL_DISABLESENSORDATATYPE 99
 
 /**
  * CRCL_JointPositionsTolerancesDataType
@@ -1494,7 +1495,7 @@ typedef struct {
     UA_CRCL_JointPositionToleranceSettingDataType *setting;
 } UA_CRCL_JointPositionsTolerancesDataType;
 
-#define UA_TYPES_CRCL_CRCL_JOINTPOSITIONSTOLERANCESDATATYPE 101
+#define UA_TYPES_CRCL_CRCL_JOINTPOSITIONSTOLERANCESDATATYPE 100
 
 /**
  * EnableSensorDataType
@@ -1513,7 +1514,7 @@ typedef struct {
     UA_CRCL_ParameterSettingDataType *sensorOption;
 } UA_EnableSensorDataType;
 
-#define UA_TYPES_CRCL_ENABLESENSORDATATYPE 102
+#define UA_TYPES_CRCL_ENABLESENSORDATATYPE 101
 
 /**
  * SetRotSpeedParametersSetDataType
@@ -1524,25 +1525,7 @@ typedef struct {
     UA_CRCL_RotSpeedDataType cRCLRotSpeed;
 } UA_SetRotSpeedParametersSetDataType;
 
-#define UA_TYPES_CRCL_SETROTSPEEDPARAMETERSSETDATATYPE 103
-
-/**
- * ActuateJointsDataType
- * ^^^^^^^^^^^^^^^^^^^^^
- * CRCL ActuateJointsType */
-typedef struct {
-    UA_UInt32 id;
-    UA_String name;
-    UA_UInt32 commandID;
-    UA_Boolean cRCLRealTimeCommand;
-    UA_NodeId cRCLRealTimeParameterNode;
-    size_t guardSize;
-    UA_CRCL_GuardDataType *guard;
-    UA_Double cRCLJointSpeed;
-    UA_Double cRCLJointAccel;
-} UA_ActuateJointsDataType;
-
-#define UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE 104
+#define UA_TYPES_CRCL_SETROTSPEEDPARAMETERSSETDATATYPE 102
 
 /**
  * SetEndeffectorParametersDataType
@@ -1560,7 +1543,7 @@ typedef struct {
     UA_CRCL_ParameterSettingDataType *parameterSetting;
 } UA_SetEndeffectorParametersDataType;
 
-#define UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSDATATYPE 105
+#define UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSDATATYPE 103
 
 /**
  * EnableRobotParameterStatusDataType
@@ -1577,7 +1560,7 @@ typedef struct {
     UA_String robotParameterName;
 } UA_EnableRobotParameterStatusDataType;
 
-#define UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSDATATYPE 106
+#define UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSDATATYPE 104
 
 /**
  * EndCanonDataType
@@ -1593,7 +1576,7 @@ typedef struct {
     UA_CRCL_GuardDataType *guard;
 } UA_EndCanonDataType;
 
-#define UA_TYPES_CRCL_ENDCANONDATATYPE 107
+#define UA_TYPES_CRCL_ENDCANONDATATYPE 105
 
 /**
  * SetAngleUnitsDataType
@@ -1610,7 +1593,7 @@ typedef struct {
     UA_CRCL_AngleUnitEnumDataType unitName;
 } UA_SetAngleUnitsDataType;
 
-#define UA_TYPES_CRCL_SETANGLEUNITSDATATYPE 108
+#define UA_TYPES_CRCL_SETANGLEUNITSDATATYPE 106
 
 /**
  * MoveScrewParametersSetDataType
@@ -1625,7 +1608,7 @@ typedef struct {
     UA_Double cRCLTurn;
 } UA_MoveScrewParametersSetDataType;
 
-#define UA_TYPES_CRCL_MOVESCREWPARAMETERSSETDATATYPE 109
+#define UA_TYPES_CRCL_MOVESCREWPARAMETERSSETDATATYPE 107
 
 /**
  * SetTorqueUnitsDataType
@@ -1642,7 +1625,7 @@ typedef struct {
     UA_CRCL_TorqueUnitEnumDataType unitName;
 } UA_SetTorqueUnitsDataType;
 
-#define UA_TYPES_CRCL_SETTORQUEUNITSDATATYPE 110
+#define UA_TYPES_CRCL_SETTORQUEUNITSDATATYPE 108
 
 /**
  * StopMotionParametersSetDataType
@@ -1653,7 +1636,7 @@ typedef struct {
     UA_CRCL_StopConditionEnumDataType cRCLStopCondition;
 } UA_StopMotionParametersSetDataType;
 
-#define UA_TYPES_CRCL_STOPMOTIONPARAMETERSSETDATATYPE 111
+#define UA_TYPES_CRCL_STOPMOTIONPARAMETERSSETDATATYPE 109
 
 /**
  * SetEndPoseToleranceDataType
@@ -1670,7 +1653,7 @@ typedef struct {
     UA_CRCL_PoseToleranceDataType tolerance;
 } UA_SetEndPoseToleranceDataType;
 
-#define UA_TYPES_CRCL_SETENDPOSETOLERANCEDATATYPE 112
+#define UA_TYPES_CRCL_SETENDPOSETOLERANCEDATATYPE 110
 
 /**
  * MessageDataType
@@ -1687,7 +1670,7 @@ typedef struct {
     UA_String message;
 } UA_MessageDataType;
 
-#define UA_TYPES_CRCL_MESSAGEDATATYPE 113
+#define UA_TYPES_CRCL_MESSAGEDATATYPE 111
 
 /**
  * CRCL_PoseStatusDataType
@@ -1702,7 +1685,7 @@ typedef struct {
     UA_String configuration;
 } UA_CRCL_PoseStatusDataType;
 
-#define UA_TYPES_CRCL_CRCL_POSESTATUSDATATYPE 114
+#define UA_TYPES_CRCL_CRCL_POSESTATUSDATATYPE 112
 
 /**
  * MoveThroughToDataType
@@ -1722,20 +1705,7 @@ typedef struct {
     UA_UInt32 numPositions;
 } UA_MoveThroughToDataType;
 
-#define UA_TYPES_CRCL_MOVETHROUGHTODATATYPE 115
-
-/**
- * ActuateJointsParametersSetDataType
- * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- * Parameters of a ActuateJoints Command. */
-typedef struct {
-    UA_Boolean cRCLRealTimeParameter;
-    size_t cRCLActuateJointSize;
-    UA_CRCL_ActuateJointDataType *cRCLActuateJoint;
-    UA_CRCL_JointPositionsTolerancesDataType cRCLJointTolerances;
-} UA_ActuateJointsParametersSetDataType;
-
-#define UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE 116
+#define UA_TYPES_CRCL_MOVETHROUGHTODATATYPE 113
 
 /**
  * DisableGripperDataType
@@ -1752,7 +1722,7 @@ typedef struct {
     UA_String gripperName;
 } UA_DisableGripperDataType;
 
-#define UA_TYPES_CRCL_DISABLEGRIPPERDATATYPE 117
+#define UA_TYPES_CRCL_DISABLEGRIPPERDATATYPE 114
 
 /**
  * SetLengthUnitsDataType
@@ -1769,7 +1739,21 @@ typedef struct {
     UA_CRCL_LengthUnitEnumDataType unitName;
 } UA_SetLengthUnitsDataType;
 
-#define UA_TYPES_CRCL_SETLENGTHUNITSDATATYPE 118
+#define UA_TYPES_CRCL_SETLENGTHUNITSDATATYPE 115
+
+/**
+ * CRCL_ActuateJointDataType
+ * ^^^^^^^^^^^^^^^^^^^^^^^^^
+ * CRCL ActuateJointType */
+typedef struct {
+    UA_UInt32 id;
+    UA_String name;
+    UA_Int32 jointNumber;
+    UA_Double cRCLJointPosition;
+    UA_CRCL_JointDetailsDataType cRCLJointDetails;
+} UA_CRCL_ActuateJointDataType;
+
+#define UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE 116
 
 /**
  * MoveThroughToParametersSetDataType
@@ -1783,7 +1767,7 @@ typedef struct {
     UA_Int32 cRCLNumPositions;
 } UA_MoveThroughToParametersSetDataType;
 
-#define UA_TYPES_CRCL_MOVETHROUGHTOPARAMETERSSETDATATYPE 119
+#define UA_TYPES_CRCL_MOVETHROUGHTOPARAMETERSSETDATATYPE 117
 
 /**
  * CRCL_TransAccelDataType
@@ -1805,7 +1789,7 @@ typedef struct {
     } fields;
 } UA_CRCL_TransAccelDataType;
 
-#define UA_TYPES_CRCL_CRCL_TRANSACCELDATATYPE 120
+#define UA_TYPES_CRCL_CRCL_TRANSACCELDATATYPE 118
 
 /**
  * MoveScrewDataType
@@ -1826,7 +1810,7 @@ typedef struct {
     UA_Double turn;
 } UA_MoveScrewDataType;
 
-#define UA_TYPES_CRCL_MOVESCREWDATATYPE 121
+#define UA_TYPES_CRCL_MOVESCREWDATATYPE 119
 
 /**
  * SetDefaultJointPositionsTolerancesDataType
@@ -1843,7 +1827,7 @@ typedef struct {
     UA_CRCL_JointPositionsTolerancesDataType jointTolerances;
 } UA_SetDefaultJointPositionsTolerancesDataType;
 
-#define UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESDATATYPE 122
+#define UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESDATATYPE 120
 
 /**
  * SetTransSpeedParametersSetDataType
@@ -1854,7 +1838,7 @@ typedef struct {
     UA_CRCL_TransSpeedDataType cRCLTransSpeed;
 } UA_SetTransSpeedParametersSetDataType;
 
-#define UA_TYPES_CRCL_SETTRANSSPEEDPARAMETERSSETDATATYPE 123
+#define UA_TYPES_CRCL_SETTRANSSPEEDPARAMETERSSETDATATYPE 121
 
 /**
  * SetDefaultJointPositionsTolerancesParametersSetDataType
@@ -1865,7 +1849,7 @@ typedef struct {
     UA_CRCL_JointPositionsTolerancesDataType cRCLJointTolerances;
 } UA_SetDefaultJointPositionsTolerancesParametersSetDataType;
 
-#define UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESPARAMETERSSETDATATYPE 124
+#define UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESPARAMETERSSETDATATYPE 122
 
 /**
  * CRCLStatusDataType
@@ -1882,7 +1866,7 @@ typedef struct {
     UA_CRCL_SensorStatusesDataType sensorStatuses;
 } UA_CRCLStatusDataType;
 
-#define UA_TYPES_CRCL_CRCLSTATUSDATATYPE 125
+#define UA_TYPES_CRCL_CRCLSTATUSDATATYPE 123
 
 /**
  * SetTransSpeedDataType
@@ -1899,7 +1883,26 @@ typedef struct {
     UA_CRCL_TransSpeedDataType transSpeed;
 } UA_SetTransSpeedDataType;
 
-#define UA_TYPES_CRCL_SETTRANSSPEEDDATATYPE 126
+#define UA_TYPES_CRCL_SETTRANSSPEEDDATATYPE 124
+
+/**
+ * ActuateJointsDataType
+ * ^^^^^^^^^^^^^^^^^^^^^
+ * CRCL ActuateJointsType */
+typedef struct {
+    UA_UInt32 id;
+    UA_String name;
+    UA_UInt32 commandID;
+    UA_Boolean cRCLRealTimeCommand;
+    UA_NodeId cRCLRealTimeParameterNode;
+    size_t guardSize;
+    UA_CRCL_GuardDataType *guard;
+    size_t cRCLActuateJointSize;
+    UA_CRCL_ActuateJointDataType *cRCLActuateJoint;
+    UA_CRCL_JointPositionsTolerancesDataType cRCLJointTolerances;
+} UA_ActuateJointsDataType;
+
+#define UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE 125
 
 /**
  * CRCL_PoseAndSetDataType
@@ -1919,7 +1922,7 @@ typedef struct {
     UA_CRCL_PoseToleranceDataType poseTolerance;
 } UA_CRCL_PoseAndSetDataType;
 
-#define UA_TYPES_CRCL_CRCL_POSEANDSETDATATYPE 127
+#define UA_TYPES_CRCL_CRCL_POSEANDSETDATATYPE 126
 
 /**
  * SetTransAccelParametersSetDataType
@@ -1930,7 +1933,20 @@ typedef struct {
     UA_CRCL_TransAccelDataType cRCLTransAccel;
 } UA_SetTransAccelParametersSetDataType;
 
-#define UA_TYPES_CRCL_SETTRANSACCELPARAMETERSSETDATATYPE 128
+#define UA_TYPES_CRCL_SETTRANSACCELPARAMETERSSETDATATYPE 127
+
+/**
+ * ActuateJointsParametersSetDataType
+ * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ * Parameters of a ActuateJoints Command. */
+typedef struct {
+    UA_Boolean cRCLRealTimeParameter;
+    size_t cRCLActuateJointSize;
+    UA_CRCL_ActuateJointDataType *cRCLActuateJoint;
+    UA_CRCL_JointPositionsTolerancesDataType cRCLJointTolerances;
+} UA_ActuateJointsParametersSetDataType;
+
+#define UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE 128
 
 /**
  * SetTransAccelDataType

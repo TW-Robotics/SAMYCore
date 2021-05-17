@@ -1,5 +1,5 @@
 /* Generated from CRCL.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py
- * on host jbg by user jbg at 2021-05-11 12:50:17 */
+ * on host jbg by user jbg at 2021-05-17 06:32:08 */
 
 #ifndef TYPES_CRCL_GENERATED_ENCODING_BINARY_H_
 #define TYPES_CRCL_GENERATED_ENCODING_BINARY_H_
@@ -83,20 +83,6 @@ UA_SetMotionCoordinationParametersSetDataType_decodeBinary(const UA_ByteString *
     return UA_decodeBinary(src, offset, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMETERSSETDATATYPE], NULL);
 }
 
-/* CRCL_ActuateJointDataType */
-static UA_INLINE size_t
-UA_CRCL_ActuateJointDataType_calcSizeBinary(const UA_CRCL_ActuateJointDataType *src) {
-    return UA_calcSizeBinary(src, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE]);
-}
-static UA_INLINE UA_StatusCode
-UA_CRCL_ActuateJointDataType_encodeBinary(const UA_CRCL_ActuateJointDataType *src, UA_Byte **bufPos, const UA_Byte *bufEnd) {
-    return UA_encodeBinary(src, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE], bufPos, &bufEnd, NULL, NULL);
-}
-static UA_INLINE UA_StatusCode
-UA_CRCL_ActuateJointDataType_decodeBinary(const UA_ByteString *src, size_t *offset, UA_CRCL_ActuateJointDataType *dst) {
-    return UA_decodeBinary(src, offset, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE], NULL);
-}
-
 /* DisableGripperParametersSetDataType */
 static UA_INLINE size_t
 UA_DisableGripperParametersSetDataType_calcSizeBinary(const UA_DisableGripperParametersSetDataType *src) {
@@ -109,20 +95,6 @@ UA_DisableGripperParametersSetDataType_encodeBinary(const UA_DisableGripperParam
 static UA_INLINE UA_StatusCode
 UA_DisableGripperParametersSetDataType_decodeBinary(const UA_ByteString *src, size_t *offset, UA_DisableGripperParametersSetDataType *dst) {
     return UA_decodeBinary(src, offset, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERPARAMETERSSETDATATYPE], NULL);
-}
-
-/* CRCL_JointDetailsDataType */
-static UA_INLINE size_t
-UA_CRCL_JointDetailsDataType_calcSizeBinary(const UA_CRCL_JointDetailsDataType *src) {
-    return UA_calcSizeBinary(src, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE]);
-}
-static UA_INLINE UA_StatusCode
-UA_CRCL_JointDetailsDataType_encodeBinary(const UA_CRCL_JointDetailsDataType *src, UA_Byte **bufPos, const UA_Byte *bufEnd) {
-    return UA_encodeBinary(src, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE], bufPos, &bufEnd, NULL, NULL);
-}
-static UA_INLINE UA_StatusCode
-UA_CRCL_JointDetailsDataType_decodeBinary(const UA_ByteString *src, size_t *offset, UA_CRCL_JointDetailsDataType *dst) {
-    return UA_decodeBinary(src, offset, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE], NULL);
 }
 
 /* CRCLCommandParametersSetDataType */
@@ -951,6 +923,20 @@ UA_EnableSensorParametersSetDataType_decodeBinary(const UA_ByteString *src, size
     return UA_decodeBinary(src, offset, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORPARAMETERSSETDATATYPE], NULL);
 }
 
+/* CRCL_JointDetailsDataType */
+static UA_INLINE size_t
+UA_CRCL_JointDetailsDataType_calcSizeBinary(const UA_CRCL_JointDetailsDataType *src) {
+    return UA_calcSizeBinary(src, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE]);
+}
+static UA_INLINE UA_StatusCode
+UA_CRCL_JointDetailsDataType_encodeBinary(const UA_CRCL_JointDetailsDataType *src, UA_Byte **bufPos, const UA_Byte *bufEnd) {
+    return UA_encodeBinary(src, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE], bufPos, &bufEnd, NULL, NULL);
+}
+static UA_INLINE UA_StatusCode
+UA_CRCL_JointDetailsDataType_decodeBinary(const UA_ByteString *src, size_t *offset, UA_CRCL_JointDetailsDataType *dst) {
+    return UA_decodeBinary(src, offset, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE], NULL);
+}
+
 /* CRCL_SensorStatusDataType */
 static UA_INLINE size_t
 UA_CRCL_SensorStatusDataType_calcSizeBinary(const UA_CRCL_SensorStatusDataType *src) {
@@ -1469,20 +1455,6 @@ UA_SetRotSpeedParametersSetDataType_decodeBinary(const UA_ByteString *src, size_
     return UA_decodeBinary(src, offset, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDPARAMETERSSETDATATYPE], NULL);
 }
 
-/* ActuateJointsDataType */
-static UA_INLINE size_t
-UA_ActuateJointsDataType_calcSizeBinary(const UA_ActuateJointsDataType *src) {
-    return UA_calcSizeBinary(src, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE]);
-}
-static UA_INLINE UA_StatusCode
-UA_ActuateJointsDataType_encodeBinary(const UA_ActuateJointsDataType *src, UA_Byte **bufPos, const UA_Byte *bufEnd) {
-    return UA_encodeBinary(src, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE], bufPos, &bufEnd, NULL, NULL);
-}
-static UA_INLINE UA_StatusCode
-UA_ActuateJointsDataType_decodeBinary(const UA_ByteString *src, size_t *offset, UA_ActuateJointsDataType *dst) {
-    return UA_decodeBinary(src, offset, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE], NULL);
-}
-
 /* SetEndeffectorParametersDataType */
 static UA_INLINE size_t
 UA_SetEndeffectorParametersDataType_calcSizeBinary(const UA_SetEndeffectorParametersDataType *src) {
@@ -1637,20 +1609,6 @@ UA_MoveThroughToDataType_decodeBinary(const UA_ByteString *src, size_t *offset, 
     return UA_decodeBinary(src, offset, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTODATATYPE], NULL);
 }
 
-/* ActuateJointsParametersSetDataType */
-static UA_INLINE size_t
-UA_ActuateJointsParametersSetDataType_calcSizeBinary(const UA_ActuateJointsParametersSetDataType *src) {
-    return UA_calcSizeBinary(src, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE]);
-}
-static UA_INLINE UA_StatusCode
-UA_ActuateJointsParametersSetDataType_encodeBinary(const UA_ActuateJointsParametersSetDataType *src, UA_Byte **bufPos, const UA_Byte *bufEnd) {
-    return UA_encodeBinary(src, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE], bufPos, &bufEnd, NULL, NULL);
-}
-static UA_INLINE UA_StatusCode
-UA_ActuateJointsParametersSetDataType_decodeBinary(const UA_ByteString *src, size_t *offset, UA_ActuateJointsParametersSetDataType *dst) {
-    return UA_decodeBinary(src, offset, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE], NULL);
-}
-
 /* DisableGripperDataType */
 static UA_INLINE size_t
 UA_DisableGripperDataType_calcSizeBinary(const UA_DisableGripperDataType *src) {
@@ -1677,6 +1635,20 @@ UA_SetLengthUnitsDataType_encodeBinary(const UA_SetLengthUnitsDataType *src, UA_
 static UA_INLINE UA_StatusCode
 UA_SetLengthUnitsDataType_decodeBinary(const UA_ByteString *src, size_t *offset, UA_SetLengthUnitsDataType *dst) {
     return UA_decodeBinary(src, offset, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSDATATYPE], NULL);
+}
+
+/* CRCL_ActuateJointDataType */
+static UA_INLINE size_t
+UA_CRCL_ActuateJointDataType_calcSizeBinary(const UA_CRCL_ActuateJointDataType *src) {
+    return UA_calcSizeBinary(src, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE]);
+}
+static UA_INLINE UA_StatusCode
+UA_CRCL_ActuateJointDataType_encodeBinary(const UA_CRCL_ActuateJointDataType *src, UA_Byte **bufPos, const UA_Byte *bufEnd) {
+    return UA_encodeBinary(src, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE], bufPos, &bufEnd, NULL, NULL);
+}
+static UA_INLINE UA_StatusCode
+UA_CRCL_ActuateJointDataType_decodeBinary(const UA_ByteString *src, size_t *offset, UA_CRCL_ActuateJointDataType *dst) {
+    return UA_decodeBinary(src, offset, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE], NULL);
 }
 
 /* MoveThroughToParametersSetDataType */
@@ -1791,6 +1763,20 @@ UA_SetTransSpeedDataType_decodeBinary(const UA_ByteString *src, size_t *offset, 
     return UA_decodeBinary(src, offset, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDDATATYPE], NULL);
 }
 
+/* ActuateJointsDataType */
+static UA_INLINE size_t
+UA_ActuateJointsDataType_calcSizeBinary(const UA_ActuateJointsDataType *src) {
+    return UA_calcSizeBinary(src, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE]);
+}
+static UA_INLINE UA_StatusCode
+UA_ActuateJointsDataType_encodeBinary(const UA_ActuateJointsDataType *src, UA_Byte **bufPos, const UA_Byte *bufEnd) {
+    return UA_encodeBinary(src, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE], bufPos, &bufEnd, NULL, NULL);
+}
+static UA_INLINE UA_StatusCode
+UA_ActuateJointsDataType_decodeBinary(const UA_ByteString *src, size_t *offset, UA_ActuateJointsDataType *dst) {
+    return UA_decodeBinary(src, offset, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE], NULL);
+}
+
 /* CRCL_PoseAndSetDataType */
 static UA_INLINE size_t
 UA_CRCL_PoseAndSetDataType_calcSizeBinary(const UA_CRCL_PoseAndSetDataType *src) {
@@ -1817,6 +1803,20 @@ UA_SetTransAccelParametersSetDataType_encodeBinary(const UA_SetTransAccelParamet
 static UA_INLINE UA_StatusCode
 UA_SetTransAccelParametersSetDataType_decodeBinary(const UA_ByteString *src, size_t *offset, UA_SetTransAccelParametersSetDataType *dst) {
     return UA_decodeBinary(src, offset, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELPARAMETERSSETDATATYPE], NULL);
+}
+
+/* ActuateJointsParametersSetDataType */
+static UA_INLINE size_t
+UA_ActuateJointsParametersSetDataType_calcSizeBinary(const UA_ActuateJointsParametersSetDataType *src) {
+    return UA_calcSizeBinary(src, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE]);
+}
+static UA_INLINE UA_StatusCode
+UA_ActuateJointsParametersSetDataType_encodeBinary(const UA_ActuateJointsParametersSetDataType *src, UA_Byte **bufPos, const UA_Byte *bufEnd) {
+    return UA_encodeBinary(src, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE], bufPos, &bufEnd, NULL, NULL);
+}
+static UA_INLINE UA_StatusCode
+UA_ActuateJointsParametersSetDataType_decodeBinary(const UA_ByteString *src, size_t *offset, UA_ActuateJointsParametersSetDataType *dst) {
+    return UA_decodeBinary(src, offset, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE], NULL);
 }
 
 /* SetTransAccelDataType */

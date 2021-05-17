@@ -1,5 +1,5 @@
 /* Generated from CRCL.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py
- * on host jbg by user jbg at 2021-05-11 12:50:17 */
+ * on host jbg by user jbg at 2021-05-17 06:32:08 */
 
 #include "types_crcl_generated.h"
 
@@ -146,49 +146,6 @@ static UA_DataTypeMember SetMotionCoordinationParametersSetDataType_members[2] =
     UA_TYPENAME("CRCLCoordinated") /* .memberName */
 },};
 
-/* CRCL_ActuateJointDataType */
-static UA_DataTypeMember CRCL_ActuateJointDataType_members[5] = {
-{
-    UA_TYPES_UINT32, /* .memberTypeIndex */
-    0, /* .padding */
-    true, /* .namespaceZero */
-    false, /* .isArray */
-    false  /* .isOptional */
-    UA_TYPENAME("Id") /* .memberName */
-},
-{
-    UA_TYPES_STRING, /* .memberTypeIndex */
-    offsetof(UA_CRCL_ActuateJointDataType, name) - offsetof(UA_CRCL_ActuateJointDataType, id) - sizeof(UA_UInt32), /* .padding */
-    true, /* .namespaceZero */
-    false, /* .isArray */
-    false  /* .isOptional */
-    UA_TYPENAME("Name") /* .memberName */
-},
-{
-    UA_TYPES_INT32, /* .memberTypeIndex */
-    offsetof(UA_CRCL_ActuateJointDataType, jointNumber) - offsetof(UA_CRCL_ActuateJointDataType, name) - sizeof(UA_String), /* .padding */
-    true, /* .namespaceZero */
-    false, /* .isArray */
-    false  /* .isOptional */
-    UA_TYPENAME("JointNumber") /* .memberName */
-},
-{
-    UA_TYPES_DOUBLE, /* .memberTypeIndex */
-    offsetof(UA_CRCL_ActuateJointDataType, cRCLJointPosition) - offsetof(UA_CRCL_ActuateJointDataType, jointNumber) - sizeof(UA_Int32), /* .padding */
-    true, /* .namespaceZero */
-    false, /* .isArray */
-    false  /* .isOptional */
-    UA_TYPENAME("CRCLJointPosition") /* .memberName */
-},
-{
-    UA_TYPES_VARIANT, /* .memberTypeIndex */
-    offsetof(UA_CRCL_ActuateJointDataType, cRCLJointDetails) - offsetof(UA_CRCL_ActuateJointDataType, cRCLJointPosition) - sizeof(UA_Double), /* .padding */
-    true, /* .namespaceZero */
-    false, /* .isArray */
-    false  /* .isOptional */
-    UA_TYPENAME("CRCLJointDetails") /* .memberName */
-},};
-
 /* DisableGripperParametersSetDataType */
 static UA_DataTypeMember DisableGripperParametersSetDataType_members[2] = {
 {
@@ -206,25 +163,6 @@ static UA_DataTypeMember DisableGripperParametersSetDataType_members[2] = {
     false, /* .isArray */
     false  /* .isOptional */
     UA_TYPENAME("CRCLGripperName") /* .memberName */
-},};
-
-/* CRCL_JointDetailsDataType */
-static UA_DataTypeMember CRCL_JointDetailsDataType_members[2] = {
-{
-    UA_TYPES_UINT32, /* .memberTypeIndex */
-    0, /* .padding */
-    true, /* .namespaceZero */
-    false, /* .isArray */
-    false  /* .isOptional */
-    UA_TYPENAME("Id") /* .memberName */
-},
-{
-    UA_TYPES_STRING, /* .memberTypeIndex */
-    offsetof(UA_CRCL_JointDetailsDataType, name) - offsetof(UA_CRCL_JointDetailsDataType, id) - sizeof(UA_UInt32), /* .padding */
-    true, /* .namespaceZero */
-    false, /* .isArray */
-    false  /* .isOptional */
-    UA_TYPENAME("Name") /* .memberName */
 },};
 
 /* CRCLCommandParametersSetDataType */
@@ -2076,6 +2014,25 @@ static UA_DataTypeMember EnableSensorParametersSetDataType_members[3] = {
     UA_TYPENAME("CRCLSensorOption") /* .memberName */
 },};
 
+/* CRCL_JointDetailsDataType */
+static UA_DataTypeMember CRCL_JointDetailsDataType_members[2] = {
+{
+    UA_TYPES_CRCL_CRCL_JOINTSPEEDACCELDATATYPE, /* .memberTypeIndex */
+    offsetof(UA_CRCL_JointDetailsDataType, fields.jointSpeedAccel), /* .padding */
+    false, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("JointSpeedAccel") /* .memberName */
+},
+{
+    UA_TYPES_CRCL_CRCL_JOINTFORCETORQUEDATATYPE, /* .memberTypeIndex */
+    offsetof(UA_CRCL_JointDetailsDataType, fields.jointForceTorque), /* .padding */
+    false, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("JointForceTorque") /* .memberName */
+},};
+
 /* CRCL_SensorStatusDataType */
 static UA_DataTypeMember CRCL_SensorStatusDataType_members[6] = {
 {
@@ -2659,7 +2616,7 @@ static UA_DataTypeMember EnableGripperParametersSetDataType_members[3] = {
 },};
 
 /* ConfigureJointReportsDataType */
-static UA_DataTypeMember ConfigureJointReportsDataType_members[4] = {
+static UA_DataTypeMember ConfigureJointReportsDataType_members[8] = {
 {
     UA_TYPES_UINT32, /* .memberTypeIndex */
     0, /* .padding */
@@ -2677,16 +2634,48 @@ static UA_DataTypeMember ConfigureJointReportsDataType_members[4] = {
     UA_TYPENAME("Name") /* .memberName */
 },
 {
-    UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    offsetof(UA_ConfigureJointReportsDataType, reset) - offsetof(UA_ConfigureJointReportsDataType, name) - sizeof(UA_String), /* .padding */
+    UA_TYPES_UINT32, /* .memberTypeIndex */
+    offsetof(UA_ConfigureJointReportsDataType, commandID) - offsetof(UA_ConfigureJointReportsDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
-    UA_TYPENAME("Reset") /* .memberName */
+    UA_TYPENAME("CommandID") /* .memberName */
+},
+{
+    UA_TYPES_BOOLEAN, /* .memberTypeIndex */
+    offsetof(UA_ConfigureJointReportsDataType, cRCLRealTimeCommand) - offsetof(UA_ConfigureJointReportsDataType, commandID) - sizeof(UA_UInt32), /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("CRCLRealTimeCommand") /* .memberName */
+},
+{
+    UA_TYPES_NODEID, /* .memberTypeIndex */
+    offsetof(UA_ConfigureJointReportsDataType, cRCLRealTimeParameterNode) - offsetof(UA_ConfigureJointReportsDataType, cRCLRealTimeCommand) - sizeof(UA_Boolean), /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("CRCLRealTimeParameterNode") /* .memberName */
+},
+{
+    UA_TYPES_CRCL_CRCL_GUARDDATATYPE, /* .memberTypeIndex */
+    offsetof(UA_ConfigureJointReportsDataType, guardSize) - offsetof(UA_ConfigureJointReportsDataType, cRCLRealTimeParameterNode) - sizeof(UA_NodeId), /* .padding */
+    false, /* .namespaceZero */
+    true, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Guard") /* .memberName */
+},
+{
+    UA_TYPES_BOOLEAN, /* .memberTypeIndex */
+    offsetof(UA_ConfigureJointReportsDataType, resetAll) - offsetof(UA_ConfigureJointReportsDataType, guard) - sizeof(void *), /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("ResetAll") /* .memberName */
 },
 {
     UA_TYPES_CRCL_CRCL_CONFIGUREJOINTREPORTDATATYPE, /* .memberTypeIndex */
-    offsetof(UA_ConfigureJointReportsDataType, configureJointReportSize) - offsetof(UA_ConfigureJointReportsDataType, reset) - sizeof(UA_Boolean), /* .padding */
+    offsetof(UA_ConfigureJointReportsDataType, configureJointReportSize) - offsetof(UA_ConfigureJointReportsDataType, resetAll) - sizeof(UA_Boolean), /* .padding */
     false, /* .namespaceZero */
     true, /* .isArray */
     false  /* .isOptional */
@@ -3035,15 +3024,15 @@ static UA_DataTypeMember ConfigureJointReportsParametersSetDataType_members[3] =
 },
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    offsetof(UA_ConfigureJointReportsParametersSetDataType, cRCLResetAllSize) - offsetof(UA_ConfigureJointReportsParametersSetDataType, cRCLRealTimeParameter) - sizeof(UA_Boolean), /* .padding */
+    offsetof(UA_ConfigureJointReportsParametersSetDataType, cRCLResetAll) - offsetof(UA_ConfigureJointReportsParametersSetDataType, cRCLRealTimeParameter) - sizeof(UA_Boolean), /* .padding */
     true, /* .namespaceZero */
-    true, /* .isArray */
+    false, /* .isArray */
     false  /* .isOptional */
     UA_TYPENAME("CRCLResetAll") /* .memberName */
 },
 {
     UA_TYPES_CRCL_CRCL_CONFIGUREJOINTREPORTDATATYPE, /* .memberTypeIndex */
-    offsetof(UA_ConfigureJointReportsParametersSetDataType, cRCLConfigureJointReportSize) - offsetof(UA_ConfigureJointReportsParametersSetDataType, cRCLResetAll) - sizeof(void *), /* .padding */
+    offsetof(UA_ConfigureJointReportsParametersSetDataType, cRCLConfigureJointReportSize) - offsetof(UA_ConfigureJointReportsParametersSetDataType, cRCLResetAll) - sizeof(UA_Boolean), /* .padding */
     false, /* .namespaceZero */
     true, /* .isArray */
     false  /* .isOptional */
@@ -3931,73 +3920,6 @@ static UA_DataTypeMember SetRotSpeedParametersSetDataType_members[2] = {
     UA_TYPENAME("CRCLRotSpeed") /* .memberName */
 },};
 
-/* ActuateJointsDataType */
-static UA_DataTypeMember ActuateJointsDataType_members[8] = {
-{
-    UA_TYPES_UINT32, /* .memberTypeIndex */
-    0, /* .padding */
-    true, /* .namespaceZero */
-    false, /* .isArray */
-    false  /* .isOptional */
-    UA_TYPENAME("Id") /* .memberName */
-},
-{
-    UA_TYPES_STRING, /* .memberTypeIndex */
-    offsetof(UA_ActuateJointsDataType, name) - offsetof(UA_ActuateJointsDataType, id) - sizeof(UA_UInt32), /* .padding */
-    true, /* .namespaceZero */
-    false, /* .isArray */
-    false  /* .isOptional */
-    UA_TYPENAME("Name") /* .memberName */
-},
-{
-    UA_TYPES_UINT32, /* .memberTypeIndex */
-    offsetof(UA_ActuateJointsDataType, commandID) - offsetof(UA_ActuateJointsDataType, name) - sizeof(UA_String), /* .padding */
-    true, /* .namespaceZero */
-    false, /* .isArray */
-    false  /* .isOptional */
-    UA_TYPENAME("CommandID") /* .memberName */
-},
-{
-    UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    offsetof(UA_ActuateJointsDataType, cRCLRealTimeCommand) - offsetof(UA_ActuateJointsDataType, commandID) - sizeof(UA_UInt32), /* .padding */
-    true, /* .namespaceZero */
-    false, /* .isArray */
-    false  /* .isOptional */
-    UA_TYPENAME("CRCLRealTimeCommand") /* .memberName */
-},
-{
-    UA_TYPES_NODEID, /* .memberTypeIndex */
-    offsetof(UA_ActuateJointsDataType, cRCLRealTimeParameterNode) - offsetof(UA_ActuateJointsDataType, cRCLRealTimeCommand) - sizeof(UA_Boolean), /* .padding */
-    true, /* .namespaceZero */
-    false, /* .isArray */
-    false  /* .isOptional */
-    UA_TYPENAME("CRCLRealTimeParameterNode") /* .memberName */
-},
-{
-    UA_TYPES_CRCL_CRCL_GUARDDATATYPE, /* .memberTypeIndex */
-    offsetof(UA_ActuateJointsDataType, guardSize) - offsetof(UA_ActuateJointsDataType, cRCLRealTimeParameterNode) - sizeof(UA_NodeId), /* .padding */
-    false, /* .namespaceZero */
-    true, /* .isArray */
-    false  /* .isOptional */
-    UA_TYPENAME("Guard") /* .memberName */
-},
-{
-    UA_TYPES_DOUBLE, /* .memberTypeIndex */
-    offsetof(UA_ActuateJointsDataType, cRCLJointSpeed) - offsetof(UA_ActuateJointsDataType, guard) - sizeof(void *), /* .padding */
-    true, /* .namespaceZero */
-    false, /* .isArray */
-    false  /* .isOptional */
-    UA_TYPENAME("CRCLJointSpeed") /* .memberName */
-},
-{
-    UA_TYPES_DOUBLE, /* .memberTypeIndex */
-    offsetof(UA_ActuateJointsDataType, cRCLJointAccel) - offsetof(UA_ActuateJointsDataType, cRCLJointSpeed) - sizeof(UA_Double), /* .padding */
-    true, /* .namespaceZero */
-    false, /* .isArray */
-    false  /* .isOptional */
-    UA_TYPENAME("CRCLJointAccel") /* .memberName */
-},};
-
 /* SetEndeffectorParametersDataType */
 static UA_DataTypeMember SetEndeffectorParametersDataType_members[7] = {
 {
@@ -4599,33 +4521,6 @@ static UA_DataTypeMember MoveThroughToDataType_members[9] = {
     UA_TYPENAME("NumPositions") /* .memberName */
 },};
 
-/* ActuateJointsParametersSetDataType */
-static UA_DataTypeMember ActuateJointsParametersSetDataType_members[3] = {
-{
-    UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
-    true, /* .namespaceZero */
-    false, /* .isArray */
-    false  /* .isOptional */
-    UA_TYPENAME("CRCLRealTimeParameter") /* .memberName */
-},
-{
-    UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE, /* .memberTypeIndex */
-    offsetof(UA_ActuateJointsParametersSetDataType, cRCLActuateJointSize) - offsetof(UA_ActuateJointsParametersSetDataType, cRCLRealTimeParameter) - sizeof(UA_Boolean), /* .padding */
-    false, /* .namespaceZero */
-    true, /* .isArray */
-    false  /* .isOptional */
-    UA_TYPENAME("CRCLActuateJoint") /* .memberName */
-},
-{
-    UA_TYPES_CRCL_CRCL_JOINTPOSITIONSTOLERANCESDATATYPE, /* .memberTypeIndex */
-    offsetof(UA_ActuateJointsParametersSetDataType, cRCLJointTolerances) - offsetof(UA_ActuateJointsParametersSetDataType, cRCLActuateJoint) - sizeof(void *), /* .padding */
-    false, /* .namespaceZero */
-    false, /* .isArray */
-    false  /* .isOptional */
-    UA_TYPENAME("CRCLJointTolerances") /* .memberName */
-},};
-
 /* DisableGripperDataType */
 static UA_DataTypeMember DisableGripperDataType_members[7] = {
 {
@@ -4742,6 +4637,49 @@ static UA_DataTypeMember SetLengthUnitsDataType_members[7] = {
     false, /* .isArray */
     false  /* .isOptional */
     UA_TYPENAME("UnitName") /* .memberName */
+},};
+
+/* CRCL_ActuateJointDataType */
+static UA_DataTypeMember CRCL_ActuateJointDataType_members[5] = {
+{
+    UA_TYPES_UINT32, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Id") /* .memberName */
+},
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    offsetof(UA_CRCL_ActuateJointDataType, name) - offsetof(UA_CRCL_ActuateJointDataType, id) - sizeof(UA_UInt32), /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
+{
+    UA_TYPES_INT32, /* .memberTypeIndex */
+    offsetof(UA_CRCL_ActuateJointDataType, jointNumber) - offsetof(UA_CRCL_ActuateJointDataType, name) - sizeof(UA_String), /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("JointNumber") /* .memberName */
+},
+{
+    UA_TYPES_DOUBLE, /* .memberTypeIndex */
+    offsetof(UA_CRCL_ActuateJointDataType, cRCLJointPosition) - offsetof(UA_CRCL_ActuateJointDataType, jointNumber) - sizeof(UA_Int32), /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("CRCLJointPosition") /* .memberName */
+},
+{
+    UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE, /* .memberTypeIndex */
+    offsetof(UA_CRCL_ActuateJointDataType, cRCLJointDetails) - offsetof(UA_CRCL_ActuateJointDataType, cRCLJointPosition) - sizeof(UA_Double), /* .padding */
+    false, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("CRCLJointDetails") /* .memberName */
 },};
 
 /* MoveThroughToParametersSetDataType */
@@ -5112,6 +5050,73 @@ static UA_DataTypeMember SetTransSpeedDataType_members[7] = {
     UA_TYPENAME("TransSpeed") /* .memberName */
 },};
 
+/* ActuateJointsDataType */
+static UA_DataTypeMember ActuateJointsDataType_members[8] = {
+{
+    UA_TYPES_UINT32, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Id") /* .memberName */
+},
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    offsetof(UA_ActuateJointsDataType, name) - offsetof(UA_ActuateJointsDataType, id) - sizeof(UA_UInt32), /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
+{
+    UA_TYPES_UINT32, /* .memberTypeIndex */
+    offsetof(UA_ActuateJointsDataType, commandID) - offsetof(UA_ActuateJointsDataType, name) - sizeof(UA_String), /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("CommandID") /* .memberName */
+},
+{
+    UA_TYPES_BOOLEAN, /* .memberTypeIndex */
+    offsetof(UA_ActuateJointsDataType, cRCLRealTimeCommand) - offsetof(UA_ActuateJointsDataType, commandID) - sizeof(UA_UInt32), /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("CRCLRealTimeCommand") /* .memberName */
+},
+{
+    UA_TYPES_NODEID, /* .memberTypeIndex */
+    offsetof(UA_ActuateJointsDataType, cRCLRealTimeParameterNode) - offsetof(UA_ActuateJointsDataType, cRCLRealTimeCommand) - sizeof(UA_Boolean), /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("CRCLRealTimeParameterNode") /* .memberName */
+},
+{
+    UA_TYPES_CRCL_CRCL_GUARDDATATYPE, /* .memberTypeIndex */
+    offsetof(UA_ActuateJointsDataType, guardSize) - offsetof(UA_ActuateJointsDataType, cRCLRealTimeParameterNode) - sizeof(UA_NodeId), /* .padding */
+    false, /* .namespaceZero */
+    true, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Guard") /* .memberName */
+},
+{
+    UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE, /* .memberTypeIndex */
+    offsetof(UA_ActuateJointsDataType, cRCLActuateJointSize) - offsetof(UA_ActuateJointsDataType, guard) - sizeof(void *), /* .padding */
+    false, /* .namespaceZero */
+    true, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("CRCLActuateJoint") /* .memberName */
+},
+{
+    UA_TYPES_CRCL_CRCL_JOINTPOSITIONSTOLERANCESDATATYPE, /* .memberTypeIndex */
+    offsetof(UA_ActuateJointsDataType, cRCLJointTolerances) - offsetof(UA_ActuateJointsDataType, cRCLActuateJoint) - sizeof(void *), /* .padding */
+    false, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("CRCLJointTolerances") /* .memberName */
+},};
+
 /* CRCL_PoseAndSetDataType */
 static UA_DataTypeMember CRCL_PoseAndSetDataType_members[11] = {
 {
@@ -5220,6 +5225,33 @@ static UA_DataTypeMember SetTransAccelParametersSetDataType_members[2] = {
     false, /* .isArray */
     false  /* .isOptional */
     UA_TYPENAME("CRCLTransAccel") /* .memberName */
+},};
+
+/* ActuateJointsParametersSetDataType */
+static UA_DataTypeMember ActuateJointsParametersSetDataType_members[3] = {
+{
+    UA_TYPES_BOOLEAN, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("CRCLRealTimeParameter") /* .memberName */
+},
+{
+    UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE, /* .memberTypeIndex */
+    offsetof(UA_ActuateJointsParametersSetDataType, cRCLActuateJointSize) - offsetof(UA_ActuateJointsParametersSetDataType, cRCLRealTimeParameter) - sizeof(UA_Boolean), /* .padding */
+    false, /* .namespaceZero */
+    true, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("CRCLActuateJoint") /* .memberName */
+},
+{
+    UA_TYPES_CRCL_CRCL_JOINTPOSITIONSTOLERANCESDATATYPE, /* .memberTypeIndex */
+    offsetof(UA_ActuateJointsParametersSetDataType, cRCLJointTolerances) - offsetof(UA_ActuateJointsParametersSetDataType, cRCLActuateJoint) - sizeof(void *), /* .padding */
+    false, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("CRCLJointTolerances") /* .memberName */
 },};
 
 /* SetTransAccelDataType */
@@ -5715,19 +5747,6 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     SetMotionCoordinationParametersSetDataType_members  /* .members */
     UA_TYPENAME("SetMotionCoordinationParametersSetDataType") /* .typeName */
 },
-/* CRCL_ActuateJointDataType */
-{
-    {6, UA_NODEIDTYPE_NUMERIC, {15059LU}}, /* .typeId */
-    {6, UA_NODEIDTYPE_NUMERIC, {15991LU}}, /* .binaryEncodingId */
-    sizeof(UA_CRCL_ActuateJointDataType), /* .memSize */
-    UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE, /* .typeIndex */
-    UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
-    false, /* .pointerFree */
-    false, /* .overlayable */
-    5, /* .membersSize */
-    CRCL_ActuateJointDataType_members  /* .members */
-    UA_TYPENAME("CRCL_ActuateJointDataType") /* .typeName */
-},
 /* DisableGripperParametersSetDataType */
 {
     {6, UA_NODEIDTYPE_NUMERIC, {15972LU}}, /* .typeId */
@@ -5740,19 +5759,6 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     2, /* .membersSize */
     DisableGripperParametersSetDataType_members  /* .members */
     UA_TYPENAME("DisableGripperParametersSetDataType") /* .typeName */
-},
-/* CRCL_JointDetailsDataType */
-{
-    {6, UA_NODEIDTYPE_NUMERIC, {15044LU}}, /* .typeId */
-    {6, UA_NODEIDTYPE_NUMERIC, {15135LU}}, /* .binaryEncodingId */
-    sizeof(UA_CRCL_JointDetailsDataType), /* .memSize */
-    UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE, /* .typeIndex */
-    UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
-    false, /* .pointerFree */
-    false, /* .overlayable */
-    2, /* .membersSize */
-    CRCL_JointDetailsDataType_members  /* .members */
-    UA_TYPENAME("CRCL_JointDetailsDataType") /* .typeName */
 },
 /* CRCLCommandParametersSetDataType */
 {
@@ -6521,6 +6527,19 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     EnableSensorParametersSetDataType_members  /* .members */
     UA_TYPENAME("EnableSensorParametersSetDataType") /* .typeName */
 },
+/* CRCL_JointDetailsDataType */
+{
+    {6, UA_NODEIDTYPE_NUMERIC, {15044LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15135LU}}, /* .binaryEncodingId */
+    sizeof(UA_CRCL_JointDetailsDataType), /* .memSize */
+    UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE, /* .typeIndex */
+    UA_DATATYPEKIND_UNION, /* .typeKind */
+    false, /* .pointerFree */
+    false, /* .overlayable */
+    2, /* .membersSize */
+    CRCL_JointDetailsDataType_members  /* .members */
+    UA_TYPENAME("CRCL_JointDetailsDataType") /* .typeName */
+},
 /* CRCL_SensorStatusDataType */
 {
     {6, UA_NODEIDTYPE_NUMERIC, {15085LU}}, /* .typeId */
@@ -6660,7 +6679,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    4, /* .membersSize */
+    8, /* .membersSize */
     ConfigureJointReportsDataType_members  /* .members */
     UA_TYPENAME("ConfigureJointReportsDataType") /* .typeName */
 },
@@ -7002,19 +7021,6 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     SetRotSpeedParametersSetDataType_members  /* .members */
     UA_TYPENAME("SetRotSpeedParametersSetDataType") /* .typeName */
 },
-/* ActuateJointsDataType */
-{
-    {6, UA_NODEIDTYPE_NUMERIC, {15048LU}}, /* .typeId */
-    {6, UA_NODEIDTYPE_NUMERIC, {15139LU}}, /* .binaryEncodingId */
-    sizeof(UA_ActuateJointsDataType), /* .memSize */
-    UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE, /* .typeIndex */
-    UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
-    false, /* .pointerFree */
-    false, /* .overlayable */
-    8, /* .membersSize */
-    ActuateJointsDataType_members  /* .members */
-    UA_TYPENAME("ActuateJointsDataType") /* .typeName */
-},
 /* SetEndeffectorParametersDataType */
 {
     {6, UA_NODEIDTYPE_NUMERIC, {15914LU}}, /* .typeId */
@@ -7158,19 +7164,6 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     MoveThroughToDataType_members  /* .members */
     UA_TYPENAME("MoveThroughToDataType") /* .typeName */
 },
-/* ActuateJointsParametersSetDataType */
-{
-    {6, UA_NODEIDTYPE_NUMERIC, {15695LU}}, /* .typeId */
-    {6, UA_NODEIDTYPE_NUMERIC, {16323LU}}, /* .binaryEncodingId */
-    sizeof(UA_ActuateJointsParametersSetDataType), /* .memSize */
-    UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE, /* .typeIndex */
-    UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
-    false, /* .pointerFree */
-    false, /* .overlayable */
-    3, /* .membersSize */
-    ActuateJointsParametersSetDataType_members  /* .members */
-    UA_TYPENAME("ActuateJointsParametersSetDataType") /* .typeName */
-},
 /* DisableGripperDataType */
 {
     {6, UA_NODEIDTYPE_NUMERIC, {15073LU}}, /* .typeId */
@@ -7196,6 +7189,19 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     7, /* .membersSize */
     SetLengthUnitsDataType_members  /* .members */
     UA_TYPENAME("SetLengthUnitsDataType") /* .typeName */
+},
+/* CRCL_ActuateJointDataType */
+{
+    {6, UA_NODEIDTYPE_NUMERIC, {15059LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15991LU}}, /* .binaryEncodingId */
+    sizeof(UA_CRCL_ActuateJointDataType), /* .memSize */
+    UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE, /* .typeIndex */
+    UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
+    false, /* .pointerFree */
+    false, /* .overlayable */
+    5, /* .membersSize */
+    CRCL_ActuateJointDataType_members  /* .members */
+    UA_TYPENAME("CRCL_ActuateJointDataType") /* .typeName */
 },
 /* MoveThroughToParametersSetDataType */
 {
@@ -7301,6 +7307,19 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     SetTransSpeedDataType_members  /* .members */
     UA_TYPENAME("SetTransSpeedDataType") /* .typeName */
 },
+/* ActuateJointsDataType */
+{
+    {6, UA_NODEIDTYPE_NUMERIC, {15048LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {15139LU}}, /* .binaryEncodingId */
+    sizeof(UA_ActuateJointsDataType), /* .memSize */
+    UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE, /* .typeIndex */
+    UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
+    false, /* .pointerFree */
+    false, /* .overlayable */
+    8, /* .membersSize */
+    ActuateJointsDataType_members  /* .members */
+    UA_TYPENAME("ActuateJointsDataType") /* .typeName */
+},
 /* CRCL_PoseAndSetDataType */
 {
     {6, UA_NODEIDTYPE_NUMERIC, {15039LU}}, /* .typeId */
@@ -7326,6 +7345,19 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     2, /* .membersSize */
     SetTransAccelParametersSetDataType_members  /* .members */
     UA_TYPENAME("SetTransAccelParametersSetDataType") /* .typeName */
+},
+/* ActuateJointsParametersSetDataType */
+{
+    {6, UA_NODEIDTYPE_NUMERIC, {15695LU}}, /* .typeId */
+    {6, UA_NODEIDTYPE_NUMERIC, {16323LU}}, /* .binaryEncodingId */
+    sizeof(UA_ActuateJointsParametersSetDataType), /* .memSize */
+    UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE, /* .typeIndex */
+    UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
+    false, /* .pointerFree */
+    false, /* .overlayable */
+    3, /* .membersSize */
+    ActuateJointsParametersSetDataType_members  /* .members */
+    UA_TYPENAME("ActuateJointsParametersSetDataType") /* .typeName */
 },
 /* SetTransAccelDataType */
 {

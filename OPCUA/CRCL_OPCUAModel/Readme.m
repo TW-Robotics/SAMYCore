@@ -6,3 +6,5 @@ sudo docker run       --mount type=bind,source=$(pwd),target=/model/src       --
 
 
 In order to directly update the model and make it available in the open62541 server/clients, just use sudo ./CompileModel.sh
+
+

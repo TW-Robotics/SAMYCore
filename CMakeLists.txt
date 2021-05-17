@@ -20,7 +20,8 @@ project(SAMYCore VERSION 0.1 LANGUAGES C CXX)
 # open62541 v1.2 must be installed!
 # If in custom path, then use -DCMAKE_PREFIX_PATH=/home/user/installcmake_minimum_required(VERSION 3.2)
 find_package(open62541 1.2 REQUIRED COMPONENTS FullNamespace)
-find_package( yaml-cpp )
+find_package( yaml-cpp REQUIRED )
+find_package(Catch2 REQUIRED)
 
 set(CMAKE_C_COMPILER "g++")
 #set(CMAKE_CXX_COMPILER "g++")
@@ -41,6 +42,7 @@ include_directories("${PROJECT_SOURCE_DIR}/OPCUA/serverGenerator/include")
 include_directories("${PROJECT_SOURCE_DIR}/Common/include")
 include_directories("${PROJECT_SOURCE_DIR}/Parsers/include")
 include_directories("${PROJECT_SOURCE_DIR}/Utils/include")
+include_directories("${PROJECT_SOURCE_DIR}/ThirdParties/spdlog/include")
 
 # The generated files are: "namespace_${NAMESPACE_NAME}_... .c/.h"
 set(NAMESPACE_NAME_CRCL "crcl")
@@ -62,7 +64,7 @@ ua_generate_nodeset_and_datatypes(
         FILE_BSD "${CMAKE_CURRENT_LIST_DIR}/OPCUA/all_models/Published/DI/Opc.Ua.Di.Types.bsd"
         OUTPUT_DIR "${GENERATE_OUTPUT_DIR}"
     # This namespace index must match the order in which you are adding the nodeset in the source code
-        NAMESPACE_MAP 1:http://opcfoundation.org/UA/DI/
+        NAMESPACE_MAP 2:http://opcfoundation.org/UA/DI/
 )
 
 ua_generate_nodeset_and_datatypes(
@@ -74,7 +76,7 @@ ua_generate_nodeset_and_datatypes(
         FILE_BSD "${CMAKE_CURRENT_LIST_DIR}/OPCUA/all_models/Published/Robotics/Opc.Ua.Robotics.Types.bsd"
         OUTPUT_DIR "${GENERATE_OUTPUT_DIR}"
     # This namespace index must match the order in which you are adding the nodeset in the source code
-        NAMESPACE_MAP 2:http://opcfoundation.org/UA/Robotics/
+        NAMESPACE_MAP 3:http://opcfoundation.org/UA/Robotics/
         DEPENDS "${NAMESPACE_NAME_DI}"
 )
 
@@ -87,7 +89,7 @@ ua_generate_nodeset_and_datatypes(
         FILE_BSD "${CMAKE_CURRENT_LIST_DIR}/OPCUA/all_models/Published/fortiss_di/fortiss.Di.Types.bsd"
         OUTPUT_DIR "${GENERATE_OUTPUT_DIR}"
     # This namespace index must match the order in which you are adding the nodeset in the source code
-        NAMESPACE_MAP 3:https://fortiss.org/UA/DI/
+        NAMESPACE_MAP 4:https://fortiss.org/UA/DI/
         DEPENDS "${NAMESPACE_NAME_ROBOTICS}"
 )
 
@@ -100,7 +102,7 @@ ua_generate_nodeset_and_datatypes(
         FILE_BSD "${CMAKE_CURRENT_LIST_DIR}/OPCUA/all_models/Published/fortiss_robotics/fortiss.Robotics.Types.bsd"
         OUTPUT_DIR "${GENERATE_OUTPUT_DIR}"
     # This namespace index must match the order in which you are adding the nodeset in the source code
-        NAMESPACE_MAP 4:https://fortiss.org/UA/Robotics/
+        NAMESPACE_MAP 5:https://fortiss.org/UA/Robotics/
         DEPENDS "${NAMESPACE_NAME_FORTISS_DI}"
 )
 
@@ -113,7 +115,7 @@ ua_generate_nodeset_and_datatypes(
         FILE_BSD "${CMAKE_CURRENT_LIST_DIR}/OPCUA/all_models/Published/CRCL/CRCL.Types.bsd"
         OUTPUT_DIR "${GENERATE_OUTPUT_DIR}"
     # This namespace index must match the order in which you are adding the nodeset in the source code
-        NAMESPACE_MAP 5:https://crcl.org
+        NAMESPACE_MAP 6:https://crcl.org
 )
 
 ua_generate_nodeset_and_datatypes(
@@ -125,11 +127,11 @@ ua_generate_nodeset_and_datatypes(
         FILE_BSD "${CMAKE_CURRENT_LIST_DIR}/OPCUA/all_models/Published/kuka_iiwa/Kuka.iiwa.Types.bsd"
         OUTPUT_DIR "${GENERATE_OUTPUT_DIR}"
     # This namespace index must match the order in which you are adding the nodeset in the source code
-        NAMESPACE_MAP 6:https://fortiss.org/UA/kuka_iiwa/
+        NAMESPACE_MAP 7:https://fortiss.org/UA/kuka_iiwa/
         DEPENDS "${NAMESPACE_NAME_FORTISS_ROBOTICS}"
 )
 
-add_executable(${PROJECT_NAME}
+add_library(SAMYCore_Library STATIC
                 ${UA_NODESET_DI_SOURCES}
                 ${UA_TYPES_DI_SOURCES}
                 ${UA_NODESET_ROBOTICS_SOURCES}
@@ -148,7 +150,20 @@ add_executable(${PROJECT_NAME}
                 "./Parsers/yaml_parser.cpp"
                 "./Utils/samyskill.cpp"
                 "./OPCUA/serverGenerator/serverGenerator.cpp"
-                "main.cpp")
+                )
+
+add_executable(testsClient
+               "./Tests/CRCLnamespace_tests/testsClient.cpp"
+               )
+
+add_executable(testsServer
+               "./Tests/CRCLnamespace_tests/testsServer.cpp"
+               )
+
+
+add_executable(${PROJECT_NAME}
+               "main.cpp"
+               )
 
 # Make sure the nodeset compiler is execute before compiling the main file
 add_dependencies(${PROJECT_NAME}
@@ -160,4 +175,17 @@ add_dependencies(${PROJECT_NAME}
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_CRCL}
                  )
 
-target_link_libraries(${PROJECT_NAME} open62541::open62541 yaml-cpp)
+# Make sure the nodeset compiler is execute before compiling the main file
+add_dependencies(testsClient
+                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_DI}
+                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_ROBOTICS}
+                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_DI}
+                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_ROBOTICS}
+                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_KUKA_IIWA}
+                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_CRCL}
+                 )
+
+target_link_libraries(SAMYCore_Library PRIVATE open62541::open62541 yaml-cpp)
+target_link_libraries(testsClient PRIVATE Catch2::Catch2 Catch2::Catch2WithMain SAMYCore_Library)
+target_link_libraries(testsServer PRIVATE Catch2::Catch2 Catch2::Catch2WithMain SAMYCore_Library)
+target_link_libraries(${PROJECT_NAME} SAMYCore_Library)

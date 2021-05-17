@@ -1,0 +1,12 @@
+Robots:
+  - Robot:
+      Name: Robot
+      ID: 1234
+      Address: "opc.tcp://localhost:4840"
+      OPCUARoboticsFile: RobotUR5.xml
+      Skills:
+         - MoveToBasic
+         - MoveToWithSpeed
+         - SetEndEffectorSkill
+         - PickSkill
+         - PickAndPlaceSkill
