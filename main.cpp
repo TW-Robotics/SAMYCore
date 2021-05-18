@@ -80,9 +80,9 @@ int main(int argc, char** argv){
         SAMYCoreOPCUAInterface.detach();
 
         /* Connect SAMYCore to all the plugins */
-/*        for(int i=0; i < robots->size(); i++){
+        for(int i=0; i < robots->size(); i++){
             retVal |= (*robots)[i].createConnectionToPlugin();
-        }*/
+        }
 
 
         while( running && retVal == UA_STATUSCODE_GOOD ){
