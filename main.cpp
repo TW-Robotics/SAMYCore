@@ -96,7 +96,6 @@ int main(int argc, char** argv){
                 if( (*robots)[i].lastRequestedSkill < (*robots)[i].robotPlan.size() ){
                     retVal |= UA_Client_run_iterate((*robots)[i].client.get(), 1);
                     std::this_thread::sleep_for(std::chrono::milliseconds(1));
-                    finished
                 }
             }
         }
