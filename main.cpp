@@ -72,10 +72,10 @@ int main(int argc, char** argv){
 
     UA_StatusCode retVal = SAMY::ServerGenerator::generateSAMYCoreServer( server, robots, skills );
     if( retVal != UA_STATUSCODE_GOOD ){
-        UA_LOG_ERROR(UA_Log_Stdout, UA_LOGCATEGORY_SERVER, "Could not add the fixed information nodesets. "
+        UA_LOG_ERROR(UA_Log_Stdout, UA_LOGCATEGORY_SERVER, "Could not add the fixed information models nodesets. "
         "Check previous output for any error.");
         retVal = UA_STATUSCODE_BADUNEXPECTEDERROR;
-    } else {/*If custom namespace succesfully added*/
+    } else {/*If custom namespaces succesfully added*/
         std::thread SAMYCoreOPCUAInterface(UA_Server_run, server, &running);
         SAMYCoreOPCUAInterface.detach();
 
@@ -84,16 +84,25 @@ int main(int argc, char** argv){
             retVal |= (*robots)[i].createConnectionToPlugin();
         }
 
+        std::cout<< "Request skills to the system and press enter to continue..." << std::endl;
+
+        std::getchar();
+
+        std::cout<< "Execution of skills start!" << std::endl;
+
 
         while( running && retVal == UA_STATUSCODE_GOOD ){
             for(int i=0; i < robots->size(); i++){
                 if( (*robots)[i].lastRequestedSkill < (*robots)[i].robotPlan.size() ){
-               //     retVal |= UA_Client_run_iterate((*robots)[i].client.get(), 1);
+                    retVal |= UA_Client_run_iterate((*robots)[i].client.get(), 1);
                     std::this_thread::sleep_for(std::chrono::milliseconds(1));
+                    finished
                 }
             }
+            if( unfinished == false )
+                break;
         }
-    }
+    }    
 
     UA_Server_delete( server );
 

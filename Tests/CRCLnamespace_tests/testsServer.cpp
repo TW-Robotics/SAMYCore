@@ -32,7 +32,7 @@ TEST_CASE("Test main", "[TestTag]"){
 
         UA_Server* server = UA_Server_new();
         UA_ServerConfig *config = UA_Server_getConfig(server);
-        UA_ServerConfig_setMinimal(config, 4841, NULL);
+        UA_ServerConfig_setMinimal(config, 4567, NULL);
 
         SAMY::Parsers::SkillsParser skillsParser;
         REQUIRE( 1 ==  skillsParser.parse( "../Skills.yaml" ) );
@@ -65,7 +65,7 @@ TEST_CASE("Server for testing nodes addition", "[TestTag]"){
 
         UA_Server* server = UA_Server_new();
         UA_ServerConfig *config = UA_Server_getConfig(server);
-        UA_ServerConfig_setMinimal(config, 4841, NULL);
+        UA_ServerConfig_setMinimal(config, 4567, NULL);
 
         REQUIRE( 0 == namespace_crcl_generated( server ) );
 
@@ -164,7 +164,7 @@ TEST_CASE("Server for testing clients against it", "[ServerTest]"){
 
     UA_Server* server = UA_Server_new();
     UA_ServerConfig *config = UA_Server_getConfig(server);
-    UA_ServerConfig_setMinimal(config, 4841, NULL);
+    UA_ServerConfig_setMinimal(config, 4567, NULL);
 
     SAMY::Parsers::SkillsParser skillsParser;
     REQUIRE( 1 ==  skillsParser.parse( "../Skills.yaml" ) );

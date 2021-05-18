@@ -27,7 +27,7 @@
 TEST_CASE("Test client - Write commands", "[WriteCommands]"){
 
     std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
-    std::string address = "opc.tcp://localhost:4841";
+    std::string address = "opc.tcp://localhost:4567";
     UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
     client.reset( UA_Client_new() );
@@ -1052,7 +1052,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
 TEST_CASE("Test client - Read commands", "[ReadCommands]"){
 
     std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
-    std::string address = "opc.tcp://localhost:4841";
+    std::string address = "opc.tcp://localhost:4567";
     UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
     client.reset( UA_Client_new() );
@@ -1630,7 +1630,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
 TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteCommandsInCRCLCommandsUnion]"){
 
     std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
-    std::string address = "opc.tcp://localhost:4841";
+    std::string address = "opc.tcp://localhost:4567";
     UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
     client.reset( UA_Client_new() );
@@ -2797,7 +2797,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
 TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadCommandsFromCRCLCommandsUnion]"){
 
     std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
-    std::string address = "opc.tcp://localhost:4841";
+    std::string address = "opc.tcp://localhost:4567";
     UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
     client.reset( UA_Client_new() );
@@ -3447,7 +3447,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
 TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkill]"){
 
     std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
-    std::string address = "opc.tcp://localhost:4841";
+    std::string address = "opc.tcp://localhost:4567";
     UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
     client.reset( UA_Client_new() );
@@ -4457,7 +4457,7 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 TEST_CASE("Test client - Read CRCLSkill", "[ReadCRCLSkill]"){
 
     std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
-    std::string address = "opc.tcp://localhost:4841";
+    std::string address = "opc.tcp://localhost:4567";
     UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
     client.reset( UA_Client_new() );
@@ -4510,7 +4510,7 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
     opcuaRobot.online = UA_TRUE;
     opcuaRobot.requested_Skill_Success = UA_TRUE;
 
-    std::string address = "opc.tcp://localhost:4841";
+    std::string address = "opc.tcp://localhost:4567";
     UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
     robot.client.reset( UA_Client_new() );
@@ -5520,7 +5520,7 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 TEST_CASE("Test client - Read Robot", "[ReadRobot]"){
 
     std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
-    std::string address = "opc.tcp://localhost:4841";
+    std::string address = "opc.tcp://localhost:4567";
     UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
     client.reset( UA_Client_new() );
@@ -5557,7 +5557,7 @@ TEST_CASE("Test client - Read Robot", "[ReadRobot]"){
 TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"){
 
     std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
-    std::string address = "opc.tcp://localhost:4841";
+    std::string address = "opc.tcp://localhost:4567";
     UA_DataTypeArray customParametersSetDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
     client.reset( UA_Client_new() );
@@ -6411,7 +6411,7 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
 TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParameterssParameters]"){
 
     std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
-    std::string address = "opc.tcp://localhost:4841";
+    std::string address = "opc.tcp://localhost:4567";
     UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
     client.reset( UA_Client_new() );

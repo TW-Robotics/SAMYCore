@@ -40,7 +40,7 @@ namespace SAMY{
         std::string address;
         std::vector<UA_CRCLSkillDataType> robotPlan;
         UA_UInt32 lastRequestedSkill = 0;
-        UA_NodeId SAMYRobotVariableNodeId = UA_NODEID_NULL;
+        UA_NodeId SAMYRobotVariableNodeId = UA_NODEID_STRING(1, "Robot");
         std::unique_ptr< UA_Client, ClientDeleter > client;
 
         UA_StatusCode createConnectionToPlugin( );

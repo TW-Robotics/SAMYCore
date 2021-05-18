@@ -39,95 +39,38 @@ sendNextSkillInstanceToRobot(UA_Client *client, UA_UInt32 subId, void *subContex
 
     UA_Boolean lastSkill_succeded = *(UA_Boolean*)value->value.data;
     if(lastSkill_succeded == true){
+
         SAMY::SAMYRobot* robot = (SAMY::SAMYRobot*)monContext;
-        UA_SAMYRobotDataType robotOPCUA;
 
-        robotOPCUA.id = robot->id;
-        robotOPCUA.name = robot->name;
+        std::cout<< robot->lastRequestedSkill << std::endl;
+        robot->SAMYRobotVariableNodeId = UA_NODEID_NUMERIC( 1, 111 );
+        robot->ipAddresses.iPAddress_Skill = UA_STRING( "Not set!" );
+        robot->ipAddresses.iPAddress_Status = UA_STRING( "Not set!" );
 
-        UA_PubSubIPAddresses pubSubAddresses;
-        pubSubAddresses.iPAddress_Skill = UA_STRING("None");
-        pubSubAddresses.iPAddress_Status = UA_STRING("None");
-        robotOPCUA.iPAddresses = pubSubAddresses;
+        UA_SAMYRobotDataType opcuaRobot;
+        opcuaRobot.active = UA_TRUE;
+        opcuaRobot.id = robot->id;
+        opcuaRobot.iPAddresses = robot->ipAddresses;
+        UA_String_copy( &robot->name, &opcuaRobot.name );
+        opcuaRobot.online = UA_TRUE;
+        opcuaRobot.requested_Skill_Success = UA_TRUE;
 
-        robotOPCUA.requested_Skill.cRCLCommands = robot->robotPlan[robot->lastRequestedSkill].cRCLCommands;
-        robotOPCUA.requested_Skill.cRCLCommandsSize = robot->robotPlan[robot->lastRequestedSkill].cRCLCommandsSize;
-        robotOPCUA.requested_Skill.id = robot->robotPlan[robot->lastRequestedSkill].id;;
-        robotOPCUA.requested_Skill.name = robot->robotPlan[robot->lastRequestedSkill].name;
+        UA_copy( &(robot->robotPlan[robot->lastRequestedSkill]),
+                                &opcuaRobot.requested_Skill,
+                                        &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE] );
 
-    for (int i=0; i<robotOPCUA.requested_Skill.cRCLCommandsSize; i++){
-        UA_CRCLCommandsUnionDataType* val = &(robotOPCUA.requested_Skill.cRCLCommands[i]);
-        printf("\n readSAMYRobot, COMMAND NUMBER %i \n", i);
-        printf("\n readSAMYRobot, switchValue %i \n", val->switchField);
+        UA_String str2;
+        UA_String_init( &str2 );
+        UA_print( &robot->robotPlan[robot->lastRequestedSkill], &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE], &str2 );
+        std::cout<< str2.data << std::endl;
 
-        if(val->switchField == 0){
-        printf("\n switchValue empty \n");
-        }else if(val->switchField == UA_CRCLCOMMANDSUNIONDATATYPESWITCH_INITCANONCOMMAND){
-            printf("\n readSAMYRobot, UA_CRCLCOMMANDSUNIONDATATYPESWITCH_INITCANONCOMMAND");
-            /*
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &opcuaRobot, &UA_TYPES_CRCL[UA_TYPES_CRCL_SAMYROBOTDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
 
-            UA_InitCanonDataType* canon = (UA_InitCanonDataType*)&(val->fields);
-            printf("\n %i \n", canon->id);
-            printf("\n %i \n", canon->commandID);
-            printf("\n \n \n \n \n \n \n");*/
+        retVal |= UA_Client_writeValueAttribute(robot->client.get(), UA_NODEID_STRING(1, "Robot"), &var);
 
-        }else if( val->switchField == UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND){
-            UA_MoveToDataType* moveTo = (UA_MoveToDataType*)&(val->fields);
-            printf("\n UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND");
-/*
-            printf("\n %i \n", moveTo->id);
-            printf("\n %i \n", moveTo->commandID);
-            printf("\n %f \n", moveTo->endPosition.point.x);
-            printf("\n %f \n", moveTo->endPosition.point.y);
-            printf("\n %f \n", moveTo->endPosition.point.z);
-            printf("\n %f \n", moveTo->endPosition.xAxis.i);
-            printf("\n %f \n", moveTo->endPosition.xAxis.j);
-            printf("\n %f \n", moveTo->endPosition.xAxis.k);
-            printf("\n %f \n", moveTo->endPosition.zAxis.i);
-            printf("\n %f \n", moveTo->endPosition.zAxis.j);
-            printf("\n %f \n", moveTo->endPosition.zAxis.k);
-            std::cout<< moveTo->name.data << std::endl;
-
-            printf("\n \n \n \n \n \n \n");
-*/
-        }else if(val->switchField == UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DWELLCOMMAND){
-        printf("\n a \n");
-        }else if(val->switchField == UA_CRCLCOMMANDSUNIONDATATYPESWITCH_GETSTATUSCOMMAND){
-        printf("\n a \n");
-        }else if(val->switchField == UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETTRANSSPEEDCOMMAND){
-            printf("\n UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETTRANSSPEEDCOMMAND");
-
-            UA_SetTransSpeedDataType* setTransSpeed = (UA_SetTransSpeedDataType*)&(val->fields);
-/*            std::cout<< setTransSpeed->name.data << std::endl;
-            std::cout<< setTransSpeed->transSpeed.fields.transSpeedAbsoluteDataType.name.data << std::endl;
-            std::cout<< setTransSpeed->transSpeed.fields.transSpeedAbsoluteDataType.setting << std::endl;*/
-        }else if(val->switchField == UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETENDEFFECTORCOMMAND){
-            printf("\n UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETENDEFFECTORCOMMAND");
-
-            UA_SetEndeffectorDataType* setEndeffector = (UA_SetEndeffectorDataType*)&(val->fields);
-            /*
-            std::cout<< setEndeffector->name.data << std::endl;
-            std::cout<< setEndeffector->setting.fraction << std::endl;
-*/
-        }else if(val->switchField == UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MESSAGECOMMAND){
-        printf("\n a \n");
-        }else if(val->switchField == UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MESSAGECOMMAND){
-        printf("\n a \n");
-        }else if(val->switchField == UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENDCANONCOMMAND){
-            printf("\n readSAMYRobot, UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENDCANONCOMMAND");
-            UA_EndCanonDataType* canon = (UA_EndCanonDataType*)&(val->fields);
-    /*        printf("\n %i \n", canon->id);
-            printf("\n %i \n", canon->commandID);
-            printf("\n \n \n \n \n \n \n"); */
-        }
-    }
-
-        UA_Variant myVar;
-        UA_Variant_init(&myVar);
-        UA_Variant_setScalar(&myVar, &robotOPCUA,  &UA_TYPES_CRCL[UA_TYPES_CRCL_SAMYROBOTDATATYPE]);
-
-        UA_StatusCode retVal = UA_Client_writeValueAttribute(robot->client.get(),
-                                                                robot->SAMYRobotVariableNodeId, &myVar);
 
         if(retVal == UA_STATUSCODE_GOOD){
             std::cout<<"ROBOT CORRECTLY WRITTEN IN SAMYPLUGIN |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"<< std::endl;

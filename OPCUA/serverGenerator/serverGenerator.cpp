@@ -284,12 +284,17 @@ namespace ServerGenerator{
                     if( robot->robotSkills[i].createSkillInstance( server, &skill ) ){
                         robot->robotPlan.emplace_back( skill );
                         std::cout << "ADDED " << skill.name.data << " TO ROBOT " << robot->name.data << std::endl;
+          //              UA_String str;
+          //              UA_String_init( &str );
+          //              UA_print( &skill, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE], &str );
+          //              std::cout<< str.data << std::endl;
                     }else{
                         throw std::runtime_error( "COULD NOT ADD SKILL TO ROBOT PLAN" );
                     }
                     break;
                 }
             }
+
             return UA_STATUSCODE_GOOD;
         }
 
