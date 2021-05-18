@@ -296,6 +296,67 @@ TEST_CASE("Server for testing clients against it", "[ServerTest]"){
                                                  );
     REQUIRE( retVal == 0 );
 
+
+    /* Add a Command Parameters variable node */
+
+    std::vector<UA_DataType> typesVectorParams;
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_MESSAGEPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETOPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_MOVESCREWPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTOPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_DWELLPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGUREJOINTREPORTSPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_OPENTOOLCHANGERPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETROBOTPARAMETERSPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTACCELPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_STOPMOTIONPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLESENSORPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE] );
+
+
+    for(int i = 0; i < typesVectorParams.size(); i++ ){
+        UA_LocalizedText_init( &vattr.description );
+        UA_LocalizedText_init( &vattr.displayName );
+        vattr.description = UA_LOCALIZEDTEXT("", const_cast<char*>( typesVectorParams[i].typeName )  );
+        vattr.displayName = UA_LOCALIZEDTEXT("", const_cast<char*>( typesVectorParams[i].typeName ) );
+        UA_NodeId_init( &vattr.dataType );
+        vattr.dataType = typesVectorParams[i].typeId;
+
+        retVal |= UA_Server_addVariableNode( server,
+                                                     UA_NODEID_NUMERIC(1, i+1500),
+                                                     UA_NODEID_NUMERIC( 0, UA_NS0ID_OBJECTSFOLDER ),
+                                                     UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT ),
+                                                     UA_QUALIFIEDNAME(0, const_cast<char*>( typesVectorParams[i].typeName ) ),
+                                                     UA_NODEID_NUMERIC(0, UA_NS0ID_BASEDATAVARIABLETYPE),
+                                                     vattr, NULL, NULL
+                                                     );
+       REQUIRE( retVal == 0 );
+    }
+
+
     std::thread SAMYCoreOPCUAInterface(UA_Server_run, server, &running);
     SAMYCoreOPCUAInterface.detach();
 

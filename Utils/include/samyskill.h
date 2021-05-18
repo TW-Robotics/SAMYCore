@@ -173,8 +173,8 @@ public:
    UA_CRCLCommandsUnionDataType operator()(const UA_InitCanonParametersSetDataType& param)const{
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_INITCANONCOMMAND;
-       command.fields.initCanonCommand.cRCLRealTimeCommand = UA_FALSE;
-       command.fields.initCanonCommand.cRCLRealTimeParameterNode = UA_NODEID_NULL;
+       command.fields.initCanonCommand.realTimeCommand = UA_FALSE;
+       command.fields.initCanonCommand.realTimeParameterNode = UA_NODEID_NULL;
        command.fields.initCanonCommand.commandID = 0;
        command.fields.initCanonCommand.guard = NULL;
        command.fields.initCanonCommand.guardSize = 0;
@@ -187,8 +187,8 @@ public:
    UA_CRCLCommandsUnionDataType operator()(const UA_EndCanonParametersSetDataType& param)const{
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENDCANONCOMMAND;
-       command.fields.endCanonCommand.cRCLRealTimeCommand = UA_FALSE;
-       command.fields.endCanonCommand.cRCLRealTimeParameterNode = UA_NODEID_NULL;
+       command.fields.endCanonCommand.realTimeCommand = UA_FALSE;
+       command.fields.endCanonCommand.realTimeParameterNode = UA_NODEID_NULL;
        command.fields.endCanonCommand.commandID = 0;
        command.fields.endCanonCommand.guard = NULL;
        command.fields.endCanonCommand.guardSize = 0;
@@ -209,8 +209,8 @@ public:
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MESSAGECOMMAND;
-       command.fields.messageCommand.cRCLRealTimeCommand = UA_FALSE;
-       command.fields.messageCommand.cRCLRealTimeParameterNode = UA_NODEID_NULL;
+       command.fields.messageCommand.realTimeCommand = UA_FALSE;
+       command.fields.messageCommand.realTimeParameterNode = UA_NODEID_NULL;
        command.fields.messageCommand.commandID = 0;
        command.fields.messageCommand.guard = NULL;
        command.fields.messageCommand.guardSize = 0;
@@ -218,9 +218,9 @@ public:
        UA_String aux = UA_STRING( " " );
        UA_String_copy(&aux, &command.fields.messageCommand.name);
 
-       command.fields.messageCommand.message = std::move( params.cRCLMessage );
-       command.fields.messageCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.messageCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.messageCommand.message = std::move( params.message );
+       command.fields.messageCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.messageCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -242,10 +242,10 @@ public:
        command.fields.moveToCommand.guard = NULL;
        command.fields.moveToCommand.guardSize = 0;
 
-       command.fields.moveToCommand.moveStraight = std::move(  params.cRCLMoveStraight );
-       command.fields.moveToCommand.endPosition = std::move( params.cRCLEndPosition );
-       command.fields.moveToCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.moveToCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.moveToCommand.moveStraight = std::move(  params.moveStraight );
+       command.fields.moveToCommand.endPosition = std::move( params.endPosition );
+       command.fields.moveToCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.moveToCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -267,14 +267,14 @@ public:
        command.fields.moveScrewCommand.guard = NULL;
        command.fields.moveScrewCommand.guardSize = 0;
 
-       command.fields.moveScrewCommand.axialDistanceFree = params.cRCLAxialDistanceFree;
-       command.fields.moveScrewCommand.axialDistanceScrew = params.cRCLAxialDistanceScrew;
-       command.fields.moveScrewCommand.axisPoint = std::move( params.cRCLAxisPoint );
-       command.fields.moveScrewCommand.startPosition = std::move( params.cRCLStartPosition );
-       command.fields.moveScrewCommand.turn = params.cRCLTurn;
+       command.fields.moveScrewCommand.axialDistanceFree = params.axialDistanceFree;
+       command.fields.moveScrewCommand.axialDistanceScrew = params.axialDistanceScrew;
+       command.fields.moveScrewCommand.axisPoint = std::move( params.axisPoint );
+       command.fields.moveScrewCommand.startPosition = std::move( params.startPosition );
+       command.fields.moveScrewCommand.turn = params.turn;
 
-       command.fields.moveScrewCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.moveScrewCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.moveScrewCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.moveScrewCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -296,13 +296,13 @@ public:
        command.fields.moveThroughToCommand.guard = NULL;
        command.fields.moveThroughToCommand.guardSize = 0;
 
-       command.fields.moveThroughToCommand.moveStraight = params.cRCLMoveStraight;
-       command.fields.moveThroughToCommand.numPositions = params.cRCLNumPositions;
-       command.fields.moveThroughToCommand.waypointSize = params.cRCLWaypointSize;
-       command.fields.moveThroughToCommand.waypoint = params.cRCLWaypoint;
+       command.fields.moveThroughToCommand.moveStraight = params.moveStraight;
+       command.fields.moveThroughToCommand.numPositions = params.numPositions;
+       command.fields.moveThroughToCommand.waypointSize = params.waypointSize;
+       command.fields.moveThroughToCommand.waypoint = params.waypoint;
 
-       command.fields.moveThroughToCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.moveThroughToCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.moveThroughToCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.moveThroughToCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -324,10 +324,10 @@ public:
        command.fields.dwellCommand.guard = NULL;
        command.fields.dwellCommand.guardSize = 0;
 
-       command.fields.dwellCommand.dwellTime = params.cRCLDwellTime;
+       command.fields.dwellCommand.dwellTime = params.dwellTime;
 
-       command.fields.dwellCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.dwellCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.dwellCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.dwellCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -351,8 +351,8 @@ public:
 
 /* TODO: FIX THIS COMMAND, I THING SOMETHING IS NOT RIGHT IN THE INFORMATION MODELLING!!!!!*/
 
-       command.fields.actuateJointsCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.actuateJointsCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.actuateJointsCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.actuateJointsCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -375,8 +375,8 @@ public:
        command.fields.configureJointReportsCommand.guard = NULL;
        command.fields.configureJointReportsCommand.guardSize = 0;
 
-       command.fields.configureJointReportsCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.configureJointReportsCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.configureJointReportsCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.configureJointReportsCommand.realTimeParameterNode = realTimeParameterNodeId;
 */
        return command;
    }
@@ -398,10 +398,10 @@ public:
        command.fields.setDefaultJointPositionsTolerancesCommand.guard = NULL;
        command.fields.setDefaultJointPositionsTolerancesCommand.guardSize = 0;
 
-       command.fields.setDefaultJointPositionsTolerancesCommand.jointTolerances = params.cRCLJointTolerances;
+       command.fields.setDefaultJointPositionsTolerancesCommand.jointTolerances = params.jointTolerances;
 
-       command.fields.setDefaultJointPositionsTolerancesCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.setDefaultJointPositionsTolerancesCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.setDefaultJointPositionsTolerancesCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setDefaultJointPositionsTolerancesCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -423,8 +423,8 @@ public:
        command.fields.getStatusCommand.guard = NULL;
        command.fields.getStatusCommand.guardSize = 0;
 
-       command.fields.getStatusCommand.cRCLRealTimeCommand = UA_FALSE;
-       command.fields.getStatusCommand.cRCLRealTimeParameterNode = UA_NODEID_NULL;
+       command.fields.getStatusCommand.realTimeCommand = UA_FALSE;
+       command.fields.getStatusCommand.realTimeParameterNode = UA_NODEID_NULL;
 
        return command;
    }
@@ -446,8 +446,8 @@ public:
        command.fields.closeToolChangerCommand.guard = NULL;
        command.fields.closeToolChangerCommand.guardSize = 0;
 
-       command.fields.closeToolChangerCommand.cRCLRealTimeCommand = UA_FALSE;
-       command.fields.closeToolChangerCommand.cRCLRealTimeParameterNode = UA_NODEID_NULL;
+       command.fields.closeToolChangerCommand.realTimeCommand = UA_FALSE;
+       command.fields.closeToolChangerCommand.realTimeParameterNode = UA_NODEID_NULL;
 
        return command;
    }
@@ -469,8 +469,8 @@ public:
        command.fields.openToolChangerCommand.guard = NULL;
        command.fields.openToolChangerCommand.guardSize = 0;
 
-       command.fields.openToolChangerCommand.cRCLRealTimeCommand = UA_FALSE;
-       command.fields.openToolChangerCommand.cRCLRealTimeParameterNode = UA_NODEID_NULL;
+       command.fields.openToolChangerCommand.realTimeCommand = UA_FALSE;
+       command.fields.openToolChangerCommand.realTimeParameterNode = UA_NODEID_NULL;
 
        return command;
    }
@@ -492,17 +492,17 @@ public:
        command.fields.setRobotParametersCommand.guard = NULL;
        command.fields.setRobotParametersCommand.guardSize = 0;
 
-       command.fields.setRobotParametersCommand.parameterSettingSize = params.cRCLParameterSettingSize;
+       command.fields.setRobotParametersCommand.parameterSettingSize = params.parameterSettingSize;
        UA_CRCL_ParameterSettingDataType* paramsArray =
-                       (UA_CRCL_ParameterSettingDataType *)UA_Array_new(params.cRCLParameterSettingSize,
+                       (UA_CRCL_ParameterSettingDataType *)UA_Array_new(params.parameterSettingSize,
                                               &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_PARAMETERSETTINGDATATYPE]);
-       for(int i=0; i < params.cRCLParameterSettingSize; i++){
-           paramsArray[i] = params.cRCLParameterSetting[i];
+       for(int i=0; i < params.parameterSettingSize; i++){
+           paramsArray[i] = params.parameterSetting[i];
        }
        command.fields.setRobotParametersCommand.parameterSetting = paramsArray;
 
-       command.fields.setRobotParametersCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.setRobotParametersCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.setRobotParametersCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setRobotParametersCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -525,11 +525,11 @@ public:
        command.fields.setEndeffectorParametersCommand.guard = NULL;
        command.fields.setEndeffectorParametersCommand.guardSize = 0;
 
-       command.fields.setEndeffectorParametersCommand.parameterSetting = std::move( params.cRCLParameterSetting );
-       command.fields.setEndeffectorParametersCommand.parameterSettingSize = params.cRCLParameterSettingSize;
+       command.fields.setEndeffectorParametersCommand.parameterSetting = std::move( params.parameterSetting );
+       command.fields.setEndeffectorParametersCommand.parameterSettingSize = params.parameterSettingSize;
 
-       command.fields.setEndeffectorParametersCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.setEndeffectorParametersCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.setEndeffectorParametersCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setEndeffectorParametersCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -553,10 +553,10 @@ public:
        command.fields.setEndeffectorCommand.guard = NULL;
        command.fields.setEndeffectorCommand.guardSize = 0;
 
-       command.fields.setEndeffectorCommand.setting = params.cRCLSetting;
+       command.fields.setEndeffectorCommand.setting = params.setting;
 
-       command.fields.setEndeffectorCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.setEndeffectorCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.setEndeffectorCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setEndeffectorCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -579,10 +579,10 @@ public:
        command.fields.setTransAccelCommand.guard = NULL;
        command.fields.setTransAccelCommand.guardSize = 0;
 
-       command.fields.setTransAccelCommand.transAccel = params.cRCLTransAccel;
+       command.fields.setTransAccelCommand.transAccel = params.transAccel;
 
-       command.fields.setTransAccelCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.setTransAccelCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.setTransAccelCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setTransAccelCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -604,12 +604,12 @@ public:
        command.fields.setTransSpeedCommand.id = 0;
        command.fields.setTransSpeedCommand.guard = NULL;
        command.fields.setTransSpeedCommand.guardSize = 0;
-       command.fields.setTransSpeedCommand.transSpeed = params.cRCLTransSpeed;
+       command.fields.setTransSpeedCommand.transSpeed = params.transSpeed;
 
-       command.fields.setTransSpeedCommand.transSpeed = params.cRCLTransSpeed;
+       command.fields.setTransSpeedCommand.transSpeed = params.transSpeed;
 
-       command.fields.setTransSpeedCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.setTransSpeedCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.setTransSpeedCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setTransSpeedCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -632,10 +632,10 @@ public:
        command.fields.setRotAccelCommand.guard = NULL;
        command.fields.setRotAccelCommand.guardSize = 0;
 
-       command.fields.setRotAccelCommand.rotAccel = params.cRCLRotAccel;
+       command.fields.setRotAccelCommand.rotAccel = params.rotAccel;
 
-       command.fields.setRotAccelCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.setRotAccelCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.setRotAccelCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setRotAccelCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -658,10 +658,10 @@ public:
        command.fields.setRotSpeedCommand.guard = NULL;
        command.fields.setRotSpeedCommand.guardSize = 0;
 
-       command.fields.setRotSpeedCommand.rotSpeed = params.cRCLRotSpeed;
+       command.fields.setRotSpeedCommand.rotSpeed = params.rotSpeed;
 
-       command.fields.setRotSpeedCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.setRotSpeedCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.setRotSpeedCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setRotSpeedCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -684,10 +684,10 @@ public:
        command.fields.setAngleUnitsCommand.guard = NULL;
        command.fields.setAngleUnitsCommand.guardSize = 0;
 
-       command.fields.setAngleUnitsCommand.unitName = params.cRCLUnitName;
+       command.fields.setAngleUnitsCommand.unitName = params.unitName;
 
-       command.fields.setAngleUnitsCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.setAngleUnitsCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.setAngleUnitsCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setAngleUnitsCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -710,10 +710,10 @@ public:
        command.fields.setEndPoseToleranceCommand.guard = NULL;
        command.fields.setEndPoseToleranceCommand.guardSize = 0;
 
-       command.fields.setEndPoseToleranceCommand.tolerance = params.cRCLTolerance;
+       command.fields.setEndPoseToleranceCommand.tolerance = params.tolerance;
 
-       command.fields.setEndPoseToleranceCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.setEndPoseToleranceCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.setEndPoseToleranceCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setEndPoseToleranceCommand.realTimeParameterNode = realTimeParameterNodeId;
        return command;
    }
    UA_CRCLCommandsUnionDataType operator()( UA_SetForceUnitsParametersSetDataType& params)const{
@@ -735,10 +735,10 @@ public:
        command.fields.setForceUnitsCommand.guard = NULL;
        command.fields.setForceUnitsCommand.guardSize = 0;
 
-       command.fields.setForceUnitsCommand.unitName = params.cRCLUnitName;
+       command.fields.setForceUnitsCommand.unitName = params.unitName;
 
-       command.fields.setForceUnitsCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.setForceUnitsCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.setForceUnitsCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setForceUnitsCommand.realTimeParameterNode = realTimeParameterNodeId;
        return command;
    }
    UA_CRCLCommandsUnionDataType operator()( UA_SetIntermediatePoseToleranceParametersSetDataType& params)const{
@@ -757,10 +757,10 @@ public:
        command.fields.setIntermediatePoseToleranceCommand.guard = NULL;
        command.fields.setIntermediatePoseToleranceCommand.guardSize = 0;
 
-       command.fields.setIntermediatePoseToleranceCommand.tolerance = params.cRCLTolerance;
+       command.fields.setIntermediatePoseToleranceCommand.tolerance = params.tolerance;
 
-       command.fields.setIntermediatePoseToleranceCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.setIntermediatePoseToleranceCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.setIntermediatePoseToleranceCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setIntermediatePoseToleranceCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -783,10 +783,10 @@ public:
        command.fields.setLengthUnitsCommand.guard = NULL;
        command.fields.setLengthUnitsCommand.guardSize = 0;
 
-       command.fields.setLengthUnitsCommand.unitName = params.cRCLUnitName;
+       command.fields.setLengthUnitsCommand.unitName = params.unitName;
 
-       command.fields.setLengthUnitsCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.setLengthUnitsCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.setLengthUnitsCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setLengthUnitsCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -809,10 +809,10 @@ public:
        command.fields.setMotionCoordinationCommand.guard = NULL;
        command.fields.setMotionCoordinationCommand.guardSize = 0;
 
-       command.fields.setMotionCoordinationCommand.coordinated = params.cRCLCoordinated;
+       command.fields.setMotionCoordinationCommand.coordinated = params.coordinated;
 
-       command.fields.setMotionCoordinationCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.setMotionCoordinationCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.setMotionCoordinationCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setMotionCoordinationCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -835,10 +835,10 @@ public:
        command.fields.setTorqueUnitsCommand.guard = NULL;
        command.fields.setTorqueUnitsCommand.guardSize = 0;
 
-       command.fields.setTorqueUnitsCommand.unitName = params.cRCLUnitName;
+       command.fields.setTorqueUnitsCommand.unitName = params.unitName;
 
-       command.fields.setTorqueUnitsCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.setTorqueUnitsCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.setTorqueUnitsCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setTorqueUnitsCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -861,10 +861,10 @@ public:
        command.fields.stopMotionCommand.guard = NULL;
        command.fields.stopMotionCommand.guardSize = 0;
 
-       command.fields.stopMotionCommand.stopCondition = params.cRCLStopCondition;
+       command.fields.stopMotionCommand.stopCondition = params.stopCondition;
 
-       command.fields.stopMotionCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.stopMotionCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.stopMotionCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.stopMotionCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -887,15 +887,15 @@ public:
        command.fields.configureStatusReportCommand.guard = NULL;
        command.fields.configureStatusReportCommand.guardSize = 0;
 
-       command.fields.configureStatusReportCommand.reportGripperStatus = params.cRCLReportGripperStatus;
-       command.fields.configureStatusReportCommand.reportGuardsStatus = params.cRCLReportGuardsStatus;
-       command.fields.configureStatusReportCommand.reportJointStatuses = params.cRCLReportJointStatuses;
-       command.fields.configureStatusReportCommand.reportPoseStatus = params.cRCLReportPoseStatus;
-       command.fields.configureStatusReportCommand.reportSensorsStatus = params.cRCLReportSensorsStatus;
-       command.fields.configureStatusReportCommand.reportSettingsStatus = params.cRCLReportSettingsStatus;
+       command.fields.configureStatusReportCommand.reportGripperStatus = params.reportGripperStatus;
+       command.fields.configureStatusReportCommand.reportGuardsStatus = params.reportGuardsStatus;
+       command.fields.configureStatusReportCommand.reportJointStatuses = params.reportJointStatuses;
+       command.fields.configureStatusReportCommand.reportPoseStatus = params.reportPoseStatus;
+       command.fields.configureStatusReportCommand.reportSensorsStatus = params.reportSensorsStatus;
+       command.fields.configureStatusReportCommand.reportSettingsStatus = params.reportSettingsStatus;
 
-       command.fields.configureStatusReportCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.configureStatusReportCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.configureStatusReportCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.configureStatusReportCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -920,12 +920,12 @@ public:
        command.fields.enableSensorCommand.guard = NULL;
        command.fields.enableSensorCommand.guardSize = 0;
 
-       command.fields.enableSensorCommand.sensorID = params.cRCLSensorID;
-       command.fields.enableSensorCommand.sensorOption = params.cRCLSensorOption;
-       command.fields.enableSensorCommand.sensorOptionSize = params.cRCLSensorOptionSize;
+       command.fields.enableSensorCommand.sensorID = params.sensorID;
+       command.fields.enableSensorCommand.sensorOption = params.sensorOption;
+       command.fields.enableSensorCommand.sensorOptionSize = params.sensorOptionSize;
 
-       command.fields.enableSensorCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.enableSensorCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.enableSensorCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.enableSensorCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -948,10 +948,10 @@ public:
        command.fields.disableSensorCommand.guard = NULL;
        command.fields.disableSensorCommand.guardSize = 0;
 
-       command.fields.disableSensorCommand.sensorID= params.cRCLSensorID;
+       command.fields.disableSensorCommand.sensorID= params.sensorID;
 
-       command.fields.disableSensorCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.disableSensorCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.disableSensorCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.disableSensorCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -974,12 +974,12 @@ public:
        command.fields.enableGripperCommand.guard = NULL;
        command.fields.enableGripperCommand.guardSize = 0;
 
-       command.fields.enableGripperCommand.gripperName= params.cRCLGripperName;
-       command.fields.enableGripperCommand.gripperOption= params.cRCLGripperOption;
-       command.fields.enableGripperCommand.gripperOptionSize= params.cRCLGripperOptionSize;
+       command.fields.enableGripperCommand.gripperName= params.gripperName;
+       command.fields.enableGripperCommand.gripperOption= params.gripperOption;
+       command.fields.enableGripperCommand.gripperOptionSize= params.gripperOptionSize;
 
-       command.fields.enableGripperCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.enableGripperCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.enableGripperCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.enableGripperCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -1002,10 +1002,10 @@ public:
        command.fields.disableGripperCommand.guard = NULL;
        command.fields.disableGripperCommand.guardSize = 0;
 
-       command.fields.disableGripperCommand.gripperName= params.cRCLGripperName;
+       command.fields.disableGripperCommand.gripperName= params.gripperName;
 
-       command.fields.disableGripperCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.disableGripperCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.disableGripperCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.disableGripperCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -1029,10 +1029,10 @@ public:
        command.fields.enableRobotParameterStatusCommand.guardSize = 0;
 
        command.fields.enableRobotParameterStatusCommand.robotParameterName = std::move(
-                                                                               params.cRCLRobotParameterName );
+                                                                               params.robotParameterName );
 
-       command.fields.enableRobotParameterStatusCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.enableRobotParameterStatusCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.enableRobotParameterStatusCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.enableRobotParameterStatusCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
@@ -1056,10 +1056,10 @@ public:
        command.fields.disableRobotParameterStatusCommand.guardSize = 0;
 
        command.fields.disableRobotParameterStatusCommand.robotParameterName = std::move(
-                                                                               params.cRCLRobotParameterName );
+                                                                               params.robotParameterName );
 
-       command.fields.disableRobotParameterStatusCommand.cRCLRealTimeCommand = params.cRCLRealTimeParameter;
-       command.fields.disableRobotParameterStatusCommand.cRCLRealTimeParameterNode = realTimeParameterNodeId;
+       command.fields.disableRobotParameterStatusCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.disableRobotParameterStatusCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }

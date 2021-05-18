@@ -42,8 +42,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_InitCanonDataType"){
         UA_InitCanonDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1000);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1000);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -58,8 +58,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_EndCanonDataType"){
         UA_EndCanonDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1001);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1001);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -74,8 +74,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_MessageDataType"){
         UA_MessageDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1002);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1002);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -93,8 +93,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_MoveToDataType"){
         UA_MoveToDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1003);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1003);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -129,8 +129,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_MoveScrewDataType"){
         UA_MoveScrewDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1004);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1004);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -176,8 +176,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_MoveThroughToDataType"){
         UA_MoveThroughToDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1005);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1005);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -242,8 +242,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_DwellDataType"){
         UA_DwellDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1006);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1006);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -261,8 +261,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_ActuateJointsDataType"){
         UA_ActuateJointsDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1007);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1007);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -272,23 +272,23 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         act1.id = 134;
         act1.name = UA_STRING( "actuate joint 1" );
         act1.jointNumber = 2;
-        act1.cRCLJointPosition = 54.74;
-        act1.cRCLJointDetails.switchField = UA_CRCL_JOINTDETAILSDATATYPESWITCH_JOINTSPEEDACCEL;
-        act1.cRCLJointDetails.fields.jointSpeedAccel.id = 101;
-        act1.cRCLJointDetails.fields.jointSpeedAccel.name = UA_STRING( "Actuate Joint jointSpeedAccel" );
-        act1.cRCLJointDetails.fields.jointSpeedAccel.cRCLJointAccel = 10.101;
-        act1.cRCLJointDetails.fields.jointSpeedAccel.cRCLJointSpeed = 210.101;
+        act1.jointPosition = 54.74;
+        act1.jointDetails.switchField = UA_CRCL_JOINTDETAILSDATATYPESWITCH_JOINTSPEEDACCEL;
+        act1.jointDetails.fields.jointSpeedAccel.id = 101;
+        act1.jointDetails.fields.jointSpeedAccel.name = UA_STRING( "Actuate Joint jointSpeedAccel" );
+        act1.jointDetails.fields.jointSpeedAccel.jointAccel = 10.101;
+        act1.jointDetails.fields.jointSpeedAccel.jointSpeed = 210.101;
 
         UA_CRCL_ActuateJointDataType act2;
         act2.id = 6341;
         act2.name = UA_STRING( "actuate joint 2" );
         act2.jointNumber = 5;
-        act2.cRCLJointPosition = 98.314;
-        act2.cRCLJointDetails.switchField = UA_CRCL_JOINTDETAILSDATATYPESWITCH_JOINTFORCETORQUE;
-        act2.cRCLJointDetails.fields.jointForceTorque.id = 101;
-        act2.cRCLJointDetails.fields.jointForceTorque.name = UA_STRING( "Actuate Joint jointForceTorque" );
-        act2.cRCLJointDetails.fields.jointForceTorque.cRCLChangeRate = 10.101;
-        act2.cRCLJointDetails.fields.jointForceTorque.cRCLSetting = 210.101;
+        act2.jointPosition = 98.314;
+        act2.jointDetails.switchField = UA_CRCL_JOINTDETAILSDATATYPESWITCH_JOINTFORCETORQUE;
+        act2.jointDetails.fields.jointForceTorque.id = 101;
+        act2.jointDetails.fields.jointForceTorque.name = UA_STRING( "Actuate Joint jointForceTorque" );
+        act2.jointDetails.fields.jointForceTorque.changeRate = 10.101;
+        act2.jointDetails.fields.jointForceTorque.setting = 210.101;
 
         UA_CRCL_ActuateJointDataType *actuateJoints = (UA_CRCL_ActuateJointDataType *) UA_Array_new(2,
                                                                               &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE]);
@@ -320,9 +320,9 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         tols.setting = settings;
         tols.settingSize = 2;
 
-        command.cRCLActuateJointSize = 2;
-        command.cRCLActuateJoint = actuateJoints;
-        command.cRCLJointTolerances = tols;
+        command.actuateJointSize = 2;
+        command.actuateJoint = actuateJoints;
+        command.jointTolerances = tols;
 
         UA_Variant var;
         UA_Variant_init( &var );
@@ -334,8 +334,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_ConfigureJointReportsDataType"){
         UA_ConfigureJointReportsDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1008);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1008);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -378,8 +378,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_SetDefaultJointPositionsTolerancesDataType"){
         UA_SetDefaultJointPositionsTolerancesDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1009);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1009);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -421,8 +421,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_GetStatusDataType"){
         UA_GetStatusDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1010);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1010);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -438,8 +438,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_CloseToolChangerDataType"){
         UA_CloseToolChangerDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1011);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1011);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -455,8 +455,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_OpenToolChangerDataType"){
         UA_OpenToolChangerDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1012);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1012);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -472,8 +472,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_SetRobotParametersDataType"){
         UA_SetRobotParametersDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1013);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1013);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -511,8 +511,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_SetEndeffectorParametersDataType"){
         UA_SetEndeffectorParametersDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1014);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1014);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -550,8 +550,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_SetEndeffectorDataType"){
         UA_SetEndeffectorDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1015);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1015);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -573,8 +573,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_SetTransAccelDataType"){
         UA_SetTransAccelDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1016);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1016);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -599,8 +599,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_SetTransSpeedDataType"){
         UA_SetTransSpeedDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1017);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1017);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -631,8 +631,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_SetRotAccelDataType"){
         UA_SetRotAccelDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1018);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1018);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -665,8 +665,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_SetRotSpeedDataType"){
         UA_SetRotSpeedDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1019);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1019);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -699,8 +699,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_SetAngleUnitsDataType"){
         UA_SetAngleUnitsDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1020);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1020);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -718,8 +718,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_SetEndPoseToleranceDataType"){
         UA_SetEndPoseToleranceDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1021);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1021);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -746,8 +746,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_SetForceUnitsDataType"){
         UA_SetForceUnitsDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1022);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1022);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -765,8 +765,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_SetIntermediatePoseToleranceDataType"){
         UA_SetIntermediatePoseToleranceDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1023);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1023);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -793,8 +793,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_SetLengthUnitsDataType"){
         UA_SetLengthUnitsDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1024);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1024);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -812,8 +812,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_SetMotionCoordinationDataType"){
         UA_SetMotionCoordinationDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1025);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1025);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -831,8 +831,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_SetTorqueUnitsDataType"){
         UA_SetTorqueUnitsDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1026);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1026);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -850,8 +850,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_StopMotionDataType"){
         UA_StopMotionDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1027);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1027);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -869,8 +869,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_ConfigureStatusReportDataType"){
         UA_ConfigureStatusReportDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1028);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1028);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -893,8 +893,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_EnableSensorDataType"){
         UA_EnableSensorDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1029);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1029);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -934,8 +934,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_DisableSensorDataType"){
         UA_DisableSensorDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1030);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1030);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -953,8 +953,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_EnableGripperDataType"){
         UA_EnableGripperDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1031);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1031);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -992,8 +992,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_DisableGripperDataType"){
         UA_DisableGripperDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1032);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1032);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -1011,8 +1011,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_EnableRobotParameterStatusDataType"){
         UA_EnableRobotParameterStatusDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1033);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1033);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -1029,8 +1029,8 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
     SECTION("UA_DisableRobotParameterStatusDataType"){
         UA_DisableRobotParameterStatusDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1034);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1034);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -1645,8 +1645,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_InitCanonDataType"){
         UA_InitCanonDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1000);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1000);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -1666,8 +1666,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_EndCanonDataType"){
         UA_EndCanonDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1001);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1001);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -1687,8 +1687,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_MessageDataType"){
         UA_MessageDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1002);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1002);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -1710,8 +1710,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_MoveToDataType"){
         UA_MoveToDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1003);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1003);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -1750,8 +1750,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_MoveScrewDataType"){
         UA_MoveScrewDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1004);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1004);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -1801,8 +1801,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_MoveThroughToDataType"){
         UA_MoveThroughToDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1005);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1005);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -1871,8 +1871,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_DwellDataType"){
         UA_DwellDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1006);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1006);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -1894,8 +1894,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_ActuateJointsDataType"){
         UA_ActuateJointsDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1007);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1007);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -1905,23 +1905,23 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         act1.id = 134;
         act1.name = UA_STRING( "actuate joint 1" );
         act1.jointNumber = 2;
-        act1.cRCLJointPosition = 54.74;
-        act1.cRCLJointDetails.switchField = UA_CRCL_JOINTDETAILSDATATYPESWITCH_JOINTSPEEDACCEL;
-        act1.cRCLJointDetails.fields.jointSpeedAccel.id = 101;
-        act1.cRCLJointDetails.fields.jointSpeedAccel.name = UA_STRING( "Actuate Joint jointSpeedAccel" );
-        act1.cRCLJointDetails.fields.jointSpeedAccel.cRCLJointAccel = 10.101;
-        act1.cRCLJointDetails.fields.jointSpeedAccel.cRCLJointSpeed = 210.101;
+        act1.jointPosition = 54.74;
+        act1.jointDetails.switchField = UA_CRCL_JOINTDETAILSDATATYPESWITCH_JOINTSPEEDACCEL;
+        act1.jointDetails.fields.jointSpeedAccel.id = 101;
+        act1.jointDetails.fields.jointSpeedAccel.name = UA_STRING( "Actuate Joint jointSpeedAccel" );
+        act1.jointDetails.fields.jointSpeedAccel.jointAccel = 10.101;
+        act1.jointDetails.fields.jointSpeedAccel.jointSpeed = 210.101;
 
         UA_CRCL_ActuateJointDataType act2;
         act2.id = 6341;
         act2.name = UA_STRING( "actuate joint 2" );
         act2.jointNumber = 5;
-        act2.cRCLJointPosition = 98.314;
-        act2.cRCLJointDetails.switchField = UA_CRCL_JOINTDETAILSDATATYPESWITCH_JOINTFORCETORQUE;
-        act2.cRCLJointDetails.fields.jointForceTorque.id = 101;
-        act2.cRCLJointDetails.fields.jointForceTorque.name = UA_STRING( "Actuate Joint jointForceTorque" );
-        act2.cRCLJointDetails.fields.jointForceTorque.cRCLChangeRate = 10.101;
-        act2.cRCLJointDetails.fields.jointForceTorque.cRCLSetting = 210.101;
+        act2.jointPosition = 98.314;
+        act2.jointDetails.switchField = UA_CRCL_JOINTDETAILSDATATYPESWITCH_JOINTFORCETORQUE;
+        act2.jointDetails.fields.jointForceTorque.id = 101;
+        act2.jointDetails.fields.jointForceTorque.name = UA_STRING( "Actuate Joint jointForceTorque" );
+        act2.jointDetails.fields.jointForceTorque.changeRate = 10.101;
+        act2.jointDetails.fields.jointForceTorque.setting = 210.101;
 
         UA_CRCL_ActuateJointDataType *actuateJoints = (UA_CRCL_ActuateJointDataType *) UA_Array_new(2,
                                                                               &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE]);
@@ -1953,9 +1953,9 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         tols.setting = settings;
         tols.settingSize = 2;
 
-        command.cRCLActuateJointSize = 2;
-        command.cRCLActuateJoint = actuateJoints;
-        command.cRCLJointTolerances = tols;
+        command.actuateJointSize = 2;
+        command.actuateJoint = actuateJoints;
+        command.jointTolerances = tols;
 
         UA_CRCLCommandsUnionDataType commandsUnion;
         commandsUnion.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ACTUATEJOINTSCOMMAND;
@@ -1971,8 +1971,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_ConfigureJointReportsDataType"){
         UA_ConfigureJointReportsDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1008);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1008);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2019,8 +2019,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_SetDefaultJointPositionsTolerancesDataType"){
         UA_SetDefaultJointPositionsTolerancesDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1009);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1009);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2066,8 +2066,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_GetStatusDataType"){
         UA_GetStatusDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1010);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1010);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2087,8 +2087,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_CloseToolChangerDataType"){
         UA_CloseToolChangerDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1011);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1011);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2108,8 +2108,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_OpenToolChangerDataType"){
         UA_OpenToolChangerDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1012);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1012);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2129,8 +2129,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_SetRobotParametersDataType"){
         UA_SetRobotParametersDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1013);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1013);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2172,8 +2172,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_SetEndeffectorParametersDataType"){
         UA_SetEndeffectorParametersDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1014);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1014);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2215,8 +2215,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_SetEndeffectorDataType"){
         UA_SetEndeffectorDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1015);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1015);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2242,8 +2242,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_SetTransAccelDataType"){
         UA_SetTransAccelDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1016);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1016);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2272,8 +2272,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_SetTransSpeedDataType"){
         UA_SetTransSpeedDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1017);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1017);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2308,8 +2308,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_SetRotAccelDataType"){
         UA_SetRotAccelDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1018);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1018);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2346,8 +2346,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_SetRotSpeedDataType"){
         UA_SetRotSpeedDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1019);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1019);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2384,8 +2384,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_SetAngleUnitsDataType"){
         UA_SetAngleUnitsDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1020);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1020);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2407,8 +2407,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_SetEndPoseToleranceDataType"){
         UA_SetEndPoseToleranceDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1021);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1021);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2439,8 +2439,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_SetForceUnitsDataType"){
         UA_SetForceUnitsDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1022);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1022);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2462,8 +2462,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_SetIntermediatePoseToleranceDataType"){
         UA_SetIntermediatePoseToleranceDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1023);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1023);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2494,8 +2494,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_SetLengthUnitsDataType"){
         UA_SetLengthUnitsDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1024);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1024);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2517,8 +2517,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_SetMotionCoordinationDataType"){
         UA_SetMotionCoordinationDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1025);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1025);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2540,8 +2540,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_SetTorqueUnitsDataType"){
         UA_SetTorqueUnitsDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1026);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1026);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2563,8 +2563,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_StopMotionDataType"){
         UA_StopMotionDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1027);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1027);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2586,8 +2586,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_ConfigureStatusReportDataType"){
         UA_ConfigureStatusReportDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1028);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1028);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2614,8 +2614,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_EnableSensorDataType"){
         UA_EnableSensorDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1029);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1029);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2659,8 +2659,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_DisableSensorDataType"){
         UA_DisableSensorDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1030);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1030);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2682,8 +2682,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_EnableGripperDataType"){
         UA_EnableGripperDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1031);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1031);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2725,8 +2725,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_DisableGripperDataType"){
         UA_DisableGripperDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1032);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1032);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2748,8 +2748,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_EnableRobotParameterStatusDataType"){
         UA_EnableRobotParameterStatusDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1033);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1033);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -2771,8 +2771,8 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
     SECTION("UA_DisableRobotParameterStatusDataType"){
         UA_DisableRobotParameterStatusDataType command;
         command.commandID = 1234;
-        command.cRCLRealTimeCommand = true;
-        command.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1034);
+        command.realTimeCommand = true;
+        command.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1034);
         command.guard = NULL;
         command.guardSize = 0;
         command.id = 5678;
@@ -3471,8 +3471,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_InitCanonDataType command1;
     command1.commandID = 1234;
-    command1.cRCLRealTimeCommand = true;
-    command1.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1000);
+    command1.realTimeCommand = true;
+    command1.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1000);
     command1.guard = NULL;
     command1.guardSize = 0;
     command1.id = 5678;
@@ -3486,8 +3486,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_EndCanonDataType command2;
     command2.commandID = 1234;
-    command2.cRCLRealTimeCommand = true;
-    command2.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1001);
+    command2.realTimeCommand = true;
+    command2.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1001);
     command2.guard = NULL;
     command2.guardSize = 0;
     command2.id = 5678;
@@ -3501,8 +3501,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_MessageDataType command3;
     command3.commandID = 1234;
-    command3.cRCLRealTimeCommand = true;
-    command3.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1002);
+    command3.realTimeCommand = true;
+    command3.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1002);
     command3.guard = NULL;
     command3.guardSize = 0;
     command3.id = 5678;
@@ -3518,8 +3518,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_MoveToDataType command4;
     command4.commandID = 1234;
-    command4.cRCLRealTimeCommand = true;
-    command4.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1003);
+    command4.realTimeCommand = true;
+    command4.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1003);
     command4.guard = NULL;
     command4.guardSize = 0;
     command4.id = 5678;
@@ -3552,8 +3552,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_MoveScrewDataType command5;
     command5.commandID = 1234;
-    command5.cRCLRealTimeCommand = true;
-    command5.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1004);
+    command5.realTimeCommand = true;
+    command5.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1004);
     command5.guard = NULL;
     command5.guardSize = 0;
     command5.id = 5678;
@@ -3597,8 +3597,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_MoveThroughToDataType command6;
     command6.commandID = 1234;
-    command6.cRCLRealTimeCommand = true;
-    command6.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1005);
+    command6.realTimeCommand = true;
+    command6.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1005);
     command6.guard = NULL;
     command6.guardSize = 0;
     command6.id = 5678;
@@ -3661,8 +3661,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_DwellDataType command7;
     command7.commandID = 1234;
-    command7.cRCLRealTimeCommand = true;
-    command7.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1006);
+    command7.realTimeCommand = true;
+    command7.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1006);
     command7.guard = NULL;
     command7.guardSize = 0;
     command7.id = 5678;
@@ -3678,8 +3678,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_ActuateJointsDataType command8;
     command8.commandID = 1234;
-    command8.cRCLRealTimeCommand = true;
-    command8.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1007);
+    command8.realTimeCommand = true;
+    command8.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1007);
     command8.guard = NULL;
     command8.guardSize = 0;
     command8.id = 5678;
@@ -3689,23 +3689,23 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
     act1.id = 134;
     act1.name = UA_STRING( "actuate joint 1" );
     act1.jointNumber = 2;
-    act1.cRCLJointPosition = 54.74;
-    act1.cRCLJointDetails.switchField = UA_CRCL_JOINTDETAILSDATATYPESWITCH_JOINTSPEEDACCEL;
-    act1.cRCLJointDetails.fields.jointSpeedAccel.id = 101;
-    act1.cRCLJointDetails.fields.jointSpeedAccel.name = UA_STRING( "Actuate Joint jointSpeedAccel" );
-    act1.cRCLJointDetails.fields.jointSpeedAccel.cRCLJointAccel = 10.101;
-    act1.cRCLJointDetails.fields.jointSpeedAccel.cRCLJointSpeed = 210.101;
+    act1.jointPosition = 54.74;
+    act1.jointDetails.switchField = UA_CRCL_JOINTDETAILSDATATYPESWITCH_JOINTSPEEDACCEL;
+    act1.jointDetails.fields.jointSpeedAccel.id = 101;
+    act1.jointDetails.fields.jointSpeedAccel.name = UA_STRING( "Actuate Joint jointSpeedAccel" );
+    act1.jointDetails.fields.jointSpeedAccel.jointAccel = 10.101;
+    act1.jointDetails.fields.jointSpeedAccel.jointSpeed = 210.101;
 
     UA_CRCL_ActuateJointDataType act2;
     act2.id = 6341;
     act2.name = UA_STRING( "actuate joint 2" );
     act2.jointNumber = 5;
-    act2.cRCLJointPosition = 98.314;
-    act2.cRCLJointDetails.switchField = UA_CRCL_JOINTDETAILSDATATYPESWITCH_JOINTFORCETORQUE;
-    act2.cRCLJointDetails.fields.jointForceTorque.id = 101;
-    act2.cRCLJointDetails.fields.jointForceTorque.name = UA_STRING( "Actuate Joint jointForceTorque" );
-    act2.cRCLJointDetails.fields.jointForceTorque.cRCLChangeRate = 10.101;
-    act2.cRCLJointDetails.fields.jointForceTorque.cRCLSetting = 210.101;
+    act2.jointPosition = 98.314;
+    act2.jointDetails.switchField = UA_CRCL_JOINTDETAILSDATATYPESWITCH_JOINTFORCETORQUE;
+    act2.jointDetails.fields.jointForceTorque.id = 101;
+    act2.jointDetails.fields.jointForceTorque.name = UA_STRING( "Actuate Joint jointForceTorque" );
+    act2.jointDetails.fields.jointForceTorque.changeRate = 10.101;
+    act2.jointDetails.fields.jointForceTorque.setting = 210.101;
 
     UA_CRCL_ActuateJointDataType *actuateJoints = (UA_CRCL_ActuateJointDataType *) UA_Array_new(2,
                                                                           &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE]);
@@ -3737,9 +3737,9 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
     tols.setting = settings1;
     tols.settingSize = 2;
 
-    command8.cRCLActuateJointSize = 2;
-    command8.cRCLActuateJoint = actuateJoints;
-    command8.cRCLJointTolerances = tols;
+    command8.actuateJointSize = 2;
+    command8.actuateJoint = actuateJoints;
+    command8.jointTolerances = tols;
 
     UA_CRCLCommandsUnionDataType commandsUnion8;
     commandsUnion8.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ACTUATEJOINTSCOMMAND;
@@ -3749,8 +3749,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_ConfigureJointReportsDataType command9;
     command9.commandID = 1234;
-    command9.cRCLRealTimeCommand = true;
-    command9.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1008);
+    command9.realTimeCommand = true;
+    command9.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1008);
     command9.guard = NULL;
     command9.guardSize = 0;
     command9.id = 5678;
@@ -3791,8 +3791,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_SetDefaultJointPositionsTolerancesDataType command10;
     command10.commandID = 1234;
-    command10.cRCLRealTimeCommand = true;
-    command10.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1009);
+    command10.realTimeCommand = true;
+    command10.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1009);
     command10.guard = NULL;
     command10.guardSize = 0;
     command10.id = 5678;
@@ -3832,8 +3832,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_GetStatusDataType command11;
     command11.commandID = 1234;
-    command11.cRCLRealTimeCommand = true;
-    command11.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1010);
+    command11.realTimeCommand = true;
+    command11.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1010);
     command11.guard = NULL;
     command11.guardSize = 0;
     command11.id = 5678;
@@ -3847,8 +3847,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_CloseToolChangerDataType command12;
     command12.commandID = 1234;
-    command12.cRCLRealTimeCommand = true;
-    command12.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1011);
+    command12.realTimeCommand = true;
+    command12.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1011);
     command12.guard = NULL;
     command12.guardSize = 0;
     command12.id = 5678;
@@ -3862,8 +3862,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_OpenToolChangerDataType command13;
     command13.commandID = 1234;
-    command13.cRCLRealTimeCommand = true;
-    command13.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1012);
+    command13.realTimeCommand = true;
+    command13.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1012);
     command13.guard = NULL;
     command13.guardSize = 0;
     command13.id = 5678;
@@ -3877,8 +3877,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_SetRobotParametersDataType command14;
     command14.commandID = 1234;
-    command14.cRCLRealTimeCommand = true;
-    command14.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1013);
+    command14.realTimeCommand = true;
+    command14.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1013);
     command14.guard = NULL;
     command14.guardSize = 0;
     command14.id = 5678;
@@ -3914,8 +3914,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_SetEndeffectorParametersDataType command15;
     command15.commandID = 1234;
-    command15.cRCLRealTimeCommand = true;
-    command15.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1014);
+    command15.realTimeCommand = true;
+    command15.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1014);
     command15.guard = NULL;
     command15.guardSize = 0;
     command15.id = 5678;
@@ -3951,8 +3951,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_SetEndeffectorDataType command16;
     command16.commandID = 1234;
-    command16.cRCLRealTimeCommand = true;
-    command16.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1015);
+    command16.realTimeCommand = true;
+    command16.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1015);
     command16.guard = NULL;
     command16.guardSize = 0;
     command16.id = 5678;
@@ -3972,8 +3972,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_SetTransAccelDataType command17;
     command17.commandID = 1234;
-    command17.cRCLRealTimeCommand = true;
-    command17.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1016);
+    command17.realTimeCommand = true;
+    command17.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1016);
     command17.guard = NULL;
     command17.guardSize = 0;
     command17.id = 5678;
@@ -3996,8 +3996,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_SetTransSpeedDataType command18;
     command18.commandID = 1234;
-    command18.cRCLRealTimeCommand = true;
-    command18.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1017);
+    command18.realTimeCommand = true;
+    command18.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1017);
     command18.guard = NULL;
     command18.guardSize = 0;
     command18.id = 5678;
@@ -4026,8 +4026,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_SetRotAccelDataType command19;
     command19.commandID = 1234;
-    command19.cRCLRealTimeCommand = true;
-    command19.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1018);
+    command19.realTimeCommand = true;
+    command19.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1018);
     command19.guard = NULL;
     command19.guardSize = 0;
     command19.id = 5678;
@@ -4058,8 +4058,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_SetRotSpeedDataType command20;
     command20.commandID = 1234;
-    command20.cRCLRealTimeCommand = true;
-    command20.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1019);
+    command20.realTimeCommand = true;
+    command20.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1019);
     command20.guard = NULL;
     command20.guardSize = 0;
     command20.id = 5678;
@@ -4090,8 +4090,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_SetAngleUnitsDataType command21;
     command21.commandID = 1234;
-    command21.cRCLRealTimeCommand = true;
-    command21.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1020);
+    command21.realTimeCommand = true;
+    command21.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1020);
     command21.guard = NULL;
     command21.guardSize = 0;
     command21.id = 5678;
@@ -4107,8 +4107,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_SetEndPoseToleranceDataType command22;
     command22.commandID = 1234;
-    command22.cRCLRealTimeCommand = true;
-    command22.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1021);
+    command22.realTimeCommand = true;
+    command22.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1021);
     command22.guard = NULL;
     command22.guardSize = 0;
     command22.id = 5678;
@@ -4133,8 +4133,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_SetForceUnitsDataType command23;
     command23.commandID = 1234;
-    command23.cRCLRealTimeCommand = true;
-    command23.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1022);
+    command23.realTimeCommand = true;
+    command23.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1022);
     command23.guard = NULL;
     command23.guardSize = 0;
     command23.id = 5678;
@@ -4150,8 +4150,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_SetIntermediatePoseToleranceDataType command24;
     command24.commandID = 1234;
-    command24.cRCLRealTimeCommand = true;
-    command24.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1023);
+    command24.realTimeCommand = true;
+    command24.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1023);
     command24.guard = NULL;
     command24.guardSize = 0;
     command24.id = 5678;
@@ -4176,8 +4176,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_SetLengthUnitsDataType command25;
     command25.commandID = 1234;
-    command25.cRCLRealTimeCommand = true;
-    command25.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1024);
+    command25.realTimeCommand = true;
+    command25.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1024);
     command25.guard = NULL;
     command25.guardSize = 0;
     command25.id = 5678;
@@ -4193,8 +4193,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_SetMotionCoordinationDataType command26;
     command26.commandID = 1234;
-    command26.cRCLRealTimeCommand = true;
-    command26.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1025);
+    command26.realTimeCommand = true;
+    command26.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1025);
     command26.guard = NULL;
     command26.guardSize = 0;
     command26.id = 5678;
@@ -4210,8 +4210,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_SetTorqueUnitsDataType command27;
     command27.commandID = 1234;
-    command27.cRCLRealTimeCommand = true;
-    command27.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1026);
+    command27.realTimeCommand = true;
+    command27.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1026);
     command27.guard = NULL;
     command27.guardSize = 0;
     command27.id = 5678;
@@ -4227,8 +4227,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_StopMotionDataType command28;
     command28.commandID = 1234;
-    command28.cRCLRealTimeCommand = true;
-    command28.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1027);
+    command28.realTimeCommand = true;
+    command28.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1027);
     command28.guard = NULL;
     command28.guardSize = 0;
     command28.id = 5678;
@@ -4244,8 +4244,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_ConfigureStatusReportDataType command29;
     command29.commandID = 1234;
-    command29.cRCLRealTimeCommand = true;
-    command29.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1028);
+    command29.realTimeCommand = true;
+    command29.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1028);
     command29.guard = NULL;
     command29.guardSize = 0;
     command29.id = 5678;
@@ -4266,8 +4266,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_EnableSensorDataType command30;
     command30.commandID = 1234;
-    command30.cRCLRealTimeCommand = true;
-    command30.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1029);
+    command30.realTimeCommand = true;
+    command30.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1029);
     command30.guard = NULL;
     command30.guardSize = 0;
     command30.id = 5678;
@@ -4305,8 +4305,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_DisableSensorDataType command31;
     command31.commandID = 1234;
-    command31.cRCLRealTimeCommand = true;
-    command31.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1030);
+    command31.realTimeCommand = true;
+    command31.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1030);
     command31.guard = NULL;
     command31.guardSize = 0;
     command31.id = 5678;
@@ -4322,8 +4322,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_EnableGripperDataType command32;
     command32.commandID = 1234;
-    command32.cRCLRealTimeCommand = true;
-    command32.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1031);
+    command32.realTimeCommand = true;
+    command32.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1031);
     command32.guard = NULL;
     command32.guardSize = 0;
     command32.id = 5678;
@@ -4359,8 +4359,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_DisableGripperDataType command33;
     command33.commandID = 1234;
-    command33.cRCLRealTimeCommand = true;
-    command33.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1032);
+    command33.realTimeCommand = true;
+    command33.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1032);
     command33.guard = NULL;
     command33.guardSize = 0;
     command33.id = 5678;
@@ -4376,8 +4376,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_EnableRobotParameterStatusDataType command34;
     command34.commandID = 1234;
-    command34.cRCLRealTimeCommand = true;
-    command34.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1033);
+    command34.realTimeCommand = true;
+    command34.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1033);
     command34.guard = NULL;
     command34.guardSize = 0;
     command34.id = 5678;
@@ -4393,8 +4393,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
 
     UA_DisableRobotParameterStatusDataType command35;
     command35.commandID = 1234;
-    command35.cRCLRealTimeCommand = true;
-    command35.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1034);
+    command35.realTimeCommand = true;
+    command35.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1034);
     command35.guard = NULL;
     command35.guardSize = 0;
     command35.id = 5678;
@@ -4491,7 +4491,6 @@ TEST_CASE("Test client - Read CRCLSkill", "[ReadCRCLSkill]"){
 }
 
 
-
 TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     SAMY::SAMYRobot robot;
@@ -4534,8 +4533,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_InitCanonDataType command1;
     command1.commandID = 1234;
-    command1.cRCLRealTimeCommand = true;
-    command1.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1000);
+    command1.realTimeCommand = true;
+    command1.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1000);
     command1.guard = NULL;
     command1.guardSize = 0;
     command1.id = 5678;
@@ -4549,8 +4548,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_EndCanonDataType command2;
     command2.commandID = 1234;
-    command2.cRCLRealTimeCommand = true;
-    command2.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1001);
+    command2.realTimeCommand = true;
+    command2.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1001);
     command2.guard = NULL;
     command2.guardSize = 0;
     command2.id = 5678;
@@ -4564,8 +4563,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_MessageDataType command3;
     command3.commandID = 1234;
-    command3.cRCLRealTimeCommand = true;
-    command3.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1002);
+    command3.realTimeCommand = true;
+    command3.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1002);
     command3.guard = NULL;
     command3.guardSize = 0;
     command3.id = 5678;
@@ -4581,8 +4580,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_MoveToDataType command4;
     command4.commandID = 1234;
-    command4.cRCLRealTimeCommand = true;
-    command4.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1003);
+    command4.realTimeCommand = true;
+    command4.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1003);
     command4.guard = NULL;
     command4.guardSize = 0;
     command4.id = 5678;
@@ -4615,8 +4614,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_MoveScrewDataType command5;
     command5.commandID = 1234;
-    command5.cRCLRealTimeCommand = true;
-    command5.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1004);
+    command5.realTimeCommand = true;
+    command5.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1004);
     command5.guard = NULL;
     command5.guardSize = 0;
     command5.id = 5678;
@@ -4660,8 +4659,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_MoveThroughToDataType command6;
     command6.commandID = 1234;
-    command6.cRCLRealTimeCommand = true;
-    command6.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1005);
+    command6.realTimeCommand = true;
+    command6.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1005);
     command6.guard = NULL;
     command6.guardSize = 0;
     command6.id = 5678;
@@ -4724,8 +4723,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_DwellDataType command7;
     command7.commandID = 1234;
-    command7.cRCLRealTimeCommand = true;
-    command7.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1006);
+    command7.realTimeCommand = true;
+    command7.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1006);
     command7.guard = NULL;
     command7.guardSize = 0;
     command7.id = 5678;
@@ -4741,8 +4740,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_ActuateJointsDataType command8;
     command8.commandID = 1234;
-    command8.cRCLRealTimeCommand = true;
-    command8.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1007);
+    command8.realTimeCommand = true;
+    command8.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1007);
     command8.guard = NULL;
     command8.guardSize = 0;
     command8.id = 5678;
@@ -4752,23 +4751,23 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
     act1.id = 134;
     act1.name = UA_STRING( "actuate joint 1" );
     act1.jointNumber = 2;
-    act1.cRCLJointPosition = 54.74;
-    act1.cRCLJointDetails.switchField = UA_CRCL_JOINTDETAILSDATATYPESWITCH_JOINTSPEEDACCEL;
-    act1.cRCLJointDetails.fields.jointSpeedAccel.id = 101;
-    act1.cRCLJointDetails.fields.jointSpeedAccel.name = UA_STRING( "Actuate Joint jointSpeedAccel" );
-    act1.cRCLJointDetails.fields.jointSpeedAccel.cRCLJointAccel = 10.101;
-    act1.cRCLJointDetails.fields.jointSpeedAccel.cRCLJointSpeed = 210.101;
+    act1.jointPosition = 54.74;
+    act1.jointDetails.switchField = UA_CRCL_JOINTDETAILSDATATYPESWITCH_JOINTSPEEDACCEL;
+    act1.jointDetails.fields.jointSpeedAccel.id = 101;
+    act1.jointDetails.fields.jointSpeedAccel.name = UA_STRING( "Actuate Joint jointSpeedAccel" );
+    act1.jointDetails.fields.jointSpeedAccel.jointAccel = 10.101;
+    act1.jointDetails.fields.jointSpeedAccel.jointSpeed = 210.101;
 
     UA_CRCL_ActuateJointDataType act2;
     act2.id = 6341;
     act2.name = UA_STRING( "actuate joint 2" );
     act2.jointNumber = 5;
-    act2.cRCLJointPosition = 98.314;
-    act2.cRCLJointDetails.switchField = UA_CRCL_JOINTDETAILSDATATYPESWITCH_JOINTFORCETORQUE;
-    act2.cRCLJointDetails.fields.jointForceTorque.id = 101;
-    act2.cRCLJointDetails.fields.jointForceTorque.name = UA_STRING( "Actuate Joint jointForceTorque" );
-    act2.cRCLJointDetails.fields.jointForceTorque.cRCLChangeRate = 10.101;
-    act2.cRCLJointDetails.fields.jointForceTorque.cRCLSetting = 210.101;
+    act2.jointPosition = 98.314;
+    act2.jointDetails.switchField = UA_CRCL_JOINTDETAILSDATATYPESWITCH_JOINTFORCETORQUE;
+    act2.jointDetails.fields.jointForceTorque.id = 101;
+    act2.jointDetails.fields.jointForceTorque.name = UA_STRING( "Actuate Joint jointForceTorque" );
+    act2.jointDetails.fields.jointForceTorque.changeRate = 10.101;
+    act2.jointDetails.fields.jointForceTorque.setting = 210.101;
 
     UA_CRCL_ActuateJointDataType *actuateJoints = (UA_CRCL_ActuateJointDataType *) UA_Array_new(2,
                                                                           &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE]);
@@ -4800,9 +4799,9 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
     tols.setting = settings1;
     tols.settingSize = 2;
 
-    command8.cRCLActuateJointSize = 2;
-    command8.cRCLActuateJoint = actuateJoints;
-    command8.cRCLJointTolerances = tols;
+    command8.actuateJointSize = 2;
+    command8.actuateJoint = actuateJoints;
+    command8.jointTolerances = tols;
 
     UA_CRCLCommandsUnionDataType commandsUnion8;
     commandsUnion8.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ACTUATEJOINTSCOMMAND;
@@ -4812,8 +4811,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_ConfigureJointReportsDataType command9;
     command9.commandID = 1234;
-    command9.cRCLRealTimeCommand = true;
-    command9.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1008);
+    command9.realTimeCommand = true;
+    command9.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1008);
     command9.guard = NULL;
     command9.guardSize = 0;
     command9.id = 5678;
@@ -4854,8 +4853,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_SetDefaultJointPositionsTolerancesDataType command10;
     command10.commandID = 1234;
-    command10.cRCLRealTimeCommand = true;
-    command10.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1009);
+    command10.realTimeCommand = true;
+    command10.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1009);
     command10.guard = NULL;
     command10.guardSize = 0;
     command10.id = 5678;
@@ -4895,8 +4894,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_GetStatusDataType command11;
     command11.commandID = 1234;
-    command11.cRCLRealTimeCommand = true;
-    command11.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1010);
+    command11.realTimeCommand = true;
+    command11.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1010);
     command11.guard = NULL;
     command11.guardSize = 0;
     command11.id = 5678;
@@ -4910,8 +4909,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_CloseToolChangerDataType command12;
     command12.commandID = 1234;
-    command12.cRCLRealTimeCommand = true;
-    command12.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1011);
+    command12.realTimeCommand = true;
+    command12.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1011);
     command12.guard = NULL;
     command12.guardSize = 0;
     command12.id = 5678;
@@ -4925,8 +4924,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_OpenToolChangerDataType command13;
     command13.commandID = 1234;
-    command13.cRCLRealTimeCommand = true;
-    command13.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1012);
+    command13.realTimeCommand = true;
+    command13.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1012);
     command13.guard = NULL;
     command13.guardSize = 0;
     command13.id = 5678;
@@ -4940,8 +4939,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_SetRobotParametersDataType command14;
     command14.commandID = 1234;
-    command14.cRCLRealTimeCommand = true;
-    command14.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1013);
+    command14.realTimeCommand = true;
+    command14.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1013);
     command14.guard = NULL;
     command14.guardSize = 0;
     command14.id = 5678;
@@ -4977,8 +4976,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_SetEndeffectorParametersDataType command15;
     command15.commandID = 1234;
-    command15.cRCLRealTimeCommand = true;
-    command15.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1014);
+    command15.realTimeCommand = true;
+    command15.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1014);
     command15.guard = NULL;
     command15.guardSize = 0;
     command15.id = 5678;
@@ -5014,8 +5013,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_SetEndeffectorDataType command16;
     command16.commandID = 1234;
-    command16.cRCLRealTimeCommand = true;
-    command16.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1015);
+    command16.realTimeCommand = true;
+    command16.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1015);
     command16.guard = NULL;
     command16.guardSize = 0;
     command16.id = 5678;
@@ -5035,8 +5034,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_SetTransAccelDataType command17;
     command17.commandID = 1234;
-    command17.cRCLRealTimeCommand = true;
-    command17.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1016);
+    command17.realTimeCommand = true;
+    command17.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1016);
     command17.guard = NULL;
     command17.guardSize = 0;
     command17.id = 5678;
@@ -5059,8 +5058,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_SetTransSpeedDataType command18;
     command18.commandID = 1234;
-    command18.cRCLRealTimeCommand = true;
-    command18.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1017);
+    command18.realTimeCommand = true;
+    command18.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1017);
     command18.guard = NULL;
     command18.guardSize = 0;
     command18.id = 5678;
@@ -5089,8 +5088,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_SetRotAccelDataType command19;
     command19.commandID = 1234;
-    command19.cRCLRealTimeCommand = true;
-    command19.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1018);
+    command19.realTimeCommand = true;
+    command19.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1018);
     command19.guard = NULL;
     command19.guardSize = 0;
     command19.id = 5678;
@@ -5121,8 +5120,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_SetRotSpeedDataType command20;
     command20.commandID = 1234;
-    command20.cRCLRealTimeCommand = true;
-    command20.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1019);
+    command20.realTimeCommand = true;
+    command20.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1019);
     command20.guard = NULL;
     command20.guardSize = 0;
     command20.id = 5678;
@@ -5153,8 +5152,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_SetAngleUnitsDataType command21;
     command21.commandID = 1234;
-    command21.cRCLRealTimeCommand = true;
-    command21.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1020);
+    command21.realTimeCommand = true;
+    command21.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1020);
     command21.guard = NULL;
     command21.guardSize = 0;
     command21.id = 5678;
@@ -5170,8 +5169,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_SetEndPoseToleranceDataType command22;
     command22.commandID = 1234;
-    command22.cRCLRealTimeCommand = true;
-    command22.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1021);
+    command22.realTimeCommand = true;
+    command22.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1021);
     command22.guard = NULL;
     command22.guardSize = 0;
     command22.id = 5678;
@@ -5196,8 +5195,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_SetForceUnitsDataType command23;
     command23.commandID = 1234;
-    command23.cRCLRealTimeCommand = true;
-    command23.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1022);
+    command23.realTimeCommand = true;
+    command23.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1022);
     command23.guard = NULL;
     command23.guardSize = 0;
     command23.id = 5678;
@@ -5213,8 +5212,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_SetIntermediatePoseToleranceDataType command24;
     command24.commandID = 1234;
-    command24.cRCLRealTimeCommand = true;
-    command24.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1023);
+    command24.realTimeCommand = true;
+    command24.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1023);
     command24.guard = NULL;
     command24.guardSize = 0;
     command24.id = 5678;
@@ -5239,8 +5238,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_SetLengthUnitsDataType command25;
     command25.commandID = 1234;
-    command25.cRCLRealTimeCommand = true;
-    command25.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1024);
+    command25.realTimeCommand = true;
+    command25.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1024);
     command25.guard = NULL;
     command25.guardSize = 0;
     command25.id = 5678;
@@ -5256,8 +5255,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_SetMotionCoordinationDataType command26;
     command26.commandID = 1234;
-    command26.cRCLRealTimeCommand = true;
-    command26.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1025);
+    command26.realTimeCommand = true;
+    command26.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1025);
     command26.guard = NULL;
     command26.guardSize = 0;
     command26.id = 5678;
@@ -5273,8 +5272,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_SetTorqueUnitsDataType command27;
     command27.commandID = 1234;
-    command27.cRCLRealTimeCommand = true;
-    command27.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1026);
+    command27.realTimeCommand = true;
+    command27.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1026);
     command27.guard = NULL;
     command27.guardSize = 0;
     command27.id = 5678;
@@ -5290,8 +5289,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_StopMotionDataType command28;
     command28.commandID = 1234;
-    command28.cRCLRealTimeCommand = true;
-    command28.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1027);
+    command28.realTimeCommand = true;
+    command28.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1027);
     command28.guard = NULL;
     command28.guardSize = 0;
     command28.id = 5678;
@@ -5307,8 +5306,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_ConfigureStatusReportDataType command29;
     command29.commandID = 1234;
-    command29.cRCLRealTimeCommand = true;
-    command29.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1028);
+    command29.realTimeCommand = true;
+    command29.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1028);
     command29.guard = NULL;
     command29.guardSize = 0;
     command29.id = 5678;
@@ -5329,8 +5328,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_EnableSensorDataType command30;
     command30.commandID = 1234;
-    command30.cRCLRealTimeCommand = true;
-    command30.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1029);
+    command30.realTimeCommand = true;
+    command30.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1029);
     command30.guard = NULL;
     command30.guardSize = 0;
     command30.id = 5678;
@@ -5368,8 +5367,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_DisableSensorDataType command31;
     command31.commandID = 1234;
-    command31.cRCLRealTimeCommand = true;
-    command31.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1030);
+    command31.realTimeCommand = true;
+    command31.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1030);
     command31.guard = NULL;
     command31.guardSize = 0;
     command31.id = 5678;
@@ -5385,8 +5384,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_EnableGripperDataType command32;
     command32.commandID = 1234;
-    command32.cRCLRealTimeCommand = true;
-    command32.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1031);
+    command32.realTimeCommand = true;
+    command32.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1031);
     command32.guard = NULL;
     command32.guardSize = 0;
     command32.id = 5678;
@@ -5422,8 +5421,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_DisableGripperDataType command33;
     command33.commandID = 1234;
-    command33.cRCLRealTimeCommand = true;
-    command33.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1032);
+    command33.realTimeCommand = true;
+    command33.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1032);
     command33.guard = NULL;
     command33.guardSize = 0;
     command33.id = 5678;
@@ -5439,8 +5438,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_EnableRobotParameterStatusDataType command34;
     command34.commandID = 1234;
-    command34.cRCLRealTimeCommand = true;
-    command34.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1033);
+    command34.realTimeCommand = true;
+    command34.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1033);
     command34.guard = NULL;
     command34.guardSize = 0;
     command34.id = 5678;
@@ -5456,8 +5455,8 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     UA_DisableRobotParameterStatusDataType command35;
     command35.commandID = 1234;
-    command35.cRCLRealTimeCommand = true;
-    command35.cRCLRealTimeParameterNode = UA_NODEID_NUMERIC( 1, 1034);
+    command35.realTimeCommand = true;
+    command35.realTimeParameterNode = UA_NODEID_NUMERIC( 1, 1034);
     command35.guard = NULL;
     command35.guardSize = 0;
     command35.id = 5678;
@@ -5518,7 +5517,7 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 }
 
 
-TEST_CASE("Test client - Read robot", "[ReadRobot]"){
+TEST_CASE("Test client - Read Robot", "[ReadRobot]"){
 
     std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
     std::string address = "opc.tcp://localhost:4841";
@@ -5552,4 +5551,1436 @@ TEST_CASE("Test client - Read robot", "[ReadRobot]"){
     UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE], &str );
     std::cout << str.data << std::endl;
     UA_String_clear( &str );
+}
+
+
+TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"){
+
+    std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
+    std::string address = "opc.tcp://localhost:4841";
+    UA_DataTypeArray customParametersSetDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
+
+    client.reset( UA_Client_new() );
+    UA_ClientConfig *cc = UA_Client_getConfig( client.get() );
+
+    UA_ClientConfig_setDefault(cc);
+    cc->customDataTypes = &customParametersSetDataTypes;
+    //cc->stateCallback = stateCallback;
+
+    UA_StatusCode retval = UA_Client_connect( client.get(), address.c_str() );
+
+    SECTION("UA_InitCanonParametersSetDataType"){
+        UA_InitCanonParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1500), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_EndCanonParametersSetDataType"){
+        UA_EndCanonParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1501), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_MessageParametersSetDataType"){
+        UA_MessageParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        command.message = UA_STRING( "TEST MESSAGE!" );
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_MESSAGEPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1502), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_MoveToParametersSetDataType"){
+        UA_MoveToParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        command.endPosition.id = 987;
+        command.endPosition.name = UA_STRING( "POSITIONNAME" );
+        command.endPosition.point.id = 87;
+        command.endPosition.point.name = UA_STRING( "POINT NAME" );
+        command.endPosition.point.x = 0.987;
+        command.endPosition.point.y = 6.543;
+        command.endPosition.point.z = 1.467;
+        command.endPosition.xAxis.id = 8711;
+        command.endPosition.xAxis.name = UA_STRING( "xVector NAME" );
+        command.endPosition.xAxis.i = 0.987;
+        command.endPosition.xAxis.j = 6.543;
+        command.endPosition.xAxis.k = 1.467;
+        command.endPosition.zAxis.id = 8764;
+        command.endPosition.zAxis.name = UA_STRING( "zVector NAME" );
+        command.endPosition.zAxis.i = 5.987;
+        command.endPosition.zAxis.j = 8.543;
+        command.endPosition.zAxis.k = 121.467;
+        command.moveStraight = UA_TRUE;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETOPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1503), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_MoveScrewParametersSetDataType"){
+        UA_MoveScrewParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        command.axialDistanceFree = 6.543;
+        command.axialDistanceScrew = 87.123;
+        command.axisPoint.id = 87;
+        command.axisPoint.name = UA_STRING( "POINT NAME" );
+        command.axisPoint.x = 0.987;
+        command.axisPoint.y = 6.543;
+        command.axisPoint.z = 1.467;
+        command.turn = 5.123;
+
+        UA_CRCL_PoseDataType pose1;
+        pose1.id = 743;
+        pose1.name = UA_STRING( "POSE1" );
+        pose1.point.id = 87;
+        pose1.point.name = UA_STRING( "POINT NAME" );
+        pose1.point.x = 0.987;
+        pose1.point.y = 6.543;
+        pose1.point.z = 1.467;
+        pose1.xAxis.id = 8711;
+        pose1.xAxis.name = UA_STRING( "xVector NAME" );
+        pose1.xAxis.i = 0.987;
+        pose1.xAxis.j = 6.543;
+        pose1.xAxis.k = 1.467;
+        pose1.zAxis.id = 8764;
+        pose1.zAxis.name = UA_STRING( "zVector NAME" );
+        pose1.zAxis.i = 5.987;
+        pose1.zAxis.j = 8.543;
+        pose1.zAxis.k = 121.467;
+
+        command.startPosition = pose1;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVESCREWPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1504), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_MoveThroughToParametersSetDataType"){
+        UA_MoveThroughToParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        UA_CRCL_PoseDataType pose1;
+        pose1.id = 743;
+        pose1.name = UA_STRING( "POSE1" );
+        pose1.point.id = 87;
+        pose1.point.name = UA_STRING( "POINT NAME" );
+        pose1.point.x = 0.987;
+        pose1.point.y = 6.543;
+        pose1.point.z = 1.467;
+        pose1.xAxis.id = 8711;
+        pose1.xAxis.name = UA_STRING( "xVector NAME" );
+        pose1.xAxis.i = 0.987;
+        pose1.xAxis.j = 6.543;
+        pose1.xAxis.k = 1.467;
+        pose1.zAxis.id = 8764;
+        pose1.zAxis.name = UA_STRING( "zVector NAME" );
+        pose1.zAxis.i = 5.987;
+        pose1.zAxis.j = 8.543;
+        pose1.zAxis.k = 121.467;
+
+        UA_CRCL_PoseDataType pose2;
+        pose2.id = 743;
+        pose2.name = UA_STRING( "POSE2" );
+        pose2.point.id = 87;
+        pose2.point.name = UA_STRING( "POINT NAME" );
+        pose2.point.x = 0.987;
+        pose2.point.y = 6.543;
+        pose2.point.z = 1.467;
+        pose2.xAxis.id = 8711;
+        pose2.xAxis.name = UA_STRING( "xVector NAME" );
+        pose2.xAxis.i = 0.987;
+        pose2.xAxis.j = 6.543;
+        pose2.xAxis.k = 1.467;
+        pose2.zAxis.id = 8764;
+        pose2.zAxis.name = UA_STRING( "zVector NAME" );
+        pose2.zAxis.i = 5.987;
+        pose2.zAxis.j = 8.543;
+        pose2.zAxis.k = 121.467;
+
+        UA_CRCL_PoseDataType *waypoint = (UA_CRCL_PoseDataType *) UA_Array_new(2,
+                                                                              &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_POSEDATATYPE]);
+
+        waypoint[0] = pose1;
+        waypoint[1] = pose2;
+
+        command.moveStraight = UA_TRUE;
+        command.waypointSize = 2;
+        command.waypoint = waypoint;
+        command.numPositions = 2;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTOPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1505), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_DwellParametersSetDataType"){
+        UA_DwellParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        command.dwellTime = 101.101;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_DWELLPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1506), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_ActuateJointsParametersSetDataType"){
+        UA_ActuateJointsParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        UA_CRCL_ActuateJointDataType act1;
+        act1.id = 134;
+        act1.name = UA_STRING( "actuate joint 1" );
+        act1.jointNumber = 2;
+        act1.jointPosition = 54.74;
+        act1.jointDetails.switchField = UA_CRCL_JOINTDETAILSDATATYPESWITCH_JOINTSPEEDACCEL;
+        act1.jointDetails.fields.jointSpeedAccel.id = 101;
+        act1.jointDetails.fields.jointSpeedAccel.name = UA_STRING( "Actuate Joint jointSpeedAccel" );
+        act1.jointDetails.fields.jointSpeedAccel.jointAccel = 10.101;
+        act1.jointDetails.fields.jointSpeedAccel.jointSpeed = 210.101;
+
+        UA_CRCL_ActuateJointDataType act2;
+        act2.id = 6341;
+        act2.name = UA_STRING( "actuate joint 2" );
+        act2.jointNumber = 5;
+        act2.jointPosition = 98.314;
+        act2.jointDetails.switchField = UA_CRCL_JOINTDETAILSDATATYPESWITCH_JOINTFORCETORQUE;
+        act2.jointDetails.fields.jointForceTorque.id = 101;
+        act2.jointDetails.fields.jointForceTorque.name = UA_STRING( "Actuate Joint jointForceTorque" );
+        act2.jointDetails.fields.jointForceTorque.changeRate = 10.101;
+        act2.jointDetails.fields.jointForceTorque.setting = 210.101;
+
+        UA_CRCL_ActuateJointDataType *actuateJoints = (UA_CRCL_ActuateJointDataType *) UA_Array_new(2,
+                                                                              &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE]);
+
+        actuateJoints[0] = act1;
+        actuateJoints[1] = act2;
+
+        UA_CRCL_JointPositionsTolerancesDataType tols;
+        tols.id = 9532;
+        tols.name = UA_STRING( "JointPosition tolerances test" );
+
+        UA_CRCL_JointPositionToleranceSettingDataType tol1;
+        tol1.id = 6363;
+        tol1.name = UA_STRING( "JointPositionTolerance 1" );
+        tol1.jointNumber = 1;
+        tol1.jointPositionTolerance = 9.876;
+
+        UA_CRCL_JointPositionToleranceSettingDataType tol2;
+        tol2.id = 15638;
+        tol2.name = UA_STRING( "JointPositionTolerance 2" );
+        tol2.jointNumber = 4;
+        tol2.jointPositionTolerance = 5.6272;
+
+        UA_CRCL_JointPositionToleranceSettingDataType *settings = (UA_CRCL_JointPositionToleranceSettingDataType *) UA_Array_new(2,
+                                                                              &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTPOSITIONTOLERANCESETTINGDATATYPE]);
+        settings[0] = tol1;
+        settings[1] = tol2;
+
+        tols.setting = settings;
+        tols.settingSize = 2;
+
+        command.actuateJointSize = 2;
+        command.actuateJoint = actuateJoints;
+        command.jointTolerances = tols;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1507), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_ConfigureJointReportsParametersSetDataType"){
+        UA_ConfigureJointReportsParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        UA_CRCL_ConfigureJointReportDataType conf1;
+        conf1.id = 9213;
+        conf1.name = UA_STRING( "name testing UA_CRCL_ConfigureJointReportParametersSetDataType 1" );
+        conf1.jointNumber = 2;
+        conf1.reportPosition = UA_TRUE;
+        conf1.reportTorqueOrForce = UA_FALSE;
+        conf1.reportVelocity = UA_TRUE;
+
+        UA_CRCL_ConfigureJointReportDataType conf2;
+        conf2.id = 9213;
+        conf2.name = UA_STRING( "name testing UA_CRCL_ConfigureJointReportParametersSetDataType 2" );
+        conf2.jointNumber = 3;
+        conf2.reportPosition = UA_TRUE;
+        conf2.reportTorqueOrForce = UA_TRUE;
+        conf2.reportVelocity = UA_TRUE;
+
+        UA_CRCL_ConfigureJointReportDataType *confReports = (UA_CRCL_ConfigureJointReportDataType *) UA_Array_new(2,
+                                                                              &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_CONFIGUREJOINTREPORTDATATYPE]);
+
+        confReports[0] = conf1;
+        confReports[1] = conf2;
+
+        command.configureJointReport = confReports;
+        command.configureJointReportSize = 2;
+
+        command.resetAll = UA_FALSE;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGUREJOINTREPORTSPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1508), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_SetDefaultJointPositionsTolerancesParametersSetDataType"){
+        UA_SetDefaultJointPositionsTolerancesParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        UA_CRCL_JointPositionToleranceSettingDataType tolSet1;
+        tolSet1.id = 663;
+        tolSet1.name = UA_STRING( "JointPositionTolerance 1" );
+        tolSet1.jointNumber = 43;
+        tolSet1.jointPositionTolerance = 411.12;
+
+        UA_CRCL_JointPositionToleranceSettingDataType tolSet2;
+        tolSet2.id = 7564;
+        tolSet2.name = UA_STRING( "JointPositionTolerance 2" );
+        tolSet2.jointNumber = 21;
+        tolSet2.jointPositionTolerance = 354.236;
+
+        UA_CRCL_JointPositionToleranceSettingDataType *tolSettings = (UA_CRCL_JointPositionToleranceSettingDataType *) UA_Array_new(2,
+                                                                       &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTPOSITIONTOLERANCESETTINGDATATYPE]);
+
+        tolSettings[0] = tolSet1;
+        tolSettings[1] = tolSet2;
+
+        UA_CRCL_JointPositionsTolerancesDataType tol;
+        tol.id = 534;
+        tol.name = UA_STRING( "JOINT TOLERANCES" );
+        tol.setting = tolSettings;
+        tol.settingSize = 2;
+
+        command.jointTolerances = tol;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1509), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_GetStatusParametersSetDataType"){
+        UA_GetStatusParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1510), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_CloseToolChangerParametersSetDataType"){
+        UA_CloseToolChangerParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1511), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_OpenToolChangerParametersSetDataType"){
+        UA_OpenToolChangerParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_OPENTOOLCHANGERPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1512), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_SetRobotParametersParametersSetDataType"){
+        UA_SetRobotParametersParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        UA_CRCL_ParameterSettingDataType setting1;
+        setting1.id = 1398;
+        setting1.name = UA_STRING( "SETTING1" );
+        setting1.parameterName = UA_STRING( "Name of the setting 1 test" );
+        setting1.parameterValue = UA_STRING( "Value of the setting 1 test" );
+
+        UA_CRCL_ParameterSettingDataType setting2;
+        setting2.id = 357;
+        setting2.name = UA_STRING( "SETTING2" );
+        setting2.parameterName = UA_STRING( "Name of the setting 2 test" );
+        setting2.parameterValue = UA_STRING( "Value of the setting 2 test" );
+
+
+        UA_CRCL_ParameterSettingDataType *settings = (UA_CRCL_ParameterSettingDataType *) UA_Array_new(2,
+                                                                       &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_PARAMETERSETTINGDATATYPE]);
+
+        settings[0] = setting1;
+        settings[1] = setting2;
+
+        command.parameterSetting = settings;
+        command.parameterSettingSize = 2;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROBOTPARAMETERSPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1513), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_SetEndeffectorParametersParametersSetDataType"){
+        UA_SetEndeffectorParametersParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        UA_CRCL_ParameterSettingDataType setting1;
+        setting1.id = 1398;
+        setting1.name = UA_STRING( "SETTING1" );
+        setting1.parameterName = UA_STRING( "Name of the setting 1 test" );
+        setting1.parameterValue = UA_STRING( "Value of the setting 1 test" );
+
+        UA_CRCL_ParameterSettingDataType setting2;
+        setting2.id = 357;
+        setting2.name = UA_STRING( "SETTING2" );
+        setting2.parameterName = UA_STRING( "Name of the setting 2 test" );
+        setting2.parameterValue = UA_STRING( "Value of the setting 2 test" );
+
+
+        UA_CRCL_ParameterSettingDataType *settings = (UA_CRCL_ParameterSettingDataType *) UA_Array_new(2,
+                                                                       &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_PARAMETERSETTINGDATATYPE]);
+
+        settings[0] = setting1;
+        settings[1] = setting2;
+
+        command.parameterSetting = settings;
+        command.parameterSettingSize = 2;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1514), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_SetEndeffectorParametersSetDataType"){
+        UA_SetEndeffectorParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        UA_CRCL_FractionDataType fraction;
+        fraction.fractionMax = 1.0;
+        fraction.fractionMin = 0.0;
+        fraction.fraction = 0.654;
+        command.setting = fraction;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1515), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_SetTransAccelParametersSetDataType"){
+        UA_SetTransAccelParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        UA_CRCL_TransAccelDataType accel;
+        accel.switchField = UA_CRCL_TRANSACCELDATATYPESWITCH_TRANSACCELABSOLUTEDATATYPE;
+        UA_CRCL_TransAccelAbsoluteDataType absolAccel;
+        absolAccel.id = 835;
+        absolAccel.name = UA_STRING( "absolute Accel" );
+        absolAccel.setting = 7452.423;
+        accel.fields.transAccelAbsoluteDataType = absolAccel;
+        command.transAccel = accel;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1516), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_SetTransSpeedParametersSetDataType"){
+        UA_SetTransSpeedParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        UA_CRCL_TransSpeedDataType speed;
+        speed.switchField = UA_CRCL_TRANSSPEEDDATATYPESWITCH_TRANSSPEEDRELATIVEDATATYPE;
+        UA_CRCL_TransSpeedRelativeDataType relSpeed;
+        relSpeed.name = UA_STRING( "rel Speed test" );
+        relSpeed.id = 634;
+
+        UA_CRCL_FractionDataType fraction;
+        fraction.fractionMax = 1.0;
+        fraction.fractionMin = 0.0;
+        fraction.fraction = 0.654;
+
+        relSpeed.fraction = fraction;
+        speed.fields.transSpeedRelativeDataType = relSpeed;
+        command.transSpeed = speed;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1517), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_SetRotAccelParametersSetDataType"){
+        UA_SetRotAccelParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        UA_CRCL_RotAccelDataType accel;
+        accel.switchField = UA_CRCL_ROTACCELDATATYPESWITCH_ROTACCELRELATIVEDATATYPE;
+
+        UA_CRCL_RotAccelRelativeDataType relAccel;
+        relAccel.name = UA_STRING( "rot rel accel test" );
+        relAccel.id = 749;
+
+        UA_CRCL_FractionDataType fraction;
+        fraction.fractionMax = 1.0;
+        fraction.fractionMin = 0.0;
+        fraction.fraction = 0.123;
+
+        relAccel.fraction = fraction;
+
+        accel.fields.rotAccelRelativeDataType = relAccel;
+        command.rotAccel = accel;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTACCELPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1518), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_SetRotSpeedParametersSetDataType"){
+        UA_SetRotSpeedParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        UA_CRCL_RotSpeedDataType speed;
+        speed.switchField = UA_CRCL_ROTSPEEDDATATYPESWITCH_ROTSPEEDRELATIVEDATATYPE;
+
+        UA_CRCL_RotSpeedRelativeDataType relSpeed;
+        relSpeed.name = UA_STRING( "rot rel Speed test" );
+        relSpeed.id = 634;
+
+        UA_CRCL_FractionDataType fraction;
+        fraction.fractionMax = 1.0;
+        fraction.fractionMin = 0.0;
+        fraction.fraction = 0.123;
+
+        relSpeed.fraction = fraction;
+
+        speed.fields.rotSpeedRelativeDataType = relSpeed;
+        command.rotSpeed = speed;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1519), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_SetAngleUnitsParametersSetDataType"){
+        UA_SetAngleUnitsParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        command.unitName = UA_CRCL_ANGLEUNITENUMDATATYPE_RADIAN;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1520), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_SetEndPoseToleranceParametersSetDataType"){
+        UA_SetEndPoseToleranceParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        UA_CRCL_PoseToleranceDataType poseTol;
+        poseTol.id = 8563;
+        poseTol.name = UA_STRING( "pose Tolerance test ");
+        poseTol.xAxisTolerance = 865.213;
+        poseTol.xPointTolerance = 9764.523;
+        poseTol.yPointTolerance = 913.678;
+        poseTol.zAxisTolerance = 954.7343;
+        poseTol.zPointTolerance = 6452.523;
+
+        command.tolerance = poseTol;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1521), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_SetForceUnitsParametersSetDataType"){
+        UA_SetForceUnitsParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        command.unitName = UA_CRCL_FORCEUNITENUMDATATYPE_NEWTON;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1522), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_SetIntermediatePoseToleranceParametersSetDataType"){
+        UA_SetIntermediatePoseToleranceParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        UA_CRCL_PoseToleranceDataType poseTol;
+        poseTol.id = 8563;
+        poseTol.name = UA_STRING( "pose Tolerance test ");
+        poseTol.xAxisTolerance = 865.213;
+        poseTol.xPointTolerance = 9764.523;
+        poseTol.yPointTolerance = 913.678;
+        poseTol.zAxisTolerance = 954.7343;
+        poseTol.zPointTolerance = 6452.523;
+
+        command.tolerance = poseTol;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1523), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_SetLengthUnitsParametersSetDataType"){
+        UA_SetLengthUnitsParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        command.unitName = UA_CRCL_LENGTHUNITENUMDATATYPE_METER;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1524), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_SetMotionCoordinationParametersSetDataType"){
+        UA_SetMotionCoordinationParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        command.coordinated = UA_TRUE;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1525), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_SetTorqueUnitsParametersSetDataType"){
+        UA_SetTorqueUnitsParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        command.unitName = UA_CRCL_TORQUEUNITENUMDATATYPE_NEWTONMETER;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1526), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_StopMotionParametersSetDataType"){
+        UA_StopMotionParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        command.stopCondition = UA_CRCL_STOPCONDITIONENUMDATATYPE_IMMEDIATE;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_STOPMOTIONPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1527), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_ConfigureStatusReportParametersSetDataType"){
+        UA_ConfigureStatusReportParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        command.reportJointStatuses = true;
+        command.reportPoseStatus = true;
+        command.reportGripperStatus = true;
+        command.reportSettingsStatus = true;
+        command.reportSensorsStatus = true;
+        command.reportGuardsStatus = true;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1528), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_EnableSensorParametersSetDataType"){
+        UA_EnableSensorParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        command.sensorID = UA_STRING( "TestSensorName");
+
+        UA_CRCL_ParameterSettingDataType setting1;
+        setting1.id = 1398;
+        setting1.name = UA_STRING( "SETTING1" );
+        setting1.parameterName = UA_STRING( "Name of the setting 1 test" );
+        setting1.parameterValue = UA_STRING( "Value of the setting 1 test" );
+
+        UA_CRCL_ParameterSettingDataType setting2;
+        setting2.id = 357;
+        setting2.name = UA_STRING( "SETTING2" );
+        setting2.parameterName = UA_STRING( "Name of the setting 2 test" );
+        setting2.parameterValue = UA_STRING( "Value of the setting 2 test" );
+
+
+        UA_CRCL_ParameterSettingDataType *settings = (UA_CRCL_ParameterSettingDataType *) UA_Array_new(2,
+                                                                       &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_PARAMETERSETTINGDATATYPE]);
+
+        settings[0] = setting1;
+        settings[1] = setting2;
+
+        command.sensorOption = settings;
+        command.sensorOptionSize = 2;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1529), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_DisableSensorParametersSetDataType"){
+        UA_DisableSensorParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        command.sensorID = UA_STRING( "TestSensorID" );
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLESENSORPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1530), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_EnableGripperParametersSetDataType"){
+        UA_EnableGripperParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        command.gripperName = UA_STRING( "TestGripperName");
+
+        UA_CRCL_ParameterSettingDataType setting1;
+        setting1.id = 1398;
+        setting1.name = UA_STRING( "SETTING1" );
+        setting1.parameterName = UA_STRING( "Name of the setting 1 test" );
+        setting1.parameterValue = UA_STRING( "Value of the setting 1 test" );
+
+        UA_CRCL_ParameterSettingDataType setting2;
+        setting2.id = 357;
+        setting2.name = UA_STRING( "SETTING2" );
+        setting2.parameterName = UA_STRING( "Name of the setting 2 test" );
+        setting2.parameterValue = UA_STRING( "Value of the setting 2 test" );
+
+        UA_CRCL_ParameterSettingDataType *settings = (UA_CRCL_ParameterSettingDataType *) UA_Array_new(2,
+                                                                       &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_PARAMETERSETTINGDATATYPE]);
+        settings[0] = setting1;
+        settings[1] = setting2;
+
+        command.gripperOption = settings;
+        command.gripperOptionSize = 2;
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1531), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_DisableGripperParametersSetDataType"){
+        UA_DisableGripperParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        command.gripperName = UA_STRING( "TestGripperName");
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1532), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+    SECTION("UA_EnableRobotParameterStatusParametersSetDataType"){
+        UA_EnableRobotParameterStatusParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        command.robotParameterName = UA_STRING( "TestParameterName" );
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1533), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );    }
+    SECTION("UA_DisableRobotParameterStatusParametersSetDataType"){
+        UA_DisableRobotParameterStatusParametersSetDataType command;
+
+        command.realTimeParameter = true;
+
+        command.robotParameterName = UA_STRING( "TestParameterName" );
+
+        UA_Variant var;
+        UA_Variant_init( &var );
+        UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE] );
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1534), &var);
+        REQUIRE( retVal == UA_STATUSCODE_GOOD );
+    }
+}
+
+
+
+
+
+TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParameterssParameters]"){
+
+    std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
+    std::string address = "opc.tcp://localhost:4841";
+    UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
+
+    client.reset( UA_Client_new() );
+    UA_ClientConfig *cc = UA_Client_getConfig( client.get() );
+
+    UA_ClientConfig_setDefault(cc);
+    cc->customDataTypes = &customDataTypes;
+    //cc->stateCallback = stateCallback;
+
+    UA_StatusCode retval = UA_Client_connect( client.get(), address.c_str() );
+
+    SECTION("UA_InitCanonDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1500), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_InitCanonParametersSetDataType* commandParameters;
+        commandParameters = (UA_InitCanonParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_EndCanonDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1501), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_EndCanonParametersSetDataType* commandParameters;
+        commandParameters = (UA_EndCanonParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_MessageDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1502), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_MessageParametersSetDataType* commandParameters;
+        commandParameters = (UA_MessageParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_MESSAGEPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_MoveToDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1503), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_MoveToParametersSetDataType* commandParameters;
+        commandParameters = (UA_MoveToParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETOPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_MoveScrewDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1504), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_MoveScrewParametersSetDataType* commandParameters;
+        commandParameters = (UA_MoveScrewParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVESCREWPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_MoveThroughToDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1505), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_MoveThroughToParametersSetDataType* commandParameters;
+        commandParameters = (UA_MoveThroughToParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTOPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_DwellDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1506), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_DwellParametersSetDataType* commandParameters;
+        commandParameters = (UA_DwellParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_DWELLPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_ActuateJointsDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1507), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_ActuateJointsParametersSetDataType* commandParameters;
+        commandParameters = (UA_ActuateJointsParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_ConfigureJointReportsDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1508), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_ConfigureJointReportsParametersSetDataType* commandParameters;
+        commandParameters = (UA_ConfigureJointReportsParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGUREJOINTREPORTSPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_SetDefaultJointPositionsTolerancesDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1509), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_SetDefaultJointPositionsTolerancesParametersSetDataType* commandParameters;
+        commandParameters = (UA_SetDefaultJointPositionsTolerancesParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_GetStatusDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1510), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_GetStatusParametersSetDataType* commandParameters;
+        commandParameters = (UA_GetStatusParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_CloseToolChangerDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1511), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_CloseToolChangerParametersSetDataType* commandParameters;
+        commandParameters = (UA_CloseToolChangerParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_OpenToolChangerDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1512), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_OpenToolChangerParametersSetDataType* commandParameters;
+        commandParameters = (UA_OpenToolChangerParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_OPENTOOLCHANGERPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_SetRobotParametersDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1513), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_SetRobotParametersParametersSetDataType* commandParameters;
+        commandParameters = (UA_SetRobotParametersParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROBOTPARAMETERSPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_SetEndeffectorParametersDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1514), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_SetEndeffectorParametersParametersSetDataType* commandParameters;
+        commandParameters = (UA_SetEndeffectorParametersParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_SetEndeffectorDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1515), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_SetEndeffectorParametersSetDataType* commandParameters;
+        commandParameters = (UA_SetEndeffectorParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_SetTransAccelDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1516), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_SetTransAccelParametersSetDataType* commandParameters;
+        commandParameters = (UA_SetTransAccelParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_SetTransSpeedDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1517), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_SetTransSpeedParametersSetDataType* commandParameters;
+        commandParameters = (UA_SetTransSpeedParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_SetRotAccelDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1518), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_SetRotAccelParametersSetDataType* commandParameters;
+        commandParameters = (UA_SetRotAccelParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTACCELPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_SetRotSpeedDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1519), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_SetRotSpeedParametersSetDataType* commandParameters;
+        commandParameters = (UA_SetRotSpeedParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_SetAngleUnitsDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1520), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_SetAngleUnitsParametersSetDataType* commandParameters;
+        commandParameters = (UA_SetAngleUnitsParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_SetEndPoseToleranceDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1521), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_SetEndPoseToleranceParametersSetDataType* commandParameters;
+        commandParameters = (UA_SetEndPoseToleranceParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_SetForceUnitsDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1522), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_SetForceUnitsParametersSetDataType* commandParameters;
+        commandParameters = (UA_SetForceUnitsParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_SetIntermediatePoseToleranceDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1523), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_SetIntermediatePoseToleranceParametersSetDataType* commandParameters;
+        commandParameters = (UA_SetIntermediatePoseToleranceParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_SetLengthUnitsDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1524), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_SetLengthUnitsParametersSetDataType* commandParameters;
+        commandParameters = (UA_SetLengthUnitsParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_SetMotionCoordinationDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1525), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_SetMotionCoordinationParametersSetDataType* commandParameters;
+        commandParameters = (UA_SetMotionCoordinationParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_SetTorqueUnitsDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1526), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_SetTorqueUnitsParametersSetDataType* commandParameters;
+        commandParameters = (UA_SetTorqueUnitsParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_StopMotionDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1527), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_StopMotionParametersSetDataType* commandParameters;
+        commandParameters = (UA_StopMotionParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_STOPMOTIONPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_ConfigureStatusReportDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1528), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_ConfigureStatusReportParametersSetDataType* commandParameters;
+        commandParameters = (UA_ConfigureStatusReportParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_EnableSensorDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1529), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_EnableSensorParametersSetDataType* commandParameters;
+        commandParameters = (UA_EnableSensorParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_DisableSensorDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1530), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_DisableSensorParametersSetDataType* commandParameters;
+        commandParameters = (UA_DisableSensorParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLESENSORPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_EnableGripperDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1531), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_EnableGripperParametersSetDataType* commandParameters;
+        commandParameters = (UA_EnableGripperParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_DisableGripperDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1532), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_DisableGripperParametersSetDataType* commandParameters;
+        commandParameters = (UA_DisableGripperParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_EnableRobotParameterStatusDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1533), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_EnableRobotParameterStatusParametersSetDataType* commandParameters;
+        commandParameters = (UA_EnableRobotParameterStatusParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
+    SECTION("UA_DisableRobotParameterStatusDataType"){
+        UA_StatusCode retval = UA_STATUSCODE_GOOD;
+        UA_Variant var;
+        UA_Variant_init( &var );
+        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1534), &var);
+
+        REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+        UA_DisableRobotParameterStatusParametersSetDataType* commandParameters;
+        commandParameters = (UA_DisableRobotParameterStatusParametersSetDataType*)var.data;
+        UA_String str;
+        UA_String_init( &str );
+        UA_print( commandParameters, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE], &str );
+        std::cout << str.data << std::endl;
+        UA_String_clear( &str );
+    }
 }
