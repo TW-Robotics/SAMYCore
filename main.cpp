@@ -99,8 +99,6 @@ int main(int argc, char** argv){
                     finished
                 }
             }
-            if( unfinished == false )
-                break;
         }
     }    
 
