@@ -1327,6 +1327,8 @@ public:
    }
 };
 
+void printCRCLSkill(const UA_CRCLSkillDataType *skill);
+
    class SAMYSkill
    {
    public:

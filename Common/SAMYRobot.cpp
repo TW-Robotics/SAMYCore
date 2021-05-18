@@ -42,7 +42,6 @@ sendNextSkillInstanceToRobot(UA_Client *client, UA_UInt32 subId, void *subContex
 
         SAMY::SAMYRobot* robot = (SAMY::SAMYRobot*)monContext;
 
-        std::cout<< robot->lastRequestedSkill << std::endl;
         robot->SAMYRobotVariableNodeId = UA_NODEID_NUMERIC( 1, 111 );
         robot->ipAddresses.iPAddress_Skill = UA_STRING( "Not set!" );
         robot->ipAddresses.iPAddress_Status = UA_STRING( "Not set!" );
@@ -55,13 +54,20 @@ sendNextSkillInstanceToRobot(UA_Client *client, UA_UInt32 subId, void *subContex
         opcuaRobot.online = UA_TRUE;
         opcuaRobot.requested_Skill_Success = UA_TRUE;
 
-        UA_copy( &(robot->robotPlan[robot->lastRequestedSkill]),
-                                &opcuaRobot.requested_Skill,
-                                        &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE] );
+        opcuaRobot.requested_Skill.id = robot->robotPlan[robot->lastRequestedSkill].id;
+        opcuaRobot.requested_Skill.name = robot->robotPlan[robot->lastRequestedSkill].name;
+        opcuaRobot.requested_Skill.cRCLCommands = robot->robotPlan[robot->lastRequestedSkill].cRCLCommands;
+        opcuaRobot.requested_Skill.cRCLCommandsSize = robot->robotPlan[robot->lastRequestedSkill].cRCLCommandsSize;
+
+    //    UA_copy( &(robot->robotPlan[robot->lastRequestedSkill]),
+   //                             &opcuaRobot.requested_Skill,
+    //                                    &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE] );
+
+        SAMY::printCRCLSkill( &opcuaRobot.requested_Skill );
 
         UA_String str2;
         UA_String_init( &str2 );
-        UA_print( &robot->robotPlan[robot->lastRequestedSkill], &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE], &str2 );
+        UA_print( &opcuaRobot.requested_Skill, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE], &str2 );
         std::cout<< str2.data << std::endl;
 
         UA_Variant var;

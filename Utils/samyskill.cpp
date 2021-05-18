@@ -10,6 +10,337 @@ std::uniform_int_distribution<std::mt19937::result_type> dist1(1,1000000); // di
 
 namespace SAMY{
 
+    void printCRCLSkill( const UA_CRCLSkillDataType* skill){
+        std::cout << "printCRCLSkill" << std::endl;
+        std::cout << "printCRCLSkill " << skill->cRCLCommandsSize << std::endl;
+
+        for(int i=0; i < skill->cRCLCommandsSize; i++){
+            int type = skill->cRCLCommands[i].switchField;
+            std::cout<< "TEST printCRCLSkill"<< skill->cRCLCommands[i].switchField << std::endl;
+
+            switch (type) {
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_INITCANONCOMMAND:
+            {
+                UA_InitCanonDataType command = skill->cRCLCommands[i].fields.initCanonCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+            }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENDCANONCOMMAND:
+                {
+                UA_EndCanonDataType command = skill->cRCLCommands[i].fields.endCanonCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MESSAGECOMMAND:
+                {
+                UA_MessageDataType command = skill->cRCLCommands[i].fields.messageCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_MESSAGEDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND:
+                {
+                UA_MoveToDataType command = skill->cRCLCommands[i].fields.moveToCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETODATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVESCREWCOMMAND:
+                {
+                UA_MoveScrewDataType command = skill->cRCLCommands[i].fields.moveScrewCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVESCREWDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETHROUGHTOCOMMAND:
+                {
+                UA_MoveThroughToDataType command = skill->cRCLCommands[i].fields.moveThroughToCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTODATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DWELLCOMMAND:
+                {
+                UA_DwellDataType command = skill->cRCLCommands[i].fields.dwellCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_DWELLDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ACTUATEJOINTSCOMMAND:
+                {
+                UA_ActuateJointsDataType command = skill->cRCLCommands[i].fields.actuateJointsCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_CONFIGUREJOINTREPORTSCOMMAND:
+                {
+                UA_ConfigureJointReportsDataType command = skill->cRCLCommands[i].fields.configureJointReportsCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGUREJOINTREPORTSDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETDEFAULTJOINTPOSITIONSTOLERANCESCOMMAND:
+                {
+                UA_SetDefaultJointPositionsTolerancesDataType command = skill->cRCLCommands[i].fields.setDefaultJointPositionsTolerancesCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_GETSTATUSCOMMAND:
+                {
+                UA_GetStatusDataType command = skill->cRCLCommands[i].fields.getStatusCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_CLOSETOOLCHANGERCOMMAND:
+                {
+                UA_CloseToolChangerDataType command = skill->cRCLCommands[i].fields.closeToolChangerCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_OPENTOOLCHANGERCOMMAND:
+                {
+                UA_OpenToolChangerDataType command = skill->cRCLCommands[i].fields.openToolChangerCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_OPENTOOLCHANGERDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETROBOTPARAMETERSCOMMAND:
+                {
+                UA_SetRobotParametersDataType command = skill->cRCLCommands[i].fields.setRobotParametersCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROBOTPARAMETERSDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETENDEFFECTORPARAMETERSCOMMAND:
+                {
+                UA_SetEndeffectorParametersDataType command = skill->cRCLCommands[i].fields.setEndeffectorParametersCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETENDEFFECTORCOMMAND:
+                {
+                UA_SetEndeffectorDataType command = skill->cRCLCommands[i].fields.setEndeffectorCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETTRANSACCELCOMMAND:
+                {
+                UA_SetTransAccelDataType command = skill->cRCLCommands[i].fields.setTransAccelCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETTRANSSPEEDCOMMAND:
+                {
+                UA_SetTransSpeedDataType command = skill->cRCLCommands[i].fields.setTransSpeedCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETROTACCELCOMMAND:
+                {
+                UA_SetRotAccelDataType command = skill->cRCLCommands[i].fields.setRotAccelCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTACCELDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETROTSPEEDCOMMAND:
+                {
+                UA_SetRotSpeedDataType command = skill->cRCLCommands[i].fields.setRotSpeedCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETANGLEUNITSCOMMAND:
+                {
+                UA_SetAngleUnitsDataType command = skill->cRCLCommands[i].fields.setAngleUnitsCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETENDPOSETOLERANCECOMMAND:
+                {
+                UA_SetEndPoseToleranceDataType command = skill->cRCLCommands[i].fields.setEndPoseToleranceCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETFORCEUNITSCOMMAND:
+                {
+                UA_SetForceUnitsDataType command = skill->cRCLCommands[i].fields.setForceUnitsCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETINTERMEDIATEPOSETOLERANCECOMMAND:
+                {
+                UA_SetIntermediatePoseToleranceDataType command = skill->cRCLCommands[i].fields.setIntermediatePoseToleranceCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETLENGTHUNITSCOMMAND:
+                {
+                UA_SetLengthUnitsDataType command = skill->cRCLCommands[i].fields.setLengthUnitsCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETMOTIONCOORDINATIONCOMMAND:
+                {
+                UA_SetMotionCoordinationDataType command = skill->cRCLCommands[i].fields.setMotionCoordinationCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETTORQUEUNITSCOMMAND:
+                {
+                UA_SetTorqueUnitsDataType command = skill->cRCLCommands[i].fields.setTorqueUnitsCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_STOPMOTIONCOMMAND:
+                {
+                UA_StopMotionDataType command = skill->cRCLCommands[i].fields.stopMotionCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_STOPMOTIONDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_CONFIGURESTATUSREPORTCOMMAND:
+                {
+                UA_ConfigureStatusReportDataType command = skill->cRCLCommands[i].fields.configureStatusReportCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGURESTATUSREPORTDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENABLESENSORCOMMAND:
+                {
+                UA_EnableSensorDataType command = skill->cRCLCommands[i].fields.enableSensorCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DISABLESENSORCOMMAND:
+                {
+                UA_DisableSensorDataType command = skill->cRCLCommands[i].fields.disableSensorCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLESENSORDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENABLEGRIPPERCOMMAND:
+                {
+                UA_EnableGripperDataType command = skill->cRCLCommands[i].fields.enableGripperCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DISABLEGRIPPERCOMMAND:
+                {
+                UA_DisableGripperDataType command = skill->cRCLCommands[i].fields.disableGripperCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENABLEROBOTPARAMETERSTATUSCOMMAND:
+                {
+                UA_EnableRobotParameterStatusDataType command = skill->cRCLCommands[i].fields.enableRobotParameterStatusCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DISABLEROBOTPARAMETERSTATUSCOMMAND:
+                {
+                UA_DisableRobotParameterStatusDataType command = skill->cRCLCommands[i].fields.disableRobotParameterStatusCommand;
+                UA_String str2;
+                UA_String_init( &str2 );
+                UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSDATATYPE], &str2 );
+                std::cout<< str2.data << std::endl;
+                break;
+                }
+            default:
+                std::cout<< "ERROR: CRCLSKILL COULD NOT BE PRINTED" << std::endl;
+                break;
+            }
+        }
+    }
+
     void SAMYSkill::setSkillTypeNodeId( const UA_NodeId& nodeId ){
         skillTypeNodeId = nodeId;
     }
