@@ -63,7 +63,7 @@ sendNextSkillInstanceToRobot(UA_Client *client, UA_UInt32 subId, void *subContex
    //                             &opcuaRobot.requested_Skill,
     //                                    &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE] );
 
-        SAMY::printCRCLSkill( &opcuaRobot.requested_Skill );
+//        SAMY::printCRCLSkill( &opcuaRobot.requested_Skill );
 
         UA_String str2;
         UA_String_init( &str2 );
