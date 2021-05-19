@@ -54,16 +54,11 @@ sendNextSkillInstanceToRobot(UA_Client *client, UA_UInt32 subId, void *subContex
         opcuaRobot.online = UA_TRUE;
         opcuaRobot.requested_Skill_Success = UA_TRUE;
 
-        opcuaRobot.requested_Skill.id = robot->robotPlan[robot->lastRequestedSkill].id;
-        opcuaRobot.requested_Skill.name = robot->robotPlan[robot->lastRequestedSkill].name;
-        opcuaRobot.requested_Skill.cRCLCommands = robot->robotPlan[robot->lastRequestedSkill].cRCLCommands;
-        opcuaRobot.requested_Skill.cRCLCommandsSize = robot->robotPlan[robot->lastRequestedSkill].cRCLCommandsSize;
+        UA_copy( &(robot->robotPlan[robot->lastRequestedSkill]),
+                                &opcuaRobot.requested_Skill,
+                                        &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE] );
 
-    //    UA_copy( &(robot->robotPlan[robot->lastRequestedSkill]),
-   //                             &opcuaRobot.requested_Skill,
-    //                                    &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE] );
-
-        SAMY::printCRCLSkill( &opcuaRobot.requested_Skill );
+    //    SAMY::printCRCLSkill( &opcuaRobot.requested_Skill );
 
         UA_String str2;
         UA_String_init( &str2 );
