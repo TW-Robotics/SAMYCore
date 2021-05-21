@@ -11,16 +11,20 @@ std::uniform_int_distribution<std::mt19937::result_type> dist1(1,1000000); // di
 namespace SAMY{
 
     void printCRCLSkill( const UA_CRCLSkillDataType* skill){
-        std::cout << "printCRCLSkill" << std::endl;
-        std::cout << "printCRCLSkill " << skill->cRCLCommandsSize << std::endl;
+        std::cout << "Number of commands in Skill: " << skill->cRCLCommandsSize << std::endl;
+        std::cout << "Commands: { " << std::endl;
 
         for(int i=0; i < skill->cRCLCommandsSize; i++){
+            std::cout << "\tCommand " << i << ":{" << std::endl;
+
             int type = skill->cRCLCommands[i].switchField;
-            std::cout<< "TEST printCRCLSkill"<< skill->cRCLCommands[i].switchField << std::endl;
+            std::cout<< "\t\tCRCLCommandsUnion  type: ";
 
             switch (type) {
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_INITCANONCOMMAND:
             {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_INITCANONCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_InitCanonDataType command = skill->cRCLCommands[i].fields.initCanonCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -30,6 +34,8 @@ namespace SAMY{
             }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENDCANONCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENDCANONCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_EndCanonDataType command = skill->cRCLCommands[i].fields.endCanonCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -39,6 +45,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MESSAGECOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MESSAGECOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_MessageDataType command = skill->cRCLCommands[i].fields.messageCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -48,6 +56,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_MoveToDataType command = skill->cRCLCommands[i].fields.moveToCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -57,6 +67,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVESCREWCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVESCREWCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_MoveScrewDataType command = skill->cRCLCommands[i].fields.moveScrewCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -66,6 +78,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETHROUGHTOCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETHROUGHTOCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_MoveThroughToDataType command = skill->cRCLCommands[i].fields.moveThroughToCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -75,6 +89,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DWELLCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DWELLCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_DwellDataType command = skill->cRCLCommands[i].fields.dwellCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -84,6 +100,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ACTUATEJOINTSCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ACTUATEJOINTSCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_ActuateJointsDataType command = skill->cRCLCommands[i].fields.actuateJointsCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -93,6 +111,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_CONFIGUREJOINTREPORTSCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_CONFIGUREJOINTREPORTSCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_ConfigureJointReportsDataType command = skill->cRCLCommands[i].fields.configureJointReportsCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -102,6 +122,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETDEFAULTJOINTPOSITIONSTOLERANCESCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETDEFAULTJOINTPOSITIONSTOLERANCESCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_SetDefaultJointPositionsTolerancesDataType command = skill->cRCLCommands[i].fields.setDefaultJointPositionsTolerancesCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -111,6 +133,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_GETSTATUSCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_GETSTATUSCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_GetStatusDataType command = skill->cRCLCommands[i].fields.getStatusCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -120,6 +144,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_CLOSETOOLCHANGERCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_CLOSETOOLCHANGERCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_CloseToolChangerDataType command = skill->cRCLCommands[i].fields.closeToolChangerCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -129,6 +155,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_OPENTOOLCHANGERCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_OPENTOOLCHANGERCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_OpenToolChangerDataType command = skill->cRCLCommands[i].fields.openToolChangerCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -138,6 +166,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETROBOTPARAMETERSCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETROBOTPARAMETERSCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_SetRobotParametersDataType command = skill->cRCLCommands[i].fields.setRobotParametersCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -147,6 +177,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETENDEFFECTORPARAMETERSCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETENDEFFECTORPARAMETERSCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_SetEndeffectorParametersDataType command = skill->cRCLCommands[i].fields.setEndeffectorParametersCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -156,6 +188,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETENDEFFECTORCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETENDEFFECTORCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_SetEndeffectorDataType command = skill->cRCLCommands[i].fields.setEndeffectorCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -165,6 +199,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETTRANSACCELCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETTRANSACCELCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_SetTransAccelDataType command = skill->cRCLCommands[i].fields.setTransAccelCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -174,6 +210,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETTRANSSPEEDCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETTRANSSPEEDCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_SetTransSpeedDataType command = skill->cRCLCommands[i].fields.setTransSpeedCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -183,6 +221,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETROTACCELCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETROTACCELCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_SetRotAccelDataType command = skill->cRCLCommands[i].fields.setRotAccelCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -192,6 +232,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETROTSPEEDCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETROTSPEEDCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_SetRotSpeedDataType command = skill->cRCLCommands[i].fields.setRotSpeedCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -201,6 +243,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETANGLEUNITSCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETANGLEUNITSCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_SetAngleUnitsDataType command = skill->cRCLCommands[i].fields.setAngleUnitsCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -210,6 +254,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETENDPOSETOLERANCECOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETENDPOSETOLERANCECOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_SetEndPoseToleranceDataType command = skill->cRCLCommands[i].fields.setEndPoseToleranceCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -219,6 +265,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETFORCEUNITSCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETFORCEUNITSCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_SetForceUnitsDataType command = skill->cRCLCommands[i].fields.setForceUnitsCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -228,6 +276,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETINTERMEDIATEPOSETOLERANCECOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETINTERMEDIATEPOSETOLERANCECOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_SetIntermediatePoseToleranceDataType command = skill->cRCLCommands[i].fields.setIntermediatePoseToleranceCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -237,6 +287,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETLENGTHUNITSCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETLENGTHUNITSCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_SetLengthUnitsDataType command = skill->cRCLCommands[i].fields.setLengthUnitsCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -246,6 +298,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETMOTIONCOORDINATIONCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETMOTIONCOORDINATIONCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_SetMotionCoordinationDataType command = skill->cRCLCommands[i].fields.setMotionCoordinationCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -255,6 +309,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETTORQUEUNITSCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETTORQUEUNITSCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_SetTorqueUnitsDataType command = skill->cRCLCommands[i].fields.setTorqueUnitsCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -264,6 +320,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_STOPMOTIONCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_STOPMOTIONCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_StopMotionDataType command = skill->cRCLCommands[i].fields.stopMotionCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -273,6 +331,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_CONFIGURESTATUSREPORTCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_CONFIGURESTATUSREPORTCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_ConfigureStatusReportDataType command = skill->cRCLCommands[i].fields.configureStatusReportCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -282,6 +342,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENABLESENSORCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENABLESENSORCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_EnableSensorDataType command = skill->cRCLCommands[i].fields.enableSensorCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -291,6 +353,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DISABLESENSORCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DISABLESENSORCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_DisableSensorDataType command = skill->cRCLCommands[i].fields.disableSensorCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -300,6 +364,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENABLEGRIPPERCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENABLEGRIPPERCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_EnableGripperDataType command = skill->cRCLCommands[i].fields.enableGripperCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -309,6 +375,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DISABLEGRIPPERCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DISABLEGRIPPERCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_DisableGripperDataType command = skill->cRCLCommands[i].fields.disableGripperCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -318,6 +386,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENABLEROBOTPARAMETERSTATUSCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENABLEROBOTPARAMETERSTATUSCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_EnableRobotParameterStatusDataType command = skill->cRCLCommands[i].fields.enableRobotParameterStatusCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -327,6 +397,8 @@ namespace SAMY{
                 }
             case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DISABLEROBOTPARAMETERSTATUSCOMMAND:
                 {
+                std::cout<< "UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DISABLEROBOTPARAMETERSTATUSCOMMAND "<< skill->cRCLCommands[i].switchField << std::endl;
+
                 UA_DisableRobotParameterStatusDataType command = skill->cRCLCommands[i].fields.disableRobotParameterStatusCommand;
                 UA_String str2;
                 UA_String_init( &str2 );
@@ -335,10 +407,12 @@ namespace SAMY{
                 break;
                 }
             default:
-                std::cout<< "ERROR: CRCLSKILL COULD NOT BE PRINTED" << std::endl;
+                std::cout<< "ERROR: CRCLCOMMANDSUNION WITH SWITCHFIELD " << type << " COULD NOT BE PRINTED" << std::endl;
                 break;
             }
+            std::cout<< "\t\t}" << std::endl ;
         }
+        std::cout<< "\t}" << std::endl;
     }
 
     void SAMYSkill::setSkillTypeNodeId( const UA_NodeId& nodeId ){
@@ -588,63 +662,6 @@ namespace SAMY{
         return typeNodeId;
     }
 
-
-
-
-/*
-    UA_StatusCode AdderParameterNodesToSkillType::addParameterNodesToServer(
-                                                    const std::string& parameterTypeName,
-                                                            const UA_NodeId& variableTypeNode ){
-
-        UA_Int16 crclNS = UA_Server_addNamespace( server, "https://crcl.org" );
-        std::string name = std::to_string(numberOfCommandInSkill) + "_" + parameterTypeName;
-
-        UA_NodeId paramNodeId = UA_NODEID_NULL;
-        UA_NodeId paramNodeIdRT = UA_NODEID_NULL;
-
-        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        UA_VariableAttributes attr = UA_VariableAttributes_default;
-        attr.accessLevel = UA_ACCESSLEVELMASK_READ | UA_ACCESSLEVELMASK_WRITE;
-        attr.displayName = UA_LOCALIZEDTEXT("", (char*)name.c_str());
- //       attr.dataType = variableTypeNode;
-        attr.valueRank = UA_VALUERANK_SCALAR;
-
-        retVal |= UA_Server_addNode_begin( server, UA_NODECLASS_VARIABLE,
-        UA_NODEID_NUMERIC(skillsNS, 0),
-        skillParametersSetNode,
-        UA_NODEID_NUMERIC(0, 47LU),
-        UA_QUALIFIEDNAME(skillsNS, const_cast<char*>( name.c_str() ) ),
-        variableTypeNode, (const UA_NodeAttributes*)&attr, &UA_TYPES[UA_TYPES_VARIABLEATTRIBUTES],
-        NULL, &paramNodeId);
-
-        retVal |= UA_Server_addReference( server, paramNodeId,
-                UA_NODEID_NUMERIC(0, 37LU), UA_EXPANDEDNODEID_NUMERIC(0, 78LU), true);
-
-        retVal |= UA_Server_addNode_finish(server, paramNodeId );
-
-        name = name + "_RealTime";
-
-        UA_VariableAttributes attr2 = UA_VariableAttributes_default;
-        attr2.accessLevel = UA_ACCESSLEVELMASK_READ | UA_ACCESSLEVELMASK_WRITE;
-        attr2.displayName = UA_LOCALIZEDTEXT("", (char*)name.c_str());
-        attr2.valueRank = UA_VALUERANK_SCALAR;
-
-        retVal |= UA_Server_addNode_begin( server, UA_NODECLASS_VARIABLE,
-        UA_NODEID_NUMERIC(skillsNS, 0),
-        skillRealTimeParametersSetNode,
-        UA_NODEID_NUMERIC(0, 47LU),
-        UA_QUALIFIEDNAME(skillsNS, const_cast<char*>( name.c_str() ) ),
-        variableTypeNode, (const UA_NodeAttributes*)&attr2, &UA_TYPES[UA_TYPES_VARIABLEATTRIBUTES],
-        NULL, &paramNodeIdRT);
-
-        retVal |= UA_Server_addReference( server, paramNodeIdRT,
-                UA_NODEID_NUMERIC(0, 37LU), UA_EXPANDEDNODEID_NUMERIC(0, 78LU), true);
-
-        retVal |= UA_Server_addNode_finish(server, paramNodeIdRT );
-
-        return retVal;
-    }*/
-
     UA_StatusCode AdderParameterNodesToSkillType::addParameterNodesToServer(
                                                     const std::string& parameterTypeName ){
 
@@ -793,6 +810,28 @@ bool SAMYSkill::createSkillInstance( UA_Server* server, UA_CRCLSkillDataType* op
 //    const std::lock_guard<std::mutex> lock(skillInstantiationMutex);
 
     InstantiateCRCLCommandFromServerParameters crclCommandsInstantiator{ server, UA_NODEID_NULL, UA_NODEID_NULL };
+
+
+/*
+    std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
+    std::string address = "opc.tcp://localhost:4567";
+    UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
+
+    client.reset( UA_Client_new() );
+    UA_ClientConfig *cc = UA_Client_getConfig( client.get() );
+
+    UA_ClientConfig_setDefault(cc);
+    cc->customDataTypes = &customDataTypes;
+
+    UA_StatusCode retvalAux = UA_Client_connect( client.get(), address.c_str() );
+
+    if( retvalAux != UA_STATUSCODE_GOOD )
+        std::cout<< "ERROR CONNECTING TO TEST SERVER" << std::endl;
+    else{
+        std::cout<< "Succesfully connected to test server" << std::endl;
+    }
+*/
+
     for(int j=0; j < commands.size(); j++)
     {
         auto it = crclCommandSwitchfield_ParameterType_Map.find( commands[j].switchField );
@@ -800,7 +839,21 @@ bool SAMYSkill::createSkillInstance( UA_Server* server, UA_CRCLSkillDataType* op
             auxParameter = it->second;
             crclCommandsInstantiator.normalParameterNodeId = normalParameterNodes[j];
             crclCommandsInstantiator.realTimeParameterNodeId = realTimeParameterNodes[j];
-            commandsArray[j] = std::visit(crclCommandsInstantiator, auxParameter);
+            UA_CRCLCommandsUnionDataType commandAux = std::move( std::visit(crclCommandsInstantiator, auxParameter) );
+/*
+            UA_Variant varTest;
+            UA_Variant_init( &varTest );
+            UA_Variant_setScalar( &varTest, &commandAux, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
+
+            retvalAux |= UA_Client_writeValueAttribute( client.get(), UA_NODEID_NUMERIC(1, 1214), &varTest);
+
+            if( retvalAux != UA_STATUSCODE_GOOD ){
+                std::cout<< "ERROR WRITTING CommandsUnionDataType TO TEST SERVER" << std::endl;
+            }else{
+                std::cout<< "success WRITTING CommandsUnionDataType TO TEST SERVER" << std::endl;
+            }
+*/
+            UA_CRCLCommandsUnionDataType_copy( &commandAux , &commandsArray[j] );
         }else{
             throw std::runtime_error("INSTANCE OF THE SKILL COULD NOT BE CREATED");
         }
@@ -810,6 +863,22 @@ bool SAMYSkill::createSkillInstance( UA_Server* server, UA_CRCLSkillDataType* op
         opcuaSkill->id = skillNodeID.identifier.numeric;
         opcuaSkill->name = UA_STRING( const_cast<char*>( skillName.c_str() ) );
     }
+
+    /*
+    UA_Variant varTest;
+    UA_Variant_init( &varTest );
+    UA_Variant_setScalar( &varTest, opcuaSkill, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE] );
+
+    retvalAux |= UA_Client_writeValueAttribute( client.get(), UA_NODEID_NUMERIC(1, 1300), &varTest);
+
+    if( retvalAux != UA_STATUSCODE_GOOD ){
+        std::cout<< "ERROR WRITTING SAMYSKILL TO TEST SERVER" << std::endl;
+    }else{
+        std::cout<< "success WRITTING SAMYSKILL TO TEST SERVER" << std::endl;
+    }
+
+    std::cout<< "createSkillInstance end"<<std::endl;*/
+
     return true;
 }
 

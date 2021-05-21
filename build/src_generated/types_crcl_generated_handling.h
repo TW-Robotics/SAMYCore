@@ -1,5 +1,5 @@
 /* Generated from CRCL.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py
- * on host jbg by user jbg at 2021-05-18 09:28:52 */
+ * on host jbg by user jbg at 2021-05-21 08:22:01 */
 
 #ifndef TYPES_CRCL_GENERATED_HANDLING_H_
 #define TYPES_CRCL_GENERATED_HANDLING_H_

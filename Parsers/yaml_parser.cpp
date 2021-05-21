@@ -37,15 +37,15 @@ UA_CRCLCommandsUnionDataType Parsers::SkillsParser::stringToCRCLCommandUnion(con
         return command;
     }else if(noCaseSensStringComparison( str, "MoveScrew" )){
         UA_CRCLCommandsUnionDataType command;
- //       UA_MoveScrewDataType moveScrew;
- //       command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVESCREWCOMMAND;
- //       command.fields.moveScrew = moveScrew;
+        UA_MoveScrewDataType moveScrew;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVESCREWCOMMAND;
+        command.fields.moveScrewCommand = moveScrew;
         return command;
     }else if(noCaseSensStringComparison( str, "MoveThroughTo" )){
         UA_CRCLCommandsUnionDataType command;
- //       UA_MoveToDataType moveThroughTo;
- //       command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETHROUGHTOCOMMAND;
- //       command.fields.moveToCommand = moveTo;
+        UA_MoveThroughToDataType moveThroughTo;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETHROUGHTOCOMMAND;
+        command.fields.moveThroughToCommand = moveThroughTo;
         return command;
     }else if(noCaseSensStringComparison( str, "Dwell" )){
         UA_CRCLCommandsUnionDataType command;
@@ -55,27 +55,21 @@ UA_CRCLCommandsUnionDataType Parsers::SkillsParser::stringToCRCLCommandUnion(con
         return command;
     }else if(noCaseSensStringComparison( str, "ActuateJoints" )){
         UA_CRCLCommandsUnionDataType command;
- //       UA_MoveToDataType moveTo;
- //       command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
- //       command.fields.moveToCommand = moveTo;
+        UA_ActuateJointsDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ACTUATEJOINTSCOMMAND;
+        command.fields.actuateJointsCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "ConfigureJointReports" )){
         UA_CRCLCommandsUnionDataType command;
-//        UA_MoveToDataType moveTo;
-//        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
-//        command.fields.moveToCommand = moveTo;
-        return command;
-    }else if(noCaseSensStringComparison( str, "ConfigureJointReport" )){
-        UA_CRCLCommandsUnionDataType command;
-   //     UA_MoveToDataType moveTo;
-   //     command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
-   //     command.fields.moveToCommand = moveTo;
+        UA_ConfigureJointReportsDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_CONFIGUREJOINTREPORTSCOMMAND;
+        command.fields.configureJointReportsCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "SetDefaultJointPositionsTolerances" )){
         UA_CRCLCommandsUnionDataType command;
-  //      UA_MoveToDataType moveTo;
-  //      command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
-  //      command.fields.moveToCommand = moveTo;
+        UA_SetDefaultJointPositionsTolerancesDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETDEFAULTJOINTPOSITIONSTOLERANCESCOMMAND;
+        command.fields.setDefaultJointPositionsTolerancesCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "GetStatus" )){
         UA_CRCLCommandsUnionDataType command;
@@ -91,9 +85,9 @@ UA_CRCLCommandsUnionDataType Parsers::SkillsParser::stringToCRCLCommandUnion(con
         return command;
     }else if(noCaseSensStringComparison( str, "OpenToolChanger" )){
         UA_CRCLCommandsUnionDataType command;
- //       UA_MoveToDataType moveTo;
- //       command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
- //       command.fields.moveToCommand = moveTo;
+        UA_OpenToolChangerDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_OPENTOOLCHANGERCOMMAND;
+        command.fields.openToolChangerCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "SetRobotParameters" )){
         UA_CRCLCommandsUnionDataType command;
@@ -103,9 +97,9 @@ UA_CRCLCommandsUnionDataType Parsers::SkillsParser::stringToCRCLCommandUnion(con
         return command;
     }else if(noCaseSensStringComparison( str, "SetEndeffectorParameters" )){
         UA_CRCLCommandsUnionDataType command;
- //       UA_MoveToDataType moveTo;
- //       command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
- //       command.fields.moveToCommand = moveTo;
+        UA_SetEndeffectorParametersDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETENDEFFECTORPARAMETERSCOMMAND;
+        command.fields.setEndeffectorParametersCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "SetEndeffector" )){
         UA_CRCLCommandsUnionDataType command;
@@ -115,9 +109,9 @@ UA_CRCLCommandsUnionDataType Parsers::SkillsParser::stringToCRCLCommandUnion(con
         return command;
     }else if(noCaseSensStringComparison( str, "SetTransAccel" )){
         UA_CRCLCommandsUnionDataType command;
-  //      UA_MoveToDataType moveTo;
-  //      command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
-  //      command.fields.moveToCommand = moveTo;
+        UA_SetTransAccelDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETTRANSACCELCOMMAND;
+        command.fields.setTransAccelCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "SetTransSpeed" )){
         UA_CRCLCommandsUnionDataType command;
@@ -127,105 +121,105 @@ UA_CRCLCommandsUnionDataType Parsers::SkillsParser::stringToCRCLCommandUnion(con
         return command;
     }else if(noCaseSensStringComparison( str, "SetRotAccel" )){
         UA_CRCLCommandsUnionDataType command;
- //       UA_MoveToDataType moveTo;
- //       command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
- //       command.fields.moveToCommand = moveTo;
+        UA_SetRotAccelDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETROTACCELCOMMAND;
+        command.fields.setRotAccelCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "SetRotSpeed" )){
         UA_CRCLCommandsUnionDataType command;
-   //     UA_MoveToDataType moveTo;
-   //     command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
-   //     command.fields.moveToCommand = moveTo;
+        UA_SetRotSpeedDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETROTSPEEDCOMMAND;
+        command.fields.setRotSpeedCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "SetAngleUnits" )){
         UA_CRCLCommandsUnionDataType command;
-    //    UA_MoveToDataType moveTo;
-    //    command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
-    //    command.fields.moveToCommand = moveTo;
+        UA_SetAngleUnitsDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETANGLEUNITSCOMMAND;
+        command.fields.setAngleUnitsCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "SetEndPoseTolerance" )){
         UA_CRCLCommandsUnionDataType command;
-     //   UA_MoveToDataType moveTo;
-     //   command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
-     //   command.fields.moveToCommand = moveTo;
+        UA_SetEndPoseToleranceDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETENDPOSETOLERANCECOMMAND;
+        command.fields.setEndPoseToleranceCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "SetForceUnits" )){
         UA_CRCLCommandsUnionDataType command;
-    //    UA_MoveToDataType moveTo;
-    //    command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
-    //    command.fields.moveToCommand = moveTo;
+        UA_SetForceUnitsDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETFORCEUNITSCOMMAND;
+        command.fields.setForceUnitsCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "SetIntermediatePoseTolerance" )){
         UA_CRCLCommandsUnionDataType command;
-    //    UA_MoveToDataType moveTo;
-    //    command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
-    //    command.fields.moveToCommand = moveTo;
+        UA_SetIntermediatePoseToleranceDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETINTERMEDIATEPOSETOLERANCECOMMAND;
+        command.fields.setIntermediatePoseToleranceCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "SetLengthUnits" )){
         UA_CRCLCommandsUnionDataType command;
-  //      UA_MoveToDataType moveTo;
-  //      command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
-  //      command.fields.moveToCommand = moveTo;
+        UA_SetLengthUnitsDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETLENGTHUNITSCOMMAND;
+        command.fields.setLengthUnitsCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "SetMotionCoordination" )){
         UA_CRCLCommandsUnionDataType command;
-  //      UA_MoveToDataType moveTo;
-  //      command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
-  //      command.fields.moveToCommand = moveTo;
+        UA_SetMotionCoordinationDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETMOTIONCOORDINATIONCOMMAND;
+        command.fields.setMotionCoordinationCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "SetTorqueUnits" )){
         UA_CRCLCommandsUnionDataType command;
-        UA_MoveToDataType moveTo;
-        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
-        command.fields.moveToCommand = moveTo;
+        UA_SetTorqueUnitsDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETTORQUEUNITSCOMMAND;
+        command.fields.setTorqueUnitsCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "StopMotion" )){
         UA_CRCLCommandsUnionDataType command;
-  //      UA_MoveToDataType moveTo;
-  //      command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
-  //      command.fields.moveToCommand = moveTo;
+        UA_StopMotionDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_STOPMOTIONCOMMAND;
+        command.fields.stopMotionCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "ConfigureStatusReport" )){
         UA_CRCLCommandsUnionDataType command;
-   //     UA_MoveToDataType moveTo;
-   //     command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
-   //     command.fields.moveToCommand = moveTo;
+        UA_ConfigureStatusReportDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_CONFIGURESTATUSREPORTCOMMAND;
+        command.fields.configureStatusReportCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "EnableSensor" )){
         UA_CRCLCommandsUnionDataType command;
-   //     UA_MoveToDataType moveTo;
-   //     command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
-   //     command.fields.moveToCommand = moveTo;
+        UA_EnableSensorDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENABLESENSORCOMMAND;
+        command.fields.enableSensorCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "DisableSensor" )){
         UA_CRCLCommandsUnionDataType command;
-  //      UA_MoveToDataType moveTo;
-  //      command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
-  //      command.fields.moveToCommand = moveTo;
+        UA_DisableSensorDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DISABLESENSORCOMMAND;
+        command.fields.disableSensorCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "EnableGripper" )){
         UA_CRCLCommandsUnionDataType command;
- //       UA_MoveToDataType moveTo;
- //       command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
- //       command.fields.moveToCommand = moveTo;
+        UA_EnableGripperDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENABLEGRIPPERCOMMAND;
+        command.fields.enableGripperCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "DisableGripper" )){
         UA_CRCLCommandsUnionDataType command;
- //       UA_MoveToDataType moveTo;
- //       command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
- //       command.fields.moveToCommand = moveTo;
+        UA_DisableGripperDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DISABLEGRIPPERCOMMAND;
+        command.fields.disableGripperCommand = aux;
         return command;
     }else if(noCaseSensStringComparison( str, "EnableRobotParameterStatus" )){
         UA_CRCLCommandsUnionDataType command;
- //       UA_MoveToDataType moveTo;
- //       command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
- //       command.fields.moveToCommand = moveTo;
+        UA_EnableRobotParameterStatusDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENABLEROBOTPARAMETERSTATUSCOMMAND;
+        command.fields.enableRobotParameterStatusCommand = aux;
         return command;
-    }else if(noCaseSensStringComparison( str, "DisableRobotParameter" )){
+    }else if(noCaseSensStringComparison( str, "DisableRobotParameterStatus" )){
         UA_CRCLCommandsUnionDataType command;
- //       UA_MoveToDataType moveTo;
- //       command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
- //       command.fields.moveToCommand = moveTo;
+        UA_DisableRobotParameterStatusDataType aux;
+        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DISABLEROBOTPARAMETERSTATUSCOMMAND;
+        command.fields.disableRobotParameterStatusCommand = aux;
         return command;
     }else{
         UA_CRCLCommandsUnionDataType command;

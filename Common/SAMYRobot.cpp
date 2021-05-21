@@ -40,6 +40,8 @@ sendNextSkillInstanceToRobot(UA_Client *client, UA_UInt32 subId, void *subContex
     UA_Boolean lastSkill_succeded = *(UA_Boolean*)value->value.data;
     if(lastSkill_succeded == true){
 
+        UA_StatusCode retvalAux = UA_STATUSCODE_GOOD;
+
         SAMY::SAMYRobot* robot = (SAMY::SAMYRobot*)monContext;
 
         robot->SAMYRobotVariableNodeId = UA_NODEID_NUMERIC( 1, 111 );
@@ -47,31 +49,42 @@ sendNextSkillInstanceToRobot(UA_Client *client, UA_UInt32 subId, void *subContex
         robot->ipAddresses.iPAddress_Status = UA_STRING( "Not set!" );
 
         UA_SAMYRobotDataType opcuaRobot;
-        opcuaRobot.active = UA_TRUE;
+        UA_SAMYRobotDataType_init( &opcuaRobot );
         opcuaRobot.id = robot->id;
-        opcuaRobot.iPAddresses = robot->ipAddresses;
         UA_String_copy( &robot->name, &opcuaRobot.name );
-        opcuaRobot.online = UA_TRUE;
+
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+
+        UA_CRCLSkillDataType_init( &opcuaRobot.requested_Skill );
+
         opcuaRobot.requested_Skill_Success = UA_TRUE;
 
-        UA_copy( &(robot->robotPlan[robot->lastRequestedSkill]),
-                                &opcuaRobot.requested_Skill,
-                                        &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE] );
+        opcuaRobot.active = UA_TRUE;
+        opcuaRobot.online = UA_TRUE;
 
-    //    SAMY::printCRCLSkill( &opcuaRobot.requested_Skill );
+        opcuaRobot.iPAddresses.iPAddress_Skill =  UA_STRING( "Not set!" );
+        opcuaRobot.iPAddresses.iPAddress_Status =  UA_STRING( "Not set!" );
+
+        retvalAux |= UA_CRCLSkillDataType_copy( &(robot->robotPlan[robot->lastRequestedSkill]), &opcuaRobot.requested_Skill );
+
+        if( retvalAux != UA_STATUSCODE_GOOD ){
+            std::cout<< "ERROR COPYING SAMYSKILL" << std::endl;
+        }else{
+            std::cout<< "success COPYING SAMYSKILL" << std::endl;
+        }
 
         UA_String str2;
         UA_String_init( &str2 );
-        UA_print( &opcuaRobot.requested_Skill, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE], &str2 );
+        UA_print( &opcuaRobot, &UA_TYPES_CRCL[UA_TYPES_CRCL_SAMYROBOTDATATYPE], &str2 );
         std::cout<< str2.data << std::endl;
+
+        SAMY::printCRCLSkill( &opcuaRobot.requested_Skill );
 
         UA_Variant var;
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &opcuaRobot, &UA_TYPES_CRCL[UA_TYPES_CRCL_SAMYROBOTDATATYPE] );
-        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
 
         retVal |= UA_Client_writeValueAttribute(robot->client.get(), UA_NODEID_STRING(1, "Robot"), &var);
-
 
         if(retVal == UA_STATUSCODE_GOOD){
             std::cout<<"ROBOT CORRECTLY WRITTEN IN SAMYPLUGIN |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"<< std::endl;

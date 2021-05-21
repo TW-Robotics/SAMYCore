@@ -1,14 +1,17 @@
+#include <map>
+#include <vector>
+#include <typeinfo>
+#include <algorithm>
+#include <memory>
+#include <thread>
+
 #include "namespace_di_generated.h"
 #include "namespace_robotics_generated.h"
 #include "namespace_fortiss_di_generated.h"
 #include "namespace_fortiss_robotics_generated.h"
 #include "namespace_crcl_generated.h"
 #include "SAMYRobot.h"
-#include <map>
-#include <vector>
-#include <typeinfo>
-#include <algorithm>
-#include <memory>
+#include <types_crcl_generated_handling.h>
 
 namespace SAMY{
 namespace ServerGenerator{

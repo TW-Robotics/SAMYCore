@@ -2896,7 +2896,7 @@ class MessageParametersSetDataType(object):
         vals = [name + ": " + str(val) for name, val in self.__dict__.items()]
         return self.__class__.__name__ + "(" + ", ".join(vals) + ")"
 
-    __repr__ = __str__C
+    __repr__ = __str__
 
     def __init__(self):
         self.RealTimeParameter = True
@@ -2988,7 +2988,7 @@ class DwellParametersSetDataType(object):
 
     ua_types = [
         ('RealTimeParameter', 'Boolean'),
-        ('DwellTime', 'Boolean'),
+        ('DwellTime', 'Double'),
     ]
     def __str__(self):
         vals = [name + ": " + str(val) for name, val in self.__dict__.items()]
@@ -2998,7 +2998,7 @@ class DwellParametersSetDataType(object):
 
     def __init__(self):
         self.RealTimeParameter = True
-        self.DwellTime = True
+        self.DwellTime = 0
 
 
 class ActuateJointsParametersSetDataType(object):

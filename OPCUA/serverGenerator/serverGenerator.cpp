@@ -281,7 +281,48 @@ namespace ServerGenerator{
             for( int i = 0; i < robot->robotSkills.size(); i++ ){
                 if( robot->robotSkills[i].getSkillNodeID().identifier.numeric == objectId->identifier.numeric ){
                     UA_CRCLSkillDataType skill;
+                    UA_CRCLSkillDataType_init( &skill );
                     if( robot->robotSkills[i].createSkillInstance( server, &skill ) ){
+/*
+                        std::cout<< "startMethodCallback start" << std::endl;
+
+
+                        std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
+                        std::string address = "opc.tcp://localhost:4567";
+                        UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
+
+                        client.reset( UA_Client_new() );
+                        UA_ClientConfig *cc = UA_Client_getConfig( client.get() );
+
+                        UA_ClientConfig_setDefault(cc);
+                        cc->customDataTypes = &customDataTypes;
+
+                        UA_StatusCode retvalAux = UA_Client_connect( client.get(), address.c_str() );
+
+                        if( retvalAux != UA_STATUSCODE_GOOD )
+                            std::cout<< "ERROR CONNECTING TO TEST SERVER" << std::endl;
+                        else{
+                            std::cout<< "Succesfully connected to test server" << std::endl;
+                        }
+
+                        UA_Variant varTest;
+                        UA_Variant_init( &varTest );
+                        UA_Variant_setScalar( &varTest, &skill, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE] );
+
+                        retvalAux |= UA_Client_writeValueAttribute( client.get(), UA_NODEID_NUMERIC(1, 1300), &varTest);
+
+                        if( retvalAux != UA_STATUSCODE_GOOD ){
+                            std::cout<< "ERROR WRITTING SAMYSKILL TO TEST SERVER" << std::endl;
+                        }else{
+                            std::cout<< "success WRITTING SAMYSKILL TO TEST SERVER" << std::endl;
+                        }
+
+
+                        std::cout<< "startMethodCallback end" << std::endl;
+                        */
+
+
+
                         robot->robotPlan.emplace_back( skill );
                         std::cout << "ADDED " << skill.name.data << " TO ROBOT " << robot->name.data << std::endl;
           //              UA_String str;

@@ -4,6 +4,7 @@
 #include <vector>
 #include "crcl_nodeids.h"
 #include "namespace_crcl_generated.h"
+#include <types_crcl_generated_handling.h>
 #include "SAMYRobot.h"
 #include <variant>
 #include <exception>
@@ -16,6 +17,8 @@
 #define CRCLSKILLS_NODE_ID 9999
 
 namespace SAMY{
+
+void printCRCLSkill(const UA_CRCLSkillDataType *skill);
 
 /* Variant for dealing with the polymorphy of the parameters required by the polymorphic CRCL commands.
 * Since polymorphy "cannot be sent over the wire", I use a union of CRCL commands for that purpose.
@@ -135,7 +138,7 @@ static const std::map<std::string, UA_NodeId> crclParameterName_DataTypeNodeId_M
     { "SetAngleUnitsParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSPARAMETERSSETDATATYPE].typeId },
     { "SetEndPoseToleranceParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMETERSSETDATATYPE].typeId },
     { "SetForceUnitsParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSPARAMETERSSETDATATYPE].typeId },
-    { "SetIntermediatePoseToleranceParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEDATATYPE].typeId },
+    { "SetIntermediatePoseToleranceParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEPARAMETERSSETDATATYPE].typeId },
     { "SetLengthUnitsParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSPARAMETERSSETDATATYPE].typeId },
     { "SetMotionCoordinationParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMETERSSETDATATYPE].typeId },
     { "SetTorqueUnitsParameters" , UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSPARAMETERSSETDATATYPE].typeId },
@@ -179,8 +182,11 @@ public:
        command.fields.initCanonCommand.guard = NULL;
        command.fields.initCanonCommand.guardSize = 0;
        command.fields.initCanonCommand.id = 12345;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.initCanonCommand.name);
+       UA_String aux = UA_STRING( "InitCommand" );
+       UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+       retVal |= UA_String_copy( &aux, &command.fields.initCanonCommand.name);
+       if( retVal != UA_STATUSCODE_GOOD )
+           throw std::runtime_error( "SKILL PARAMETER COULD NOT BE COPIED" );
 
        return command;
    }
@@ -193,19 +199,23 @@ public:
        command.fields.endCanonCommand.guard = NULL;
        command.fields.endCanonCommand.guardSize = 0;
        command.fields.endCanonCommand.id = 12345;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.endCanonCommand.name);
+       UA_String aux = UA_STRING( "EndCommand" );
+       UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+       retVal |= UA_String_copy( &aux, &command.fields.endCanonCommand.name);
+       if( retVal != UA_STATUSCODE_GOOD )
+           throw std::runtime_error( "SKILL PARAMETER COULD NOT BE COPIED" );
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_MessageParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_MessageParametersSetDataType& params2)const{
        UA_Variant var;
        UA_Variant_init(&var);
+
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_MessageParametersSetDataType*)(&var)) );
+       UA_MessageParametersSetDataType* params = (UA_MessageParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MESSAGECOMMAND;
@@ -215,850 +225,862 @@ public:
        command.fields.messageCommand.guard = NULL;
        command.fields.messageCommand.guardSize = 0;
        command.fields.messageCommand.id = 12345;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.messageCommand.name);
+       UA_String aux = UA_STRING( "MessageCommand" );
+       retVal |= UA_String_copy( &aux, &command.fields.messageCommand.name);
 
-       command.fields.messageCommand.message = std::move( params.message );
-       command.fields.messageCommand.realTimeCommand = params.realTimeParameter;
+       retVal |= UA_String_copy( &params->message, &(command.fields.messageCommand.message) );
+       command.fields.messageCommand.realTimeCommand = params->realTimeParameter;
        command.fields.messageCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_MoveToParametersSetDataType& params )const{
+   UA_CRCLCommandsUnionDataType operator()( UA_MoveToParametersSetDataType& paramType )const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_MoveToParametersSetDataType*)(&var)) );
+       UA_MoveToParametersSetDataType* params = (UA_MoveToParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND;
        command.fields.moveToCommand.commandID = 0;
        command.fields.moveToCommand.id = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.moveToCommand.name);
+       UA_String aux = UA_STRING( "MoveToCommand" );
+       retVal |= UA_String_copy( &aux, &command.fields.moveToCommand.name);
        command.fields.moveToCommand.guard = NULL;
        command.fields.moveToCommand.guardSize = 0;
 
-       command.fields.moveToCommand.moveStraight = std::move(  params.moveStraight );
-       command.fields.moveToCommand.endPosition = std::move( params.endPosition );
-       command.fields.moveToCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.moveToCommand.moveStraight = params->moveStraight;
+       command.fields.moveToCommand.endPosition = std::move( params->endPosition );
+       command.fields.moveToCommand.realTimeCommand = params->realTimeParameter;
        command.fields.moveToCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_MoveScrewParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_MoveScrewParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_MoveScrewParametersSetDataType*)(&var)) );
+       UA_MoveScrewParametersSetDataType* params = (UA_MoveScrewParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVESCREWCOMMAND;
        command.fields.moveScrewCommand.commandID = 0;
        command.fields.moveScrewCommand.id = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.moveScrewCommand.name);
+       UA_String aux = UA_STRING( "MoveScrewCommand" );
+       retVal |= UA_String_copy( &aux, &command.fields.moveScrewCommand.name);
        command.fields.moveScrewCommand.guard = NULL;
        command.fields.moveScrewCommand.guardSize = 0;
 
-       command.fields.moveScrewCommand.axialDistanceFree = params.axialDistanceFree;
-       command.fields.moveScrewCommand.axialDistanceScrew = params.axialDistanceScrew;
-       command.fields.moveScrewCommand.axisPoint = std::move( params.axisPoint );
-       command.fields.moveScrewCommand.startPosition = std::move( params.startPosition );
-       command.fields.moveScrewCommand.turn = params.turn;
+       command.fields.moveScrewCommand.axialDistanceFree = params->axialDistanceFree;
+       command.fields.moveScrewCommand.axialDistanceScrew = params->axialDistanceScrew;
+       command.fields.moveScrewCommand.axisPoint = std::move( params->axisPoint );
+       command.fields.moveScrewCommand.startPosition = std::move( params->startPosition );
+       command.fields.moveScrewCommand.turn = params->turn;
 
-       command.fields.moveScrewCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.moveScrewCommand.realTimeCommand = params->realTimeParameter;
        command.fields.moveScrewCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_MoveThroughToParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_MoveThroughToParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_MoveThroughToParametersSetDataType*)(&var)) );
+       UA_MoveThroughToParametersSetDataType* params = (UA_MoveThroughToParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETHROUGHTOCOMMAND;
        command.fields.moveThroughToCommand.commandID = 0;
        command.fields.moveThroughToCommand.id = 0;
        UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.moveThroughToCommand.name);
+       retVal |= UA_String_copy( &aux, &command.fields.moveThroughToCommand.name);
        command.fields.moveThroughToCommand.guard = NULL;
        command.fields.moveThroughToCommand.guardSize = 0;
 
-       command.fields.moveThroughToCommand.moveStraight = params.moveStraight;
-       command.fields.moveThroughToCommand.numPositions = params.numPositions;
-       command.fields.moveThroughToCommand.waypointSize = params.waypointSize;
-       command.fields.moveThroughToCommand.waypoint = params.waypoint;
+       command.fields.moveThroughToCommand.moveStraight = params->moveStraight;
+       command.fields.moveThroughToCommand.numPositions = params->numPositions;
+       command.fields.moveThroughToCommand.waypointSize = params->waypointSize;
+       command.fields.moveThroughToCommand.waypoint = std::move( params->waypoint );
 
-       command.fields.moveThroughToCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.moveThroughToCommand.realTimeCommand = params->realTimeParameter;
        command.fields.moveThroughToCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_DwellParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_DwellParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_DwellParametersSetDataType*)(&var)) );
+       UA_DwellParametersSetDataType* params = (UA_DwellParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DWELLCOMMAND;
        command.fields.dwellCommand.commandID = 0;
        command.fields.dwellCommand.id = 0;
        UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.dwellCommand.name);
+       retVal |= UA_String_copy( &aux, &command.fields.dwellCommand.name);
        command.fields.dwellCommand.guard = NULL;
        command.fields.dwellCommand.guardSize = 0;
 
-       command.fields.dwellCommand.dwellTime = params.dwellTime;
+       command.fields.dwellCommand.dwellTime = params->dwellTime;
 
-       command.fields.dwellCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.dwellCommand.realTimeCommand = params->realTimeParameter;
        command.fields.dwellCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_ActuateJointsParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_ActuateJointsParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_ActuateJointsParametersSetDataType*)(&var)) );
+       UA_ActuateJointsParametersSetDataType* params = (UA_ActuateJointsParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ACTUATEJOINTSCOMMAND;
        command.fields.actuateJointsCommand.commandID = 0;
        command.fields.actuateJointsCommand.id = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.actuateJointsCommand.name);
+       UA_String aux = UA_STRING( "ActuateJointsCommand" );
+       retVal |= UA_String_copy( &aux, &command.fields.actuateJointsCommand.name);
        command.fields.actuateJointsCommand.guard = NULL;
        command.fields.actuateJointsCommand.guardSize = 0;
 
-/* TODO: FIX THIS COMMAND, I THING SOMETHING IS NOT RIGHT IN THE INFORMATION MODELLING!!!!!*/
+       retVal |= UA_Array_copy( params->actuateJoint, params->actuateJointSize,
+                                (void**)&(command.fields.actuateJointsCommand.actuateJoint),
+                                &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE]);
+       if( retVal != UA_STATUSCODE_GOOD )
+           throw std::runtime_error( "SKILL PARAMETER COULD NOT BE COPIED" );
+       command.fields.actuateJointsCommand.actuateJointSize = params->actuateJointSize;
 
-       command.fields.actuateJointsCommand.realTimeCommand = params.realTimeParameter;
+       UA_CRCL_JointPositionsTolerancesDataType_copy( &params->jointTolerances,
+                                                      &(command.fields.actuateJointsCommand.jointTolerances) );
+
+       command.fields.actuateJointsCommand.realTimeCommand = params->realTimeParameter;
        command.fields.actuateJointsCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_ConfigureJointReportsParametersSetDataType& params)const{
-/*        UA_Variant var;
+   UA_CRCLCommandsUnionDataType operator()( UA_ConfigureJointReportsParametersSetDataType& paramType)const{
+        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
-       params = std::move( *((UA_ConfigureJointReportsParametersSetDataType*)(&var)) );
-*/
+       if( retVal != UA_STATUSCODE_GOOD )
+           throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
+
+       UA_ConfigureJointReportsParametersSetDataType* params = (UA_ConfigureJointReportsParametersSetDataType*)(var.data);
+
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_CONFIGUREJOINTREPORTSCOMMAND;
 
-       /* TODO: FIX THIS COMMAND, I THING SOMETHING IS NOT RIGHT IN THE INFORMATION MODELLING!!!!!*/
-
-       /*
        command.fields.configureJointReportsCommand.commandID = 0;
        command.fields.configureJointReportsCommand.id = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.configureJointReportsCommand.name);
+       UA_String aux = UA_STRING( "ConfigureJointReportsCommand" );
+       retVal |= UA_String_copy( &aux, &command.fields.configureJointReportsCommand.name);
        command.fields.configureJointReportsCommand.guard = NULL;
        command.fields.configureJointReportsCommand.guardSize = 0;
 
-       command.fields.configureJointReportsCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.configureJointReportsCommand.configureJointReportSize = params->configureJointReportSize;
+
+       command.fields.configureJointReportsCommand.resetAll = params->resetAll;
+       retVal |= UA_Array_copy( params->configureJointReport, params->configureJointReportSize,
+                                (void**)&(command.fields.configureJointReportsCommand.configureJointReport),
+                                &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_CONFIGUREJOINTREPORTDATATYPE]);
+       if( retVal != UA_STATUSCODE_GOOD )
+           throw std::runtime_error( "SKILL PARAMETER COULD NOT BE COPIED" );
+
+       command.fields.configureJointReportsCommand.realTimeCommand = params->realTimeParameter;
        command.fields.configureJointReportsCommand.realTimeParameterNode = realTimeParameterNodeId;
-*/
+
+
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_SetDefaultJointPositionsTolerancesParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_SetDefaultJointPositionsTolerancesParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_SetDefaultJointPositionsTolerancesParametersSetDataType*)(&var)) );
+       UA_SetDefaultJointPositionsTolerancesParametersSetDataType* params =
+                                                                (UA_SetDefaultJointPositionsTolerancesParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETDEFAULTJOINTPOSITIONSTOLERANCESCOMMAND;
        command.fields.setDefaultJointPositionsTolerancesCommand.commandID = 0;
        command.fields.setDefaultJointPositionsTolerancesCommand.id = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.setDefaultJointPositionsTolerancesCommand.name);
+       UA_String aux = UA_STRING( "SetDefaultJointPositionsTolerances" );
+       retVal |= UA_String_copy( &aux, &command.fields.setDefaultJointPositionsTolerancesCommand.name);
        command.fields.setDefaultJointPositionsTolerancesCommand.guard = NULL;
        command.fields.setDefaultJointPositionsTolerancesCommand.guardSize = 0;
 
-       command.fields.setDefaultJointPositionsTolerancesCommand.jointTolerances = params.jointTolerances;
+       UA_CRCL_JointPositionsTolerancesDataType_copy( &params->jointTolerances,
+                                                      &command.fields.setDefaultJointPositionsTolerancesCommand.jointTolerances );
 
-       command.fields.setDefaultJointPositionsTolerancesCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setDefaultJointPositionsTolerancesCommand.realTimeCommand = params->realTimeParameter;
        command.fields.setDefaultJointPositionsTolerancesCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_GetStatusParametersSetDataType& params)const{
-       UA_Variant var;
-       UA_Variant_init(&var);
-       UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
-       if( retVal != UA_STATUSCODE_GOOD )
-           throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
-
-       params = std::move( *((UA_GetStatusParametersSetDataType*)(&var)) );
-
+   UA_CRCLCommandsUnionDataType operator()( UA_GetStatusParametersSetDataType& paramType)const{
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_GETSTATUSCOMMAND;
        command.fields.getStatusCommand.commandID = 0;
        command.fields.getStatusCommand.id = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.getStatusCommand.name);
        command.fields.getStatusCommand.guard = NULL;
        command.fields.getStatusCommand.guardSize = 0;
+       UA_String aux = UA_STRING( "GetStatus" );
+       UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+       retVal |= UA_String_copy( &aux, &command.fields.getStatusCommand.name);
+       if( retVal != UA_STATUSCODE_GOOD )
+           throw std::runtime_error( "SKILL PARAMETER COULD NOT BE COPIED" );
 
        command.fields.getStatusCommand.realTimeCommand = UA_FALSE;
        command.fields.getStatusCommand.realTimeParameterNode = UA_NODEID_NULL;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_CloseToolChangerParametersSetDataType& params)const{
-       UA_Variant var;
-       UA_Variant_init(&var);
-       UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
-       if( retVal != UA_STATUSCODE_GOOD )
-           throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
-
-       params = std::move( *((UA_CloseToolChangerParametersSetDataType*)(&var)) );
-
+   UA_CRCLCommandsUnionDataType operator()( UA_CloseToolChangerParametersSetDataType& paramType)const{
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_CLOSETOOLCHANGERCOMMAND;
        command.fields.closeToolChangerCommand.commandID = 0;
        command.fields.closeToolChangerCommand.id = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.closeToolChangerCommand.name);
        command.fields.closeToolChangerCommand.guard = NULL;
        command.fields.closeToolChangerCommand.guardSize = 0;
+       UA_String aux = UA_STRING( "CloseToolChanger" );
+       UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+       retVal |= UA_String_copy( &aux, &command.fields.closeToolChangerCommand.name);
+       if( retVal != UA_STATUSCODE_GOOD )
+           throw std::runtime_error( "SKILL PARAMETER COULD NOT BE COPIED" );
 
        command.fields.closeToolChangerCommand.realTimeCommand = UA_FALSE;
        command.fields.closeToolChangerCommand.realTimeParameterNode = UA_NODEID_NULL;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_OpenToolChangerParametersSetDataType& params)const{
-       UA_Variant var;
-       UA_Variant_init(&var);
-       UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
-       if( retVal != UA_STATUSCODE_GOOD )
-           throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
-
-       params = std::move( *((UA_OpenToolChangerParametersSetDataType*)(&var)) );
-
+   UA_CRCLCommandsUnionDataType operator()( UA_OpenToolChangerParametersSetDataType& paramType)const{
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_OPENTOOLCHANGERCOMMAND;
        command.fields.openToolChangerCommand.commandID = 0;
        command.fields.openToolChangerCommand.id = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.openToolChangerCommand.name);
        command.fields.openToolChangerCommand.guard = NULL;
        command.fields.openToolChangerCommand.guardSize = 0;
+       UA_String aux = UA_STRING( "OpenToolChanger" );
+       UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+       retVal |= UA_String_copy( &aux, &command.fields.openToolChangerCommand.name);
+       if( retVal != UA_STATUSCODE_GOOD )
+           throw std::runtime_error( "SKILL PARAMETER COULD NOT BE COPIED" );
 
        command.fields.openToolChangerCommand.realTimeCommand = UA_FALSE;
        command.fields.openToolChangerCommand.realTimeParameterNode = UA_NODEID_NULL;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_SetRobotParametersParametersSetDataType& params )const{
+   UA_CRCLCommandsUnionDataType operator()( UA_SetRobotParametersParametersSetDataType& paramType )const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_SetRobotParametersParametersSetDataType*)(&var)) );
+       UA_SetRobotParametersParametersSetDataType* params = (UA_SetRobotParametersParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETROBOTPARAMETERSCOMMAND;
        command.fields.setRobotParametersCommand.commandID = 0;
        command.fields.setRobotParametersCommand.id = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.setRobotParametersCommand.name);
+       UA_String aux = UA_STRING( "SetRobotParameters" );
+       retVal |= UA_String_copy( &aux, &command.fields.setRobotParametersCommand.name);
        command.fields.setRobotParametersCommand.guard = NULL;
        command.fields.setRobotParametersCommand.guardSize = 0;
 
-       command.fields.setRobotParametersCommand.parameterSettingSize = params.parameterSettingSize;
-       UA_CRCL_ParameterSettingDataType* paramsArray =
-                       (UA_CRCL_ParameterSettingDataType *)UA_Array_new(params.parameterSettingSize,
-                                              &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_PARAMETERSETTINGDATATYPE]);
-       for(int i=0; i < params.parameterSettingSize; i++){
-           paramsArray[i] = params.parameterSetting[i];
-       }
-       command.fields.setRobotParametersCommand.parameterSetting = paramsArray;
+       command.fields.setRobotParametersCommand.parameterSettingSize = params->parameterSettingSize;
+       retVal |= UA_Array_copy( params->parameterSetting,  params->parameterSettingSize,
+                                (void**)&(command.fields.setRobotParametersCommand.parameterSetting),
+                                &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_PARAMETERSETTINGDATATYPE]);
+       if( retVal != UA_STATUSCODE_GOOD )
+           throw std::runtime_error( "SKILL PARAMETER COULD NOT BE COPIED" );
 
-       command.fields.setRobotParametersCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setRobotParametersCommand.realTimeCommand = params->realTimeParameter;
        command.fields.setRobotParametersCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
 
-   UA_CRCLCommandsUnionDataType operator()( UA_SetEndeffectorParametersParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_SetEndeffectorParametersParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_SetEndeffectorParametersParametersSetDataType*)(&var)) );
+       UA_SetEndeffectorParametersParametersSetDataType* params = (UA_SetEndeffectorParametersParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETENDEFFECTORPARAMETERSCOMMAND;
        command.fields.setEndeffectorParametersCommand.commandID = 0;
        command.fields.setEndeffectorParametersCommand.id = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.setEndeffectorParametersCommand.name);
+       UA_String aux = UA_STRING( "SetEndeffectorParameters" );
+       retVal |= UA_String_copy( &aux, &command.fields.setEndeffectorParametersCommand.name);
        command.fields.setEndeffectorParametersCommand.guard = NULL;
        command.fields.setEndeffectorParametersCommand.guardSize = 0;
 
-       command.fields.setEndeffectorParametersCommand.parameterSetting = std::move( params.parameterSetting );
-       command.fields.setEndeffectorParametersCommand.parameterSettingSize = params.parameterSettingSize;
+       command.fields.setEndeffectorParametersCommand.parameterSettingSize = params->parameterSettingSize;
+       retVal |= UA_Array_copy( params->parameterSetting,  params->parameterSettingSize,
+                                (void**)&(command.fields.setEndeffectorParametersCommand.parameterSetting),
+                                &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_PARAMETERSETTINGDATATYPE]);
+       if( retVal != UA_STATUSCODE_GOOD )
+           throw std::runtime_error( "SKILL PARAMETER COULD NOT BE COPIED" );
 
-       command.fields.setEndeffectorParametersCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setEndeffectorParametersCommand.realTimeCommand = params->realTimeParameter;
        command.fields.setEndeffectorParametersCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
 
-   UA_CRCLCommandsUnionDataType operator()( UA_SetEndeffectorParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_SetEndeffectorParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_SetEndeffectorParametersSetDataType*)(&var)) );
+       UA_SetEndeffectorParametersSetDataType* params = (UA_SetEndeffectorParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETENDEFFECTORCOMMAND;
        command.fields.setEndeffectorCommand.commandID = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.setEndeffectorCommand.name);
+       UA_String aux = UA_STRING( "SetEndeffector" );
+       retVal |= UA_String_copy( &aux, &command.fields.setEndeffectorCommand.name);
        command.fields.setEndeffectorCommand.commandID = 0;
        command.fields.setEndeffectorCommand.id = 0;
        command.fields.setEndeffectorCommand.guard = NULL;
        command.fields.setEndeffectorCommand.guardSize = 0;
 
-       command.fields.setEndeffectorCommand.setting = params.setting;
+       command.fields.setEndeffectorCommand.setting = params->setting;
 
-       command.fields.setEndeffectorCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setEndeffectorCommand.realTimeCommand = params->realTimeParameter;
        command.fields.setEndeffectorCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_SetTransAccelParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_SetTransAccelParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_SetTransAccelParametersSetDataType*)(&var)) );
+       UA_SetTransAccelParametersSetDataType* params = (UA_SetTransAccelParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETENDEFFECTORCOMMAND;
        command.fields.setTransAccelCommand.commandID = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.setTransAccelCommand.name);
+       UA_String aux = UA_STRING( "SetTransAccel" );
+       retVal |= UA_String_copy( &aux, &command.fields.setTransAccelCommand.name);
        command.fields.setTransAccelCommand.commandID = 0;
        command.fields.setTransAccelCommand.id = 0;
        command.fields.setTransAccelCommand.guard = NULL;
        command.fields.setTransAccelCommand.guardSize = 0;
 
-       command.fields.setTransAccelCommand.transAccel = params.transAccel;
+       command.fields.setTransAccelCommand.transAccel = params->transAccel;
 
-       command.fields.setTransAccelCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setTransAccelCommand.realTimeCommand = params->realTimeParameter;
        command.fields.setTransAccelCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_SetTransSpeedParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_SetTransSpeedParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_SetTransSpeedParametersSetDataType*)(&var)) );
+       UA_SetTransSpeedParametersSetDataType* params = (UA_SetTransSpeedParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETTRANSSPEEDCOMMAND;
        command.fields.setTransSpeedCommand.commandID = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.setTransSpeedCommand.name);
+       UA_String aux = UA_STRING( "SetTransSpeed" );
+       retVal |= UA_String_copy( &aux, &command.fields.setTransSpeedCommand.name);
        command.fields.setTransSpeedCommand.commandID = 0;
        command.fields.setTransSpeedCommand.id = 0;
        command.fields.setTransSpeedCommand.guard = NULL;
        command.fields.setTransSpeedCommand.guardSize = 0;
-       command.fields.setTransSpeedCommand.transSpeed = params.transSpeed;
 
-       command.fields.setTransSpeedCommand.transSpeed = params.transSpeed;
+       command.fields.setTransSpeedCommand.transSpeed = params->transSpeed;
 
-       command.fields.setTransSpeedCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setTransSpeedCommand.realTimeCommand = params->realTimeParameter;
        command.fields.setTransSpeedCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_SetRotAccelParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_SetRotAccelParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_SetRotAccelParametersSetDataType*)(&var)) );
+       UA_SetRotAccelParametersSetDataType* params = (UA_SetRotAccelParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETTRANSSPEEDCOMMAND;
        command.fields.setTransSpeedCommand.commandID = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.setRotAccelCommand.name);
+       UA_String aux = UA_STRING( "SetRotAccel" );
+       retVal |= UA_String_copy( &aux, &command.fields.setRotAccelCommand.name);
        command.fields.setRotAccelCommand.commandID = 0;
        command.fields.setRotAccelCommand.id = 0;
        command.fields.setRotAccelCommand.guard = NULL;
        command.fields.setRotAccelCommand.guardSize = 0;
 
-       command.fields.setRotAccelCommand.rotAccel = params.rotAccel;
+       command.fields.setRotAccelCommand.rotAccel = params->rotAccel;
 
-       command.fields.setRotAccelCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setRotAccelCommand.realTimeCommand = params->realTimeParameter;
        command.fields.setRotAccelCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_SetRotSpeedParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_SetRotSpeedParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_SetRotSpeedParametersSetDataType*)(&var)) );
+       UA_SetRotSpeedParametersSetDataType* params = (UA_SetRotSpeedParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETROTSPEEDCOMMAND;
        command.fields.setRotSpeedCommand.commandID = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.setRotSpeedCommand.name);
+       UA_String aux = UA_STRING( "SetRotSpeed" );
+       retVal |= UA_String_copy( &aux, &command.fields.setRotSpeedCommand.name);
        command.fields.setRotSpeedCommand.commandID = 0;
        command.fields.setRotSpeedCommand.id = 0;
        command.fields.setRotSpeedCommand.guard = NULL;
        command.fields.setRotSpeedCommand.guardSize = 0;
 
-       command.fields.setRotSpeedCommand.rotSpeed = params.rotSpeed;
+       command.fields.setRotSpeedCommand.rotSpeed = params->rotSpeed;
 
-       command.fields.setRotSpeedCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setRotSpeedCommand.realTimeCommand = params->realTimeParameter;
        command.fields.setRotSpeedCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_SetAngleUnitsParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_SetAngleUnitsParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_SetAngleUnitsParametersSetDataType*)(&var)) );
+       UA_SetAngleUnitsParametersSetDataType* params = (UA_SetAngleUnitsParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETANGLEUNITSCOMMAND;
        command.fields.setAngleUnitsCommand.commandID = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.setAngleUnitsCommand.name);
+       UA_String aux = UA_STRING( "SetAngleUnit" );
+       retVal |= UA_String_copy( &aux, &command.fields.setAngleUnitsCommand.name);
        command.fields.setAngleUnitsCommand.commandID = 0;
        command.fields.setAngleUnitsCommand.id = 0;
        command.fields.setAngleUnitsCommand.guard = NULL;
        command.fields.setAngleUnitsCommand.guardSize = 0;
 
-       command.fields.setAngleUnitsCommand.unitName = params.unitName;
+       command.fields.setAngleUnitsCommand.unitName = params->unitName;
 
-       command.fields.setAngleUnitsCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setAngleUnitsCommand.realTimeCommand = params->realTimeParameter;
        command.fields.setAngleUnitsCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_SetEndPoseToleranceParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_SetEndPoseToleranceParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_SetEndPoseToleranceParametersSetDataType*)(&var)) );
+       UA_SetEndPoseToleranceParametersSetDataType* params = (UA_SetEndPoseToleranceParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETENDPOSETOLERANCECOMMAND;
        command.fields.setEndPoseToleranceCommand.commandID = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.setEndPoseToleranceCommand.name);
+       UA_String aux = UA_STRING( "SetEndPoseTolerance" );
+       retVal |= UA_String_copy( &aux, &command.fields.setEndPoseToleranceCommand.name);
        command.fields.setEndPoseToleranceCommand.commandID = 0;
        command.fields.setEndPoseToleranceCommand.id = 0;
        command.fields.setEndPoseToleranceCommand.guard = NULL;
        command.fields.setEndPoseToleranceCommand.guardSize = 0;
 
-       command.fields.setEndPoseToleranceCommand.tolerance = params.tolerance;
+       command.fields.setEndPoseToleranceCommand.tolerance = params->tolerance;
 
-       command.fields.setEndPoseToleranceCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setEndPoseToleranceCommand.realTimeCommand = params->realTimeParameter;
        command.fields.setEndPoseToleranceCommand.realTimeParameterNode = realTimeParameterNodeId;
+
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_SetForceUnitsParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_SetForceUnitsParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_SetForceUnitsParametersSetDataType*)(&var)) );
+       UA_SetForceUnitsParametersSetDataType* params = (UA_SetForceUnitsParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETFORCEUNITSCOMMAND;
        command.fields.setForceUnitsCommand.commandID = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.setForceUnitsCommand.name);
+       UA_String aux = UA_STRING( "SetForceUnits" );
+       retVal |= UA_String_copy( &aux, &command.fields.setForceUnitsCommand.name);
        command.fields.setForceUnitsCommand.commandID = 0;
        command.fields.setForceUnitsCommand.id = 0;
        command.fields.setForceUnitsCommand.guard = NULL;
        command.fields.setForceUnitsCommand.guardSize = 0;
 
-       command.fields.setForceUnitsCommand.unitName = params.unitName;
+       command.fields.setForceUnitsCommand.unitName = params->unitName;
 
-       command.fields.setForceUnitsCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setForceUnitsCommand.realTimeCommand = params->realTimeParameter;
        command.fields.setForceUnitsCommand.realTimeParameterNode = realTimeParameterNodeId;
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_SetIntermediatePoseToleranceParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_SetIntermediatePoseToleranceParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
-       params = std::move( *((UA_SetIntermediatePoseToleranceParametersSetDataType*)(&var)) );
+       UA_SetIntermediatePoseToleranceParametersSetDataType* params = (UA_SetIntermediatePoseToleranceParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETINTERMEDIATEPOSETOLERANCECOMMAND;
        command.fields.setIntermediatePoseToleranceCommand.commandID = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.setIntermediatePoseToleranceCommand.name);
+       UA_String aux = UA_STRING( "SetIntermediatePoseTolerance" );
+       retVal |= UA_String_copy( &aux, &command.fields.setIntermediatePoseToleranceCommand.name);
        command.fields.setIntermediatePoseToleranceCommand.commandID = 0;
        command.fields.setIntermediatePoseToleranceCommand.id = 0;
        command.fields.setIntermediatePoseToleranceCommand.guard = NULL;
        command.fields.setIntermediatePoseToleranceCommand.guardSize = 0;
 
-       command.fields.setIntermediatePoseToleranceCommand.tolerance = params.tolerance;
+       command.fields.setIntermediatePoseToleranceCommand.tolerance = params->tolerance;
 
-       command.fields.setIntermediatePoseToleranceCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setIntermediatePoseToleranceCommand.realTimeCommand = params->realTimeParameter;
        command.fields.setIntermediatePoseToleranceCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_SetLengthUnitsParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_SetLengthUnitsParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_SetLengthUnitsParametersSetDataType*)(&var)) );
+       UA_SetLengthUnitsParametersSetDataType* params = (UA_SetLengthUnitsParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETLENGTHUNITSCOMMAND;
        command.fields.setLengthUnitsCommand.commandID = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.setLengthUnitsCommand.name);
+       UA_String aux = UA_STRING( "SetLengthUnits" );
+       retVal |= UA_String_copy( &aux, &command.fields.setLengthUnitsCommand.name);
        command.fields.setLengthUnitsCommand.commandID = 0;
        command.fields.setLengthUnitsCommand.id = 0;
        command.fields.setLengthUnitsCommand.guard = NULL;
        command.fields.setLengthUnitsCommand.guardSize = 0;
 
-       command.fields.setLengthUnitsCommand.unitName = params.unitName;
+       command.fields.setLengthUnitsCommand.unitName = params->unitName;
 
-       command.fields.setLengthUnitsCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setLengthUnitsCommand.realTimeCommand = params->realTimeParameter;
        command.fields.setLengthUnitsCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_SetMotionCoordinationParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_SetMotionCoordinationParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_SetMotionCoordinationParametersSetDataType*)(&var)) );
+       UA_SetMotionCoordinationParametersSetDataType* params = (UA_SetMotionCoordinationParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETMOTIONCOORDINATIONCOMMAND;
        command.fields.setMotionCoordinationCommand.commandID = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.setMotionCoordinationCommand.name);
+       UA_String aux = UA_STRING( "SetMotionCoordination" );
+       retVal |= UA_String_copy( &aux, &command.fields.setMotionCoordinationCommand.name);
        command.fields.setMotionCoordinationCommand.commandID = 0;
        command.fields.setMotionCoordinationCommand.id = 0;
        command.fields.setMotionCoordinationCommand.guard = NULL;
        command.fields.setMotionCoordinationCommand.guardSize = 0;
 
-       command.fields.setMotionCoordinationCommand.coordinated = params.coordinated;
+       command.fields.setMotionCoordinationCommand.coordinated = params->coordinated;
 
-       command.fields.setMotionCoordinationCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setMotionCoordinationCommand.realTimeCommand = params->realTimeParameter;
        command.fields.setMotionCoordinationCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_SetTorqueUnitsParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_SetTorqueUnitsParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_SetTorqueUnitsParametersSetDataType*)(&var)) );
+       UA_SetTorqueUnitsParametersSetDataType* params = (UA_SetTorqueUnitsParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETTORQUEUNITSCOMMAND;
        command.fields.setTorqueUnitsCommand.commandID = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.setTorqueUnitsCommand.name);
+       UA_String aux = UA_STRING( "SetTorqueUnits" );
+       retVal |= UA_String_copy( &aux, &command.fields.setTorqueUnitsCommand.name);
        command.fields.setTorqueUnitsCommand.commandID = 0;
        command.fields.setTorqueUnitsCommand.id = 0;
        command.fields.setTorqueUnitsCommand.guard = NULL;
        command.fields.setTorqueUnitsCommand.guardSize = 0;
 
-       command.fields.setTorqueUnitsCommand.unitName = params.unitName;
+       command.fields.setTorqueUnitsCommand.unitName = params->unitName;
 
-       command.fields.setTorqueUnitsCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.setTorqueUnitsCommand.realTimeCommand = params->realTimeParameter;
        command.fields.setTorqueUnitsCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_StopMotionParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_StopMotionParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_StopMotionParametersSetDataType*)(&var)) );
+       UA_StopMotionParametersSetDataType* params = (UA_StopMotionParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_STOPMOTIONCOMMAND;
        command.fields.stopMotionCommand.commandID = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.stopMotionCommand.name);
+       UA_String aux = UA_STRING( "StopMotion" );
+       retVal |= UA_String_copy( &aux, &command.fields.stopMotionCommand.name);
        command.fields.stopMotionCommand.commandID = 0;
        command.fields.stopMotionCommand.id = 0;
        command.fields.stopMotionCommand.guard = NULL;
        command.fields.stopMotionCommand.guardSize = 0;
 
-       command.fields.stopMotionCommand.stopCondition = params.stopCondition;
+       command.fields.stopMotionCommand.stopCondition = params->stopCondition;
 
-       command.fields.stopMotionCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.stopMotionCommand.realTimeCommand = params->realTimeParameter;
        command.fields.stopMotionCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_ConfigureStatusReportParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_ConfigureStatusReportParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_ConfigureStatusReportParametersSetDataType*)(&var)) );
+       UA_ConfigureStatusReportParametersSetDataType* params = (UA_ConfigureStatusReportParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
-       command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_CONFIGUREJOINTREPORTSCOMMAND;
+       command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_CONFIGURESTATUSREPORTCOMMAND;
        command.fields.configureStatusReportCommand.commandID = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.configureStatusReportCommand.name);
+       UA_String aux = UA_STRING( "ConfigureStatusReport" );
+       retVal |= UA_String_copy( &aux, &command.fields.configureStatusReportCommand.name);
        command.fields.configureStatusReportCommand.commandID = 0;
        command.fields.configureStatusReportCommand.id = 0;
        command.fields.configureStatusReportCommand.guard = NULL;
        command.fields.configureStatusReportCommand.guardSize = 0;
 
-       command.fields.configureStatusReportCommand.reportGripperStatus = params.reportGripperStatus;
-       command.fields.configureStatusReportCommand.reportGuardsStatus = params.reportGuardsStatus;
-       command.fields.configureStatusReportCommand.reportJointStatuses = params.reportJointStatuses;
-       command.fields.configureStatusReportCommand.reportPoseStatus = params.reportPoseStatus;
-       command.fields.configureStatusReportCommand.reportSensorsStatus = params.reportSensorsStatus;
-       command.fields.configureStatusReportCommand.reportSettingsStatus = params.reportSettingsStatus;
+       command.fields.configureStatusReportCommand.reportGripperStatus = params->reportGripperStatus;
+       command.fields.configureStatusReportCommand.reportGuardsStatus = params->reportGuardsStatus;
+       command.fields.configureStatusReportCommand.reportJointStatuses = params->reportJointStatuses;
+       command.fields.configureStatusReportCommand.reportPoseStatus = params->reportPoseStatus;
+       command.fields.configureStatusReportCommand.reportSensorsStatus = params->reportSensorsStatus;
+       command.fields.configureStatusReportCommand.reportSettingsStatus = params->reportSettingsStatus;
 
-       command.fields.configureStatusReportCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.configureStatusReportCommand.realTimeCommand = params->realTimeParameter;
        command.fields.configureStatusReportCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_EnableSensorParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_EnableSensorParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_EnableSensorParametersSetDataType*)(&var)) );
+       UA_EnableSensorParametersSetDataType* params = (UA_EnableSensorParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
-       /* TODO: FIX THIS COMMAND, I THING SOMETHING IS NOT RIGHT IN THE INFORMATION MODELLING!!!!!*/
 
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENABLESENSORCOMMAND;
        command.fields.enableSensorCommand.commandID = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.enableSensorCommand.name);
+       UA_String aux = UA_STRING( "EnableSensor" );
+       retVal |= retVal |= UA_String_copy( &aux, &command.fields.enableSensorCommand.name);
        command.fields.enableSensorCommand.commandID = 0;
        command.fields.enableSensorCommand.id = 0;
        command.fields.enableSensorCommand.guard = NULL;
        command.fields.enableSensorCommand.guardSize = 0;
 
-       command.fields.enableSensorCommand.sensorID = params.sensorID;
-       command.fields.enableSensorCommand.sensorOption = params.sensorOption;
-       command.fields.enableSensorCommand.sensorOptionSize = params.sensorOptionSize;
+       retVal |= UA_String_copy( &params->sensorID, &command.fields.enableSensorCommand.sensorID );
+       command.fields.enableSensorCommand.sensorOptionSize = params->sensorOptionSize;
+       retVal |= UA_Array_copy( params->sensorOption,  params->sensorOptionSize,
+                                (void**)&(command.fields.enableSensorCommand.sensorOption),
+                                &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_PARAMETERSETTINGDATATYPE]);
+       if( retVal != UA_STATUSCODE_GOOD )
+           throw std::runtime_error( "SKILL PARAMETER COULD NOT BE COPIED" );
 
-       command.fields.enableSensorCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.enableSensorCommand.realTimeCommand = params->realTimeParameter;
        command.fields.enableSensorCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_DisableSensorParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_DisableSensorParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_DisableSensorParametersSetDataType*)(&var)) );
+       UA_DisableSensorParametersSetDataType* params = (UA_DisableSensorParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DISABLESENSORCOMMAND;
        command.fields.disableSensorCommand.commandID = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.configureStatusReportCommand.name);
+       UA_String aux = UA_STRING( "DisableSensor" );
+       retVal |= UA_String_copy( &aux, &command.fields.configureStatusReportCommand.name);
        command.fields.disableSensorCommand.commandID = 0;
        command.fields.disableSensorCommand.id = 0;
        command.fields.disableSensorCommand.guard = NULL;
        command.fields.disableSensorCommand.guardSize = 0;
 
-       command.fields.disableSensorCommand.sensorID= params.sensorID;
+       retVal |= UA_String_copy( &params->sensorID, &command.fields.disableSensorCommand.sensorID  );
 
-       command.fields.disableSensorCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.disableSensorCommand.realTimeCommand = params->realTimeParameter;
        command.fields.disableSensorCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_EnableGripperParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_EnableGripperParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_EnableGripperParametersSetDataType*)(&var)) );
+       UA_EnableGripperParametersSetDataType* params = (UA_EnableGripperParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENABLEGRIPPERCOMMAND;
        command.fields.enableGripperCommand.commandID = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.enableGripperCommand.name);
+       UA_String aux = UA_STRING( "EnableGripper" );
+       retVal |= UA_String_copy( &aux, &command.fields.enableGripperCommand.name);
        command.fields.enableGripperCommand.commandID = 0;
        command.fields.enableGripperCommand.id = 0;
        command.fields.enableGripperCommand.guard = NULL;
        command.fields.enableGripperCommand.guardSize = 0;
 
-       command.fields.enableGripperCommand.gripperName= params.gripperName;
-       command.fields.enableGripperCommand.gripperOption= params.gripperOption;
-       command.fields.enableGripperCommand.gripperOptionSize= params.gripperOptionSize;
+       retVal |= UA_String_copy( &params->gripperName, &command.fields.enableGripperCommand.gripperName);
+       command.fields.enableGripperCommand.gripperOptionSize= params->gripperOptionSize;
+       retVal |= UA_Array_copy( params->gripperOption,  params->gripperOptionSize,
+                                (void**)&command.fields.enableGripperCommand.gripperOption,
+                                &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_PARAMETERSETTINGDATATYPE]);
+       if( retVal != UA_STATUSCODE_GOOD )
+           throw std::runtime_error( "SKILL PARAMETER COULD NOT BE COPIED" );
 
-       command.fields.enableGripperCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.enableGripperCommand.realTimeCommand = params->realTimeParameter;
        command.fields.enableGripperCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_DisableGripperParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_DisableGripperParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_DisableGripperParametersSetDataType*)(&var)) );
+       UA_DisableGripperParametersSetDataType* params = (UA_DisableGripperParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
-       command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENABLEGRIPPERCOMMAND;
+       command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DISABLEGRIPPERCOMMAND;
        command.fields.disableGripperCommand.commandID = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.disableGripperCommand.name);
+       UA_String aux = UA_STRING( "DisableGripper" );
+       retVal |= UA_String_copy( &aux, &command.fields.disableGripperCommand.name);
        command.fields.disableGripperCommand.commandID = 0;
        command.fields.disableGripperCommand.id = 0;
        command.fields.disableGripperCommand.guard = NULL;
        command.fields.disableGripperCommand.guardSize = 0;
 
-       command.fields.disableGripperCommand.gripperName= params.gripperName;
+      retVal |= UA_String_copy( &params->gripperName, &command.fields.disableGripperCommand.gripperName );
 
-       command.fields.disableGripperCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.disableGripperCommand.realTimeCommand = params->realTimeParameter;
        command.fields.disableGripperCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_EnableRobotParameterStatusParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_EnableRobotParameterStatusParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_EnableRobotParameterStatusParametersSetDataType*)(&var)) );
+       UA_EnableRobotParameterStatusParametersSetDataType* params = (UA_EnableRobotParameterStatusParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENABLEROBOTPARAMETERSTATUSCOMMAND;
        command.fields.enableRobotParameterStatusCommand.commandID = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.enableRobotParameterStatusCommand.name);
+       UA_String aux = UA_STRING( "EnableRobotParameterStatus" );
+       retVal |= UA_String_copy( &aux, &command.fields.enableRobotParameterStatusCommand.name);
        command.fields.enableRobotParameterStatusCommand.commandID = 0;
        command.fields.enableRobotParameterStatusCommand.id = 0;
        command.fields.enableRobotParameterStatusCommand.guard = NULL;
        command.fields.enableRobotParameterStatusCommand.guardSize = 0;
 
-       command.fields.enableRobotParameterStatusCommand.robotParameterName = std::move(
-                                                                               params.robotParameterName );
+       retVal |= UA_String_copy( &params->robotParameterName, &command.fields.enableRobotParameterStatusCommand.robotParameterName );
 
-       command.fields.enableRobotParameterStatusCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.enableRobotParameterStatusCommand.realTimeCommand = params->realTimeParameter;
        command.fields.enableRobotParameterStatusCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
    }
-   UA_CRCLCommandsUnionDataType operator()( UA_DisableRobotParameterStatusParametersSetDataType& params)const{
+   UA_CRCLCommandsUnionDataType operator()( UA_DisableRobotParameterStatusParametersSetDataType& paramType)const{
        UA_Variant var;
        UA_Variant_init(&var);
        UA_StatusCode retVal = UA_Server_readValue( server, normalParameterNodeId, &var );
        if( retVal != UA_STATUSCODE_GOOD )
            throw std::runtime_error( "SKILL PARAMETER COULD NOT BE READ" );
 
-       params = std::move( *((UA_DisableRobotParameterStatusParametersSetDataType*)(&var)) );
+       UA_DisableRobotParameterStatusParametersSetDataType* params = (UA_DisableRobotParameterStatusParametersSetDataType*)(var.data);
 
        UA_CRCLCommandsUnionDataType command;
        command.switchField = UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DISABLEROBOTPARAMETERSTATUSCOMMAND;
        command.fields.disableRobotParameterStatusCommand.commandID = 0;
-       UA_String aux = UA_STRING( " " );
-       UA_String_copy(&aux, &command.fields.disableRobotParameterStatusCommand.name);
+       UA_String aux = UA_STRING( "DisableRobotParameterStatus" );
+       retVal |= UA_String_copy( &aux, &command.fields.disableRobotParameterStatusCommand.name);
        command.fields.disableRobotParameterStatusCommand.commandID = 0;
        command.fields.disableRobotParameterStatusCommand.id = 0;
        command.fields.disableRobotParameterStatusCommand.guard = NULL;
        command.fields.disableRobotParameterStatusCommand.guardSize = 0;
 
-       command.fields.disableRobotParameterStatusCommand.robotParameterName = std::move(
-                                                                               params.robotParameterName );
+       retVal |= UA_String_copy( &params->robotParameterName , &command.fields.disableRobotParameterStatusCommand.robotParameterName );
 
-       command.fields.disableRobotParameterStatusCommand.realTimeCommand = params.realTimeParameter;
+       command.fields.disableRobotParameterStatusCommand.realTimeCommand = params->realTimeParameter;
        command.fields.disableRobotParameterStatusCommand.realTimeParameterNode = realTimeParameterNodeId;
 
        return command;
@@ -1117,61 +1139,51 @@ public:
    }
    UA_StatusCode operator()(const UA_InitCanonParametersSetDataType& param){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "InitCanonParameters" );
        retVal |= addParameterNodesToServer( "InitCanonParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_EndCanonParametersSetDataType& param){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "EndCanonParameters" );
        retVal |= addParameterNodesToServer( "EndCanonParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_MessageParametersSetDataType& param){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "MessageParameters" );
        retVal |= addParameterNodesToServer( "MessageParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_MoveToParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "MoveToParameters" );
        retVal |= addParameterNodesToServer( "MoveToParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_MoveScrewParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "MoveScrewParameters" );
        retVal |= addParameterNodesToServer( "MoveScrewParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_MoveThroughToParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "MoveThroughToParameters" );
        retVal |= addParameterNodesToServer( "MoveThroughToParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_DwellParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "DwellParameters" );
        retVal |= addParameterNodesToServer( "DwellParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_ActuateJointsParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "ActuateJointsParameters" );
        retVal |= addParameterNodesToServer( "ActuateJointsParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_ConfigureJointReportsParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "ConfigureJointReportsParameters" );
        retVal |= addParameterNodesToServer( "ConfigureJointReportsParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetDefaultJointPositionsTolerancesParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetDefaultJointPositionsTolerancesParameters" );
        retVal |= addParameterNodesToServer( "SetDefaultJointPositionsTolerancesParameters" );
        return retVal;
    }
@@ -1183,151 +1195,125 @@ public:
    }
    UA_StatusCode operator()(const UA_CloseToolChangerParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "CloseToolChangerParameters" );
        retVal |= addParameterNodesToServer( "CloseToolChangerParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_OpenToolChangerParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "OpenToolChangerParameters" );
        retVal |= addParameterNodesToServer( "OpenToolChangerParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetRobotParametersParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetRobotParametersParameters" );
        retVal |= addParameterNodesToServer( "SetRobotParametersParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetEndeffectorParametersParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetEndeffectorParametersParameters" );
        retVal |= addParameterNodesToServer( "SetEndeffectorParametersParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetEndeffectorParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetEndeffectorParameters" );
        retVal |= addParameterNodesToServer( "SetEndeffectorParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetTransAccelParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetTransAccelParameters" );
        retVal |= addParameterNodesToServer( "SetTransAccelParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetTransSpeedParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetTransSpeedParameters" );
        retVal |= addParameterNodesToServer( "SetTransSpeedParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetRotAccelParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetRotAccelParameters" );
        retVal |= addParameterNodesToServer( "SetRotAccelParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetRotSpeedParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetRotSpeedParameters" );
        retVal |= addParameterNodesToServer( "SetRotSpeedParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetAngleUnitsParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetAngleUnitsParameters" );
        retVal |= addParameterNodesToServer( "SetAngleUnitsParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetEndPoseToleranceParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetEndPoseToleranceParameters" );
        retVal |= addParameterNodesToServer( "SetEndPoseToleranceParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetForceUnitsParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetForceUnitsParameters" );
        retVal |= addParameterNodesToServer( "SetForceUnitsParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetIntermediatePoseToleranceParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetIntermediatePoseToleranceParameters" );
        retVal |= addParameterNodesToServer( "SetIntermediatePoseToleranceParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetLengthUnitsParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetLengthUnitsParameters" );
        retVal |= addParameterNodesToServer( "SetLengthUnitsParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetMotionCoordinationParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetMotionCoordinationParameters" );
        retVal |= addParameterNodesToServer( "SetMotionCoordinationParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_SetTorqueUnitsParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "SetTorqueUnitsParameters" );
        retVal |= addParameterNodesToServer( "SetTorqueUnitsParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_StopMotionParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "StopMotionParameters" );
        retVal |= addParameterNodesToServer( "StopMotionParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_ConfigureStatusReportParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "ConfigureStatusReportParameters" );
        retVal |= addParameterNodesToServer( "ConfigureStatusReportParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_EnableSensorParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "EnableSensorParameters" );
        retVal |= addParameterNodesToServer( "EnableSensorParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_DisableSensorParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "DisableSensorParameters" );
        retVal |= addParameterNodesToServer( "DisableSensorParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_EnableGripperParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "EnableGripperParameters" );
        retVal |= addParameterNodesToServer( "EnableGripperParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_DisableGripperParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "DisableGripperParameters" );
        retVal |= addParameterNodesToServer( "DisableGripperParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_EnableRobotParameterStatusParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "EnableRobotParameterStatusParameters" );
        retVal |= addParameterNodesToServer( "EnableRobotParameterStatusParameters" );
        return retVal;
    }
    UA_StatusCode operator()(const UA_DisableRobotParameterStatusParametersSetDataType& params){
        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-       // UA_NodeId parameterTypeId = findCommandParameterType( server, "DisableRobotParameterStatusParameters" );
        retVal |= addParameterNodesToServer( "DisableRobotParameterStatusParameters" );
        return retVal;
    }
 };
-
-void printCRCLSkill(const UA_CRCLSkillDataType *skill);
 
    class SAMYSkill
    {

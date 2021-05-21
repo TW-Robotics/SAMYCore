@@ -5,6 +5,7 @@ Robots:
       Address: "opc.tcp://localhost:4840"
       OPCUARoboticsFile: RobotUR5.xml
       Skills:
+         - TestSkill
          - MoveToWithSpeed
          - SetEndEffectorSkill
          - PickSkill
