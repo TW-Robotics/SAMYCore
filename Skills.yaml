@@ -38,6 +38,10 @@ FundamentalSkills: # Fundamental skills are only composed by CRCL commands
              - EnableRobotParameterStatus
              - DisableRobotParameterStatus
    - FundamentalSkill:
+         SkillName: SimpleMove
+         CRCLCommands:
+             - MoveTo
+   - FundamentalSkill:
          SkillName: MoveToWithSpeed
          CRCLCommands:
              - SetTransSpeed

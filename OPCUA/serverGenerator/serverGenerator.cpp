@@ -590,6 +590,9 @@ namespace ServerGenerator{
     UA_StatusCode addFixedInformationModels( UA_Server* server, std::vector<SAMYRobot>* robots ){
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
 
+        retVal |= namespace_crcl_generated( server );
+        logOfNodesAdditionToServer( "CRCL Nodeset", retVal );
+
         retVal |= namespace_di_generated( server );
         logOfNodesAdditionToServer( "DI Nodeset", retVal );
 
@@ -601,9 +604,6 @@ namespace ServerGenerator{
 
         retVal |= namespace_fortiss_robotics_generated( server );
         logOfNodesAdditionToServer( "Fortiss Robotics Nodeset", retVal );
-
-        retVal |= namespace_crcl_generated( server );
-        logOfNodesAdditionToServer( "CRCL Nodeset", retVal );
 
         return retVal;
     }

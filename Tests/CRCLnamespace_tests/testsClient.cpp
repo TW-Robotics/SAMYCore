@@ -3442,6 +3442,23 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
 }
 
 
+static void print_bytes(const void *object, size_t size)
+{
+#ifdef __cplusplus
+  const unsigned char * const bytes = static_cast<const unsigned char *>(object);
+#else // __cplusplus
+  const unsigned char * const bytes = object;
+#endif // __cplusplus
+
+  size_t i;
+
+  printf("[ ");
+  for(i = 0; i < size; i++)
+  {
+    printf("%02x ", bytes[i]);
+  }
+  printf("]\n");
+}
 
 
 TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkill]"){
@@ -4449,6 +4466,8 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
     UA_Variant_setScalar( &var, &skill, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE] );
     UA_StatusCode retVal = UA_STATUSCODE_GOOD;
     retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1300), &var);
+
+  //  print_bytes( &var.data, sizeof(*var.data));
     REQUIRE( retVal == UA_STATUSCODE_GOOD );
 }
 
@@ -5545,12 +5564,7 @@ TEST_CASE("Test client - Read Robot", "[ReadRobot]"){
     std::cout << str.data << std::endl;
     UA_String_clear( &str );
 
-    UA_ActuateJointsDataType command;
-    command = robot->requested_Skill.cRCLCommands[7].fields.actuateJointsCommand;
-    UA_String_init( &str );
-    UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE], &str );
-    std::cout << str.data << std::endl;
-    UA_String_clear( &str );
+    SAMY::printCRCLSkill( &robot->requested_Skill );
 }
 
 

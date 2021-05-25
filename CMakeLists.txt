@@ -57,6 +57,18 @@ set(NAMESPACE_PREFIX "pref")
 
 ua_generate_nodeset_and_datatypes(
         INTERNAL
+        NAME "${NAMESPACE_NAME_CRCL}"
+        FILE_NS "${CMAKE_CURRENT_LIST_DIR}/OPCUA/all_models/Published/CRCL/CRCL.NodeSet2.xml"
+        TARGET_PREFIX "${NAMESPACE_PREFIX}"
+        FILE_CSV "${CMAKE_CURRENT_LIST_DIR}/OPCUA/all_models/Published/CRCL/CRCL.csv"
+        FILE_BSD "${CMAKE_CURRENT_LIST_DIR}/OPCUA/all_models/Published/CRCL/CRCL.Types.bsd"
+        OUTPUT_DIR "${GENERATE_OUTPUT_DIR}"
+    # This namespace index must match the order in which you are adding the nodeset in the source code
+        NAMESPACE_MAP 2:https://crcl.org
+)
+
+ua_generate_nodeset_and_datatypes(
+        INTERNAL
         NAME "${NAMESPACE_NAME_DI}"
         FILE_NS "${CMAKE_CURRENT_LIST_DIR}/OPCUA/all_models/Published/DI/Opc.Ua.Di.NodeSet2.xml"
         TARGET_PREFIX "${NAMESPACE_PREFIX}"
@@ -64,7 +76,7 @@ ua_generate_nodeset_and_datatypes(
         FILE_BSD "${CMAKE_CURRENT_LIST_DIR}/OPCUA/all_models/Published/DI/Opc.Ua.Di.Types.bsd"
         OUTPUT_DIR "${GENERATE_OUTPUT_DIR}"
     # This namespace index must match the order in which you are adding the nodeset in the source code
-        NAMESPACE_MAP 2:http://opcfoundation.org/UA/DI/
+        NAMESPACE_MAP 3:http://opcfoundation.org/UA/DI/
 )
 
 ua_generate_nodeset_and_datatypes(
@@ -76,7 +88,7 @@ ua_generate_nodeset_and_datatypes(
         FILE_BSD "${CMAKE_CURRENT_LIST_DIR}/OPCUA/all_models/Published/Robotics/Opc.Ua.Robotics.Types.bsd"
         OUTPUT_DIR "${GENERATE_OUTPUT_DIR}"
     # This namespace index must match the order in which you are adding the nodeset in the source code
-        NAMESPACE_MAP 3:http://opcfoundation.org/UA/Robotics/
+        NAMESPACE_MAP 4:http://opcfoundation.org/UA/Robotics/
         DEPENDS "${NAMESPACE_NAME_DI}"
 )
 
@@ -89,7 +101,7 @@ ua_generate_nodeset_and_datatypes(
         FILE_BSD "${CMAKE_CURRENT_LIST_DIR}/OPCUA/all_models/Published/fortiss_di/fortiss.Di.Types.bsd"
         OUTPUT_DIR "${GENERATE_OUTPUT_DIR}"
     # This namespace index must match the order in which you are adding the nodeset in the source code
-        NAMESPACE_MAP 4:https://fortiss.org/UA/DI/
+        NAMESPACE_MAP 5:https://fortiss.org/UA/DI/
         DEPENDS "${NAMESPACE_NAME_ROBOTICS}"
 )
 
@@ -102,20 +114,8 @@ ua_generate_nodeset_and_datatypes(
         FILE_BSD "${CMAKE_CURRENT_LIST_DIR}/OPCUA/all_models/Published/fortiss_robotics/fortiss.Robotics.Types.bsd"
         OUTPUT_DIR "${GENERATE_OUTPUT_DIR}"
     # This namespace index must match the order in which you are adding the nodeset in the source code
-        NAMESPACE_MAP 5:https://fortiss.org/UA/Robotics/
+        NAMESPACE_MAP 6:https://fortiss.org/UA/Robotics/
         DEPENDS "${NAMESPACE_NAME_FORTISS_DI}"
-)
-
-ua_generate_nodeset_and_datatypes(
-        INTERNAL
-        NAME "${NAMESPACE_NAME_CRCL}"
-        FILE_NS "${CMAKE_CURRENT_LIST_DIR}/OPCUA/all_models/Published/CRCL/CRCL.NodeSet2.xml"
-        TARGET_PREFIX "${NAMESPACE_PREFIX}"
-        FILE_CSV "${CMAKE_CURRENT_LIST_DIR}/OPCUA/all_models/Published/CRCL/CRCL.csv"
-        FILE_BSD "${CMAKE_CURRENT_LIST_DIR}/OPCUA/all_models/Published/CRCL/CRCL.Types.bsd"
-        OUTPUT_DIR "${GENERATE_OUTPUT_DIR}"
-    # This namespace index must match the order in which you are adding the nodeset in the source code
-        NAMESPACE_MAP 6:https://crcl.org
 )
 
 ua_generate_nodeset_and_datatypes(
