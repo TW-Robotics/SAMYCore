@@ -4,7 +4,7 @@ Basic_Test_Servers: Contains two basic servers with a simple union variable base
 
 FreeOPCUA_fixed_stack: Modified version of https://github.com/FreeOpcUa/python-opcua that supports unions.
 
-CRCL_DataTypes.py: Automatically generated CRCL classes that allow directly interacting with the SAMYCore.
+CRCL_DataTypes.py: Automatically generated CRCL classes that allow directly interacting with the SAMYCore. They are rather a reference, since when connecting to the SAMYCore, they are automatically created when invoking the load_type_definitions()
 
 structuresGenerator.py: Generates from a .bsd file (OPC UA Binary Schema) python classes.
 
