@@ -1,5 +1,5 @@
 /* Generated from Kuka.iiwa.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py
- * on host jbg by user jbg at 2021-05-25 09:43:23 */
+ * on host jbg by user jbg at 2021-06-11 02:20:53 */
 
 #ifndef TYPES_KUKA_IIWA_GENERATED_ENCODING_BINARY_H_
 #define TYPES_KUKA_IIWA_GENERATED_ENCODING_BINARY_H_

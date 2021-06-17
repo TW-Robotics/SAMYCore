@@ -8,6 +8,7 @@ import uuid
 
 from opcua import ua
 
+# Depending on Python Version might not required
 from enum import IntEnum
 
 class CRCL_StopConditionEnumDataType(IntEnum):
@@ -382,9 +383,9 @@ class CRCL_RotAccelDataType(object):
     __repr__ = __str__
 
     def __init__(self):
-        self.SwitchField = 0
-        self.RotAccelAbsoluteDataType = ua.CRCL_RotAccelAbsoluteDataType()
-        self.RotAccelRelativeDataType = ua.CRCL_RotAccelRelativeDataType()
+        self.isUnion = True
+        self.switchField = 0
+        self.unionValue = None
 
 
 class CRCL_RotSpeedAbsoluteDataType(object):
@@ -451,9 +452,9 @@ class CRCL_RotSpeedDataType(object):
     __repr__ = __str__
 
     def __init__(self):
-        self.SwitchField = 0
-        self.RotSpeedAbsoluteDataType = ua.CRCL_RotSpeedAbsoluteDataType()
-        self.RotSpeedRelativeDataType = ua.CRCL_RotSpeedRelativeDataType()
+        self.isUnion = True
+        self.switchField = 0
+        self.unionValue = None
 
 
 class CRCL_TransAccelAbsoluteDataType(object):
@@ -520,9 +521,9 @@ class CRCL_TransAccelDataType(object):
     __repr__ = __str__
 
     def __init__(self):
-        self.SwitchField = 0
-        self.TransAccelAbsoluteDataType = ua.CRCL_TransAccelAbsoluteDataType()
-        self.TransAccelRelativeDataType = ua.CRCL_TransAccelRelativeDataType()
+        self.isUnion = True
+        self.switchField = 0
+        self.unionValue = None
 
 
 class CRCL_TransSpeedAbsoluteDataType(object):
@@ -589,9 +590,9 @@ class CRCL_TransSpeedDataType(object):
     __repr__ = __str__
 
     def __init__(self):
-        self.SwitchField = 0
-        self.TransSpeedAbsoluteDataType = ua.CRCL_TransSpeedAbsoluteDataType()
-        self.TransSpeedRelativeDataType = ua.CRCL_TransSpeedRelativeDataType()
+        self.isUnion = True
+        self.switchField = 0
+        self.unionValue = None
 
 
 class CRCL_ConfigureJointReportDataType(object):
@@ -881,9 +882,9 @@ class CRCL_JointDetailsDataType(object):
     __repr__ = __str__
 
     def __init__(self):
-        self.SwitchField = 0
-        self.JointSpeedAccel = ua.CRCL_JointSpeedAccelDataType()
-        self.JointForceTorque = ua.CRCL_JointForceTorqueDataType()
+        self.isUnion = True
+        self.switchField = 0
+        self.unionValue = None
 
 
 class CRCL_ActuateJointDataType(object):
@@ -2707,42 +2708,9 @@ class CRCLCommandsUnionDataType(object):
     __repr__ = __str__
 
     def __init__(self):
-        self.SwitchField = 0
-        self.InitCanonCommand = ua.InitCanonDataType()
-        self.EndCanonCommand = ua.EndCanonDataType()
-        self.MessageCommand = ua.MessageDataType()
-        self.MoveToCommand = ua.MoveToDataType()
-        self.MoveScrewCommand = ua.MoveScrewDataType()
-        self.MoveThroughToCommand = ua.MoveThroughToDataType()
-        self.DwellCommand = ua.DwellDataType()
-        self.ActuateJointsCommand = ua.ActuateJointsDataType()
-        self.ConfigureJointReportsCommand = ua.ConfigureJointReportsDataType()
-        self.SetDefaultJointPositionsTolerancesCommand = ua.SetDefaultJointPositionsTolerancesDataType()
-        self.GetStatusCommand = ua.GetStatusDataType()
-        self.CloseToolChangerCommand = ua.CloseToolChangerDataType()
-        self.OpenToolChangerCommand = ua.OpenToolChangerDataType()
-        self.SetRobotParametersCommand = ua.SetRobotParametersDataType()
-        self.SetEndeffectorParametersCommand = ua.SetEndeffectorParametersDataType()
-        self.SetEndeffectorCommand = ua.SetEndeffectorDataType()
-        self.SetTransAccelCommand = ua.SetTransAccelDataType()
-        self.SetTransSpeedCommand = ua.SetTransSpeedDataType()
-        self.SetRotAccelCommand = ua.SetRotAccelDataType()
-        self.SetRotSpeedCommand = ua.SetRotSpeedDataType()
-        self.SetAngleUnitsCommand = ua.SetAngleUnitsDataType()
-        self.SetEndPoseToleranceCommand = ua.SetEndPoseToleranceDataType()
-        self.SetForceUnitsCommand = ua.SetForceUnitsDataType()
-        self.SetIntermediatePoseToleranceCommand = ua.SetIntermediatePoseToleranceDataType()
-        self.SetLengthUnitsCommand = ua.SetLengthUnitsDataType()
-        self.SetMotionCoordinationCommand = ua.SetMotionCoordinationDataType()
-        self.SetTorqueUnitsCommand = ua.SetTorqueUnitsDataType()
-        self.StopMotionCommand = ua.StopMotionDataType()
-        self.ConfigureStatusReportCommand = ua.ConfigureStatusReportDataType()
-        self.EnableSensorCommand = ua.EnableSensorDataType()
-        self.DisableSensorCommand = ua.DisableSensorDataType()
-        self.EnableGripperCommand = ua.EnableGripperDataType()
-        self.DisableGripperCommand = ua.DisableGripperDataType()
-        self.EnableRobotParameterStatusCommand = ua.EnableRobotParameterStatusDataType()
-        self.DisableRobotParameterStatusCommand = ua.DisableRobotParameterStatusDataType()
+        self.isUnion = True
+        self.switchField = 0
+        self.unionValue = None
 
 
 class CRCLSkillDataType(object):
