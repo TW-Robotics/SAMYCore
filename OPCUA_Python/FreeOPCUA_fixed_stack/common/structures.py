@@ -394,9 +394,7 @@ def _generate_python_class(model, env=None):
         env['IntEnum'] = IntEnum
     # generate classes one by one and add them to dict
     for element in model:
- element, "\n")
         code = element.get_code()
-
         exec(code, env)
     return env
 
