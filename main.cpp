@@ -44,11 +44,11 @@ int main(int argc, char** argv){
     bool correctParsing = true;
 
     SAMY::Parsers::SkillsParser skillsParser;
-    correctParsing |= skillsParser.parse( "../Skills.yaml" );
+    correctParsing |= skillsParser.parse( "../config/Skills.yaml" );
     std::vector<SAMY::SAMYSkill>* skills = skillsParser.getParsedSkills();
 
     SAMY::Parsers::RobotsConfigurationParser robotsParser;
-    correctParsing |= robotsParser.parse( "../RobotsConfiguration.yaml", *skills );
+    correctParsing |= robotsParser.parse( "../config/RobotsConfiguration.yaml", *skills );
     std::vector<SAMY::SAMYRobot>* robots = robotsParser.getParsedRobots();
 
     if( correctParsing == false )
