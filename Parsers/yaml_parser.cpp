@@ -481,8 +481,8 @@ bool Parsers::RobotsConfigurationParser::parse(const std::string& filepath, std:
                         }
                 }
                 robotAux.name = UA_STRING_ALLOC(const_cast<char*>(auxName.c_str()));
-                robotAux.lastRequestedSkill = 0;
-                robotAux.SAMYRobotVariableNodeId = UA_NODEID_STRING(2, const_cast<char*>(auxName.c_str()));
+               // robotAux.requested_skill = 0;
+                //robotAux.SAMYRobotVariableNodeId = UA_NODEID_STRING(2, const_cast<char*>(auxName.c_str()));
                 robotAux.robotSkills = parsedRobotSkills;
                 robotAux.address = auxAddress;
 

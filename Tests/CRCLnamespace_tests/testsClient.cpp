@@ -24,6 +24,7 @@
 
 #include "serverGenerator.h";
 
+
 TEST_CASE("Test client - Write commands", "[WriteCommands]"){
 
     std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
@@ -4509,7 +4510,7 @@ TEST_CASE("Test client - Read CRCLSkill", "[ReadCRCLSkill]"){
     UA_String_clear( &str );
 }
 
-
+/*
 TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
 
     SAMY::SAMYRobot robot;
@@ -5534,7 +5535,7 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
     retVal |= UA_Client_writeValueAttribute(robot.client.get(), UA_NODEID_NUMERIC(1, 1400), &var);
     REQUIRE( retVal == UA_STATUSCODE_GOOD );
 }
-
+*/
 
 TEST_CASE("Test client - Read Robot", "[ReadRobot]"){
 

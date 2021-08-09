@@ -2226,7 +2226,7 @@ TEST_CASE("Server testing", "[ServerAutoRead]"){
 }
 
 
-
+/*
 TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteCommandsInCRCLCommandsUnion]"){
 
     UA_Boolean running = true;
@@ -4129,7 +4129,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
 
     }
 }
-
+*/
 
 
 

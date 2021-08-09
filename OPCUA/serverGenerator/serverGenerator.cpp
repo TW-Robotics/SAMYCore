@@ -13,8 +13,49 @@ namespace ServerGenerator{
             UA_LOG_ERROR(UA_Log_Stdout, UA_LOGCATEGORY_SERVER, auxFail.c_str());
             retVal = UA_STATUSCODE_BADUNEXPECTEDERROR;
         }else{ std::cout << auxSuc << std::endl; }
-
     }
+
+    UA_NodeId findRobotControllerObject( UA_Server *server, const SAMYRobot* robot ){
+        UA_UInt16 robotNS = UA_Server_addNamespace( server, reinterpret_cast<const char*>(robot->name.data) );
+        UA_Int16 roboticsNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/Robotics/");
+
+        UA_UInt32 length = 2;
+        char *paths[length] = { "Controllers", (char*)robot->name.data };
+        UA_UInt32 ids[length] = { UA_NS0ID_HASCOMPONENT, UA_NS0ID_HASCOMPONENT };
+        UA_UInt16 ns[length] = { roboticsNS, robotNS };
+
+        UA_BrowsePath browsePath;
+        UA_BrowsePath_init(&browsePath);
+        browsePath.startingNode = robot->robotNodeIdInSAMYCore;
+        browsePath.relativePath.elements = (UA_RelativePathElement*)UA_Array_new(length, &UA_TYPES[UA_TYPES_RELATIVEPATHELEMENT]);
+        browsePath.relativePath.elementsSize = length;
+
+        for(size_t i = 0; i < length; i++) {
+            UA_RelativePathElement *elem = &browsePath.relativePath.elements[i];
+            elem->referenceTypeId = UA_NODEID_NUMERIC(0, ids[i]);
+            elem->targetName = UA_QUALIFIEDNAME_ALLOC(ns[i], paths[i]);
+        }
+
+        UA_BrowsePathResult res = UA_Server_translateBrowsePathToNodeIds(server, &browsePath);
+        if(res.statusCode != UA_STATUSCODE_GOOD || res.targetsSize < 1)
+            throw "SKILLS COULD NOT BE FOUND IN ROBOT CONTROLLER: THE REQUIRED OBJECT IS NOT IN THE BROWSEPATH";
+
+        return res.targets->targetId.nodeId;
+    }
+
+
+
+
+    UA_StatusCode addCurrentState( UA_Server* server, const SAMYRobot* robot ){
+        return UA_STATUSCODE_GOOD;
+    }
+    UA_StatusCode addLastTransition( UA_Server* server, const SAMYRobot* robot ){
+        return UA_STATUSCODE_GOOD;
+    }
+    UA_StatusCode addCurrentSkill( UA_Server* server, const SAMYRobot* robot ){
+        return UA_STATUSCODE_GOOD;
+    }
+
 
     UA_NodeId findFolderInRobotMotionSystem( UA_Server* server, const SAMYRobot* robot, char* folderName ){
         UA_UInt16 diNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/DI/");
@@ -76,7 +117,7 @@ namespace ServerGenerator{
         return typeNodeId;
     }
 
-    UA_StatusCode addRobotMotionSystem( UA_Server* server, const SAMYRobot* robot ){
+    UA_StatusCode addRobotMotionSystem( UA_Server* server, SAMYRobot* robot ){
         UA_Int16 robotNS = UA_Server_addNamespace( server, reinterpret_cast<const char*>(robot->name.data) );
         UA_Int16 diNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/DI/");
         UA_Int16 roboticsNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/Robotics/");
@@ -97,6 +138,8 @@ namespace ServerGenerator{
         (const UA_NodeAttributes*)&attr, &UA_TYPES[UA_TYPES_OBJECTATTRIBUTES], NULL, NULL);
 
         retVal |= UA_Server_addNode_finish( server, UA_NODEID_NUMERIC( robotNS, 15001LU) );
+
+        robot->robotNodeIdInSAMYCore = UA_NODEID_NUMERIC(robotNS, 15001LU);
 
         return retVal;
     }
@@ -183,7 +226,43 @@ namespace ServerGenerator{
         return retVal;
     }
 
-        UA_StatusCode addRobotController( UA_Server* server, const SAMYRobot* robot ){
+
+    UA_StatusCode addRobotNextSkill( UA_Server* server, const SAMYRobot* robot ){
+        UA_Int16 robotNS = UA_Server_addNamespace( server, reinterpret_cast<const char*>(robot->name.data) );
+
+        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+        UA_VariableAttributes attr = UA_VariableAttributes_default;
+        attr.minimumSamplingInterval = 0.000000;
+        attr.userAccessLevel = 1;
+        attr.accessLevel = UA_ACCESSLEVELMASK_READ | UA_ACCESSLEVELMASK_WRITE;
+        /*attr.accessLevel = UA_ACCESSLEVELMASK_READ;*/
+        /* Value rank inherited */
+        attr.valueRank = -1;
+        attr.dataType = UA_NODEID_NUMERIC(0, 17);
+        attr.displayName = UA_LOCALIZEDTEXT("", "NextSkillNodeId");
+        attr.displayName = UA_LOCALIZEDTEXT("", "NextSkillNodeId");
+        #ifdef UA_ENABLE_NODESET_COMPILER_DESCRIPTIONS
+        attr.description = UA_LOCALIZEDTEXT("", "The nodeid of the next skill to be executed by the robot");
+        #endif
+
+        UA_NodeId nextSkillNodeId = UA_NODEID_NULL;
+        retVal |= UA_Server_addNode_begin(
+        server,
+        UA_NODECLASS_VARIABLE,
+        UA_NODEID_NUMERIC(robotNS, 0),
+        UA_NODEID_NUMERIC(robotNS, 16428LU),
+        UA_NODEID_NUMERIC(0, 47LU),
+        UA_QUALIFIEDNAME(robotNS, "NextSkillNodeId"),
+        UA_NODEID_NUMERIC(0, 68),
+        (const UA_NodeAttributes*)&attr, &UA_TYPES[UA_TYPES_VARIABLEATTRIBUTES], NULL, &nextSkillNodeId );
+
+        retVal |= UA_Server_addNode_finish( server, nextSkillNodeId);
+
+        return retVal;
+    }
+
+    /* NodeId -> robotNS 16428 */
+        UA_StatusCode addRobotController( UA_Server* server, SAMYRobot* robot ){
             UA_Int16 robotNS = UA_Server_addNamespace( server, reinterpret_cast<const char*>(robot->name.data) );
             UA_Int16 roboticsNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/Robotics/");
             UA_Int16 fortissDiNS = UA_Server_addNamespace( server, "https://fortiss.org/UA/DI/");
@@ -203,6 +282,8 @@ namespace ServerGenerator{
 
             retVal |= UA_Server_addNode_finish( server, UA_NODEID_NUMERIC(robotNS, 16428LU));
 
+            retVal = UA_Server_setNodeContext( server, UA_NODEID_NUMERIC(robotNS, 16428LU), static_cast<void*>( robot ) );
+
             return retVal;
         }
 
@@ -211,7 +292,7 @@ namespace ServerGenerator{
                 const UA_NodeId objectId,
                 const UA_QualifiedName childName,
                 const UA_NodeId reference
-        ) {
+        ){
             UA_RelativePathElement rpe;
             UA_RelativePathElement_init(&rpe);
             rpe.referenceTypeId = reference;
@@ -251,12 +332,22 @@ namespace ServerGenerator{
                 UA_Server* server,
                 const UA_NodeId& objectId,
                 const UA_QualifiedName& componentName
-        ) {
+        ){
             return UA_Server_getObjectChildId(server, objectId, componentName,
                                               UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT));
         }
 
-        static UA_StatusCode startMethodCallback(
+        /* Adds contexts (skill and robot) to skill node and method (start, resume, halt, reset, resume) nodes */
+        UA_StatusCode setContextInRobotSkill( UA_Server* server, const UA_NodeId& skillNode, SAMYRobot* robot )
+        {
+            UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+            retVal = UA_Server_setNodeContext( server, skillNode, static_cast<void*>( robot ) );
+            if ( retVal != UA_STATUSCODE_GOOD) {
+                throw std::runtime_error("SETTING SKILL CONTEXT (ROBOT AND SKILL) FOR SKILL FAILED");
+            }
+            return retVal;
+        }
+       static UA_StatusCode startMethodCallback(
                 UA_Server* server,
                 const UA_NodeId* sessionId,
                 void* sessionHandle,
@@ -269,99 +360,194 @@ namespace ServerGenerator{
                 size_t outputSize,
                 UA_Variant* output
         ){
-
             if (!objectContext)
                 return UA_STATUSCODE_BADINTERNALERROR;
 
             auto* robot = static_cast<SAMYRobot*>(objectContext);
-
             /* Locks the thread while is adding the skill to the robot */
      //       const std::lock_guard<std::mutex> lock( robot->planMutex );
-
-            for( int i = 0; i < robot->robotSkills.size(); i++ ){
+            for( int i = 0; i < robot->robotSkills.size(); i++ )
+            {
                 if( robot->robotSkills[i].getSkillNodeID().identifier.numeric == objectId->identifier.numeric ){
                     UA_CRCLSkillDataType skill;
                     UA_CRCLSkillDataType_init( &skill );
                     if( robot->robotSkills[i].createSkillInstance( server, &skill ) ){
-/*
-                        std::cout<< "startMethodCallback start" << std::endl;
-
-
-                        std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
-                        std::string address = "opc.tcp://localhost:4567";
-                        UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
-
-                        client.reset( UA_Client_new() );
-                        UA_ClientConfig *cc = UA_Client_getConfig( client.get() );
-
-                        UA_ClientConfig_setDefault(cc);
-                        cc->customDataTypes = &customDataTypes;
-
-                        UA_StatusCode retvalAux = UA_Client_connect( client.get(), address.c_str() );
-
-                        if( retvalAux != UA_STATUSCODE_GOOD )
-                            std::cout<< "ERROR CONNECTING TO TEST SERVER" << std::endl;
-                        else{
-                            std::cout<< "Succesfully connected to test server" << std::endl;
-                        }
-
-                        UA_Variant varTest;
-                        UA_Variant_init( &varTest );
-                        UA_Variant_setScalar( &varTest, &skill, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE] );
-
-                        retvalAux |= UA_Client_writeValueAttribute( client.get(), UA_NODEID_NUMERIC(1, 1300), &varTest);
-
-                        if( retvalAux != UA_STATUSCODE_GOOD ){
-                            std::cout<< "ERROR WRITTING SAMYSKILL TO TEST SERVER" << std::endl;
-                        }else{
-                            std::cout<< "success WRITTING SAMYSKILL TO TEST SERVER" << std::endl;
-                        }
-
-
-                        std::cout<< "startMethodCallback end" << std::endl;
-                        */
-
-
-
                         robot->robotPlan.emplace_back( skill );
                         std::cout << "ADDED " << skill.name.data << " TO ROBOT " << robot->name.data << std::endl;
-          //              UA_String str;
-          //              UA_String_init( &str );
-          //              UA_print( &skill, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE], &str );
-          //              std::cout<< str.data << std::endl;
                     }else{
                         throw std::runtime_error( "COULD NOT ADD SKILL TO ROBOT PLAN" );
                     }
                     break;
                 }
             }
-
             return UA_STATUSCODE_GOOD;
         }
+       static UA_StatusCode haltMethodCallback(
+                UA_Server* server,
+                const UA_NodeId* sessionId,
+                void* sessionHandle,
+                const UA_NodeId* methodId,
+                void* methodContext,
+                const UA_NodeId* objectId,
+                void* objectContext,
+                size_t inputSize,
+                const UA_Variant* input,
+                size_t outputSize,
+                UA_Variant* output
+        ){
+           if (!objectContext)
+               return UA_STATUSCODE_BADINTERNALERROR;
 
-        UA_StatusCode setStartMethodCallbackAndContextInRobotSkill( UA_Server* server, const UA_NodeId& skillNode,
-                                                                        SAMYRobot* robot ){
+           auto* robot = static_cast<SAMYRobot*>(objectContext);
+           /* Locks the thread while is adding the skill to the robot */
+    //       const std::lock_guard<std::mutex> lock( robot->planMutex );
+           for( int i = 0; i < robot->robotSkills.size(); i++ )
+           {
+               if( robot->robotSkills[i].getSkillNodeID().identifier.numeric == objectId->identifier.numeric ){
+                   robot->robotSkills[i].transition( server, ProgramStateNumber::HALTED );
+                   break;
+               }
+           }
+           return UA_STATUSCODE_GOOD;
+        }
+       static UA_StatusCode resumeMethodCallback(
+                UA_Server* server,
+                const UA_NodeId* sessionId,
+                void* sessionHandle,
+                const UA_NodeId* methodId,
+                void* methodContext,
+                const UA_NodeId* objectId,
+                void* objectContext,
+                size_t inputSize,
+                const UA_Variant* input,
+                size_t outputSize,
+                UA_Variant* output
+        ){
+           if (!objectContext)
+               return UA_STATUSCODE_BADINTERNALERROR;
 
-            UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+           auto* robot = static_cast<SAMYRobot*>(objectContext);
+           /* Locks the thread while is adding the skill to the robot */
+    //       const std::lock_guard<std::mutex> lock( robot->planMutex );
+           for( int i = 0; i < robot->robotSkills.size(); i++ )
+           {
+               if( robot->robotSkills[i].getSkillNodeID().identifier.numeric == objectId->identifier.numeric ){
+                   robot->robotSkills[i].transition( server, ProgramStateNumber::RUNNING );
+                   break;
+               }
+           }
+           return UA_STATUSCODE_GOOD;
+        }
+       static UA_StatusCode suspendMethodCallback(
+                UA_Server* server,
+                const UA_NodeId* sessionId,
+                void* sessionHandle,
+                const UA_NodeId* methodId,
+                void* methodContext,
+                const UA_NodeId* objectId,
+                void* objectContext,
+                size_t inputSize,
+                const UA_Variant* input,
+                size_t outputSize,
+                UA_Variant* output
+        ){
+           if (!objectContext)
+               return UA_STATUSCODE_BADINTERNALERROR;
 
-            retVal = UA_Server_setNodeContext( server, skillNode, static_cast<void*>( robot ) );
-            if ( retVal != UA_STATUSCODE_GOOD) {
-                throw std::runtime_error("SETTING START METHOD CONTEXT FOR A SKILL FAILED");
-            }
-            const std::shared_ptr<UA_NodeId> startMethodNode = UA_Server_getObjectComponentId(server, skillNode,
-                                                                                        UA_QUALIFIEDNAME(0,
-                                                                                                         const_cast<char*>("Start")));
+           auto* robot = static_cast<SAMYRobot*>(objectContext);
+           /* Locks the thread while is adding the skill to the robot */
+    //       const std::lock_guard<std::mutex> lock( robot->planMutex );
+           for( int i = 0; i < robot->robotSkills.size(); i++ )
+           {
+               if( robot->robotSkills[i].getSkillNodeID().identifier.numeric == objectId->identifier.numeric ){
+                   robot->robotSkills[i].transition( server, ProgramStateNumber::SUSPENDED );
+                   break;
+               }
+           }
+           return UA_STATUSCODE_GOOD;
+        }
+       static UA_StatusCode resetMethodCallback(
+                UA_Server* server,
+                const UA_NodeId* sessionId,
+                void* sessionHandle,
+                const UA_NodeId* methodId,
+                void* methodContext,
+                const UA_NodeId* objectId,
+                void* objectContext,
+                size_t inputSize,
+                const UA_Variant* input,
+                size_t outputSize,
+                UA_Variant* output
+        ){
+           if (!objectContext)
+               return UA_STATUSCODE_BADINTERNALERROR;
 
-            retVal = UA_Server_setMethodNode_callback( server, *(startMethodNode.get()), &startMethodCallback);
+           auto* robot = static_cast<SAMYRobot*>(objectContext);
+           /* Locks the thread while is adding the skill to the robot */
+    //       const std::lock_guard<std::mutex> lock( robot->planMutex );
+           for( int i = 0; i < robot->robotSkills.size(); i++ )
+           {
+               if( robot->robotSkills[i].getSkillNodeID().identifier.numeric == objectId->identifier.numeric ){
+                   robot->robotSkills[i].transition( server, ProgramStateNumber::READY );
+                   break;
+               }
+           }
+           return UA_STATUSCODE_GOOD;
+        }
+
+       UA_StatusCode setStartMethodCallback( UA_Server* server, const UA_NodeId& skillNode,
+                                                                        SAMYRobot* robot )
+       {
+           UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+            const std::shared_ptr<UA_NodeId> methodNode = UA_Server_getObjectComponentId(server, skillNode,
+                                                                                        UA_QUALIFIEDNAME(0, const_cast<char*>("Start")));
+            retVal = UA_Server_setMethodNode_callback( server, *(methodNode.get()), &startMethodCallback);
 
             return retVal;
+        }
+        UA_StatusCode setHaltMethodCallback( UA_Server* server, const UA_NodeId& skillNode,
+                                                                        SAMYRobot* robot ){
+            UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+             const std::shared_ptr<UA_NodeId> methodNode = UA_Server_getObjectComponentId(server, skillNode,
+                                                                                         UA_QUALIFIEDNAME(0, const_cast<char*>("Halt")));
+             retVal = UA_Server_setMethodNode_callback( server, *(methodNode.get()), &haltMethodCallback);
+
+             return retVal;
+        }
+        UA_StatusCode setResumeMethodCallback( UA_Server* server, const UA_NodeId& skillNode,
+                                                                        SAMYRobot* robot ){
+            UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+             const std::shared_ptr<UA_NodeId> methodNode = UA_Server_getObjectComponentId(server, skillNode,
+                                                                                         UA_QUALIFIEDNAME(0, const_cast<char*>("Resume")));
+             retVal = UA_Server_setMethodNode_callback( server, *(methodNode.get()), &resumeMethodCallback);
+
+             return retVal;
+        }
+        UA_StatusCode setSuspendMethodCallback( UA_Server* server, const UA_NodeId& skillNode,
+                                                                        SAMYRobot* robot ){
+            UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+             const std::shared_ptr<UA_NodeId> methodNode = UA_Server_getObjectComponentId(server, skillNode,
+                                                                                         UA_QUALIFIEDNAME(0, const_cast<char*>("Suspend")));
+             retVal = UA_Server_setMethodNode_callback( server, *(methodNode.get()), &suspendMethodCallback);
+
+             return retVal;
+        }
+        UA_StatusCode setResetMethodCallback( UA_Server* server, const UA_NodeId& skillNode,
+                                                                        SAMYRobot* robot ){
+            UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+             const std::shared_ptr<UA_NodeId> methodNode = UA_Server_getObjectComponentId(server, skillNode,
+                                                                                         UA_QUALIFIEDNAME(0, const_cast<char*>("Reset")));
+             retVal = UA_Server_setMethodNode_callback( server, *(methodNode.get()), &resetMethodCallback);
+
+             return retVal;
         }
 
         UA_StatusCode addSkillsToRobotController( UA_Server* server, SAMYRobot* robot ){
             UA_StatusCode retVal = UA_STATUSCODE_GOOD;
             UA_Int16 robotNS = UA_Server_addNamespace( server, reinterpret_cast<const char*>(robot->name.data) );
             UA_Int16 nsSkills = UA_Server_addNamespace( server, "http://SAMY.org/SAMYSkills" );
-            for( int i=0; i < robot->robotSkills.size(); i++ ){
+            for( int i=0; i < robot->robotSkills.size(); i++ )
+            {
                UA_NodeId skillTypeNode = findSkillType( server, robot->robotSkills[i].getSkillName().c_str() );
                UA_NodeId skillInstanceNode;
 
@@ -381,13 +567,33 @@ namespace ServerGenerator{
 
                 retVal |= UA_Server_addNode_finish( server, skillInstanceNode);
 
-                robot->robotSkills[i].setSkillNodeID( skillInstanceNode );
                 robot->robotSkills[i].setSkillTypeNodeId( skillTypeNode );
+                robot->robotSkills[i].setSkillNodeID( skillInstanceNode );
+                robot->robotSkills[i].setSkillCurrentStateNodeId( std::move( getComponentNodeByBrowseName( server, skillInstanceNode,
+                                                                                                                    "CurrentState", 0 ) ) );
+                robot->robotSkills[i].setSkillLastTransitionNodeId( std::move( getComponentNodeByBrowseName( server, skillInstanceNode,
+                                                                                                                    "LastTransition", 0 ) ) );
+                UA_Int16 diNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/DI/");
+                robot->robotSkills[i].setSkillParametersSetNodeId( std::move( getComponentNodeByBrowseName( server, skillInstanceNode,
+                                                                                                            "ParameterSet", diNS ) ) );
+                robot->robotSkills[i].setSkillParametersSetRealTimeNodeId( std::move( getComponentNodeByBrowseName( server, skillInstanceNode,
+                                                                                                            "ParameterSetRealTime", nsSkills ) ) );
+                robot->robotSkills[i].setTransitions( server );
+                robot->robotSkills[i].setStates( server );
 
-                robot->robotSkills[i].setParameterNodesInSkill( server );
-
-                retVal |= setStartMethodCallbackAndContextInRobotSkill( server, skillInstanceNode,
-                                                                            const_cast<SAMYRobot*>(robot) );
+                UA_Int16 fortissDiNS = UA_Server_addNamespace( server, "https://fortiss.org/UA/DI/");
+                robot->robotSkills[i].setskillTransitionEventTypeNodeId( std::move(
+                                                       getSubtypeNodeByBrowseName( server, UA_NODEID_NUMERIC(0, UA_NS0ID_PROGRAMTRANSITIONEVENTTYPE),
+                                                                                   "SkillTransitionEventType", fortissDiNS )));
+                robot->robotSkills[i].setInitialStateSkill();
+                robot->robotSkills[i].setSkillNormalParameterNodes( server );
+                robot->robotSkills[i].setSkillRealTimeParameterNodes( server );
+                retVal |= setContextInRobotSkill( server, skillInstanceNode, const_cast<SAMYRobot*>(robot) );
+                retVal |= setStartMethodCallback( server, skillInstanceNode, const_cast<SAMYRobot*>(robot) );
+                retVal |= setHaltMethodCallback( server, skillInstanceNode, const_cast<SAMYRobot*>(robot) );
+                retVal |= setSuspendMethodCallback( server, skillInstanceNode, const_cast<SAMYRobot*>(robot) );
+                retVal |= setResumeMethodCallback( server, skillInstanceNode, const_cast<SAMYRobot*>(robot) );
+                retVal |= setResetMethodCallback( server, skillInstanceNode, const_cast<SAMYRobot*>(robot) );
             }
             return retVal;
         }
@@ -410,6 +616,9 @@ namespace ServerGenerator{
 
         retVal |= addRobotPosition( server, robot );
         logOfNodesAdditionToServer( "Robot Motion Device Position", retVal );
+
+        retVal |= addRobotNextSkill( server, robot );
+        logOfNodesAdditionToServer( "Robot Motion Device Next Skill", retVal );
 
         std::cout << "Finished Processing Robot: " << robot->name.data << std::endl << std::endl;
 
@@ -480,14 +689,14 @@ namespace ServerGenerator{
         return retVal;
     }
 
-    UA_StatusCode addParameterSetObjectToSkillType( UA_Server* server, const SAMYSkill* skill ){
+    UA_StatusCode addParameterSetObjectToSkillType( UA_Server* server, SAMYSkill* skill ){
         UA_Int16 diNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/DI/");
         UA_Int16 nsSkills = UA_Server_addNamespace( server, "http://SAMY.org/SAMYSkills" );
 
         UA_NodeId nodeNumber;
 
-        //UA_NodeId skillTypeNodeId = findSkillType( server, skill->getSkillName().c_str() );
-        UA_NodeId skillTypeNodeId = std::move( skill->getSkillTypeNodeId() );
+        UA_NodeId skillTypeNodeId = findSkillType( server, skill->getSkillName().c_str() );
+        skill->setSkillTypeNodeId( std::move( skillTypeNodeId ) );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
         UA_ObjectAttributes attr = UA_ObjectAttributes_default;
         attr.displayName = UA_LOCALIZEDTEXT("", "ParameterSet");
@@ -506,13 +715,14 @@ namespace ServerGenerator{
         return retVal;
     }
 
-    UA_StatusCode addParameterSetRealTimeObjectToSkillType( UA_Server* server, const SAMYSkill* skill ){
+    UA_StatusCode addParameterSetRealTimeObjectToSkillType( UA_Server* server, SAMYSkill* skill ){
         UA_Int16 diNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/DI/");
         UA_Int16 nsSkills = UA_Server_addNamespace( server, "http://SAMY.org/SAMYSkills" );
 
         UA_NodeId nodeNumber;
-        //UA_NodeId skillTypeNodeId = findSkillType( server, skill->getSkillName().c_str() );
-        UA_NodeId skillTypeNodeId = std::move( skill->getSkillTypeNodeId() );
+        UA_NodeId skillTypeNodeId = findSkillType( server, skill->getSkillName().c_str() );
+       // UA_NodeId skillTypeNodeId = std::move( skill->getSkillTypeNodeId() );
+        skill->setSkillTypeNodeId( std::move( skillTypeNodeId ) );
 
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
         UA_ObjectAttributes attr = UA_ObjectAttributes_default;

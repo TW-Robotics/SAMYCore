@@ -20,7 +20,7 @@ stateCallback(UA_Client *client, UA_SecureChannelState channelState,
         break;
     }
 
-    switch(sessionState) {
+    switch(sessionState){
     case UA_SESSIONSTATE_ACTIVATED: {
         UA_LOG_INFO(UA_Log_Stdout, UA_LOGCATEGORY_USERLAND, "A session with the Plugin is activated");
         }
@@ -35,7 +35,8 @@ stateCallback(UA_Client *client, UA_SecureChannelState channelState,
 
 static void
 sendNextSkillInstanceToRobot(UA_Client *client, UA_UInt32 subId, void *subContext,
-                           UA_UInt32 monId, void *monContext, UA_DataValue *value){
+                           UA_UInt32 monId, void *monContext, UA_DataValue *value)
+{
 
     UA_Boolean lastSkill_succeded = *(UA_Boolean*)value->value.data;
     if(lastSkill_succeded == true){
@@ -44,7 +45,7 @@ sendNextSkillInstanceToRobot(UA_Client *client, UA_UInt32 subId, void *subContex
 
         SAMY::SAMYRobot* robot = (SAMY::SAMYRobot*)monContext;
 
-        robot->SAMYRobotVariableNodeId = UA_NODEID_NUMERIC( 1, 111 );
+  //      robot->SAMYRobotVariableNodeId = UA_NODEID_NUMERIC( 1, 111 );
         robot->ipAddresses.iPAddress_Skill = UA_STRING( "Not set!" );
         robot->ipAddresses.iPAddress_Status = UA_STRING( "Not set!" );
 
@@ -84,7 +85,7 @@ sendNextSkillInstanceToRobot(UA_Client *client, UA_UInt32 subId, void *subContex
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &opcuaRobot, &UA_TYPES_CRCL[UA_TYPES_CRCL_SAMYROBOTDATATYPE] );
 
-        retVal |= UA_Client_writeValueAttribute(robot->client.get(), UA_NODEID_STRING(1, "Robot"), &var);
+    //    retVal |= UA_Client_writeValueAttribute(robot->client.get(), UA_NODEID_STRING(1, "Robot"), &var);
 
 
 
@@ -109,7 +110,6 @@ sendNextSkillInstanceToRobot(UA_Client *client, UA_UInt32 subId, void *subContex
         retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1400), &varAux); */
 
 
-
         if(retVal == UA_STATUSCODE_GOOD){
             std::cout<<"ROBOT CORRECTLY WRITTEN IN SAMYPLUGIN |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"<< std::endl;
             robot->lastRequestedSkill = robot->lastRequestedSkill + 1;
@@ -120,7 +120,7 @@ sendNextSkillInstanceToRobot(UA_Client *client, UA_UInt32 subId, void *subContex
             UA_Variant_init(&var);
             UA_Variant_setScalar(&var, &skillFinished,  &UA_TYPES[UA_TYPES_BOOLEAN]);
 
-            retVal = UA_Client_writeValueAttribute(robot->client.get(), UA_NODEID_STRING(1, "lastSkill_succeeded"), &var);
+      //      retVal = UA_Client_writeValueAttribute(robot->client.get(), UA_NODEID_STRING(1, "lastSkill_succeeded"), &var);
 
         }else{
             std::cout<<"ROBOT FAILED WHEN WRITTING IN SAMYPLUGIN  |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"<< std::endl;
@@ -131,7 +131,7 @@ sendNextSkillInstanceToRobot(UA_Client *client, UA_UInt32 subId, void *subContex
 }
 
 namespace SAMY {
-
+/*
 UA_StatusCode SAMYRobot::createConnectionToPlugin( ){
     UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
@@ -182,7 +182,7 @@ UA_StatusCode SAMYRobot::createConnectionToPlugin( ){
 
     return retval;
 }
-
+*/
 }
 
 #if pubsub

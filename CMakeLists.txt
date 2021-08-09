@@ -42,6 +42,7 @@ include_directories("${PROJECT_SOURCE_DIR}/OPCUA/serverGenerator/include")
 include_directories("${PROJECT_SOURCE_DIR}/Common/include")
 include_directories("${PROJECT_SOURCE_DIR}/Parsers/include")
 include_directories("${PROJECT_SOURCE_DIR}/Utils/include")
+include_directories("${PROJECT_SOURCE_DIR}/Helpers/include")
 include_directories("${PROJECT_SOURCE_DIR}/ThirdParties/spdlog/include")
 
 # The generated files are: "namespace_${NAMESPACE_NAME}_... .c/.h"
@@ -144,6 +145,7 @@ add_library(SAMYCore_Library STATIC
                 ${UA_TYPES_KUKA_IIWA_SOURCES}
                 ${UA_NODESET_CRCL_SOURCES}
                 ${UA_TYPES_CRCL_SOURCES}
+                "./Helpers/helpers.cpp"
                 "./Common/Publisher.c"
                 "./Common/Subscriber.c"
                 "./Common/SAMYRobot.cpp"

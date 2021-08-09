@@ -1,12 +1,10 @@
 #ifndef SAMYROBOT_H
 #define SAMYROBOT_H
 
-#include "crcl_nodeids.h"
-#include "namespace_crcl_generated.h"
-#include "samyskill.h"
 #include <algorithm>
 #include <mutex>
 #include <memory>
+#include <queue>
 
 #ifndef PubSub
 #include <vector>
@@ -16,43 +14,46 @@
 #include <open62541/plugin/log_stdout.h>
 #include <types_crcl_generated_handling.h>
 #include <thread>
-
 #else
 #include <Publisher.h>
 #include <Subscriber.h>
 #endif
 
+#include "crcl_nodeids.h"
+#include "namespace_crcl_generated.h"
+#include "samyskill.h"
+
+
 namespace SAMY{
     struct SAMYSkill;
+
 }
     #ifndef PubSub
 namespace SAMY{
 
-    struct SAMYRobot{
-        struct ClientDeleter {
-          void operator()(UA_Client* client) { UA_Client_delete(client); }
-        };
-
+typedef struct {
         /*The same fields than the SAMYRobot modelled in OPC UA (UA_SAMYRobot)*/
         UA_UInt16 id = 0;
         UA_String name = UA_STRING_NULL;
         std::vector<SAMY::SAMYSkill> robotSkills;
-        UA_CRCLSkillDataType requested_skill;
+        UA_NodeId requested_skill;
         UA_CRCLStatusDataType robot_status;
         UA_PubSubIPAddresses ipAddresses;
         std::string address;
+        std::queue<UA_CRCLSkillDataType> planToExecute;
         std::vector<UA_CRCLSkillDataType> robotPlan;
-        UA_UInt32 lastRequestedSkill = 0;
-        UA_NodeId SAMYRobotVariableNodeId = UA_NODEID_STRING(1, "Robot");
-        std::unique_ptr< UA_Client, ClientDeleter > client;
-
-        UA_StatusCode createConnectionToPlugin( );
+        UA_NodeId robotNodeIdInSAMYCore = UA_NODEID_NULL;
+        UA_NodeId robotControllerNodeIdInSAMYCore = UA_NODEID_NULL;
+        int lastRequestedSkill = 0;
   //      std::shared_ptr<spdlog::logger> logger;
   //      std::mutex planMutex;
-    };
+        /* delete in the future (used for compile purposes) */
+        struct ClientDeleter {
+          void operator()(UA_Client* client) { UA_Client_delete(client); }
+        };
 
+    } SAMYRobot;
 }
-
     #else
 namespace SAMY{
 

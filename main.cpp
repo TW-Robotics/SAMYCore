@@ -44,18 +44,19 @@ int main(int argc, char** argv){
     bool correctParsing = true;
 
     SAMY::Parsers::SkillsParser skillsParser;
-    correctParsing |= skillsParser.parse( "../config/Skills.yaml" );
+    correctParsing |= skillsParser.parse( "../Skills.yaml" );
     std::vector<SAMY::SAMYSkill>* skills = skillsParser.getParsedSkills();
 
     SAMY::Parsers::RobotsConfigurationParser robotsParser;
-    correctParsing |= robotsParser.parse( "../config/RobotsConfiguration.yaml", *skills );
+    correctParsing |= robotsParser.parse( "../RobotsConfiguration.yaml", *skills );
     std::vector<SAMY::SAMYRobot>* robots = robotsParser.getParsedRobots();
 
     if( correctParsing == false )
         return 0;
 
     for(int i=0; i < skills->size(); i++){
-        std::cout << "Number of commands in skill " << (*skills)[i].getSkillName() << "  :  " << (*skills)[i].getSkillCommands().size() << std::endl;
+        std::cout << "Number of commands in skill " << (*skills)[i].getSkillName() << "  :  "
+                  << (*skills)[i].getSkillCommands().size() << std::endl;
         std::cout << "Skill NodeTypeID " << (*skills)[i].getSkillTypeNodeId().identifier.numeric << std::endl;
     }
     std::cout << "Number of parsed skills: " << skills->size() << std::endl;
@@ -75,14 +76,15 @@ int main(int argc, char** argv){
         UA_LOG_ERROR(UA_Log_Stdout, UA_LOGCATEGORY_SERVER, "Could not add the fixed information models nodesets. "
         "Check previous output for any error.");
         retVal = UA_STATUSCODE_BADUNEXPECTEDERROR;
-    } else {/*If custom namespaces succesfully added*/
+    }else {/*If custom namespaces succesfully added*/
         std::thread SAMYCoreOPCUAInterface(UA_Server_run, server, &running);
         SAMYCoreOPCUAInterface.detach();
 
         /* Connect SAMYCore to all the plugins */
-        for(int i=0; i < robots->size(); i++){
+ /*       for(int i=0; i < robots->size(); i++){
             retVal |= (*robots)[i].createConnectionToPlugin();
         }
+*/
 
         std::cout<< "Request skills to the system and press enter to continue..." << std::endl;
 
@@ -94,7 +96,7 @@ int main(int argc, char** argv){
         while( running && retVal == UA_STATUSCODE_GOOD ){
             for(int i=0; i < robots->size(); i++){
                 if( (*robots)[i].lastRequestedSkill < (*robots)[i].robotPlan.size() ){
-                    retVal |= UA_Client_run_iterate((*robots)[i].client.get(), 1);
+              //      retVal |= UA_Client_run_iterate((*robots)[i].client.get(), 1);
                     std::this_thread::sleep_for(std::chrono::milliseconds(1));
                 }
             }

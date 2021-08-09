@@ -12,11 +12,29 @@
 #include "namespace_crcl_generated.h"
 #include "SAMYRobot.h"
 #include <types_crcl_generated_handling.h>
+#include <helpers.h>
 
 namespace SAMY{
 namespace ServerGenerator{
 
+    struct SkillContext{
+        SAMYRobot* robot;
+        SAMYSkill* skill;
+    };
+
     /* Add robot to SAMYCore internals */
+    UA_StatusCode addThrowHaltedToReady(UA_Server* server, SAMYRobot *robot );
+    UA_StatusCode addThrowReadyToRunning( UA_Server* server, const SAMYRobot* robot );
+    UA_StatusCode addThrowRunningToHalted( UA_Server* server, const SAMYRobot* robot );
+    UA_StatusCode addThrowRunningToSuspended( UA_Server* server, const SAMYRobot* robot );
+    UA_StatusCode addThrowSuspendedToRunning( UA_Server* server, const SAMYRobot* robot );
+    UA_StatusCode addThrowSuspendedToHalted( UA_Server* server, const SAMYRobot* robot );
+    UA_StatusCode addThrowSuspendedToReady( UA_Server* server, const SAMYRobot* robot );
+    UA_StatusCode addThrowReadyToHalted( UA_Server* server, const SAMYRobot* robot );
+    UA_StatusCode addCurrentState( UA_Server* server, const SAMYRobot* robot );
+    UA_StatusCode addLastTransition( UA_Server* server, const SAMYRobot* robot );
+    UA_StatusCode addCurrentSkill( UA_Server* server, const SAMYRobot* robot );
+
     UA_StatusCode addMotionSystem( UA_Server* server, const SAMYRobot* robot );
     UA_StatusCode addMotionDevices( UA_Server* server, const SAMYRobot* robot );
     UA_StatusCode addRobotSpecificMotionDevice( UA_Server* server, const SAMYRobot* robot );
@@ -36,7 +54,7 @@ namespace ServerGenerator{
 
     /* Add skill to SAMYCore internals */
     UA_StatusCode addBasicSkillType(UA_Server* server, SAMYSkill *skill );
-    UA_StatusCode addParameterSetObjectToSkillType(UA_Server* server, const SAMYSkill *skill );
+    UA_StatusCode addParameterSetObjectToSkillType(UA_Server* server, SAMYSkill *skill );
     UA_StatusCode addParametersToSkillType(UA_Server* server, const SAMYSkill *skill );
     UA_StatusCode addSkillTypeToServer(UA_Server* server, SAMYSkill *skill );
     /* Add skills to SAMYCore interface */
@@ -48,5 +66,6 @@ namespace ServerGenerator{
     /* Generate SAMYCore OPC UA Server interface */
     UA_StatusCode generateSAMYCoreServer(UA_Server* server, std::vector<SAMYRobot> *robots,
                                                                 std::vector<SAMYSkill> *skills );   
+
 }
 }
