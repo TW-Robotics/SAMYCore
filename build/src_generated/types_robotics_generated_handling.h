@@ -1,5 +1,5 @@
 /* Generated from Opc.Ua.Robotics.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py
- * on host jbg by user jbg at 2021-08-09 12:58:43 */
+ * on host jbg by user jbg at 2021-08-13 06:21:24 */
 
 #ifndef TYPES_ROBOTICS_GENERATED_HANDLING_H_
 #define TYPES_ROBOTICS_GENERATED_HANDLING_H_

@@ -1,0 +1,48 @@
+{
+  "cartpole": {
+    "classifiers": {
+      "default": {
+        "stats": {
+          "nodes": 253,
+          "inner nodes": 126,
+          "paths": 127,
+          "bandwidth": 7
+        },
+        "time": "00:00:00.280"
+      }
+    },
+    "metadata": {
+      "X_metadata": {
+        "categorical": [],
+        "min": [
+          2.24,
+          -2.0
+        ],
+        "max": [
+          4.08,
+          2.0
+        ],
+        "step_size": [
+          0.08,
+          0.1
+        ]
+      },
+      "Y_metadata": {
+        "variables": [
+          "u_0"
+        ],
+        "min": [
+          -4.0
+        ],
+        "max": [
+          4.0
+        ],
+        "step_size": [
+          0.1
+        ],
+        "num_rows": 271,
+        "num_flattened": 21951
+      }
+    }
+  }
+}

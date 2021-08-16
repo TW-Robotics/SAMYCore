@@ -8,7 +8,7 @@
 #else
 #include <spdlog/sinks/ansicolor_sink.h>
 #endif
-
+#include <spdlog/sinks/stdout_color_sinks.h>
 #include <spdlog/details/synchronous_factory.h>
 
 namespace spdlog {

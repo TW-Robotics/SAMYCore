@@ -1,0 +1,30 @@
+FundamentalInformationSources:
+  - FundamentalInformationSource:
+      InformationSourceName: "infoSource_1"
+      DataTypes:
+             - Boolean
+             - UInt32
+             - Double
+             - Float
+             - CRCL_PoseDataType
+             - CRCL_PointDataType
+  - FundamentalInformationSource:
+      InformationSourceName: "infoSource_2"
+      DataTypes:
+             - String
+             - Float
+             - CRCL_PointDataType
+ComplexInformationSources:
+  - ComplexInformationSource:
+      InformationSourceName: "complexInfoSource_1"
+      DataTypes_And_PreviousInformationSources:
+             - Boolean
+             - infoSource_1
+             - infoSource_2
+  - ComplexInformationSource:
+      InformationSourceName: "complexInfoSource_2"
+      DataTypes_And_PreviousInformationSources:
+             - Int64
+             - infoSource_1
+             - infoSource_2
+             - complexInfoSource_1

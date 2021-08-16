@@ -1,0 +1,17 @@
+SAMYCoreConfig:
+     AppURI: "AppURItest"
+     AppName: "AppNameTest"
+     Server:
+        Port: 4840
+        Encryption: false
+        Anonymous: true
+        CertificatesPath: ""
+     Logging:
+        Level:
+           App: "info"
+           OPCUA: "error"
+        Path: "logs"
+     ConfigFiles:
+        SkillsFile: "/home/jbg/Desktop/SAMY/SAMYCore/cofigFiles/Skills.yaml" 
+        RobotsFile: "/home/jbg/Desktop/SAMY/SAMYCore/cofigFiles/RobotsConfiguration.yaml"
+        InformationSourcesFile: "/home/jbg/Desktop/SAMY/SAMYCore/cofigFiles/InformationSources.yaml"
