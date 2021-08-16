@@ -46,21 +46,6 @@ namespace SAMY {
         SAMY::SAMYCoreInterfaceGenerator generator{logger};
         generator.generateSAMYCoreInterface( ls.get(), &robots, &skills, &informationSources );
 
-
-
-
-
-/*        systemStatusNodes = generator.getSystemStatusNodesIds();
-         std::stringstream msg2;
-        msg2 <<"NUMBER OF RELEVANT NODES FOR DESCRIBING SYSTEM STATUS: " << systemStatusNodes.size() << std::endl << std::endl;
-        logger->info(msg2.str());
-
-       for( const auto& node : systemStatusNodes ){
-            std::stringstream msg2;
-            msg2 <<"NSIndex: " << node.namespaceIndex << "   " << node.identifier.numeric;
-            logger->info(msg2.str());
-        }
-*/
         server->init();
     }
 }
