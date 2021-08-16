@@ -18,7 +18,6 @@ public:
     void run(bool &running);
 private:
     std::shared_ptr<OPCUA::OpcUaServer> server;
- //   UA_Server* server;
     SAMYCoreConfig config;
     std::vector<UA_NodeId> systemStatusNodes;
     std::vector<SAMYRobot> robots;
