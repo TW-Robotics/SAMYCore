@@ -12,6 +12,33 @@ namespace SAMY{
         return retVal;
     }
 
+    void SAMYCoreInterfaceGenerator::saveSkillParametersNodes( UA_Server* server, const std::string& baseName, const UA_NodeId& parametersNode ){
+        std::vector< std::pair< std::string, UA_NodeId> > parameters = std::move( UA_Server_getNodeChildren( server, parametersNode ) );
+        for( const auto& param : parameters ){
+            std::string auxStr2 = baseName + "_Parameter_" + param.first;
+            systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>( param.second,  auxStr2 ) );
+        }
+    }
+
+    void SAMYCoreInterfaceGenerator::saveSkillStatusNodes( UA_Server* server, SAMYRobot* robot, SAMYSkill* skill ){
+        UA_NodeId aux = UA_NODEID_NULL;
+        std::string baseName = "Robot_" + std::string{ reinterpret_cast<char*>( robot->name.data )} + "_Skill_" + skill->getSkillName();
+        aux = getComponentNodeByBrowseName( server, skill->getSkillNodeID(), "CurrentState", 0 );
+        std::string name = baseName + "_CurrentState";
+        systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>( aux,  name ) );
+
+        aux = getComponentNodeByBrowseName( server, skill->getSkillNodeID(), "LastTransition", 0 );
+        name = baseName + "_LastTransition";
+        systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>( aux,  name ) );
+
+        UA_Int16 diNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/DI/");
+        aux = getComponentNodeByBrowseName( server, skill->getSkillNodeID(), "ParameterSet", diNS );
+        saveSkillParametersNodes( server, baseName, aux );
+
+  /*      UA_Int16 nsSkills = UA_Server_addNamespace( server, "http://SAMY.org/SAMYSkills" );
+        aux = getComponentNodeByBrowseName( server, skill->getSkillNodeID(), "ParameterSetRealTime", nsSkills ); */
+    }
+
     UA_StatusCode SAMYCoreInterfaceGenerator::setSkillMethodsCallbacks( UA_Server* server, UA_NodeId skillInstanceNode, SAMYRobot* robot ){
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
         retVal |= setStartMethodCallback( server, skillInstanceNode, const_cast<SAMYRobot*>(robot) );
@@ -50,7 +77,7 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
         retVal |= setContextInRobotSkill( server, skillInstanceNode, const_cast<SAMYRobot*>(robot) );
         retVal |= setSkillMethodsCallbacks( server, skillInstanceNode, const_cast<SAMYRobot*>(robot) );
 
-        systemStatusNodesIds.emplace_back( skillInstanceNode );
+        saveSkillStatusNodes( server, robot, &robot->robotSkills[i] );
     }
     robot->initializeRobotSkills( server );
 
@@ -261,7 +288,8 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
 
         retVal |= UA_Server_addNode_finish( server, UA_NODEID_NUMERIC(robotNS, 16296LU));
 
-        systemStatusNodesIds.emplace_back( UA_NODEID_NUMERIC(robotNS, 16296LU) );
+        std::string name = "Robot_" + std::string{ reinterpret_cast<char*>( robot->name.data ) } + "_Position";
+        systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>(  UA_NODEID_NUMERIC(robotNS, 16296LU),  name ) );
 
         return retVal;
     }
@@ -295,7 +323,8 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
 
         retVal |= UA_Server_addNode_finish( server, tempNode );
 
-        systemStatusNodesIds.emplace_back( tempNode );
+        std::string name = "Robot_" + std::string{ reinterpret_cast<char*>( robot->name.data ) } + "_CRCLStatus";
+        systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>(  tempNode,  name ) );
 
         return retVal;
     }
@@ -331,7 +360,8 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
 
         retVal |= UA_Server_addNode_finish( server, nextSkillNodeId);
 
-        systemStatusNodesIds.emplace_back( nextSkillNodeId );
+        std::string name = "Robot_" + std::string{ reinterpret_cast<char*>( robot->name.data ) } + "_nextSkillNodeId";
+        systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>(  nextSkillNodeId,  name ) );
 
         return retVal;
     }

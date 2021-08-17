@@ -50,17 +50,21 @@ namespace SAMY {
 
 
 
-/*        systemStatusNodes = generator.getSystemStatusNodesIds();
+        systemStatusNodesAndNames = generator.getSystemStatusNodesAndNames();
+        generator.addSystemStatusObject( ls.get() );
+
          std::stringstream msg2;
-        msg2 <<"NUMBER OF RELEVANT NODES FOR DESCRIBING SYSTEM STATUS: " << systemStatusNodes.size() << std::endl << std::endl;
+        msg2 <<"NUMBER OF RELEVANT NODES FOR DESCRIBING SYSTEM STATUS: " << systemStatusNodesAndNames.size() << std::endl << std::endl;
         logger->info(msg2.str());
 
-       for( const auto& node : systemStatusNodes ){
+       for( auto& nodeAndName : systemStatusNodesAndNames ){
             std::stringstream msg2;
-            msg2 <<"NSIndex: " << node.namespaceIndex << "   " << node.identifier.numeric;
+            msg2 <<"NSIndex: " << nodeAndName.first.namespaceIndex << "   " << nodeAndName.first.identifier.numeric << "   " << nodeAndName.second;
             logger->info(msg2.str());
+
+            generator.addDataSourcesToSystemStatusVariable( ls.get(), nodeAndName );
         }
-*/
+
         server->init();
     }
 }

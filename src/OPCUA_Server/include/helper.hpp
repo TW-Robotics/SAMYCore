@@ -389,7 +389,6 @@ namespace SAMY {
 
         }
 
-
         inline bool UA_Server_findChildOfType(
                 const std::shared_ptr<SAMY::OPCUA::OpcUaServer>& server,
                 const std::shared_ptr<spdlog::logger>& logger,

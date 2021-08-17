@@ -20,6 +20,28 @@
 
 namespace SAMY {
 
+inline std::vector< std::pair< std::string, UA_NodeId> > UA_Server_getNodeChildren( UA_Server* server, const UA_NodeId& parentNode ){
+    std::vector< std::pair< std::string, UA_NodeId> > retVal;
+
+    UA_BrowseDescription bDes;
+    UA_BrowseDescription_init(&bDes);
+    bDes.nodeId = parentNode;
+    bDes.resultMask = UA_BROWSERESULTMASK_ALL;
+    UA_BrowseResult bRes = UA_Server_browse(server, 0, &bDes);
+
+    for( int i = 0; i < bRes.referencesSize; i++ ){
+        if( bRes.references[i].referenceTypeId.identifier.numeric == UA_NS0ID_HASCOMPONENT &&
+            bRes.references[i].referenceTypeId.namespaceIndex == 0 ){
+            retVal.emplace_back( std::pair<std::string, UA_NodeId>( reinterpret_cast<char*>( bRes.references[i].browseName.name.data ),
+                                                                         bRes.references[i].nodeId.nodeId ) );
+//            UA_QualifiedName_copy( &bRes.references[i].browseName, &retVal[i].first);
+        }
+    }
+    UA_BrowseResult_deleteMembers(&bRes);
+    UA_BrowseResult_clear(&bRes);
+    return retVal;
+}
+
 inline const std::shared_ptr<UA_NodeId> UA_Server_getObjectChildId(
                 UA_Server* server,
                 const UA_NodeId objectId,

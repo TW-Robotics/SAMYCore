@@ -20,7 +20,7 @@ private:
     std::shared_ptr<OPCUA::OpcUaServer> server;
  //   UA_Server* server;
     SAMYCoreConfig config;
-    std::vector<UA_NodeId> systemStatusNodes;
+    std::vector< std::pair<UA_NodeId, std::string> > systemStatusNodesAndNames;
     std::vector<SAMYRobot> robots;
     std::vector<SAMYSkill> skills;
     std::vector<InformationSource> informationSources;

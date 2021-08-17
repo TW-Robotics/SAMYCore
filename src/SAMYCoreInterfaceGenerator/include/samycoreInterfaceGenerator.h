@@ -32,10 +32,15 @@ namespace SAMY{
         UA_StatusCode generateSAMYCoreInterface( UA_Server* server, std::vector<SAMYRobot>* robots,
                                                                     std::vector<SAMYSkill>* skills,
                                                                     std::vector<InformationSource>* informationSources );
-        std::vector<UA_NodeId> getSystemStatusNodesIds();
-        private:
-        std::vector<UA_NodeId> systemStatusNodesIds;
-        std::shared_ptr<spdlog::logger> logger;
+        std::vector<std::pair<UA_NodeId, std::string> > getSystemStatusNodesAndNames();
+
+        UA_StatusCode addDataSourcesToSystemStatusVariable(UA_Server* server , std::pair<UA_NodeId, std::string> &nodeAndName);
+        UA_StatusCode addSystemStatusObject( UA_Server* server );
+
+    private:
+        std::vector< std::pair<UA_NodeId, std::string> > systemStatusNodesAndNames;
+        std::shared_ptr<spdlog::logger> logger = nullptr;
+        UA_NodeId systemStatusObjectNodeId = UA_NODEID_NULL;
 
         void logOfNodesAdditionToServer( const std::string& element, UA_StatusCode retVal );
         UA_NodeId findRobotControllerObject( UA_Server *server, const SAMYRobot* robot );
@@ -70,11 +75,29 @@ namespace SAMY{
         UA_StatusCode addFixedInformationModels( UA_Server* server, std::vector<SAMYRobot>* robots );
         UA_StatusCode addInformationSourcesToServer( UA_Server* server, std::vector<InformationSource>* infoSources );
         UA_StatusCode setSkillMethodsCallbacks( UA_Server* server, UA_NodeId skillInstanceNode, SAMYRobot* robot );
+        void saveSkillStatusNodes(UA_Server *server, SAMYRobot* robot, SAMYSkill *skill );
+        void saveSkillParametersNodes( UA_Server* server, const std::string& baseName, const UA_NodeId& parametersNode );
 
+        static UA_StatusCode readStatusVariableCallback(
+                UA_Server* server,
+                const UA_NodeId* sessionId,
+                void* sessionContext,
+                const UA_NodeId* nodeId,
+                void* nodeContext,
+                UA_Boolean sourceTimeStamp,
+                const UA_NumericRange* range,
+                UA_DataValue* dataValue
+        );
+        static UA_StatusCode writeStatusVariableCallback(
+                UA_Server *server,
+                const UA_NodeId *sessionId,
+                void *sessionContext,
+                const UA_NodeId *nodeId,
+                void *nodeContext,
+                const UA_NumericRange *range,
+                const UA_DataValue *dataValue
+                                    );
     };
-
-    static void logOfNodesAdditionToServer( const std::string& element, UA_StatusCode retVal );
-
 }
 
 #endif

@@ -80,7 +80,6 @@ UA_StatusCode AdderParameterNodesToSkillType::addParameterNodesToServer(
 
     name = name + "_RealTime";
 
-
     UA_VariableAttributes vattr2 = UA_VariableAttributes_default;
     vattr2.valueRank = UA_VALUERANK_SCALAR;
     vattr2.accessLevel = UA_ACCESSLEVELMASK_READ | UA_ACCESSLEVELMASK_WRITE;

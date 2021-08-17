@@ -15,7 +15,7 @@ UA_StatusCode SAMYRobot::readCurrentStateId(
         UA_Boolean sourceTimeStamp,
         const UA_NumericRange* range,
         UA_DataValue* dataValue
-) {
+){
     if (!nodeContext)
         return UA_STATUSCODE_BADINTERNALERROR;
     auto* robot = static_cast<SAMYRobot*>(nodeContext);
@@ -118,7 +118,8 @@ UA_StatusCode SAMYRobot::initializeRobotSkills( UA_Server* server ){
     }
 }
 
-UA_StatusCode SAMYRobot::addDataSources( UA_Server* server, const UA_NodeId& skillNodeID ){
+UA_StatusCode SAMYRobot::addDataSources( UA_Server* server, const UA_NodeId& skillNodeID )
+{
     UA_StatusCode retval = UA_STATUSCODE_GOOD;
 
     UA_DataSource dataSource{};

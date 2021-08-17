@@ -161,15 +161,11 @@ namespace SAMY{
     UA_StatusCode SAMYSkill::initializeSkill( UA_Server* server){
         UA_Int16 nsSkills = UA_Server_addNamespace( server, "http://SAMY.org/SAMYSkills" );
 
-        this->setSkillCurrentStateNodeId( std::move( getComponentNodeByBrowseName( server, skillNodeID,
-                                                                                                            "CurrentState", 0 ) ) );
-        this->setSkillLastTransitionNodeId( std::move( getComponentNodeByBrowseName( server, skillNodeID,
-                                                                                                            "LastTransition", 0 ) ) );
+        this->setSkillCurrentStateNodeId( std::move( getComponentNodeByBrowseName( server, skillNodeID, "CurrentState", 0 ) ) );
+        this->setSkillLastTransitionNodeId( std::move( getComponentNodeByBrowseName( server, skillNodeID, "LastTransition", 0 ) ) );
         UA_Int16 diNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/DI/");
-        this->setSkillParametersSetNodeId( std::move( getComponentNodeByBrowseName( server, skillNodeID,
-                                                                                                    "ParameterSet", diNS ) ) );
-        this->setSkillParametersSetRealTimeNodeId( std::move( getComponentNodeByBrowseName( server, skillNodeID,
-                                                                                                    "ParameterSetRealTime", nsSkills ) ) );
+        this->setSkillParametersSetNodeId( std::move( getComponentNodeByBrowseName( server, skillNodeID, "ParameterSet", diNS ) ) );
+        this->setSkillParametersSetRealTimeNodeId( std::move( getComponentNodeByBrowseName( server, skillNodeID, "ParameterSetRealTime", nsSkills )));
         UA_Int16 fortissDiNS = UA_Server_addNamespace( server, "https://fortiss.org/UA/DI/");
         this->setskillTransitionEventTypeNodeId( std::move(
                                                getSubtypeNodeByBrowseName( server, UA_NODEID_NUMERIC(0, UA_NS0ID_PROGRAMTRANSITIONEVENTTYPE),
@@ -193,6 +189,7 @@ namespace SAMY{
         this->setSkillNormalParameterNodes( server );
         this->setSkillRealTimeParameterNodes( server );
 
+        return UA_STATUSCODE_GOOD;
     }
 
     UA_StatusCode SAMYSkill::triggerTransitionEvent(
