@@ -32,7 +32,7 @@ namespace OPCUA {
                 serverConfig,
                 parsedServerConfig.appUri,
                 parsedServerConfig.appName,
-                (UA_UInt16) std::stoi( parsedServerConfig.serverPort ),
+                (UA_UInt16) parsedServerConfig.serverPort,
                 parsedServerConfig.encryption,
                 parsedServerConfig.anonymous,
                 parsedServerConfig.certificatesPath) != UA_STATUSCODE_GOOD)

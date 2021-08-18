@@ -22,7 +22,7 @@ bool Parsers::SAMYCoreConfigParser::parseSAMYCoreConfig(const std::string& filep
 
         if(!server) return false;
 
-        config.serverPort = server["Port"].as<std::string>();
+        config.serverPort = server["Port"].as<int>();
         config.certificatesPath = server["CertificatesPath"].as<std::string>();
         config.encryption = server["Encryption"].as<bool>();
         config.anonymous = server["Anonymous"].as<bool>();

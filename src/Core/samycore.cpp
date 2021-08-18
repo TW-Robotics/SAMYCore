@@ -59,7 +59,8 @@ namespace SAMY {
 
        for( auto& nodeAndName : systemStatusNodesAndNames ){
             std::stringstream msg2;
-            msg2 <<"NSIndex: " << nodeAndName.first.namespaceIndex << "   " << nodeAndName.first.identifier.numeric << "   " << nodeAndName.second;
+            msg2 <<"NSIndex: " << nodeAndName.first.namespaceIndex << "   "
+                 << nodeAndName.first.identifier.numeric << "   " << nodeAndName.second;
             logger->info(msg2.str());
 
             generator.addDataSourcesToSystemStatusVariable( ls.get(), nodeAndName );

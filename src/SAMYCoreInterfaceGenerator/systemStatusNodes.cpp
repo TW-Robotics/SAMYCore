@@ -2,8 +2,6 @@
 
 namespace SAMY {
 
-
-
 UA_StatusCode SAMYCoreInterfaceGenerator::readStatusVariableCallback(
         UA_Server* server,
         const UA_NodeId* sessionId,

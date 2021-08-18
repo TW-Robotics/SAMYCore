@@ -36,6 +36,21 @@ def testSkill( nsIndex, nodeNumber ):
             print(parameterNode.get_browse_name())
             print(parameterNode.get_value())
 
+def readSystemStatus( ):
+       rootNode = client.get_root_node()
+       objectNode = rootNode.get_child("0:Objects")
+       childrenNodes = objectNode.get_children()
+       systemStatusNode = None
+       for child in childrenNodes:
+          if child.get_browse_name().Name == 'SystemStatus':
+             systemStatusNode = child 
+       print( systemStatusNode )
+
+       statusVariablesNodes = systemStatusNode.get_children()
+       for var in statusVariablesNodes:
+           print( var.get_browse_name() )
+           print( var.get_value() )
+       
 
 
 if __name__ == "__main__":
@@ -44,7 +59,8 @@ if __name__ == "__main__":
     try:
         client.connect()
         client.load_type_definitions()
-        testSkill( 8, 56949 )
-        testSkill( 9, 57384 )
+ #       testSkill( 8, 56949 )
+ #       testSkill( 9, 57384 )
+        readSystemStatus()
     finally:
         client.disconnect()

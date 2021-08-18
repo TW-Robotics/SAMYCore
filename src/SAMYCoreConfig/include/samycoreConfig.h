@@ -7,7 +7,7 @@ struct SAMYCoreConfig{
     std::string appLoggingLevel;
     std::string serverLoggingLevel;
     std::string logsPath;
-    std::string serverPort;
+    int serverPort;
     bool encryption = false;
     bool anonymous = true;
     std::string pathToRobotsConfig;

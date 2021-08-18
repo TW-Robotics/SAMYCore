@@ -28,6 +28,9 @@ UA_NodeId AdderParameterNodesToSkillType::findSkillType( const char* skillName )
 
     UA_NodeId typeNodeId = res.targets->targetId.nodeId;
 
+    UA_BrowsePathResult_deleteMembers(&res);
+    UA_BrowsePath_deleteMembers(&browsePath);
+
     return typeNodeId;
 }
 
@@ -44,7 +47,6 @@ UA_NodeId AdderParameterNodesToSkillType::findSkillParameterSetRealTimeObject( c
 
 UA_StatusCode AdderParameterNodesToSkillType::addParameterNodesToServer(
                                                 const std::string& parameterTypeName ){
-
     UA_Int16 crclNS = UA_Server_addNamespace( server, "https://crcl.org" );
     std::string name = std::to_string(numberOfCommandInSkill) + "_" + parameterTypeName;
     UA_StatusCode retVal = UA_STATUSCODE_GOOD;
@@ -71,10 +73,11 @@ UA_StatusCode AdderParameterNodesToSkillType::addParameterNodesToServer(
                                          UA_NODEID_NUMERIC(skillsNS, 0),
                                          skillParametersSetNode,
                                          UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT ),
-                                         UA_QUALIFIEDNAME( skillsNS, const_cast<char*>( name.c_str() ) ),
+                                         UA_QUALIFIEDNAME( skillsNS, const_cast<char*>( name.data() ) ),
                                          UA_NODEID_NUMERIC(0, UA_NS0ID_BASEDATAVARIABLETYPE),
                                          vattr, NULL, &paramNodeId
                                          );
+
     retVal |= UA_Server_addReference( server, paramNodeId,
             UA_NODEID_NUMERIC(0, 37LU), UA_EXPANDEDNODEID_NUMERIC(0, 78LU), true);
 
@@ -129,6 +132,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
         }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENDCANONCOMMAND:
@@ -140,6 +144,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MESSAGECOMMAND:
@@ -151,6 +156,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_MESSAGEDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETOCOMMAND:
@@ -162,6 +168,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETODATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVESCREWCOMMAND:
@@ -173,6 +180,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVESCREWDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_MOVETHROUGHTOCOMMAND:
@@ -184,6 +192,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTODATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DWELLCOMMAND:
@@ -195,6 +204,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_DWELLDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ACTUATEJOINTSCOMMAND:
@@ -206,6 +216,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_CONFIGUREJOINTREPORTSCOMMAND:
@@ -217,6 +228,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGUREJOINTREPORTSDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETDEFAULTJOINTPOSITIONSTOLERANCESCOMMAND:
@@ -228,6 +240,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_GETSTATUSCOMMAND:
@@ -239,6 +252,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_CLOSETOOLCHANGERCOMMAND:
@@ -250,6 +264,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_OPENTOOLCHANGERCOMMAND:
@@ -261,6 +276,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_OPENTOOLCHANGERDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETROBOTPARAMETERSCOMMAND:
@@ -272,6 +288,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROBOTPARAMETERSDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETENDEFFECTORPARAMETERSCOMMAND:
@@ -283,6 +300,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETENDEFFECTORCOMMAND:
@@ -294,6 +312,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETTRANSACCELCOMMAND:
@@ -305,6 +324,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETTRANSSPEEDCOMMAND:
@@ -316,6 +336,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETROTACCELCOMMAND:
@@ -327,6 +348,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTACCELDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETROTSPEEDCOMMAND:
@@ -338,6 +360,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETANGLEUNITSCOMMAND:
@@ -349,6 +372,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETENDPOSETOLERANCECOMMAND:
@@ -360,6 +384,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETFORCEUNITSCOMMAND:
@@ -371,6 +396,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETINTERMEDIATEPOSETOLERANCECOMMAND:
@@ -382,6 +408,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETLENGTHUNITSCOMMAND:
@@ -393,6 +420,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETMOTIONCOORDINATIONCOMMAND:
@@ -404,6 +432,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_SETTORQUEUNITSCOMMAND:
@@ -415,6 +444,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_STOPMOTIONCOMMAND:
@@ -426,6 +456,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_STOPMOTIONDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_CONFIGURESTATUSREPORTCOMMAND:
@@ -437,6 +468,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGURESTATUSREPORTDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENABLESENSORCOMMAND:
@@ -448,6 +480,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DISABLESENSORCOMMAND:
@@ -459,6 +492,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLESENSORDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENABLEGRIPPERCOMMAND:
@@ -470,6 +504,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DISABLEGRIPPERCOMMAND:
@@ -481,6 +516,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_ENABLEROBOTPARAMETERSTATUSCOMMAND:
@@ -492,6 +528,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         case UA_CRCLCOMMANDSUNIONDATATYPESWITCH_DISABLEROBOTPARAMETERSTATUSCOMMAND:
@@ -503,6 +540,7 @@ void printCRCLSkill( const UA_CRCLSkillDataType* skill){
             UA_String_init( &str2 );
             UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSDATATYPE], &str2 );
             std::cout<< str2.data << std::endl;
+            UA_String_deleteMembers(&str2);
             break;
             }
         default:
@@ -540,6 +578,9 @@ UA_NodeId findCommandParameterType( UA_Server* server, char* parameterTypeName )
         throw "PARAMETER VARIABLE TYPE COULD NOT BE FOUND CRCLCOMMANDPARAMETERS TYPES: THE REQUIRED TYPE IS NOT IN THE BROWSEPATH";
 
     UA_NodeId typeNodeId = res.targets->targetId.nodeId;
+
+    UA_BrowsePathResult_deleteMembers(&res);
+    UA_BrowsePath_deleteMembers(&browsePath);
 
     return typeNodeId;
 }

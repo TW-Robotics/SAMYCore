@@ -34,9 +34,6 @@ namespace SAMY{
         UA_Int16 diNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/DI/");
         aux = getComponentNodeByBrowseName( server, skill->getSkillNodeID(), "ParameterSet", diNS );
         saveSkillParametersNodes( server, baseName, aux );
-
-  /*      UA_Int16 nsSkills = UA_Server_addNamespace( server, "http://SAMY.org/SAMYSkills" );
-        aux = getComponentNodeByBrowseName( server, skill->getSkillNodeID(), "ParameterSetRealTime", nsSkills ); */
     }
 
     UA_StatusCode SAMYCoreInterfaceGenerator::setSkillMethodsCallbacks( UA_Server* server, UA_NodeId skillInstanceNode, SAMYRobot* robot ){
