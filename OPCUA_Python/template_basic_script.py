@@ -50,6 +50,7 @@ def readSystemStatus( ):
        for var in statusVariablesNodes:
            print( var.get_browse_name() )
            print( var.get_value() )
+           print( '\n' )
        
 
 
