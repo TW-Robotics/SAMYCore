@@ -31,9 +31,6 @@ inline std::vector< std::pair< std::string, UA_NodeId> > UA_Server_getNodeChildr
     UA_BrowseResult bRes = UA_Server_browse(server, 0, &bDes);
 
     for( int i = 0; i < bRes.referencesSize; i++ ){
-        UA_QualifiedName qn;
-        UA_QualifiedName_init(&qn);
-        UA_Server_readBrowseName(server, bRes.references[i].nodeId.nodeId, &qn);
         /* Sometimes the array of data contains after the relevant data non-zero characters that produce a weird behaviour.
            Using pointers and the actual size we can initialize correctly the corresponding string */
         std::string aux{ bRes.references[i].browseName.name.data,
@@ -44,11 +41,8 @@ inline std::vector< std::pair< std::string, UA_NodeId> > UA_Server_getNodeChildr
         {
             retVal.emplace_back( std::pair<std::string, UA_NodeId>( aux, bRes.references[i].nodeId.nodeId ) );
         }
-
-        UA_QualifiedName_clear(&qn);
     }
     UA_BrowseResult_deleteMembers(&bRes);
-    UA_BrowseResult_clear(&bRes);
     return retVal;
 }
 
