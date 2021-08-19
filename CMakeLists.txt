@@ -162,6 +162,7 @@ add_library(SAMYCore_Library STATIC
                 "./src/SAMYCoreInterfaceGenerator/skillsNodesAddition.cpp"
                 "./src/SAMYCoreInterfaceGenerator/robotsNodesAddition.cpp"
                 "./src/SAMYCoreInterfaceGenerator/samycoreInterfaceGenerator.cpp"
+                "./src/SAMYCoreInterfaceGenerator/systemStatusNodes.cpp"
                 "./src/Parsers/robotsParser.cpp"
                 "./src/Parsers/skillsParser.cpp"
                 "./src/SAMYRobot/Publisher.c"
