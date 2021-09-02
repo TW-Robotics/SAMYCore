@@ -1,0 +1,207 @@
+- One has to modify the files from the repository so the dot files contain data with all the decimals (coefficients, etc.!!
+- One has to modify the Node class in decision_tree/decision_tree.py, adding the method 
+# Added this method so we do not "serialize(pickle.dump(self, data)" the logger, because otherwise we get errors
+    def __getstate__(self):
+        # Copy the object's state from self.__dict__ which contains
+        # all our instance attributes. Always use the dict.copy()
+        # method to avoid modifying the original state.
+        state = self.__dict__.copy()
+        # Remove the unpicklable entries.
+        del state['logger']
+        return state
+
+so the nodes can be saved using pickle
+
+Modify the methods in util.py, otherwise the system cannot parse the files it generates itself (the categorical strings get "dissapeared") with the original methods.
+
+def print_tuple(t):
+    return tuple(t)
+ #   return f'({", ".join([str(e) for e in t])})'
+
+
+def print_list(l):
+    return l
+  #  return f'[{", ".join([str(e) for e in l])}]'
+
+
+def print_set(s):
+    return s
+#    return f'{{{", ".join([str(e) for e in s])}}}'
+
+
+
+
+Notation for labels:
+
+- Categorical labels: either integer number or words surrounded by ''
+
+- Numerical labels: floats (with point!). For example 1.0, 2.4354, etc.
+
+- Multioutout actions (aka controller with multiple input): ( , , , ... )
+Multiouput labels can be divided using \n. Nevertheless, do not add a coma after an element if you separate elements with \n within a tuple!!!
+Example: (0, 1, 7.45 \n  'PickAndPlace', 'Part1' \n 'None', 'None')
+
+- Undetermined action: [ , , ]
+Similarly to multioutput labels, can be divided using \n. Nevertheless, do not add a coma after an element if you separate elements with \n within an array!!!
+Example: [2.2, 2.3, 2.4, 2.5, 2.6\n2.7, 2.8, 2.9, 3.0, 3.1\n3.2, 3.3, 3.4, 3.5, 3.6\n3.7, 3.8, 3.9, 4.0]
+
+- Categorical Groups: { Category1, Category2, ... }
+Here you can place \n between elements, but still you need a coma!!! (Unlike the previous cases). Not my fault, the original dtControl handles the cases like this, so I adapt to it so we can use dtControl output directly as Input for our controllers.
+Example: {Halted,\nSuspended,\nRunning}
+
+
+Predicates as labels in dot file:
+- AxisAligned predicates: variables <= numericaValue. 
+Example: x[1] <= 54.12 . Spacing is important!!!
+
+- Hyperplanes: coef1*var1\n-coef2*var2\n+...\n+interception <= 0 ( wTx+b <= 0 )   SPACING AND \n ARE RELEVANT!!!!!!!!!
+Example: -50.70809704629042*x[0]\n-204.92693242234685*x[1]\n-16.252595803286038 <= 0
+
+- Categorical Single Label: variables == value
+Example: var1 == 1   or   state == fast_fast
+
+
+- Categorical MultiLabel: variable in node label, each(different) possible value in the edge labels. Categories can be grouped using { Category1, Category2, ... }
+Example (not grouped, hence each category has a branch):
+    camaraDetector_2 -> action4_Part1 [label="Part1"]
+    camaraDetector_2 -> action4_Part2 [label="Part2"]
+    camaraDetector_2 -> action4_Part3 [label="Part3"]
+
+or grouped (all the categories in the group follow the same branch)
+
+    robot2CurrentState -> action6 [label="{Halted,\nSuspended,\nRunning}"]
+
+
+Example of valid file (more examples in the folder decision_trees)
+
+strict digraph {
+    action1  [ label="[(1, 0, 0 \n 'None', 'None' \n 'None', 'None'), (0, 1, 0 \n  'None', 'None' \n 'PickAndPlace', 'Part1' ), (0, 1, 0 \n  'None', 'None' \n 'PickAndPlace', 'Part1' )]"]
+    action2  [ label="(0, 1, 0 \n 'None', 'None' \n 'None', 'None')"]
+    action3  [ label="(0, 1, 1 \n 'None', 'None' \n 'None', 'None')"]
+    action4_Part1 [label="(0, 1, 0 \n  'PickAndPlace', 'Part1' \n 'None', 'None')"]
+    action4_Part2 [label="(0, 1, 0 \n  'PickAndPlace', 'Part2' \n 'None', 'None')"]
+    action4_Part3 [label="(0, 1, 0 \n  'PickAndPlace', 'Part3' \n 'None', 'None')"]
+    action5_Part1 [label="(0, 1, 0 \n  'None', 'None' \n 'PickAndPlace', 'Part1' )"]
+    action5_Part2 [label="(0, 1, 0 \n  'None', 'None' \n 'PickAndPlace',  'Part2')"]
+    action5_Part3 [label="(0, 1, 0 \n  'None', 'None' \n 'PickAndPlace', 'Part3' )"]
+    action6 [label="(0, 0, 0 \n 'None', 'None' \n 'None', 'None')"]
+
+
+    lightBarrierSensor [label="LightBarrierSensor == Detection"]
+    cylinderState [label="Cylinder_CurrentState"]
+    camaraDetector_1 [label="CamaraDetection"]
+    camaraDetector_2 [label="CamaraDetection"]
+    camaraDetector_3 [label="CamaraDetection"]
+    robot1CurrentState [label="Robot1_CurrentState"]
+    robot2CurrentState [label="Robot2_CurrentState"]
+
+
+    
+    
+    lightBarrierSensor -> action1 [ label="False"]
+    lightBarrierSensor -> cylinderState [ label="True"]
+    cylinderState -> action2 [label="{Halted,\nSuspended,\nReady}"]
+    cylinderState -> camaraDetector_1 [label="Running"]
+
+    camaraDetector_1 -> action3 [label = "'None'"]
+    camaraDetector_1 -> robot1CurrentState [label = "{Part1,\nPart2,\nPart3}"]
+
+    robot1CurrentState -> camaraDetector_2 [label="Ready"]
+    camaraDetector_2 -> action4_Part1 [label="Part1"]
+    camaraDetector_2 -> action4_Part2 [label="Part2"]
+    camaraDetector_2 -> action4_Part3 [label="Part3"]
+
+    robot1CurrentState -> robot2CurrentState [label="{Halted,\nSuspended,\nRunning}"]
+    robot2CurrentState -> camaraDetector_3 [label="Ready"]
+    camaraDetector_3 -> action5_Part1 [label="Part1"]
+    camaraDetector_3 -> action5_Part2 [label="Part2"]
+    camaraDetector_3 -> action5_Part3 [label="Part3"]
+
+    robot2CurrentState -> action6 [label="{Halted,\nSuspended,\nRunning}"]
+
+}
+
+
+
+
+
+
+Benchmark_suite says which decission tree and with wich data run the learning algorithm.
+Decission tree contains the "global" information for a decission tree learning process. Fit starts the process, predict allows predicting.
+Realmente lo que necesito es crear los nodes!!! La DecissionTree structure es para el learning...
+Nodes implement the actual decission tree and implement the (recursive) functions. Predict predicts, fits implements the learning (splitting).
+Split implements the "split" predicate.
+
+Procedure to create the decission tree classifier based on a dot file:
+- Parse the dot file into a graph
+- Create the corresponding split predicates depending on the graph node labels
+- Create the corresponding nodes (without children) with the corresponding split, labels, etc.
+- Create the corresponding nodes children structure following the edge indications
+- Test it parsing a dot file and reprinting the structure as dot file!!!
+
+
+
+
+
+
+
+
+
+ContextAwareSplittingStrategy allow providing further information (for example predicates to test/use or units) to the problem. The ContextAwareSplittingStrategy contain the (root) Node in themselfs.
+
+DecissionTree -> fit method: fits the data. It adds some information to the data set depending on the capabilities of the DecissionTree and given arguments: for example runs preprocessing if required or runs DecissionTree.check_categorical method, for checking wether the categorical splitting strategies (CategoricalMultiSplittingStrategy or CategoricalSingleSplittingStrategy) are supported by the decission tree, and if not, labels accordingly the data (dataset.dataset.set_treat_categorical_as_numeric()).
+
+
+DecissionTree -> predict method: return self.root.predict(dataset.x, actual_values)
+DecissionTree.root -> It is a Node with the same paremeters passed as DecissionTree
+class Node:
+    def __init__(self, splitting_strategies, impurity_measure, early_stopping=False, early_stopping_num_examples=None,
+                 early_stopping_optimized=False, depth=0):
+        self.logger = logging.getLogger("node_logger")
+        self.logger.setLevel(logging.ERROR)
+        self.splitting_strategies = splitting_strategies
+        self.impurity_measure = impurity_measure
+        self.early_stopping = early_stopping
+        self.early_stopping_num_examples = early_stopping_num_examples
+        self.early_stopping_optimized = early_stopping_optimized
+        self.depth = depth
+        self.split = None
+        self.num_nodes = 0
+        self.num_inner_nodes = 0
+        self.children = []
+        # labels can be one of the following: a single label, a single tuple, a list of possible labels,
+        #                                     a list of tuples
+        self.index_label = None  # the label with int indices
+        self.actual_label = None  # the actual float or categorical label
+        self.logged_depth_problem = False
+
+
+    def predict(self, x, actual_values=True):
+        pred = []
+        for row in np.array(x):
+            pred.append(self.predict_one(row.reshape(1, -1), actual_values))
+        return pred
+
+    def predict_one(self, features, actual_values=True):
+        node = self
+        while not node.is_leaf():
+            node = node.children[node.split.predict(features)]
+        return node.actual_label if actual_values else node.index_label
+
+    def predict_one_step(self, features, actual_value=True):
+        node = self
+        decision_path = []
+        while not node.is_leaf():
+            next_child = node.split.predict(features)
+            node = node.children[next_child]
+            decision_path.append(next_child)
+        tuple_or_value = node.get_determinized_label()
+        if type(tuple_or_value) == tuple:
+            return [float(np_float) for np_float in tuple_or_value], decision_path
+        else:
+            return [tuple_or_value.item()], decision_path
+
+
+
+.predict(dataset.x, actual_values)
+
