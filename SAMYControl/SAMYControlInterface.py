@@ -170,9 +170,9 @@ class SAMYControlInterface():
             
 
     def executeSystemAction(self, systemAction):
-        if( len( systemAction.individualActions ) == len(self.agents) ):
-            for action in systemAction:
-                performIndividualAction(action)
+#       if( len( systemAction.individualActions ) == len(self.agents) ):
+        for action in systemAction:
+             performIndividualAction(action)
 
 
     def performIndividualAction(action):
@@ -184,7 +184,7 @@ class SAMYControlInterface():
                 dataBaseValue = dataBaseNode.get_value()
                 agentSkillParamNode = self.client.get_node( skill.parametersNodesIds[params.skillParameterNumber] )
                 if( agentSkillParamNode.get_data_type() == dataBaseNode.get_data_type() ):
-                    agentSkillParamNode.set_value( parameterValue )
+                    agentSkillParamNode.set_value( dataBaseValue )
                 else: # TODO  try to create a CRCLCommandParameterSet from the node in the database CRCLCommandParameterSetBuilder (similar to the other else in this function)
                     self.client.disconnect()
                     string = 'The SAMYCore does not have the expected structure. SystemStatus node is missing.'
