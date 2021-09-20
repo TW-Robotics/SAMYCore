@@ -22,9 +22,12 @@ import networkx as nx
 import json
 import pprint
 
-# I didn't know the format for every combination of possible labels/predicates/singleinput/multiinput/determined/undetermined actions/etc. in advance because there is no clear documentation that explains the dot format generated for all possible combinations.
+# I didn't know the format for every combination of possible labels/predicates/singleinput/multiinput/determined/undetermined actions/etc. 
+# in advance because there is no clear documentation that explains the dot format generated for all possible combinations.
 # Hence I had to kind of discover it on the run, so the code could be improved (specially the parts regarding the handle of labels)
-# The code regarding the inspection of the graph and generation of nodes I think cannot be improved a lot, since we do not pass metadata in advance and they are infered on the run, we need to go through the graph at least twice to update some node elements that require metadata of the whole graph (for example linear split coefficients) 
+# The code regarding the inspection of the graph and generation of nodes I think cannot be improved a lot, since we do not pass metadata
+# in advance and they are infered on the run, we need to go through the graph at least twice to update some node elements that require metadata of the whole graph 
+# (for example linear split coefficients) 
 # FOR EXAMPLE, CODE THAT COULD BE REFACTORED AND SIMPLIFIED WHEN WE HAVE A SINGLE INPUT ACTION BY USING:
 # action = tuple([action]) -> Then we can use the same code for single and multioutput actions (in the code related with leaf labels)
 # Rerite parser using ANTLR???
@@ -66,7 +69,9 @@ class DTControlDotFileParser:
         self.y_variables_categorical = []
         self.y_categories = {}
         self.actionsActualLabels = [] # List of all the different actions labels appearing in the parsed file
-        self.leafLabelTypeDescription =  { "singleOutput": None, "numericAndCategorical": None } # Describes the type of action we expect (single or multi, numeric and categorical variables, determined or undet., order of numeric and categoric variables in case is a multiouputVariable. numericAndCategorical is an array containing strings like ["numeric", "categorical", ...])
+        # Describes the type of action we expect (single or multi, numeric and categorical variables, determined or undet., order of numeric and categoric 
+        # variables in case is a multiouputVariable. numericAndCategorical is an array containing strings like ["numeric", "categorical", ...])
+        self.leafLabelTypeDescription =  { "singleOutput": None, "numericAndCategorical": None }
         self.x_metadata = {"variables": None, "categorical": None, "category_names": None,
                            "min": None, "max": None, "step_size": None}
         self.y_metadata = {"categorical": None, "category_names": None, "min": None, "max": None, "step_size": None,
@@ -130,8 +135,10 @@ class DTControlDotFileParser:
          else:
              elems = label.split(' ')
              if( len(elems) != 3 or elems[1] != '==' ):
-                  str = 'The notation == in labels is used for denoting categorical labels handled as axis aligned nodes (aka true or false branches). The label must be of the type categoricVariable == value(integer). The label ' + label + ' apparently is trying to express a categorical single predicate, but the format is not correct. Please review it.'
-                  raise ValueError(str)
+                  string = ('The notation == in labels is used for denoting categorical labels handled as axis aligned nodes (aka true or false branches).  ' 
+                            ' The label must be of the type categoricVariable == value(integer). The label ' + label + ' apparently is trying to express ' 
+                            ' a categorical single predicate, but the format is not correct. Please review it.')
+                  raise ValueError(string)
          return True       
 
     def getNumericXvariables(self):
@@ -273,13 +280,13 @@ class DTControlDotFileParser:
                   if( isfloat(coeffSplit[0]) ):
                        coefficients.append(coeffSplit[0])
                   else:
-                       str = 'The label ' + label + ' apparently is trying to express a linear predicate, but ' + coeffSplit[0] + ' is not a float as expected. Please review it.'
-                       raise ValueError(str)
+                       string = 'The label ' + label + ' apparently is trying to express a linear predicate, but ' + coeffSplit[0] + ' is not a float as expected. Please review it.'
+                       raise ValueError(string)
                   if( not (coeffSplit[1] in variables) ):
                        variables.append(coeffSplit[1])
                   else:
-                       str = 'The label ' + label + ' apparently is trying to express a linear predicate, but ' + coeffSplit[1] + ' is appearing more than once in the predicate. Please review it.'
-                       raise ValueError(str)
+                       string = 'The label ' + label + ' apparently is trying to express a linear predicate, but ' + coeffSplit[1] + ' is appearing more than once in the predicate. Please review it.'
+                       raise ValueError(string)
                   
                   # If this (x) variable didn't appear before, add the variable name to the array of x variable names
                   if( not (coeffSplit[1] in self.x_variables) ):
@@ -288,8 +295,8 @@ class DTControlDotFileParser:
                   if( isfloat(coeff) ):
                        interception = float(coeff)
                   else:
-                       str = 'The label ' + label + ' apparently is trying to express a linear predicate, but ' + coeff + ' is not a float as expected. Please review it.'
-                       raise ValueError(str)
+                       string = 'The label ' + label + ' apparently is trying to express a linear predicate, but ' + coeff + ' is not a float as expected. Please review it.'
+                       raise ValueError(string)
                   
           # We have to generate a (temporal) array that represents the (temporal) coefficients of the LinearSplit. It is temporal since at the end gets updated with variables appearing later
           temporalTotalCoefs = [0]*len(self.x_variables)
@@ -409,7 +416,8 @@ class DTControlDotFileParser:
 
 
     def validateLeafLabel(self, processedLabel):
-           if( self.leafLabelTypeDescription['singleOutput'] == None ): # If it is the first leaf label we process, we store its structure from one single action so we can compare future labels against it
+           # If it is the first leaf label we process, we store its structure from one single action so we can compare future labels against it
+           if( self.leafLabelTypeDescription['singleOutput'] == None ):
                   self.setleafLabelTypeDescription( processedLabel )
                   self.setLeafCategoriesNamesBase()
                   return self.validateLeafLabel( processedLabel ) # once set the action structure, we ensure that this label also satisfies it

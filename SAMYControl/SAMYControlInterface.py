@@ -5,13 +5,16 @@ import sys
 import pprint
 
 
-############# These classes are the objects required by the SAMYControlInterface to perform an action so they are called the standard representation of the actions.
-# Hence the SAMYControllers pass to the SAMYController interface must convert its outputs to these classes
+############# These classes are the objects required by the SAMYControlInterface to perform an action so refer to them as the standard representation of the actions.
+# Hence, the "computed" actions by the SAMYControllers that are passed to the SAMYControlInterface must convert these actions first to these classes.
+
 class SAMYActionParameter(): # A class containing describing a parameter of an action
     def __init__(self, skillParameterNumber_, valueType_ , value_):
         self.skillParameterNumber = skillParameterNumber_ # The command targeted by this parameter within a skill
         self.valueType = valueType_ # "DataBaseReference" or Other (the self.value will be string that will require be translated into a CRCLCommandParameterSet)
-        self.value = value_ # The value of the parameter (can be a string than later on can be converted into a CRCLCommandParameterSet required by the skillParameterNumber using a CRCLCommandParameterSet that takes self.value as "metaparameter", or the self.value can be a reference to an element in the SAMYCore database (the name of the parameter stored there)
+        self.value = value_ # The value of the parameter (can be a string than later on can be converted into a CRCLCommandParameterSet required by the 
+                            # skillParameterNumber using a CRCLCommandParameterSet that takes self.value as "metaparameter", 
+                            # or the self.value can be a reference to an element in the SAMYCore database (the name of the parameter stored there)
 
 
 class SAMYAction: # A class describing a specific action to be performed by an agent
@@ -24,7 +27,9 @@ class SAMYAction: # A class describing a specific action to be performed by an a
 class SAMYSystemAction: # An action describing the action to be performed on the total system (an array of SAMYActions, one for each agent)
     def __init__(self, individualActionsArray):
         self.individualActions = individualActionsArray
+
 #######################################################
+
 
 # Internal classes used by the SAMYControlInterface for encapsulating the SAMYCore structure
 class SAMYInformationSource:
@@ -51,7 +56,7 @@ class SAMYAgent:
         self.skills = {}
 
 
-# Object passed to the subscription. It calls the required control callbacks when the relevant variables change
+# Object passed to the subscription. It calls to the required control function of the controller when the relevant variables (the state varibles of the controller) change
 class ControllerStateChangeHandler(object): 
     """
     Subscription Handler. When the value of a relevant variable change (hence the controlled system state changes) or an event is thrown, the methods of this class are called
@@ -87,18 +92,24 @@ class ControllerStateChangeHandler(object):
 
 
 # SAMYControlInterface offers a simple control interface for controlling the system through the SAMYCore. 
-# The only interface requeriment for the control function passed to SAMYControlInterface is being a function that takes one parameter, the system state in a standard form (an array of numerical and categorical values with the order specified by controlStateVariablesNames_), and returns a (valid) SAMYSystemAction (which is the next action to be performed). Everything else is handled internally. This function of the controller class is passed as the standardControlCb_ in the arguments when instantiated.
+# The only interface requeriment for the control function passed to SAMYControlInterface is being a function that takes one parameter, the system state in a standard form
+# (an array of numerical and categorical values in the order specified in controlStateVariablesNames_), and returns a (valid) SAMYSystemAction 
+# (which is the next action to be performed). Everything else is handled internally. 
+# The standard control function of the controller class (describe in the previous lines) is passed as the standardControlCb_ in the arguments when instantiated.
 class SAMYControlInterface():
-    def __init__(self, samyCoreAddress_, controlStateVariablesNames_, standardControlCb_, serializeToStandardOutput_ = True  ):
+    def __init__(self, samyCoreAddress_, controlStateVariablesNames_, standardControlCb_, serializeToStandardOutput_ = False  ):
         if( len(controlStateVariablesNames_) == 0 ):
             string = 'The SAMYCore controlling interface requires providing variable names appearing in the SAMYCore System Status nodes.'
             raise SystemError(string)
         self.samyCoreAddress = samyCoreAddress_
         self.client = Client(self.samyCoreAddress)
-        self.auxClient = Client(self.samyCoreAddress) # we need a second client when controlling, in order to be able to read the complete new state (all the variables) within the callback
+        self.auxClient = Client(self.samyCoreAddress) # we need a second client when controlling, 
+                                                      # in order to be able to read the complete new state (all the variables) within the subscription callback of the first client
         self.controlStateVariablesNames = controlStateVariablesNames_ # Array containing the names of the variables that define a controller state
-        self.standardControlCb = standardControlCb_ # A callback that takes 
-        self.serializeToStandardOutput = serializeToStandardOutput_ # When marked as true, the self.readSytemState function "flattens out" the structure into an array of strings, integers and floats, which it is considered the standard representation of a state
+        self.standardControlCb = standardControlCb_ # A callback that takes the system state in a standard form and returns a (valid) SAMYSystemAction
+        self.serializeToStandardOutput = serializeToStandardOutput_ # When marked as true, the self.readSytemState function 
+                                                                    # "flattens out" the structure into an array of strings, integers and floats, 
+                                                                    # which it is considered the standard representation of a state
 
         # The following attributes require connecting and inspecting the SAMYCore
         self.namespaces = {} # SAMYCore namespaces
@@ -106,11 +117,11 @@ class SAMYControlInterface():
         self.infoSources = {} # Dict of SAMYInformationSources in the system
         self.systemStateNodeIds = {} # Dictionary containing ALL the nodes in the SAMYCore that describe the system (all the children of SAMYCore SystemStatus node)
         self.controlStateVariablesNodesIds = [] # Array containing the nodesIds of the variables that define a controller state
-        self.controlStateVariablesDataTypesNodesIds = [] # Array containing the nodes ids of the data types of the controller state variables, so we can flatten the structures to an array and reconstruct the structures
-        self.systemState = [] # The array of values describing the state of the system required by a controller in the form of integers, strings and floats
-
+        self.controlStateVariablesDataTypesNodesIds = [] # Array containing the nodes ids of the data types of the controller state variables, 
+                                                         # so we can flatten the structures to an array and reconstruct the structures
+        self.systemState = [] # The array of values describing the state of the system required by a controller 
+                              # in the form of integers, strings and floats (standard controller state representation)
         self.controllerStateChangeHandler = ControllerStateChangeHandler( self.readSytemState, self.standardControlCb, self.executeSystemAction )
-
         self.connectToServerAndSetControllingInterface()
 
         print(self.controlStateVariablesNodesIds)
@@ -138,9 +149,10 @@ class SAMYControlInterface():
                raise SystemError(string)
 
 
- #   def updateSystemState(self, varNodeId, newValue): Possible alternative a readSytemState and the additional requeriment of and auxClient. Only the var that thrown the callback would be modified or all? Check
- #       self.systemState[self.controlStateVariablesNodesIds.index(varNodeId)] = newValue
- #       return self.systemState
+#    def updateSystemState(self, varNodeId, newValue): Possible alternative a readSytemState and the additional requeriment of and auxClient. 
+#  Only the var that thrown the callback would be modified or all? Check
+#        self.systemState[self.controlStateVariablesNodesIds.index(varNodeId)] = newValue
+#        return self.systemState
 
 
     def readSytemState(self):
@@ -274,9 +286,11 @@ class SAMYControlInterface():
         pprint.pprint(self.systemStateNodeIds)
         for var in self.controlStateVariablesNames:
             try:
-               self.controlStateVariablesNodesIds.append( self.systemStateNodeIds[var] ) # We get from SAMYCore SystemStatus Node the underlying variable node that represents that state "dimension"
+               # We get from SAMYCore SystemStatus Node the underlying variable node that represents that state "dimension"
+               self.controlStateVariablesNodesIds.append( self.systemStateNodeIds[var] ) 
             except:
-               string = 'The given variable name ' + var + ' is not a children of SAMYCore SystemStatus node. This might be due to an error when using the naming convention. Capital letters matter. Please review it.'
+               string = 'The given variable name ' + var + ' is not a children of SAMYCore SystemStatus node. '
+               string = string + 'This might be due to an error when using the naming convention. Capital letters matter. Please review it.'
                raise SystemError(string)
 
 
