@@ -9,7 +9,8 @@ class DTbasedController(SAMYControllerBase, ABC):
         self.x_metadata = x_metadata_
         self.y_metadata = y_metadata_
         self.configurationPath = configurationPath_
-        self.controlStateVariables = [] # Array of variable names in the SAMYCore SystemState variable, that represents the state of the system (for this controller)
+        # Array of variable names in the SAMYCore SystemState variable, that represents the state of the system (for this controller)
+        self.controlStateVariables = []
    #     self.actionType = actionType_ # An array describing the elements of each action input (inputs can be numerical or categorical, and action can be single input or multiinput)
                                                             # Examples: multiinput action -> [ "numeric", "categoric", "numeric", "numeric" ] singleinput action -> ["categorical"] or ["numeric"]
         
@@ -26,7 +27,8 @@ class DTbasedController(SAMYControllerBase, ABC):
                 lines = f.readlines()
                 if(len(lines) != len(self.x_metadata['variables'])):
                     print(lines)
-                    string = 'The passed configuration file must contain the names of variables in the SAMYCore SystemState variables, one name per line, in the same order that appear in the generated file x_metada generated when the dot file was parsed.'
+                    string = ('The passed configuration file must contain the names of variables in the SAMYCore SystemState variables, '
+                              'one name per line, in the same order that appear in the generated file x_metada generated when the dot file was parsed.')
                     raise SystemError(string)
                 else:
                     print('Using the following naming map between DOT file variables and SAMYCore variables:\n')
@@ -67,8 +69,8 @@ class DTbasedController(SAMYControllerBase, ABC):
 
         return standardSystemAction
         
-
-    def extractInputActionInformation(self, actionInput): # Agent_Skill_NumberOfCommand:ParameterInDataBase_NumberOfCommand:ParameterInDataBase_...
+    # Agent_Skill_NumberOfCommand:ParameterInDataBase_NumberOfCommand:ParameterInDataBase_...
+    def extractInputActionInformation(self, actionInput):
             splittedAction = actionInput.split('_')
             agentName = splittedAction[0]
             skillName = splittedAction[1]
@@ -84,7 +86,8 @@ class DTbasedController(SAMYControllerBase, ABC):
                 value = spl[1]
                 if( len(commandNumber)>0 and commandNumber.isdigit() and len(dataBaseElement)>0 ):
                       if( commandNumber not in skillParameters ):
-                           actParam = SAMYActionParameter( commandNumber, 'DataBaseReference', value) # Extend it to include non direct DataBaseReference (composing of CRCLCommandParameterSet from other elements)
+                           # Extend it to include non direct DataBaseReference (composing of CRCLCommandParameterSet from other elements)
+                           actParam = SAMYActionParameter( commandNumber, 'DataBaseReference', value)
                            skillParameters.append( actParam )
                       else:
                           string = 'The same parameter of the skill is appearing twice in the action input: ' + actionInputParameters
