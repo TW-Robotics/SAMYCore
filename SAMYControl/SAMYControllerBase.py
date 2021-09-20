@@ -30,7 +30,8 @@ class SAMYControllerBase(ABC):
 
     def standardControlCallback(self, standardSystemState):
         """
-        Returns the next system action (SAMYSystemAction) to be performed, given the standard system state. It is the method passed as control callback to the SAMYControlInterface
+        Returns the next system action (SAMYSystemAction) to be performed, given the standard system state. 
+        It is the method passed as control callback to the SAMYControlInterface
         """
         internalState = self.standardStateToInternalState(standardSystemState)
         internalSystemAction = self.predict(internalState)
