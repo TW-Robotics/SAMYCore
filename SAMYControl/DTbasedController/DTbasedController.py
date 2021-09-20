@@ -2,7 +2,7 @@ from SAMYControlInterface import *
 from abc import ABC
 from SAMYControllerBase import SAMYControllerBase
 
-class DTbasedController(SAMYControllerBase, ABC):
+class DTbasedController(SAMYControllerBase):
     def __init__(self, root_, x_metadata_, y_metadata_, configurationPath_ = None):
         super().__init__()
         self.root = root_
