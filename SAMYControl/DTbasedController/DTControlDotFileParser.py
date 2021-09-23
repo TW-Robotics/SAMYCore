@@ -165,6 +165,9 @@ class DTControlDotFileParser:
                 self.x_categories[self.x_variables.index(elems[0])] = []
             if( not elems[2] in self.x_categories[self.x_variables.index(elems[0])] ):
                 self.x_categories[self.x_variables.index(elems[0])].append( elems[2] )
+        print('createCategoricalSingleSplitFromDotNodeLabel  label  ', label)
+        print('createCategoricalSingleSplitFromDotNodeLabel  feature  ', self.x_variables.index(elems[0]))
+        print('createCategoricalSingleSplitFromDotNodeLabel  value  ', self.x_categories[ self.x_variables.index(elems[0])].index(elems[2]))
         return CategoricalSingleSplit( self.x_variables.index(elems[0]), self.x_categories[ self.x_variables.index(elems[0])].index(elems[2]) )
 
 

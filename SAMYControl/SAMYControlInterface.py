@@ -127,6 +127,7 @@ class SAMYControlInterface():
         self.controllerStateChangeHandler = ControllerStateChangeHandler( self.readSytemState, self.standardControlCb, self.executeSystemAction )
         self.connectToServerAndSetControllingInterface()
 
+
         print('\n\n\n')
         self.printAgents(False)
         print('\n\n\n')
@@ -185,22 +186,20 @@ class SAMYControlInterface():
 
     def performIndividualAction(self, action):
         agent = self.agents[action.agentName]
-        skill = agent.skills[action.skillName]
-        for parameter in action.params: # Writes all the parameters of the skill
-            if(parameter.valueType == 'DataBaseReference'):
-                dataBaseNode = self.getDataBaseParameter(parameter.value)
-                dataBaseValue = dataBaseNode.get_value()
-                agentSkillParamNode = self.client.get_node( skill.parametersNodesIds[parameter.skillParameterNumber] )
-                if( agentSkillParamNode.get_data_type() == dataBaseNode.get_data_type() ):
-                    agentSkillParamNode.set_value( dataBaseValue )
-                else: # TODO  try to create a CRCLCommandParameterSet from the node in the database CRCLCommandParameterSetBuilder (similar to the other else in this function)
-                    self.client.disconnect()
-                    string = 'The SAMYCore does not have the expected structure. SystemStatus node is missing.'
-                    raise SystemError(string)
-           # else if( params.valueType == 'Other' ) :
-                # CRCLCommandsParameterSetBuilder(params.value)
-
-        agent.nextSkillNodeId.set_value( skill.skillNodeId )
+        if( action.skillName != 'pass'):
+            skill = agent.skills[action.skillName]
+            for parameter in action.params: # Writes all the parameters of the skill
+                if(parameter.valueType == 'DataBaseReference'):
+                    dataBaseNode = self.getDataBaseParameter(parameter.value)
+                    dataBaseValue = dataBaseNode.get_value()
+                    agentSkillParamNode = self.client.get_node( skill.parametersNodesIds[parameter.skillParameterNumber] )
+                    if( agentSkillParamNode.get_data_type() == dataBaseNode.get_data_type() ):
+                        agentSkillParamNode.set_value( dataBaseValue )
+                    else: # TODO  try to create a CRCLCommandParameterSet from the node in the database CRCLCommandParameterSetBuilder (similar to the other else in this function)
+                        self.client.disconnect()
+                        string = 'The SAMYCore does not have the expected structure. SystemStatus node is missing.'
+                        raise SystemError(string)
+            agent.nextSkillNodeId.set_value( skill.skillNodeId )
 
 
     def connectToServerAndSetControllingInterface(self):
