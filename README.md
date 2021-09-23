@@ -1,7 +1,7 @@
 # SAMYCore
 
 Content:
- - Fortiss_reusable: Some code files from Fortiss projects that have been used for the SAMYCore
+ - Fortiss_reusable: Some code files from Fortiss projects (OPC UA servers, etc.) that have been/could be adapted used for the SAMYCore
  - OPC_UA Models: The OPC_UA models used in the SAMYCore (CRCL, DI, Robotics, fortiss_di, fortiss_robotics)
  - OPCUA Python: An improved version of FreeOPCUA Python stack with added support for unions
  - SAMYControl: Software components for controlling a system through the SAMYCore. It includes the SAMYControlInterface and the SAMYControllerBase, the former 
