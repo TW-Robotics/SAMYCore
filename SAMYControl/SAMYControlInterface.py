@@ -186,7 +186,7 @@ class SAMYControlInterface():
 
     def performIndividualAction(self, action):
         agent = self.agents[action.agentName]
-        if( action.skillName != 'pass'):
+        if( action.skillName != 'pass'): # ginving an agent the skill "pass" we can skip one agent and not perform any action with it
             skill = agent.skills[action.skillName]
             for parameter in action.params: # Writes all the parameters of the skill
                 if(parameter.valueType == 'DataBaseReference'):

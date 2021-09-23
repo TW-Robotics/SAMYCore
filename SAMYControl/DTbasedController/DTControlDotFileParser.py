@@ -137,7 +137,7 @@ class DTControlDotFileParser:
              elems = label.split(' ')
              if( len(elems) != 3 or elems[1] != '==' ):
                   string = ('The notation == in labels is used for denoting categorical labels handled as axis aligned nodes (aka true or false branches).  ' 
-                            ' The label must be of the type categoricVariable == value(integer). The label ' + label + ' apparently is trying to express ' 
+                            ' The label must be of the type categoricVariable == value(or integer). The label ' + label + ' apparently is trying to express ' 
                             ' a categorical single predicate, but the format is not correct. Please review it.')
                   raise ValueError(string)
          return True       
@@ -165,9 +165,6 @@ class DTControlDotFileParser:
                 self.x_categories[self.x_variables.index(elems[0])] = []
             if( not elems[2] in self.x_categories[self.x_variables.index(elems[0])] ):
                 self.x_categories[self.x_variables.index(elems[0])].append( elems[2] )
-        print('createCategoricalSingleSplitFromDotNodeLabel  label  ', label)
-        print('createCategoricalSingleSplitFromDotNodeLabel  feature  ', self.x_variables.index(elems[0]))
-        print('createCategoricalSingleSplitFromDotNodeLabel  value  ', self.x_categories[ self.x_variables.index(elems[0])].index(elems[2]))
         return CategoricalSingleSplit( self.x_variables.index(elems[0]), self.x_categories[ self.x_variables.index(elems[0])].index(elems[2]) )
 
 
