@@ -24,7 +24,7 @@ How to proceed in order to be able of using custom unions in OPC UA:
 
 </opc:TypeDictionary>
 
-#4 You may want to manually modify the UA NodeSet (NodeSet2.xml) in order to make it valid. For that, one would have to do two things. 
+#4 Manually modify the UA NodeSet (NodeSet2.xml) in order to make it valid. For that, one would have to do two things. 
 	#4.1 First of all modify the unions structure by adding the IsUnion attribute. Example:
 	  <UADataType NodeId="ns=1;i=15001" BrowseName="1:Uni">
     <DisplayName>Uni</DisplayName>
@@ -44,7 +44,8 @@ How to proceed in order to be able of using custom unions in OPC UA:
       </Field>
     </Definition>
   </UADataType>
-  #4.2 Then you will have to modify the OPC UA Binary Schema (and eventually also the xml schema) describing the data types encoding variable that is added by the compiler, since the nodeset compiler does not support at the moment unions. Hence, you would have to convert in a ByteString the previously modifed .bsd file, and modify the following part:
+
+  #4.2 Then you will have to modify the OPC UA Binary Schema (and eventually also the xml schema) describing the data types encoding variable that is added by the compiler, since the nodeset compiler does not support at the moment unions. For this purpose, take the corrected .bsd file, encode it in base64, and modify the following variable node in the NodeSet2.xml file.
     <UAVariable NodeId="ns=1;i=15003" BrowseName="1:CRCL" SymbolicName="CRCL_BinarySchema" DataType="ByteString">
     <DisplayName>CRCL</DisplayName>
     <References>
@@ -70,11 +71,24 @@ YW1lPSJvcHRpb25CIiBUeXBlTmFtZT0ib3BjOlN0cmluZyIgLz4NCiAgPC9vcGM6U3RydWN0dXJl
 ZFR5cGU+DQoNCjwvb3BjOlR5cGVEaWN0aW9uYXJ5Pg==</ByteString>
     </Value>
   </UAVariable>
-  
-  If you do #4, you wouldn't have to do anything else...if you don't do this, continue:
-  
 
+Note that this only fixes the OPC UA Binary Schema. Hence, when retrieven the DataTypes from the server, it must be done through this variable node. The XML description of the data types has not been fixed!! It should be possible to do it, but there is very little documentation regarding xml, and OPC UA Binary Schema is much more supported.
+  
 #5 Correct the python nodeset_compiler (for open62541) for the unions (one has to modify one line [from cero to 1] in one file, so the generated C structures are right.
+
+
+With these steps should be enough to fix it
+
+
+
+
+
+
+
+
+
+
+
 
 #6 Compile everything
 

@@ -53,6 +53,9 @@ class SAMYAgent:
         self.CRCLStatusNodeId = None
         self.positionNodeId = None
         self.nextSkillNodeId = None
+        self.lastTransitionNodeId = None
+        self.currentStateNodeId = None
+        self.executedSkillsNodeId = None
         self.skills = {}
 
 
@@ -124,9 +127,9 @@ class SAMYControlInterface():
         self.controllerStateChangeHandler = ControllerStateChangeHandler( self.readSytemState, self.standardControlCb, self.executeSystemAction )
         self.connectToServerAndSetControllingInterface()
 
-        print(self.controlStateVariablesNodesIds)
+        print('\n\n\n')
         self.printAgents(False)
-
+        print('\n\n\n')
         print('Number of agents: ', len(self.agents))
         print('Number of information sources: ', len(self.infoSources))
         print('Number of variable nodes describing the system in the SAMYCore : ', len(self.systemStateNodeIds))
@@ -159,7 +162,13 @@ class SAMYControlInterface():
         state = []
         try:
             for stateVarNode in self.controlStateVariablesNodesIds:
-               state.append( self.auxClient.get_node(stateVarNode).get_value() )
+               value = self.auxClient.get_node(stateVarNode).get_value()
+               if( type(value).__name__ == 'LocalizedText' ):
+                   state.append( value.Text )
+               elif( type(value).__name__ == 'int' ):
+                   state.append( str(value) )
+               else:
+                   state.append( value )
         except:
                self.client.disconnect()
                self.auxClient.disconnect()
@@ -170,19 +179,18 @@ class SAMYControlInterface():
             
 
     def executeSystemAction(self, systemAction):
-#       if( len( systemAction.individualActions ) == len(self.agents) ):
-        for action in systemAction:
-             performIndividualAction(action)
+        for action in systemAction.individualActions:
+             self.performIndividualAction(action)
 
 
-    def performIndividualAction(action):
-        agent = self.agents[action.agent]
-        skill = agent.skills[action.name]
+    def performIndividualAction(self, action):
+        agent = self.agents[action.agentName]
+        skill = agent.skills[action.skillName]
         for parameter in action.params: # Writes all the parameters of the skill
-            if(params.valueType == 'DataBaseReference'):
-                dataBaseNode = getDataBaseParameter(params.value)
+            if(parameter.valueType == 'DataBaseReference'):
+                dataBaseNode = self.getDataBaseParameter(parameter.value)
                 dataBaseValue = dataBaseNode.get_value()
-                agentSkillParamNode = self.client.get_node( skill.parametersNodesIds[params.skillParameterNumber] )
+                agentSkillParamNode = self.client.get_node( skill.parametersNodesIds[parameter.skillParameterNumber] )
                 if( agentSkillParamNode.get_data_type() == dataBaseNode.get_data_type() ):
                     agentSkillParamNode.set_value( dataBaseValue )
                 else: # TODO  try to create a CRCLCommandParameterSet from the node in the database CRCLCommandParameterSetBuilder (similar to the other else in this function)
@@ -241,7 +249,7 @@ class SAMYControlInterface():
                             self.extractSkillNodeId(auxArray, node)
                             self.systemStateNodeIds[str(node.get_browse_name().Name)] = node.get_value()
                     elif( (not "Skill" in auxArray) and 
-                          ("nextSkillNodeId" in auxArray or "Position" in auxArray or "CRCLStatus" in auxArray) ): # Robot_RobotName_nextSkillNodeId
+                          ("nextSkillNodeId" in auxArray or "Position" in auxArray or "CRCLStatus" in auxArray  or "CurrentState" in auxArray  or "LastTransition" in auxArray  or "ExecutedSkills" in auxArray) ): # Robot_RobotName_nextSkillNodeId
                             self.extractRobotVariable(auxArray, node)
                             self.systemStateNodeIds[str(node.get_browse_name().Name)] = node.get_value()
 
@@ -280,10 +288,14 @@ class SAMYControlInterface():
                  self.agents[nameArray[1]].positionNodeId = node.get_value()
             elif( "CRCLStatus" in nameArray ):
                  self.agents[nameArray[1]].CRCLStatusNodeId = node.get_value()
-
+            elif( "CurrentState" in nameArray ):
+                 self.agents[nameArray[1]].currentStateNodeId = node.get_value()
+            elif( "LastTransition" in nameArray ):
+                 self.agents[nameArray[1]].lastTransitionNodeId = node.get_value()
+            elif( "ExecutedSkills" in nameArray ):
+                 self.agents[nameArray[1]].executedSkillsNodeId = node.get_value()
 
     def setControlStateVariablesNodesIds(self):
-        pprint.pprint(self.systemStateNodeIds)
         for var in self.controlStateVariablesNames:
             try:
                # We get from SAMYCore SystemStatus Node the underlying variable node that represents that state "dimension"
@@ -297,7 +309,6 @@ class SAMYControlInterface():
     def setControlStateVariablesDataTypesNodesIds(self):
         for node in self.controlStateVariablesNodesIds:
              self.controlStateVariablesDataTypesNodesIds.append( self.client.get_node(node).get_data_type() )
-        print("setControlStateVariablesDataTypesNodesIds    ", self.controlStateVariablesDataTypesNodesIds)
 
     def getDataBaseParameter(self, parameterName):
         rootNode = self.client.get_root_node()
@@ -333,7 +344,6 @@ class SAMYControlInterface():
             return systemStatusNode
 
     def getSkillParameters(self, nextSkillNodeId):
-            print('\n\n readNodeAndPrintType \n', nextSkillNodeId)
             skillNode = self.client.get_node(nextSkillNodeId)
             browsepath = str(self.namespaces['http://opcfoundation.org/UA/DI/']) + ":ParameterSet"
             parameterSetNode = skillNode.get_child(browsepath)
@@ -351,12 +361,12 @@ class SAMYControlInterface():
 
     def printAgents(self, detailedSkills = False):
         for agent in self.agents:
-            print('--------------------------------------------------------------------------')
+            print('-------------------', self.agents[agent].name,'-------------------')
             pprint.pprint(self.agents[agent].__dict__)
             if( detailedSkills ):
                 for skill in self.agents[agent].skills:
                     pprint.pprint(self.agents[agent].skills[skill].__dict__)
-            print('--------------------------------------------------------------------------')
+            print('--------------------------------------------------------------------------\n\n')
 
 
     def printNodesNamesAndTypes(self, arrayOfNodes):

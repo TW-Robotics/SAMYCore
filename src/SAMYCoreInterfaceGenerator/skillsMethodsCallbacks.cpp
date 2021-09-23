@@ -24,7 +24,6 @@ namespace SAMY{
             for( int i = 0; i < robot->robotSkills.size(); i++ )
             {
                 if( robot->robotSkills[i].getSkillNodeID().identifier.numeric == objectId->identifier.numeric ){
-
                     if (!robot->robotSkills[i].isTransitionAllowed(robot->robotSkills[i].getSkillCurrentState()->getNumber(),
                         ProgramStateNumber::RUNNING, true))
                     {
@@ -45,6 +44,7 @@ namespace SAMY{
                     }else{
                         throw std::runtime_error( "COULD NOT ADD SKILL TO ROBOT PLAN" );
                     }
+                    robot->currentState = robot->robotSkills[i].getSkillCurrentState();
                     return UA_STATUSCODE_GOOD;
                 }
             }
@@ -72,16 +72,19 @@ namespace SAMY{
     //       const std::lock_guard<std::mutex> lock( robot->planMutex );
            for( int i = 0; i < robot->robotSkills.size(); i++ )
            {
-               if (!robot->robotSkills[i].isTransitionAllowed(robot->robotSkills[i].getSkillCurrentState()->getNumber(),
-                   ProgramStateNumber::HALTED, true))
-               {
-                   return UA_STATUSCODE_BADSTATENOTACTIVE;
+               if( robot->robotSkills[i].getSkillNodeID().identifier.numeric == objectId->identifier.numeric ){
+                   if (!robot->robotSkills[i].isTransitionAllowed(robot->robotSkills[i].getSkillCurrentState()->getNumber(),
+                       ProgramStateNumber::HALTED, true))
+                   {
+                       return UA_STATUSCODE_BADSTATENOTACTIVE;
+                   }
+                   if (!robot->robotSkills[i].transition( server, ProgramStateNumber::HALTED ))
+                   {
+                       return UA_STATUSCODE_BADSTATENOTACTIVE;
+                   }
+                   robot->currentState = robot->robotSkills[i].getSkillCurrentState();
+                   return UA_STATUSCODE_GOOD;
                }
-               if (!robot->robotSkills[i].transition( server, ProgramStateNumber::HALTED ))
-               {
-                   return UA_STATUSCODE_BADSTATENOTACTIVE;
-               }
-               return UA_STATUSCODE_GOOD;
            }
            return UA_STATUSCODE_GOOD;
         }
@@ -107,16 +110,19 @@ namespace SAMY{
     //       const std::lock_guard<std::mutex> lock( robot->planMutex );
            for( int i = 0; i < robot->robotSkills.size(); i++ )
            {
-               if (!robot->robotSkills[i].isTransitionAllowed(robot->robotSkills[i].getSkillCurrentState()->getNumber(),
-                   ProgramStateNumber::RUNNING, true))
-               {
-                   return UA_STATUSCODE_BADSTATENOTACTIVE;
+               if( robot->robotSkills[i].getSkillNodeID().identifier.numeric == objectId->identifier.numeric ){
+                   if (!robot->robotSkills[i].isTransitionAllowed(robot->robotSkills[i].getSkillCurrentState()->getNumber(),
+                       ProgramStateNumber::RUNNING, true))
+                   {
+                       return UA_STATUSCODE_BADSTATENOTACTIVE;
+                   }
+                   if (!robot->robotSkills[i].transition( server, ProgramStateNumber::RUNNING ))
+                   {
+                       return UA_STATUSCODE_BADSTATENOTACTIVE;
+                   }
+                   robot->currentState = robot->robotSkills[i].getSkillCurrentState();
+                   return UA_STATUSCODE_GOOD;
                }
-               if (!robot->robotSkills[i].transition( server, ProgramStateNumber::RUNNING ))
-               {
-                   return UA_STATUSCODE_BADSTATENOTACTIVE;
-               }
-               return UA_STATUSCODE_GOOD;
            }
            return UA_STATUSCODE_GOOD;
         }
@@ -153,6 +159,7 @@ namespace SAMY{
                    {
                        return UA_STATUSCODE_BADSTATENOTACTIVE;
                    }
+                   robot->currentState = robot->robotSkills[i].getSkillCurrentState();
                    return UA_STATUSCODE_GOOD;
                }
            }
@@ -191,6 +198,7 @@ namespace SAMY{
                    {
                        return UA_STATUSCODE_BADSTATENOTACTIVE;
                    }
+                   robot->currentState = robot->robotSkills[i].getSkillCurrentState();
                    return UA_STATUSCODE_GOOD;
                }
            }

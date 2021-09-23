@@ -29,13 +29,11 @@ namespace SAMY{
     class SAMYCoreInterfaceGenerator{
     public:
         SAMYCoreInterfaceGenerator( std::shared_ptr<spdlog::logger> appLogger_ );
-        UA_StatusCode generateSAMYCoreInterface( UA_Server* server, std::vector<SAMYRobot>* robots,
+        UA_StatusCode generateSAMYCoreInterface(UA_Server* server, std::vector<SAMYRobot>* robots,
                                                                     std::vector<SAMYSkill>* skills,
-                                                                    std::vector<InformationSource>* informationSources );
+                                                                    std::vector<InformationSource>* informationSources ,
+                                                                    std::vector<std::tuple<std::string, UA_UInt16, std::string> > *dataBaseTypes);
         std::vector<std::pair<UA_NodeId, std::string> > getSystemStatusNodesAndNames();
-
-        UA_StatusCode addDataSourcesToSystemStatusVariable(UA_Server* server , std::pair<UA_NodeId, std::string> &nodeAndName);
-        UA_StatusCode addSystemStatusObject( UA_Server* server );
 
     private:
         std::vector< std::pair<UA_NodeId, std::string> > systemStatusNodesAndNames;
@@ -55,6 +53,11 @@ namespace SAMY{
         UA_StatusCode addRobotPosition( UA_Server* server, const SAMYRobot* robot );
         UA_StatusCode addRobotCRCLStatus( UA_Server* server, const SAMYRobot* robot );
         UA_StatusCode addRobotNextSkill( UA_Server* server, const SAMYRobot* robot );
+
+        UA_StatusCode addRobotCurrentState(UA_Server* server, SAMYRobot *robot );
+        UA_StatusCode addRobotLastTransition( UA_Server* server, SAMYRobot* robot );
+        UA_StatusCode addRobotExecutedSkills( UA_Server* server, SAMYRobot* robot );
+
         UA_StatusCode addRobotController( UA_Server* server, SAMYRobot* robot );
         UA_StatusCode setContextInRobotSkill( UA_Server* server, const UA_NodeId& skillNode, SAMYRobot* robot );
         UA_StatusCode setStartMethodCallback( UA_Server* server, const UA_NodeId& skillNode, SAMYRobot* robot );
@@ -74,7 +77,12 @@ namespace SAMY{
         UA_StatusCode addSkillTypesToServer( UA_Server* server, std::vector<SAMYSkill> *skills );
         UA_StatusCode addFixedInformationModels( UA_Server* server, std::vector<SAMYRobot>* robots );
         UA_StatusCode addInformationSourcesToServer( UA_Server* server, std::vector<InformationSource>* infoSources );
+        UA_StatusCode addDataBaseNodesToServer(UA_Server *server, std::vector<std::tuple<std::string, UA_UInt16, std::string> > *dataBaseTypes);
+        UA_StatusCode addSystemStatusNodesToServer(UA_Server *server);
         UA_StatusCode setSkillMethodsCallbacks( UA_Server* server, UA_NodeId skillInstanceNode, SAMYRobot* robot );
+    /*    UA_StatusCode addDataSourcesToSystemStatusVariable(UA_Server* server , std::pair<UA_NodeId, std::string> &nodeAndName);*/
+        UA_StatusCode addSystemStatusObject( UA_Server* server );
+
         void saveSkillStatusNodes(UA_Server *server, SAMYRobot* robot, SAMYSkill *skill );
         void saveSkillParametersNodes( UA_Server* server, const std::string& baseName, const UA_NodeId& parametersNode );
 

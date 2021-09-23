@@ -1,13 +1,21 @@
 /* Generated from CRCL.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py
- * on host jbg by user jbg at 2021-08-19 10:40:23 */
+ * on host jbg by user jbg at 2021-09-21 04:39:40 */
 
 #include "types_crcl_generated.h"
 
 /* MessageParametersSetDataType */
-static UA_DataTypeMember MessageParametersSetDataType_members[2] = {
+static UA_DataTypeMember MessageParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_MessageParametersSetDataType, realTimeParameter) - offsetof(UA_MessageParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -128,10 +136,18 @@ static UA_DataTypeMember CRCL_PoseToleranceDataType_members[7] = {
 },};
 
 /* SetMotionCoordinationParametersSetDataType */
-static UA_DataTypeMember SetMotionCoordinationParametersSetDataType_members[2] = {
+static UA_DataTypeMember SetMotionCoordinationParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_SetMotionCoordinationParametersSetDataType, realTimeParameter) - offsetof(UA_SetMotionCoordinationParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -147,10 +163,18 @@ static UA_DataTypeMember SetMotionCoordinationParametersSetDataType_members[2] =
 },};
 
 /* DisableGripperParametersSetDataType */
-static UA_DataTypeMember DisableGripperParametersSetDataType_members[2] = {
+static UA_DataTypeMember DisableGripperParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_DisableGripperParametersSetDataType, realTimeParameter) - offsetof(UA_DisableGripperParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -166,10 +190,18 @@ static UA_DataTypeMember DisableGripperParametersSetDataType_members[2] = {
 },};
 
 /* CRCLCommandParametersSetDataType */
-static UA_DataTypeMember CRCLCommandParametersSetDataType_members[1] = {
+static UA_DataTypeMember CRCLCommandParametersSetDataType_members[2] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_CRCLCommandParametersSetDataType, realTimeParameter) - offsetof(UA_CRCLCommandParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -177,10 +209,18 @@ static UA_DataTypeMember CRCLCommandParametersSetDataType_members[1] = {
 },};
 
 /* DisableRobotParameterStatusParametersSetDataType */
-static UA_DataTypeMember DisableRobotParameterStatusParametersSetDataType_members[2] = {
+static UA_DataTypeMember DisableRobotParameterStatusParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_DisableRobotParameterStatusParametersSetDataType, realTimeParameter) - offsetof(UA_DisableRobotParameterStatusParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -223,10 +263,18 @@ static UA_DataTypeMember CRCL_TransAccelAbsoluteDataType_members[3] = {
 },};
 
 /* OpenToolChangerParametersSetDataType */
-static UA_DataTypeMember OpenToolChangerParametersSetDataType_members[1] = {
+static UA_DataTypeMember OpenToolChangerParametersSetDataType_members[2] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_OpenToolChangerParametersSetDataType, realTimeParameter) - offsetof(UA_OpenToolChangerParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -355,10 +403,18 @@ static UA_DataTypeMember CRCL_JointLimitDataType_members[7] = {
 },};
 
 /* EnableRobotParameterStatusParametersSetDataType */
-static UA_DataTypeMember EnableRobotParameterStatusParametersSetDataType_members[2] = {
+static UA_DataTypeMember EnableRobotParameterStatusParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_EnableRobotParameterStatusParametersSetDataType, realTimeParameter) - offsetof(UA_EnableRobotParameterStatusParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -374,10 +430,18 @@ static UA_DataTypeMember EnableRobotParameterStatusParametersSetDataType_members
 },};
 
 /* ConfigureStatusReportParametersSetDataType */
-static UA_DataTypeMember ConfigureStatusReportParametersSetDataType_members[7] = {
+static UA_DataTypeMember ConfigureStatusReportParametersSetDataType_members[8] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_ConfigureStatusReportParametersSetDataType, realTimeParameter) - offsetof(UA_ConfigureStatusReportParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -536,10 +600,18 @@ static UA_DataTypeMember CRCL_TransSpeedAbsoluteDataType_members[3] = {
 },};
 
 /* CloseToolChangerParametersSetDataType */
-static UA_DataTypeMember CloseToolChangerParametersSetDataType_members[1] = {
+static UA_DataTypeMember CloseToolChangerParametersSetDataType_members[2] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_CloseToolChangerParametersSetDataType, realTimeParameter) - offsetof(UA_CloseToolChangerParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -633,10 +705,18 @@ static UA_DataTypeMember CRCL_ConfigureJointReportDataType_members[6] = {
 },};
 
 /* SetEndeffectorParametersParametersSetDataType */
-static UA_DataTypeMember SetEndeffectorParametersParametersSetDataType_members[2] = {
+static UA_DataTypeMember SetEndeffectorParametersParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_SetEndeffectorParametersParametersSetDataType, realTimeParameter) - offsetof(UA_SetEndeffectorParametersParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -714,10 +794,18 @@ static UA_DataTypeMember CRCL_RotAccelAbsoluteDataType_members[3] = {
 },};
 
 /* SetRobotParametersParametersSetDataType */
-static UA_DataTypeMember SetRobotParametersParametersSetDataType_members[2] = {
+static UA_DataTypeMember SetRobotParametersParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_SetRobotParametersParametersSetDataType, realTimeParameter) - offsetof(UA_SetRobotParametersParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -739,10 +827,18 @@ static UA_DataTypeMember SetRobotParametersParametersSetDataType_members[2] = {
 #define CRCL_LengthUnitEnumDataType_members NULL
 
 /* SetAngleUnitsParametersSetDataType */
-static UA_DataTypeMember SetAngleUnitsParametersSetDataType_members[2] = {
+static UA_DataTypeMember SetAngleUnitsParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_SetAngleUnitsParametersSetDataType, realTimeParameter) - offsetof(UA_SetAngleUnitsParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -844,10 +940,18 @@ static UA_DataTypeMember CRCL_GripperStatusDataType_members[5] = {
 },};
 
 /* SetLengthUnitsParametersSetDataType */
-static UA_DataTypeMember SetLengthUnitsParametersSetDataType_members[2] = {
+static UA_DataTypeMember SetLengthUnitsParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_SetLengthUnitsParametersSetDataType, realTimeParameter) - offsetof(UA_SetLengthUnitsParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -898,10 +1002,18 @@ static UA_DataTypeMember CRCL_JointForceTorqueDataType_members[4] = {
 },};
 
 /* SetTorqueUnitsParametersSetDataType */
-static UA_DataTypeMember SetTorqueUnitsParametersSetDataType_members[2] = {
+static UA_DataTypeMember SetTorqueUnitsParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_SetTorqueUnitsParametersSetDataType, realTimeParameter) - offsetof(UA_SetTorqueUnitsParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -1084,10 +1196,18 @@ static UA_DataTypeMember CRCL_RotAccelDataType_members[2] = {
 },};
 
 /* DisableSensorParametersSetDataType */
-static UA_DataTypeMember DisableSensorParametersSetDataType_members[2] = {
+static UA_DataTypeMember DisableSensorParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_DisableSensorParametersSetDataType, realTimeParameter) - offsetof(UA_DisableSensorParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -1162,10 +1282,18 @@ static UA_DataTypeMember CRCL_ScalarSensorStatusDataType_members[7] = {
 },};
 
 /* DwellParametersSetDataType */
-static UA_DataTypeMember DwellParametersSetDataType_members[2] = {
+static UA_DataTypeMember DwellParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_DwellParametersSetDataType, realTimeParameter) - offsetof(UA_DwellParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -1184,10 +1312,18 @@ static UA_DataTypeMember DwellParametersSetDataType_members[2] = {
 #define CRCL_ForceUnitEnumDataType_members NULL
 
 /* GetStatusParametersSetDataType */
-static UA_DataTypeMember GetStatusParametersSetDataType_members[1] = {
+static UA_DataTypeMember GetStatusParametersSetDataType_members[2] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_GetStatusParametersSetDataType, realTimeParameter) - offsetof(UA_GetStatusParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -1195,10 +1331,18 @@ static UA_DataTypeMember GetStatusParametersSetDataType_members[1] = {
 },};
 
 /* SetIntermediatePoseToleranceParametersSetDataType */
-static UA_DataTypeMember SetIntermediatePoseToleranceParametersSetDataType_members[2] = {
+static UA_DataTypeMember SetIntermediatePoseToleranceParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_SetIntermediatePoseToleranceParametersSetDataType, realTimeParameter) - offsetof(UA_SetIntermediatePoseToleranceParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -1214,10 +1358,18 @@ static UA_DataTypeMember SetIntermediatePoseToleranceParametersSetDataType_membe
 },};
 
 /* SetEndPoseToleranceParametersSetDataType */
-static UA_DataTypeMember SetEndPoseToleranceParametersSetDataType_members[2] = {
+static UA_DataTypeMember SetEndPoseToleranceParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_SetEndPoseToleranceParametersSetDataType, realTimeParameter) - offsetof(UA_SetEndPoseToleranceParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -1282,10 +1434,18 @@ static UA_DataTypeMember CRCL_JointStatusesDataType_members[3] = {
 #define CRCL_StopConditionEnumDataType_members NULL
 
 /* EndCanonParametersSetDataType */
-static UA_DataTypeMember EndCanonParametersSetDataType_members[1] = {
+static UA_DataTypeMember EndCanonParametersSetDataType_members[2] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_EndCanonParametersSetDataType, realTimeParameter) - offsetof(UA_EndCanonParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -1320,10 +1480,18 @@ static UA_DataTypeMember CRCL_RotSpeedAbsoluteDataType_members[3] = {
 },};
 
 /* InitCanonParametersSetDataType */
-static UA_DataTypeMember InitCanonParametersSetDataType_members[1] = {
+static UA_DataTypeMember InitCanonParametersSetDataType_members[2] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_InitCanonParametersSetDataType, realTimeParameter) - offsetof(UA_InitCanonParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -1623,10 +1791,18 @@ static UA_DataTypeMember CRCL_ParallelGripperStatusDataType_members[6] = {
 },};
 
 /* SetRotAccelParametersSetDataType */
-static UA_DataTypeMember SetRotAccelParametersSetDataType_members[2] = {
+static UA_DataTypeMember SetRotAccelParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_SetRotAccelParametersSetDataType, realTimeParameter) - offsetof(UA_SetRotAccelParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -1693,10 +1869,18 @@ static UA_DataTypeMember CRCLCommandDataType_members[6] = {
 },};
 
 /* SetEndeffectorParametersSetDataType */
-static UA_DataTypeMember SetEndeffectorParametersSetDataType_members[2] = {
+static UA_DataTypeMember SetEndeffectorParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_SetEndeffectorParametersSetDataType, realTimeParameter) - offsetof(UA_SetEndeffectorParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -1988,10 +2172,18 @@ static UA_DataTypeMember CRCL_OnOffSensorStatusDataType_members[7] = {
 },};
 
 /* EnableSensorParametersSetDataType */
-static UA_DataTypeMember EnableSensorParametersSetDataType_members[3] = {
+static UA_DataTypeMember EnableSensorParametersSetDataType_members[4] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_EnableSensorParametersSetDataType, realTimeParameter) - offsetof(UA_EnableSensorParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -2589,10 +2781,18 @@ static UA_DataTypeMember SetEndeffectorDataType_members[7] = {
 },};
 
 /* EnableGripperParametersSetDataType */
-static UA_DataTypeMember EnableGripperParametersSetDataType_members[3] = {
+static UA_DataTypeMember EnableGripperParametersSetDataType_members[4] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_EnableGripperParametersSetDataType, realTimeParameter) - offsetof(UA_EnableGripperParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -3013,10 +3213,18 @@ static UA_DataTypeMember DisableRobotParameterStatusDataType_members[7] = {
 },};
 
 /* ConfigureJointReportsParametersSetDataType */
-static UA_DataTypeMember ConfigureJointReportsParametersSetDataType_members[3] = {
+static UA_DataTypeMember ConfigureJointReportsParametersSetDataType_members[4] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_ConfigureJointReportsParametersSetDataType, realTimeParameter) - offsetof(UA_ConfigureJointReportsParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -3169,10 +3377,18 @@ static UA_DataTypeMember MoveToDataType_members[8] = {
 },};
 
 /* MoveToParametersSetDataType */
-static UA_DataTypeMember MoveToParametersSetDataType_members[3] = {
+static UA_DataTypeMember MoveToParametersSetDataType_members[4] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_MoveToParametersSetDataType, realTimeParameter) - offsetof(UA_MoveToParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -3730,10 +3946,18 @@ static UA_DataTypeMember CRCL_SensorStatusesDataType_members[6] = {
 },};
 
 /* SetForceUnitsParametersSetDataType */
-static UA_DataTypeMember SetForceUnitsParametersSetDataType_members[2] = {
+static UA_DataTypeMember SetForceUnitsParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_SetForceUnitsParametersSetDataType, realTimeParameter) - offsetof(UA_SetForceUnitsParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -3902,10 +4126,18 @@ static UA_DataTypeMember EnableSensorDataType_members[8] = {
 },};
 
 /* SetRotSpeedParametersSetDataType */
-static UA_DataTypeMember SetRotSpeedParametersSetDataType_members[2] = {
+static UA_DataTypeMember SetRotSpeedParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_SetRotSpeedParametersSetDataType, realTimeParameter) - offsetof(UA_SetRotSpeedParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -4149,10 +4381,18 @@ static UA_DataTypeMember SetAngleUnitsDataType_members[7] = {
 },};
 
 /* MoveScrewParametersSetDataType */
-static UA_DataTypeMember MoveScrewParametersSetDataType_members[6] = {
+static UA_DataTypeMember MoveScrewParametersSetDataType_members[7] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_MoveScrewParametersSetDataType, realTimeParameter) - offsetof(UA_MoveScrewParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -4259,10 +4499,18 @@ static UA_DataTypeMember SetTorqueUnitsDataType_members[7] = {
 },};
 
 /* StopMotionParametersSetDataType */
-static UA_DataTypeMember StopMotionParametersSetDataType_members[2] = {
+static UA_DataTypeMember StopMotionParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_StopMotionParametersSetDataType, realTimeParameter) - offsetof(UA_StopMotionParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -4683,10 +4931,18 @@ static UA_DataTypeMember CRCL_ActuateJointDataType_members[5] = {
 },};
 
 /* MoveThroughToParametersSetDataType */
-static UA_DataTypeMember MoveThroughToParametersSetDataType_members[4] = {
+static UA_DataTypeMember MoveThroughToParametersSetDataType_members[5] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_MoveThroughToParametersSetDataType, realTimeParameter) - offsetof(UA_MoveThroughToParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -4887,10 +5143,18 @@ static UA_DataTypeMember SetDefaultJointPositionsTolerancesDataType_members[7] =
 },};
 
 /* SetTransSpeedParametersSetDataType */
-static UA_DataTypeMember SetTransSpeedParametersSetDataType_members[2] = {
+static UA_DataTypeMember SetTransSpeedParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_SetTransSpeedParametersSetDataType, realTimeParameter) - offsetof(UA_SetTransSpeedParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -4906,10 +5170,18 @@ static UA_DataTypeMember SetTransSpeedParametersSetDataType_members[2] = {
 },};
 
 /* SetDefaultJointPositionsTolerancesParametersSetDataType */
-static UA_DataTypeMember SetDefaultJointPositionsTolerancesParametersSetDataType_members[2] = {
+static UA_DataTypeMember SetDefaultJointPositionsTolerancesParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_SetDefaultJointPositionsTolerancesParametersSetDataType, realTimeParameter) - offsetof(UA_SetDefaultJointPositionsTolerancesParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -5209,10 +5481,18 @@ static UA_DataTypeMember CRCL_PoseAndSetDataType_members[11] = {
 },};
 
 /* SetTransAccelParametersSetDataType */
-static UA_DataTypeMember SetTransAccelParametersSetDataType_members[2] = {
+static UA_DataTypeMember SetTransAccelParametersSetDataType_members[3] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_SetTransAccelParametersSetDataType, realTimeParameter) - offsetof(UA_SetTransAccelParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -5228,10 +5508,18 @@ static UA_DataTypeMember SetTransAccelParametersSetDataType_members[2] = {
 },};
 
 /* ActuateJointsParametersSetDataType */
-static UA_DataTypeMember ActuateJointsParametersSetDataType_members[3] = {
+static UA_DataTypeMember ActuateJointsParametersSetDataType_members[4] = {
+{
+    UA_TYPES_STRING, /* .memberTypeIndex */
+    0, /* .padding */
+    true, /* .namespaceZero */
+    false, /* .isArray */
+    false  /* .isOptional */
+    UA_TYPENAME("Name") /* .memberName */
+},
 {
     UA_TYPES_BOOLEAN, /* .memberTypeIndex */
-    0, /* .padding */
+    offsetof(UA_ActuateJointsParametersSetDataType, realTimeParameter) - offsetof(UA_ActuateJointsParametersSetDataType, name) - sizeof(UA_String), /* .padding */
     true, /* .namespaceZero */
     false, /* .isArray */
     false  /* .isOptional */
@@ -5691,7 +5979,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     MessageParametersSetDataType_members  /* .members */
     UA_TYPENAME("MessageParametersSetDataType") /* .typeName */
 },
@@ -5741,9 +6029,9 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     sizeof(UA_SetMotionCoordinationParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
-    true, /* .pointerFree */
+    false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     SetMotionCoordinationParametersSetDataType_members  /* .members */
     UA_TYPENAME("SetMotionCoordinationParametersSetDataType") /* .typeName */
 },
@@ -5756,7 +6044,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     DisableGripperParametersSetDataType_members  /* .members */
     UA_TYPENAME("DisableGripperParametersSetDataType") /* .typeName */
 },
@@ -5767,9 +6055,9 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     sizeof(UA_CRCLCommandParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_CRCLCOMMANDPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
-    true, /* .pointerFree */
+    false, /* .pointerFree */
     false, /* .overlayable */
-    1, /* .membersSize */
+    2, /* .membersSize */
     CRCLCommandParametersSetDataType_members  /* .members */
     UA_TYPENAME("CRCLCommandParametersSetDataType") /* .typeName */
 },
@@ -5782,7 +6070,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     DisableRobotParameterStatusParametersSetDataType_members  /* .members */
     UA_TYPENAME("DisableRobotParameterStatusParametersSetDataType") /* .typeName */
 },
@@ -5806,9 +6094,9 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     sizeof(UA_OpenToolChangerParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_OPENTOOLCHANGERPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
-    true, /* .pointerFree */
+    false, /* .pointerFree */
     false, /* .overlayable */
-    1, /* .membersSize */
+    2, /* .membersSize */
     OpenToolChangerParametersSetDataType_members  /* .members */
     UA_TYPENAME("OpenToolChangerParametersSetDataType") /* .typeName */
 },
@@ -5860,7 +6148,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     EnableRobotParameterStatusParametersSetDataType_members  /* .members */
     UA_TYPENAME("EnableRobotParameterStatusParametersSetDataType") /* .typeName */
 },
@@ -5871,9 +6159,9 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     sizeof(UA_ConfigureStatusReportParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
-    true, /* .pointerFree */
+    false, /* .pointerFree */
     false, /* .overlayable */
-    7, /* .membersSize */
+    8, /* .membersSize */
     ConfigureStatusReportParametersSetDataType_members  /* .members */
     UA_TYPENAME("ConfigureStatusReportParametersSetDataType") /* .typeName */
 },
@@ -5949,9 +6237,9 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     sizeof(UA_CloseToolChangerParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
-    true, /* .pointerFree */
+    false, /* .pointerFree */
     false, /* .overlayable */
-    1, /* .membersSize */
+    2, /* .membersSize */
     CloseToolChangerParametersSetDataType_members  /* .members */
     UA_TYPENAME("CloseToolChangerParametersSetDataType") /* .typeName */
 },
@@ -5990,7 +6278,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     SetEndeffectorParametersParametersSetDataType_members  /* .members */
     UA_TYPENAME("SetEndeffectorParametersParametersSetDataType") /* .typeName */
 },
@@ -6029,7 +6317,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     SetRobotParametersParametersSetDataType_members  /* .members */
     UA_TYPENAME("SetRobotParametersParametersSetDataType") /* .typeName */
 },
@@ -6066,9 +6354,9 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     sizeof(UA_SetAngleUnitsParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETANGLEUNITSPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
-    true, /* .pointerFree */
+    false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     SetAngleUnitsParametersSetDataType_members  /* .members */
     UA_TYPENAME("SetAngleUnitsParametersSetDataType") /* .typeName */
 },
@@ -6105,9 +6393,9 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     sizeof(UA_SetLengthUnitsParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETLENGTHUNITSPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
-    true, /* .pointerFree */
+    false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     SetLengthUnitsParametersSetDataType_members  /* .members */
     UA_TYPENAME("SetLengthUnitsParametersSetDataType") /* .typeName */
 },
@@ -6131,9 +6419,9 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     sizeof(UA_SetTorqueUnitsParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETTORQUEUNITSPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
-    true, /* .pointerFree */
+    false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     SetTorqueUnitsParametersSetDataType_members  /* .members */
     UA_TYPENAME("SetTorqueUnitsParametersSetDataType") /* .typeName */
 },
@@ -6211,7 +6499,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     DisableSensorParametersSetDataType_members  /* .members */
     UA_TYPENAME("DisableSensorParametersSetDataType") /* .typeName */
 },
@@ -6235,9 +6523,9 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     sizeof(UA_DwellParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_DWELLPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
-    true, /* .pointerFree */
+    false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     DwellParametersSetDataType_members  /* .members */
     UA_TYPENAME("DwellParametersSetDataType") /* .typeName */
 },
@@ -6261,9 +6549,9 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     sizeof(UA_GetStatusParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_GETSTATUSPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
-    true, /* .pointerFree */
+    false, /* .pointerFree */
     false, /* .overlayable */
-    1, /* .membersSize */
+    2, /* .membersSize */
     GetStatusParametersSetDataType_members  /* .members */
     UA_TYPENAME("GetStatusParametersSetDataType") /* .typeName */
 },
@@ -6276,7 +6564,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     SetIntermediatePoseToleranceParametersSetDataType_members  /* .members */
     UA_TYPENAME("SetIntermediatePoseToleranceParametersSetDataType") /* .typeName */
 },
@@ -6289,7 +6577,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     SetEndPoseToleranceParametersSetDataType_members  /* .members */
     UA_TYPENAME("SetEndPoseToleranceParametersSetDataType") /* .typeName */
 },
@@ -6339,9 +6627,9 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     sizeof(UA_EndCanonParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_ENDCANONPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
-    true, /* .pointerFree */
+    false, /* .pointerFree */
     false, /* .overlayable */
-    1, /* .membersSize */
+    2, /* .membersSize */
     EndCanonParametersSetDataType_members  /* .members */
     UA_TYPENAME("EndCanonParametersSetDataType") /* .typeName */
 },
@@ -6365,9 +6653,9 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     sizeof(UA_InitCanonParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_INITCANONPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
-    true, /* .pointerFree */
+    false, /* .pointerFree */
     false, /* .overlayable */
-    1, /* .membersSize */
+    2, /* .membersSize */
     InitCanonParametersSetDataType_members  /* .members */
     UA_TYPENAME("InitCanonParametersSetDataType") /* .typeName */
 },
@@ -6432,7 +6720,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     SetRotAccelParametersSetDataType_members  /* .members */
     UA_TYPENAME("SetRotAccelParametersSetDataType") /* .typeName */
 },
@@ -6456,9 +6744,9 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     sizeof(UA_SetEndeffectorParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
-    true, /* .pointerFree */
+    false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     SetEndeffectorParametersSetDataType_members  /* .members */
     UA_TYPENAME("SetEndeffectorParametersSetDataType") /* .typeName */
 },
@@ -6523,7 +6811,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    3, /* .membersSize */
+    4, /* .membersSize */
     EnableSensorParametersSetDataType_members  /* .members */
     UA_TYPENAME("EnableSensorParametersSetDataType") /* .typeName */
 },
@@ -6666,7 +6954,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    3, /* .membersSize */
+    4, /* .membersSize */
     EnableGripperParametersSetDataType_members  /* .members */
     UA_TYPENAME("EnableGripperParametersSetDataType") /* .typeName */
 },
@@ -6770,7 +7058,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    3, /* .membersSize */
+    4, /* .membersSize */
     ConfigureJointReportsParametersSetDataType_members  /* .members */
     UA_TYPENAME("ConfigureJointReportsParametersSetDataType") /* .typeName */
 },
@@ -6822,7 +7110,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    3, /* .membersSize */
+    4, /* .membersSize */
     MoveToParametersSetDataType_members  /* .members */
     UA_TYPENAME("MoveToParametersSetDataType") /* .typeName */
 },
@@ -6963,9 +7251,9 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     sizeof(UA_SetForceUnitsParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_SETFORCEUNITSPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
-    true, /* .pointerFree */
+    false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     SetForceUnitsParametersSetDataType_members  /* .members */
     UA_TYPENAME("SetForceUnitsParametersSetDataType") /* .typeName */
 },
@@ -7017,7 +7305,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     SetRotSpeedParametersSetDataType_members  /* .members */
     UA_TYPENAME("SetRotSpeedParametersSetDataType") /* .typeName */
 },
@@ -7082,7 +7370,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    6, /* .membersSize */
+    7, /* .membersSize */
     MoveScrewParametersSetDataType_members  /* .members */
     UA_TYPENAME("MoveScrewParametersSetDataType") /* .typeName */
 },
@@ -7106,9 +7394,9 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     sizeof(UA_StopMotionParametersSetDataType), /* .memSize */
     UA_TYPES_CRCL_STOPMOTIONPARAMETERSSETDATATYPE, /* .typeIndex */
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
-    true, /* .pointerFree */
+    false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     StopMotionParametersSetDataType_members  /* .members */
     UA_TYPENAME("StopMotionParametersSetDataType") /* .typeName */
 },
@@ -7212,7 +7500,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    4, /* .membersSize */
+    5, /* .membersSize */
     MoveThroughToParametersSetDataType_members  /* .members */
     UA_TYPENAME("MoveThroughToParametersSetDataType") /* .typeName */
 },
@@ -7264,7 +7552,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     SetTransSpeedParametersSetDataType_members  /* .members */
     UA_TYPENAME("SetTransSpeedParametersSetDataType") /* .typeName */
 },
@@ -7277,7 +7565,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     SetDefaultJointPositionsTolerancesParametersSetDataType_members  /* .members */
     UA_TYPENAME("SetDefaultJointPositionsTolerancesParametersSetDataType") /* .typeName */
 },
@@ -7342,7 +7630,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    2, /* .membersSize */
+    3, /* .membersSize */
     SetTransAccelParametersSetDataType_members  /* .members */
     UA_TYPENAME("SetTransAccelParametersSetDataType") /* .typeName */
 },
@@ -7355,7 +7643,7 @@ const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT] = {
     UA_DATATYPEKIND_STRUCTURE, /* .typeKind */
     false, /* .pointerFree */
     false, /* .overlayable */
-    3, /* .membersSize */
+    4, /* .membersSize */
     ActuateJointsParametersSetDataType_members  /* .members */
     UA_TYPENAME("ActuateJointsParametersSetDataType") /* .typeName */
 },

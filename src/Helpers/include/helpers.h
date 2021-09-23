@@ -20,7 +20,7 @@
 
 namespace SAMY {
 
-inline std::vector< std::pair< std::string, UA_NodeId> > UA_Server_getNodeChildren( UA_Server* server,
+inline std::vector< std::pair< std::string, UA_NodeId> > UA_Server_getNodeComponents( UA_Server* server,
                                                                                     const UA_NodeId& parentNode ){
     std::vector< std::pair< std::string, UA_NodeId> > retVal;
 
@@ -36,7 +36,8 @@ inline std::vector< std::pair< std::string, UA_NodeId> > UA_Server_getNodeChildr
         std::string aux{ bRes.references[i].browseName.name.data,
                          bRes.references[i].browseName.name.data + bRes.references[i].browseName.name.length };
 
-        if( bRes.references[i].referenceTypeId.identifier.numeric == UA_NS0ID_HASCOMPONENT &&
+        if( (bRes.references[i].referenceTypeId.identifier.numeric == UA_NS0ID_HASCOMPONENT
+                || bRes.references[i].referenceTypeId.identifier.numeric == UA_NS0ID_HASORDEREDCOMPONENT) &&
             bRes.references[i].referenceTypeId.namespaceIndex == 0 )
         {
             retVal.emplace_back( std::pair<std::string, UA_NodeId>( aux, bRes.references[i].nodeId.nodeId ) );

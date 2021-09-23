@@ -30,7 +30,8 @@ namespace SAMY{
        SAMYSkill( const std::string& name,
                        const std::vector<UA_CRCLCommandsUnionDataType>& commands_,
                            const UA_NodeId& id, std::shared_ptr<spdlog::logger> logger_ );
-       SAMYSkill(const std::string& name, std::vector<SAMYSkill>& skills, const UA_NodeId &id, std::shared_ptr<spdlog::logger> logger_ );
+       SAMYSkill(const std::string& name, std::vector<SAMYSkill>& skills, const UA_NodeId &id,
+                                                                        std::shared_ptr<spdlog::logger> logger_ );
        /* Getters */
        std::string getSkillName() const;
        std::vector<UA_CRCLCommandsUnionDataType> getSkillCommands() const;
@@ -88,6 +89,7 @@ namespace SAMY{
        UA_NodeId skillTransitionEventTypeNodeId;
        std::vector<UA_NodeId> normalParameterNodes;
        std::vector<UA_NodeId> realTimeParameterNodes;
+
        ProgramState const * currentState = nullptr;
        ProgramTransition const * lastTransition = nullptr;
        std::vector<ProgramState> states;

@@ -24,6 +24,7 @@ private:
     std::vector<SAMYRobot> robots;
     std::vector<SAMYSkill> skills;
     std::vector<InformationSource> informationSources;
+    std::vector< std::tuple< std::string, UA_UInt16, std::string > > dataBaseTypes; /* tuple is (namespace, index, browsename) */
     std::shared_ptr<spdlog::logger> logger;
 };
 

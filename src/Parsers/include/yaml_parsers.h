@@ -43,6 +43,7 @@ namespace Parsers {
         InformationSourcesParser( std::shared_ptr<spdlog::logger> logger_ );
         bool parseInformationSources( const std::string& filepath, std::vector<InformationSource>& parsedSources );
     private:
+        std::vector<InformationSource> parseInformationSourcesDescriptions(const YAML::Node &data );
         std::shared_ptr<spdlog::logger> logger;
 
     };
@@ -55,6 +56,19 @@ namespace Parsers {
     private:
         std::shared_ptr<spdlog::logger> logger;
     };
+
+    class DataBaseParser{
+    public:
+        DataBaseParser( std::shared_ptr<spdlog::logger> logger_ );
+        bool parseDataBase(const std::string& filepath, std::vector<std::tuple<std::string, UA_UInt16, std::string> > &typesIndexes );
+        void iterateDataTypesArray(const std::string& type,
+                                    const YAML::Node& dataBaseNode, bool& found,
+                                    const std::string& dataTypeName,
+                                    std::vector< std::tuple < std::string, UA_UInt16, std::string > > &typesIndexes, int elementsCounter);
+    private:
+        std::shared_ptr<spdlog::logger> logger;
+    };
+
 
 }
 

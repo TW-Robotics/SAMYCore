@@ -35,4 +35,4 @@ class SAMYControllerBase(ABC):
         """
         internalState = self.standardStateToInternalState(standardSystemState)
         internalSystemAction = self.predict(internalState)
-        return internalSystemActionToStandardSystemAction( internalSystemAction )
+        return self.internalSystemActionToStandardSystemAction( internalSystemAction )

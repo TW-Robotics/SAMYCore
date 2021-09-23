@@ -1,4 +1,4 @@
-/* Generated from CRCL.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py * on host jbg by user jbg at 2021-08-19 10:40:23 */
+/* Generated from CRCL.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py * on host jbg by user jbg at 2021-09-21 04:39:40 */
 
 #ifndef TYPES_CRCL_GENERATED_H_
 #define TYPES_CRCL_GENERATED_H_
@@ -26,6 +26,7 @@ extern UA_EXPORT const UA_DataType UA_TYPES_CRCL[UA_TYPES_CRCL_COUNT];
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a Message Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_String message;
 } UA_MessageParametersSetDataType;
@@ -75,6 +76,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a SetMotionCoordination Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_Boolean coordinated;
 } UA_SetMotionCoordinationParametersSetDataType;
@@ -86,6 +88,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a DisableGripper Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_String gripperName;
 } UA_DisableGripperParametersSetDataType;
@@ -97,6 +100,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a CRCL Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
 } UA_CRCLCommandParametersSetDataType;
 
@@ -107,6 +111,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a DisableRobotParameterStatus Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_String robotParameterName;
 } UA_DisableRobotParameterStatusParametersSetDataType;
@@ -130,6 +135,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a OpenToolChanger Command (does not require parameters). */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
 } UA_OpenToolChangerParametersSetDataType;
 
@@ -181,6 +187,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a EnableRobotParameterStatus Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_String robotParameterName;
 } UA_EnableRobotParameterStatusParametersSetDataType;
@@ -192,6 +199,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a ConfigureStatusReport Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_Boolean reportJointStatuses;
     UA_Boolean reportPoseStatus;
@@ -272,6 +280,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a CloseToolChanger Command (does not require parameters). */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
 } UA_CloseToolChangerParametersSetDataType;
 
@@ -310,6 +319,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a SetEndeffectorParameters Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     size_t parameterSettingSize;
     UA_CRCL_ParameterSettingDataType *parameterSetting;
@@ -347,6 +357,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a SetRobotParameters Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     size_t parameterSettingSize;
     UA_CRCL_ParameterSettingDataType *parameterSetting;
@@ -388,6 +399,7 @@ UA_STATIC_ASSERT(sizeof(UA_CRCL_LengthUnitEnumDataType) == sizeof(UA_Int32), enu
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a SetAngleUnits Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_CRCL_AngleUnitEnumDataType unitName;
 } UA_SetAngleUnitsParametersSetDataType;
@@ -428,6 +440,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a SetLengthUnits Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_CRCL_LengthUnitEnumDataType unitName;
 } UA_SetLengthUnitsParametersSetDataType;
@@ -452,6 +465,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a SetTorqueUnits Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_CRCL_TorqueUnitEnumDataType unitName;
 } UA_SetTorqueUnitsParametersSetDataType;
@@ -545,6 +559,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a DisableSensor Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_String sensorID;
 } UA_DisableSensorParametersSetDataType;
@@ -573,6 +588,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a Dwell Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_Double dwellTime;
 } UA_DwellParametersSetDataType;
@@ -598,6 +614,7 @@ UA_STATIC_ASSERT(sizeof(UA_CRCL_ForceUnitEnumDataType) == sizeof(UA_Int32), enum
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a GetStatus Command (does not require parameters). */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
 } UA_GetStatusParametersSetDataType;
 
@@ -608,6 +625,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a SetIntermediatePoseTolerance Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_CRCL_PoseToleranceDataType tolerance;
 } UA_SetIntermediatePoseToleranceParametersSetDataType;
@@ -619,6 +637,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a SetEndPoseTolerance Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_CRCL_PoseToleranceDataType tolerance;
 } UA_SetEndPoseToleranceParametersSetDataType;
@@ -668,6 +687,7 @@ UA_STATIC_ASSERT(sizeof(UA_CRCL_StopConditionEnumDataType) == sizeof(UA_Int32), 
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of an EndCanon Command (does not require parameters). */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
 } UA_EndCanonParametersSetDataType;
 
@@ -690,6 +710,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of an Init Command (does not require parameters). */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
 } UA_InitCanonParametersSetDataType;
 
@@ -774,6 +795,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a SetRotAccel Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_CRCL_RotAccelDataType rotAccel;
 } UA_SetRotAccelParametersSetDataType;
@@ -801,6 +823,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a SetEndeffector Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_CRCL_FractionDataType setting;
 } UA_SetEndeffectorParametersSetDataType;
@@ -886,6 +909,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a EnableSensor Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_String sensorID;
     size_t sensorOptionSize;
@@ -1076,6 +1100,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a EnableGripper Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_String gripperName;
     size_t gripperOptionSize;
@@ -1205,6 +1230,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a ConfigureJointreports Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_Boolean resetAll;
     size_t configureJointReportSize;
@@ -1272,6 +1298,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a MoveToCommand. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_Boolean moveStraight;
     UA_CRCL_PoseDataType endPosition;
@@ -1461,6 +1488,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a SetForceUnits Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_CRCL_ForceUnitEnumDataType unitName;
 } UA_SetForceUnitsParametersSetDataType;
@@ -1521,6 +1549,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a SetTransSpeed Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_CRCL_RotSpeedDataType rotSpeed;
 } UA_SetRotSpeedParametersSetDataType;
@@ -1600,6 +1629,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a MoveScrew Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_CRCL_PoseDataType startPosition;
     UA_CRCL_PointDataType axisPoint;
@@ -1632,6 +1662,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a StopMotion Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_CRCL_StopConditionEnumDataType stopCondition;
 } UA_StopMotionParametersSetDataType;
@@ -1760,6 +1791,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a MoveThroughTo Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_Boolean moveStraight;
     size_t waypointSize;
@@ -1834,6 +1866,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a SetTransSpeed Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_CRCL_TransSpeedDataType transSpeed;
 } UA_SetTransSpeedParametersSetDataType;
@@ -1845,6 +1878,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a SetDefaultJointPositionsTolerances Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_CRCL_JointPositionsTolerancesDataType jointTolerances;
 } UA_SetDefaultJointPositionsTolerancesParametersSetDataType;
@@ -1929,6 +1963,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a SetTransAccel Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     UA_CRCL_TransAccelDataType transAccel;
 } UA_SetTransAccelParametersSetDataType;
@@ -1940,6 +1975,7 @@ typedef struct {
  * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  * Parameters of a ActuateJoints Command. */
 typedef struct {
+    UA_String name;
     UA_Boolean realTimeParameter;
     size_t actuateJointSize;
     UA_CRCL_ActuateJointDataType *actuateJoint;

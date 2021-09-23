@@ -161,33 +161,33 @@ namespace SAMY{
     UA_StatusCode SAMYSkill::initializeSkill( UA_Server* server){
         UA_Int16 nsSkills = UA_Server_addNamespace( server, "http://SAMY.org/SAMYSkills" );
 
-        this->setSkillCurrentStateNodeId( std::move( getComponentNodeByBrowseName( server, skillNodeID, "CurrentState", 0 ) ) );
-        this->setSkillLastTransitionNodeId( std::move( getComponentNodeByBrowseName( server, skillNodeID, "LastTransition", 0 ) ) );
+        setSkillCurrentStateNodeId( std::move( getComponentNodeByBrowseName( server, skillNodeID, "CurrentState", 0 ) ) );
+        setSkillLastTransitionNodeId( std::move( getComponentNodeByBrowseName( server, skillNodeID, "LastTransition", 0 ) ) );
         UA_Int16 diNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/DI/");
-        this->setSkillParametersSetNodeId( std::move( getComponentNodeByBrowseName( server, skillNodeID, "ParameterSet", diNS ) ) );
-        this->setSkillParametersSetRealTimeNodeId( std::move( getComponentNodeByBrowseName( server, skillNodeID, "ParameterSetRealTime", nsSkills )));
+        setSkillParametersSetNodeId( std::move( getComponentNodeByBrowseName( server, skillNodeID, "ParameterSet", diNS ) ) );
+        setSkillParametersSetRealTimeNodeId( std::move( getComponentNodeByBrowseName( server, skillNodeID, "ParameterSetRealTime", nsSkills )));
         UA_Int16 fortissDiNS = UA_Server_addNamespace( server, "https://fortiss.org/UA/DI/");
-        this->setskillTransitionEventTypeNodeId( std::move(
+        setskillTransitionEventTypeNodeId( std::move(
                                                getSubtypeNodeByBrowseName( server, UA_NODEID_NUMERIC(0, UA_NS0ID_PROGRAMTRANSITIONEVENTTYPE),
                                                                            "SkillTransitionEventType", fortissDiNS )));
         transitions = generateTransitions( server );
         states = generateStates( server );
 
-        if (this->states.empty()) {
+        if (states.empty()) {
             throw std::runtime_error("Got empty state array");
         }
 
-        if (this->transitions.empty()) {
+        if (transitions.empty()) {
             throw std::runtime_error("Got empty transitions array");
         }
 
         // default initialization
-        currentState = &this->states[0];
+        currentState = &states[0];
         // default value to avoid segfaults due to being null
-        lastTransition = &this->transitions[0];
+        lastTransition = &transitions[0];
 
-        this->setSkillNormalParameterNodes( server );
-        this->setSkillRealTimeParameterNodes( server );
+        setSkillNormalParameterNodes( server );
+        setSkillRealTimeParameterNodes( server );
 
         return UA_STATUSCODE_GOOD;
     }
@@ -349,7 +349,6 @@ namespace SAMY{
                 currentState = &state;
             }
         }
-
         lastTransition = &*nextTransition;
         return triggerTransitionEvent( server, from, eventType ) == UA_STATUSCODE_GOOD;
     }
@@ -378,7 +377,8 @@ bool SAMYSkill::createSkillInstance( UA_Server* server, UA_CRCLSkillDataType* op
     for(int j=0; j < commands.size(); j++)
     {
         auto it = crclCommandSwitchfield_ParameterType_Map.find( commands[j].switchField );
-        if( it != crclCommandSwitchfield_ParameterType_Map.end()){
+        if( it != crclCommandSwitchfield_ParameterType_Map.end())
+        {
             auxParameter = it->second;
             crclCommandsInstantiator.normalParameterNodeId = normalParameterNodes[j];
             crclCommandsInstantiator.realTimeParameterNodeId = realTimeParameterNodes[j];

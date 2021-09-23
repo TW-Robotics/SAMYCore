@@ -43,6 +43,7 @@ bool Parsers::SAMYCoreConfigParser::parseSAMYCoreConfig(const std::string& filep
         config.pathToSkillsConfig = configFiles["SkillsFile"].as<std::string>();
         config.pathToRobotsConfig = configFiles["RobotsFile"].as<std::string>();
         config.pathToInformationSourcesConfig = configFiles["InformationSourcesFile"].as<std::string>();
+        config.pathToDataBaseConfig = configFiles["DataBaseFile"].as<std::string>();
 
         return true;
     }

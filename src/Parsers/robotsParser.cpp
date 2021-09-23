@@ -3,6 +3,7 @@
 namespace SAMY {
 namespace Parsers {
 
+/* To upper should not be called with char, REVIEW! */
 static bool noCaseSensStringComparison(std::string & str1, const std::string &strExt)
 {
     std::string str2 = strExt;
@@ -10,7 +11,8 @@ static bool noCaseSensStringComparison(std::string & str1, const std::string &st
             [](char & c1, char & c2){return (c1 == c2 || std::toupper(c1) == std::toupper(c2));}));
 }
 
-static bool stringIsInStringsVector(std::string& name, std::vector<std::string>& existing ){
+static bool stringIsInStringsVector(std::string& name, std::vector<std::string>& existing )
+{
     auto found = std::find_if(existing.begin(), existing.end(),
                                    [&](std::string& it)->bool{
                                               std::string aux = name;
@@ -39,7 +41,8 @@ int findSkillIndexInSkillsVectorBySkillName( std::string& name, std::vector<SAMY
     return (found != skills.end() ) ? ( found - skills.begin() ) : -1;
 }
 
-bool RobotsParser::parseRobots(const std::string& filepath, std::vector<SAMYSkill> &parsedSkills, std::vector<SAMYRobot> &parsedRobots){
+bool RobotsParser::parseRobots(const std::string& filepath, std::vector<SAMYSkill> &parsedSkills, std::vector<SAMYRobot> &parsedRobots)
+{
     std::ifstream stream(filepath);
     std::stringstream strStream;
     strStream << stream.rdbuf();
@@ -71,8 +74,9 @@ bool RobotsParser::parseRobots(const std::string& filepath, std::vector<SAMYSkil
                         stringIsInStringsVector(auxID, alreadyParsedRobotIDs) ||
                             stringIsInStringsVector(auxAddress, alreadyParsedRobotAddresses) ){
                     parsedRobots.clear();
-                    std::cout << "ERROR!!! THE ROBOT NAME OR ID OR ADDRESS IS THE SAME THAN A PREVIOUSLY DEFINED ROBOT. THIS IS NOT ALLOWED!" << std::endl;
-                    std::cout << "ROBOT NAME: "<< auxName <<"     ID: "  << auxID << "     ADDRESS: " << auxAddress << std::endl;
+                    std::string message = "ERROR! THE ROBOT NAME OR ID OR ADDRESS IS THE SAME THAN A PREVIOUSLY DEFINED ROBOT. THIS IS NOT ALLOWED!\nROBOT NAME:  "
+                                          + auxName + "     ID: "  + auxID + "     ADDRESS: " + auxAddress;
+                    throw std::runtime_error( message );
                     return false;
                 }else{
                     auto robotSkillsNode = node["Skills"];
@@ -85,9 +89,10 @@ bool RobotsParser::parseRobots(const std::string& filepath, std::vector<SAMYSkil
                                     alreadyRobotParsedSkills.emplace_back(auxSkillString);
                             }else{
                                 parsedRobots.clear();
-                                std::cout << "ERROR!!! THE GIVEN SKILL FOR THE ROBOT EITHER DOES NOT "
-                                             "EXIST OR WAS ALREADY DEFINED FOR THIS ROBOT. THIS IS NOT ALLOWED!" << std::endl;
-                                std::cout << "ROBOT NAME: "<< auxName << "     ROBOT SKILL: " << auxSkillString << std::endl;
+                                std::string message = "ERROR! THE GIVEN SKILL FOR THE ROBOT EITHER DOES NOT EXIST OR WAS ALREADY DEFINED "
+                                                      "FOR THIS ROBOT. THIS IS NOT ALLOWED!\nROBOT NAME:  "
+                                                      + auxName + "     ROBOT SKILL: " + auxSkillString;
+                                throw std::runtime_error( message );
                                 return false;
                             }
                         }

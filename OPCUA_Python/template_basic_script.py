@@ -48,7 +48,7 @@ def readSystemStatus( ):
 
        statusVariablesNodes = systemStatusNode.get_children()
        for var in statusVariablesNodes:
-           print( var.get_browse_name() )
+           print( var.get_browse_name().NamespaceIndex, "  ", var.get_browse_name().Name )
            print( var.get_value() )
            print( '\n' )
        

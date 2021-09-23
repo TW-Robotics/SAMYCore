@@ -291,6 +291,7 @@ static bool stringIsInStringsVector(std::string& name, std::vector<std::string>&
 }
 
 bool SkillsParser::parseSkills( const std::string& filepath, std::vector<SAMYSkill>& parsedSkills){
+
     std::ifstream stream(filepath);
     std::stringstream strStream;
     strStream << stream.rdbuf();
@@ -322,8 +323,10 @@ bool SkillsParser::parseSkills( const std::string& filepath, std::vector<SAMYSki
 
                 if( nameIsCRCLCommand(skillName)  || stringIsInStringsVector(skillName, alreadyParsedSkillsNames) ){
                     parsedSkills.clear();
-                    std::cout << "ERROR!!! THE SKILL NAME IS THE SAME THAN A CRCL COMMAND; THIS IS NOT ALLOWED!" << std::endl;
-                    std::cout << "SkillName: "<< skillName << std::endl;
+                    std::string message = "ERROR! THE SKILL NAME IS THE SAME THAN A CRCL COMMAND; THIS IS NOT ALLOWED!\n"
+                                          "SKILL NAME:  " + skillName;
+                    throw std::runtime_error( message );
+
                     return false;
                 }else{
                     auto commandsNode = skillNode["CRCLCommands"];
@@ -362,12 +365,14 @@ bool SkillsParser::parseSkills( const std::string& filepath, std::vector<SAMYSki
                 skillName = skillNode["SkillName"].as<std::string>();
                 if( nameIsCRCLCommand(skillName) || stringIsInStringsVector(skillName, alreadyParsedSkillsNames) ){
                     parsedSkills.clear();
-                    std::cout << "ERROR!!! THE SKILL NAME IS THE SAME THAN A CRCL COMMAND; THIS IS NOT ALLOWED!" << std::endl;
-                    std::cout <<  "SkillName: "<< skillName << std::endl;
+                    std::string message = "ERROR! THE SKILL NAME IS THE SAME THAN A CRCL COMMAND; THIS IS NOT ALLOWED!\n"
+                                          "SKILL NAME:  " + skillName;
+                    throw std::runtime_error( message );
                     return false;
                 }else{
                     auto commandsNode = skillNode["CRCLCommands_And_PreviousSkills"];
-                        for(auto commandString : commandsNode){
+                        for(auto commandString : commandsNode)
+                        {
                             std::string auxStr = commandString.as<std::string>();
                               auto foundSkill = std::find_if(alreadyParsedSkillsNames.begin(), alreadyParsedSkillsNames.end(),
                                                              [auxStr](const std::string& it)->bool{

@@ -68,7 +68,8 @@ class DTControlDotFileParser:
         self.y_variables = []
         self.y_variables_categorical = []
         self.y_categories = {}
-        self.actionsActualLabels = [] # List of all the different actions labels appearing in the parsed file
+        self.actionsActualLabels = [] # List of all the different actions (all inputs together) labels appearing in the parsed file
+        self.inputsActualLabels = [] # List of all the different INPUTS labels appearing in the parsed file
         # Describes the type of action we expect (single or multi, numeric and categorical variables, determined or undet., order of numeric and categoric 
         # variables in case is a multiouputVariable. numericAndCategorical is an array containing strings like ["numeric", "categorical", ...])
         self.leafLabelTypeDescription =  { "singleOutput": None, "numericAndCategorical": None }
@@ -240,7 +241,17 @@ class DTControlDotFileParser:
                          str = 'In a multicategorical split with label ' + label + ' two branches have the same (edge) label ' + edgeLabel +'. Please review it.'
                          raise ValueError(str)
                     valueGroups.append([categories.index(edgeLabel)])
-        return CategoricalMultiSplit( self.x_variables.index(labelAux), valueGroups) # The value groups are update at the end, when we have all the possible values for the feature
+        aux = []
+        for group in valueGroups:
+           if(isinstance(group, list) ):
+               aux2 = []
+               for elem in group:
+                    aux2.append(np.int64(elem))
+               aux.append(aux2)
+           elif(len(group) == 1 ):
+               aux.append(np.int64(group[0]))
+        return CategoricalMultiSplit( np.int64(self.x_variables.index(labelAux)), aux) # The value groups are update at the end, when we have all the possible values for the feature
+    #    return CategoricalMultiSplit( np.int64(self.x_variables.index(labelAux)), valueGroups) # The value groups are update at the end, when we have all the possible values for the feature
 
     def isLinearPredicate(self, label):
           'split of the form coef1*var1\n+coef2*var2\n+...\n+interception <= 0 ( wTx+b <= 0 )   SPACING AND \n ARE RELEVANT!!!!!!!!!'
@@ -379,9 +390,48 @@ class DTControlDotFileParser:
             label = self.graph.nodes[parsedNode]['label']
             labelsStructure = self.processLeafLabel( label ) # returns the labels structure after updating internal categories, etc. and ensuring it is a valid leaf label
             node.actual_label = self.categoricalVariablesSubstitution(labelsStructure)
+            node.index_label = self.actualLabelsToIndexLabels(labelsStructure)
         node.num_nodes = 1 + sum([c.num_nodes for c in node.children])
         node.num_inner_nodes = 1 + sum([c.num_inner_nodes for c in node.children])
         return node
+
+   
+    def actualLabelsToIndexLabels(self, actualLabels):
+        indexLabels = None
+        if( isinstance( actualLabels, list) ): # Undetermined label
+            indexLabels = []
+            for label in actualLabels:
+               auxLab = None
+               if( isinstance(label, tuple) ): # Undet.label, multioutput
+                  auxLab = []
+                  for labelElem in label:
+                     auxLab.append(self.inputsActualLabels.index(labelElem) )
+                  auxLab = tuple(auxLab)
+               else:                           # Undet.label, single output
+                  auxLab = labelElem
+               indexLabels.append( self.inputsActualLabels.index(auxLab) )
+        else:
+            if( isinstance(actualLabels, tuple) ): # Undet.label, multioutput
+               auxLab = []
+               for labelElem in actualLabels:
+                  auxLab.append(self.inputsActualLabels.index(labelElem) )
+               indexLabels = tuple(auxLab)
+            else:                           # Undet.label, single output
+               indexLabels = self.inputsActualLabels.index(actualLabels)
+        
+        return indexLabels
+
+
+  #  def setLabels(self, label_array, dataset):
+
+#        self.index_label = [dataset.map_single_label_back(label) for label in list(label_array) if label != -1]
+#        if len(self.index_label) == 1:
+#            self.index_label = self.index_label[0]
+#        self.actual_label = dataset.index_label_to_actual(self.index_label)
+#        self.num_nodes = 1
+
+
+
 
     def setLeafCategoriesNamesBase(self):
            for counter, actionInputType in enumerate(self.leafLabelTypeDescription['numericAndCategorical']):
@@ -501,11 +551,32 @@ class DTControlDotFileParser:
             updatedStructure = []
             for action in labelsStructure:
                  updatedStructure.append( self.categoricalVariablesSubstitutionInSingleOrMultioutputAction(action) )
-        else:
+        else: # determined action
             updatedStructure = self.categoricalVariablesSubstitutionInSingleOrMultioutputAction(labelsStructure)
         return updatedStructure
 
         
+    def addInputsActualLabels(self, labelsStructure):
+        if( isinstance(labelsStructure, list) ): # Undet. actions
+           for actionLab in labelsStructure:
+               if( isinstance(actionLab, tuple) ): #multioutput action
+                   for individualInput in actionLab: # Given a multioutput action, we check wether the categorical actions appears in the dictionary self.y_categories and eventually add it
+                        if( not individualInput in self.inputsActualLabels ):
+                             self.inputsActualLabels.append(individualInput)
+               else: #single output action
+                   if( not individualInput in self.inputsActualLabels ):
+                        self.inputsActualLabels.append(individualInput)
+        else: # determinized action label
+               if( isinstance(labelsStructure, tuple) ): #multioutput action
+                   for individualInput in labelsStructure: # Given a multioutput action, we check wether the categorical actions appears in the dictionary self.y_categories and eventually add it
+                        if( not individualInput in self.inputsActualLabels ):
+                             self.inputsActualLabels.append(individualInput)
+               else: #single output action
+                   if( not labelsStructure in self.inputsActualLabels ):
+                        self.inputsActualLabels.append(individualInput)
+
+
+
 
     # processes Leaf Labels (aka Y)
     # Possible leaf labels:
@@ -516,6 +587,7 @@ class DTControlDotFileParser:
     # [ ( , , ), ( , , ), ( , , ) ] => undetermined multiple input actions
     def processLeafLabel(self, label):
         labelsStructure = self.leafLabelToArraysStructure( label )
+        self.addInputsActualLabels(labelsStructure)
         if( isinstance(labelsStructure, list) ): # Undet. actions
            for actionLab in labelsStructure:
                if(not actionLab in self.actionsActualLabels):
@@ -537,7 +609,7 @@ class DTControlDotFileParser:
                     if( self.leafLabelTypeDescription['numericAndCategorical'][i] == 'categorical' ):
                         if(not individualInput in self.y_categories[i]):
                              self.y_categories[i].append(individualInput)
-           else:
+           else: # single output label
                 if( self.leafLabelTypeDescription['numericAndCategorical'][0] == 'categorical' ):
                     if(not labelsStructure in self.y_categories[0]):
                          self.y_categories[0].append(labelsStructure)

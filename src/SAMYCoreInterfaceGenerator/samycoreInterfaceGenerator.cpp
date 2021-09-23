@@ -116,10 +116,68 @@ namespace SAMY{
         return retVal;
     }
 
-    UA_StatusCode SAMYCoreInterfaceGenerator::generateSAMYCoreInterface( UA_Server* server,
+
+    UA_StatusCode SAMYCoreInterfaceGenerator::addDataBaseNodesToServer( UA_Server* server,
+                                            std::vector< std::tuple<std::string, UA_UInt16, std::string> >* dataBaseTypes ){
+         UA_Int16 dataBaseNS = UA_Server_addNamespace( server, "http://SAMY.org/DataBase");
+         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+
+         UA_NodeId dataBaseFolder = UA_NODEID_NULL;
+         UA_ObjectAttributes attr = UA_ObjectAttributes_default;
+         attr.displayName = UA_LOCALIZEDTEXT("", "DataBase" );
+         retVal |= UA_Server_addNode_begin( server, UA_NODECLASS_OBJECT,
+         UA_NODEID_NUMERIC(dataBaseNS, 0),
+         UA_NODEID_NUMERIC(0, UA_NS0ID_OBJECTSFOLDER),
+         UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT),
+         UA_QUALIFIEDNAME(dataBaseNS, "DataBase"),
+         UA_NODEID_NUMERIC( 0, UA_NS0ID_FOLDERTYPE),
+         (const UA_NodeAttributes*)&attr, &UA_TYPES[UA_TYPES_OBJECTATTRIBUTES], NULL, &dataBaseFolder);
+
+         retVal |= UA_Server_addNode_finish( server, dataBaseFolder );
+
+         for( std::tuple<std::string, UA_UInt16, std::string>& entry : *dataBaseTypes ){
+                std::string auxName = std::get<2>(entry);
+                UA_NodeId tempNodeId = UA_NODEID_NULL;
+
+                UA_VariableAttributes attr = UA_VariableAttributes_default;
+                attr.minimumSamplingInterval = 0.000000;
+                attr.userAccessLevel = 1;
+                attr.accessLevel = UA_ACCESSLEVELMASK_READ | UA_ACCESSLEVELMASK_WRITE;
+                /* Value rank inherited */
+                attr.valueRank = -1;
+                if( std::get<0>(entry) == "UA_TYPES_CRCL" )
+                   attr.dataType = UA_TYPES_CRCL[std::get<1>(entry)].typeId;
+                else if( std::get<0>(entry) == "UA_TYPES" )
+                    attr.dataType = UA_TYPES[std::get<1>(entry)].typeId;
+                if( std::get<0>(entry) == "UA_TYPES_DI" )
+                   attr.dataType = UA_TYPES_DI[std::get<1>(entry)].typeId;
+                else if( std::get<0>(entry) == "UA_TYPES_ROBOTICS" )
+                    attr.dataType = UA_TYPES_ROBOTICS[std::get<1>(entry)].typeId;
+
+                attr.displayName = UA_LOCALIZEDTEXT("", const_cast<char*>(auxName.c_str()));
+                attr.displayName = UA_LOCALIZEDTEXT("", const_cast<char*>(auxName.c_str()));
+                #ifdef UA_ENABLE_NODESET_COMPILER_DESCRIPTIONS
+                attr.description = UA_LOCALIZEDTEXT("", "Variable node in the database folder of the SAMYCore");
+                #endif
+
+                 retVal |= UA_Server_addVariableNode( server,
+                                                      UA_NODEID_NUMERIC( dataBaseNS, 0),
+                                                      dataBaseFolder,
+                                                      UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT),
+                                                      UA_QUALIFIEDNAME(dataBaseNS, const_cast<char*>(auxName.c_str()) ),
+                                                      UA_NODEID_NUMERIC(0, UA_NS0ID_PROPERTYTYPE), attr, NULL, &tempNodeId
+                                                      );
+
+                if( retVal != UA_STATUSCODE_GOOD) return retVal;
+         }
+        return retVal;
+    }
+
+    UA_StatusCode SAMYCoreInterfaceGenerator::generateSAMYCoreInterface(UA_Server* server,
                                                                std::vector<SAMYRobot>* robots,
                                                                std::vector<SAMYSkill>* skills,
-                                                               std::vector<InformationSource>* informationSources ){
+                                                               std::vector<InformationSource>* informationSources,
+                                                               std::vector< std::tuple<std::string, UA_UInt16, std::string> >* dataBaseTypes){
 
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
         retVal |= addFixedInformationModels( server,     robots );
@@ -140,6 +198,14 @@ namespace SAMY{
         retVal |= addInformationSourcesToServer( server, informationSources );
         if( retVal != UA_STATUSCODE_GOOD ){ logger->error( "Could not add the information sources nodes!" );
         }else{ logger->info("Information source nodes correctly added\n\n"); }
+
+        retVal |= addDataBaseNodesToServer( server, dataBaseTypes );
+        if( retVal != UA_STATUSCODE_GOOD ){ logger->error( "Could not add the DataBase nodes!" );
+        }else{ logger->info("DataBase nodes correctly added\n\n"); }
+
+        retVal |= addSystemStatusNodesToServer( server );
+        if( retVal != UA_STATUSCODE_GOOD ){ logger->error( "Could not add the System Status nodes!" );
+        }else{ logger->info("System Status nodes correctly added\n\n"); }
 
         return retVal;
     }

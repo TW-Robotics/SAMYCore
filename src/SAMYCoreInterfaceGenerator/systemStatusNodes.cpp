@@ -1,7 +1,9 @@
 #include <samycoreInterfaceGenerator.h>
 
 namespace SAMY {
-
+/*
+ * We add the system status variables as source nodes, so when we read or write this nodes, we modify the underlying variable node.
+ * With this approach we cannot use subscription to automatically notice when a variable node was modified
 UA_StatusCode SAMYCoreInterfaceGenerator::readStatusVariableCallback(
         UA_Server* server,
         const UA_NodeId* sessionId,
@@ -94,6 +96,7 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addDataSourcesToSystemStatusVariable( 
 
     return retval;
 }
+*/
 
 UA_StatusCode SAMYCoreInterfaceGenerator::addSystemStatusObject(UA_Server *server){
 
@@ -121,6 +124,55 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSystemStatusObject(UA_Server *serve
     systemStatusObjectNodeId = systemStatusNodeId;
     logger->info("SystemStatus node succesfully added: ns={} i={}", systemStatusNodeId.namespaceIndex, systemStatusNodeId.identifier.numeric);
     return retVal;
+}
+
+
+UA_StatusCode SAMYCoreInterfaceGenerator::addSystemStatusNodesToServer( UA_Server *server ){
+    UA_StatusCode retval = UA_STATUSCODE_GOOD;
+    retval |= addSystemStatusObject( server );
+    UA_Int16 systemStatusNS = UA_Server_addNamespace( server, "http://SAMY.org/SystemStatus");
+
+    for( auto& nodeAndName : systemStatusNodesAndNames ){
+         std::stringstream msg2;
+         msg2 <<"NSIndex: " << nodeAndName.first.namespaceIndex << "   "
+              << nodeAndName.first.identifier.numeric << "   " << nodeAndName.second;
+
+         logger->debug(msg2.str());
+
+         UA_VariableAttributes vattr = UA_VariableAttributes_default;
+         vattr.valueRank = UA_VALUERANK_SCALAR;
+         vattr.accessLevel = UA_ACCESSLEVELMASK_READ;
+         UA_LocalizedText_init( &vattr.description );
+         UA_LocalizedText_init( &vattr.displayName );
+         vattr.description = UA_LOCALIZEDTEXT("", const_cast<char*>( nodeAndName.second.c_str() ) );
+         vattr.displayName = UA_LOCALIZEDTEXT("", const_cast<char*>( nodeAndName.second.c_str() ) );
+         vattr.dataType = UA_TYPES[UA_TYPES_NODEID].typeId;
+         UA_Variant_setScalar(  &vattr.value, &nodeAndName.first, &UA_TYPES[UA_TYPES_NODEID]);
+
+         if( retval != UA_STATUSCODE_GOOD )
+             return UA_STATUSCODE_BADINTERNALERROR;
+
+         UA_QualifiedName browseName = UA_QUALIFIEDNAME(systemStatusNS, const_cast<char*>( nodeAndName.second.c_str() ) );
+         UA_NodeId parentNodeId = systemStatusObjectNodeId;
+         UA_NodeId parentReferenceNodeId = UA_NODEID_NUMERIC( 0, UA_NS0ID_HASCOMPONENT );
+         UA_NodeId variableTypeNodeId = UA_NODEID_NUMERIC(0, UA_NS0ID_PROPERTYTYPE);
+         UA_NodeId variableNodeId = UA_NODEID_NULL;
+
+         retval |= UA_Server_addVariableNode(server,
+                                             UA_NODEID_NUMERIC(systemStatusNS, 0),
+                                             parentNodeId,
+                                             parentReferenceNodeId,
+                                             browseName,
+                                             variableTypeNodeId,
+                                             vattr,
+                                             NULL,
+                                             &variableNodeId
+                                             );
+
+         if (retval != UA_STATUSCODE_GOOD)
+             throw std::runtime_error("COULD NOT ADD A NODE TO THE SYSTEM STATUS OBJECT. ABORTING...");
+     }
+    return retval;
 }
 
 }

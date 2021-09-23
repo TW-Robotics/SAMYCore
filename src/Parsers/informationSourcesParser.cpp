@@ -37,26 +37,23 @@ static bool stringIsInStringsVector(std::string& name, std::vector<std::string>&
     return ( found != existing.end() ) ? true : false;
 }
 
-bool InformationSourcesParser::parseInformationSources( const std::string& filepath, std::vector<InformationSource>& parsedSources ){
-    std::ifstream stream(filepath);
-    std::stringstream strStream;
-    strStream << stream.rdbuf();
+
+std::vector<InformationSource> InformationSourcesParser::parseInformationSourcesDescriptions( const YAML::Node& data ){
+
+    std::vector<InformationSource> parsedSources;
 
     std::vector<std::string> alreadyParsedInformationSourcesNames;
 
-    YAML::Node data = YAML::Load(strStream.str());
+    if(!data["InformationSourcesDescriptions"])
+        return parsedSources;
 
-    if(!data["FundamentalInformationSources"])
-        return false;
+    auto informationSourcesDescriptions = data["InformationSourcesDescriptions"];
 
-    // ParseFundamentalInformationSources
-    auto fundamentalInformationSourcesNodes = data["FundamentalInformationSources"];
-
-    if( fundamentalInformationSourcesNodes )
+    if( informationSourcesDescriptions )
     {
-        for(auto fundamentalInformationSourceNode : fundamentalInformationSourcesNodes )
+        for(auto informationSourceDescript : informationSourcesDescriptions )
         {
-            auto InformationSourceNode = fundamentalInformationSourceNode["FundamentalInformationSource"];
+            auto InformationSourceNode = informationSourceDescript["InformationSourceDescription"];
             std::vector<UA_NodeId> dataTypes;
             std::string InformationSourceName;
             if(InformationSourceNode)
@@ -68,7 +65,6 @@ bool InformationSourcesParser::parseInformationSources( const std::string& filep
                     std::string message = "ERROR: THE INFORMATIONSOURCE NAME " + InformationSourceName +
                             " IS THE SAME THAN ANOTHER INFORMATIONSOURCE; THIS IS NOT ALLOWED!";
                     throw std::runtime_error( message );
-                    return false;
                 }else{
                     auto dataTypesNodes = InformationSourceNode["DataTypes"];
                         for(auto dataTypeNode : dataTypesNodes){
@@ -77,11 +73,10 @@ bool InformationSourcesParser::parseInformationSources( const std::string& filep
                             if( nodeTemp.namespaceIndex != 9999 ){
                                 dataTypes.emplace_back(nodeTemp);
                             }else{
+                                parsedSources.clear();
                                 std::string message = "ERROR: THE PROVIDED DATATYPE " + auxStr +
                                         " IS NOT AN EXISTING DATA TYPE OR PREVIOUSLY DEFINED INFORMATION SOURCE;THIS IS NOT ALLOWED!";
                                 throw std::runtime_error( message );
-                                parsedSources.clear();
-                                return false;
                             }
                         }
                     SAMY::InformationSource aux( InformationSourceName, dataTypes);
@@ -92,13 +87,37 @@ bool InformationSourcesParser::parseInformationSources( const std::string& filep
         }
     }
 
+
+}
+
+bool InformationSourcesParser::parseInformationSources( const std::string& filepath,
+                                                        std::vector<InformationSource>& parsedSources ){
+
+    if( filepath.size() == 0 ) /* In case we do not want any information source */
+        return true;
+
+    std::ifstream stream(filepath);
+    std::stringstream strStream;
+    strStream << stream.rdbuf();
+    YAML::Node data = YAML::Load(strStream.str());
+
+    std::vector<InformationSource> infoSourcesDescriptions = std::move( parseInformationSourcesDescriptions(data) );
+    std::vector<std::string> alreadyParsedInformationSourcesNames;
+
+    for( InformationSource& infoSourceDesc : infoSourcesDescriptions ){
+        alreadyParsedInformationSourcesNames.emplace_back( infoSourceDesc.getName() );
+    }
+
+    if(!data["InformationSources"])
+        return true;
+
     // ParseComplexInformationSources
-    auto complexInformationSourcesNodes = data["ComplexInformationSources"];
+    auto complexInformationSourcesNodes = data["InformationSources"];
     if( complexInformationSourcesNodes )
     {
         for(auto complexInformationSourceNode : complexInformationSourcesNodes )
         {
-            auto InformationSourceNode = complexInformationSourceNode["ComplexInformationSource"];
+            auto InformationSourceNode = complexInformationSourceNode["InformationSource"];
             std::vector<UA_NodeId> dataTypes;
             std::string InformationSourceName;
             if(InformationSourceNode)
@@ -111,7 +130,7 @@ bool InformationSourcesParser::parseInformationSources( const std::string& filep
                     throw std::runtime_error( message );
                     return false;
                 }else{
-                    auto dataTypesNodes = InformationSourceNode["DataTypes_And_PreviousInformationSources"];
+                    auto dataTypesNodes = InformationSourceNode["DataTypes"];
                         for(auto dataTypeNode : dataTypesNodes){
                             std::string auxStr = dataTypeNode.as<std::string>();
 
@@ -120,9 +139,15 @@ bool InformationSourcesParser::parseInformationSources( const std::string& filep
                                                              [auxStr](const std::string& it)->bool{
                                                                         return (auxStr == it) ? true : false;
                                                                 });
-                          if(foundInformationSource != alreadyParsedInformationSourcesNames.end()){
+                          if(foundInformationSource != alreadyParsedInformationSourcesNames.end())
+                          {
                                 int index = std::distance(alreadyParsedInformationSourcesNames.begin(), foundInformationSource);
-                                std::vector<UA_NodeId> dataTypesAux = parsedSources[index].getDataTypesNodeIds();
+                                std::vector<UA_NodeId> dataTypesAux;
+                                if( index < infoSourcesDescriptions.size() )
+                                     dataTypesAux = infoSourcesDescriptions[index].getDataTypesNodeIds();
+                                else
+                                    dataTypesAux = parsedSources[index-infoSourcesDescriptions.size()].getDataTypesNodeIds();
+
                                 for(int j=0; j < dataTypesAux.size(); j++){
                                     dataTypes.emplace_back(dataTypesAux[j]);
                                 }

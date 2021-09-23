@@ -1,5 +1,5 @@
 /* Generated from fortiss.Robotics.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py
- * on host jbg by user jbg at 2021-08-19 10:40:23 */
+ * on host jbg by user jbg at 2021-09-21 04:39:40 */
 
 #ifndef TYPES_FORTISS_ROBOTICS_GENERATED_ENCODING_BINARY_H_
 #define TYPES_FORTISS_ROBOTICS_GENERATED_ENCODING_BINARY_H_

@@ -13,6 +13,7 @@ struct SAMYCoreConfig{
     std::string pathToRobotsConfig;
     std::string pathToSkillsConfig;
     std::string pathToInformationSourcesConfig;
+    std::string pathToDataBaseConfig;
     std::string appUri;
     std::string appName;
     std::string certificatesPath;

@@ -72,7 +72,7 @@ UA_StatusCode AdderParameterNodesToSkillType::addParameterNodesToServer(
     retVal |= UA_Server_addVariableNode( server,
                                          UA_NODEID_NUMERIC(skillsNS, 0),
                                          skillParametersSetNode,
-                                         UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT ),
+                                         UA_NODEID_NUMERIC(0, UA_NS0ID_HASORDEREDCOMPONENT ),
                                          UA_QUALIFIEDNAME( skillsNS, const_cast<char*>( name.data() ) ),
                                          UA_NODEID_NUMERIC(0, UA_NS0ID_BASEDATAVARIABLETYPE),
                                          vattr, NULL, &paramNodeId

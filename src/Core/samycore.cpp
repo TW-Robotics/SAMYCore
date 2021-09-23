@@ -25,6 +25,9 @@ namespace SAMY {
         Parsers::SAMYCoreConfigParser parserConfig{logger};
         parserConfig.parseSAMYCoreConfig( serverConfigFilePath, config );
 
+        Parsers::DataBaseParser parserDataBase{logger};
+        parserDataBase.parseDataBase( config.pathToDataBaseConfig, dataBaseTypes );
+
         Parsers::SkillsParser skillsParser{ logger };
         skillsParser.parseSkills( config.pathToSkillsConfig, skills );
 
@@ -36,7 +39,7 @@ namespace SAMY {
 
          std::stringstream msg;
          msg <<"SKILLS SIZE: "<< skills.size() << "  ROBOTS SIZE: "<<robots.size()<<"   INFO SOURCES SIZE: "
-            << informationSources.size() << std::endl << std::endl;
+            << informationSources.size() <<  "  ELEMENTS IN DATABASE: " << dataBaseTypes.size() << std::endl << std::endl;
          logger->info(msg.str());
 
          server = std::make_shared<SAMY::OPCUA::OpcUaServer>( config, logger );
@@ -44,27 +47,13 @@ namespace SAMY {
         LockedServer ls = server->getLocked();
 
         SAMY::SAMYCoreInterfaceGenerator generator{logger};
-        generator.generateSAMYCoreInterface( ls.get(), &robots, &skills, &informationSources );
-
-
-
-
+        generator.generateSAMYCoreInterface( ls.get(), &robots, &skills, &informationSources, &dataBaseTypes );
 
         systemStatusNodesAndNames = generator.getSystemStatusNodesAndNames();
-        generator.addSystemStatusObject( ls.get() );
 
          std::stringstream msg2;
         msg2 <<"NUMBER OF RELEVANT NODES FOR DESCRIBING SYSTEM STATUS: " << systemStatusNodesAndNames.size() << std::endl << std::endl;
         logger->info(msg2.str());
-
-       for( auto& nodeAndName : systemStatusNodesAndNames ){
-            std::stringstream msg2;
-            msg2 <<"NSIndex: " << nodeAndName.first.namespaceIndex << "   "
-                 << nodeAndName.first.identifier.numeric << "   " << nodeAndName.second;
-            logger->info(msg2.str());
-
-            generator.addDataSourcesToSystemStatusVariable( ls.get(), nodeAndName );
-        }
 
         server->init();
     }
