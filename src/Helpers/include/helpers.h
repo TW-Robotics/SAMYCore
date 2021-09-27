@@ -9,6 +9,7 @@
 #include <iostream>
 #include <map>
 #include <mutex>
+#include <queue>
 
 //#include <crcl_nodeids.h>
 #include <namespace_crcl_generated.h>
@@ -19,6 +20,26 @@
 #define CRCLSKILLS_NODE_ID 9999
 
 namespace SAMY {
+
+template <typename T>
+class FiniteDeque{
+    public:
+        FiniteDeque(const int size): maxSize(size){}
+        const std::deque<T>& getDeque(){return deque;}
+        const std::int32_t getMaxSize(){return maxSize;}
+        std::int32_t getSize(){return deque.size();}
+        void addElement(const T& elem){
+            if( deque.size() == 100 ){
+                deque.pop_front();
+                deque.push_back(elem);
+            }else{
+                deque.push_back(elem);
+            }
+        }
+    private:
+        std::deque<T> deque;
+        std::int32_t maxSize = 100;
+};
 
 inline std::vector< std::pair< std::string, UA_NodeId> > UA_Server_getNodeComponents( UA_Server* server,
                                                                                     const UA_NodeId& parentNode ){

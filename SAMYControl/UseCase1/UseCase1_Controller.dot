@@ -6,7 +6,7 @@ strict digraph {
     action6  [ label="('RobotABB_pass' \n 'RobotUR5_pass' \n 'RobotPLC_DisableComponent_0:Disable-Conveyor-Parts')"]
 
     action8_1  [ label="('RobotABB_pass' \n 'RobotUR5_PickAndPlaceSkill_11:Move-UR5-Place-CaseBottom-Above_14:Move-UR5-Place-CaseBottom' \n 'RobotPLC_DisableComponent_0:Disable-Conveyor-Parts')"]
-    action8_2  [ label="('RobotABB_pass' \n 'RobotUR5_PickAndPlaceSkill_11:Move-UR5-Place-Raspi-Above_14:Move-UR5-Raspi' \n 'RobotPLC_DisableComponent_0:Disable-Conveyor-Parts')"]
+    action8_2  [ label="('RobotABB_pass' \n 'RobotUR5_PickAndPlaceSkill_11:Move-UR5-Place-Raspi-Above_14:Move-UR5-Place-Raspi' \n 'RobotPLC_DisableComponent_0:Disable-Conveyor-Parts')"]
     action8_3  [ label="('RobotABB_pass' \n 'RobotUR5_PickAndPlaceSkill_11:Move-UR5-Place-TopCase-Above_14:Move-UR5-TopCase' \n 'RobotPLC_DisableComponent_0:Disable-Conveyor-Parts')"]
 
     action9_1  [ label="('RobotABB__PickAndPlaceSkill_11:Move-UR5-Place-CaseBottom-Above_14:Move-UR5-Place-CaseBottom' \n 'RobotUR5_pass' \n 'RobotPLC_DisableComponent_0:Disable-Conveyor-Parts')"]
@@ -23,12 +23,12 @@ strict digraph {
     robot2CurrentState [label="Robot_RobotABB_CurrentState"]
 
 
-    lightBarrierActive -> action1 [ label="False"]
     lightBarrierActive -> conveyorHolderActive [ label="True"]
-    conveyorHolderActive -> action2 [ label="False"]
+    lightBarrierActive -> action1 [ label="False"]
     conveyorHolderActive ->  cylinderActive[ label="True"]
-    cylinderActive -> action3 [ label="False"]
+    conveyorHolderActive -> action2 [ label="False"]
     cylinderActive -> camaraDetection_1 [ label="True"]
+    cylinderActive -> action3 [ label="False"]
     camaraDetection_1 -> action5 [ label="No"]
     camaraDetection_1 -> robot1CurrentState [ label="{Part1,\n Part2,\n Part3}"]
 
@@ -43,3 +43,4 @@ strict digraph {
     camaraDetection_3 -> action9_2 [ label="Part2"]
     camaraDetection_3 -> action9_3 [ label="Part3"]
 }
+

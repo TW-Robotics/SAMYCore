@@ -52,7 +52,7 @@ namespace SAMY{
         UA_StatusCode addRobotMotionDevice( UA_Server* server, const SAMYRobot* robot );
         UA_StatusCode addRobotPosition( UA_Server* server, const SAMYRobot* robot );
         UA_StatusCode addRobotCRCLStatus( UA_Server* server, const SAMYRobot* robot );
-        UA_StatusCode addRobotNextSkill( UA_Server* server, const SAMYRobot* robot );
+        UA_StatusCode addRobotNextSkill(UA_Server* server, SAMYRobot *robot );
 
         UA_StatusCode addRobotCurrentState(UA_Server* server, SAMYRobot *robot );
         UA_StatusCode addRobotLastTransition( UA_Server* server, SAMYRobot* robot );

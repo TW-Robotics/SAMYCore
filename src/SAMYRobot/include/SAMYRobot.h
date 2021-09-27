@@ -4,7 +4,7 @@
 #include <algorithm>
 #include <mutex>
 #include <memory>
-#include <queue>
+#include <helpers.h>
 
 #ifndef PubSub
 #include <vector>
@@ -38,16 +38,19 @@ namespace SAMY{
             UA_CRCLStatusDataType robot_status;
             UA_PubSubIPAddresses ipAddresses;
             std::string address;
-            std::queue<UA_CRCLSkillDataType> planToExecute;
-            std::vector<UA_CRCLSkillDataType> robotPlan;
+        //    std::queue<UA_CRCLSkillDataType> planToExecute;
+        //    std::vector<UA_CRCLSkillDataType> robotPlan;
             UA_NodeId robotNodeIdInSAMYCore = UA_NODEID_NULL;
-            UA_NodeId robotControllerNodeIdInSAMYCore = UA_NODEID_NULL;            
+            UA_NodeId robotControllerNodeIdInSAMYCore = UA_NODEID_NULL;
+            UA_NodeId robotNextSkillNodeId = UA_NODEID_NULL;
             int lastRequestedSkill = 0;
             std::shared_ptr<spdlog::logger> logger;
 
+
             UA_NodeId currentStateNodeId = UA_NODEID_NULL;
             UA_NodeId lastTransitionNodeId = UA_NODEID_NULL;
-            UA_NodeId executedSkillsNodeIds = UA_NODEID_NULL;
+            UA_NodeId executedSkillsNodeId = UA_NODEID_NULL;
+            FiniteDeque<UA_NodeId> executedSkills = FiniteDeque<UA_NodeId>{100};
             ProgramState const * currentState = nullptr;
             ProgramTransition const * lastTransition = nullptr;
             std::vector<ProgramState> states;

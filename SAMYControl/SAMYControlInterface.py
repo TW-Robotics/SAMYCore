@@ -3,7 +3,12 @@ from opcua import ua
 import time
 import sys
 import pprint
+import ast
+from CRCL_DataTypes import *
 
+# ADD MIDDLEWARE TO THE SAMYCONTROL INTERFACE SO "PARTIAL" DATA TYPES IF A PARAMETERSETDATATYPE CAN BE USED AS REFERENCES. E.G, FOR A MOVETOPARAMETERSETDATATYPE (AKA A PARAMETER OF A MOVETO COMMAND IN A SKILL) A POSE CAN BE USED AS REFERENCE FOR EXAMPLE IN THE SAMYCORE DATABASE. 
+#THE MIDDLEWARE TAKES THE TYPE OF THE PASSED/REFERED PARAMETER, COMPARES IT WITH THE TYPES THAT COMPOSE THE PARAMETERSETDATATYPE. IF THE DATATYPE OF THE EXTERNAL/PASSED PARAMETERS APPEARS AS A DATATYPE CONTAINED WITHIN THE PARAMETERSETDATATYPE, READS THE CURRENT VALUE OF THE PARAMETERSETDATATYPE, MODIFIES IT PARTIALLY (THE "PARTIAL" PARAMETER EXTERNALLY PASSED, FOR EXAMPLE THE POSE FOR A MOVETOPARAMETERSETDATATYPE), AND WRITES THE COMPLETE MODIFIED PARAMETERSETDATATYPE IN THE SAMYCORE.
+# THIS WAY IT IS MORE FLEXIBLE MODIFY THE PARAMETERSETDATATYPES AND MORE NATURAL AND REUSABLE THINGS CAN BE STORED IN THE DATABASE (POSES, SPEEDS, etc.)
 
 ############# These classes are the objects required by the SAMYControlInterface to perform an action so refer to them as the standard representation of the actions.
 # Hence, the "computed" actions by the SAMYControllers that are passed to the SAMYControlInterface must convert these actions first to these classes.
@@ -42,6 +47,7 @@ class SAMYSkill:
     def __init__(self, name_):
         self.name = name_
         self.skillNodeId = None
+        self.methods = {}
         self.currentStateNodeId = None
         self.lastTransitionNodeId = None
         self.parametersNodesIds = {}
@@ -180,27 +186,59 @@ class SAMYControlInterface():
             
 
     def executeSystemAction(self, systemAction):
+        print('|||||||||||||||||||||||||   Actions requested to SAMYCore   |||||||||||||||||||||||||\n')
         for action in systemAction.individualActions:
              self.performIndividualAction(action)
+        print('|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n\n')
 
 
     def performIndividualAction(self, action):
         agent = self.agents[action.agentName]
-        if( action.skillName != 'pass'): # ginving an agent the skill "pass" we can skip one agent and not perform any action with it
+        robotStateText = self.auxClient.get_node( agent.currentStateNodeId ).get_value().Text
+        # Giving an agent the skill "pass" we can skip one agent and not perform any action with it. If the robot is not available also skip it
+        if( action.skillName != 'pass' and robotStateText == 'Ready' ):
+            print('|||||||||||||||||||||||||   Action   |||||||||||||||||||||||||\n', action.__dict__)
             skill = agent.skills[action.skillName]
             for parameter in action.params: # Writes all the parameters of the skill
                 if(parameter.valueType == 'DataBaseReference'):
                     dataBaseNode = self.getDataBaseParameter(parameter.value)
-                    dataBaseValue = dataBaseNode.get_value()
-                    agentSkillParamNode = self.client.get_node( skill.parametersNodesIds[parameter.skillParameterNumber] )
-                    if( agentSkillParamNode.get_data_type() == dataBaseNode.get_data_type() ):
-                        agentSkillParamNode.set_value( dataBaseValue )
-                    else: # TODO  try to create a CRCLCommandParameterSet from the node in the database CRCLCommandParameterSetBuilder (similar to the other else in this function)
-                        self.client.disconnect()
-                        string = 'The SAMYCore does not have the expected structure. SystemStatus node is missing.'
-                        raise SystemError(string)
-            agent.nextSkillNodeId.set_value( skill.skillNodeId )
+                    agentSkillParamNode = self.auxClient.get_node( skill.parametersNodesIds[parameter.skillParameterNumber] )
+                    self.smartParameterSetting( agentSkillParamNode, dataBaseNode )
+            skillNode = self.auxClient.get_node( skill.skillNodeId )
+            skillNode.call_method("0:Start")
+        else:
+            print('|||||| Nothing ||||||\n')
+      #      nextSkillNode = self.auxClient.get_node(agent.nextSkillNodeId)
+      #      nextSkillNode.set_value( skill.skillNodeId )
 
+
+    # It allows using flexible DataTypes for setting skills parameters (CRCLCommandsParametersSetDataType) by making inferences from the involved datatypes
+    def smartParameterSetting(self, agentSkillParamNode, dataBaseNode ):
+        done = False
+        dataBaseValue = dataBaseNode.get_value()
+        skillParamValue = agentSkillParamNode.get_value()
+        newSkillParamValue = skillParamValue
+
+        if( type(skillParamValue).__name__ == type(dataBaseValue).__name__ and done == False): # In the DataBase we directly give a CRCLCommandParametersSet
+            agentSkillParamNode.set_value( dataBaseValue )
+            done = True
+
+        # Try to find if the skill's command parameter set (CRCLCommandParametersSetDataType) contains a field of the type of the given node in the DataBase. If so, it uses it for the first possible field
+        if( done == False ): 
+            dataBaseValueTypeName = type(dataBaseValue).__name__
+            skillParamTypes = getattr(skillParamValue, "ua_types")
+            for nameAndTypeTuple in skillParamTypes : # skillParamTypes = type.ua_types = [(FieldName, TypeName), (FieldName, TypeName), ...]
+                if( nameAndTypeTuple[1] == dataBaseValueTypeName ):
+                    setattr(newSkillParamValue, dataBaseValueTypeName[0], dataBaseValue) # It modifies the first field that matches the type of the database reference
+                    agentSkillParamNode.set_value( newSkillParamValue )
+                    done = True
+                    break
+
+        if( done == False ): # TODO  try to create a CRCLCommandParameterSet from the node in the database CRCLCommandParameterSetBuilder (similar to the other else in this function)
+            string = 'The referenced DataBase node could not be used for writing a skill\'s command parameters set.'
+            self.client.disconnect()
+            self.auxClient.disconnect()
+            raise SystemError(string)
 
     def connectToServerAndSetControllingInterface(self):
         try:
@@ -251,9 +289,10 @@ class SAMYControlInterface():
                           ("nextSkillNodeId" in auxArray or "Position" in auxArray or "CRCLStatus" in auxArray  or "CurrentState" in auxArray  or "LastTransition" in auxArray  or "ExecutedSkills" in auxArray) ): # Robot_RobotName_nextSkillNodeId
                             self.extractRobotVariable(auxArray, node)
                             self.systemStateNodeIds[str(node.get_browse_name().Name)] = node.get_value()
+            self.extractSkillsMethods()
 
 
-    def extractSkillVariable(self, nameArray, node): # Robot_RobotName_Skill_SkillName_CurrentState/LastTransition 
+    def extractSkillVariable(self, nameArray, node): # Robot_RobotName_Skill_SkillName_CurrentState/LastTransition/Method
         agent = self.agents[nameArray[1]].skills.get(nameArray[3])
         if( agent == None ):
              self.agents[nameArray[1]].skills[nameArray[3]] = SAMYSkill(nameArray[3])
@@ -294,6 +333,13 @@ class SAMYControlInterface():
             elif( "ExecutedSkills" in nameArray ):
                  self.agents[nameArray[1]].executedSkillsNodeId = node.get_value()
 
+
+    def extractSkillsMethods(self):
+        for agent in self.agents:
+            for skill in self.agents[agent].skills:
+                skillNode = self.client.get_node( self.agents[agent].skills[skill].skillNodeId )
+
+
     def setControlStateVariablesNodesIds(self):
         for var in self.controlStateVariablesNames:
             try:
@@ -309,10 +355,23 @@ class SAMYControlInterface():
         for node in self.controlStateVariablesNodesIds:
              self.controlStateVariablesDataTypesNodesIds.append( self.client.get_node(node).get_data_type() )
 
+
     def getDataBaseParameter(self, parameterName):
-        rootNode = self.client.get_root_node()
-        paramQualifiedName = str(self.namespaces['http://SAMY.org/DataBase']) + parameterName
-        browsePath = ["0:Objects", "0:Server", paramQualifiedName]
+        rootNode = self.auxClient.get_root_node()
+        dataBaseNS = str(self.namespaces['http://SAMY.org/DataBase'])
+        dataBaseBrowseName = dataBaseNS + ':DataBase'
+        paramQualifiedName =  dataBaseNS + ':' + parameterName
+        browsePath = ["0:Objects", dataBaseBrowseName, paramQualifiedName]
+        auxNode = None
+        try:
+            auxNode = rootNode.get_child(browsePath) 
+        except:
+            print("Not found browsepath: ", browsePath)
+            string = 'The parameter in the database ' + paramQualifiedName + ' could not be found. This could be due to an error in the naming.'
+            self.client.disconnect()
+            self.auxClient.disconnect()
+            raise SystemError(string)  
+        value = auxNode.get_value()
         return rootNode.get_child(browsePath)
 
 
@@ -342,11 +401,11 @@ class SAMYControlInterface():
         else:
             return systemStatusNode
 
-    def getSkillParameters(self, nextSkillNodeId):
-            skillNode = self.client.get_node(nextSkillNodeId)
-            browsepath = str(self.namespaces['http://opcfoundation.org/UA/DI/']) + ":ParameterSet"
-            parameterSetNode = skillNode.get_child(browsepath)
-            return parameterSetNode.get_children()
+  #  def getSkillParameters(self, nextSkillNodeId):
+  #          skillNode = self.client.get_node(nextSkillNodeId)
+  #          browsepath = str(self.namespaces['http://opcfoundation.org/UA/DI/']) + ":ParameterSet"
+  #          parameterSetNode = skillNode.get_child(browsepath)
+  #          return parameterSetNode.get_children()
 
 
     def readAndPrintSystemStatus(self):

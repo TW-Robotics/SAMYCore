@@ -333,7 +333,7 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
         return retVal;
     }
 
-    UA_StatusCode SAMYCoreInterfaceGenerator::addRobotNextSkill( UA_Server* server, const SAMYRobot* robot ){
+    UA_StatusCode SAMYCoreInterfaceGenerator::addRobotNextSkill( UA_Server* server, SAMYRobot* robot ){
         UA_Int16 robotNS = UA_Server_addNamespace( server, reinterpret_cast<const char*>(robot->name.data) );
 
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
@@ -363,6 +363,8 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
         (const UA_NodeAttributes*)&attr, &UA_TYPES[UA_TYPES_VARIABLEATTRIBUTES], NULL, &nextSkillNodeId );
 
         retVal |= UA_Server_addNode_finish( server, nextSkillNodeId);
+
+        robot->robotNextSkillNodeId = nextSkillNodeId;
 
         std::string name = "Robot_" + std::string{ reinterpret_cast<char*>( robot->name.data ) } + "_nextSkillNodeId";
         systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>(  nextSkillNodeId,  name ) );
@@ -507,7 +509,7 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
 
             retVal |= UA_Server_addNode_finish( server, tempNodeId);
 
-            robot->executedSkillsNodeIds = tempNodeId;
+            robot->executedSkillsNodeId = tempNodeId;
             std::string name = "Robot_" + std::string{ reinterpret_cast<char*>( robot->name.data ) } + "_ExecutedSkills";
             systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>(  tempNodeId,  name ) );
 

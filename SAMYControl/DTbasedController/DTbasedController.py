@@ -60,9 +60,9 @@ class DTbasedController(SAMYControllerBase):
         State is an array of numeric and categorical values that represents the state of the system according to the SAMYControllerInterface
         Converts the standard representation of the controller state into the internal representation
         """
-        print("Standard state representation (values read from the SAMYCore): \n", standardState)
-        print("\n")
-        internalState = np.empty(len(standardState), dtype = np.int64)
+   #     print("Standard state representation (values read from the SAMYCore): \n", standardState)
+   #     print("\n")
+        internalState = np.full(len(standardState), 99999999999, dtype = np.int64)
         for i, var in enumerate(standardState):
            if( isfloat(var) ): # creo que esto estaría bien
               internalState[i] = var
@@ -71,8 +71,8 @@ class DTbasedController(SAMYControllerBase):
                   if(var in self.x_metadata['category_names'][category]):
                         internalState[i] = np.int64(self.x_metadata['category_names'][category].index(var))
                         break
-        print("DTbasedController internal state representation (using indexes):\n", internalState)
-        print("\n\n")
+    #    print("DTbasedController internal state representation (using indexes):\n", internalState)
+    #    print("\n\n")
         return np.array([internalState]) # DTcontrol predict functions require a 2D numpy array (rows of array of variables describing the state)
  
 
@@ -87,8 +87,8 @@ class DTbasedController(SAMYControllerBase):
         """
         Converts the internal representation of the system action into the standard system action representation (returns a SAMYSystemAction)
         """
-        print("DTbasedController internal System Control action representation:\n", internalAction)
-        print("\n")
+    #    print("DTbasedController internal System Control action representation:\n", internalAction)
+    #    print("\n")
         internalAction = internalAction[0]
         agentsStandardActionsArray = None
         categorical = self.y_metadata.get('categorical', [])
@@ -110,7 +110,7 @@ class DTbasedController(SAMYControllerBase):
         else:
             new_label = tuple(new_label)
 
-        print("Standard System Control action representation:\n", new_label)
+        print("Standard System Control action representation text:\n", new_label)
 
         if( isinstance(new_label, tuple) ): # Multiouput action
             aux = []
@@ -120,16 +120,17 @@ class DTbasedController(SAMYControllerBase):
         else:  # Single output action
              agentsStandardActionsArray =  self.extractInputActionInformation( new_label )
 
-        print('\nDTbasedController predicted the following system control for the given state: ')
-        for standardAction in agentsStandardActionsArray: #DELETE
-            print('\n')
-            print(standardAction.agentName)
-            print(standardAction.skillName)
-            for param in standardAction.params:
-               print(param.skillParameterNumber)
-               print(param.valueType)
-               print(param.value)
-        print('\n')
+  #      print('\nDTbasedController predicted the following system control for the given state: ')
+  #      for standardAction in agentsStandardActionsArray: #DELETE
+  #          print('\n')
+  #          print(standardAction.agentName)
+  #          print(standardAction.skillName)
+  #          for param in standardAction.params:
+  #             print(param.skillParameterNumber)
+  #             print(param.valueType)
+  #             print(param.value)
+  #      print('\n')
+   
         return SAMYSystemAction(agentsStandardActionsArray)
         
     # Agent_Skill_NumberOfCommand:ParameterInDataBase_NumberOfCommand:ParameterInDataBase_...

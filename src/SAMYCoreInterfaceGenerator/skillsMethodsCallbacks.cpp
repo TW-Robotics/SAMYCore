@@ -23,29 +23,40 @@ namespace SAMY{
      //       const std::lock_guard<std::mutex> lock( robot->planMutex );
             for( int i = 0; i < robot->robotSkills.size(); i++ )
             {
+                // triggerTransitionEvent( server, from, eventType );
                 if( robot->robotSkills[i].getSkillNodeID().identifier.numeric == objectId->identifier.numeric ){
                     if (!robot->robotSkills[i].isTransitionAllowed(robot->robotSkills[i].getSkillCurrentState()->getNumber(),
                         ProgramStateNumber::RUNNING, true))
                     {
                         return UA_STATUSCODE_BADSTATENOTACTIVE;
                     }
+                    UA_Variant var;
+                    UA_NodeId aux = robot->robotSkills[i].getSkillNodeID();
+                    UA_Variant_setScalar( &var, &aux, &UA_TYPES[UA_TYPES_NODEID]);
+                    UA_Server_writeValue(server, robot->robotNextSkillNodeId, var );
                     if (!robot->robotSkills[i].transition( server, ProgramStateNumber::RUNNING ))
                     {
                         return UA_STATUSCODE_BADSTATENOTACTIVE;
                     }
-                    UA_CRCLSkillDataType skill;
-                    UA_CRCLSkillDataType_init( &skill );
-                    if( robot->robotSkills[i].createSkillInstance( server, &skill ) ){
-                        robot->robotPlan.emplace_back( skill );
-                        auto logger = robot->robotSkills[i].getLogger();
-                        std::stringstream msg;
-                        msg << "ADDED " << skill.name.data << " TO ROBOT " << robot->name.data;
-                        logger->info( msg.str() );
-                    }else{
-                        throw std::runtime_error( "COULD NOT ADD SKILL TO ROBOT PLAN" );
-                    }
+                    robot->lastTransition = robot->robotSkills[i].getSkillLastTransition();
                     robot->currentState = robot->robotSkills[i].getSkillCurrentState();
-                    return UA_STATUSCODE_GOOD;
+
+                    robot->executedSkills.addElement(robot->robotSkills[i].getSkillNodeID());
+
+                    UA_Variant_init(&var);
+
+                    auto arr = (UA_NodeId*)UA_Array_new(robot->executedSkills.getSize(), &UA_TYPES[UA_TYPES_NODEID]);
+                    int i = 0;
+                    const auto& deque = robot->executedSkills.getDeque();
+                    for ( auto node : deque ) {
+                        arr[i] = node;
+                        i++;
+                    }
+
+                    UA_Variant_setArray( &var, arr, robot->executedSkills.getSize(), &UA_TYPES[UA_TYPES_NODEID]);
+                    UA_StatusCode retVal = UA_Server_writeValue( server, robot->executedSkillsNodeId, var );
+
+                    return retVal;
                 }
             }
             return UA_STATUSCODE_GOOD;
@@ -82,6 +93,7 @@ namespace SAMY{
                    {
                        return UA_STATUSCODE_BADSTATENOTACTIVE;
                    }
+                   robot->lastTransition = robot->robotSkills[i].getSkillLastTransition();
                    robot->currentState = robot->robotSkills[i].getSkillCurrentState();
                    return UA_STATUSCODE_GOOD;
                }
@@ -120,6 +132,7 @@ namespace SAMY{
                    {
                        return UA_STATUSCODE_BADSTATENOTACTIVE;
                    }
+                   robot->lastTransition = robot->robotSkills[i].getSkillLastTransition();
                    robot->currentState = robot->robotSkills[i].getSkillCurrentState();
                    return UA_STATUSCODE_GOOD;
                }
@@ -159,6 +172,7 @@ namespace SAMY{
                    {
                        return UA_STATUSCODE_BADSTATENOTACTIVE;
                    }
+                   robot->lastTransition = robot->robotSkills[i].getSkillLastTransition();
                    robot->currentState = robot->robotSkills[i].getSkillCurrentState();
                    return UA_STATUSCODE_GOOD;
                }
@@ -198,6 +212,7 @@ namespace SAMY{
                    {
                        return UA_STATUSCODE_BADSTATENOTACTIVE;
                    }
+                   robot->lastTransition = robot->robotSkills[i].getSkillLastTransition();
                    robot->currentState = robot->robotSkills[i].getSkillCurrentState();
                    return UA_STATUSCODE_GOOD;
                }
