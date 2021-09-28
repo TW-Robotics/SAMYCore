@@ -12,6 +12,7 @@ SAMYCoreConfig:
            OPCUA: "error"
         Path: "logs"
      ConfigFiles:
-        SkillsFile: "/home/jbg/Desktop/SAMY/SAMYCore/cofigFiles/Skills.yaml" 
-        RobotsFile: "/home/jbg/Desktop/SAMY/SAMYCore/cofigFiles/RobotsConfiguration.yaml"
-        InformationSourcesFile: "/home/jbg/Desktop/SAMY/SAMYCore/cofigFiles/InformationSources.yaml"
+        SkillsFile: "/home/jbg/Desktop/SAMY/SAMYControl/UseCase1/configFiles/skills.yaml"
+        RobotsFile: "/home/jbg/Desktop/SAMY/SAMYControl/UseCase1/configFiles/RobotsConfiguration.yaml"
+        InformationSourcesFile: "/home/jbg/Desktop/SAMY/SAMYControl/UseCase1/configFiles/InformationSources.yaml"
+        DataBaseFile: "/home/jbg/Desktop/SAMY/SAMYControl/UseCase1/configFiles/DataBaseFile.yaml"
