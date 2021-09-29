@@ -161,7 +161,7 @@ def where_clause_from_evtype(evtypes):
         el.FilterOperands.append(op)
 
     el.FilterOperator = ua.FilterOperator.InList
-    cf.Elements.append(el)
+ #   cf.Elements.append(el) # This filter apparently is not supported by Open62541
 
     return cf
 
