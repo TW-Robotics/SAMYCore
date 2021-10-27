@@ -42,7 +42,7 @@ class SubHandler(object):
     """
     def event_notification(self, event):
         print("New event recived: ", event)
-
+        print( type(event) )
 
 if __name__ == "__main__":
 
@@ -65,9 +65,8 @@ if __name__ == "__main__":
 
         msclt = SubHandler()
         sub = client.create_subscription(100, msclt)
-  #      handle = sub.subscribe_events(robotNodeUppest, samy_event)
         handle = sub.subscribe_events(robotNodeUppest, samy_event)
-    #    resetRobotSkills(client, robotNode)
+        resetRobotSkills(client, robotNode)
 
         embed()
         sub.unsubscribe(handle)

@@ -7,23 +7,20 @@
 /* Files namespace_foo_flt_generated.h and namespace_foo_flt_generated.c are created from FooFlt.NodeSet2.xml in the
  * /src_generated directory by CMake */
 
-#include "SAMYRobot.h"
-
 #include <thread>
-
 #include <signal.h>
-
-#include <yaml_parser.h>
-
 #include <samyskill.h>
-
 #include <iostream>
-
 #include <chrono>
-
 #include <open62541/plugin/log_stdout.h>
+#include <yaml_parsers.h>
+#include "SAMYRobot.h"
+#include <samycoreInterfaceGenerator.h>
+#include <samycoreConfig.h>
+#include <OpcUaServer.h>
+#include <logging.h>
+#include <logging_opcua.h>
 
-#include "serverGenerator.h";
 
 /*
 TEST_CASE("Test main", "[TestTag]"){
@@ -5160,25 +5157,23 @@ TEST_CASE("Test Server/Client - Write CRCLSkill with all the commands with clien
     UA_Variant_init( &var );
     UA_Variant_setScalar( &var, &skill, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE] );
 
-
-    std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
+    UA_Client* client = UA_Client_new();
     std::string address = "opc.tcp://localhost:4567";
     UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
-    client.reset( UA_Client_new() );
-    UA_ClientConfig *cc = UA_Client_getConfig( client.get() );
+    UA_ClientConfig *cc = UA_Client_getConfig( client );
 
     UA_ClientConfig_setDefault(cc);
     cc->customDataTypes = &customDataTypes;
     //cc->stateCallback = stateCallback;
 
-    UA_StatusCode retval = UA_Client_connect( client.get(), address.c_str() );
+    UA_StatusCode retval = UA_Client_connect( client, address.c_str() );
 
 
-    retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1300), &var);
+    retVal |= UA_Client_writeValueAttribute( client, UA_NODEID_NUMERIC(1, 1300), &var);
     REQUIRE( retVal == UA_STATUSCODE_GOOD );
 
-    UA_Client_disconnect( client.get() );
+    UA_Client_disconnect( client );
 
     UA_Variant_init( &var );
     retVal |= UA_Server_readValue(server, UA_NODEID_NUMERIC(1, 1300), &var );
@@ -5213,23 +5208,31 @@ static void stopHandler(int sign){
 
 TEST_CASE("Server for testing clients against it", "[ServerTest]"){
 
-    signal(SIGINT, stopHandler);
-    signal(SIGTERM, stopHandler);
+    SAMYCoreConfig config;
+    config.appLoggingLevel = "debug";
+    config.serverLoggingLevel = "debug";
+    config.logsPath = "";
+    config.serverPort = 4567;
+    config.encryption = false;
+    config.anonymous = true;
+    config.pathToRobotsConfig = "";
+    config.pathToSkillsConfig = "";
+    config.pathToInformationSourcesConfig = "";
+    config.pathToDataBaseConfig = "";
+    config.appUri = "TEST_SERVER";
+    config.appName = "TEST_SERVER";
+    config.certificatesPath = "";
 
-    UA_Server* server = UA_Server_new();
-    UA_ServerConfig *config = UA_Server_getConfig(server);
-    UA_ServerConfig_setMinimal(config, 4567, NULL);
+    std::shared_ptr<spdlog::logger> logger = SAMY::Logging::LoggerFactory::createLogger("TEST_SERVER",
+                                                       config.appLoggingLevel,
+                                                       config.logsPath);
 
-    SAMY::Parsers::SkillsParser skillsParser;
-    REQUIRE( 1 ==  skillsParser.parse( "../Skills.yaml" ) );
-    std::vector<SAMY::SAMYSkill>* skills = skillsParser.getParsedSkills();
+    std::shared_ptr<SAMY::OPCUA::OpcUaServer> server = std::make_shared<SAMY::OPCUA::OpcUaServer>( config, logger );
 
-    SAMY::Parsers::RobotsConfigurationParser robotsParser;
-    REQUIRE( 1 == robotsParser.parse( "../RobotsConfiguration.yaml", *skills ));
-    std::vector<SAMY::SAMYRobot>* robots = robotsParser.getParsedRobots();
+    LockedServer ls = server->getLocked();
 
-    UA_StatusCode retVal = SAMY::ServerGenerator::generateSAMYCoreServer( server, robots, skills );
-    REQUIRE( retVal == 0 );
+    UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+    retVal |= namespace_crcl_generated( ls.get() );
 
     std::vector<UA_DataType> typesVector;
     typesVector.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONDATATYPE] );
@@ -5283,7 +5286,7 @@ TEST_CASE("Server for testing clients against it", "[ServerTest]"){
         UA_NodeId_init( &vattr.dataType );
         vattr.dataType = typesVector[i].typeId;
 
-        retVal |= UA_Server_addVariableNode( server,
+        retVal |= UA_Server_addVariableNode( ls.get(),
                                                      UA_NODEID_NUMERIC(1, i+1000),
                                                      UA_NODEID_NUMERIC( 0, UA_NS0ID_OBJECTSFOLDER ),
                                                      UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT ),
@@ -5303,7 +5306,7 @@ TEST_CASE("Server for testing clients against it", "[ServerTest]"){
         UA_NodeId_init( &vattr.dataType );
         vattr.dataType = UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE].typeId;
 
-        retVal |= UA_Server_addVariableNode( server,
+        retVal |= UA_Server_addVariableNode( ls.get(),
                                                      UA_NODEID_NUMERIC(1, i+1200),
                                                      UA_NODEID_NUMERIC( 0, UA_NS0ID_OBJECTSFOLDER ),
                                                      UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT ),
@@ -5322,7 +5325,7 @@ TEST_CASE("Server for testing clients against it", "[ServerTest]"){
     UA_NodeId_init( &vattr.dataType );
     vattr.dataType = UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE].typeId;
 
-    retVal |= UA_Server_addVariableNode( server,
+    retVal |= UA_Server_addVariableNode( ls.get(),
                                                  UA_NODEID_NUMERIC(1, 1300),
                                                  UA_NODEID_NUMERIC( 0, UA_NS0ID_OBJECTSFOLDER ),
                                                  UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT ),
@@ -5340,7 +5343,7 @@ TEST_CASE("Server for testing clients against it", "[ServerTest]"){
     UA_NodeId_init( &vattr.dataType );
     vattr.dataType = UA_TYPES_CRCL[UA_TYPES_CRCL_SAMYROBOTDATATYPE].typeId;
 
-    retVal |= UA_Server_addVariableNode( server,
+    retVal |= UA_Server_addVariableNode( ls.get(),
                                                  UA_NODEID_NUMERIC(1, 1400),
                                                  UA_NODEID_NUMERIC( 0, UA_NS0ID_OBJECTSFOLDER ),
                                                  UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT ),
@@ -5399,7 +5402,7 @@ TEST_CASE("Server for testing clients against it", "[ServerTest]"){
         UA_NodeId_init( &vattr.dataType );
         vattr.dataType = typesVectorParams[i].typeId;
 
-        retVal |= UA_Server_addVariableNode( server,
+        retVal |= UA_Server_addVariableNode( ls.get(),
                                                      UA_NODEID_NUMERIC(1, i+1500),
                                                      UA_NODEID_NUMERIC( 0, UA_NS0ID_OBJECTSFOLDER ),
                                                      UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT ),
@@ -5411,20 +5414,28 @@ TEST_CASE("Server for testing clients against it", "[ServerTest]"){
     }
 
 
-    std::thread SAMYCoreOPCUAInterface(UA_Server_run, server, &running);
-    SAMYCoreOPCUAInterface.detach();
+    server->init();
 
-    while( running && retVal == UA_STATUSCODE_GOOD ){
-        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    signal(SIGINT, stopHandler);
+    signal(SIGTERM, stopHandler);
+
+    while ( running ) {
+        server->iterate();
+        std::this_thread::yield();
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
 
-    UA_Server_delete( server );
+ //   UA_Server_delete( ls.get() );
 
     std::cout << "END TEST 3 ---------------------------------------------------------------------------" << std::endl;
 
     std::this_thread::sleep_for(std::chrono::milliseconds( 1000 ));
 
     REQUIRE( retVal == 0);
+
+
+
+
 }
 
 

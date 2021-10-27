@@ -1,21 +1,30 @@
-InformationSources:
-  - InformationSource:
-      InformationSourceName: "LightBarrier-Active"
+InformationSourcesDescriptions:
+  - InformationSourceDescription:
+      InformationSourceName: "infoSource1"
       DataTypes:
+             - Boolean
              - UInt32
-  - InformationSource:
-      InformationSourceName: "ConveyorHolder-Active"
-      DataTypes:
-             - UInt32
-  - InformationSource:
-      InformationSourceName: "ConveyorPart-Active"
-      DataTypes:
-             - UInt32
-  - InformationSource:
-      InformationSourceName: "Cylinder-Active"
-      DataTypes:
-             - UInt32
-  - InformationSource:
-      InformationSourceName: "CameraDetectionString"
+             - Double
+             - Float
+             - CRCL_PoseDataType
+             - CRCL_PointDataType
+  - InformationSourceDescription:
+      InformationSourceName: "infoSource2"
       DataTypes:
              - String
+             - Float
+             - CRCL_PointDataType
+InformationSources:
+  - InformationSource:
+      InformationSourceName: "complexInfoSource1"
+      DataTypes:
+             - Boolean
+             - infoSource1
+             - infoSource2
+  - InformationSource:
+      InformationSourceName: "complexInfoSource2"
+      DataTypes:
+             - Int64
+             - infoSource1
+             - infoSource2
+             - complexInfoSource1

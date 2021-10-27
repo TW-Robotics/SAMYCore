@@ -24,8 +24,7 @@ class DTbasedController(SAMYControllerBase):
         self.configurationPath = configurationPath_
         # Array of variable names in the SAMYCore SystemState variable, that represents the state of the system (for this controller)
         self.controlStateVariables = []
-   #     self.actionType = actionType_ # An array describing the elements of each action input (inputs can be numerical or categorical, and action can be single input or multiinput)
-                                                            # Examples: multiinput action -> [ "numeric", "categoric", "numeric", "numeric" ] singleinput action -> ["categorical"] or ["numeric"]
+
         
         self.setControlStateVariables()
 

@@ -19,3 +19,7 @@ InformationSources:
       InformationSourceName: "CameraDetectionString"
       DataTypes:
              - String
+  - InformationSource:
+      InformationSourceName: "CameraPose"
+      DataTypes:
+             - CRCL_PoseDataType

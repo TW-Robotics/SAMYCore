@@ -28,10 +28,18 @@ class SAMYAction: # A class describing a specific action to be performed by an a
         self.skillName = skillName_ # Name of the skill of the agent. In case nothing should be done with an agen, the name to use is "pass"
         self.params = params_ # An array of SAMYActionParameters
 
+    def __str__(self):
+        retval = "\n-----------SAMYAction-----------\n"
+        retval = retval + "Agent name: " + self.agentName + "\n"
+        retval = retval + "Skill name: " + self.skillName + "\n"
+        retval = "--------------------------------\n\n"
+        return retval
+
 
 class SAMYSystemAction: # An action describing the action to be performed on the total system (an array of SAMYActions, one for each agent)
     def __init__(self, individualActionsArray):
         self.individualActions = individualActionsArray
+
 
 #######################################################
 
@@ -193,6 +201,9 @@ class SAMYControlInterface():
 
 
     def performIndividualAction(self, action):
+        pprint.pprint(self.agents)
+        print("typeof         ", type(action) )
+        print("AAAAAAAAAAAAAAAAAAAAAAAAA         ", action)
         agent = self.agents[action.agentName]
         robotStateText = self.auxClient.get_node( agent.currentStateNodeId ).get_value().Text
         # Giving an agent the skill "pass" we can skip one agent and not perform any action with it. If the robot is not available also skip it

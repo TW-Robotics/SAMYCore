@@ -5,17 +5,17 @@ strict digraph {
     action5  [ label="('RobotABB_pass' \n 'RobotUR5_pass' \n 'RobotPLC_EnableComponent_0:Enable-Conveyor-Parts')"]
     action6  [ label="('RobotABB_pass' \n 'RobotUR5_pass' \n 'RobotPLC_DisableComponent_0:Disable-Conveyor-Parts')"]
 
-    action8_1  [ label="('RobotABB_pass' \n 'RobotUR5_PickAndPlaceSkill_11:Move-UR5-Place-CaseBottom-Above_14:Move-UR5-Place-CaseBottom' \n 'RobotPLC_DisableComponent_0:Disable-Conveyor-Parts')"]
-    action8_2  [ label="('RobotABB_pass' \n 'RobotUR5_PickAndPlaceSkill_11:Move-UR5-Place-Raspi-Above_14:Move-UR5-Place-Raspi' \n 'RobotPLC_DisableComponent_0:Disable-Conveyor-Parts')"]
-    action8_3  [ label="('RobotABB_pass' \n 'RobotUR5_PickAndPlaceSkill_11:Move-UR5-Place-TopCase-Above_14:Move-UR5-TopCase' \n 'RobotPLC_DisableComponent_0:Disable-Conveyor-Parts')"]
+    action8_1  [ label="('RobotABB_pass' \n 'RobotUR5_PickAndPlaceSkill_9:Move-UR5-Place-CaseBottom-Above_11:Move-UR5-Place-CaseBottom_14:Move-UR5-Place-CaseBottom-Above' \n 'RobotPLC_DisableComponent_0:Disable-Conveyor-Parts')"]
+    action8_2  [ label="('RobotABB_pass' \n 'RobotUR5_PickAndPlaceSkill_9:Move-UR5-Place-Raspi-Above_11:Move-UR5-Place-Raspi_14:Move-UR5-Place-Raspi-Above' \n 'RobotPLC_DisableComponent_0:Disable-Conveyor-Parts')"]
+    action8_3  [ label="('RobotABB_pass' \n 'RobotUR5_PickAndPlaceSkill_9:Move-UR5-Place-TopCase-Above_11:Move-UR5-Place-TopCase_14:Move-UR5-Place-TopCase-Above' \n 'RobotPLC_DisableComponent_0:Disable-Conveyor-Parts')"]
 
-    action9_1  [ label="('RobotABB__PickAndPlaceSkill_11:Move-UR5-Place-CaseBottom-Above_14:Move-UR5-Place-CaseBottom' \n 'RobotUR5_pass' \n 'RobotPLC_DisableComponent_0:Disable-Conveyor-Parts')"]
-    action9_2  [ label="('RobotABB__PickAndPlaceSkill_11:Move-UR5-Place-Raspi-Above_14:Move-UR5-Place-Raspi' \n 'RobotUR5_pass' \n 'RobotPLC_DisableComponent_0:Disable-Conveyor-Parts')"]
-    action9_3  [ label="('RobotABB__PickAndPlaceSkill_11:Move-UR5-Place-TopCase-Above_14:Move-UR5-Place-TopCase' \n 'RobotUR5_pass' \n 'RobotPLC_DisableComponent_0:Disable-Conveyor-Parts')"]
+    action9_1  [ label="('RobotABB__PickAndPlaceSkill_9:Move-UR5-Place-CaseBottom-Above_11:Move-UR5-Place-CaseBottom_14:Move-UR5-Place-CaseBottom-Above' \n 'RobotUR5_pass' \n 'RobotPLC_DisableComponent_0:Disable-Conveyor-Parts')"]
+    action9_2  [ label="('RobotABB__PickAndPlaceSkill_9:Move-UR5-Place-Raspi-Above_11:Move-UR5-Place-Raspi_14:Move-UR5-Place-Raspi-Above' \n 'RobotUR5_pass' \n 'RobotPLC_DisableComponent_0:Disable-Conveyor-Parts')"]
+    action9_3  [ label="('RobotABB__PickAndPlaceSkill_9:Move-UR5-Place-TopCase-Above_11:Move-UR5-Place-TopCase_14:Move-UR5-Place-TopCase-Above' \n 'RobotUR5_pass' \n 'RobotPLC_DisableComponent_0:Disable-Conveyor-Parts')"]
 
-    lightBarrierActive [label="InformationSource_LightBarrier-Active_0 == 1"]
-    cylinderActive [label="InformationSource_Cylinder-Active_0 == 1"]
-    conveyorHolderActive [label="InformationSource_ConveyorHolder-Active_0 == 1"]
+    lightBarrierActive [label="InformationSource_LightBarrier-Active_0 == True"]
+    cylinderActive [label="InformationSource_Cylinder-Active_0 == True"]
+    conveyorHolderActive [label="InformationSource_ConveyorHolder-Active_0 == True"]
     camaraDetection_1 [label="InformationSource_CameraDetectionString_0"]
     camaraDetection_2 [label="InformationSource_CameraDetectionString_0"]
     camaraDetection_3 [label="InformationSource_CameraDetectionString_0"]
@@ -25,8 +25,8 @@ strict digraph {
 
     lightBarrierActive -> conveyorHolderActive [ label="True"]
     lightBarrierActive -> action1 [ label="False"]
-    conveyorHolderActive ->  cylinderActive[ label="True"]
-    conveyorHolderActive -> action2 [ label="False"]
+    conveyorHolderActive -> action2 [ label="True"]
+    conveyorHolderActive ->  cylinderActive[ label="False"]
     cylinderActive -> camaraDetection_1 [ label="True"]
     cylinderActive -> action3 [ label="False"]
     camaraDetection_1 -> action5 [ label="No"]
@@ -43,4 +43,3 @@ strict digraph {
     camaraDetection_3 -> action9_2 [ label="Part2"]
     camaraDetection_3 -> action9_3 [ label="Part3"]
 }
-

@@ -1,38 +1,36 @@
 Robots:
   - Robot:
       Name: RobotUR5
-      ID: 1
+      ID: 12344
       Address: "opc.tcp://localhost:4840"
       OPCUARoboticsFile: RobotUR5.xml
       Skills:
-        - SimpleMove
-        - MoveToWithSpeed
-        - SetEndEffectorSkill
-        - PickSkill
-        - PickAndPlaceSkill
+         - SimpleMove
+         - TestSkill
+         - MoveToWithSpeed
+         - SetEndEffectorSkill
+         - PickSkill
+         - PickAndPlaceSkill
   - Robot:
-      Name: Mir100
-      ID: 2
+      Name: RobotABB
+      ID: 1234
       Address: "192.168.8.24:3300"
       OPCUARoboticsFile: RobotABB.xml
       Skills:
-        - StartMissionSkill
+         - MoveToWithSpeed
+         - SetEndEffectorSkill
+         - PickSkill
+         - PickAndPlaceSkill
+         - TestSkill
   - Robot:
-      Name: RobotABB
-      ID: 3
+      Name: KukaIiwa
+      ID: 123448
       Address: "192.168.8.24:3200"
       OPCUARoboticsFile: RobotUR5.xml
       Skills:
-        - SimpleMove
-        - MoveToWithSpeed
-        - SetEndEffectorSkill
-        - PickSkill
-        - PickAndPlaceSkill
-  - Robot:
-      Name: RobotPLC
-      ID: 4
-      Address: "192.168.8.24:3100"
-      OPCUARoboticsFile: RobotUR5.xml
-      Skills:
-        - DisableComponent
-        - EnableComponent
+         - MoveToWithSpeed
+         - SetEndEffectorSkill
+         - PickSkill
+         - PickAndPlaceSkill
+         - Drilling
+         - TestSkill

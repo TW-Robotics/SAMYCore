@@ -5,40 +5,28 @@
 #include <open62541/server_config_default.h>
 /* Files namespace_foo_flt_generated.h and namespace_foo_flt_generated.c are created from FooFlt.NodeSet2.xml in the
  * /src_generated directory by CMake */
-
 #include "SAMYRobot.h"
-
 #include <thread>
-
 #include <signal.h>
-
-#include <yaml_parser.h>
-
+#include <yaml_parsers.h>
 #include <samyskill.h>
-
 #include <iostream>
-
 #include <chrono>
-
 #include <open62541/plugin/log_stdout.h>
-
-#include "serverGenerator.h";
-
 
 TEST_CASE("Test client - Write commands", "[WriteCommands]"){
 
-    std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
+    UA_Client* client = UA_Client_new();
     std::string address = "opc.tcp://localhost:4567";
-    UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
+    UA_DataTypeArray customDataTypes{NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
-    client.reset( UA_Client_new() );
-    UA_ClientConfig *cc = UA_Client_getConfig( client.get() );
+    UA_ClientConfig *cc = UA_Client_getConfig( client );
 
     UA_ClientConfig_setDefault(cc);
     cc->customDataTypes = &customDataTypes;
     //cc->stateCallback = stateCallback;
 
-    UA_StatusCode retval = UA_Client_connect( client.get(), address.c_str() );
+    UA_StatusCode retval = UA_Client_connect( client, address.c_str() );
 
     SECTION("UA_InitCanonDataType"){
         UA_InitCanonDataType command;
@@ -53,7 +41,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1000), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1000), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_EndCanonDataType"){
@@ -69,7 +57,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1001), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1001), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_MessageDataType"){
@@ -88,7 +76,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_MESSAGEDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1002), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1002), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_MoveToDataType"){
@@ -124,7 +112,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETODATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1003), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1003), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_MoveScrewDataType"){
@@ -171,7 +159,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVESCREWDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1004), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1004), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_MoveThroughToDataType"){
@@ -237,7 +225,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTODATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1005), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1005), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_DwellDataType"){
@@ -256,7 +244,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_DWELLDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1006), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1006), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_ActuateJointsDataType"){
@@ -329,7 +317,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1007), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1007), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_ConfigureJointReportsDataType"){
@@ -373,7 +361,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGUREJOINTREPORTSDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1008), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1008), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetDefaultJointPositionsTolerancesDataType"){
@@ -416,7 +404,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1009), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1009), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_GetStatusDataType"){
@@ -433,7 +421,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1010), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1010), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_CloseToolChangerDataType"){
@@ -450,7 +438,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1011), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1011), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_OpenToolChangerDataType"){
@@ -467,7 +455,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_OPENTOOLCHANGERDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1012), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1012), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetRobotParametersDataType"){
@@ -506,7 +494,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROBOTPARAMETERSDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1013), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1013), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetEndeffectorParametersDataType"){
@@ -545,7 +533,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1014), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1014), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetEndeffectorDataType"){
@@ -568,7 +556,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1015), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1015), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetTransAccelDataType"){
@@ -594,7 +582,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1016), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1016), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetTransSpeedDataType"){
@@ -626,7 +614,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1017), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1017), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetRotAccelDataType"){
@@ -660,7 +648,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTACCELDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1018), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1018), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetRotSpeedDataType"){
@@ -694,7 +682,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1019), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1019), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetAngleUnitsDataType"){
@@ -713,7 +701,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1020), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1020), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetEndPoseToleranceDataType"){
@@ -741,7 +729,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1021), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1021), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetForceUnitsDataType"){
@@ -760,7 +748,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1022), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1022), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetIntermediatePoseToleranceDataType"){
@@ -788,7 +776,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1023), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1023), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetLengthUnitsDataType"){
@@ -807,7 +795,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1024), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1024), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetMotionCoordinationDataType"){
@@ -826,7 +814,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1025), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1025), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetTorqueUnitsDataType"){
@@ -845,7 +833,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1026), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1026), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_StopMotionDataType"){
@@ -864,7 +852,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_STOPMOTIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1027), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1027), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_ConfigureStatusReportDataType"){
@@ -888,7 +876,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGURESTATUSREPORTDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1028), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1028), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_EnableSensorDataType"){
@@ -929,7 +917,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1029), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1029), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_DisableSensorDataType"){
@@ -948,7 +936,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLESENSORDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1030), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1030), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_EnableGripperDataType"){
@@ -987,7 +975,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1031), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1031), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_DisableGripperDataType"){
@@ -1006,7 +994,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1032), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1032), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_EnableRobotParameterStatusDataType"){
@@ -1025,7 +1013,7 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1033), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1033), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );    }
     SECTION("UA_DisableRobotParameterStatusDataType"){
         UA_DisableRobotParameterStatusDataType command;
@@ -1043,33 +1031,37 @@ TEST_CASE("Test client - Write commands", "[WriteCommands]"){
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1034), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1034), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
+
+    retval |= UA_Client_disconnect( client );
+    REQUIRE( retval == UA_STATUSCODE_GOOD );
 }
 
 
 
 TEST_CASE("Test client - Read commands", "[ReadCommands]"){
 
-    std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
-    std::string address = "opc.tcp://localhost:4567";
-    UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
+    UA_Client* client = UA_Client_new();
 
-    client.reset( UA_Client_new() );
-    UA_ClientConfig *cc = UA_Client_getConfig( client.get() );
+    std::string address = "opc.tcp://localhost:4567";
+  //  UA_DataTypeArray customDataTypes{NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
+    UA_DataTypeArray customDataTypes{NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
+
+    UA_ClientConfig *cc = UA_Client_getConfig( client );
 
     UA_ClientConfig_setDefault(cc);
     cc->customDataTypes = &customDataTypes;
     //cc->stateCallback = stateCallback;
 
-    UA_StatusCode retval = UA_Client_connect( client.get(), address.c_str() );
+    UA_StatusCode retval = UA_Client_connect( client, address.c_str() );
 
     SECTION("UA_InitCanonDataType"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1000), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1000), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1085,7 +1077,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1001), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1001), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1101,7 +1093,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1002), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1002), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1117,7 +1109,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1003), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1003), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1133,7 +1125,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1004), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1004), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1149,7 +1141,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1005), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1005), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1165,7 +1157,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1006), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1006), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1181,7 +1173,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1007), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1007), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1197,7 +1189,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1008), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1008), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1213,7 +1205,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1009), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1009), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1229,7 +1221,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1010), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1010), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1245,7 +1237,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1011), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1011), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1261,7 +1253,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1012), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1012), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1277,7 +1269,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1013), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1013), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1293,7 +1285,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1014), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1014), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1309,7 +1301,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1015), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1015), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1325,7 +1317,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1016), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1016), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1341,7 +1333,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1017), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1017), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1357,7 +1349,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1018), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1018), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1373,7 +1365,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1019), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1019), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1389,7 +1381,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1020), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1020), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1405,7 +1397,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1021), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1021), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1421,7 +1413,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1022), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1022), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1437,7 +1429,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1023), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1023), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1453,7 +1445,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1024), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1024), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1469,7 +1461,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1025), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1025), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1485,7 +1477,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1026), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1026), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1501,7 +1493,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1027), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1027), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1517,7 +1509,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1028), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1028), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1533,7 +1525,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1029), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1029), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1549,7 +1541,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1030), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1030), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1565,7 +1557,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1031), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1031), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1581,7 +1573,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1032), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1032), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1597,7 +1589,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1033), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1033), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1613,7 +1605,7 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1034), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1034), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -1625,23 +1617,27 @@ TEST_CASE("Test client - Read commands", "[ReadCommands]"){
         std::cout << str.data << std::endl;
         UA_String_clear( &str );
     }
+
+    retval |= UA_Client_disconnect( client );
+    REQUIRE( retval == UA_STATUSCODE_GOOD );
 }
 
 
 TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteCommandsInCRCLCommandsUnion]"){
 
-    std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
+    UA_Client* client = UA_Client_new();
+
     std::string address = "opc.tcp://localhost:4567";
     UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
-    client.reset( UA_Client_new() );
-    UA_ClientConfig *cc = UA_Client_getConfig( client.get() );
+
+    UA_ClientConfig *cc = UA_Client_getConfig( client );
 
     UA_ClientConfig_setDefault(cc);
     cc->customDataTypes = &customDataTypes;
     //cc->stateCallback = stateCallback;
 
-    UA_StatusCode retval = UA_Client_connect( client.get(), address.c_str() );
+    UA_StatusCode retval = UA_Client_connect( client, address.c_str() );
 
     SECTION("UA_InitCanonDataType"){
         UA_InitCanonDataType command;
@@ -1661,7 +1657,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1200), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1200), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_EndCanonDataType"){
@@ -1682,7 +1678,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1201), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1201), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_MessageDataType"){
@@ -1705,7 +1701,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1202), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1202), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_MoveToDataType"){
@@ -1745,7 +1741,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1203), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1203), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_MoveScrewDataType"){
@@ -1796,7 +1792,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1204), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1204), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_MoveThroughToDataType"){
@@ -1866,7 +1862,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1205), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1205), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_DwellDataType"){
@@ -1889,7 +1885,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1206), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1206), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_ActuateJointsDataType"){
@@ -1966,7 +1962,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1207), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1207), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_ConfigureJointReportsDataType"){
@@ -2014,7 +2010,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1208), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1208), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetDefaultJointPositionsTolerancesDataType"){
@@ -2061,7 +2057,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1209), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1209), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_GetStatusDataType"){
@@ -2082,7 +2078,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1210), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1210), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_CloseToolChangerDataType"){
@@ -2103,7 +2099,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1211), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1211), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_OpenToolChangerDataType"){
@@ -2124,7 +2120,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1212), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1212), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetRobotParametersDataType"){
@@ -2167,7 +2163,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1213), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1213), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetEndeffectorParametersDataType"){
@@ -2210,7 +2206,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1214), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1214), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetEndeffectorDataType"){
@@ -2237,7 +2233,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1215), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1215), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetTransAccelDataType"){
@@ -2267,7 +2263,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1216), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1216), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetTransSpeedDataType"){
@@ -2303,7 +2299,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1217), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1217), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetRotAccelDataType"){
@@ -2341,7 +2337,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1218), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1218), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetRotSpeedDataType"){
@@ -2379,7 +2375,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1219), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1219), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetAngleUnitsDataType"){
@@ -2402,7 +2398,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1220), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1220), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetEndPoseToleranceDataType"){
@@ -2434,7 +2430,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1221), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1221), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetForceUnitsDataType"){
@@ -2457,7 +2453,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1222), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1222), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetIntermediatePoseToleranceDataType"){
@@ -2489,7 +2485,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1223), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1223), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetLengthUnitsDataType"){
@@ -2512,7 +2508,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1224), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1224), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetMotionCoordinationDataType"){
@@ -2535,7 +2531,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1225), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1225), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetTorqueUnitsDataType"){
@@ -2558,7 +2554,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1226), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1226), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_StopMotionDataType"){
@@ -2581,7 +2577,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1227), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1227), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_ConfigureStatusReportDataType"){
@@ -2609,7 +2605,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1228), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1228), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_EnableSensorDataType"){
@@ -2654,7 +2650,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1229), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1229), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_DisableSensorDataType"){
@@ -2677,7 +2673,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1230), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1230), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_EnableGripperDataType"){
@@ -2720,7 +2716,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1231), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1231), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_DisableGripperDataType"){
@@ -2743,7 +2739,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1232), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1232), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_EnableRobotParameterStatusDataType"){
@@ -2766,7 +2762,7 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1233), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1233), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_DisableRobotParameterStatusDataType"){
@@ -2789,32 +2785,36 @@ TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteComman
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &commandsUnion, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1234), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1234), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
+
+    retval |= UA_Client_disconnect( client );
+    REQUIRE( retval == UA_STATUSCODE_GOOD );
 }
 
 
 TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadCommandsFromCRCLCommandsUnion]"){
 
-    std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
+    UA_Client* client = UA_Client_new();
+
     std::string address = "opc.tcp://localhost:4567";
     UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
-    client.reset( UA_Client_new() );
-    UA_ClientConfig *cc = UA_Client_getConfig( client.get() );
+
+    UA_ClientConfig *cc = UA_Client_getConfig( client );
 
     UA_ClientConfig_setDefault(cc);
     cc->customDataTypes = &customDataTypes;
     //cc->stateCallback = stateCallback;
 
-    UA_StatusCode retval = UA_Client_connect( client.get(), address.c_str() );
+    UA_StatusCode retval = UA_Client_connect( client, address.c_str() );
 
     SECTION("UA_InitCanonDataType"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1200), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1200), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -2832,7 +2832,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1201), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1201), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -2850,7 +2850,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1202), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1202), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -2868,7 +2868,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1203), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1203), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -2886,7 +2886,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1204), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1204), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -2904,7 +2904,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1205), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1205), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -2922,7 +2922,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1206), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1206), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -2940,7 +2940,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1207), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1207), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -2958,7 +2958,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1208), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1208), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -2976,7 +2976,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1209), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1209), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -2994,7 +2994,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1210), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1210), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3012,7 +3012,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1211), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1211), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3030,7 +3030,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1212), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1212), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3048,7 +3048,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1213), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1213), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3066,7 +3066,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1214), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1214), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3084,7 +3084,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1215), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1215), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3102,7 +3102,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1216), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1216), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3120,7 +3120,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1217), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1217), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3138,7 +3138,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1218), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1218), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3156,7 +3156,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1219), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1219), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3174,7 +3174,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1220), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1220), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3192,7 +3192,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1221), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1221), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3210,7 +3210,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1222), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1222), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3228,7 +3228,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1223), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1223), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3246,7 +3246,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1224), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1224), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3264,7 +3264,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1225), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1225), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3282,7 +3282,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1226), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1226), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3300,7 +3300,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1227), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1227), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3318,7 +3318,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1228), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1228), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3336,7 +3336,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1229), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1229), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3354,7 +3354,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1230), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1230), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3372,7 +3372,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1231), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1231), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3390,7 +3390,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1232), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1232), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3408,7 +3408,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1233), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1233), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3426,7 +3426,7 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1234), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1234), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -3440,6 +3440,9 @@ TEST_CASE("Test client - Read all commands from CRCLCommandsUnion", "[ReadComman
         std::cout << str.data << std::endl;
         UA_String_clear( &str );
     }
+
+    retval |= UA_Client_disconnect( client );
+    REQUIRE( retval == UA_STATUSCODE_GOOD );
 }
 
 
@@ -3464,18 +3467,19 @@ static void print_bytes(const void *object, size_t size)
 
 TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkill]"){
 
-    std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
+    UA_Client* client = UA_Client_new();
+
     std::string address = "opc.tcp://localhost:4567";
     UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
-    client.reset( UA_Client_new() );
-    UA_ClientConfig *cc = UA_Client_getConfig( client.get() );
+
+    UA_ClientConfig *cc = UA_Client_getConfig( client );
 
     UA_ClientConfig_setDefault(cc);
     cc->customDataTypes = &customDataTypes;
     //cc->stateCallback = stateCallback;
 
-    UA_StatusCode retval = UA_Client_connect( client.get(), address.c_str() );
+    UA_StatusCode retval = UA_Client_connect( client, address.c_str() );
 
     UA_CRCLSkillDataType skill;
     skill.name = UA_STRING( "Skill test" );
@@ -4466,32 +4470,36 @@ TEST_CASE("Test client - Write CRCLSkill with all the commands", "[WriteCRCLSkil
     UA_Variant_init( &var );
     UA_Variant_setScalar( &var, &skill, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE] );
     UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-    retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1300), &var);
+    retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1300), &var);
 
   //  print_bytes( &var.data, sizeof(*var.data));
     REQUIRE( retVal == UA_STATUSCODE_GOOD );
+
+    retval |= UA_Client_disconnect( client );
+    REQUIRE( retval == UA_STATUSCODE_GOOD );
 }
 
 
 
 TEST_CASE("Test client - Read CRCLSkill", "[ReadCRCLSkill]"){
 
-    std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
+    UA_Client* client = UA_Client_new();
+
     std::string address = "opc.tcp://localhost:4567";
     UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
-    client.reset( UA_Client_new() );
-    UA_ClientConfig *cc = UA_Client_getConfig( client.get() );
+
+    UA_ClientConfig *cc = UA_Client_getConfig( client );
 
     UA_ClientConfig_setDefault(cc);
     cc->customDataTypes = &customDataTypes;
     //cc->stateCallback = stateCallback;
 
-    UA_StatusCode retval = UA_Client_connect( client.get(), address.c_str() );
+    UA_StatusCode retval = UA_Client_connect( client, address.c_str() );
 
     UA_Variant var;
     UA_Variant_init( &var );
-    retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1300), &var);
+    retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1300), &var);
 
     REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -4508,6 +4516,10 @@ TEST_CASE("Test client - Read CRCLSkill", "[ReadCRCLSkill]"){
     UA_print( &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSDATATYPE], &str );
     std::cout << str.data << std::endl;
     UA_String_clear( &str );
+
+    retval |= UA_Client_disconnect( client );
+    REQUIRE( retval == UA_STATUSCODE_GOOD );
+
 }
 
 /*
@@ -4533,14 +4545,14 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
     std::string address = "opc.tcp://localhost:4567";
     UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
-    robot.client.reset( UA_Client_new() );
-    UA_ClientConfig *cc = UA_Client_getConfig( robot.client.get() );
+    robot.
+    UA_ClientConfig *cc = UA_Client_getConfig( robot.client );
 
     UA_ClientConfig_setDefault(cc);
     cc->customDataTypes = &customDataTypes;
     //cc->stateCallback = stateCallback;
 
-    UA_StatusCode retval = UA_Client_connect( robot.client.get(), address.c_str() );
+    UA_StatusCode retval = UA_Client_connect( robot.client, address.c_str() );
 
     robot.requested_skill.name = UA_STRING( "Robot requested skill test" );
     robot.requested_skill.id = 999;
@@ -5532,29 +5544,30 @@ TEST_CASE("Test client - Write Robot", "[WriteRobot]"){
     UA_Variant_init( &var );
     UA_Variant_setScalar( &var, &opcuaRobot, &UA_TYPES_CRCL[UA_TYPES_CRCL_SAMYROBOTDATATYPE] );
     UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-    retVal |= UA_Client_writeValueAttribute(robot.client.get(), UA_NODEID_NUMERIC(1, 1400), &var);
+    retVal |= UA_Client_writeValueAttribute(robot.client, UA_NODEID_NUMERIC(1, 1400), &var);
     REQUIRE( retVal == UA_STATUSCODE_GOOD );
 }
 */
 
 TEST_CASE("Test client - Read Robot", "[ReadRobot]"){
 
-    std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
+    UA_Client* client = UA_Client_new();
+
     std::string address = "opc.tcp://localhost:4567";
     UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
-    client.reset( UA_Client_new() );
-    UA_ClientConfig *cc = UA_Client_getConfig( client.get() );
+
+    UA_ClientConfig *cc = UA_Client_getConfig( client );
 
     UA_ClientConfig_setDefault(cc);
     cc->customDataTypes = &customDataTypes;
     //cc->stateCallback = stateCallback;
 
-    UA_StatusCode retval = UA_Client_connect( client.get(), address.c_str() );
+    UA_StatusCode retval = UA_Client_connect( client, address.c_str() );
 
     UA_Variant var;
     UA_Variant_init( &var );
-    retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1400), &var);
+    retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1400), &var);
 
     REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -5566,52 +5579,59 @@ TEST_CASE("Test client - Read Robot", "[ReadRobot]"){
     UA_String_clear( &str );
 
     SAMY::printCRCLSkill( &robot->requested_Skill );
-}
 
+    retval |= UA_Client_disconnect( client );
+    REQUIRE( retval == UA_STATUSCODE_GOOD );
+
+}
 
 TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"){
 
-    std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
+    UA_Client* client = UA_Client_new();
+
     std::string address = "opc.tcp://localhost:4567";
     UA_DataTypeArray customParametersSetDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
-    client.reset( UA_Client_new() );
-    UA_ClientConfig *cc = UA_Client_getConfig( client.get() );
+
+    UA_ClientConfig *cc = UA_Client_getConfig( client );
 
     UA_ClientConfig_setDefault(cc);
     cc->customDataTypes = &customParametersSetDataTypes;
     //cc->stateCallback = stateCallback;
 
-    UA_StatusCode retval = UA_Client_connect( client.get(), address.c_str() );
+    UA_StatusCode retval = UA_Client_connect( client, address.c_str() );
 
     SECTION("UA_InitCanonParametersSetDataType"){
         UA_InitCanonParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_InitCanonParametersSetDataType");
 
         UA_Variant var;
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1500), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1500), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_EndCanonParametersSetDataType"){
         UA_EndCanonParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_EndCanonParametersSetDataType");
 
         UA_Variant var;
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1501), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1501), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_MessageParametersSetDataType"){
         UA_MessageParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_MessageParametersSetDataType");
 
         command.message = UA_STRING( "TEST MESSAGE!" );
 
@@ -5619,13 +5639,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_MESSAGEPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1502), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1502), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_MoveToParametersSetDataType"){
         UA_MoveToParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_MoveToParametersSetDataType");
 
         command.endPosition.id = 987;
         command.endPosition.name = UA_STRING( "POSITIONNAME" );
@@ -5650,13 +5671,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETOPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1503), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1503), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_MoveScrewParametersSetDataType"){
         UA_MoveScrewParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_MoveScrewParametersSetDataType");
 
         command.axialDistanceFree = 6.543;
         command.axialDistanceScrew = 87.123;
@@ -5692,13 +5714,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVESCREWPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1504), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1504), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_MoveThroughToParametersSetDataType"){
         UA_MoveThroughToParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_MoveThroughToParametersSetDataType");
 
         UA_CRCL_PoseDataType pose1;
         pose1.id = 743;
@@ -5753,13 +5776,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTOPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1505), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1505), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_DwellParametersSetDataType"){
         UA_DwellParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_DwellParametersSetDataType");
 
         command.dwellTime = 101.101;
 
@@ -5767,13 +5791,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_DWELLPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1506), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1506), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_ActuateJointsParametersSetDataType"){
         UA_ActuateJointsParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_ActuateJointsParametersSetDataType");
 
         UA_CRCL_ActuateJointDataType act1;
         act1.id = 134;
@@ -5835,13 +5860,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1507), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1507), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_ConfigureJointReportsParametersSetDataType"){
         UA_ConfigureJointReportsParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_ConfigureJointReportsParametersSetDataType");
 
         UA_CRCL_ConfigureJointReportDataType conf1;
         conf1.id = 9213;
@@ -5874,13 +5900,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGUREJOINTREPORTSPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1508), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1508), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetDefaultJointPositionsTolerancesParametersSetDataType"){
         UA_SetDefaultJointPositionsTolerancesParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_SetDefaultJointPositionsTolerancesParametersSetDataType");
 
         UA_CRCL_JointPositionToleranceSettingDataType tolSet1;
         tolSet1.id = 663;
@@ -5912,49 +5939,53 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1509), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1509), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_GetStatusParametersSetDataType"){
         UA_GetStatusParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_GetStatusParametersSetDataType");
 
         UA_Variant var;
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1510), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1510), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_CloseToolChangerParametersSetDataType"){
         UA_CloseToolChangerParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_CloseToolChangerParametersSetDataType");
 
         UA_Variant var;
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1511), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1511), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_OpenToolChangerParametersSetDataType"){
         UA_OpenToolChangerParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_OpenToolChangerParametersSetDataType");
 
         UA_Variant var;
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_OPENTOOLCHANGERPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1512), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1512), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetRobotParametersParametersSetDataType"){
         UA_SetRobotParametersParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_SetRobotParametersParametersSetDataType");
 
         UA_CRCL_ParameterSettingDataType setting1;
         setting1.id = 1398;
@@ -5982,13 +6013,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROBOTPARAMETERSPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1513), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1513), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetEndeffectorParametersParametersSetDataType"){
         UA_SetEndeffectorParametersParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_SetEndeffectorParametersParametersSetDataType");
 
         UA_CRCL_ParameterSettingDataType setting1;
         setting1.id = 1398;
@@ -6016,13 +6048,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1514), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1514), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetEndeffectorParametersSetDataType"){
         UA_SetEndeffectorParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_SetEndeffectorParametersSetDataType");
 
         UA_CRCL_FractionDataType fraction;
         fraction.fractionMax = 1.0;
@@ -6034,13 +6067,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1515), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1515), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetTransAccelParametersSetDataType"){
         UA_SetTransAccelParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_SetTransAccelParametersSetDataType");
 
         UA_CRCL_TransAccelDataType accel;
         accel.switchField = UA_CRCL_TRANSACCELDATATYPESWITCH_TRANSACCELABSOLUTEDATATYPE;
@@ -6055,13 +6089,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1516), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1516), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetTransSpeedParametersSetDataType"){
         UA_SetTransSpeedParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_SetTransSpeedParametersSetDataType");
 
         UA_CRCL_TransSpeedDataType speed;
         speed.switchField = UA_CRCL_TRANSSPEEDDATATYPESWITCH_TRANSSPEEDRELATIVEDATATYPE;
@@ -6082,13 +6117,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1517), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1517), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetRotAccelParametersSetDataType"){
         UA_SetRotAccelParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_SetRotAccelParametersSetDataType");
 
         UA_CRCL_RotAccelDataType accel;
         accel.switchField = UA_CRCL_ROTACCELDATATYPESWITCH_ROTACCELRELATIVEDATATYPE;
@@ -6111,13 +6147,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTACCELPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1518), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1518), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetRotSpeedParametersSetDataType"){
         UA_SetRotSpeedParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_SetRotSpeedParametersSetDataType");
 
         UA_CRCL_RotSpeedDataType speed;
         speed.switchField = UA_CRCL_ROTSPEEDDATATYPESWITCH_ROTSPEEDRELATIVEDATATYPE;
@@ -6140,13 +6177,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1519), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1519), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetAngleUnitsParametersSetDataType"){
         UA_SetAngleUnitsParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_SetAngleUnitsParametersSetDataType");
 
         command.unitName = UA_CRCL_ANGLEUNITENUMDATATYPE_RADIAN;
 
@@ -6154,13 +6192,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1520), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1520), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetEndPoseToleranceParametersSetDataType"){
         UA_SetEndPoseToleranceParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_SetEndPoseToleranceParametersSetDataType");
 
         UA_CRCL_PoseToleranceDataType poseTol;
         poseTol.id = 8563;
@@ -6177,13 +6216,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1521), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1521), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetForceUnitsParametersSetDataType"){
         UA_SetForceUnitsParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_SetForceUnitsParametersSetDataType");
 
         command.unitName = UA_CRCL_FORCEUNITENUMDATATYPE_NEWTON;
 
@@ -6191,13 +6231,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1522), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1522), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetIntermediatePoseToleranceParametersSetDataType"){
         UA_SetIntermediatePoseToleranceParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_SetIntermediatePoseToleranceParametersSetDataType");
 
         UA_CRCL_PoseToleranceDataType poseTol;
         poseTol.id = 8563;
@@ -6214,13 +6255,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1523), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1523), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetLengthUnitsParametersSetDataType"){
         UA_SetLengthUnitsParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_SetLengthUnitsParametersSetDataType");
 
         command.unitName = UA_CRCL_LENGTHUNITENUMDATATYPE_METER;
 
@@ -6228,13 +6270,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1524), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1524), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetMotionCoordinationParametersSetDataType"){
         UA_SetMotionCoordinationParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_SetMotionCoordinationParametersSetDataType");
 
         command.coordinated = UA_TRUE;
 
@@ -6242,13 +6285,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1525), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1525), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_SetTorqueUnitsParametersSetDataType"){
         UA_SetTorqueUnitsParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_SetTorqueUnitsParametersSetDataType");
 
         command.unitName = UA_CRCL_TORQUEUNITENUMDATATYPE_NEWTONMETER;
 
@@ -6256,13 +6300,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1526), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1526), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_StopMotionParametersSetDataType"){
         UA_StopMotionParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_StopMotionParametersSetDataType");
 
         command.stopCondition = UA_CRCL_STOPCONDITIONENUMDATATYPE_IMMEDIATE;
 
@@ -6270,13 +6315,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_STOPMOTIONPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1527), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1527), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_ConfigureStatusReportParametersSetDataType"){
         UA_ConfigureStatusReportParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_ConfigureStatusReportParametersSetDataType");
 
         command.reportJointStatuses = true;
         command.reportPoseStatus = true;
@@ -6289,13 +6335,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1528), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1528), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_EnableSensorParametersSetDataType"){
         UA_EnableSensorParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_EnableSensorParametersSetDataType");
 
         command.sensorID = UA_STRING( "TestSensorName");
 
@@ -6325,13 +6372,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1529), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1529), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_DisableSensorParametersSetDataType"){
         UA_DisableSensorParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_DisableSensorParametersSetDataType");
 
         command.sensorID = UA_STRING( "TestSensorID" );
 
@@ -6339,13 +6387,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLESENSORPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1530), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1530), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_EnableGripperParametersSetDataType"){
         UA_EnableGripperParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_EnableGripperParametersSetDataType");
 
         command.gripperName = UA_STRING( "TestGripperName");
 
@@ -6373,13 +6422,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1531), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1531), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_DisableGripperParametersSetDataType"){
         UA_DisableGripperParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_DisableGripperParametersSetDataType");
 
         command.gripperName = UA_STRING( "TestGripperName");
 
@@ -6387,13 +6437,14 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1532), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1532), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
     SECTION("UA_EnableRobotParameterStatusParametersSetDataType"){
         UA_EnableRobotParameterStatusParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_EnableRobotParameterStatusParametersSetDataType");
 
         command.robotParameterName = UA_STRING( "TestParameterName" );
 
@@ -6401,12 +6452,13 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1533), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1533), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );    }
     SECTION("UA_DisableRobotParameterStatusParametersSetDataType"){
         UA_DisableRobotParameterStatusParametersSetDataType command;
 
         command.realTimeParameter = true;
+        command.name = UA_STRING("UA_DisableRobotParameterStatusParametersSetDataType");
 
         command.robotParameterName = UA_STRING( "TestParameterName" );
 
@@ -6414,9 +6466,12 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
         UA_Variant_init( &var );
         UA_Variant_setScalar( &var, &command, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE] );
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= UA_Client_writeValueAttribute(client.get(), UA_NODEID_NUMERIC(1, 1534), &var);
+        retVal |= UA_Client_writeValueAttribute(client, UA_NODEID_NUMERIC(1, 1534), &var);
         REQUIRE( retVal == UA_STATUSCODE_GOOD );
     }
+
+    retval |= UA_Client_disconnect( client );
+    REQUIRE( retval == UA_STATUSCODE_GOOD );
 }
 
 
@@ -6425,24 +6480,25 @@ TEST_CASE("Test client - Write commands parameters", "[WriteCommandsParameters]"
 
 TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParameterssParameters]"){
 
-    std::unique_ptr< UA_Client, SAMY::SAMYRobot::ClientDeleter > client;
+    UA_Client* client = UA_Client_new();
+
     std::string address = "opc.tcp://localhost:4567";
     UA_DataTypeArray customDataTypes = {NULL, UA_TYPES_CRCL_COUNT, UA_TYPES_CRCL};
 
-    client.reset( UA_Client_new() );
-    UA_ClientConfig *cc = UA_Client_getConfig( client.get() );
+
+    UA_ClientConfig *cc = UA_Client_getConfig( client );
 
     UA_ClientConfig_setDefault(cc);
     cc->customDataTypes = &customDataTypes;
     //cc->stateCallback = stateCallback;
 
-    UA_StatusCode retval = UA_Client_connect( client.get(), address.c_str() );
+    UA_StatusCode retval = UA_Client_connect( client, address.c_str() );
 
     SECTION("UA_InitCanonDataType"){
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1500), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1500), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6458,7 +6514,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1501), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1501), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6474,7 +6530,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1502), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1502), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6490,7 +6546,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1503), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1503), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6506,7 +6562,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1504), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1504), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6522,7 +6578,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1505), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1505), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6538,7 +6594,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1506), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1506), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6554,7 +6610,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1507), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1507), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6570,7 +6626,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1508), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1508), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6586,7 +6642,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1509), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1509), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6602,7 +6658,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1510), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1510), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6618,7 +6674,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1511), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1511), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6634,7 +6690,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1512), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1512), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6650,7 +6706,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1513), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1513), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6666,7 +6722,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1514), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1514), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6682,7 +6738,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1515), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1515), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6698,7 +6754,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1516), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1516), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6714,7 +6770,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1517), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1517), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6730,7 +6786,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1518), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1518), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6746,7 +6802,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1519), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1519), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6762,7 +6818,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1520), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1520), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6778,7 +6834,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1521), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1521), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6794,7 +6850,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1522), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1522), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6810,7 +6866,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1523), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1523), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6826,7 +6882,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1524), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1524), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6842,7 +6898,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1525), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1525), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6858,7 +6914,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1526), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1526), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6874,7 +6930,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1527), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1527), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6890,7 +6946,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1528), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1528), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6906,7 +6962,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1529), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1529), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6922,7 +6978,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1530), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1530), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6938,7 +6994,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1531), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1531), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6954,7 +7010,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1532), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1532), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6970,7 +7026,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1533), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1533), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
@@ -6986,7 +7042,7 @@ TEST_CASE("Test client - Read commandParameterss parameters", "[ReadcommandParam
         UA_StatusCode retval = UA_STATUSCODE_GOOD;
         UA_Variant var;
         UA_Variant_init( &var );
-        retval |= UA_Client_readValueAttribute( client.get(), UA_NODEID_NUMERIC(1,1534), &var);
+        retval |= UA_Client_readValueAttribute( client, UA_NODEID_NUMERIC(1,1534), &var);
 
         REQUIRE( retval == UA_STATUSCODE_GOOD );
 
