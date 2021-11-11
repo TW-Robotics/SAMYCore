@@ -1,5 +1,5 @@
 name: 'build_linux'
-description: 'Builds the SAMYCore with different compilers in the last version of Ubuntu'
+description: 'Builds the SAMYCore with different compilers in the last version of Ubuntu (see ci.sh for the options)'
 inputs:
   build-type:  # id of input
     description: 'Type of the build'
