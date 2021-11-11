@@ -9,10 +9,10 @@ SAMYControl (create new repository)
      - Action for "building" (it will depend on the language) a fake controller that uses the tests skills of the SAMYCore
      - Action for running the test controller
   + Workflow:
-     - codeAnalysis -> run a tool for code analysis -> https://github.com/open62541/open62541/blob/master/.github/workflows/codeql.yml
+     - codeAnalysis -> run a tool for code analysis
          *
          * 
-     - build -> build the component with different compilers on Linux (we could also include windows???)   https://github.com/open62541/open62541/blob/master/.github/workflows/build_linux.yml
+     - build -> build the component with different compilers on Linux (we could also include windows???)   
          *
          *
      - tests -> tests the component
@@ -21,8 +21,6 @@ SAMYControl (create new repository)
      - dockerization -> creates docker image of the component: needs build and tests
          *
          *
-     - debian packaging??? https://github.com/open62541/open62541/blob/master/.github/workflows/debian_packing.yml
-
 
 SAMYCore
   + Actions:
@@ -31,10 +29,10 @@ SAMYCore
      - Action for running the testsServer and testsClient and a checking whether the tests were succesfully pass
      - Action for running the SAMYCore with a "default" information model for tests purposes (include a test skill with all the commands and default robot or something like that)
   + Workflow:
-     - codeAnalysis -> run a tool for code analysis -> https://github.com/open62541/open62541/blob/master/.github/workflows/codeql.yml
+     - codeAnalysis -> run a tool for code analysis
          *
          * 
-     - build -> build the component with different compilers on Linux (we could also include windows???)   https://github.com/open62541/open62541/blob/master/.github/workflows/build_linux.yml
+     - build -> build the component with different compilers on Linux (we could also include windows???)
          *
          *
      - tests -> tests the component: needs build
@@ -43,8 +41,6 @@ SAMYCore
      - dockerization -> creates docker image of the component: needs build and tests
          *
          * 
-     - debian packaging??? https://github.com/open62541/open62541/blob/master/.github/workflows/debian_packing.yml
-
 
 SAMYPluginTemplate
   + Actions:
@@ -54,10 +50,10 @@ SAMYPluginTemplate
      - Action for running the dummy test plugin in CPP
      - Action for running the dummy test plugin in Python
   + Workflow (jobs):
-     - codeAnalysis -> run a tool for code analysis -> https://github.com/open62541/open62541/blob/master/.github/workflows/codeql.yml
+     - codeAnalysis -> run a tool for code analysis
          *
          * 
-     - build -> build the component with different compilers on Linux (we could also include windows???)   https://github.com/open62541/open62541/blob/master/.github/workflows/build_linux.yml
+     - build -> build the component with different compilers on Linux (we could also include windows???) 
          *
          *
      - tests -> tests the component: needs build
@@ -66,7 +62,7 @@ SAMYPluginTemplate
      - dockerization -> creates docker image of the component: needs build and tests
          *
          * 
-     - debian packaging??? https://github.com/open62541/open62541/blob/master/.github/workflows/debian_packing.yml
+     - debian packaging???
 
 
 SAMYPlugins
@@ -75,10 +71,10 @@ SAMYPlugins
      - Action for creating a docker image of the SAMYPlugin
      - Action for running a test mode of the plugin
   + Workflow:
-     - codeAnalysis -> run a tool for code analysis -> https://github.com/open62541/open62541/blob/master/.github/workflows/codeql.yml
+     - codeAnalysis -> run a tool for code analysis
          *
          * 
-     - build -> build the component with different compilers on Linux (we could also include windows???)   https://github.com/open62541/open62541/blob/master/.github/workflows/build_linux.yml
+     - build -> build the component with different compilers on Linux (we could also include windows???) 
          *
          *
      - tests -> tests the component: needs build
@@ -87,5 +83,5 @@ SAMYPlugins
      - dockerization -> creates docker image of the component: needs build and tests
          *
          * 
-     - debian packaging??? https://github.com/open62541/open62541/blob/master/.github/workflows/debian_packing.yml
+     - debian packaging??? 
 
