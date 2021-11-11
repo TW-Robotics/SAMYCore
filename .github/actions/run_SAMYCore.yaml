@@ -1,0 +1,10 @@
+name: 'run_SAMYCore'
+description: 'Builds the SAMYCore with different compilers in the last version of Ubuntu (see ci.sh for the options)'
+inputs:
+  run-type:  # id of input
+    description: 'Type of the run (regular or for testing purposes)'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: ./SAMYCore ${{ run-type }}
