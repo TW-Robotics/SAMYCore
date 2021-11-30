@@ -15,11 +15,12 @@ endif()
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+#SET(CMAKE_CXX_FLAGS "-Wno-write-strings")
 
 project(SAMYCore VERSION 0.1 LANGUAGES C CXX)
 # open62541 v1.2 must be installed!
 # If in custom path, then use -DCMAKE_PREFIX_PATH=/home/user/installcmake_minimum_required(VERSION 3.2)
-find_package(open62541 REQUIRED COMPONENTS FullNamespace)
+find_package(open62541 1.2 REQUIRED COMPONENTS FullNamespace)
 find_package( yaml-cpp REQUIRED )
 find_package(Catch2 REQUIRED)
 find_package(spdlog REQUIRED)
@@ -173,20 +174,21 @@ add_library(SAMYCore_Library STATIC
                 )
 
 
-#add_executable(testsClient
-#               "./Tests/CRCLnamespace_tests/testsClient.cpp"
-#               )
-
-#add_executable(testsServer
-#               "./Tests/CRCLnamespace_tests/testsServer.cpp"
-#               )
-
-
 add_executable(${PROJECT_NAME}
                "./src/main.cpp"
                )
 
-# Make sure the nodeset compiler is execute before compiling the main file
+
+add_executable(testsClient
+               "./Tests/CRCLnamespace_tests/testsClient.cpp"
+               )
+
+add_executable(testsServer
+               "./Tests/CRCLnamespace_tests/testsServer.cpp"
+               )
+
+
+# Make sure the nodeset compiler is executed before compiling the SAMYCore_Library
 add_dependencies(SAMYCore_Library
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_DI}
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_ROBOTICS}
@@ -196,7 +198,7 @@ add_dependencies(SAMYCore_Library
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_CRCL}
                  )
 
-# Make sure the nodeset compiler is execute before compiling the main file
+# Make sure the nodeset compiler is executed before compiling the main file
 add_dependencies(${PROJECT_NAME}
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_DI}
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_ROBOTICS}
@@ -206,17 +208,27 @@ add_dependencies(${PROJECT_NAME}
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_CRCL}
                  )
 
-# Make sure the nodeset compiler is execute before compiling the main file
-#add_dependencies(testsClient
-#                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_DI}
-#                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_ROBOTICS}
-#                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_DI}
-#                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_ROBOTICS}
-#                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_KUKA_IIWA}
-#                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_CRCL}
-#                 )
+# Make sure the nodeset compiler is executed before compiling the testsClient
+add_dependencies(testsClient
+                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_DI}
+                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_ROBOTICS}
+                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_DI}
+                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_ROBOTICS}
+                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_KUKA_IIWA}
+                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_CRCL}
+                 )
+
+# Make sure the nodeset compiler is executed before compiling the testsServer
+add_dependencies(testsServer
+                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_DI}
+                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_ROBOTICS}
+                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_DI}
+                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_ROBOTICS}
+                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_KUKA_IIWA}
+                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_CRCL}
+                 )
 
 target_link_libraries(SAMYCore_Library PRIVATE open62541::open62541 yaml-cpp spdlog::spdlog spdlog::spdlog)
-#target_link_libraries(testsClient PRIVATE Catch2::Catch2 Catch2::Catch2WithMain SAMYCore_Library)
-#target_link_libraries(testsServer PRIVATE Catch2::Catch2 Catch2::Catch2WithMain SAMYCore_Library spdlog::spdlog)
+target_link_libraries(testsClient PRIVATE Catch2::Catch2 Catch2::Catch2WithMain SAMYCore_Library)
+target_link_libraries(testsServer PRIVATE Catch2::Catch2 Catch2::Catch2WithMain SAMYCore_Library spdlog::spdlog)
 target_link_libraries(${PROJECT_NAME} SAMYCore_Library spdlog::spdlog)

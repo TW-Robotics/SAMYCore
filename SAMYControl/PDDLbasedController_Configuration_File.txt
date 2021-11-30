@@ -1,55 +1,44 @@
-### CONFIGURATION FILE FOR PDDL BASED CONTROLLER ###
-
-### AGENTS SECTION ### Map of agent names in PDDL plan and SAMYCore. If no name is provided, the one in PDDL is used
-r:
-r2:
-r3:
-
-
-### ACTIONS SECTION ### Map from PDDL actions to SAMYCore skills. If no name is provided, the on in PDDL is used. Each parameter in PDDL actions must match one SAMYCore ParameterSkill index 
-move-to-pickup:
-	robotpose:
-	robotpose:
-	staticpose:
-gripper-close-to-pickup:
-	robotpose:
-	staticpose:
-wait-for-gripper-closed-to-pickup:
-	robotpose:
-	staticpose:
-move-from-pickup-to-place:
-	robotpose:
-	robotpose:
-	staticpose:
-	staticpose:
-
-
-### STATE VARIABLES SECTION ### Map of required PDDL variables to SAMYCore boolean variables that describe system state for the PDDL plan. These varibles will be tracked in the control loop.
-current-status ['ok']:
-can-pick-from ['r', 'o', 'rsrc', 'src']:
-can-pick-from ['r', 'o', 'rsrc2', 'src2']:
-gripper-open ['r']:
-free ['r']:
-free ['dst']:
-free ['src']:
-is-in-robotpose ['r', 'rstart']:
-is-in-robotpose ['r', 'rsrc']:
-is-in-robotpose ['r', 'rstart2']:
-is-in-robotpose ['r', 'rsrc2']:
-is-in-robotpose ['r', 'rdst']:
-is-in-robotpose ['r2', 'rsrc']:
-is-in-robotpose ['r2', 'rdst']:
-is-in-robotpose ['r3', 'rsrc']:
-is-in-robotpose ['r3', 'rdst']:
-is-at ['o', 'src']:
-is-at ['o', 'src2']:
-expecting-gripper-closed ['r']:
-gripper-closed ['r']:
-gripper-closed ['r2']:
-gripper-closed ['r3']:
-is-held-by ['o', 'r']:
-is-held-by ['o', 'r2']:
-is-held-by ['o', 'r3']:
-can-place-to ['r', 'o', 'rdst', 'dst']:
-can-place-to ['r2', 'o', 'rdst', 'dst']:
-can-place-to ['r3', 'o', 'rdst', 'dst']:
+CONFIGURATION_FILE_PDDL_BASED_CONTROLLER:
+    ACTIONS:
+        gripper-close-to-pickup:
+            SkillName: ''
+            robotpose(robotpose): ''
+            src(staticpose): ''
+        move-from-pickup-to-place:
+            SkillName: ''
+            dest(staticpose): ''
+            oldrobotpose(robotpose): ''
+            robotpose(robotpose): ''
+            src(staticpose): ''
+        move-to-pickup:
+            SkillName: ''
+            oldrobotpose(robotpose): ''
+            robotpose(robotpose): ''
+            src(staticpose): ''
+        wait-for-gripper-closed-to-pickup:
+            SkillName: ''
+            robotpose(robotpose): ''
+            src(staticpose): ''
+    AGENTS:
+        r: ''
+    PARAMETERS(DATABASE_INFOSOURCES):
+        dst: ''
+        rdst: ''
+        rsrc: ''
+        rstart: ''
+        src: ''
+    STATE_VARIABLES:
+        can-pick-from ['r', 'o', 'rsrc', 'src']: ''
+        can-place-to ['r', 'o', 'rdst', 'dst']: ''
+        current-status ['ok']: ''
+        expecting-gripper-closed ['r']: ''
+        free ['dst']: ''
+        free ['r']: ''
+        free ['src']: ''
+        gripper-closed ['r']: ''
+        gripper-open ['r']: ''
+        is-at ['o', 'src']: ''
+        is-held-by ['o', 'r']: ''
+        is-in-robotpose ['r', 'rdst']: ''
+        is-in-robotpose ['r', 'rsrc']: ''
+        is-in-robotpose ['r', 'rstart']: ''

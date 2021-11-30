@@ -67,11 +67,48 @@ class PDDLActionInstance(PDDLAction):
         super().__init__(name_, parameters_, positiveConditions_, negativeConditions_, addEffects_, deleteEffects_)
         self.instanceParameters = instanceParameters_
         self.parametersToInstanceParametersMap = {}
+        self.instanceParametersToTypesMap = {}
+        self.positiveConditionsAsString = []
+        self.negativeConditionsAsString = []
+
         self.setInstanceParamsToArgumentsMap()
+        self.setInstanceParametersToTypesMap()
+        self.setPositiveConditionsAsString()
+        self.setNegativeConditionsAsString()
+
+
+    def setPositiveConditionsAsString(self):
+        for cond in self.positiveConditions:
+            instanceParamsArray = []
+            for param in cond[1]:
+                if param[0] == '?':
+                    instanceParamsArray.append( self.parametersToInstanceParametersMap[param] )
+                else:
+                    instanceParamsArray.append( param )
+            condString = cond[0] + " " + str(instanceParamsArray)
+            self.positiveConditionsAsString.append(condString)
+
+
+    def setNegativeConditionsAsString(self):
+        for cond in self.negativeConditions:
+            instanceParamsArray = []
+            for param in cond[1]:
+                instanceParamsArray.append( self.parametersToInstanceParametersMap[param] )
+            condString = cond[0] + " " + str(instanceParamsArray)
+            self.negativeConditionsAsString.append(condString)
+
 
     def setInstanceParamsToArgumentsMap(self):
         for i, argument in enumerate(self.parameters):
+           print(argument)
            self.parametersToInstanceParametersMap[argument[0]] =  self.instanceParameters[i]
+
+
+    def setInstanceParametersToTypesMap(self):
+        for i, argument in enumerate(self.parameters):
+           if( self.instanceParameters[i] not in self.instanceParametersToTypesMap):
+               self.instanceParametersToTypesMap[self.instanceParameters[i]] = argument[1]
+
 
     def print(self):
         print("----------------------PDDL ACTION INSTANCE----------------------")
@@ -82,19 +119,23 @@ class PDDLActionInstance(PDDLAction):
         print("Action add effects: ", self.addEffects)
         print("Action delete effects: ", self.deleteEffects)
         print("Action Instance parameters: ", self.instanceParameters)
-        print("Parameters To Instance parameters map: ")
+        print("Action Parameters To action Instance parameters map: ")
         pprint.pprint(self.parametersToInstanceParametersMap)
+        print("Action Instance parameters to types Map: ")
+        pprint.pprint(self.instanceParametersToTypesMap)
         print("----------------------------------------------------------------")
 
 
 class PDDLPlan():
-    def __init__(self, actions_, robotsActionsRequeriments_, actionsRequired_):
+    def __init__(self, actions_, robotsActionsRequeriments_, actionsRequired_, paramsRequired_):
         self.actions = actions_
         self.robotsActionsRequeriments = robotsActionsRequeriments_
         self.actionsRequired = actionsRequired_
+        self.paramsRequired = paramsRequired_
 
     def print(self):
         print('------------PDDL PLAN------------\n')
+        print(str('Number of actions in the plan: ' + str(len(self.actions)) + '\n'))
         print('------REQUIRED ACTIONS BY AGENT------')
         pprint.pprint(self.robotsActionsRequeriments)
         print('\n------PLAN------')
@@ -111,6 +152,7 @@ class PDDLPlanParser():
         self.PDDLactions = [] # PDDL actions in the form of name of the action (according to the domain) and the arguments
         self.robotsActionsRequeriments = {}
         self.actionsRequired = []
+        self.paramsRequired = {} # Parameters required and the type of the parameter
 
     def processActionInstance(self, actionName, domain, instanceParameters):
         pos = []
@@ -144,7 +186,14 @@ class PDDLPlanParser():
             effectCond =[x for xs in aux for x in xs]
             effectType = effectCond.pop(0)
             delEffect.append([effectType, effectCond])
-        return PDDLActionInstance(actionName, params, pos, neg, addEffect, delEffect, instanceParameters) 
+
+        retval = PDDLActionInstance(actionName, params, pos, neg, addEffect, delEffect, instanceParameters)
+
+        for i, argument in enumerate(params):
+            if instanceParameters[i] not in self.paramsRequired:
+                self.paramsRequired[instanceParameters[i]] = argument[1]
+             
+        return retval
 
     def parse_plan(self, domain):
         with open(self.pathToPlan) as fp:
@@ -168,112 +217,6 @@ class PDDLPlanParser():
                      self.actionsRequired.append(name)
               line = fp.readline()
               cnt += 1
-
-
-class PDDLbasedController(SAMYControllerBase):
-    def __init__(self, pathToDomain_, pathToProblem_, pathToPlan_, configurationPath_ = None):
-        super().__init__()
-        self.pathToDomain = pathToDomain_
-        self.pathToPlan = pathToPlan_
-        self.pathToProblem = pathToProblem_
-        self.configurationPath = configurationPath_
-        self.domain, self.problem = self.parseDomainAndProblem()
-        self.plan = self.parsePlan() #PDDLPlan 
-        self.internalPDDLactionParameters = ['robot', 'movable'] # parameter types appearing in actions that are only internal for solving the PDDL problem, but not relevant for the SAMYCore
-        self.PDDLStateVariables = {} # Array of required PDDL predicate variables that describe the relevant system state for the plan
-        self.controlStateVariables = [] # Array of SAMYCore SystemStatus variables names required by the PDDL Plan that will be tracked (either through configuration file or using naming convention)
-
-        self.setPDDLStateVariables()
-   
-        self.generateConfigurationTemplate()
-        self.domain.print()
-        self.problem.print()
-        self.plan.print()
-
-        pprint.pprint(self.PDDLStateVariables)
-
-
-    def parseConfigurationFile(self):
-        if( configurationPath_ == None):
-           print("Trying to read the file: "
-        else:
-           print("Trying to read the file: "
-
-
-    def generateConfigurationTemplate(self):
-        confTemplate = "### CONFIGURATION FILE FOR PDDL BASED CONTROLLER ###\n"
-        confTemplate = confTemplate + "\n### AGENTS SECTION ### Map of agent names in PDDL plan and SAMYCore. If no name is provided, the one in PDDL is used\n"
-        for robot in self.plan.robotsActionsRequeriments:
-            confTemplate = confTemplate + robot + ":\n"
-        confTemplate = confTemplate + "\n\n### ACTIONS SECTION ### Map from PDDL actions to SAMYCore skills. If no name is provided, the on in PDDL is used. Each parameter in PDDL actions must match one SAMYCore ParameterSkill index \n"
-        for action in self.plan.actionsRequired:
-            confTemplate = confTemplate + action + ":\n"
-            for param in self.domain.actions[action].parameters:
-                if( not param[1] in self.internalPDDLactionParameters ):
-                    confTemplate = confTemplate + "\t" + param[1] + ":\n"
-
-        confTemplate = confTemplate + "\n\n### STATE VARIABLES SECTION ### Map of required PDDL variables to SAMYCore boolean variables that describe system state for the PDDL plan. These varibles will be tracked in the control loop.\n"
-
-        for predicateType in self.PDDLStateVariables:
-            for arguments in self.PDDLStateVariables[predicateType]:
-                confTemplate = confTemplate + predicateType + " " + str(arguments) + ":\n"
-
-        f = open("PDDLbasedController_Configuration_File.txt", "w")
-        f.write(confTemplate)
-
-
-    def setPDDLStateVariables(self):
-         for action in self.plan.actions:
-            if( not action.instanceParameters[0] in self.PDDLStateVariables): # In every action, the first parameter indicates the agent performing the action
-               self.processActionInstanceVariables(action)
-            
-
-    def processActionInstanceVariables(self, pddlActionInstance ):
-        for cond in pddlActionInstance.positiveConditions:
-            self.processPredicate(pddlActionInstance, cond)
-        for cond in pddlActionInstance.negativeConditions:
-            self.processPredicate(pddlActionInstance, cond)
-        for effect in pddlActionInstance.addEffects:
-            self.processPredicate(pddlActionInstance, effect)
-        for effect in pddlActionInstance.deleteEffects:
-            self.processPredicate(pddlActionInstance, effect)
-
-    def processPredicate(self, pddlActionInstance, argument ):
-        agent = pddlActionInstance.instanceParameters[0]
-        actionName = pddlActionInstance.name
-        actionParameters = pddlActionInstance.parameters
-
-        predicateType = argument[0]
-        predicateArguments = argument[1]
-        predicateArgumentsInstance = []
-        for arg in predicateArguments:
-            if( arg[0] == '?' ):
-                predicateArgumentsInstance.append( pddlActionInstance.parametersToInstanceParametersMap[arg] )
-            else:
-                predicateArgumentsInstance.append( arg )
-
-        print("predicateType   ", predicateType, "   predicateArguments   ", predicateArgumentsInstance )
-
-        if( not predicateType in self.PDDLStateVariables ):
-            self.PDDLStateVariables[predicateType] = []
-
-        if( not predicateArgumentsInstance in self.PDDLStateVariables[predicateType] ):
-            self.PDDLStateVariables[predicateType].append( predicateArgumentsInstance )
-
-
-    def parseDomainAndProblem(self):
-        parser = PDDL_Parser()
-        parser.parse_domain(self.pathToDomain)
-        domain = PDDLDomain(parser.domain_name, parser.requirements, parser.types, parser.objects, parser.actions, parser.predicates)
-        parser.parse_problem(self.pathToProblem)
-        problem = PDDLProblem(parser.problem_name, parser.objects, parser.state, parser.positive_goals, parser.negative_goals)
-        return domain, problem
-
-
-    def parsePlan(self):
-        parser = PDDLPlanParser(self.pathToPlan, self.domain)
-        parser.parse_plan(self.domain)
-        return PDDLPlan(parser.PDDLactions, parser.robotsActionsRequeriments, parser.actionsRequired)
 
 
   

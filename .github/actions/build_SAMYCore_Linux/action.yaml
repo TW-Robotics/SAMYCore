@@ -1,0 +1,39 @@
+name: "Build SAMYCore"
+description: "Builds the SAMYCore, including dependencies"
+pre-if: runner.os == 'linux'
+inputs:
+  catch-exists:
+    description: 'Type of the build'
+    required: false
+    default: false
+  open62541-exists:
+    description: 'Type of the build'
+    required: false
+    default: false
+runs:
+  using: "composite"
+  steps:
+    - run: |
+        sudo apt-get update
+        sudo apt-get install -y -qq libboost-python1.71.0 build-essential cmake libyaml-cpp-dev libboost-all-dev git libspdlog-dev
+      shell: bash
+    - if: ${{ inputs.open62541-exists }} == false
+      uses: ./.github/actions/build_linux
+      with:
+        build-type: build_open62541
+    - if: ${{ inputs.catch-exists }} == false
+      uses: actions/checkout@v2
+      with:
+        repository: catchorg/Catch2
+        path: Catch2
+        ref: v2.13.4
+        submodules: true
+      uses: ./.github/actions/build_linux
+      with:
+        build-type: build_catch2
+    - run: |
+        cd ${{ github.workspace }}
+    - name: "Build SAMYCore"
+      uses: ./.github/actions/build_linux
+      with:
+        build-type: build_release

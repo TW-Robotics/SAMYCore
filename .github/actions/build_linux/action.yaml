@@ -1,4 +1,5 @@
 name: 'build_linux'
+pre-if: runner.os == 'linux'
 description: 'Builds the SAMYPlugin template with different compilers in Linux (see ci.sh for the options)'
 inputs:
   build-type:

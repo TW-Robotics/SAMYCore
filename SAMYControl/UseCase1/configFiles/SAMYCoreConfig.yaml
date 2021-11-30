@@ -9,7 +9,7 @@ SAMYCoreConfig:
      Logging:
         Level:
            App: "info"
-           OPCUA: "warn"
+           OPCUA: "debug"
         Path: "logs"
      ConfigFiles:
         SkillsFile: "/home/jbg/Desktop/SAMY/SAMYControl/UseCase1/configFiles/skills.yaml"
