@@ -2,13 +2,13 @@ name: "Build SAMYCore"
 description: "Builds the SAMYCore, including dependencies"
 pre-if: runner.os == 'linux'
 inputs:
-  catch-exists:
-    description: 'Type of the build'
-    required: false
+  catch2-exists:
+    description: 'Is catch2 v2.x already installed'
+    required: true
     default: false
   open62541-exists:
-    description: 'Type of the build'
-    required: false
+    description: 'Is open62541 v1.2 already installed'
+    required: true
     default: false
 runs:
   using: "composite"
