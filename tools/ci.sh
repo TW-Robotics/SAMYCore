@@ -71,8 +71,8 @@ function build_tpm_tool {
 #########################
 
 function build_open62541 {
-    mkdir SamyPlugins_Template_Cpp/open62541_v1.2_unions_fixed/build;
-    cd SamyPlugins_Template_Cpp/open62541_v1.2_unions_fixed/build
+    mkdir -p SAMYCore/open62541_v1.2_unions_fixed/build;
+    cd SAMYCore/open62541_v1.2_unions_fixed/build
     rm -rf *
     cmake -DUA_NAMESPACE_ZERO=FULL \
       -DUA_ENABLE_SUBSCRIPTIONS=ON \
