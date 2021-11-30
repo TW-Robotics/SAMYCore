@@ -19,7 +19,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 project(SAMYCore VERSION 0.1 LANGUAGES C CXX)
 # open62541 v1.2 must be installed!
 # If in custom path, then use -DCMAKE_PREFIX_PATH=/home/user/installcmake_minimum_required(VERSION 3.2)
-find_package(open62541 1.2 REQUIRED COMPONENTS FullNamespace)
+find_package(open62541 REQUIRED COMPONENTS FullNamespace)
 find_package( yaml-cpp REQUIRED )
 find_package(Catch2 REQUIRED)
 find_package(spdlog REQUIRED)
