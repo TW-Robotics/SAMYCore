@@ -72,8 +72,8 @@ function build_tpm_tool {
 
 function build_open62541 {
     tree -L 2
-    mkdir -p SAMYCore/open62541_v1.2_unions_fixed/build;
-    cd SAMYCore/open62541_v1.2_unions_fixed/build
+    mkdir -p open62541_v1.2_unions_fixed/build;
+    cd open62541_v1.2_unions_fixed/build
     rm -rf *
     cmake -DUA_NAMESPACE_ZERO=FULL \
       -DUA_ENABLE_SUBSCRIPTIONS=ON \
