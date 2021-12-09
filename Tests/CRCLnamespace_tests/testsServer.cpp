@@ -5393,10 +5393,7 @@ TEST_CASE("Server for testing clients against it", "[ServerTest]"){
     typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERPARAMETERSSETDATATYPE] );
     typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERPARAMETERSSETDATATYPE] );
     typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE] );
- //   typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE] );
-
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE] );
-
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE] );
 
     for(int i = 0; i < typesVectorParams.size(); i++ ){
         UA_LocalizedText_init( &vattr.description );
