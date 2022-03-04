@@ -20,7 +20,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 project(SAMYCore VERSION 0.1 LANGUAGES C CXX)
 # open62541 v1.2 must be installed!
 # If in custom path, then use -DCMAKE_PREFIX_PATH=/home/user/installcmake_minimum_required(VERSION 3.2)
-find_package(open62541 REQUIRED COMPONENTS FullNamespace)
+find_package(open62541 1.2 REQUIRED COMPONENTS FullNamespace)
 find_package( yaml-cpp REQUIRED )
 find_package(Catch2 REQUIRED)
 find_package(spdlog REQUIRED)
@@ -35,7 +35,6 @@ include_directories("${GENERATE_OUTPUT_DIR}")
 file(MAKE_DIRECTORY "${GENERATE_OUTPUT_DIR}")
 
 include_directories("${PROJECT_SOURCE_DIR}")
-include_directories("${PROJECT_SOURCE_DIR}/src/OPCUA_Server/pubsub")
 include_directories("${PROJECT_SOURCE_DIR}/src/OPCUA_Server/deps")
 include_directories("${PROJECT_SOURCE_DIR}/src/OPCUA_Server/include")
 include_directories("${PROJECT_SOURCE_DIR}/src/OPCUA_Server/include/open62541/plugin")
@@ -59,7 +58,6 @@ set(NAMESPACE_NAME_DI "di")
 set(NAMESPACE_NAME_ROBOTICS "robotics")
 set(NAMESPACE_NAME_FORTISS_DI "fortiss_di")
 set(NAMESPACE_NAME_FORTISS_ROBOTICS "fortiss_robotics")
-set(NAMESPACE_NAME_FORTISS_KUKA_IIWA "kuka_iiwa")
 
 # The compiled namespace is: "${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME}"
 set(NAMESPACE_PREFIX "pref")
@@ -127,19 +125,6 @@ ua_generate_nodeset_and_datatypes(
         DEPENDS "${NAMESPACE_NAME_FORTISS_DI}"
 )
 
-ua_generate_nodeset_and_datatypes(
-        INTERNAL
-        NAME "${NAMESPACE_NAME_FORTISS_KUKA_IIWA}"
-        FILE_NS "${CMAKE_CURRENT_LIST_DIR}/OPCUA_Models/all_models/Published/kuka_iiwa/Kuka.iiwa.NodeSet2.xml"
-        TARGET_PREFIX "${NAMESPACE_PREFIX}"
-        FILE_CSV "${CMAKE_CURRENT_LIST_DIR}/OPCUA_Models/all_models/Published/kuka_iiwa/kukaIiwaModel.csv"
-        FILE_BSD "${CMAKE_CURRENT_LIST_DIR}/OPCUA_Models/all_models/Published/kuka_iiwa/Kuka.iiwa.Types.bsd"
-        OUTPUT_DIR "${GENERATE_OUTPUT_DIR}"
-    # This namespace index must match the order in which you are adding the nodeset in the source code
-        NAMESPACE_MAP 7:https://fortiss.org/UA/kuka_iiwa/
-        DEPENDS "${NAMESPACE_NAME_FORTISS_ROBOTICS}"
-)
-
 add_library(SAMYCore_Library STATIC
                 ${UA_NODESET_DI_SOURCES}
                 ${UA_TYPES_DI_SOURCES}
@@ -149,8 +134,6 @@ add_library(SAMYCore_Library STATIC
                 ${UA_TYPES_FORTISS_DI_SOURCES}
                 ${UA_NODESET_FORTISS_ROBOTICS_SOURCES}
                 ${UA_TYPES_FORTISS_ROBOTICS_SOURCES}
-                ${UA_NODESET_KUKA_IIWA_SOURCES}
-                ${UA_TYPES_KUKA_IIWA_SOURCES}
                 ${UA_NODESET_CRCL_SOURCES}
                 ${UA_TYPES_CRCL_SOURCES}
                 "./src/Helpers/helpers.cpp"
@@ -167,8 +150,6 @@ add_library(SAMYCore_Library STATIC
                 "./src/SAMYCoreInterfaceGenerator/robotsNodesAddition.cpp"
                 "./src/SAMYCoreInterfaceGenerator/samycoreInterfaceGenerator.cpp"
                 "./src/SAMYCoreInterfaceGenerator/systemStatusNodes.cpp"
-                "./src/SAMYRobot/Publisher.c"
-                "./src/SAMYRobot/Subscriber.c"
                 "./src/SAMYRobot/SAMYRobot.cpp"
                 "./src/Core/samycore.cpp"
                 )
@@ -194,7 +175,6 @@ add_dependencies(SAMYCore_Library
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_ROBOTICS}
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_DI}
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_ROBOTICS}
-                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_KUKA_IIWA}
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_CRCL}
                  )
 
@@ -204,7 +184,6 @@ add_dependencies(${PROJECT_NAME}
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_ROBOTICS}
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_DI}
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_ROBOTICS}
-                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_KUKA_IIWA}
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_CRCL}
                  )
 
@@ -214,7 +193,6 @@ add_dependencies(testsClient
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_ROBOTICS}
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_DI}
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_ROBOTICS}
-                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_KUKA_IIWA}
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_CRCL}
                  )
 
@@ -224,11 +202,10 @@ add_dependencies(testsServer
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_ROBOTICS}
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_DI}
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_ROBOTICS}
-                 ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_FORTISS_KUKA_IIWA}
                  ${NAMESPACE_PREFIX}-ns-${NAMESPACE_NAME_CRCL}
                  )
 
-target_link_libraries(SAMYCore_Library PRIVATE open62541::open62541 yaml-cpp spdlog::spdlog spdlog::spdlog)
+target_link_libraries(SAMYCore_Library PRIVATE open62541::open62541 yaml-cpp spdlog::spdlog)
 target_link_libraries(testsClient PRIVATE Catch2::Catch2 Catch2::Catch2WithMain SAMYCore_Library)
-target_link_libraries(testsServer PRIVATE Catch2::Catch2 Catch2::Catch2WithMain SAMYCore_Library spdlog::spdlog)
+target_link_libraries(testsServer PRIVATE Catch2::Catch2 Catch2::Catch2WithMain SAMYCore_Library)
 target_link_libraries(${PROJECT_NAME} SAMYCore_Library spdlog::spdlog)

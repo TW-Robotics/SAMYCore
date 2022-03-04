@@ -1,4 +1,4 @@
-/* Generated from CRCL.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py * on host jbg by user jbg at 2021-09-21 04:39:40 */
+/* Generated from CRCL.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py * on host jbg by user jbg at 2022-03-04 11:18:59 */
 
 #ifndef TYPES_CRCL_GENERATED_H_
 #define TYPES_CRCL_GENERATED_H_
