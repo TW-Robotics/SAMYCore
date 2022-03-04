@@ -46,22 +46,17 @@ jobs:
       uses: actions/upload-artifact@master
       with:
            name: SAMYCore
-           path: SAMYCore/build/SAMYCore
+           path: build/SAMYCore
     - name: "Upload the SAMYCore testsServer binary"
       uses: actions/upload-artifact@master
       with:
            name: SAMYCore-testsServer
-           path: SAMYCore/build/testsServer
-    - name: "Upload the cpp plugin test"
+           path: build/testsServer
+    - name: "Upload the cpp test client"
       uses: actions/upload-artifact@master
       with:
-           name: SAMYPlugin-CPP-test
-           path: SamyPlugins_Template_Cpp/build/test_robot
-    - name: "Upload the testsClient binary"
-      uses: actions/upload-artifact@master
-      with:
-           name: SAMYPlugin-testsClient
-           path: SamyPlugins_Template_Cpp/build/testsClient
+           name: SAMYCore-testsClient
+           path: build/testsClient
   test:
       runs-on: ubuntu-20.04
       needs: [build]
@@ -84,12 +79,7 @@ jobs:
       - name: "Download the SAMYPlugin-CPP-test binary"
         uses: actions/download-artifact@master
         with:
-            name: SAMYPlugin-CPP-test
-            path: binaries
-      - name: "Download the testsClient binary"
-        uses: actions/download-artifact@master
-        with:
-            name: SAMYPlugin-testsClient
+            name: SAMYCore-testsClient
             path: binaries
       - run: |
              cd binaries
