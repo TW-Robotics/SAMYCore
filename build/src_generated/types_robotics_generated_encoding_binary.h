@@ -1,5 +1,5 @@
 /* Generated from Opc.Ua.Robotics.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py
- * on host jbg by user jbg at 2022-03-04 04:20:40 */
+ * on host jbg by user jbg at 2022-03-04 04:27:53 */
 
 #ifndef TYPES_ROBOTICS_GENERATED_ENCODING_BINARY_H_
 #define TYPES_ROBOTICS_GENERATED_ENCODING_BINARY_H_
