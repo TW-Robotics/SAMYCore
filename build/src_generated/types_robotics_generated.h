@@ -1,4 +1,4 @@
-/* Generated from Opc.Ua.Robotics.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py * on host jbg by user jbg at 2022-03-04 11:18:59 */
+/* Generated from Opc.Ua.Robotics.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py * on host jbg by user jbg at 2022-03-04 02:15:52 */
 
 #ifndef TYPES_ROBOTICS_GENERATED_H_
 #define TYPES_ROBOTICS_GENERATED_H_
