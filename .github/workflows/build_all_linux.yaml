@@ -42,41 +42,41 @@ jobs:
       uses: ./.github/actions/build_linux
       with:
         build-type: build_release
+  test:
+      runs-on: ubuntu-20.04
+      needs: [build]
+      steps:
+      - run: |
+             sudo apt-get update
+             sudo apt-get install -y -qq libboost-python1.71.0 build-essential cmake libyaml-cpp-dev libboost-all-dev git libspdlog-dev
+      - run: |
+             mkdir -p binaries
+      - name: "Download the SAMYCore binary"
+        uses: actions/download-artifact@master
+        with:
+            name: SAMYCore
+            path: binaries
+      - name: "Download the SAMYCore-testsServer binary"
+        uses: actions/download-artifact@master
+        with:
+            name: SAMYCore-testsServer
+            path: binaries
+      - name: "Download the SAMYPlugin-CPP-test binary"
+        uses: actions/download-artifact@master
+        with:
+            name: SAMYPlugin-CPP-test
+            path: binaries
+      - name: "Download the testsClient binary"
+        uses: actions/download-artifact@master
+        with:
+            name: SAMYPlugin-testsClient
+            path: binaries
+      - run: |
+             cd binaries
+             sudo chmod +x testsServer
+             sudo chmod +x testsClient
+             ./testsServer [ServerTest] &
+             sleep 5
+             ./testsClient
+             cd ..
 
-
-# name: Linux Build
-#
-# on: push #[push, pull_request]
-# jobs:
-#   build:
-#     strategy:
-#       fail-fast: false
-#       matrix:
-#         include:
-#           - build_name: "Build open62541"
-#             cmd_deps: sudo apt-get install -y -qq libboost-python1.71.0 build-essential cmake libyaml-cpp-dev libboost-all-dev git libspdlog-dev
-#             cmd_action: build_open62541
-#           - build_name: "Release Build"
-#             cmd_deps: sudo apt-get install -y -qq libboost-python1.71.0 build-essential cmake libyaml-cpp-dev libboost-all-dev git libspdlog-dev
-#             cmd_action: build_release
-#           # - build_name: "Valgrind Build & Unit Tests"
-#           #   cmd_deps: sudo apt-get install -y -qq valgrind libmbedtls-dev
-#           #   cmd_action: unit_tests_valgrind MBEDTLS
-#           # - build_name: "Clang Static Analyzer"
-#           #   cmd_deps: sudo apt-get install -y -qq clang-11 clang-tools-11 libmbedtls-dev
-#           #   cmd_action: build_clang_analyzer
-#         os: [ubuntu-18.04, ubuntu-20.04]
-#     name: ${{matrix.build_name}}
-#     runs-on: ${{matrix.os}}
-#     steps:
-#     - uses: actions/checkout@v2
-#       with:
-#         submodules: true
-#     - name: Install Dependencies
-#       run: |
-#         sudo apt-get update
-#         ${{ matrix.cmd_deps }}
-#     - name: ${{matrix.build_name}}
-#       uses: actions/build_linux.yaml@v1
-#       with:
-#         built_type: ${{matrix.cmd_action}}
