@@ -3,7 +3,7 @@ name: Linux Build
 on: push #[push, pull_request]
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-18.04
     steps:
     - name: Check out repository
       uses: actions/checkout@v2
@@ -42,44 +42,33 @@ jobs:
       uses: ./.github/actions/build_linux
       with:
         build-type: build_release
-    - name: "Upload the SAMYCore binary"
+    - name: "Upload the testsServer binary"
       uses: actions/upload-artifact@master
       with:
-           name: SAMYCore
-           path: build/SAMYCore
-    - name: "Upload the SAMYCore testsServer binary"
-      uses: actions/upload-artifact@master
-      with:
-           name: SAMYCore-testsServer
+           name: testsServer
            path: build/testsServer
-    - name: "Upload the cpp test client"
+    - name: "Upload the testsClient binary"
       uses: actions/upload-artifact@master
       with:
-           name: SAMYCore-testsClient
+           name: testsClient
            path: build/testsClient
   test:
-      runs-on: ubuntu-20.04
+      runs-on: ubuntu-18.04
       needs: [build]
       steps:
       - run: |
              sudo apt-get update
-             sudo apt-get install -y -qq libboost-python1.71.0 build-essential cmake libyaml-cpp-dev libboost-all-dev git libspdlog-dev
       - run: |
              mkdir -p binaries
-      - name: "Download the SAMYCore binary"
+      - name: "Download the testsServer binary"
         uses: actions/download-artifact@master
         with:
-            name: SAMYCore
+            name: testsServer
             path: binaries
-      - name: "Download the SAMYCore-testsServer binary"
+      - name: "Download the testsClient binary"
         uses: actions/download-artifact@master
         with:
-            name: SAMYCore-testsServer
-            path: binaries
-      - name: "Download the SAMYPlugin-CPP-test binary"
-        uses: actions/download-artifact@master
-        with:
-            name: SAMYCore-testsClient
+            name: testsClient
             path: binaries
       - run: |
              cd binaries
