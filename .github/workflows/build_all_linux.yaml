@@ -63,7 +63,7 @@ jobs:
       steps:
       - run: |
              sudo apt-get update
-             sudo apt-get install -y -qq libyaml-cpp-dev libspdlog-dev
+             sudo apt-get install -y -qq libspdlog-dev
       - run: |
              mkdir -p binaries
       - name: "Download the testsServer binary"
