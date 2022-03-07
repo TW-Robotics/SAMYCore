@@ -3,7 +3,7 @@ name: Linux Build
 on: push #[push, pull_request]
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
     - name: Check out repository
       uses: actions/checkout@v2
@@ -53,7 +53,7 @@ jobs:
            name: testsClient
            path: build/testsClient
   test:
-      runs-on: ubuntu-18.04
+      runs-on: ubuntu-20.04
       needs: [build]
       steps:
       - run: |
