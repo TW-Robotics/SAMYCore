@@ -42,6 +42,11 @@ jobs:
       uses: ./.github/actions/build_linux
       with:
         build-type: build_release
+    - name: "Upload the SAMYCore binary"
+      uses: actions/upload-artifact@master
+      with:
+           name: SAMYCore
+           path: build/SAMYCore
     - name: "Upload the testsServer binary"
       uses: actions/upload-artifact@master
       with:
