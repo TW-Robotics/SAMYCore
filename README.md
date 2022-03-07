@@ -36,21 +36,21 @@ make ${MAKEOPTS}
 sudo make install
 ```
 
-#### SPDLog v0.16.3 (Logging)
-As of Marz 2022, in Ubuntu 18.04 LTS the following works:
+#### SPDLog v1.5.0 (Logging)
+As of Marz 2022, in Ubuntu 20.04 LTS the following works:
 ```
 sudo apt-get install libspdlog-dev
 ```
 
-Eventually could be built from source: https://github.com/gabime/spdlog.git
+Eventually can be built from source: https://github.com/gabime/spdlog.git
 
-#### YAML-cpp v0.5.2
-As of Marz 2022, in Ubuntu 18.04 LTS the following works:
+#### YAML-cpp v0.6.2
+As of Marz 2022, in Ubuntu 20.04 LTS the following works:
 ```
 sudo apt-get install libyaml-cpp-dev
 ```
 
-Eventually could be built from source: https://github.com/jbeder/yaml-cpp.git
+Eventually can be built from source: https://github.com/jbeder/yaml-cpp.git
 
 
 # Content:
