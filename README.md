@@ -5,7 +5,7 @@
 #### Basics
 ```
 sudo apt-get update
-sudo apt-get install -y -qq build-essential cmake git libyaml-cpp-dev 
+sudo apt-get install -y -qq build-essential cmake git
 ```
 
 #### Open62541 v1.2.4 (OPC UA implementation)
