@@ -21,7 +21,7 @@ cmake -DUA_NAMESPACE_ZERO=FULL \
       -DUA_ENABLE_METHODCALLS=ON \
       -DUA_ENABLE_NODEMANAGEMENT=ON \
       ..
-make ${MAKEOPTS}
+make -j6
 sudo make install
 ```
 
@@ -32,7 +32,7 @@ cd Catch2
 git checkout tags/v2.13.4
 mkdir build && cd build
 cmake ..
-make ${MAKEOPTS}
+make -j6
 sudo make install
 ```
 
