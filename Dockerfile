@@ -23,24 +23,12 @@ RUN rm -r open62541_v1.2_unions_fixed/build
 RUN mkdir open62541_v1.2_unions_fixed/build
 WORKDIR open62541_v1.2_unions_fixed/build
 RUN cmake -DUA_NAMESPACE_ZERO=FULL \
-  -DUA_ENABLE_SUBSCRIPTIONS=ON \
-  -DUA_ENABLE_SUBSCRIPTIONS_EVENTS=ON \
-	-DUA_ENABLE_DISCOVERY=ON \
-	-DUA_ENABLE_DISCOVERY_MULTICAST=ON \
-	-DUA_ENABLE_DA=ON \
-	-DUA_ENABLE_METHODCALLS=ON \
-	-DUA_ENABLE_NODEMANAGEMENT=ON \
-	-DUA_ENABLE_MICRO_EMB_DEV_PROFILE=OFF \
-	-DUA_ENABLE_PUBSUB=ON \
-	-DUA_ENABLE_PUBSUB_ETH_UADP=ON \
-	-DUA_ENABLE_PUBSUB_ETH_UADP_ETF=ON \
-	-DUA_ENABLE_PUBSUB_FILE_CONFIG=ON \
-	-DUA_ENABLE_PUBSUB_INFORMATIONMODEL=ON \
-	-DUA_ENABLE_PUBSUB_INFORMATIONMODEL_METHODS=ON \
-	-DUA_ENABLE_PUBSUB_MONITORING=ON \
-	-DUA_ENABLE_PUBSUB_MQTT=ON \
-	-DUA_ENABLE_JSON_ENCODING=ON \
-	..
+      -DUA_ENABLE_SUBSCRIPTIONS=ON \
+      -DUA_ENABLE_SUBSCRIPTIONS_EVENTS=ON \
+      -DUA_ENABLE_DA=ON \
+      -DUA_ENABLE_METHODCALLS=ON \
+      -DUA_ENABLE_NODEMANAGEMENT=ON \
+      ..
 RUN make -j
 RUN make install
 
@@ -48,6 +36,7 @@ RUN make install
 WORKDIR /usr/src
 RUN git clone https://github.com/catchorg/Catch2.git
 WORKDIR Catch2
+RUN git checkout tags/v2.13.4
 RUN mkdir build
 WORKDIR build
 RUN cmake ..
@@ -61,10 +50,10 @@ WORKDIR build
 RUN cmake ..
 RUN make -j
 
-#EXPOSE 4840
+EXPOSE 4840
 
 ## start core
 
 #ENTRYPOINT ["tail"]
 #CMD ["-f","/dev/null"]
-CMD ["/usr/src/samy/build/SAMYCore", "/usr/src/samy/cofigFiles/SAMYCoreConfig.yaml"]
+CMD ["/usr/src/samy/build/SAMYCore", "/usr/src/samy/configFiles/SAMYCoreConfig.yaml"]

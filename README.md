@@ -10,9 +10,7 @@ sudo apt-get install -y -qq build-essential cmake git
 
 #### Open62541 v1.2.4 (OPC UA implementation)
 ```
-git clone --recursive https://github.com/open62541/open62541.git
-cd open62541
-git checkout tags/v1.2.4
+cd open62541_v1.2_unions_fixed
 mkdir build && cd build
 cmake -DUA_NAMESPACE_ZERO=FULL \
       -DUA_ENABLE_SUBSCRIPTIONS=ON \
