@@ -48,6 +48,7 @@ RUN make install
 WORKDIR /usr/src
 RUN git clone https://github.com/catchorg/Catch2.git
 WORKDIR Catch2
+RUN git checkout tags/v2.13.4
 RUN mkdir build
 WORKDIR build
 RUN cmake ..
