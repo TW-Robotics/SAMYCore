@@ -19,7 +19,7 @@ RUN mkdir /usr/src/samy
 WORKDIR /usr/src/samy
 COPY . ./
 ## build and install open62541
-RUN rm -r open62541_v1.2_unions_fixed/build
+#RUN rm -r open62541_v1.2_unions_fixed/build
 RUN mkdir open62541_v1.2_unions_fixed/build
 WORKDIR open62541_v1.2_unions_fixed/build
 RUN cmake -DUA_NAMESPACE_ZERO=FULL \
