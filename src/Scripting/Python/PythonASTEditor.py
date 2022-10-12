@@ -1,0 +1,1 @@
+# This file parses a python function (the skill implementation) as an AST, it adds the required SkillScripting_API calls at the end of each code block, so we wait until commands are executed by the robot before proceeden with looping, branching, etc., and returns this modified AST so it can be executed when the (python) scripted skills are to be executed.

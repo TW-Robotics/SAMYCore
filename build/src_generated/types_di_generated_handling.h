@@ -1,5 +1,5 @@
 /* Generated from Opc.Ua.Di.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py
- * on host jbg by user jbg at 2022-03-04 05:03:34 */
+ * on host jbg by user jbg at 2022-10-11 03:44:19 */
 
 #ifndef TYPES_DI_GENERATED_HANDLING_H_
 #define TYPES_DI_GENERATED_HANDLING_H_

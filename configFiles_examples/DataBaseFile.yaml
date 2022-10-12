@@ -1,5 +1,5 @@
 DataBase:
-- !!python/object:CRCL_DataTypes.MoveToParametersSetDataType
+- !!python/object:CRCL_DataTypes.MoveToParamsSetDataType
   RealTimeParameter: false
   MoveStraight: true
   EndPosition: !!python/object:CRCL_DataTypes.CRCL_PoseDataType
@@ -23,7 +23,7 @@ DataBase:
       i: 0
       j: 0
       k: -1
-- !!python/object:CRCL_DataTypes.MoveToParametersSetDataType
+- !!python/object:CRCL_DataTypes.MoveToParamsSetDataType
   RealTimeParameter: false
   MoveStraight: true
   EndPosition: !!python/object:CRCL_DataTypes.CRCL_PoseDataType
@@ -47,7 +47,7 @@ DataBase:
       i: 0
       j: 0
       k: -1
-- !!python/object:CRCL_DataTypes.SetTransSpeedParametersSetDataType
+- !!python/object:CRCL_DataTypes.SetTransSpeedParamsSetDataType
   RealTimeParameter: true
   TransSpeed: !!python/object:CRCL_DataTypes.CRCL_TransSpeedDataType
     isUnion: true
@@ -56,19 +56,19 @@ DataBase:
       id: 0
       name: universal_speed
       setting: 150
-- !!python/object:CRCL_DataTypes.SetEndeffectorParametersSetDataType
+- !!python/object:CRCL_DataTypes.SetEndeffectorParamsSetDataType
   RealTimeParameter: true
   Setting: !!python/object:CRCL_DataTypes.CRCL_FractionDataType
     fraction: 0
     fractionMax: 0
     fractionMin: 0
-- !!python/object:CRCL_DataTypes.SetEndeffectorParametersSetDataType
+- !!python/object:CRCL_DataTypes.SetEndeffectorParamsSetDataType
   RealTimeParameter: true
   Setting: !!python/object:CRCL_DataTypes.CRCL_FractionDataType
     fraction: 1
     fractionMax: 0
     fractionMin: 0
-- !!python/object:CRCL_DataTypes.MoveToParametersSetDataType
+- !!python/object:CRCL_DataTypes.MoveToParamsSetDataType
   RealTimeParameter: false
   MoveStraight: true
   EndPosition: !!python/object:CRCL_DataTypes.CRCL_PoseDataType
@@ -92,7 +92,7 @@ DataBase:
       i: 0
       j: 0
       k: -1
-- !!python/object:CRCL_DataTypes.MoveToParametersSetDataType
+- !!python/object:CRCL_DataTypes.MoveToParamsSetDataType
   RealTimeParameter: false
   MoveStraight: true
   EndPosition: !!python/object:CRCL_DataTypes.CRCL_PoseDataType
@@ -116,7 +116,7 @@ DataBase:
       i: 0
       j: 0
       k: -1
-- !!python/object:CRCL_DataTypes.MoveToParametersSetDataType
+- !!python/object:CRCL_DataTypes.MoveToParamsSetDataType
   RealTimeParameter: false
   MoveStraight: true
   EndPosition: !!python/object:CRCL_DataTypes.CRCL_PoseDataType
@@ -140,7 +140,7 @@ DataBase:
       i: 0
       j: 0
       k: -1
-- !!python/object:CRCL_DataTypes.MoveToParametersSetDataType
+- !!python/object:CRCL_DataTypes.MoveToParamsSetDataType
   RealTimeParameter: false
   MoveStraight: true
   EndPosition: !!python/object:CRCL_DataTypes.CRCL_PoseDataType
@@ -164,7 +164,7 @@ DataBase:
       i: 0
       j: 0
       k: -1
-- !!python/object:CRCL_DataTypes.SetTransSpeedParametersSetDataType
+- !!python/object:CRCL_DataTypes.SetTransSpeedParamsSetDataType
   RealTimeParameter: true
   TransSpeed: !!python/object:CRCL_DataTypes.CRCL_TransSpeedDataType
     isUnion: true
@@ -173,19 +173,19 @@ DataBase:
       id: 0
       name: universal_speed
       setting: 150
-- !!python/object:CRCL_DataTypes.SetEndeffectorParametersSetDataType
+- !!python/object:CRCL_DataTypes.SetEndeffectorParamsSetDataType
   RealTimeParameter: true
   Setting: !!python/object:CRCL_DataTypes.CRCL_FractionDataType
     fraction: 0
     fractionMax: 0
     fractionMin: 0
-- !!python/object:CRCL_DataTypes.SetEndeffectorParametersSetDataType
+- !!python/object:CRCL_DataTypes.SetEndeffectorParamsSetDataType
   RealTimeParameter: true
   Setting: !!python/object:CRCL_DataTypes.CRCL_FractionDataType
     fraction: 1
     fractionMax: 0
     fractionMin: 0
-- !!python/object:CRCL_DataTypes.MoveToParametersSetDataType
+- !!python/object:CRCL_DataTypes.MoveToParamsSetDataType
   RealTimeParameter: false
   MoveStraight: true
   EndPosition: !!python/object:CRCL_DataTypes.CRCL_PoseDataType
@@ -209,7 +209,7 @@ DataBase:
       i: 0
       j: 0
       k: -1
-- !!python/object:CRCL_DataTypes.MoveToParametersSetDataType
+- !!python/object:CRCL_DataTypes.MoveToParamsSetDataType
   RealTimeParameter: false
   MoveStraight: true
   EndPosition: !!python/object:CRCL_DataTypes.CRCL_PoseDataType
@@ -233,7 +233,7 @@ DataBase:
       i: 0
       j: 0
       k: -1
-- !!python/object:CRCL_DataTypes.MoveToParametersSetDataType
+- !!python/object:CRCL_DataTypes.MoveToParamsSetDataType
   RealTimeParameter: false
   MoveStraight: true
   EndPosition: !!python/object:CRCL_DataTypes.CRCL_PoseDataType
@@ -257,7 +257,7 @@ DataBase:
       i: 0
       j: 0
       k: -1
-- !!python/object:CRCL_DataTypes.MoveToParametersSetDataType
+- !!python/object:CRCL_DataTypes.MoveToParamsSetDataType
   RealTimeParameter: false
   MoveStraight: true
   EndPosition: !!python/object:CRCL_DataTypes.CRCL_PoseDataType

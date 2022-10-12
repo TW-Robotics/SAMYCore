@@ -2226,7 +2226,7 @@ TEST_CASE("Server testing", "[ServerAutoRead]"){
 
 
 /*
-TEST_CASE("Test client - Write all commands in CRCLCommandsUnion", "[WriteCommandsInCRCLCommandsUnion]"){
+TEST_CASE("Test client - Write all commands in crclCommandsUnion", "[WriteCommandsIncrclCommandsUnion]"){
 
     UA_Boolean running = true;
 
@@ -4152,16 +4152,16 @@ TEST_CASE("Test Server/Client - Write CRCLSkill with all the commands with clien
 
     UA_LocalizedText_init( &vattr.description );
     UA_LocalizedText_init( &vattr.displayName );
-    vattr.description = UA_LOCALIZEDTEXT("", const_cast<char*>( UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE].typeName )  );
-    vattr.displayName = UA_LOCALIZEDTEXT("", const_cast<char*>( UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE].typeName ) );
+    vattr.description = UA_LOCALIZEDTEXT("", const_cast<char*>( UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERDATATYPE].typeName )  );
+    vattr.displayName = UA_LOCALIZEDTEXT("", const_cast<char*>( UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERDATATYPE].typeName ) );
     UA_NodeId_init( &vattr.dataType );
-    vattr.dataType = UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE].typeId;
+    vattr.dataType = UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERDATATYPE].typeId;
 
     retVal |= UA_Server_addVariableNode( server,
                                                  UA_NODEID_NUMERIC(1, 1300),
                                                  UA_NODEID_NUMERIC( 0, UA_NS0ID_OBJECTSFOLDER ),
                                                  UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT ),
-                                                 UA_QUALIFIEDNAME(0, const_cast<char*>( UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE].typeName ) ),
+                                                 UA_QUALIFIEDNAME(0, const_cast<char*>( UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERDATATYPE].typeName ) ),
                                                  UA_NODEID_NUMERIC(0, UA_NS0ID_BASEDATAVARIABLETYPE),
                                                  vattr, NULL, NULL
                                                  );
@@ -4170,10 +4170,10 @@ TEST_CASE("Test Server/Client - Write CRCLSkill with all the commands with clien
         std::thread serverThread(UA_Server_run, server, &running);
         serverThread.detach();
 
-    UA_CRCLSkillDataType skill;
+    UA_CRCLCommandsBufferDataType skill;
     skill.name = UA_STRING( "Skill test" );
     skill.id = 999;
-    skill.cRCLCommandsSize = 35;
+    skill.crclCommandsSize = 35;
 
     UA_CRCLCommandsUnionDataType *commandsArray = (UA_CRCLCommandsUnionDataType *) UA_Array_new(35,
                                                                           &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE]);
@@ -5153,11 +5153,11 @@ TEST_CASE("Test Server/Client - Write CRCLSkill with all the commands with clien
     commandsArray[33] = commandsUnion34;
     commandsArray[34] = commandsUnion35;
 
-    skill.cRCLCommands = commandsArray;
+    skill.crclCommands = commandsArray;
 
     UA_Variant var;
     UA_Variant_init( &var );
-    UA_Variant_setScalar( &var, &skill, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE] );
+    UA_Variant_setScalar( &var, &skill, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERDATATYPE] );
 
     UA_Client* client = UA_Client_new();
     std::string address = "opc.tcp://localhost:4567";
@@ -5180,11 +5180,11 @@ TEST_CASE("Test Server/Client - Write CRCLSkill with all the commands with clien
     UA_Variant_init( &var );
     retVal |= UA_Server_readValue(server, UA_NODEID_NUMERIC(1, 1300), &var );
 
-    UA_CRCLSkillDataType* skillAux = (UA_CRCLSkillDataType*)var.data;
+    UA_CRCLCommandsBufferDataType* skillAux = (UA_CRCLCommandsBufferDataType*)var.data;
 
     UA_String str;
     UA_String_init( &str );
-    UA_print( skillAux, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE], &str );
+    UA_print( skillAux, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERDATATYPE], &str );
     std::cout<< str.data << std::endl;
 
     SAMY::printCRCLSkill( skillAux );
@@ -5299,7 +5299,7 @@ TEST_CASE("Server for testing clients against it", "[ServerTest]"){
             REQUIRE( retVal == 0 );
     }
 
-    /* Add one CRCLCommandsUnion variable node by each command, so all the commands can be tested */
+    /* Add one crclCommandsUnion variable node by each command, so all the commands can be tested */
     for(int i = 0; i < typesVector.size(); i++ ){
         UA_LocalizedText_init( &vattr.description );
         UA_LocalizedText_init( &vattr.displayName );
@@ -5322,23 +5322,23 @@ TEST_CASE("Server for testing clients against it", "[ServerTest]"){
     /* Add a CRCLSkill variable node */
     UA_LocalizedText_init( &vattr.description );
     UA_LocalizedText_init( &vattr.displayName );
-    vattr.description = UA_LOCALIZEDTEXT("", const_cast<char*>( UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE].typeName )  );
-    vattr.displayName = UA_LOCALIZEDTEXT("", const_cast<char*>( UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE].typeName ) );
+    vattr.description = UA_LOCALIZEDTEXT("", const_cast<char*>( UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERDATATYPE].typeName )  );
+    vattr.displayName = UA_LOCALIZEDTEXT("", const_cast<char*>( UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERDATATYPE].typeName ) );
     UA_NodeId_init( &vattr.dataType );
-    vattr.dataType = UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE].typeId;
+    vattr.dataType = UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERDATATYPE].typeId;
 
     retVal |= UA_Server_addVariableNode( ls.get(),
                                                  UA_NODEID_NUMERIC(1, 1300),
                                                  UA_NODEID_NUMERIC( 0, UA_NS0ID_OBJECTSFOLDER ),
                                                  UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT ),
-                                                 UA_QUALIFIEDNAME(0, const_cast<char*>( UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE].typeName ) ),
+                                                 UA_QUALIFIEDNAME(0, const_cast<char*>( UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERDATATYPE].typeName ) ),
                                                  UA_NODEID_NUMERIC(0, UA_NS0ID_BASEDATAVARIABLETYPE),
                                                  vattr, NULL, NULL
                                                  );
     REQUIRE( retVal == 0 );
 
     /* Add a SAMYRobot variable node */
-    UA_LocalizedText_init( &vattr.description );
+/*    UA_LocalizedText_init( &vattr.description );
     UA_LocalizedText_init( &vattr.displayName );
     vattr.description = UA_LOCALIZEDTEXT("", const_cast<char*>( UA_TYPES_CRCL[UA_TYPES_CRCL_SAMYROBOTDATATYPE].typeName )  );
     vattr.displayName = UA_LOCALIZEDTEXT("", const_cast<char*>( UA_TYPES_CRCL[UA_TYPES_CRCL_SAMYROBOTDATATYPE].typeName ) );
@@ -5354,46 +5354,46 @@ TEST_CASE("Server for testing clients against it", "[ServerTest]"){
                                                  vattr, NULL, NULL
                                                  );
     REQUIRE( retVal == 0 );
-
+*/
 
     /* Add a Command Parameters variable node */
 
     std::vector<UA_DataType> typesVectorParams;
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_MESSAGEPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETOPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_MOVESCREWPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTOPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_DWELLPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGUREJOINTREPORTSPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_OPENTOOLCHANGERPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETROBOTPARAMETERSPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTACCELPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_STOPMOTIONPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLESENSORPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE] );
-    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_MESSAGEPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETOPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_MOVESCREWPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTOPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_DWELLPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGUREJOINTREPORTSPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_OPENTOOLCHANGERPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETROBOTPARAMETERSPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTACCELPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_STOPMOTIONPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLESENSORPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMSSETDATATYPE] );
+    typesVectorParams.emplace_back( UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMSSETDATATYPE] );
 
     for(int i = 0; i < typesVectorParams.size(); i++ ){
         UA_LocalizedText_init( &vattr.description );

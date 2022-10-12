@@ -3397,8 +3397,8 @@ namespace CRCL
         /// <summary>
         /// CRCL RotAccelAbsolute DataType
         /// </summary>
-        [DataMember(Name = "RotAccelAbsoluteDataType", IsRequired = false, Order = 2)]
-        public CRCL_RotAccelAbsoluteDataType RotAccelAbsoluteDataType
+        [DataMember(Name = "rotAccelAbsoluteDataType", IsRequired = false, Order = 2)]
+        public CRCL_RotAccelAbsoluteDataType rotAccelAbsoluteDataType
         {
             get
             {
@@ -3419,8 +3419,8 @@ namespace CRCL
         /// <summary>
         /// CRCL RotAccelRelative DataType
         /// </summary>
-        [DataMember(Name = "RotAccelRelativeDataType", IsRequired = false, Order = 3)]
-        public CRCL_RotAccelRelativeDataType RotAccelRelativeDataType
+        [DataMember(Name = "rotAccelRelativeDataType", IsRequired = false, Order = 3)]
+        public CRCL_RotAccelRelativeDataType rotAccelRelativeDataType
         {
             get
             {
@@ -3466,8 +3466,8 @@ namespace CRCL
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
             encoder.WriteUInt32("SwitchField", SwitchField);
-            encoder.WriteEncodeable("RotAccelAbsoluteDataType", RotAccelAbsoluteDataType, typeof(CRCL_RotAccelAbsoluteDataType));
-            encoder.WriteEncodeable("RotAccelRelativeDataType", RotAccelRelativeDataType, typeof(CRCL_RotAccelRelativeDataType));
+            encoder.WriteEncodeable("rotAccelAbsoluteDataType", rotAccelAbsoluteDataType, typeof(CRCL_RotAccelAbsoluteDataType));
+            encoder.WriteEncodeable("rotAccelRelativeDataType", rotAccelRelativeDataType, typeof(CRCL_RotAccelRelativeDataType));
 
             encoder.PopNamespace();
         }
@@ -3480,8 +3480,8 @@ namespace CRCL
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
             SwitchField = decoder.ReadUInt32("SwitchField");
-            RotAccelAbsoluteDataType = (CRCL_RotAccelAbsoluteDataType)decoder.ReadEncodeable("RotAccelAbsoluteDataType", typeof(CRCL_RotAccelAbsoluteDataType));
-            RotAccelRelativeDataType = (CRCL_RotAccelRelativeDataType)decoder.ReadEncodeable("RotAccelRelativeDataType", typeof(CRCL_RotAccelRelativeDataType));
+            rotAccelAbsoluteDataType = (CRCL_RotAccelAbsoluteDataType)decoder.ReadEncodeable("rotAccelAbsoluteDataType", typeof(CRCL_RotAccelAbsoluteDataType));
+            rotAccelRelativeDataType = (CRCL_RotAccelRelativeDataType)decoder.ReadEncodeable("rotAccelRelativeDataType", typeof(CRCL_RotAccelRelativeDataType));
 
             decoder.PopNamespace();
         }
@@ -4133,8 +4133,8 @@ namespace CRCL
         /// <summary>
         /// CRCL RotSpeedAbsolute DataType
         /// </summary>
-        [DataMember(Name = "RotSpeedAbsoluteDataType", IsRequired = false, Order = 2)]
-        public CRCL_RotSpeedAbsoluteDataType RotSpeedAbsoluteDataType
+        [DataMember(Name = "rotSpeedAbsoluteDataType", IsRequired = false, Order = 2)]
+        public CRCL_RotSpeedAbsoluteDataType rotSpeedAbsoluteDataType
         {
             get
             {
@@ -4155,8 +4155,8 @@ namespace CRCL
         /// <summary>
         /// CRCL RotSpeedRelative DataType
         /// </summary>
-        [DataMember(Name = "RotSpeedRelativeDataType", IsRequired = false, Order = 3)]
-        public CRCL_RotSpeedRelativeDataType RotSpeedRelativeDataType
+        [DataMember(Name = "rotSpeedRelativeDataType", IsRequired = false, Order = 3)]
+        public CRCL_RotSpeedRelativeDataType rotSpeedRelativeDataType
         {
             get
             {
@@ -4202,8 +4202,8 @@ namespace CRCL
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
             encoder.WriteUInt32("SwitchField", SwitchField);
-            encoder.WriteEncodeable("RotSpeedAbsoluteDataType", RotSpeedAbsoluteDataType, typeof(CRCL_RotSpeedAbsoluteDataType));
-            encoder.WriteEncodeable("RotSpeedRelativeDataType", RotSpeedRelativeDataType, typeof(CRCL_RotSpeedRelativeDataType));
+            encoder.WriteEncodeable("rotSpeedAbsoluteDataType", rotSpeedAbsoluteDataType, typeof(CRCL_RotSpeedAbsoluteDataType));
+            encoder.WriteEncodeable("rotSpeedRelativeDataType", rotSpeedRelativeDataType, typeof(CRCL_RotSpeedRelativeDataType));
 
             encoder.PopNamespace();
         }
@@ -4216,8 +4216,8 @@ namespace CRCL
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
             SwitchField = decoder.ReadUInt32("SwitchField");
-            RotSpeedAbsoluteDataType = (CRCL_RotSpeedAbsoluteDataType)decoder.ReadEncodeable("RotSpeedAbsoluteDataType", typeof(CRCL_RotSpeedAbsoluteDataType));
-            RotSpeedRelativeDataType = (CRCL_RotSpeedRelativeDataType)decoder.ReadEncodeable("RotSpeedRelativeDataType", typeof(CRCL_RotSpeedRelativeDataType));
+            rotSpeedAbsoluteDataType = (CRCL_RotSpeedAbsoluteDataType)decoder.ReadEncodeable("rotSpeedAbsoluteDataType", typeof(CRCL_RotSpeedAbsoluteDataType));
+            rotSpeedRelativeDataType = (CRCL_RotSpeedRelativeDataType)decoder.ReadEncodeable("rotSpeedRelativeDataType", typeof(CRCL_RotSpeedRelativeDataType));
 
             decoder.PopNamespace();
         }
@@ -4869,8 +4869,8 @@ namespace CRCL
         /// <summary>
         /// CRCL TransAccelAbsolute DataType
         /// </summary>
-        [DataMember(Name = "TransAccelAbsoluteDataType", IsRequired = false, Order = 2)]
-        public CRCL_TransAccelAbsoluteDataType TransAccelAbsoluteDataType
+        [DataMember(Name = "transAccelAbsoluteDataType", IsRequired = false, Order = 2)]
+        public CRCL_TransAccelAbsoluteDataType transAccelAbsoluteDataType
         {
             get
             {
@@ -4891,8 +4891,8 @@ namespace CRCL
         /// <summary>
         /// CRCL TransAccelRelative DataType
         /// </summary>
-        [DataMember(Name = "TransAccelRelativeDataType", IsRequired = false, Order = 3)]
-        public CRCL_TransAccelRelativeDataType TransAccelRelativeDataType
+        [DataMember(Name = "transAccelRelativeDataType", IsRequired = false, Order = 3)]
+        public CRCL_TransAccelRelativeDataType transAccelRelativeDataType
         {
             get
             {
@@ -4938,8 +4938,8 @@ namespace CRCL
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
             encoder.WriteUInt32("SwitchField", SwitchField);
-            encoder.WriteEncodeable("TransAccelAbsoluteDataType", TransAccelAbsoluteDataType, typeof(CRCL_TransAccelAbsoluteDataType));
-            encoder.WriteEncodeable("TransAccelRelativeDataType", TransAccelRelativeDataType, typeof(CRCL_TransAccelRelativeDataType));
+            encoder.WriteEncodeable("transAccelAbsoluteDataType", transAccelAbsoluteDataType, typeof(CRCL_TransAccelAbsoluteDataType));
+            encoder.WriteEncodeable("transAccelRelativeDataType", transAccelRelativeDataType, typeof(CRCL_TransAccelRelativeDataType));
 
             encoder.PopNamespace();
         }
@@ -4952,8 +4952,8 @@ namespace CRCL
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
             SwitchField = decoder.ReadUInt32("SwitchField");
-            TransAccelAbsoluteDataType = (CRCL_TransAccelAbsoluteDataType)decoder.ReadEncodeable("TransAccelAbsoluteDataType", typeof(CRCL_TransAccelAbsoluteDataType));
-            TransAccelRelativeDataType = (CRCL_TransAccelRelativeDataType)decoder.ReadEncodeable("TransAccelRelativeDataType", typeof(CRCL_TransAccelRelativeDataType));
+            transAccelAbsoluteDataType = (CRCL_TransAccelAbsoluteDataType)decoder.ReadEncodeable("transAccelAbsoluteDataType", typeof(CRCL_TransAccelAbsoluteDataType));
+            transAccelRelativeDataType = (CRCL_TransAccelRelativeDataType)decoder.ReadEncodeable("transAccelRelativeDataType", typeof(CRCL_TransAccelRelativeDataType));
 
             decoder.PopNamespace();
         }
@@ -5605,8 +5605,8 @@ namespace CRCL
         /// <summary>
         /// TransSpeedAbsoluteDataType
         /// </summary>
-        [DataMember(Name = "TransSpeedAbsoluteDataType", IsRequired = false, Order = 2)]
-        public CRCL_TransSpeedAbsoluteDataType TransSpeedAbsoluteDataType
+        [DataMember(Name = "transSpeedAbsoluteDataType", IsRequired = false, Order = 2)]
+        public CRCL_TransSpeedAbsoluteDataType transSpeedAbsoluteDataType
         {
             get
             {
@@ -5627,8 +5627,8 @@ namespace CRCL
         /// <summary>
         /// RelativeSpeedAbsoluteDataType
         /// </summary>
-        [DataMember(Name = "TransSpeedRelativeDataType", IsRequired = false, Order = 3)]
-        public CRCL_TransSpeedRelativeDataType TransSpeedRelativeDataType
+        [DataMember(Name = "transSpeedRelativeDataType", IsRequired = false, Order = 3)]
+        public CRCL_TransSpeedRelativeDataType transSpeedRelativeDataType
         {
             get
             {
@@ -5674,8 +5674,8 @@ namespace CRCL
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
             encoder.WriteUInt32("SwitchField", SwitchField);
-            encoder.WriteEncodeable("TransSpeedAbsoluteDataType", TransSpeedAbsoluteDataType, typeof(CRCL_TransSpeedAbsoluteDataType));
-            encoder.WriteEncodeable("TransSpeedRelativeDataType", TransSpeedRelativeDataType, typeof(CRCL_TransSpeedRelativeDataType));
+            encoder.WriteEncodeable("transSpeedAbsoluteDataType", transSpeedAbsoluteDataType, typeof(CRCL_TransSpeedAbsoluteDataType));
+            encoder.WriteEncodeable("transSpeedRelativeDataType", transSpeedRelativeDataType, typeof(CRCL_TransSpeedRelativeDataType));
 
             encoder.PopNamespace();
         }
@@ -5688,8 +5688,8 @@ namespace CRCL
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
             SwitchField = decoder.ReadUInt32("SwitchField");
-            TransSpeedAbsoluteDataType = (CRCL_TransSpeedAbsoluteDataType)decoder.ReadEncodeable("TransSpeedAbsoluteDataType", typeof(CRCL_TransSpeedAbsoluteDataType));
-            TransSpeedRelativeDataType = (CRCL_TransSpeedRelativeDataType)decoder.ReadEncodeable("TransSpeedRelativeDataType", typeof(CRCL_TransSpeedRelativeDataType));
+            transSpeedAbsoluteDataType = (CRCL_TransSpeedAbsoluteDataType)decoder.ReadEncodeable("transSpeedAbsoluteDataType", typeof(CRCL_TransSpeedAbsoluteDataType));
+            transSpeedRelativeDataType = (CRCL_TransSpeedRelativeDataType)decoder.ReadEncodeable("transSpeedRelativeDataType", typeof(CRCL_TransSpeedRelativeDataType));
 
             decoder.PopNamespace();
         }
@@ -5874,32 +5874,32 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "JointNumber", IsRequired = false, Order = 1)]
-        public int JointNumber
+        [DataMember(Name = "jointNumber", IsRequired = false, Order = 1)]
+        public int jointNumber
         {
             get { return m_jointNumber;  }
             set { m_jointNumber = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "ReportPosition", IsRequired = false, Order = 2)]
-        public bool ReportPosition
+        [DataMember(Name = "reportPosition", IsRequired = false, Order = 2)]
+        public bool reportPosition
         {
             get { return m_reportPosition;  }
             set { m_reportPosition = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "ReportTorqueOrForce", IsRequired = false, Order = 3)]
-        public bool ReportTorqueOrForce
+        [DataMember(Name = "reportTorqueOrForce", IsRequired = false, Order = 3)]
+        public bool reportTorqueOrForce
         {
             get { return m_reportTorqueOrForce;  }
             set { m_reportTorqueOrForce = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "ReportVelocity", IsRequired = false, Order = 4)]
-        public bool ReportVelocity
+        [DataMember(Name = "reportVelocity", IsRequired = false, Order = 4)]
+        public bool reportVelocity
         {
             get { return m_reportVelocity;  }
             set { m_reportVelocity = value; }
@@ -5932,10 +5932,10 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteInt32("JointNumber", JointNumber);
-            encoder.WriteBoolean("ReportPosition", ReportPosition);
-            encoder.WriteBoolean("ReportTorqueOrForce", ReportTorqueOrForce);
-            encoder.WriteBoolean("ReportVelocity", ReportVelocity);
+            encoder.WriteInt32("jointNumber", jointNumber);
+            encoder.WriteBoolean("reportPosition", reportPosition);
+            encoder.WriteBoolean("reportTorqueOrForce", reportTorqueOrForce);
+            encoder.WriteBoolean("reportVelocity", reportVelocity);
 
             encoder.PopNamespace();
         }
@@ -5947,10 +5947,10 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            JointNumber = decoder.ReadInt32("JointNumber");
-            ReportPosition = decoder.ReadBoolean("ReportPosition");
-            ReportTorqueOrForce = decoder.ReadBoolean("ReportTorqueOrForce");
-            ReportVelocity = decoder.ReadBoolean("ReportVelocity");
+            jointNumber = decoder.ReadInt32("jointNumber");
+            reportPosition = decoder.ReadBoolean("reportPosition");
+            reportTorqueOrForce = decoder.ReadBoolean("reportTorqueOrForce");
+            reportVelocity = decoder.ReadBoolean("reportVelocity");
 
             decoder.PopNamespace();
         }
@@ -6570,16 +6570,16 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "JointNumber", IsRequired = false, Order = 1)]
-        public int JointNumber
+        [DataMember(Name = "jointNumber", IsRequired = false, Order = 1)]
+        public int jointNumber
         {
             get { return m_jointNumber;  }
             set { m_jointNumber = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "JointPositionTolerance", IsRequired = false, Order = 2)]
-        public double JointPositionTolerance
+        [DataMember(Name = "jointPositionTolerance", IsRequired = false, Order = 2)]
+        public double jointPositionTolerance
         {
             get { return m_jointPositionTolerance;  }
             set { m_jointPositionTolerance = value; }
@@ -6612,8 +6612,8 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteInt32("JointNumber", JointNumber);
-            encoder.WriteDouble("JointPositionTolerance", JointPositionTolerance);
+            encoder.WriteInt32("jointNumber", jointNumber);
+            encoder.WriteDouble("jointPositionTolerance", jointPositionTolerance);
 
             encoder.PopNamespace();
         }
@@ -6625,8 +6625,8 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            JointNumber = decoder.ReadInt32("JointNumber");
-            JointPositionTolerance = decoder.ReadDouble("JointPositionTolerance");
+            jointNumber = decoder.ReadInt32("jointNumber");
+            jointPositionTolerance = decoder.ReadDouble("jointPositionTolerance");
 
             decoder.PopNamespace();
         }
@@ -6807,8 +6807,8 @@ namespace CRCL
         /// <summary>
         /// Setting CRCL JointPositionsTolerancesDataType DataType
         /// </summary>
-        [DataMember(Name = "Setting", IsRequired = false, Order = 1)]
-        public CRCL_JointPositionToleranceSettingDataTypeCollection Setting
+        [DataMember(Name = "setting", IsRequired = false, Order = 1)]
+        public CRCL_JointPositionToleranceSettingDataTypeCollection setting
         {
             get
             {
@@ -6853,7 +6853,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeableArray("Setting", Setting.ToArray(), typeof(CRCL_JointPositionToleranceSettingDataType));
+            encoder.WriteEncodeableArray("setting", setting.ToArray(), typeof(CRCL_JointPositionToleranceSettingDataType));
 
             encoder.PopNamespace();
         }
@@ -6865,7 +6865,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            Setting = (CRCL_JointPositionToleranceSettingDataTypeCollection)decoder.ReadEncodeableArray("Setting", typeof(CRCL_JointPositionToleranceSettingDataType));
+            setting = (CRCL_JointPositionToleranceSettingDataTypeCollection)decoder.ReadEncodeableArray("setting", typeof(CRCL_JointPositionToleranceSettingDataType));
 
             decoder.PopNamespace();
         }
@@ -7046,8 +7046,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "Coordinated", IsRequired = false, Order = 1)]
-        public bool Coordinated
+        [DataMember(Name = "coordinated", IsRequired = false, Order = 1)]
+        public bool coordinated
         {
             get { return m_coordinated;  }
             set { m_coordinated = value; }
@@ -7056,8 +7056,8 @@ namespace CRCL
         /// <summary>
         /// TransSpeed CRCL PoseAndSet DataType
         /// </summary>
-        [DataMember(Name = "TransSpeed", IsRequired = false, Order = 2)]
-        public CRCL_TransSpeedDataType TransSpeed
+        [DataMember(Name = "transSpeed", IsRequired = false, Order = 2)]
+        public CRCL_TransSpeedDataType transSpeed
         {
             get
             {
@@ -7078,8 +7078,8 @@ namespace CRCL
         /// <summary>
         /// RotSpeed CRCL PoseAndSet DataType
         /// </summary>
-        [DataMember(Name = "RotSpeed", IsRequired = false, Order = 3)]
-        public CRCL_RotSpeedDataType RotSpeed
+        [DataMember(Name = "rotSpeed", IsRequired = false, Order = 3)]
+        public CRCL_RotSpeedDataType rotSpeed
         {
             get
             {
@@ -7100,8 +7100,8 @@ namespace CRCL
         /// <summary>
         /// TransAccel CRCL PoseAndSet DataType
         /// </summary>
-        [DataMember(Name = "TransAccel", IsRequired = false, Order = 4)]
-        public CRCL_TransAccelDataType TransAccel
+        [DataMember(Name = "transAccel", IsRequired = false, Order = 4)]
+        public CRCL_TransAccelDataType transAccel
         {
             get
             {
@@ -7122,8 +7122,8 @@ namespace CRCL
         /// <summary>
         /// RotAccel CRCL PoseAndSet DataType
         /// </summary>
-        [DataMember(Name = "RotAccel", IsRequired = false, Order = 5)]
-        public CRCL_RotAccelDataType RotAccel
+        [DataMember(Name = "rotAccel", IsRequired = false, Order = 5)]
+        public CRCL_RotAccelDataType rotAccel
         {
             get
             {
@@ -7144,8 +7144,8 @@ namespace CRCL
         /// <summary>
         /// PoseTolerance CRCL PoseAndSet DataType
         /// </summary>
-        [DataMember(Name = "PoseTolerance", IsRequired = false, Order = 6)]
-        public CRCL_PoseToleranceDataType PoseTolerance
+        [DataMember(Name = "poseTolerance", IsRequired = false, Order = 6)]
+        public CRCL_PoseToleranceDataType poseTolerance
         {
             get
             {
@@ -7190,12 +7190,12 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteBoolean("Coordinated", Coordinated);
-            encoder.WriteEncodeable("TransSpeed", TransSpeed, typeof(CRCL_TransSpeedDataType));
-            encoder.WriteEncodeable("RotSpeed", RotSpeed, typeof(CRCL_RotSpeedDataType));
-            encoder.WriteEncodeable("TransAccel", TransAccel, typeof(CRCL_TransAccelDataType));
-            encoder.WriteEncodeable("RotAccel", RotAccel, typeof(CRCL_RotAccelDataType));
-            encoder.WriteEncodeable("PoseTolerance", PoseTolerance, typeof(CRCL_PoseToleranceDataType));
+            encoder.WriteBoolean("coordinated", coordinated);
+            encoder.WriteEncodeable("transSpeed", transSpeed, typeof(CRCL_TransSpeedDataType));
+            encoder.WriteEncodeable("rotSpeed", rotSpeed, typeof(CRCL_RotSpeedDataType));
+            encoder.WriteEncodeable("transAccel", transAccel, typeof(CRCL_TransAccelDataType));
+            encoder.WriteEncodeable("rotAccel", rotAccel, typeof(CRCL_RotAccelDataType));
+            encoder.WriteEncodeable("poseTolerance", poseTolerance, typeof(CRCL_PoseToleranceDataType));
 
             encoder.PopNamespace();
         }
@@ -7207,12 +7207,12 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            Coordinated = decoder.ReadBoolean("Coordinated");
-            TransSpeed = (CRCL_TransSpeedDataType)decoder.ReadEncodeable("TransSpeed", typeof(CRCL_TransSpeedDataType));
-            RotSpeed = (CRCL_RotSpeedDataType)decoder.ReadEncodeable("RotSpeed", typeof(CRCL_RotSpeedDataType));
-            TransAccel = (CRCL_TransAccelDataType)decoder.ReadEncodeable("TransAccel", typeof(CRCL_TransAccelDataType));
-            RotAccel = (CRCL_RotAccelDataType)decoder.ReadEncodeable("RotAccel", typeof(CRCL_RotAccelDataType));
-            PoseTolerance = (CRCL_PoseToleranceDataType)decoder.ReadEncodeable("PoseTolerance", typeof(CRCL_PoseToleranceDataType));
+            coordinated = decoder.ReadBoolean("coordinated");
+            transSpeed = (CRCL_TransSpeedDataType)decoder.ReadEncodeable("transSpeed", typeof(CRCL_TransSpeedDataType));
+            rotSpeed = (CRCL_RotSpeedDataType)decoder.ReadEncodeable("rotSpeed", typeof(CRCL_RotSpeedDataType));
+            transAccel = (CRCL_TransAccelDataType)decoder.ReadEncodeable("transAccel", typeof(CRCL_TransAccelDataType));
+            rotAccel = (CRCL_RotAccelDataType)decoder.ReadEncodeable("rotAccel", typeof(CRCL_RotAccelDataType));
+            poseTolerance = (CRCL_PoseToleranceDataType)decoder.ReadEncodeable("poseTolerance", typeof(CRCL_PoseToleranceDataType));
 
             decoder.PopNamespace();
         }
@@ -7414,16 +7414,16 @@ namespace CRCL
         }
 
         /// <remarks />
-        [DataMember(Name = "RealTimeCommand", IsRequired = false, Order = 2)]
-        public bool RealTimeCommand
+        [DataMember(Name = "realTimeCommand", IsRequired = false, Order = 2)]
+        public bool realTimeCommand
         {
             get { return m_realTimeCommand;  }
             set { m_realTimeCommand = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "RealTimeParameterNode", IsRequired = false, Order = 3)]
-        public NodeId RealTimeParameterNode
+        [DataMember(Name = "realTimeParameterNode", IsRequired = false, Order = 3)]
+        public NodeId realTimeParameterNode
         {
             get { return m_realTimeParameterNode;  }
             set { m_realTimeParameterNode = value; }
@@ -7432,8 +7432,8 @@ namespace CRCL
         /// <summary>
         /// Guard of the CRCLCommand
         /// </summary>
-        [DataMember(Name = "Guard", IsRequired = false, Order = 4)]
-        public CRCL_GuardDataTypeCollection Guard
+        [DataMember(Name = "guard", IsRequired = false, Order = 4)]
+        public CRCL_GuardDataTypeCollection guard
         {
             get
             {
@@ -7479,9 +7479,9 @@ namespace CRCL
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
             encoder.WriteUInt32("commandID", commandID);
-            encoder.WriteBoolean("RealTimeCommand", RealTimeCommand);
-            encoder.WriteNodeId("RealTimeParameterNode", RealTimeParameterNode);
-            encoder.WriteEncodeableArray("Guard", Guard.ToArray(), typeof(CRCL_GuardDataType));
+            encoder.WriteBoolean("realTimeCommand", realTimeCommand);
+            encoder.WriteNodeId("realTimeParameterNode", realTimeParameterNode);
+            encoder.WriteEncodeableArray("guard", guard.ToArray(), typeof(CRCL_GuardDataType));
 
             encoder.PopNamespace();
         }
@@ -7494,9 +7494,9 @@ namespace CRCL
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
             commandID = decoder.ReadUInt32("commandID");
-            RealTimeCommand = decoder.ReadBoolean("RealTimeCommand");
-            RealTimeParameterNode = decoder.ReadNodeId("RealTimeParameterNode");
-            Guard = (CRCL_GuardDataTypeCollection)decoder.ReadEncodeableArray("Guard", typeof(CRCL_GuardDataType));
+            realTimeCommand = decoder.ReadBoolean("realTimeCommand");
+            realTimeParameterNode = decoder.ReadNodeId("realTimeParameterNode");
+            guard = (CRCL_GuardDataTypeCollection)decoder.ReadEncodeableArray("guard", typeof(CRCL_GuardDataType));
 
             decoder.PopNamespace();
         }
@@ -8317,8 +8317,8 @@ namespace CRCL
         /// <summary>
         /// JointSpeedAccel in the JointDetailsDataType
         /// </summary>
-        [DataMember(Name = "JointSpeedAccel", IsRequired = false, Order = 2)]
-        public CRCL_JointSpeedAccelDataType JointSpeedAccel
+        [DataMember(Name = "jointSpeedAccel", IsRequired = false, Order = 2)]
+        public CRCL_JointSpeedAccelDataType jointSpeedAccel
         {
             get
             {
@@ -8339,8 +8339,8 @@ namespace CRCL
         /// <summary>
         /// JointForceTorque in the JointDetailsDataType
         /// </summary>
-        [DataMember(Name = "JointForceTorque", IsRequired = false, Order = 3)]
-        public CRCL_JointForceTorqueDataType JointForceTorque
+        [DataMember(Name = "jointForceTorque", IsRequired = false, Order = 3)]
+        public CRCL_JointForceTorqueDataType jointForceTorque
         {
             get
             {
@@ -8386,8 +8386,8 @@ namespace CRCL
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
             encoder.WriteUInt32("SwitchField", SwitchField);
-            encoder.WriteEncodeable("JointSpeedAccel", JointSpeedAccel, typeof(CRCL_JointSpeedAccelDataType));
-            encoder.WriteEncodeable("JointForceTorque", JointForceTorque, typeof(CRCL_JointForceTorqueDataType));
+            encoder.WriteEncodeable("jointSpeedAccel", jointSpeedAccel, typeof(CRCL_JointSpeedAccelDataType));
+            encoder.WriteEncodeable("jointForceTorque", jointForceTorque, typeof(CRCL_JointForceTorqueDataType));
 
             encoder.PopNamespace();
         }
@@ -8400,8 +8400,8 @@ namespace CRCL
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
             SwitchField = decoder.ReadUInt32("SwitchField");
-            JointSpeedAccel = (CRCL_JointSpeedAccelDataType)decoder.ReadEncodeable("JointSpeedAccel", typeof(CRCL_JointSpeedAccelDataType));
-            JointForceTorque = (CRCL_JointForceTorqueDataType)decoder.ReadEncodeable("JointForceTorque", typeof(CRCL_JointForceTorqueDataType));
+            jointSpeedAccel = (CRCL_JointSpeedAccelDataType)decoder.ReadEncodeable("jointSpeedAccel", typeof(CRCL_JointSpeedAccelDataType));
+            jointForceTorque = (CRCL_JointForceTorqueDataType)decoder.ReadEncodeable("jointForceTorque", typeof(CRCL_JointForceTorqueDataType));
 
             decoder.PopNamespace();
         }
@@ -8585,16 +8585,16 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "JointNumber", IsRequired = false, Order = 1)]
-        public int JointNumber
+        [DataMember(Name = "jointNumber", IsRequired = false, Order = 1)]
+        public int jointNumber
         {
             get { return m_jointNumber;  }
             set { m_jointNumber = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "JointPosition", IsRequired = false, Order = 2)]
-        public double JointPosition
+        [DataMember(Name = "jointPosition", IsRequired = false, Order = 2)]
+        public double jointPosition
         {
             get { return m_jointPosition;  }
             set { m_jointPosition = value; }
@@ -8603,8 +8603,8 @@ namespace CRCL
         /// <summary>
         /// JointDetails of CRCL ActuateJointType
         /// </summary>
-        [DataMember(Name = "JointDetails", IsRequired = false, Order = 3)]
-        public CRCL_JointDetailsDataType JointDetails
+        [DataMember(Name = "jointDetails", IsRequired = false, Order = 3)]
+        public CRCL_JointDetailsDataType jointDetails
         {
             get
             {
@@ -8649,9 +8649,9 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteInt32("JointNumber", JointNumber);
-            encoder.WriteDouble("JointPosition", JointPosition);
-            encoder.WriteEncodeable("JointDetails", JointDetails, typeof(CRCL_JointDetailsDataType));
+            encoder.WriteInt32("jointNumber", jointNumber);
+            encoder.WriteDouble("jointPosition", jointPosition);
+            encoder.WriteEncodeable("jointDetails", jointDetails, typeof(CRCL_JointDetailsDataType));
 
             encoder.PopNamespace();
         }
@@ -8663,9 +8663,9 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            JointNumber = decoder.ReadInt32("JointNumber");
-            JointPosition = decoder.ReadDouble("JointPosition");
-            JointDetails = (CRCL_JointDetailsDataType)decoder.ReadEncodeable("JointDetails", typeof(CRCL_JointDetailsDataType));
+            jointNumber = decoder.ReadInt32("jointNumber");
+            jointPosition = decoder.ReadDouble("jointPosition");
+            jointDetails = (CRCL_JointDetailsDataType)decoder.ReadEncodeable("jointDetails", typeof(CRCL_JointDetailsDataType));
 
             decoder.PopNamespace();
         }
@@ -8848,16 +8848,16 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "Setting", IsRequired = false, Order = 1)]
-        public double Setting
+        [DataMember(Name = "setting", IsRequired = false, Order = 1)]
+        public double setting
         {
             get { return m_setting;  }
             set { m_setting = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "ChangeRate", IsRequired = false, Order = 2)]
-        public double ChangeRate
+        [DataMember(Name = "changeRate", IsRequired = false, Order = 2)]
+        public double changeRate
         {
             get { return m_changeRate;  }
             set { m_changeRate = value; }
@@ -8890,8 +8890,8 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteDouble("Setting", Setting);
-            encoder.WriteDouble("ChangeRate", ChangeRate);
+            encoder.WriteDouble("setting", setting);
+            encoder.WriteDouble("changeRate", changeRate);
 
             encoder.PopNamespace();
         }
@@ -8903,8 +8903,8 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            Setting = decoder.ReadDouble("Setting");
-            ChangeRate = decoder.ReadDouble("ChangeRate");
+            setting = decoder.ReadDouble("setting");
+            changeRate = decoder.ReadDouble("changeRate");
 
             decoder.PopNamespace();
         }
@@ -9084,16 +9084,16 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "JointSpeed", IsRequired = false, Order = 1)]
-        public double JointSpeed
+        [DataMember(Name = "jointSpeed", IsRequired = false, Order = 1)]
+        public double jointSpeed
         {
             get { return m_jointSpeed;  }
             set { m_jointSpeed = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "JointAccel", IsRequired = false, Order = 2)]
-        public double JointAccel
+        [DataMember(Name = "jointAccel", IsRequired = false, Order = 2)]
+        public double jointAccel
         {
             get { return m_jointAccel;  }
             set { m_jointAccel = value; }
@@ -9126,8 +9126,8 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteDouble("JointSpeed", JointSpeed);
-            encoder.WriteDouble("JointAccel", JointAccel);
+            encoder.WriteDouble("jointSpeed", jointSpeed);
+            encoder.WriteDouble("jointAccel", jointAccel);
 
             encoder.PopNamespace();
         }
@@ -9139,8 +9139,8 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            JointSpeed = decoder.ReadDouble("JointSpeed");
-            JointAccel = decoder.ReadDouble("JointAccel");
+            jointSpeed = decoder.ReadDouble("jointSpeed");
+            jointAccel = decoder.ReadDouble("jointAccel");
 
             decoder.PopNamespace();
         }
@@ -9323,8 +9323,8 @@ namespace CRCL
         /// Array of ActuateJoint of a ActuateJoints Command
             
         /// </summary>
-        [DataMember(Name = "ActuateJoint", IsRequired = false, Order = 1)]
-        public CRCL_ActuateJointDataTypeCollection ActuateJoint
+        [DataMember(Name = "actuateJoint", IsRequired = false, Order = 1)]
+        public CRCL_ActuateJointDataTypeCollection actuateJoint
         {
             get
             {
@@ -9346,8 +9346,8 @@ namespace CRCL
         /// JointTolerances of a ActuateJoints Command
             
         /// </summary>
-        [DataMember(Name = "JointTolerances", IsRequired = false, Order = 2)]
-        public CRCL_JointPositionsTolerancesDataType JointTolerances
+        [DataMember(Name = "jointTolerances", IsRequired = false, Order = 2)]
+        public CRCL_JointPositionsTolerancesDataType jointTolerances
         {
             get
             {
@@ -9392,8 +9392,8 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeableArray("ActuateJoint", ActuateJoint.ToArray(), typeof(CRCL_ActuateJointDataType));
-            encoder.WriteEncodeable("JointTolerances", JointTolerances, typeof(CRCL_JointPositionsTolerancesDataType));
+            encoder.WriteEncodeableArray("actuateJoint", actuateJoint.ToArray(), typeof(CRCL_ActuateJointDataType));
+            encoder.WriteEncodeable("jointTolerances", jointTolerances, typeof(CRCL_JointPositionsTolerancesDataType));
 
             encoder.PopNamespace();
         }
@@ -9405,8 +9405,8 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            ActuateJoint = (CRCL_ActuateJointDataTypeCollection)decoder.ReadEncodeableArray("ActuateJoint", typeof(CRCL_ActuateJointDataType));
-            JointTolerances = (CRCL_JointPositionsTolerancesDataType)decoder.ReadEncodeable("JointTolerances", typeof(CRCL_JointPositionsTolerancesDataType));
+            actuateJoint = (CRCL_ActuateJointDataTypeCollection)decoder.ReadEncodeableArray("actuateJoint", typeof(CRCL_ActuateJointDataType));
+            jointTolerances = (CRCL_JointPositionsTolerancesDataType)decoder.ReadEncodeable("jointTolerances", typeof(CRCL_JointPositionsTolerancesDataType));
 
             decoder.PopNamespace();
         }
@@ -9586,8 +9586,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "MoveStraight", IsRequired = false, Order = 1)]
-        public bool MoveStraight
+        [DataMember(Name = "moveStraight", IsRequired = false, Order = 1)]
+        public bool moveStraight
         {
             get { return m_moveStraight;  }
             set { m_moveStraight = value; }
@@ -9596,8 +9596,8 @@ namespace CRCL
         /// <summary>
         /// Name of the CRCLCommand
         /// </summary>
-        [DataMember(Name = "EndPosition", IsRequired = false, Order = 2)]
-        public CRCL_PoseDataType EndPosition
+        [DataMember(Name = "endPosition", IsRequired = false, Order = 2)]
+        public CRCL_PoseDataType endPosition
         {
             get
             {
@@ -9642,8 +9642,8 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteBoolean("MoveStraight", MoveStraight);
-            encoder.WriteEncodeable("EndPosition", EndPosition, typeof(CRCL_PoseDataType));
+            encoder.WriteBoolean("moveStraight", moveStraight);
+            encoder.WriteEncodeable("endPosition", endPosition, typeof(CRCL_PoseDataType));
 
             encoder.PopNamespace();
         }
@@ -9655,8 +9655,8 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            MoveStraight = decoder.ReadBoolean("MoveStraight");
-            EndPosition = (CRCL_PoseDataType)decoder.ReadEncodeable("EndPosition", typeof(CRCL_PoseDataType));
+            moveStraight = decoder.ReadBoolean("moveStraight");
+            endPosition = (CRCL_PoseDataType)decoder.ReadEncodeable("endPosition", typeof(CRCL_PoseDataType));
 
             decoder.PopNamespace();
         }
@@ -10043,8 +10043,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "DwellTime", IsRequired = false, Order = 1)]
-        public double DwellTime
+        [DataMember(Name = "dwellTime", IsRequired = false, Order = 1)]
+        public double dwellTime
         {
             get { return m_dwellTime;  }
             set { m_dwellTime = value; }
@@ -10077,7 +10077,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteDouble("DwellTime", DwellTime);
+            encoder.WriteDouble("dwellTime", dwellTime);
 
             encoder.PopNamespace();
         }
@@ -10089,7 +10089,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            DwellTime = decoder.ReadDouble("DwellTime");
+            dwellTime = decoder.ReadDouble("dwellTime");
 
             decoder.PopNamespace();
         }
@@ -10473,8 +10473,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "Message", IsRequired = false, Order = 1)]
-        public string Message
+        [DataMember(Name = "message", IsRequired = false, Order = 1)]
+        public string message
         {
             get { return m_message;  }
             set { m_message = value; }
@@ -10507,7 +10507,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteString("Message", Message);
+            encoder.WriteString("message", message);
 
             encoder.PopNamespace();
         }
@@ -10519,7 +10519,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            Message = decoder.ReadString("Message");
+            message = decoder.ReadString("message");
 
             decoder.PopNamespace();
         }
@@ -10701,8 +10701,8 @@ namespace CRCL
         /// <summary>
         /// StartPosition of MoveScrew
         /// </summary>
-        [DataMember(Name = "StartPosition", IsRequired = false, Order = 1)]
-        public CRCL_PoseDataType StartPosition
+        [DataMember(Name = "startPosition", IsRequired = false, Order = 1)]
+        public CRCL_PoseDataType startPosition
         {
             get
             {
@@ -10723,8 +10723,8 @@ namespace CRCL
         /// <summary>
         /// AxisPoint of MoveScrew
         /// </summary>
-        [DataMember(Name = "AxisPoint", IsRequired = false, Order = 2)]
-        public CRCL_PointDataType AxisPoint
+        [DataMember(Name = "axisPoint", IsRequired = false, Order = 2)]
+        public CRCL_PointDataType axisPoint
         {
             get
             {
@@ -10743,24 +10743,24 @@ namespace CRCL
         }
 
         /// <remarks />
-        [DataMember(Name = "AxialDistanceFree", IsRequired = false, Order = 3)]
-        public double AxialDistanceFree
+        [DataMember(Name = "axialDistanceFree", IsRequired = false, Order = 3)]
+        public double axialDistanceFree
         {
             get { return m_axialDistanceFree;  }
             set { m_axialDistanceFree = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "AxialDistanceScrew", IsRequired = false, Order = 4)]
-        public double AxialDistanceScrew
+        [DataMember(Name = "axialDistanceScrew", IsRequired = false, Order = 4)]
+        public double axialDistanceScrew
         {
             get { return m_axialDistanceScrew;  }
             set { m_axialDistanceScrew = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "Turn", IsRequired = false, Order = 5)]
-        public double Turn
+        [DataMember(Name = "turn", IsRequired = false, Order = 5)]
+        public double turn
         {
             get { return m_turn;  }
             set { m_turn = value; }
@@ -10793,11 +10793,11 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeable("StartPosition", StartPosition, typeof(CRCL_PoseDataType));
-            encoder.WriteEncodeable("AxisPoint", AxisPoint, typeof(CRCL_PointDataType));
-            encoder.WriteDouble("AxialDistanceFree", AxialDistanceFree);
-            encoder.WriteDouble("AxialDistanceScrew", AxialDistanceScrew);
-            encoder.WriteDouble("Turn", Turn);
+            encoder.WriteEncodeable("startPosition", startPosition, typeof(CRCL_PoseDataType));
+            encoder.WriteEncodeable("axisPoint", axisPoint, typeof(CRCL_PointDataType));
+            encoder.WriteDouble("axialDistanceFree", axialDistanceFree);
+            encoder.WriteDouble("axialDistanceScrew", axialDistanceScrew);
+            encoder.WriteDouble("turn", turn);
 
             encoder.PopNamespace();
         }
@@ -10809,11 +10809,11 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            StartPosition = (CRCL_PoseDataType)decoder.ReadEncodeable("StartPosition", typeof(CRCL_PoseDataType));
-            AxisPoint = (CRCL_PointDataType)decoder.ReadEncodeable("AxisPoint", typeof(CRCL_PointDataType));
-            AxialDistanceFree = decoder.ReadDouble("AxialDistanceFree");
-            AxialDistanceScrew = decoder.ReadDouble("AxialDistanceScrew");
-            Turn = decoder.ReadDouble("Turn");
+            startPosition = (CRCL_PoseDataType)decoder.ReadEncodeable("startPosition", typeof(CRCL_PoseDataType));
+            axisPoint = (CRCL_PointDataType)decoder.ReadEncodeable("axisPoint", typeof(CRCL_PointDataType));
+            axialDistanceFree = decoder.ReadDouble("axialDistanceFree");
+            axialDistanceScrew = decoder.ReadDouble("axialDistanceScrew");
+            turn = decoder.ReadDouble("turn");
 
             decoder.PopNamespace();
         }
@@ -11003,8 +11003,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "MoveStraight", IsRequired = false, Order = 1)]
-        public bool MoveStraight
+        [DataMember(Name = "moveStraight", IsRequired = false, Order = 1)]
+        public bool moveStraight
         {
             get { return m_moveStraight;  }
             set { m_moveStraight = value; }
@@ -11013,8 +11013,8 @@ namespace CRCL
         /// <summary>
         /// Waypoint of MoveThroughTo
         /// </summary>
-        [DataMember(Name = "Waypoint", IsRequired = false, Order = 2)]
-        public CRCL_PoseDataTypeCollection Waypoint
+        [DataMember(Name = "waypoint", IsRequired = false, Order = 2)]
+        public CRCL_PoseDataTypeCollection waypoint
         {
             get
             {
@@ -11033,8 +11033,8 @@ namespace CRCL
         }
 
         /// <remarks />
-        [DataMember(Name = "NumPositions", IsRequired = false, Order = 3)]
-        public uint NumPositions
+        [DataMember(Name = "numPositions", IsRequired = false, Order = 3)]
+        public uint numPositions
         {
             get { return m_numPositions;  }
             set { m_numPositions = value; }
@@ -11067,9 +11067,9 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteBoolean("MoveStraight", MoveStraight);
-            encoder.WriteEncodeableArray("Waypoint", Waypoint.ToArray(), typeof(CRCL_PoseDataType));
-            encoder.WriteUInt32("NumPositions", NumPositions);
+            encoder.WriteBoolean("moveStraight", moveStraight);
+            encoder.WriteEncodeableArray("waypoint", waypoint.ToArray(), typeof(CRCL_PoseDataType));
+            encoder.WriteUInt32("numPositions", numPositions);
 
             encoder.PopNamespace();
         }
@@ -11081,9 +11081,9 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            MoveStraight = decoder.ReadBoolean("MoveStraight");
-            Waypoint = (CRCL_PoseDataTypeCollection)decoder.ReadEncodeableArray("Waypoint", typeof(CRCL_PoseDataType));
-            NumPositions = decoder.ReadUInt32("NumPositions");
+            moveStraight = decoder.ReadBoolean("moveStraight");
+            waypoint = (CRCL_PoseDataTypeCollection)decoder.ReadEncodeableArray("waypoint", typeof(CRCL_PoseDataType));
+            numPositions = decoder.ReadUInt32("numPositions");
 
             decoder.PopNamespace();
         }
@@ -11473,8 +11473,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "ProgramText", IsRequired = false, Order = 1)]
-        public string ProgramText
+        [DataMember(Name = "programText", IsRequired = false, Order = 1)]
+        public string programText
         {
             get { return m_programText;  }
             set { m_programText = value; }
@@ -11507,7 +11507,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteString("ProgramText", ProgramText);
+            encoder.WriteString("programText", programText);
 
             encoder.PopNamespace();
         }
@@ -11519,7 +11519,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            ProgramText = decoder.ReadString("ProgramText");
+            programText = decoder.ReadString("programText");
 
             decoder.PopNamespace();
         }
@@ -11695,8 +11695,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "UnitName", IsRequired = false, Order = 1)]
-        public CRCL_AngleUnitEnumDataType UnitName
+        [DataMember(Name = "unitName", IsRequired = false, Order = 1)]
+        public CRCL_AngleUnitEnumDataType unitName
         {
             get { return m_unitName;  }
             set { m_unitName = value; }
@@ -11729,7 +11729,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEnumerated("UnitName", UnitName);
+            encoder.WriteEnumerated("unitName", unitName);
 
             encoder.PopNamespace();
         }
@@ -11741,7 +11741,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            UnitName = (CRCL_AngleUnitEnumDataType)decoder.ReadEnumerated("UnitName", typeof(CRCL_AngleUnitEnumDataType));
+            unitName = (CRCL_AngleUnitEnumDataType)decoder.ReadEnumerated("unitName", typeof(CRCL_AngleUnitEnumDataType));
 
             decoder.PopNamespace();
         }
@@ -11919,8 +11919,8 @@ namespace CRCL
         /// <summary>
         /// ParameterSetting of SetEndeffectorParametersDataType
         /// </summary>
-        [DataMember(Name = "ParameterSetting", IsRequired = false, Order = 1)]
-        public CRCL_ParameterSettingDataTypeCollection ParameterSetting
+        [DataMember(Name = "parameterSetting", IsRequired = false, Order = 1)]
+        public CRCL_ParameterSettingDataTypeCollection parameterSetting
         {
             get
             {
@@ -11965,7 +11965,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeableArray("ParameterSetting", ParameterSetting.ToArray(), typeof(CRCL_ParameterSettingDataType));
+            encoder.WriteEncodeableArray("parameterSetting", parameterSetting.ToArray(), typeof(CRCL_ParameterSettingDataType));
 
             encoder.PopNamespace();
         }
@@ -11977,7 +11977,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            ParameterSetting = (CRCL_ParameterSettingDataTypeCollection)decoder.ReadEncodeableArray("ParameterSetting", typeof(CRCL_ParameterSettingDataType));
+            parameterSetting = (CRCL_ParameterSettingDataTypeCollection)decoder.ReadEncodeableArray("parameterSetting", typeof(CRCL_ParameterSettingDataType));
 
             decoder.PopNamespace();
         }
@@ -12155,8 +12155,8 @@ namespace CRCL
         /// <summary>
         /// Setting of SetEndeffectorDataType
         /// </summary>
-        [DataMember(Name = "Setting", IsRequired = false, Order = 1)]
-        public CRCL_FractionDataType Setting
+        [DataMember(Name = "setting", IsRequired = false, Order = 1)]
+        public CRCL_FractionDataType setting
         {
             get
             {
@@ -12201,7 +12201,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeable("Setting", Setting, typeof(CRCL_FractionDataType));
+            encoder.WriteEncodeable("setting", setting, typeof(CRCL_FractionDataType));
 
             encoder.PopNamespace();
         }
@@ -12213,7 +12213,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            Setting = (CRCL_FractionDataType)decoder.ReadEncodeable("Setting", typeof(CRCL_FractionDataType));
+            setting = (CRCL_FractionDataType)decoder.ReadEncodeable("setting", typeof(CRCL_FractionDataType));
 
             decoder.PopNamespace();
         }
@@ -12391,8 +12391,8 @@ namespace CRCL
         /// <summary>
         /// Tolerance of SetEndPoseTolerance
         /// </summary>
-        [DataMember(Name = "Tolerance", IsRequired = false, Order = 1)]
-        public CRCL_PoseToleranceDataType Tolerance
+        [DataMember(Name = "tolerance", IsRequired = false, Order = 1)]
+        public CRCL_PoseToleranceDataType tolerance
         {
             get
             {
@@ -12437,7 +12437,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeable("Tolerance", Tolerance, typeof(CRCL_PoseToleranceDataType));
+            encoder.WriteEncodeable("tolerance", tolerance, typeof(CRCL_PoseToleranceDataType));
 
             encoder.PopNamespace();
         }
@@ -12449,7 +12449,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            Tolerance = (CRCL_PoseToleranceDataType)decoder.ReadEncodeable("Tolerance", typeof(CRCL_PoseToleranceDataType));
+            tolerance = (CRCL_PoseToleranceDataType)decoder.ReadEncodeable("tolerance", typeof(CRCL_PoseToleranceDataType));
 
             decoder.PopNamespace();
         }
@@ -12625,8 +12625,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "UnitName", IsRequired = false, Order = 1)]
-        public CRCL_ForceUnitEnumDataType UnitName
+        [DataMember(Name = "unitName", IsRequired = false, Order = 1)]
+        public CRCL_ForceUnitEnumDataType unitName
         {
             get { return m_unitName;  }
             set { m_unitName = value; }
@@ -12659,7 +12659,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEnumerated("UnitName", UnitName);
+            encoder.WriteEnumerated("unitName", unitName);
 
             encoder.PopNamespace();
         }
@@ -12671,7 +12671,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            UnitName = (CRCL_ForceUnitEnumDataType)decoder.ReadEnumerated("UnitName", typeof(CRCL_ForceUnitEnumDataType));
+            unitName = (CRCL_ForceUnitEnumDataType)decoder.ReadEnumerated("unitName", typeof(CRCL_ForceUnitEnumDataType));
 
             decoder.PopNamespace();
         }
@@ -12849,8 +12849,8 @@ namespace CRCL
         /// <summary>
         /// Tolerance of SetIntermediatePoseTolerance
         /// </summary>
-        [DataMember(Name = "Tolerance", IsRequired = false, Order = 1)]
-        public CRCL_PoseToleranceDataType Tolerance
+        [DataMember(Name = "tolerance", IsRequired = false, Order = 1)]
+        public CRCL_PoseToleranceDataType tolerance
         {
             get
             {
@@ -12895,7 +12895,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeable("Tolerance", Tolerance, typeof(CRCL_PoseToleranceDataType));
+            encoder.WriteEncodeable("tolerance", tolerance, typeof(CRCL_PoseToleranceDataType));
 
             encoder.PopNamespace();
         }
@@ -12907,7 +12907,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            Tolerance = (CRCL_PoseToleranceDataType)decoder.ReadEncodeable("Tolerance", typeof(CRCL_PoseToleranceDataType));
+            tolerance = (CRCL_PoseToleranceDataType)decoder.ReadEncodeable("tolerance", typeof(CRCL_PoseToleranceDataType));
 
             decoder.PopNamespace();
         }
@@ -13083,8 +13083,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "UnitName", IsRequired = false, Order = 1)]
-        public CRCL_LengthUnitEnumDataType UnitName
+        [DataMember(Name = "unitName", IsRequired = false, Order = 1)]
+        public CRCL_LengthUnitEnumDataType unitName
         {
             get { return m_unitName;  }
             set { m_unitName = value; }
@@ -13117,7 +13117,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEnumerated("UnitName", UnitName);
+            encoder.WriteEnumerated("unitName", unitName);
 
             encoder.PopNamespace();
         }
@@ -13129,7 +13129,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            UnitName = (CRCL_LengthUnitEnumDataType)decoder.ReadEnumerated("UnitName", typeof(CRCL_LengthUnitEnumDataType));
+            unitName = (CRCL_LengthUnitEnumDataType)decoder.ReadEnumerated("unitName", typeof(CRCL_LengthUnitEnumDataType));
 
             decoder.PopNamespace();
         }
@@ -13305,8 +13305,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "Coordinated", IsRequired = false, Order = 1)]
-        public bool Coordinated
+        [DataMember(Name = "coordinated", IsRequired = false, Order = 1)]
+        public bool coordinated
         {
             get { return m_coordinated;  }
             set { m_coordinated = value; }
@@ -13339,7 +13339,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteBoolean("Coordinated", Coordinated);
+            encoder.WriteBoolean("coordinated", coordinated);
 
             encoder.PopNamespace();
         }
@@ -13351,7 +13351,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            Coordinated = decoder.ReadBoolean("Coordinated");
+            coordinated = decoder.ReadBoolean("coordinated");
 
             decoder.PopNamespace();
         }
@@ -13529,8 +13529,8 @@ namespace CRCL
         /// <summary>
         /// ParameterSetting of SetRobotParameters
         /// </summary>
-        [DataMember(Name = "ParameterSetting", IsRequired = false, Order = 1)]
-        public CRCL_ParameterSettingDataTypeCollection ParameterSetting
+        [DataMember(Name = "parameterSetting", IsRequired = false, Order = 1)]
+        public CRCL_ParameterSettingDataTypeCollection parameterSetting
         {
             get
             {
@@ -13575,7 +13575,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeableArray("ParameterSetting", ParameterSetting.ToArray(), typeof(CRCL_ParameterSettingDataType));
+            encoder.WriteEncodeableArray("parameterSetting", parameterSetting.ToArray(), typeof(CRCL_ParameterSettingDataType));
 
             encoder.PopNamespace();
         }
@@ -13587,7 +13587,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            ParameterSetting = (CRCL_ParameterSettingDataTypeCollection)decoder.ReadEncodeableArray("ParameterSetting", typeof(CRCL_ParameterSettingDataType));
+            parameterSetting = (CRCL_ParameterSettingDataTypeCollection)decoder.ReadEncodeableArray("parameterSetting", typeof(CRCL_ParameterSettingDataType));
 
             decoder.PopNamespace();
         }
@@ -13763,8 +13763,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "UnitName", IsRequired = false, Order = 1)]
-        public CRCL_TorqueUnitEnumDataType UnitName
+        [DataMember(Name = "unitName", IsRequired = false, Order = 1)]
+        public CRCL_TorqueUnitEnumDataType unitName
         {
             get { return m_unitName;  }
             set { m_unitName = value; }
@@ -13797,7 +13797,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEnumerated("UnitName", UnitName);
+            encoder.WriteEnumerated("unitName", unitName);
 
             encoder.PopNamespace();
         }
@@ -13809,7 +13809,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            UnitName = (CRCL_TorqueUnitEnumDataType)decoder.ReadEnumerated("UnitName", typeof(CRCL_TorqueUnitEnumDataType));
+            unitName = (CRCL_TorqueUnitEnumDataType)decoder.ReadEnumerated("unitName", typeof(CRCL_TorqueUnitEnumDataType));
 
             decoder.PopNamespace();
         }
@@ -13985,8 +13985,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "StopCondition", IsRequired = false, Order = 1)]
-        public CRCL_StopConditionEnumDataType StopCondition
+        [DataMember(Name = "stopCondition", IsRequired = false, Order = 1)]
+        public CRCL_StopConditionEnumDataType stopCondition
         {
             get { return m_stopCondition;  }
             set { m_stopCondition = value; }
@@ -14019,7 +14019,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEnumerated("StopCondition", StopCondition);
+            encoder.WriteEnumerated("stopCondition", stopCondition);
 
             encoder.PopNamespace();
         }
@@ -14031,7 +14031,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            StopCondition = (CRCL_StopConditionEnumDataType)decoder.ReadEnumerated("StopCondition", typeof(CRCL_StopConditionEnumDataType));
+            stopCondition = (CRCL_StopConditionEnumDataType)decoder.ReadEnumerated("stopCondition", typeof(CRCL_StopConditionEnumDataType));
 
             decoder.PopNamespace();
         }
@@ -14212,48 +14212,48 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "ReportJointStatuses", IsRequired = false, Order = 1)]
-        public bool ReportJointStatuses
+        [DataMember(Name = "reportJointStatuses", IsRequired = false, Order = 1)]
+        public bool reportJointStatuses
         {
             get { return m_reportJointStatuses;  }
             set { m_reportJointStatuses = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "ReportPoseStatus", IsRequired = false, Order = 2)]
-        public bool ReportPoseStatus
+        [DataMember(Name = "reportPoseStatus", IsRequired = false, Order = 2)]
+        public bool reportPoseStatus
         {
             get { return m_reportPoseStatus;  }
             set { m_reportPoseStatus = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "ReportGripperStatus", IsRequired = false, Order = 3)]
-        public bool ReportGripperStatus
+        [DataMember(Name = "reportGripperStatus", IsRequired = false, Order = 3)]
+        public bool reportGripperStatus
         {
             get { return m_reportGripperStatus;  }
             set { m_reportGripperStatus = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "ReportSettingsStatus", IsRequired = false, Order = 4)]
-        public bool ReportSettingsStatus
+        [DataMember(Name = "reportSettingsStatus", IsRequired = false, Order = 4)]
+        public bool reportSettingsStatus
         {
             get { return m_reportSettingsStatus;  }
             set { m_reportSettingsStatus = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "ReportSensorsStatus", IsRequired = false, Order = 5)]
-        public bool ReportSensorsStatus
+        [DataMember(Name = "reportSensorsStatus", IsRequired = false, Order = 5)]
+        public bool reportSensorsStatus
         {
             get { return m_reportSensorsStatus;  }
             set { m_reportSensorsStatus = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "ReportGuardsStatus", IsRequired = false, Order = 6)]
-        public bool ReportGuardsStatus
+        [DataMember(Name = "reportGuardsStatus", IsRequired = false, Order = 6)]
+        public bool reportGuardsStatus
         {
             get { return m_reportGuardsStatus;  }
             set { m_reportGuardsStatus = value; }
@@ -14286,12 +14286,12 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteBoolean("ReportJointStatuses", ReportJointStatuses);
-            encoder.WriteBoolean("ReportPoseStatus", ReportPoseStatus);
-            encoder.WriteBoolean("ReportGripperStatus", ReportGripperStatus);
-            encoder.WriteBoolean("ReportSettingsStatus", ReportSettingsStatus);
-            encoder.WriteBoolean("ReportSensorsStatus", ReportSensorsStatus);
-            encoder.WriteBoolean("ReportGuardsStatus", ReportGuardsStatus);
+            encoder.WriteBoolean("reportJointStatuses", reportJointStatuses);
+            encoder.WriteBoolean("reportPoseStatus", reportPoseStatus);
+            encoder.WriteBoolean("reportGripperStatus", reportGripperStatus);
+            encoder.WriteBoolean("reportSettingsStatus", reportSettingsStatus);
+            encoder.WriteBoolean("reportSensorsStatus", reportSensorsStatus);
+            encoder.WriteBoolean("reportGuardsStatus", reportGuardsStatus);
 
             encoder.PopNamespace();
         }
@@ -14303,12 +14303,12 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            ReportJointStatuses = decoder.ReadBoolean("ReportJointStatuses");
-            ReportPoseStatus = decoder.ReadBoolean("ReportPoseStatus");
-            ReportGripperStatus = decoder.ReadBoolean("ReportGripperStatus");
-            ReportSettingsStatus = decoder.ReadBoolean("ReportSettingsStatus");
-            ReportSensorsStatus = decoder.ReadBoolean("ReportSensorsStatus");
-            ReportGuardsStatus = decoder.ReadBoolean("ReportGuardsStatus");
+            reportJointStatuses = decoder.ReadBoolean("reportJointStatuses");
+            reportPoseStatus = decoder.ReadBoolean("reportPoseStatus");
+            reportGripperStatus = decoder.ReadBoolean("reportGripperStatus");
+            reportSettingsStatus = decoder.ReadBoolean("reportSettingsStatus");
+            reportSensorsStatus = decoder.ReadBoolean("reportSensorsStatus");
+            reportGuardsStatus = decoder.ReadBoolean("reportGuardsStatus");
 
             decoder.PopNamespace();
         }
@@ -14500,8 +14500,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "SensorID", IsRequired = false, Order = 1)]
-        public string SensorID
+        [DataMember(Name = "sensorID", IsRequired = false, Order = 1)]
+        public string sensorID
         {
             get { return m_sensorID;  }
             set { m_sensorID = value; }
@@ -14510,8 +14510,8 @@ namespace CRCL
         /// <summary>
         /// SensorOption of EnableSensor
         /// </summary>
-        [DataMember(Name = "SensorOption", IsRequired = false, Order = 2)]
-        public CRCL_ParameterSettingDataTypeCollection SensorOption
+        [DataMember(Name = "sensorOption", IsRequired = false, Order = 2)]
+        public CRCL_ParameterSettingDataTypeCollection sensorOption
         {
             get
             {
@@ -14556,8 +14556,8 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteString("SensorID", SensorID);
-            encoder.WriteEncodeableArray("SensorOption", SensorOption.ToArray(), typeof(CRCL_ParameterSettingDataType));
+            encoder.WriteString("sensorID", sensorID);
+            encoder.WriteEncodeableArray("sensorOption", sensorOption.ToArray(), typeof(CRCL_ParameterSettingDataType));
 
             encoder.PopNamespace();
         }
@@ -14569,8 +14569,8 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            SensorID = decoder.ReadString("SensorID");
-            SensorOption = (CRCL_ParameterSettingDataTypeCollection)decoder.ReadEncodeableArray("SensorOption", typeof(CRCL_ParameterSettingDataType));
+            sensorID = decoder.ReadString("sensorID");
+            sensorOption = (CRCL_ParameterSettingDataTypeCollection)decoder.ReadEncodeableArray("sensorOption", typeof(CRCL_ParameterSettingDataType));
 
             decoder.PopNamespace();
         }
@@ -14749,8 +14749,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "SensorID", IsRequired = false, Order = 1)]
-        public string SensorID
+        [DataMember(Name = "sensorID", IsRequired = false, Order = 1)]
+        public string sensorID
         {
             get { return m_sensorID;  }
             set { m_sensorID = value; }
@@ -14783,7 +14783,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteString("SensorID", SensorID);
+            encoder.WriteString("sensorID", sensorID);
 
             encoder.PopNamespace();
         }
@@ -14795,7 +14795,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            SensorID = decoder.ReadString("SensorID");
+            sensorID = decoder.ReadString("sensorID");
 
             decoder.PopNamespace();
         }
@@ -14972,8 +14972,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "GripperName", IsRequired = false, Order = 1)]
-        public string GripperName
+        [DataMember(Name = "gripperName", IsRequired = false, Order = 1)]
+        public string gripperName
         {
             get { return m_gripperName;  }
             set { m_gripperName = value; }
@@ -14982,8 +14982,8 @@ namespace CRCL
         /// <summary>
         /// GripperOption of EnableGripper
         /// </summary>
-        [DataMember(Name = "GripperOption", IsRequired = false, Order = 2)]
-        public CRCL_ParameterSettingDataTypeCollection GripperOption
+        [DataMember(Name = "gripperOption", IsRequired = false, Order = 2)]
+        public CRCL_ParameterSettingDataTypeCollection gripperOption
         {
             get
             {
@@ -15028,8 +15028,8 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteString("GripperName", GripperName);
-            encoder.WriteEncodeableArray("GripperOption", GripperOption.ToArray(), typeof(CRCL_ParameterSettingDataType));
+            encoder.WriteString("gripperName", gripperName);
+            encoder.WriteEncodeableArray("gripperOption", gripperOption.ToArray(), typeof(CRCL_ParameterSettingDataType));
 
             encoder.PopNamespace();
         }
@@ -15041,8 +15041,8 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            GripperName = decoder.ReadString("GripperName");
-            GripperOption = (CRCL_ParameterSettingDataTypeCollection)decoder.ReadEncodeableArray("GripperOption", typeof(CRCL_ParameterSettingDataType));
+            gripperName = decoder.ReadString("gripperName");
+            gripperOption = (CRCL_ParameterSettingDataTypeCollection)decoder.ReadEncodeableArray("gripperOption", typeof(CRCL_ParameterSettingDataType));
 
             decoder.PopNamespace();
         }
@@ -15221,8 +15221,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "GripperName", IsRequired = false, Order = 1)]
-        public string GripperName
+        [DataMember(Name = "gripperName", IsRequired = false, Order = 1)]
+        public string gripperName
         {
             get { return m_gripperName;  }
             set { m_gripperName = value; }
@@ -15255,7 +15255,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteString("GripperName", GripperName);
+            encoder.WriteString("gripperName", gripperName);
 
             encoder.PopNamespace();
         }
@@ -15267,7 +15267,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            GripperName = decoder.ReadString("GripperName");
+            gripperName = decoder.ReadString("gripperName");
 
             decoder.PopNamespace();
         }
@@ -15443,8 +15443,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "RobotParameterName", IsRequired = false, Order = 1)]
-        public string RobotParameterName
+        [DataMember(Name = "robotParameterName", IsRequired = false, Order = 1)]
+        public string robotParameterName
         {
             get { return m_robotParameterName;  }
             set { m_robotParameterName = value; }
@@ -15477,7 +15477,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteString("RobotParameterName", RobotParameterName);
+            encoder.WriteString("robotParameterName", robotParameterName);
 
             encoder.PopNamespace();
         }
@@ -15489,7 +15489,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            RobotParameterName = decoder.ReadString("RobotParameterName");
+            robotParameterName = decoder.ReadString("robotParameterName");
 
             decoder.PopNamespace();
         }
@@ -15665,8 +15665,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "RobotParameterName", IsRequired = false, Order = 1)]
-        public string RobotParameterName
+        [DataMember(Name = "robotParameterName", IsRequired = false, Order = 1)]
+        public string robotParameterName
         {
             get { return m_robotParameterName;  }
             set { m_robotParameterName = value; }
@@ -15699,7 +15699,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteString("RobotParameterName", RobotParameterName);
+            encoder.WriteString("robotParameterName", robotParameterName);
 
             encoder.PopNamespace();
         }
@@ -15711,7 +15711,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            RobotParameterName = decoder.ReadString("RobotParameterName");
+            robotParameterName = decoder.ReadString("robotParameterName");
 
             decoder.PopNamespace();
         }
@@ -15889,8 +15889,8 @@ namespace CRCL
         /// <summary>
         /// JointTolerances of SetDefaultJointPositonsTolerances
         /// </summary>
-        [DataMember(Name = "JointTolerances", IsRequired = false, Order = 1)]
-        public CRCL_JointPositionsTolerancesDataType JointTolerances
+        [DataMember(Name = "jointTolerances", IsRequired = false, Order = 1)]
+        public CRCL_JointPositionsTolerancesDataType jointTolerances
         {
             get
             {
@@ -15935,7 +15935,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeable("JointTolerances", JointTolerances, typeof(CRCL_JointPositionsTolerancesDataType));
+            encoder.WriteEncodeable("jointTolerances", jointTolerances, typeof(CRCL_JointPositionsTolerancesDataType));
 
             encoder.PopNamespace();
         }
@@ -15947,7 +15947,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            JointTolerances = (CRCL_JointPositionsTolerancesDataType)decoder.ReadEncodeable("JointTolerances", typeof(CRCL_JointPositionsTolerancesDataType));
+            jointTolerances = (CRCL_JointPositionsTolerancesDataType)decoder.ReadEncodeable("jointTolerances", typeof(CRCL_JointPositionsTolerancesDataType));
 
             decoder.PopNamespace();
         }
@@ -16125,8 +16125,8 @@ namespace CRCL
         /// <summary>
         /// RotAccel of SetRotAccel
         /// </summary>
-        [DataMember(Name = "RotAccel", IsRequired = false, Order = 1)]
-        public CRCL_RotAccelDataType RotAccel
+        [DataMember(Name = "rotAccel", IsRequired = false, Order = 1)]
+        public CRCL_RotAccelDataType rotAccel
         {
             get
             {
@@ -16171,7 +16171,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeable("RotAccel", RotAccel, typeof(CRCL_RotAccelDataType));
+            encoder.WriteEncodeable("rotAccel", rotAccel, typeof(CRCL_RotAccelDataType));
 
             encoder.PopNamespace();
         }
@@ -16183,7 +16183,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            RotAccel = (CRCL_RotAccelDataType)decoder.ReadEncodeable("RotAccel", typeof(CRCL_RotAccelDataType));
+            rotAccel = (CRCL_RotAccelDataType)decoder.ReadEncodeable("rotAccel", typeof(CRCL_RotAccelDataType));
 
             decoder.PopNamespace();
         }
@@ -16361,8 +16361,8 @@ namespace CRCL
         /// <summary>
         /// RotAccel of SetTransAccel
         /// </summary>
-        [DataMember(Name = "TransAccel", IsRequired = false, Order = 1)]
-        public CRCL_TransAccelDataType TransAccel
+        [DataMember(Name = "transAccel", IsRequired = false, Order = 1)]
+        public CRCL_TransAccelDataType transAccel
         {
             get
             {
@@ -16407,7 +16407,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeable("TransAccel", TransAccel, typeof(CRCL_TransAccelDataType));
+            encoder.WriteEncodeable("transAccel", transAccel, typeof(CRCL_TransAccelDataType));
 
             encoder.PopNamespace();
         }
@@ -16419,7 +16419,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            TransAccel = (CRCL_TransAccelDataType)decoder.ReadEncodeable("TransAccel", typeof(CRCL_TransAccelDataType));
+            transAccel = (CRCL_TransAccelDataType)decoder.ReadEncodeable("transAccel", typeof(CRCL_TransAccelDataType));
 
             decoder.PopNamespace();
         }
@@ -16597,8 +16597,8 @@ namespace CRCL
         /// <summary>
         /// RotAccel of SetRotSpeed
         /// </summary>
-        [DataMember(Name = "RotSpeed", IsRequired = false, Order = 1)]
-        public CRCL_RotSpeedDataType RotSpeed
+        [DataMember(Name = "rotSpeed", IsRequired = false, Order = 1)]
+        public CRCL_RotSpeedDataType rotSpeed
         {
             get
             {
@@ -16643,7 +16643,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeable("RotSpeed", RotSpeed, typeof(CRCL_RotSpeedDataType));
+            encoder.WriteEncodeable("rotSpeed", rotSpeed, typeof(CRCL_RotSpeedDataType));
 
             encoder.PopNamespace();
         }
@@ -16655,7 +16655,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            RotSpeed = (CRCL_RotSpeedDataType)decoder.ReadEncodeable("RotSpeed", typeof(CRCL_RotSpeedDataType));
+            rotSpeed = (CRCL_RotSpeedDataType)decoder.ReadEncodeable("rotSpeed", typeof(CRCL_RotSpeedDataType));
 
             decoder.PopNamespace();
         }
@@ -16833,8 +16833,8 @@ namespace CRCL
         /// <summary>
         /// TransSpeed of SetTransSpeed
         /// </summary>
-        [DataMember(Name = "TransSpeed", IsRequired = false, Order = 1)]
-        public CRCL_TransSpeedDataType TransSpeed
+        [DataMember(Name = "transSpeed", IsRequired = false, Order = 1)]
+        public CRCL_TransSpeedDataType transSpeed
         {
             get
             {
@@ -16879,7 +16879,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeable("TransSpeed", TransSpeed, typeof(CRCL_TransSpeedDataType));
+            encoder.WriteEncodeable("transSpeed", transSpeed, typeof(CRCL_TransSpeedDataType));
 
             encoder.PopNamespace();
         }
@@ -16891,7 +16891,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            TransSpeed = (CRCL_TransSpeedDataType)decoder.ReadEncodeable("TransSpeed", typeof(CRCL_TransSpeedDataType));
+            transSpeed = (CRCL_TransSpeedDataType)decoder.ReadEncodeable("transSpeed", typeof(CRCL_TransSpeedDataType));
 
             decoder.PopNamespace();
         }
@@ -17068,8 +17068,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "ResetAll", IsRequired = false, Order = 1)]
-        public bool ResetAll
+        [DataMember(Name = "resetAll", IsRequired = false, Order = 1)]
+        public bool resetAll
         {
             get { return m_resetAll;  }
             set { m_resetAll = value; }
@@ -17078,8 +17078,8 @@ namespace CRCL
         /// <summary>
         /// Array of ConfigureJointReport of ConfigureJointReportsDataType
         /// </summary>
-        [DataMember(Name = "ConfigureJointReport", IsRequired = false, Order = 2)]
-        public CRCL_ConfigureJointReportDataTypeCollection ConfigureJointReport
+        [DataMember(Name = "configureJointReport", IsRequired = false, Order = 2)]
+        public CRCL_ConfigureJointReportDataTypeCollection configureJointReport
         {
             get
             {
@@ -17124,8 +17124,8 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteBoolean("ResetAll", ResetAll);
-            encoder.WriteEncodeableArray("ConfigureJointReport", ConfigureJointReport.ToArray(), typeof(CRCL_ConfigureJointReportDataType));
+            encoder.WriteBoolean("resetAll", resetAll);
+            encoder.WriteEncodeableArray("configureJointReport", configureJointReport.ToArray(), typeof(CRCL_ConfigureJointReportDataType));
 
             encoder.PopNamespace();
         }
@@ -17137,8 +17137,8 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            ResetAll = decoder.ReadBoolean("ResetAll");
-            ConfigureJointReport = (CRCL_ConfigureJointReportDataTypeCollection)decoder.ReadEncodeableArray("ConfigureJointReport", typeof(CRCL_ConfigureJointReportDataType));
+            resetAll = decoder.ReadBoolean("resetAll");
+            configureJointReport = (CRCL_ConfigureJointReportDataTypeCollection)decoder.ReadEncodeableArray("configureJointReport", typeof(CRCL_ConfigureJointReportDataType));
 
             decoder.PopNamespace();
         }
@@ -22496,543 +22496,6 @@ namespace CRCL
     #endif
     #endregion
 
-    #region PubSubIPAddresses Class
-    #if (!OPCUA_EXCLUDE_PubSubIPAddresses)
-    /// <summary>
-    /// PubSub IP addresses: IPAddress_Skill is the address where the SAMYCore is Publishing and the SAMYPlugIn is Subscribed; IPAddress_Status is the address where the SAMYCore is Subscribed and the SAMYCore is Publishing
-    /// </summary>
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class PubSubIPAddresses : IEncodeable
-    {
-        #region Constructors
-        /// <summary>
-        /// The default constructor.
-        /// </summary>
-        public PubSubIPAddresses()
-        {
-            Initialize();
-        }
-
-        /// <summary>
-        /// Called by the .NET framework during deserialization.
-        /// </summary>
-        [OnDeserializing]
-        private void Initialize(StreamingContext context)
-        {
-            Initialize();
-        }
-
-        /// <summary>
-        /// Sets private members to default values.
-        /// </summary>
-        private void Initialize()
-        {
-            m_iPAddress_Skill = null;
-            m_iPAddress_Status = null;
-        }
-        #endregion
-
-        #region Public Properties
-        /// <remarks />
-        [DataMember(Name = "IPAddress_Skill", IsRequired = false, Order = 1)]
-        public string IPAddress_Skill
-        {
-            get { return m_iPAddress_Skill;  }
-            set { m_iPAddress_Skill = value; }
-        }
-
-        /// <remarks />
-        [DataMember(Name = "IPAddress_Status", IsRequired = false, Order = 2)]
-        public string IPAddress_Status
-        {
-            get { return m_iPAddress_Status;  }
-            set { m_iPAddress_Status = value; }
-        }
-        #endregion
-
-        #region IEncodeable Members
-        /// <summary cref="IEncodeable.TypeId" />
-        public virtual ExpandedNodeId TypeId
-        {
-            get { return DataTypeIds.PubSubIPAddresses; }
-        }
-
-        /// <summary cref="IEncodeable.BinaryEncodingId" />
-        public virtual ExpandedNodeId BinaryEncodingId
-        {
-            get { return ObjectIds.PubSubIPAddresses_Encoding_DefaultBinary; }
-        }
-
-        /// <summary cref="IEncodeable.XmlEncodingId" />
-        public virtual ExpandedNodeId XmlEncodingId
-        {
-            get { return ObjectIds.PubSubIPAddresses_Encoding_DefaultXml; }
-        }
-
-        /// <summary cref="IEncodeable.Encode(IEncoder)" />
-        public virtual void Encode(IEncoder encoder)
-        {
-            encoder.PushNamespace(CRCL.Namespaces.CRCL);
-
-            encoder.WriteString("IPAddress_Skill", IPAddress_Skill);
-            encoder.WriteString("IPAddress_Status", IPAddress_Status);
-
-            encoder.PopNamespace();
-        }
-
-        /// <summary cref="IEncodeable.Decode(IDecoder)" />
-        public virtual void Decode(IDecoder decoder)
-        {
-            decoder.PushNamespace(CRCL.Namespaces.CRCL);
-
-            IPAddress_Skill = decoder.ReadString("IPAddress_Skill");
-            IPAddress_Status = decoder.ReadString("IPAddress_Status");
-
-            decoder.PopNamespace();
-        }
-
-        /// <summary cref="IEncodeable.IsEqual(IEncodeable)" />
-        public virtual bool IsEqual(IEncodeable encodeable)
-        {
-            if (Object.ReferenceEquals(this, encodeable))
-            {
-                return true;
-            }
-
-            PubSubIPAddresses value = encodeable as PubSubIPAddresses;
-
-            if (value == null)
-            {
-                return false;
-            }
-
-            if (!Utils.IsEqual(m_iPAddress_Skill, value.m_iPAddress_Skill)) return false;
-            if (!Utils.IsEqual(m_iPAddress_Status, value.m_iPAddress_Status)) return false;
-
-            return true;
-        }
-
-        #if !NET_STANDARD
-        /// <summary cref="ICloneable.Clone" />
-        public virtual object Clone()
-        {
-            return (PubSubIPAddresses)this.MemberwiseClone();
-        }
-        #endif
-
-        /// <summary cref="Object.MemberwiseClone" />
-        public new object MemberwiseClone()
-        {
-            PubSubIPAddresses clone = (PubSubIPAddresses)base.MemberwiseClone();
-
-            clone.m_iPAddress_Skill = (string)Utils.Clone(this.m_iPAddress_Skill);
-            clone.m_iPAddress_Status = (string)Utils.Clone(this.m_iPAddress_Status);
-
-            return clone;
-        }
-        #endregion
-
-        #region Private Fields
-        private string m_iPAddress_Skill;
-        private string m_iPAddress_Status;
-        #endregion
-    }
-
-    #region PubSubIPAddressesCollection Class
-    /// <summary>
-    /// A collection of PubSubIPAddresses objects.
-    /// </summary>
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfPubSubIPAddresses", Namespace = CRCL.Namespaces.CRCL, ItemName = "PubSubIPAddresses")]
-    #if !NET_STANDARD
-    public partial class PubSubIPAddressesCollection : List<PubSubIPAddresses>, ICloneable
-    #else
-    public partial class PubSubIPAddressesCollection : List<PubSubIPAddresses>
-    #endif
-    {
-        #region Constructors
-        /// <summary>
-        /// Initializes the collection with default values.
-        /// </summary>
-        public PubSubIPAddressesCollection() {}
-
-        /// <summary>
-        /// Initializes the collection with an initial capacity.
-        /// </summary>
-        public PubSubIPAddressesCollection(int capacity) : base(capacity) {}
-
-        /// <summary>
-        /// Initializes the collection with another collection.
-        /// </summary>
-        public PubSubIPAddressesCollection(IEnumerable<PubSubIPAddresses> collection) : base(collection) {}
-        #endregion
-
-        #region Static Operators
-        /// <summary>
-        /// Converts an array to a collection.
-        /// </summary>
-        public static implicit operator PubSubIPAddressesCollection(PubSubIPAddresses[] values)
-        {
-            if (values != null)
-            {
-                return new PubSubIPAddressesCollection(values);
-            }
-
-            return new PubSubIPAddressesCollection();
-        }
-
-        /// <summary>
-        /// Converts a collection to an array.
-        /// </summary>
-        public static explicit operator PubSubIPAddresses[](PubSubIPAddressesCollection values)
-        {
-            if (values != null)
-            {
-                return values.ToArray();
-            }
-
-            return null;
-        }
-        #endregion
-
-        #if !NET_STANDARD
-        #region ICloneable Methods
-        /// <summary>
-        /// Creates a deep copy of the collection.
-        /// </summary>
-        public object Clone()
-        {
-            return (PubSubIPAddressesCollection)this.MemberwiseClone();
-        }
-        #endregion
-        #endif
-
-        /// <summary cref="Object.MemberwiseClone" />
-        public new object MemberwiseClone()
-        {
-            PubSubIPAddressesCollection clone = new PubSubIPAddressesCollection(this.Count);
-
-            for (int ii = 0; ii < this.Count; ii++)
-            {
-                clone.Add((PubSubIPAddresses)Utils.Clone(this[ii]));
-            }
-
-            return clone;
-        }
-    }
-    #endregion
-    #endif
-    #endregion
-
-    #region SAMYRobotDataType Class
-    #if (!OPCUA_EXCLUDE_SAMYRobotDataType)
-    /// <summary>
-    /// CRCLProgramm
-    /// </summary>
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class SAMYRobotDataType : CRCL_DataThingDataType
-    {
-        #region Constructors
-        /// <summary>
-        /// The default constructor.
-        /// </summary>
-        public SAMYRobotDataType()
-        {
-            Initialize();
-        }
-
-        /// <summary>
-        /// Called by the .NET framework during deserialization.
-        /// </summary>
-        [OnDeserializing]
-        private void Initialize(StreamingContext context)
-        {
-            Initialize();
-        }
-
-        /// <summary>
-        /// Sets private members to default values.
-        /// </summary>
-        private void Initialize()
-        {
-            m_requested_Skill = new CRCLSkillDataType();
-            m_requested_Skill_Success = true;
-            m_active = true;
-            m_online = true;
-            m_iPAddresses = new PubSubIPAddresses();
-        }
-        #endregion
-
-        #region Public Properties
-        /// <summary>
-        /// Indicates the current requested skill by the SAMYCore to be executed by the robot
-        /// </summary>
-        [DataMember(Name = "Requested_Skill", IsRequired = false, Order = 1)]
-        public CRCLSkillDataType Requested_Skill
-        {
-            get
-            {
-                return m_requested_Skill;
-            }
-
-            set
-            {
-                m_requested_Skill = value;
-
-                if (value == null)
-                {
-                    m_requested_Skill = new CRCLSkillDataType();
-                }
-            }
-        }
-
-        /// <remarks />
-        [DataMember(Name = "Requested_Skill_Success", IsRequired = false, Order = 2)]
-        public bool Requested_Skill_Success
-        {
-            get { return m_requested_Skill_Success;  }
-            set { m_requested_Skill_Success = value; }
-        }
-
-        /// <remarks />
-        [DataMember(Name = "Active", IsRequired = false, Order = 3)]
-        public bool Active
-        {
-            get { return m_active;  }
-            set { m_active = value; }
-        }
-
-        /// <remarks />
-        [DataMember(Name = "Online", IsRequired = false, Order = 4)]
-        public bool Online
-        {
-            get { return m_online;  }
-            set { m_online = value; }
-        }
-
-        /// <summary>
-        /// IPAddresses where the Requested_Skills (IPAddress_Skill) and Status (IPAddress_Status) are published
-        /// </summary>
-        [DataMember(Name = "IPAddresses", IsRequired = false, Order = 5)]
-        public PubSubIPAddresses IPAddresses
-        {
-            get
-            {
-                return m_iPAddresses;
-            }
-
-            set
-            {
-                m_iPAddresses = value;
-
-                if (value == null)
-                {
-                    m_iPAddresses = new PubSubIPAddresses();
-                }
-            }
-        }
-        #endregion
-
-        #region IEncodeable Members
-        /// <summary cref="IEncodeable.TypeId" />
-        public override ExpandedNodeId TypeId
-        {
-            get { return DataTypeIds.SAMYRobotDataType; }
-        }
-
-        /// <summary cref="IEncodeable.BinaryEncodingId" />
-        public override ExpandedNodeId BinaryEncodingId
-        {
-            get { return ObjectIds.SAMYRobotDataType_Encoding_DefaultBinary; }
-        }
-
-        /// <summary cref="IEncodeable.XmlEncodingId" />
-        public override ExpandedNodeId XmlEncodingId
-        {
-            get { return ObjectIds.SAMYRobotDataType_Encoding_DefaultXml; }
-        }
-
-        /// <summary cref="IEncodeable.Encode(IEncoder)" />
-        public override void Encode(IEncoder encoder)
-        {
-            base.Encode(encoder);
-
-            encoder.PushNamespace(CRCL.Namespaces.CRCL);
-
-            encoder.WriteEncodeable("Requested_Skill", Requested_Skill, typeof(CRCLSkillDataType));
-            encoder.WriteBoolean("Requested_Skill_Success", Requested_Skill_Success);
-            encoder.WriteBoolean("Active", Active);
-            encoder.WriteBoolean("Online", Online);
-            encoder.WriteEncodeable("IPAddresses", IPAddresses, typeof(PubSubIPAddresses));
-
-            encoder.PopNamespace();
-        }
-
-        /// <summary cref="IEncodeable.Decode(IDecoder)" />
-        public override void Decode(IDecoder decoder)
-        {
-            base.Decode(decoder);
-
-            decoder.PushNamespace(CRCL.Namespaces.CRCL);
-
-            Requested_Skill = (CRCLSkillDataType)decoder.ReadEncodeable("Requested_Skill", typeof(CRCLSkillDataType));
-            Requested_Skill_Success = decoder.ReadBoolean("Requested_Skill_Success");
-            Active = decoder.ReadBoolean("Active");
-            Online = decoder.ReadBoolean("Online");
-            IPAddresses = (PubSubIPAddresses)decoder.ReadEncodeable("IPAddresses", typeof(PubSubIPAddresses));
-
-            decoder.PopNamespace();
-        }
-
-        /// <summary cref="IEncodeable.IsEqual(IEncodeable)" />
-        public override bool IsEqual(IEncodeable encodeable)
-        {
-            if (Object.ReferenceEquals(this, encodeable))
-            {
-                return true;
-            }
-
-            SAMYRobotDataType value = encodeable as SAMYRobotDataType;
-
-            if (value == null)
-            {
-                return false;
-            }
-
-            if (!base.IsEqual(encodeable)) return false;
-            if (!Utils.IsEqual(m_requested_Skill, value.m_requested_Skill)) return false;
-            if (!Utils.IsEqual(m_requested_Skill_Success, value.m_requested_Skill_Success)) return false;
-            if (!Utils.IsEqual(m_active, value.m_active)) return false;
-            if (!Utils.IsEqual(m_online, value.m_online)) return false;
-            if (!Utils.IsEqual(m_iPAddresses, value.m_iPAddresses)) return false;
-
-            return true;
-        }    
-
-        #if !NET_STANDARD
-        /// <summary cref="ICloneable.Clone" />
-        public override object Clone()
-        {
-            return (SAMYRobotDataType)this.MemberwiseClone();
-        }
-        #endif
-
-        /// <summary cref="Object.MemberwiseClone" />
-        public new object MemberwiseClone()
-        {
-            SAMYRobotDataType clone = (SAMYRobotDataType)base.MemberwiseClone();
-
-            clone.m_requested_Skill = (CRCLSkillDataType)Utils.Clone(this.m_requested_Skill);
-            clone.m_requested_Skill_Success = (bool)Utils.Clone(this.m_requested_Skill_Success);
-            clone.m_active = (bool)Utils.Clone(this.m_active);
-            clone.m_online = (bool)Utils.Clone(this.m_online);
-            clone.m_iPAddresses = (PubSubIPAddresses)Utils.Clone(this.m_iPAddresses);
-
-            return clone;
-        }
-        #endregion
-
-        #region Private Fields
-        private CRCLSkillDataType m_requested_Skill;
-        private bool m_requested_Skill_Success;
-        private bool m_active;
-        private bool m_online;
-        private PubSubIPAddresses m_iPAddresses;
-        #endregion
-    }
-
-    #region SAMYRobotDataTypeCollection Class
-    /// <summary>
-    /// A collection of SAMYRobotDataType objects.
-    /// </summary>
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfSAMYRobotDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SAMYRobotDataType")]
-    #if !NET_STANDARD
-    public partial class SAMYRobotDataTypeCollection : List<SAMYRobotDataType>, ICloneable
-    #else
-    public partial class SAMYRobotDataTypeCollection : List<SAMYRobotDataType>
-    #endif
-    {
-        #region Constructors
-        /// <summary>
-        /// Initializes the collection with default values.
-        /// </summary>
-        public SAMYRobotDataTypeCollection() {}
-
-        /// <summary>
-        /// Initializes the collection with an initial capacity.
-        /// </summary>
-        public SAMYRobotDataTypeCollection(int capacity) : base(capacity) {}
-
-        /// <summary>
-        /// Initializes the collection with another collection.
-        /// </summary>
-        public SAMYRobotDataTypeCollection(IEnumerable<SAMYRobotDataType> collection) : base(collection) {}
-        #endregion
-
-        #region Static Operators
-        /// <summary>
-        /// Converts an array to a collection.
-        /// </summary>
-        public static implicit operator SAMYRobotDataTypeCollection(SAMYRobotDataType[] values)
-        {
-            if (values != null)
-            {
-                return new SAMYRobotDataTypeCollection(values);
-            }
-
-            return new SAMYRobotDataTypeCollection();
-        }
-
-        /// <summary>
-        /// Converts a collection to an array.
-        /// </summary>
-        public static explicit operator SAMYRobotDataType[](SAMYRobotDataTypeCollection values)
-        {
-            if (values != null)
-            {
-                return values.ToArray();
-            }
-
-            return null;
-        }
-        #endregion
-
-        #if !NET_STANDARD
-        #region ICloneable Methods
-        /// <summary>
-        /// Creates a deep copy of the collection.
-        /// </summary>
-        public object Clone()
-        {
-            return (SAMYRobotDataTypeCollection)this.MemberwiseClone();
-        }
-        #endregion
-        #endif
-
-        /// <summary cref="Object.MemberwiseClone" />
-        public new object MemberwiseClone()
-        {
-            SAMYRobotDataTypeCollection clone = new SAMYRobotDataTypeCollection(this.Count);
-
-            for (int ii = 0; ii < this.Count; ii++)
-            {
-                clone.Add((SAMYRobotDataType)Utils.Clone(this[ii]));
-            }
-
-            return clone;
-        }
-    }
-    #endregion
-    #endif
-    #endregion
-
     #region CRCLCommandsUnionDataType Class
     #if (!OPCUA_EXCLUDE_CRCLCommandsUnionDataType)
     /// <summary>
@@ -23117,8 +22580,8 @@ namespace CRCL
         /// <summary>
         /// InitCanonCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "InitCanonCommand", IsRequired = false, Order = 2)]
-        public InitCanonDataType InitCanonCommand
+        [DataMember(Name = "initCanonCommand", IsRequired = false, Order = 2)]
+        public InitCanonDataType initCanonCommand
         {
             get
             {
@@ -23139,8 +22602,8 @@ namespace CRCL
         /// <summary>
         /// EndCanonCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "EndCanonCommand", IsRequired = false, Order = 3)]
-        public EndCanonDataType EndCanonCommand
+        [DataMember(Name = "endCanonCommand", IsRequired = false, Order = 3)]
+        public EndCanonDataType endCanonCommand
         {
             get
             {
@@ -23161,8 +22624,8 @@ namespace CRCL
         /// <summary>
         /// MessageCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "MessageCommand", IsRequired = false, Order = 4)]
-        public MessageDataType MessageCommand
+        [DataMember(Name = "messageCommand", IsRequired = false, Order = 4)]
+        public MessageDataType messageCommand
         {
             get
             {
@@ -23183,8 +22646,8 @@ namespace CRCL
         /// <summary>
         /// MoveToCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "MoveToCommand", IsRequired = false, Order = 5)]
-        public MoveToDataType MoveToCommand
+        [DataMember(Name = "moveToCommand", IsRequired = false, Order = 5)]
+        public MoveToDataType moveToCommand
         {
             get
             {
@@ -23205,8 +22668,8 @@ namespace CRCL
         /// <summary>
         /// MoveScrewCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "MoveScrewCommand", IsRequired = false, Order = 6)]
-        public MoveScrewDataType MoveScrewCommand
+        [DataMember(Name = "moveScrewCommand", IsRequired = false, Order = 6)]
+        public MoveScrewDataType moveScrewCommand
         {
             get
             {
@@ -23227,8 +22690,8 @@ namespace CRCL
         /// <summary>
         /// MoveThroughToCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "MoveThroughToCommand", IsRequired = false, Order = 7)]
-        public MoveThroughToDataType MoveThroughToCommand
+        [DataMember(Name = "moveThroughToCommand", IsRequired = false, Order = 7)]
+        public MoveThroughToDataType moveThroughToCommand
         {
             get
             {
@@ -23249,8 +22712,8 @@ namespace CRCL
         /// <summary>
         /// DwellCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "DwellCommand", IsRequired = false, Order = 8)]
-        public DwellDataType DwellCommand
+        [DataMember(Name = "dwellCommand", IsRequired = false, Order = 8)]
+        public DwellDataType dwellCommand
         {
             get
             {
@@ -23271,8 +22734,8 @@ namespace CRCL
         /// <summary>
         /// ActuateJointsCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "ActuateJointsCommand", IsRequired = false, Order = 9)]
-        public ActuateJointsDataType ActuateJointsCommand
+        [DataMember(Name = "actuateJointsCommand", IsRequired = false, Order = 9)]
+        public ActuateJointsDataType actuateJointsCommand
         {
             get
             {
@@ -23293,8 +22756,8 @@ namespace CRCL
         /// <summary>
         /// ConfigureJointReportsCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "ConfigureJointReportsCommand", IsRequired = false, Order = 10)]
-        public ConfigureJointReportsDataType ConfigureJointReportsCommand
+        [DataMember(Name = "configureJointReportsCommand", IsRequired = false, Order = 10)]
+        public ConfigureJointReportsDataType configureJointReportsCommand
         {
             get
             {
@@ -23315,8 +22778,8 @@ namespace CRCL
         /// <summary>
         /// SetDefaultJointPositionsTolerancesCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "SetDefaultJointPositionsTolerancesCommand", IsRequired = false, Order = 11)]
-        public SetDefaultJointPositionsTolerancesDataType SetDefaultJointPositionsTolerancesCommand
+        [DataMember(Name = "setDefaultJointPositionsTolerancesCommand", IsRequired = false, Order = 11)]
+        public SetDefaultJointPositionsTolerancesDataType setDefaultJointPositionsTolerancesCommand
         {
             get
             {
@@ -23337,8 +22800,8 @@ namespace CRCL
         /// <summary>
         /// GetStatusCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "GetStatusCommand", IsRequired = false, Order = 12)]
-        public GetStatusDataType GetStatusCommand
+        [DataMember(Name = "getStatusCommand", IsRequired = false, Order = 12)]
+        public GetStatusDataType getStatusCommand
         {
             get
             {
@@ -23359,8 +22822,8 @@ namespace CRCL
         /// <summary>
         /// CloseToolChangerCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "CloseToolChangerCommand", IsRequired = false, Order = 13)]
-        public CloseToolChangerDataType CloseToolChangerCommand
+        [DataMember(Name = "closeToolChangerCommand", IsRequired = false, Order = 13)]
+        public CloseToolChangerDataType closeToolChangerCommand
         {
             get
             {
@@ -23381,8 +22844,8 @@ namespace CRCL
         /// <summary>
         /// OpenToolChangerCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "OpenToolChangerCommand", IsRequired = false, Order = 14)]
-        public OpenToolChangerDataType OpenToolChangerCommand
+        [DataMember(Name = "openToolChangerCommand", IsRequired = false, Order = 14)]
+        public OpenToolChangerDataType openToolChangerCommand
         {
             get
             {
@@ -23403,8 +22866,8 @@ namespace CRCL
         /// <summary>
         /// SetRobotParametersCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "SetRobotParametersCommand", IsRequired = false, Order = 15)]
-        public SetRobotParametersDataType SetRobotParametersCommand
+        [DataMember(Name = "setRobotParametersCommand", IsRequired = false, Order = 15)]
+        public SetRobotParametersDataType setRobotParametersCommand
         {
             get
             {
@@ -23425,8 +22888,8 @@ namespace CRCL
         /// <summary>
         /// SetEndeffectorParametersCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "SetEndeffectorParametersCommand", IsRequired = false, Order = 16)]
-        public SetEndeffectorParametersDataType SetEndeffectorParametersCommand
+        [DataMember(Name = "setEndeffectorParametersCommand", IsRequired = false, Order = 16)]
+        public SetEndeffectorParametersDataType setEndeffectorParametersCommand
         {
             get
             {
@@ -23447,8 +22910,8 @@ namespace CRCL
         /// <summary>
         /// SetEndeffectorCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "SetEndeffectorCommand", IsRequired = false, Order = 17)]
-        public SetEndeffectorDataType SetEndeffectorCommand
+        [DataMember(Name = "setEndeffectorCommand", IsRequired = false, Order = 17)]
+        public SetEndeffectorDataType setEndeffectorCommand
         {
             get
             {
@@ -23469,8 +22932,8 @@ namespace CRCL
         /// <summary>
         /// SetTransAccelCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "SetTransAccelCommand", IsRequired = false, Order = 18)]
-        public SetTransAccelDataType SetTransAccelCommand
+        [DataMember(Name = "setTransAccelCommand", IsRequired = false, Order = 18)]
+        public SetTransAccelDataType setTransAccelCommand
         {
             get
             {
@@ -23491,8 +22954,8 @@ namespace CRCL
         /// <summary>
         /// SetTransSpeedCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "SetTransSpeedCommand", IsRequired = false, Order = 19)]
-        public SetTransSpeedDataType SetTransSpeedCommand
+        [DataMember(Name = "setTransSpeedCommand", IsRequired = false, Order = 19)]
+        public SetTransSpeedDataType setTransSpeedCommand
         {
             get
             {
@@ -23513,8 +22976,8 @@ namespace CRCL
         /// <summary>
         /// SetRotAccelCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "SetRotAccelCommand", IsRequired = false, Order = 20)]
-        public SetRotAccelDataType SetRotAccelCommand
+        [DataMember(Name = "setRotAccelCommand", IsRequired = false, Order = 20)]
+        public SetRotAccelDataType setRotAccelCommand
         {
             get
             {
@@ -23535,8 +22998,8 @@ namespace CRCL
         /// <summary>
         /// SetRotSpeedCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "SetRotSpeedCommand", IsRequired = false, Order = 21)]
-        public SetRotSpeedDataType SetRotSpeedCommand
+        [DataMember(Name = "setRotSpeedCommand", IsRequired = false, Order = 21)]
+        public SetRotSpeedDataType setRotSpeedCommand
         {
             get
             {
@@ -23557,8 +23020,8 @@ namespace CRCL
         /// <summary>
         /// SetAngleUnitsCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "SetAngleUnitsCommand", IsRequired = false, Order = 22)]
-        public SetAngleUnitsDataType SetAngleUnitsCommand
+        [DataMember(Name = "setAngleUnitsCommand", IsRequired = false, Order = 22)]
+        public SetAngleUnitsDataType setAngleUnitsCommand
         {
             get
             {
@@ -23579,8 +23042,8 @@ namespace CRCL
         /// <summary>
         /// SetEndPoseToleranceCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "SetEndPoseToleranceCommand", IsRequired = false, Order = 23)]
-        public SetEndPoseToleranceDataType SetEndPoseToleranceCommand
+        [DataMember(Name = "setEndPoseToleranceCommand", IsRequired = false, Order = 23)]
+        public SetEndPoseToleranceDataType setEndPoseToleranceCommand
         {
             get
             {
@@ -23601,8 +23064,8 @@ namespace CRCL
         /// <summary>
         /// SetForceUnitsCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "SetForceUnitsCommand", IsRequired = false, Order = 24)]
-        public SetForceUnitsDataType SetForceUnitsCommand
+        [DataMember(Name = "setForceUnitsCommand", IsRequired = false, Order = 24)]
+        public SetForceUnitsDataType setForceUnitsCommand
         {
             get
             {
@@ -23623,8 +23086,8 @@ namespace CRCL
         /// <summary>
         /// SetIntermediatePoseToleranceCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "SetIntermediatePoseToleranceCommand", IsRequired = false, Order = 25)]
-        public SetIntermediatePoseToleranceDataType SetIntermediatePoseToleranceCommand
+        [DataMember(Name = "setIntermediatePoseToleranceCommand", IsRequired = false, Order = 25)]
+        public SetIntermediatePoseToleranceDataType setIntermediatePoseToleranceCommand
         {
             get
             {
@@ -23645,8 +23108,8 @@ namespace CRCL
         /// <summary>
         /// SetLengthUnitsCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "SetLengthUnitsCommand", IsRequired = false, Order = 26)]
-        public SetLengthUnitsDataType SetLengthUnitsCommand
+        [DataMember(Name = "setLengthUnitsCommand", IsRequired = false, Order = 26)]
+        public SetLengthUnitsDataType setLengthUnitsCommand
         {
             get
             {
@@ -23667,8 +23130,8 @@ namespace CRCL
         /// <summary>
         /// SetMotionCoordinationCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "SetMotionCoordinationCommand", IsRequired = false, Order = 27)]
-        public SetMotionCoordinationDataType SetMotionCoordinationCommand
+        [DataMember(Name = "setMotionCoordinationCommand", IsRequired = false, Order = 27)]
+        public SetMotionCoordinationDataType setMotionCoordinationCommand
         {
             get
             {
@@ -23689,8 +23152,8 @@ namespace CRCL
         /// <summary>
         /// SetTorqueUnitsCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "SetTorqueUnitsCommand", IsRequired = false, Order = 28)]
-        public SetTorqueUnitsDataType SetTorqueUnitsCommand
+        [DataMember(Name = "setTorqueUnitsCommand", IsRequired = false, Order = 28)]
+        public SetTorqueUnitsDataType setTorqueUnitsCommand
         {
             get
             {
@@ -23711,8 +23174,8 @@ namespace CRCL
         /// <summary>
         /// StopMotionCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "StopMotionCommand", IsRequired = false, Order = 29)]
-        public StopMotionDataType StopMotionCommand
+        [DataMember(Name = "stopMotionCommand", IsRequired = false, Order = 29)]
+        public StopMotionDataType stopMotionCommand
         {
             get
             {
@@ -23733,8 +23196,8 @@ namespace CRCL
         /// <summary>
         /// ConfigureStatusReportCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "ConfigureStatusReportCommand", IsRequired = false, Order = 30)]
-        public ConfigureStatusReportDataType ConfigureStatusReportCommand
+        [DataMember(Name = "configureStatusReportCommand", IsRequired = false, Order = 30)]
+        public ConfigureStatusReportDataType configureStatusReportCommand
         {
             get
             {
@@ -23755,8 +23218,8 @@ namespace CRCL
         /// <summary>
         /// EnableSensorCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "EnableSensorCommand", IsRequired = false, Order = 31)]
-        public EnableSensorDataType EnableSensorCommand
+        [DataMember(Name = "enableSensorCommand", IsRequired = false, Order = 31)]
+        public EnableSensorDataType enableSensorCommand
         {
             get
             {
@@ -23777,8 +23240,8 @@ namespace CRCL
         /// <summary>
         /// DisableSensorCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "DisableSensorCommand", IsRequired = false, Order = 32)]
-        public DisableSensorDataType DisableSensorCommand
+        [DataMember(Name = "disableSensorCommand", IsRequired = false, Order = 32)]
+        public DisableSensorDataType disableSensorCommand
         {
             get
             {
@@ -23799,8 +23262,8 @@ namespace CRCL
         /// <summary>
         /// EnableGripperCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "EnableGripperCommand", IsRequired = false, Order = 33)]
-        public EnableGripperDataType EnableGripperCommand
+        [DataMember(Name = "enableGripperCommand", IsRequired = false, Order = 33)]
+        public EnableGripperDataType enableGripperCommand
         {
             get
             {
@@ -23821,8 +23284,8 @@ namespace CRCL
         /// <summary>
         /// DisableGripperCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "DisableGripperCommand", IsRequired = false, Order = 34)]
-        public DisableGripperDataType DisableGripperCommand
+        [DataMember(Name = "disableGripperCommand", IsRequired = false, Order = 34)]
+        public DisableGripperDataType disableGripperCommand
         {
             get
             {
@@ -23843,8 +23306,8 @@ namespace CRCL
         /// <summary>
         /// EnableRobotParameterStatusCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "EnableRobotParameterStatusCommand", IsRequired = false, Order = 35)]
-        public EnableRobotParameterStatusDataType EnableRobotParameterStatusCommand
+        [DataMember(Name = "enableRobotParameterStatusCommand", IsRequired = false, Order = 35)]
+        public EnableRobotParameterStatusDataType enableRobotParameterStatusCommand
         {
             get
             {
@@ -23865,8 +23328,8 @@ namespace CRCL
         /// <summary>
         /// DisableRobotParameterStatusCommand in the CRCLCommandsUnionDataType
         /// </summary>
-        [DataMember(Name = "DisableRobotParameterStatusCommand", IsRequired = false, Order = 36)]
-        public DisableRobotParameterStatusDataType DisableRobotParameterStatusCommand
+        [DataMember(Name = "disableRobotParameterStatusCommand", IsRequired = false, Order = 36)]
+        public DisableRobotParameterStatusDataType disableRobotParameterStatusCommand
         {
             get
             {
@@ -23912,41 +23375,41 @@ namespace CRCL
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
             encoder.WriteUInt32("SwitchField", SwitchField);
-            encoder.WriteEncodeable("InitCanonCommand", InitCanonCommand, typeof(InitCanonDataType));
-            encoder.WriteEncodeable("EndCanonCommand", EndCanonCommand, typeof(EndCanonDataType));
-            encoder.WriteEncodeable("MessageCommand", MessageCommand, typeof(MessageDataType));
-            encoder.WriteEncodeable("MoveToCommand", MoveToCommand, typeof(MoveToDataType));
-            encoder.WriteEncodeable("MoveScrewCommand", MoveScrewCommand, typeof(MoveScrewDataType));
-            encoder.WriteEncodeable("MoveThroughToCommand", MoveThroughToCommand, typeof(MoveThroughToDataType));
-            encoder.WriteEncodeable("DwellCommand", DwellCommand, typeof(DwellDataType));
-            encoder.WriteEncodeable("ActuateJointsCommand", ActuateJointsCommand, typeof(ActuateJointsDataType));
-            encoder.WriteEncodeable("ConfigureJointReportsCommand", ConfigureJointReportsCommand, typeof(ConfigureJointReportsDataType));
-            encoder.WriteEncodeable("SetDefaultJointPositionsTolerancesCommand", SetDefaultJointPositionsTolerancesCommand, typeof(SetDefaultJointPositionsTolerancesDataType));
-            encoder.WriteEncodeable("GetStatusCommand", GetStatusCommand, typeof(GetStatusDataType));
-            encoder.WriteEncodeable("CloseToolChangerCommand", CloseToolChangerCommand, typeof(CloseToolChangerDataType));
-            encoder.WriteEncodeable("OpenToolChangerCommand", OpenToolChangerCommand, typeof(OpenToolChangerDataType));
-            encoder.WriteEncodeable("SetRobotParametersCommand", SetRobotParametersCommand, typeof(SetRobotParametersDataType));
-            encoder.WriteEncodeable("SetEndeffectorParametersCommand", SetEndeffectorParametersCommand, typeof(SetEndeffectorParametersDataType));
-            encoder.WriteEncodeable("SetEndeffectorCommand", SetEndeffectorCommand, typeof(SetEndeffectorDataType));
-            encoder.WriteEncodeable("SetTransAccelCommand", SetTransAccelCommand, typeof(SetTransAccelDataType));
-            encoder.WriteEncodeable("SetTransSpeedCommand", SetTransSpeedCommand, typeof(SetTransSpeedDataType));
-            encoder.WriteEncodeable("SetRotAccelCommand", SetRotAccelCommand, typeof(SetRotAccelDataType));
-            encoder.WriteEncodeable("SetRotSpeedCommand", SetRotSpeedCommand, typeof(SetRotSpeedDataType));
-            encoder.WriteEncodeable("SetAngleUnitsCommand", SetAngleUnitsCommand, typeof(SetAngleUnitsDataType));
-            encoder.WriteEncodeable("SetEndPoseToleranceCommand", SetEndPoseToleranceCommand, typeof(SetEndPoseToleranceDataType));
-            encoder.WriteEncodeable("SetForceUnitsCommand", SetForceUnitsCommand, typeof(SetForceUnitsDataType));
-            encoder.WriteEncodeable("SetIntermediatePoseToleranceCommand", SetIntermediatePoseToleranceCommand, typeof(SetIntermediatePoseToleranceDataType));
-            encoder.WriteEncodeable("SetLengthUnitsCommand", SetLengthUnitsCommand, typeof(SetLengthUnitsDataType));
-            encoder.WriteEncodeable("SetMotionCoordinationCommand", SetMotionCoordinationCommand, typeof(SetMotionCoordinationDataType));
-            encoder.WriteEncodeable("SetTorqueUnitsCommand", SetTorqueUnitsCommand, typeof(SetTorqueUnitsDataType));
-            encoder.WriteEncodeable("StopMotionCommand", StopMotionCommand, typeof(StopMotionDataType));
-            encoder.WriteEncodeable("ConfigureStatusReportCommand", ConfigureStatusReportCommand, typeof(ConfigureStatusReportDataType));
-            encoder.WriteEncodeable("EnableSensorCommand", EnableSensorCommand, typeof(EnableSensorDataType));
-            encoder.WriteEncodeable("DisableSensorCommand", DisableSensorCommand, typeof(DisableSensorDataType));
-            encoder.WriteEncodeable("EnableGripperCommand", EnableGripperCommand, typeof(EnableGripperDataType));
-            encoder.WriteEncodeable("DisableGripperCommand", DisableGripperCommand, typeof(DisableGripperDataType));
-            encoder.WriteEncodeable("EnableRobotParameterStatusCommand", EnableRobotParameterStatusCommand, typeof(EnableRobotParameterStatusDataType));
-            encoder.WriteEncodeable("DisableRobotParameterStatusCommand", DisableRobotParameterStatusCommand, typeof(DisableRobotParameterStatusDataType));
+            encoder.WriteEncodeable("initCanonCommand", initCanonCommand, typeof(InitCanonDataType));
+            encoder.WriteEncodeable("endCanonCommand", endCanonCommand, typeof(EndCanonDataType));
+            encoder.WriteEncodeable("messageCommand", messageCommand, typeof(MessageDataType));
+            encoder.WriteEncodeable("moveToCommand", moveToCommand, typeof(MoveToDataType));
+            encoder.WriteEncodeable("moveScrewCommand", moveScrewCommand, typeof(MoveScrewDataType));
+            encoder.WriteEncodeable("moveThroughToCommand", moveThroughToCommand, typeof(MoveThroughToDataType));
+            encoder.WriteEncodeable("dwellCommand", dwellCommand, typeof(DwellDataType));
+            encoder.WriteEncodeable("actuateJointsCommand", actuateJointsCommand, typeof(ActuateJointsDataType));
+            encoder.WriteEncodeable("configureJointReportsCommand", configureJointReportsCommand, typeof(ConfigureJointReportsDataType));
+            encoder.WriteEncodeable("setDefaultJointPositionsTolerancesCommand", setDefaultJointPositionsTolerancesCommand, typeof(SetDefaultJointPositionsTolerancesDataType));
+            encoder.WriteEncodeable("getStatusCommand", getStatusCommand, typeof(GetStatusDataType));
+            encoder.WriteEncodeable("closeToolChangerCommand", closeToolChangerCommand, typeof(CloseToolChangerDataType));
+            encoder.WriteEncodeable("openToolChangerCommand", openToolChangerCommand, typeof(OpenToolChangerDataType));
+            encoder.WriteEncodeable("setRobotParametersCommand", setRobotParametersCommand, typeof(SetRobotParametersDataType));
+            encoder.WriteEncodeable("setEndeffectorParametersCommand", setEndeffectorParametersCommand, typeof(SetEndeffectorParametersDataType));
+            encoder.WriteEncodeable("setEndeffectorCommand", setEndeffectorCommand, typeof(SetEndeffectorDataType));
+            encoder.WriteEncodeable("setTransAccelCommand", setTransAccelCommand, typeof(SetTransAccelDataType));
+            encoder.WriteEncodeable("setTransSpeedCommand", setTransSpeedCommand, typeof(SetTransSpeedDataType));
+            encoder.WriteEncodeable("setRotAccelCommand", setRotAccelCommand, typeof(SetRotAccelDataType));
+            encoder.WriteEncodeable("setRotSpeedCommand", setRotSpeedCommand, typeof(SetRotSpeedDataType));
+            encoder.WriteEncodeable("setAngleUnitsCommand", setAngleUnitsCommand, typeof(SetAngleUnitsDataType));
+            encoder.WriteEncodeable("setEndPoseToleranceCommand", setEndPoseToleranceCommand, typeof(SetEndPoseToleranceDataType));
+            encoder.WriteEncodeable("setForceUnitsCommand", setForceUnitsCommand, typeof(SetForceUnitsDataType));
+            encoder.WriteEncodeable("setIntermediatePoseToleranceCommand", setIntermediatePoseToleranceCommand, typeof(SetIntermediatePoseToleranceDataType));
+            encoder.WriteEncodeable("setLengthUnitsCommand", setLengthUnitsCommand, typeof(SetLengthUnitsDataType));
+            encoder.WriteEncodeable("setMotionCoordinationCommand", setMotionCoordinationCommand, typeof(SetMotionCoordinationDataType));
+            encoder.WriteEncodeable("setTorqueUnitsCommand", setTorqueUnitsCommand, typeof(SetTorqueUnitsDataType));
+            encoder.WriteEncodeable("stopMotionCommand", stopMotionCommand, typeof(StopMotionDataType));
+            encoder.WriteEncodeable("configureStatusReportCommand", configureStatusReportCommand, typeof(ConfigureStatusReportDataType));
+            encoder.WriteEncodeable("enableSensorCommand", enableSensorCommand, typeof(EnableSensorDataType));
+            encoder.WriteEncodeable("disableSensorCommand", disableSensorCommand, typeof(DisableSensorDataType));
+            encoder.WriteEncodeable("enableGripperCommand", enableGripperCommand, typeof(EnableGripperDataType));
+            encoder.WriteEncodeable("disableGripperCommand", disableGripperCommand, typeof(DisableGripperDataType));
+            encoder.WriteEncodeable("enableRobotParameterStatusCommand", enableRobotParameterStatusCommand, typeof(EnableRobotParameterStatusDataType));
+            encoder.WriteEncodeable("disableRobotParameterStatusCommand", disableRobotParameterStatusCommand, typeof(DisableRobotParameterStatusDataType));
 
             encoder.PopNamespace();
         }
@@ -23959,41 +23422,41 @@ namespace CRCL
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
             SwitchField = decoder.ReadUInt32("SwitchField");
-            InitCanonCommand = (InitCanonDataType)decoder.ReadEncodeable("InitCanonCommand", typeof(InitCanonDataType));
-            EndCanonCommand = (EndCanonDataType)decoder.ReadEncodeable("EndCanonCommand", typeof(EndCanonDataType));
-            MessageCommand = (MessageDataType)decoder.ReadEncodeable("MessageCommand", typeof(MessageDataType));
-            MoveToCommand = (MoveToDataType)decoder.ReadEncodeable("MoveToCommand", typeof(MoveToDataType));
-            MoveScrewCommand = (MoveScrewDataType)decoder.ReadEncodeable("MoveScrewCommand", typeof(MoveScrewDataType));
-            MoveThroughToCommand = (MoveThroughToDataType)decoder.ReadEncodeable("MoveThroughToCommand", typeof(MoveThroughToDataType));
-            DwellCommand = (DwellDataType)decoder.ReadEncodeable("DwellCommand", typeof(DwellDataType));
-            ActuateJointsCommand = (ActuateJointsDataType)decoder.ReadEncodeable("ActuateJointsCommand", typeof(ActuateJointsDataType));
-            ConfigureJointReportsCommand = (ConfigureJointReportsDataType)decoder.ReadEncodeable("ConfigureJointReportsCommand", typeof(ConfigureJointReportsDataType));
-            SetDefaultJointPositionsTolerancesCommand = (SetDefaultJointPositionsTolerancesDataType)decoder.ReadEncodeable("SetDefaultJointPositionsTolerancesCommand", typeof(SetDefaultJointPositionsTolerancesDataType));
-            GetStatusCommand = (GetStatusDataType)decoder.ReadEncodeable("GetStatusCommand", typeof(GetStatusDataType));
-            CloseToolChangerCommand = (CloseToolChangerDataType)decoder.ReadEncodeable("CloseToolChangerCommand", typeof(CloseToolChangerDataType));
-            OpenToolChangerCommand = (OpenToolChangerDataType)decoder.ReadEncodeable("OpenToolChangerCommand", typeof(OpenToolChangerDataType));
-            SetRobotParametersCommand = (SetRobotParametersDataType)decoder.ReadEncodeable("SetRobotParametersCommand", typeof(SetRobotParametersDataType));
-            SetEndeffectorParametersCommand = (SetEndeffectorParametersDataType)decoder.ReadEncodeable("SetEndeffectorParametersCommand", typeof(SetEndeffectorParametersDataType));
-            SetEndeffectorCommand = (SetEndeffectorDataType)decoder.ReadEncodeable("SetEndeffectorCommand", typeof(SetEndeffectorDataType));
-            SetTransAccelCommand = (SetTransAccelDataType)decoder.ReadEncodeable("SetTransAccelCommand", typeof(SetTransAccelDataType));
-            SetTransSpeedCommand = (SetTransSpeedDataType)decoder.ReadEncodeable("SetTransSpeedCommand", typeof(SetTransSpeedDataType));
-            SetRotAccelCommand = (SetRotAccelDataType)decoder.ReadEncodeable("SetRotAccelCommand", typeof(SetRotAccelDataType));
-            SetRotSpeedCommand = (SetRotSpeedDataType)decoder.ReadEncodeable("SetRotSpeedCommand", typeof(SetRotSpeedDataType));
-            SetAngleUnitsCommand = (SetAngleUnitsDataType)decoder.ReadEncodeable("SetAngleUnitsCommand", typeof(SetAngleUnitsDataType));
-            SetEndPoseToleranceCommand = (SetEndPoseToleranceDataType)decoder.ReadEncodeable("SetEndPoseToleranceCommand", typeof(SetEndPoseToleranceDataType));
-            SetForceUnitsCommand = (SetForceUnitsDataType)decoder.ReadEncodeable("SetForceUnitsCommand", typeof(SetForceUnitsDataType));
-            SetIntermediatePoseToleranceCommand = (SetIntermediatePoseToleranceDataType)decoder.ReadEncodeable("SetIntermediatePoseToleranceCommand", typeof(SetIntermediatePoseToleranceDataType));
-            SetLengthUnitsCommand = (SetLengthUnitsDataType)decoder.ReadEncodeable("SetLengthUnitsCommand", typeof(SetLengthUnitsDataType));
-            SetMotionCoordinationCommand = (SetMotionCoordinationDataType)decoder.ReadEncodeable("SetMotionCoordinationCommand", typeof(SetMotionCoordinationDataType));
-            SetTorqueUnitsCommand = (SetTorqueUnitsDataType)decoder.ReadEncodeable("SetTorqueUnitsCommand", typeof(SetTorqueUnitsDataType));
-            StopMotionCommand = (StopMotionDataType)decoder.ReadEncodeable("StopMotionCommand", typeof(StopMotionDataType));
-            ConfigureStatusReportCommand = (ConfigureStatusReportDataType)decoder.ReadEncodeable("ConfigureStatusReportCommand", typeof(ConfigureStatusReportDataType));
-            EnableSensorCommand = (EnableSensorDataType)decoder.ReadEncodeable("EnableSensorCommand", typeof(EnableSensorDataType));
-            DisableSensorCommand = (DisableSensorDataType)decoder.ReadEncodeable("DisableSensorCommand", typeof(DisableSensorDataType));
-            EnableGripperCommand = (EnableGripperDataType)decoder.ReadEncodeable("EnableGripperCommand", typeof(EnableGripperDataType));
-            DisableGripperCommand = (DisableGripperDataType)decoder.ReadEncodeable("DisableGripperCommand", typeof(DisableGripperDataType));
-            EnableRobotParameterStatusCommand = (EnableRobotParameterStatusDataType)decoder.ReadEncodeable("EnableRobotParameterStatusCommand", typeof(EnableRobotParameterStatusDataType));
-            DisableRobotParameterStatusCommand = (DisableRobotParameterStatusDataType)decoder.ReadEncodeable("DisableRobotParameterStatusCommand", typeof(DisableRobotParameterStatusDataType));
+            initCanonCommand = (InitCanonDataType)decoder.ReadEncodeable("initCanonCommand", typeof(InitCanonDataType));
+            endCanonCommand = (EndCanonDataType)decoder.ReadEncodeable("endCanonCommand", typeof(EndCanonDataType));
+            messageCommand = (MessageDataType)decoder.ReadEncodeable("messageCommand", typeof(MessageDataType));
+            moveToCommand = (MoveToDataType)decoder.ReadEncodeable("moveToCommand", typeof(MoveToDataType));
+            moveScrewCommand = (MoveScrewDataType)decoder.ReadEncodeable("moveScrewCommand", typeof(MoveScrewDataType));
+            moveThroughToCommand = (MoveThroughToDataType)decoder.ReadEncodeable("moveThroughToCommand", typeof(MoveThroughToDataType));
+            dwellCommand = (DwellDataType)decoder.ReadEncodeable("dwellCommand", typeof(DwellDataType));
+            actuateJointsCommand = (ActuateJointsDataType)decoder.ReadEncodeable("actuateJointsCommand", typeof(ActuateJointsDataType));
+            configureJointReportsCommand = (ConfigureJointReportsDataType)decoder.ReadEncodeable("configureJointReportsCommand", typeof(ConfigureJointReportsDataType));
+            setDefaultJointPositionsTolerancesCommand = (SetDefaultJointPositionsTolerancesDataType)decoder.ReadEncodeable("setDefaultJointPositionsTolerancesCommand", typeof(SetDefaultJointPositionsTolerancesDataType));
+            getStatusCommand = (GetStatusDataType)decoder.ReadEncodeable("getStatusCommand", typeof(GetStatusDataType));
+            closeToolChangerCommand = (CloseToolChangerDataType)decoder.ReadEncodeable("closeToolChangerCommand", typeof(CloseToolChangerDataType));
+            openToolChangerCommand = (OpenToolChangerDataType)decoder.ReadEncodeable("openToolChangerCommand", typeof(OpenToolChangerDataType));
+            setRobotParametersCommand = (SetRobotParametersDataType)decoder.ReadEncodeable("setRobotParametersCommand", typeof(SetRobotParametersDataType));
+            setEndeffectorParametersCommand = (SetEndeffectorParametersDataType)decoder.ReadEncodeable("setEndeffectorParametersCommand", typeof(SetEndeffectorParametersDataType));
+            setEndeffectorCommand = (SetEndeffectorDataType)decoder.ReadEncodeable("setEndeffectorCommand", typeof(SetEndeffectorDataType));
+            setTransAccelCommand = (SetTransAccelDataType)decoder.ReadEncodeable("setTransAccelCommand", typeof(SetTransAccelDataType));
+            setTransSpeedCommand = (SetTransSpeedDataType)decoder.ReadEncodeable("setTransSpeedCommand", typeof(SetTransSpeedDataType));
+            setRotAccelCommand = (SetRotAccelDataType)decoder.ReadEncodeable("setRotAccelCommand", typeof(SetRotAccelDataType));
+            setRotSpeedCommand = (SetRotSpeedDataType)decoder.ReadEncodeable("setRotSpeedCommand", typeof(SetRotSpeedDataType));
+            setAngleUnitsCommand = (SetAngleUnitsDataType)decoder.ReadEncodeable("setAngleUnitsCommand", typeof(SetAngleUnitsDataType));
+            setEndPoseToleranceCommand = (SetEndPoseToleranceDataType)decoder.ReadEncodeable("setEndPoseToleranceCommand", typeof(SetEndPoseToleranceDataType));
+            setForceUnitsCommand = (SetForceUnitsDataType)decoder.ReadEncodeable("setForceUnitsCommand", typeof(SetForceUnitsDataType));
+            setIntermediatePoseToleranceCommand = (SetIntermediatePoseToleranceDataType)decoder.ReadEncodeable("setIntermediatePoseToleranceCommand", typeof(SetIntermediatePoseToleranceDataType));
+            setLengthUnitsCommand = (SetLengthUnitsDataType)decoder.ReadEncodeable("setLengthUnitsCommand", typeof(SetLengthUnitsDataType));
+            setMotionCoordinationCommand = (SetMotionCoordinationDataType)decoder.ReadEncodeable("setMotionCoordinationCommand", typeof(SetMotionCoordinationDataType));
+            setTorqueUnitsCommand = (SetTorqueUnitsDataType)decoder.ReadEncodeable("setTorqueUnitsCommand", typeof(SetTorqueUnitsDataType));
+            stopMotionCommand = (StopMotionDataType)decoder.ReadEncodeable("stopMotionCommand", typeof(StopMotionDataType));
+            configureStatusReportCommand = (ConfigureStatusReportDataType)decoder.ReadEncodeable("configureStatusReportCommand", typeof(ConfigureStatusReportDataType));
+            enableSensorCommand = (EnableSensorDataType)decoder.ReadEncodeable("enableSensorCommand", typeof(EnableSensorDataType));
+            disableSensorCommand = (DisableSensorDataType)decoder.ReadEncodeable("disableSensorCommand", typeof(DisableSensorDataType));
+            enableGripperCommand = (EnableGripperDataType)decoder.ReadEncodeable("enableGripperCommand", typeof(EnableGripperDataType));
+            disableGripperCommand = (DisableGripperDataType)decoder.ReadEncodeable("disableGripperCommand", typeof(DisableGripperDataType));
+            enableRobotParameterStatusCommand = (EnableRobotParameterStatusDataType)decoder.ReadEncodeable("enableRobotParameterStatusCommand", typeof(EnableRobotParameterStatusDataType));
+            disableRobotParameterStatusCommand = (DisableRobotParameterStatusDataType)decoder.ReadEncodeable("disableRobotParameterStatusCommand", typeof(DisableRobotParameterStatusDataType));
 
             decoder.PopNamespace();
         }
@@ -24235,21 +23698,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region CRCLSkillDataType Class
-    #if (!OPCUA_EXCLUDE_CRCLSkillDataType)
+    #region CRCLCommandsBufferDataType Class
+    #if (!OPCUA_EXCLUDE_CRCLCommandsBufferDataType)
     /// <summary>
     /// CRCLProgramm
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class CRCLSkillDataType : CRCL_DataThingDataType
+    public partial class CRCLCommandsBufferDataType : CRCL_DataThingDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public CRCLSkillDataType()
+        public CRCLCommandsBufferDataType()
         {
             Initialize();
         }
@@ -24268,7 +23731,7 @@ namespace CRCL
         /// </summary>
         private void Initialize()
         {
-            m_cRCLCommands = new CRCLCommandsUnionDataTypeCollection();
+            m_crclCommands = new CRCLCommandsUnionDataTypeCollection();
         }
         #endregion
 
@@ -24276,21 +23739,21 @@ namespace CRCL
         /// <summary>
         /// CRCLCommands of the Skill
         /// </summary>
-        [DataMember(Name = "CRCLCommands", IsRequired = false, Order = 1)]
-        public CRCLCommandsUnionDataTypeCollection CRCLCommands
+        [DataMember(Name = "crclCommands", IsRequired = false, Order = 1)]
+        public CRCLCommandsUnionDataTypeCollection crclCommands
         {
             get
             {
-                return m_cRCLCommands;
+                return m_crclCommands;
             }
 
             set
             {
-                m_cRCLCommands = value;
+                m_crclCommands = value;
 
                 if (value == null)
                 {
-                    m_cRCLCommands = new CRCLCommandsUnionDataTypeCollection();
+                    m_crclCommands = new CRCLCommandsUnionDataTypeCollection();
                 }
             }
         }
@@ -24300,19 +23763,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.CRCLSkillDataType; }
+            get { return DataTypeIds.CRCLCommandsBufferDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.CRCLSkillDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.CRCLCommandsBufferDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.CRCLSkillDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.CRCLCommandsBufferDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -24322,7 +23785,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeableArray("CRCLCommands", CRCLCommands.ToArray(), typeof(CRCLCommandsUnionDataType));
+            encoder.WriteEncodeableArray("crclCommands", crclCommands.ToArray(), typeof(CRCLCommandsUnionDataType));
 
             encoder.PopNamespace();
         }
@@ -24334,7 +23797,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            CRCLCommands = (CRCLCommandsUnionDataTypeCollection)decoder.ReadEncodeableArray("CRCLCommands", typeof(CRCLCommandsUnionDataType));
+            crclCommands = (CRCLCommandsUnionDataTypeCollection)decoder.ReadEncodeableArray("crclCommands", typeof(CRCLCommandsUnionDataType));
 
             decoder.PopNamespace();
         }
@@ -24347,7 +23810,7 @@ namespace CRCL
                 return true;
             }
 
-            CRCLSkillDataType value = encodeable as CRCLSkillDataType;
+            CRCLCommandsBufferDataType value = encodeable as CRCLCommandsBufferDataType;
 
             if (value == null)
             {
@@ -24355,7 +23818,7 @@ namespace CRCL
             }
 
             if (!base.IsEqual(encodeable)) return false;
-            if (!Utils.IsEqual(m_cRCLCommands, value.m_cRCLCommands)) return false;
+            if (!Utils.IsEqual(m_crclCommands, value.m_crclCommands)) return false;
 
             return true;
         }    
@@ -24364,74 +23827,74 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (CRCLSkillDataType)this.MemberwiseClone();
+            return (CRCLCommandsBufferDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            CRCLSkillDataType clone = (CRCLSkillDataType)base.MemberwiseClone();
+            CRCLCommandsBufferDataType clone = (CRCLCommandsBufferDataType)base.MemberwiseClone();
 
-            clone.m_cRCLCommands = (CRCLCommandsUnionDataTypeCollection)Utils.Clone(this.m_cRCLCommands);
+            clone.m_crclCommands = (CRCLCommandsUnionDataTypeCollection)Utils.Clone(this.m_crclCommands);
 
             return clone;
         }
         #endregion
 
         #region Private Fields
-        private CRCLCommandsUnionDataTypeCollection m_cRCLCommands;
+        private CRCLCommandsUnionDataTypeCollection m_crclCommands;
         #endregion
     }
 
-    #region CRCLSkillDataTypeCollection Class
+    #region CRCLCommandsBufferDataTypeCollection Class
     /// <summary>
-    /// A collection of CRCLSkillDataType objects.
+    /// A collection of CRCLCommandsBufferDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfCRCLSkillDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "CRCLSkillDataType")]
+    [CollectionDataContract(Name = "ListOfCRCLCommandsBufferDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "CRCLCommandsBufferDataType")]
     #if !NET_STANDARD
-    public partial class CRCLSkillDataTypeCollection : List<CRCLSkillDataType>, ICloneable
+    public partial class CRCLCommandsBufferDataTypeCollection : List<CRCLCommandsBufferDataType>, ICloneable
     #else
-    public partial class CRCLSkillDataTypeCollection : List<CRCLSkillDataType>
+    public partial class CRCLCommandsBufferDataTypeCollection : List<CRCLCommandsBufferDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public CRCLSkillDataTypeCollection() {}
+        public CRCLCommandsBufferDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public CRCLSkillDataTypeCollection(int capacity) : base(capacity) {}
+        public CRCLCommandsBufferDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public CRCLSkillDataTypeCollection(IEnumerable<CRCLSkillDataType> collection) : base(collection) {}
+        public CRCLCommandsBufferDataTypeCollection(IEnumerable<CRCLCommandsBufferDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator CRCLSkillDataTypeCollection(CRCLSkillDataType[] values)
+        public static implicit operator CRCLCommandsBufferDataTypeCollection(CRCLCommandsBufferDataType[] values)
         {
             if (values != null)
             {
-                return new CRCLSkillDataTypeCollection(values);
+                return new CRCLCommandsBufferDataTypeCollection(values);
             }
 
-            return new CRCLSkillDataTypeCollection();
+            return new CRCLCommandsBufferDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator CRCLSkillDataType[](CRCLSkillDataTypeCollection values)
+        public static explicit operator CRCLCommandsBufferDataType[](CRCLCommandsBufferDataTypeCollection values)
         {
             if (values != null)
             {
@@ -24449,7 +23912,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (CRCLSkillDataTypeCollection)this.MemberwiseClone();
+            return (CRCLCommandsBufferDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -24457,11 +23920,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            CRCLSkillDataTypeCollection clone = new CRCLSkillDataTypeCollection(this.Count);
+            CRCLCommandsBufferDataTypeCollection clone = new CRCLCommandsBufferDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((CRCLSkillDataType)Utils.Clone(this[ii]));
+                clone.Add((CRCLCommandsBufferDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -24471,21 +23934,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region CRCLCommandParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_CRCLCommandParametersSetDataType)
+    #region CRCLCommandParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_CRCLCommandParamsSetDataType)
     /// <summary>
     /// Parameters of a CRCL Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class CRCLCommandParametersSetDataType : IEncodeable
+    public partial class CRCLCommandParamsSetDataType : IEncodeable
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public CRCLCommandParametersSetDataType()
+        public CRCLCommandParamsSetDataType()
         {
             Initialize();
         }
@@ -24506,24 +23969,33 @@ namespace CRCL
         {
             m_name = null;
             m_realTimeParameter = true;
+            m_realTimeParameterNodeID = null;
         }
         #endregion
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "Name", IsRequired = false, Order = 1)]
-        public string Name
+        [DataMember(Name = "name", IsRequired = false, Order = 1)]
+        public string name
         {
             get { return m_name;  }
             set { m_name = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "RealTimeParameter", IsRequired = false, Order = 2)]
-        public bool RealTimeParameter
+        [DataMember(Name = "realTimeParameter", IsRequired = false, Order = 2)]
+        public bool realTimeParameter
         {
             get { return m_realTimeParameter;  }
             set { m_realTimeParameter = value; }
+        }
+
+        /// <remarks />
+        [DataMember(Name = "realTimeParameterNodeID", IsRequired = false, Order = 3)]
+        public NodeId realTimeParameterNodeID
+        {
+            get { return m_realTimeParameterNodeID;  }
+            set { m_realTimeParameterNodeID = value; }
         }
         #endregion
 
@@ -24531,19 +24003,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public virtual ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.CRCLCommandParametersSetDataType; }
+            get { return DataTypeIds.CRCLCommandParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public virtual ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.CRCLCommandParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.CRCLCommandParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public virtual ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.CRCLCommandParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.CRCLCommandParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -24551,8 +24023,9 @@ namespace CRCL
         {
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteString("Name", Name);
-            encoder.WriteBoolean("RealTimeParameter", RealTimeParameter);
+            encoder.WriteString("name", name);
+            encoder.WriteBoolean("realTimeParameter", realTimeParameter);
+            encoder.WriteNodeId("realTimeParameterNodeID", realTimeParameterNodeID);
 
             encoder.PopNamespace();
         }
@@ -24562,8 +24035,9 @@ namespace CRCL
         {
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            Name = decoder.ReadString("Name");
-            RealTimeParameter = decoder.ReadBoolean("RealTimeParameter");
+            name = decoder.ReadString("name");
+            realTimeParameter = decoder.ReadBoolean("realTimeParameter");
+            realTimeParameterNodeID = decoder.ReadNodeId("realTimeParameterNodeID");
 
             decoder.PopNamespace();
         }
@@ -24576,7 +24050,7 @@ namespace CRCL
                 return true;
             }
 
-            CRCLCommandParametersSetDataType value = encodeable as CRCLCommandParametersSetDataType;
+            CRCLCommandParamsSetDataType value = encodeable as CRCLCommandParamsSetDataType;
 
             if (value == null)
             {
@@ -24585,6 +24059,7 @@ namespace CRCL
 
             if (!Utils.IsEqual(m_name, value.m_name)) return false;
             if (!Utils.IsEqual(m_realTimeParameter, value.m_realTimeParameter)) return false;
+            if (!Utils.IsEqual(m_realTimeParameterNodeID, value.m_realTimeParameterNodeID)) return false;
 
             return true;
         }
@@ -24593,17 +24068,18 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public virtual object Clone()
         {
-            return (CRCLCommandParametersSetDataType)this.MemberwiseClone();
+            return (CRCLCommandParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            CRCLCommandParametersSetDataType clone = (CRCLCommandParametersSetDataType)base.MemberwiseClone();
+            CRCLCommandParamsSetDataType clone = (CRCLCommandParamsSetDataType)base.MemberwiseClone();
 
             clone.m_name = (string)Utils.Clone(this.m_name);
             clone.m_realTimeParameter = (bool)Utils.Clone(this.m_realTimeParameter);
+            clone.m_realTimeParameterNodeID = (NodeId)Utils.Clone(this.m_realTimeParameterNodeID);
 
             return clone;
         }
@@ -24612,57 +24088,58 @@ namespace CRCL
         #region Private Fields
         private string m_name;
         private bool m_realTimeParameter;
+        private NodeId m_realTimeParameterNodeID;
         #endregion
     }
 
-    #region CRCLCommandParametersSetDataTypeCollection Class
+    #region CRCLCommandParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of CRCLCommandParametersSetDataType objects.
+    /// A collection of CRCLCommandParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfCRCLCommandParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "CRCLCommandParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfCRCLCommandParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "CRCLCommandParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class CRCLCommandParametersSetDataTypeCollection : List<CRCLCommandParametersSetDataType>, ICloneable
+    public partial class CRCLCommandParamsSetDataTypeCollection : List<CRCLCommandParamsSetDataType>, ICloneable
     #else
-    public partial class CRCLCommandParametersSetDataTypeCollection : List<CRCLCommandParametersSetDataType>
+    public partial class CRCLCommandParamsSetDataTypeCollection : List<CRCLCommandParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public CRCLCommandParametersSetDataTypeCollection() {}
+        public CRCLCommandParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public CRCLCommandParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public CRCLCommandParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public CRCLCommandParametersSetDataTypeCollection(IEnumerable<CRCLCommandParametersSetDataType> collection) : base(collection) {}
+        public CRCLCommandParamsSetDataTypeCollection(IEnumerable<CRCLCommandParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator CRCLCommandParametersSetDataTypeCollection(CRCLCommandParametersSetDataType[] values)
+        public static implicit operator CRCLCommandParamsSetDataTypeCollection(CRCLCommandParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new CRCLCommandParametersSetDataTypeCollection(values);
+                return new CRCLCommandParamsSetDataTypeCollection(values);
             }
 
-            return new CRCLCommandParametersSetDataTypeCollection();
+            return new CRCLCommandParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator CRCLCommandParametersSetDataType[](CRCLCommandParametersSetDataTypeCollection values)
+        public static explicit operator CRCLCommandParamsSetDataType[](CRCLCommandParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -24680,7 +24157,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (CRCLCommandParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (CRCLCommandParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -24688,11 +24165,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            CRCLCommandParametersSetDataTypeCollection clone = new CRCLCommandParametersSetDataTypeCollection(this.Count);
+            CRCLCommandParamsSetDataTypeCollection clone = new CRCLCommandParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((CRCLCommandParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((CRCLCommandParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -24702,21 +24179,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region InitCanonParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_InitCanonParametersSetDataType)
+    #region InitCanonParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_InitCanonParamsSetDataType)
     /// <summary>
     /// Parameters of an Init Command (does not require parameters).
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class InitCanonParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class InitCanonParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public InitCanonParametersSetDataType()
+        public InitCanonParamsSetDataType()
         {
             Initialize();
         }
@@ -24745,19 +24222,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.InitCanonParametersSetDataType; }
+            get { return DataTypeIds.InitCanonParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.InitCanonParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.InitCanonParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.InitCanonParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.InitCanonParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -24790,7 +24267,7 @@ namespace CRCL
                 return true;
             }
 
-            InitCanonParametersSetDataType value = encodeable as InitCanonParametersSetDataType;
+            InitCanonParamsSetDataType value = encodeable as InitCanonParamsSetDataType;
 
             if (value == null)
             {
@@ -24805,14 +24282,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (InitCanonParametersSetDataType)this.MemberwiseClone();
+            return (InitCanonParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            InitCanonParametersSetDataType clone = (InitCanonParametersSetDataType)base.MemberwiseClone();
+            InitCanonParamsSetDataType clone = (InitCanonParamsSetDataType)base.MemberwiseClone();
 
 
             return clone;
@@ -24823,54 +24300,54 @@ namespace CRCL
         #endregion
     }
 
-    #region InitCanonParametersSetDataTypeCollection Class
+    #region InitCanonParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of InitCanonParametersSetDataType objects.
+    /// A collection of InitCanonParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfInitCanonParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "InitCanonParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfInitCanonParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "InitCanonParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class InitCanonParametersSetDataTypeCollection : List<InitCanonParametersSetDataType>, ICloneable
+    public partial class InitCanonParamsSetDataTypeCollection : List<InitCanonParamsSetDataType>, ICloneable
     #else
-    public partial class InitCanonParametersSetDataTypeCollection : List<InitCanonParametersSetDataType>
+    public partial class InitCanonParamsSetDataTypeCollection : List<InitCanonParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public InitCanonParametersSetDataTypeCollection() {}
+        public InitCanonParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public InitCanonParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public InitCanonParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public InitCanonParametersSetDataTypeCollection(IEnumerable<InitCanonParametersSetDataType> collection) : base(collection) {}
+        public InitCanonParamsSetDataTypeCollection(IEnumerable<InitCanonParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator InitCanonParametersSetDataTypeCollection(InitCanonParametersSetDataType[] values)
+        public static implicit operator InitCanonParamsSetDataTypeCollection(InitCanonParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new InitCanonParametersSetDataTypeCollection(values);
+                return new InitCanonParamsSetDataTypeCollection(values);
             }
 
-            return new InitCanonParametersSetDataTypeCollection();
+            return new InitCanonParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator InitCanonParametersSetDataType[](InitCanonParametersSetDataTypeCollection values)
+        public static explicit operator InitCanonParamsSetDataType[](InitCanonParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -24888,7 +24365,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (InitCanonParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (InitCanonParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -24896,11 +24373,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            InitCanonParametersSetDataTypeCollection clone = new InitCanonParametersSetDataTypeCollection(this.Count);
+            InitCanonParamsSetDataTypeCollection clone = new InitCanonParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((InitCanonParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((InitCanonParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -24910,21 +24387,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region EndCanonParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_EndCanonParametersSetDataType)
+    #region EndCanonParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_EndCanonParamsSetDataType)
     /// <summary>
     /// Parameters of an EndCanon Command (does not require parameters).
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class EndCanonParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class EndCanonParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public EndCanonParametersSetDataType()
+        public EndCanonParamsSetDataType()
         {
             Initialize();
         }
@@ -24953,19 +24430,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.EndCanonParametersSetDataType; }
+            get { return DataTypeIds.EndCanonParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.EndCanonParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.EndCanonParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.EndCanonParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.EndCanonParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -24998,7 +24475,7 @@ namespace CRCL
                 return true;
             }
 
-            EndCanonParametersSetDataType value = encodeable as EndCanonParametersSetDataType;
+            EndCanonParamsSetDataType value = encodeable as EndCanonParamsSetDataType;
 
             if (value == null)
             {
@@ -25013,14 +24490,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (EndCanonParametersSetDataType)this.MemberwiseClone();
+            return (EndCanonParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            EndCanonParametersSetDataType clone = (EndCanonParametersSetDataType)base.MemberwiseClone();
+            EndCanonParamsSetDataType clone = (EndCanonParamsSetDataType)base.MemberwiseClone();
 
 
             return clone;
@@ -25031,54 +24508,54 @@ namespace CRCL
         #endregion
     }
 
-    #region EndCanonParametersSetDataTypeCollection Class
+    #region EndCanonParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of EndCanonParametersSetDataType objects.
+    /// A collection of EndCanonParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfEndCanonParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "EndCanonParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfEndCanonParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "EndCanonParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class EndCanonParametersSetDataTypeCollection : List<EndCanonParametersSetDataType>, ICloneable
+    public partial class EndCanonParamsSetDataTypeCollection : List<EndCanonParamsSetDataType>, ICloneable
     #else
-    public partial class EndCanonParametersSetDataTypeCollection : List<EndCanonParametersSetDataType>
+    public partial class EndCanonParamsSetDataTypeCollection : List<EndCanonParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public EndCanonParametersSetDataTypeCollection() {}
+        public EndCanonParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public EndCanonParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public EndCanonParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public EndCanonParametersSetDataTypeCollection(IEnumerable<EndCanonParametersSetDataType> collection) : base(collection) {}
+        public EndCanonParamsSetDataTypeCollection(IEnumerable<EndCanonParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator EndCanonParametersSetDataTypeCollection(EndCanonParametersSetDataType[] values)
+        public static implicit operator EndCanonParamsSetDataTypeCollection(EndCanonParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new EndCanonParametersSetDataTypeCollection(values);
+                return new EndCanonParamsSetDataTypeCollection(values);
             }
 
-            return new EndCanonParametersSetDataTypeCollection();
+            return new EndCanonParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator EndCanonParametersSetDataType[](EndCanonParametersSetDataTypeCollection values)
+        public static explicit operator EndCanonParamsSetDataType[](EndCanonParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -25096,7 +24573,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (EndCanonParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (EndCanonParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -25104,11 +24581,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            EndCanonParametersSetDataTypeCollection clone = new EndCanonParametersSetDataTypeCollection(this.Count);
+            EndCanonParamsSetDataTypeCollection clone = new EndCanonParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((EndCanonParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((EndCanonParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -25118,21 +24595,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region GetStatusParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_GetStatusParametersSetDataType)
+    #region GetStatusParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_GetStatusParamsSetDataType)
     /// <summary>
     /// Parameters of a GetStatus Command (does not require parameters).
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class GetStatusParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class GetStatusParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public GetStatusParametersSetDataType()
+        public GetStatusParamsSetDataType()
         {
             Initialize();
         }
@@ -25161,19 +24638,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.GetStatusParametersSetDataType; }
+            get { return DataTypeIds.GetStatusParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.GetStatusParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.GetStatusParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.GetStatusParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.GetStatusParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -25206,7 +24683,7 @@ namespace CRCL
                 return true;
             }
 
-            GetStatusParametersSetDataType value = encodeable as GetStatusParametersSetDataType;
+            GetStatusParamsSetDataType value = encodeable as GetStatusParamsSetDataType;
 
             if (value == null)
             {
@@ -25221,14 +24698,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (GetStatusParametersSetDataType)this.MemberwiseClone();
+            return (GetStatusParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            GetStatusParametersSetDataType clone = (GetStatusParametersSetDataType)base.MemberwiseClone();
+            GetStatusParamsSetDataType clone = (GetStatusParamsSetDataType)base.MemberwiseClone();
 
 
             return clone;
@@ -25239,54 +24716,54 @@ namespace CRCL
         #endregion
     }
 
-    #region GetStatusParametersSetDataTypeCollection Class
+    #region GetStatusParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of GetStatusParametersSetDataType objects.
+    /// A collection of GetStatusParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfGetStatusParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "GetStatusParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfGetStatusParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "GetStatusParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class GetStatusParametersSetDataTypeCollection : List<GetStatusParametersSetDataType>, ICloneable
+    public partial class GetStatusParamsSetDataTypeCollection : List<GetStatusParamsSetDataType>, ICloneable
     #else
-    public partial class GetStatusParametersSetDataTypeCollection : List<GetStatusParametersSetDataType>
+    public partial class GetStatusParamsSetDataTypeCollection : List<GetStatusParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public GetStatusParametersSetDataTypeCollection() {}
+        public GetStatusParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public GetStatusParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public GetStatusParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public GetStatusParametersSetDataTypeCollection(IEnumerable<GetStatusParametersSetDataType> collection) : base(collection) {}
+        public GetStatusParamsSetDataTypeCollection(IEnumerable<GetStatusParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator GetStatusParametersSetDataTypeCollection(GetStatusParametersSetDataType[] values)
+        public static implicit operator GetStatusParamsSetDataTypeCollection(GetStatusParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new GetStatusParametersSetDataTypeCollection(values);
+                return new GetStatusParamsSetDataTypeCollection(values);
             }
 
-            return new GetStatusParametersSetDataTypeCollection();
+            return new GetStatusParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator GetStatusParametersSetDataType[](GetStatusParametersSetDataTypeCollection values)
+        public static explicit operator GetStatusParamsSetDataType[](GetStatusParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -25304,7 +24781,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (GetStatusParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (GetStatusParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -25312,11 +24789,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            GetStatusParametersSetDataTypeCollection clone = new GetStatusParametersSetDataTypeCollection(this.Count);
+            GetStatusParamsSetDataTypeCollection clone = new GetStatusParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((GetStatusParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((GetStatusParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -25326,21 +24803,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region CloseToolChangerParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_CloseToolChangerParametersSetDataType)
+    #region CloseToolChangerParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_CloseToolChangerParamsSetDataType)
     /// <summary>
     /// Parameters of a CloseToolChanger Command (does not require parameters).
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class CloseToolChangerParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class CloseToolChangerParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public CloseToolChangerParametersSetDataType()
+        public CloseToolChangerParamsSetDataType()
         {
             Initialize();
         }
@@ -25369,19 +24846,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.CloseToolChangerParametersSetDataType; }
+            get { return DataTypeIds.CloseToolChangerParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.CloseToolChangerParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.CloseToolChangerParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.CloseToolChangerParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.CloseToolChangerParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -25414,7 +24891,7 @@ namespace CRCL
                 return true;
             }
 
-            CloseToolChangerParametersSetDataType value = encodeable as CloseToolChangerParametersSetDataType;
+            CloseToolChangerParamsSetDataType value = encodeable as CloseToolChangerParamsSetDataType;
 
             if (value == null)
             {
@@ -25429,14 +24906,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (CloseToolChangerParametersSetDataType)this.MemberwiseClone();
+            return (CloseToolChangerParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            CloseToolChangerParametersSetDataType clone = (CloseToolChangerParametersSetDataType)base.MemberwiseClone();
+            CloseToolChangerParamsSetDataType clone = (CloseToolChangerParamsSetDataType)base.MemberwiseClone();
 
 
             return clone;
@@ -25447,54 +24924,54 @@ namespace CRCL
         #endregion
     }
 
-    #region CloseToolChangerParametersSetDataTypeCollection Class
+    #region CloseToolChangerParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of CloseToolChangerParametersSetDataType objects.
+    /// A collection of CloseToolChangerParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfCloseToolChangerParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "CloseToolChangerParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfCloseToolChangerParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "CloseToolChangerParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class CloseToolChangerParametersSetDataTypeCollection : List<CloseToolChangerParametersSetDataType>, ICloneable
+    public partial class CloseToolChangerParamsSetDataTypeCollection : List<CloseToolChangerParamsSetDataType>, ICloneable
     #else
-    public partial class CloseToolChangerParametersSetDataTypeCollection : List<CloseToolChangerParametersSetDataType>
+    public partial class CloseToolChangerParamsSetDataTypeCollection : List<CloseToolChangerParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public CloseToolChangerParametersSetDataTypeCollection() {}
+        public CloseToolChangerParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public CloseToolChangerParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public CloseToolChangerParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public CloseToolChangerParametersSetDataTypeCollection(IEnumerable<CloseToolChangerParametersSetDataType> collection) : base(collection) {}
+        public CloseToolChangerParamsSetDataTypeCollection(IEnumerable<CloseToolChangerParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator CloseToolChangerParametersSetDataTypeCollection(CloseToolChangerParametersSetDataType[] values)
+        public static implicit operator CloseToolChangerParamsSetDataTypeCollection(CloseToolChangerParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new CloseToolChangerParametersSetDataTypeCollection(values);
+                return new CloseToolChangerParamsSetDataTypeCollection(values);
             }
 
-            return new CloseToolChangerParametersSetDataTypeCollection();
+            return new CloseToolChangerParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator CloseToolChangerParametersSetDataType[](CloseToolChangerParametersSetDataTypeCollection values)
+        public static explicit operator CloseToolChangerParamsSetDataType[](CloseToolChangerParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -25512,7 +24989,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (CloseToolChangerParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (CloseToolChangerParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -25520,11 +24997,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            CloseToolChangerParametersSetDataTypeCollection clone = new CloseToolChangerParametersSetDataTypeCollection(this.Count);
+            CloseToolChangerParamsSetDataTypeCollection clone = new CloseToolChangerParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((CloseToolChangerParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((CloseToolChangerParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -25534,21 +25011,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region OpenToolChangerParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_OpenToolChangerParametersSetDataType)
+    #region OpenToolChangerParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_OpenToolChangerParamsSetDataType)
     /// <summary>
     /// Parameters of a OpenToolChanger Command (does not require parameters).
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class OpenToolChangerParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class OpenToolChangerParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public OpenToolChangerParametersSetDataType()
+        public OpenToolChangerParamsSetDataType()
         {
             Initialize();
         }
@@ -25577,19 +25054,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.OpenToolChangerParametersSetDataType; }
+            get { return DataTypeIds.OpenToolChangerParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.OpenToolChangerParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.OpenToolChangerParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.OpenToolChangerParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.OpenToolChangerParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -25622,7 +25099,7 @@ namespace CRCL
                 return true;
             }
 
-            OpenToolChangerParametersSetDataType value = encodeable as OpenToolChangerParametersSetDataType;
+            OpenToolChangerParamsSetDataType value = encodeable as OpenToolChangerParamsSetDataType;
 
             if (value == null)
             {
@@ -25637,14 +25114,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (OpenToolChangerParametersSetDataType)this.MemberwiseClone();
+            return (OpenToolChangerParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            OpenToolChangerParametersSetDataType clone = (OpenToolChangerParametersSetDataType)base.MemberwiseClone();
+            OpenToolChangerParamsSetDataType clone = (OpenToolChangerParamsSetDataType)base.MemberwiseClone();
 
 
             return clone;
@@ -25655,54 +25132,54 @@ namespace CRCL
         #endregion
     }
 
-    #region OpenToolChangerParametersSetDataTypeCollection Class
+    #region OpenToolChangerParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of OpenToolChangerParametersSetDataType objects.
+    /// A collection of OpenToolChangerParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfOpenToolChangerParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "OpenToolChangerParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfOpenToolChangerParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "OpenToolChangerParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class OpenToolChangerParametersSetDataTypeCollection : List<OpenToolChangerParametersSetDataType>, ICloneable
+    public partial class OpenToolChangerParamsSetDataTypeCollection : List<OpenToolChangerParamsSetDataType>, ICloneable
     #else
-    public partial class OpenToolChangerParametersSetDataTypeCollection : List<OpenToolChangerParametersSetDataType>
+    public partial class OpenToolChangerParamsSetDataTypeCollection : List<OpenToolChangerParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public OpenToolChangerParametersSetDataTypeCollection() {}
+        public OpenToolChangerParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public OpenToolChangerParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public OpenToolChangerParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public OpenToolChangerParametersSetDataTypeCollection(IEnumerable<OpenToolChangerParametersSetDataType> collection) : base(collection) {}
+        public OpenToolChangerParamsSetDataTypeCollection(IEnumerable<OpenToolChangerParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator OpenToolChangerParametersSetDataTypeCollection(OpenToolChangerParametersSetDataType[] values)
+        public static implicit operator OpenToolChangerParamsSetDataTypeCollection(OpenToolChangerParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new OpenToolChangerParametersSetDataTypeCollection(values);
+                return new OpenToolChangerParamsSetDataTypeCollection(values);
             }
 
-            return new OpenToolChangerParametersSetDataTypeCollection();
+            return new OpenToolChangerParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator OpenToolChangerParametersSetDataType[](OpenToolChangerParametersSetDataTypeCollection values)
+        public static explicit operator OpenToolChangerParamsSetDataType[](OpenToolChangerParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -25720,7 +25197,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (OpenToolChangerParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (OpenToolChangerParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -25728,11 +25205,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            OpenToolChangerParametersSetDataTypeCollection clone = new OpenToolChangerParametersSetDataTypeCollection(this.Count);
+            OpenToolChangerParamsSetDataTypeCollection clone = new OpenToolChangerParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((OpenToolChangerParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((OpenToolChangerParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -25742,21 +25219,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region MessageParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_MessageParametersSetDataType)
+    #region MessageParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_MessageParamsSetDataType)
     /// <summary>
     /// Parameters of a Message Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class MessageParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class MessageParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public MessageParametersSetDataType()
+        public MessageParamsSetDataType()
         {
             Initialize();
         }
@@ -25781,8 +25258,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "Message", IsRequired = false, Order = 1)]
-        public string Message
+        [DataMember(Name = "message", IsRequired = false, Order = 1)]
+        public string message
         {
             get { return m_message;  }
             set { m_message = value; }
@@ -25793,19 +25270,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.MessageParametersSetDataType; }
+            get { return DataTypeIds.MessageParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.MessageParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.MessageParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.MessageParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.MessageParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -25815,7 +25292,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteString("Message", Message);
+            encoder.WriteString("message", message);
 
             encoder.PopNamespace();
         }
@@ -25827,7 +25304,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            Message = decoder.ReadString("Message");
+            message = decoder.ReadString("message");
 
             decoder.PopNamespace();
         }
@@ -25840,7 +25317,7 @@ namespace CRCL
                 return true;
             }
 
-            MessageParametersSetDataType value = encodeable as MessageParametersSetDataType;
+            MessageParamsSetDataType value = encodeable as MessageParamsSetDataType;
 
             if (value == null)
             {
@@ -25857,14 +25334,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (MessageParametersSetDataType)this.MemberwiseClone();
+            return (MessageParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            MessageParametersSetDataType clone = (MessageParametersSetDataType)base.MemberwiseClone();
+            MessageParamsSetDataType clone = (MessageParamsSetDataType)base.MemberwiseClone();
 
             clone.m_message = (string)Utils.Clone(this.m_message);
 
@@ -25877,54 +25354,54 @@ namespace CRCL
         #endregion
     }
 
-    #region MessageParametersSetDataTypeCollection Class
+    #region MessageParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of MessageParametersSetDataType objects.
+    /// A collection of MessageParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfMessageParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "MessageParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfMessageParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "MessageParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class MessageParametersSetDataTypeCollection : List<MessageParametersSetDataType>, ICloneable
+    public partial class MessageParamsSetDataTypeCollection : List<MessageParamsSetDataType>, ICloneable
     #else
-    public partial class MessageParametersSetDataTypeCollection : List<MessageParametersSetDataType>
+    public partial class MessageParamsSetDataTypeCollection : List<MessageParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public MessageParametersSetDataTypeCollection() {}
+        public MessageParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public MessageParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public MessageParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public MessageParametersSetDataTypeCollection(IEnumerable<MessageParametersSetDataType> collection) : base(collection) {}
+        public MessageParamsSetDataTypeCollection(IEnumerable<MessageParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator MessageParametersSetDataTypeCollection(MessageParametersSetDataType[] values)
+        public static implicit operator MessageParamsSetDataTypeCollection(MessageParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new MessageParametersSetDataTypeCollection(values);
+                return new MessageParamsSetDataTypeCollection(values);
             }
 
-            return new MessageParametersSetDataTypeCollection();
+            return new MessageParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator MessageParametersSetDataType[](MessageParametersSetDataTypeCollection values)
+        public static explicit operator MessageParamsSetDataType[](MessageParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -25942,7 +25419,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (MessageParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (MessageParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -25950,11 +25427,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            MessageParametersSetDataTypeCollection clone = new MessageParametersSetDataTypeCollection(this.Count);
+            MessageParamsSetDataTypeCollection clone = new MessageParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((MessageParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((MessageParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -25964,21 +25441,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region MoveToParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_MoveToParametersSetDataType)
+    #region MoveToParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_MoveToParamsSetDataType)
     /// <summary>
     /// Parameters of a MoveToCommand.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class MoveToParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class MoveToParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public MoveToParametersSetDataType()
+        public MoveToParamsSetDataType()
         {
             Initialize();
         }
@@ -26004,8 +25481,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "MoveStraight", IsRequired = false, Order = 1)]
-        public bool MoveStraight
+        [DataMember(Name = "moveStraight", IsRequired = false, Order = 1)]
+        public bool moveStraight
         {
             get { return m_moveStraight;  }
             set { m_moveStraight = value; }
@@ -26013,10 +25490,9 @@ namespace CRCL
 
         /// <summary>
         /// EndPosition of a moveTo command
-            
         /// </summary>
-        [DataMember(Name = "EndPosition", IsRequired = false, Order = 2)]
-        public CRCL_PoseDataType EndPosition
+        [DataMember(Name = "endPosition", IsRequired = false, Order = 2)]
+        public CRCL_PoseDataType endPosition
         {
             get
             {
@@ -26039,19 +25515,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.MoveToParametersSetDataType; }
+            get { return DataTypeIds.MoveToParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.MoveToParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.MoveToParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.MoveToParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.MoveToParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -26061,8 +25537,8 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteBoolean("MoveStraight", MoveStraight);
-            encoder.WriteEncodeable("EndPosition", EndPosition, typeof(CRCL_PoseDataType));
+            encoder.WriteBoolean("moveStraight", moveStraight);
+            encoder.WriteEncodeable("endPosition", endPosition, typeof(CRCL_PoseDataType));
 
             encoder.PopNamespace();
         }
@@ -26074,8 +25550,8 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            MoveStraight = decoder.ReadBoolean("MoveStraight");
-            EndPosition = (CRCL_PoseDataType)decoder.ReadEncodeable("EndPosition", typeof(CRCL_PoseDataType));
+            moveStraight = decoder.ReadBoolean("moveStraight");
+            endPosition = (CRCL_PoseDataType)decoder.ReadEncodeable("endPosition", typeof(CRCL_PoseDataType));
 
             decoder.PopNamespace();
         }
@@ -26088,7 +25564,7 @@ namespace CRCL
                 return true;
             }
 
-            MoveToParametersSetDataType value = encodeable as MoveToParametersSetDataType;
+            MoveToParamsSetDataType value = encodeable as MoveToParamsSetDataType;
 
             if (value == null)
             {
@@ -26106,14 +25582,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (MoveToParametersSetDataType)this.MemberwiseClone();
+            return (MoveToParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            MoveToParametersSetDataType clone = (MoveToParametersSetDataType)base.MemberwiseClone();
+            MoveToParamsSetDataType clone = (MoveToParamsSetDataType)base.MemberwiseClone();
 
             clone.m_moveStraight = (bool)Utils.Clone(this.m_moveStraight);
             clone.m_endPosition = (CRCL_PoseDataType)Utils.Clone(this.m_endPosition);
@@ -26128,54 +25604,54 @@ namespace CRCL
         #endregion
     }
 
-    #region MoveToParametersSetDataTypeCollection Class
+    #region MoveToParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of MoveToParametersSetDataType objects.
+    /// A collection of MoveToParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfMoveToParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "MoveToParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfMoveToParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "MoveToParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class MoveToParametersSetDataTypeCollection : List<MoveToParametersSetDataType>, ICloneable
+    public partial class MoveToParamsSetDataTypeCollection : List<MoveToParamsSetDataType>, ICloneable
     #else
-    public partial class MoveToParametersSetDataTypeCollection : List<MoveToParametersSetDataType>
+    public partial class MoveToParamsSetDataTypeCollection : List<MoveToParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public MoveToParametersSetDataTypeCollection() {}
+        public MoveToParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public MoveToParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public MoveToParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public MoveToParametersSetDataTypeCollection(IEnumerable<MoveToParametersSetDataType> collection) : base(collection) {}
+        public MoveToParamsSetDataTypeCollection(IEnumerable<MoveToParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator MoveToParametersSetDataTypeCollection(MoveToParametersSetDataType[] values)
+        public static implicit operator MoveToParamsSetDataTypeCollection(MoveToParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new MoveToParametersSetDataTypeCollection(values);
+                return new MoveToParamsSetDataTypeCollection(values);
             }
 
-            return new MoveToParametersSetDataTypeCollection();
+            return new MoveToParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator MoveToParametersSetDataType[](MoveToParametersSetDataTypeCollection values)
+        public static explicit operator MoveToParamsSetDataType[](MoveToParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -26193,7 +25669,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (MoveToParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (MoveToParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -26201,11 +25677,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            MoveToParametersSetDataTypeCollection clone = new MoveToParametersSetDataTypeCollection(this.Count);
+            MoveToParamsSetDataTypeCollection clone = new MoveToParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((MoveToParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((MoveToParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -26215,21 +25691,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region MoveScrewParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_MoveScrewParametersSetDataType)
+    #region MoveScrewParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_MoveScrewParamsSetDataType)
     /// <summary>
     /// Parameters of a MoveScrew Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class MoveScrewParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class MoveScrewParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public MoveScrewParametersSetDataType()
+        public MoveScrewParamsSetDataType()
         {
             Initialize();
         }
@@ -26259,10 +25735,9 @@ namespace CRCL
         #region Public Properties
         /// <summary>
         /// StartPosition of a MoveScrew Command
-            
         /// </summary>
-        [DataMember(Name = "StartPosition", IsRequired = false, Order = 1)]
-        public CRCL_PoseDataType StartPosition
+        [DataMember(Name = "startPosition", IsRequired = false, Order = 1)]
+        public CRCL_PoseDataType startPosition
         {
             get
             {
@@ -26282,10 +25757,9 @@ namespace CRCL
 
         /// <summary>
         /// AxisPoint of a MoveScrew Command
-            
         /// </summary>
-        [DataMember(Name = "AxisPoint", IsRequired = false, Order = 2)]
-        public CRCL_PointDataType AxisPoint
+        [DataMember(Name = "axisPoint", IsRequired = false, Order = 2)]
+        public CRCL_PointDataType axisPoint
         {
             get
             {
@@ -26304,24 +25778,24 @@ namespace CRCL
         }
 
         /// <remarks />
-        [DataMember(Name = "AxialDistanceFree", IsRequired = false, Order = 3)]
-        public double AxialDistanceFree
+        [DataMember(Name = "axialDistanceFree", IsRequired = false, Order = 3)]
+        public double axialDistanceFree
         {
             get { return m_axialDistanceFree;  }
             set { m_axialDistanceFree = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "AxialDistanceScrew", IsRequired = false, Order = 4)]
-        public double AxialDistanceScrew
+        [DataMember(Name = "axialDistanceScrew", IsRequired = false, Order = 4)]
+        public double axialDistanceScrew
         {
             get { return m_axialDistanceScrew;  }
             set { m_axialDistanceScrew = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "Turn", IsRequired = false, Order = 5)]
-        public double Turn
+        [DataMember(Name = "turn", IsRequired = false, Order = 5)]
+        public double turn
         {
             get { return m_turn;  }
             set { m_turn = value; }
@@ -26332,19 +25806,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.MoveScrewParametersSetDataType; }
+            get { return DataTypeIds.MoveScrewParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.MoveScrewParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.MoveScrewParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.MoveScrewParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.MoveScrewParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -26354,11 +25828,11 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeable("StartPosition", StartPosition, typeof(CRCL_PoseDataType));
-            encoder.WriteEncodeable("AxisPoint", AxisPoint, typeof(CRCL_PointDataType));
-            encoder.WriteDouble("AxialDistanceFree", AxialDistanceFree);
-            encoder.WriteDouble("AxialDistanceScrew", AxialDistanceScrew);
-            encoder.WriteDouble("Turn", Turn);
+            encoder.WriteEncodeable("startPosition", startPosition, typeof(CRCL_PoseDataType));
+            encoder.WriteEncodeable("axisPoint", axisPoint, typeof(CRCL_PointDataType));
+            encoder.WriteDouble("axialDistanceFree", axialDistanceFree);
+            encoder.WriteDouble("axialDistanceScrew", axialDistanceScrew);
+            encoder.WriteDouble("turn", turn);
 
             encoder.PopNamespace();
         }
@@ -26370,11 +25844,11 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            StartPosition = (CRCL_PoseDataType)decoder.ReadEncodeable("StartPosition", typeof(CRCL_PoseDataType));
-            AxisPoint = (CRCL_PointDataType)decoder.ReadEncodeable("AxisPoint", typeof(CRCL_PointDataType));
-            AxialDistanceFree = decoder.ReadDouble("AxialDistanceFree");
-            AxialDistanceScrew = decoder.ReadDouble("AxialDistanceScrew");
-            Turn = decoder.ReadDouble("Turn");
+            startPosition = (CRCL_PoseDataType)decoder.ReadEncodeable("startPosition", typeof(CRCL_PoseDataType));
+            axisPoint = (CRCL_PointDataType)decoder.ReadEncodeable("axisPoint", typeof(CRCL_PointDataType));
+            axialDistanceFree = decoder.ReadDouble("axialDistanceFree");
+            axialDistanceScrew = decoder.ReadDouble("axialDistanceScrew");
+            turn = decoder.ReadDouble("turn");
 
             decoder.PopNamespace();
         }
@@ -26387,7 +25861,7 @@ namespace CRCL
                 return true;
             }
 
-            MoveScrewParametersSetDataType value = encodeable as MoveScrewParametersSetDataType;
+            MoveScrewParamsSetDataType value = encodeable as MoveScrewParamsSetDataType;
 
             if (value == null)
             {
@@ -26408,14 +25882,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (MoveScrewParametersSetDataType)this.MemberwiseClone();
+            return (MoveScrewParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            MoveScrewParametersSetDataType clone = (MoveScrewParametersSetDataType)base.MemberwiseClone();
+            MoveScrewParamsSetDataType clone = (MoveScrewParamsSetDataType)base.MemberwiseClone();
 
             clone.m_startPosition = (CRCL_PoseDataType)Utils.Clone(this.m_startPosition);
             clone.m_axisPoint = (CRCL_PointDataType)Utils.Clone(this.m_axisPoint);
@@ -26436,54 +25910,54 @@ namespace CRCL
         #endregion
     }
 
-    #region MoveScrewParametersSetDataTypeCollection Class
+    #region MoveScrewParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of MoveScrewParametersSetDataType objects.
+    /// A collection of MoveScrewParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfMoveScrewParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "MoveScrewParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfMoveScrewParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "MoveScrewParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class MoveScrewParametersSetDataTypeCollection : List<MoveScrewParametersSetDataType>, ICloneable
+    public partial class MoveScrewParamsSetDataTypeCollection : List<MoveScrewParamsSetDataType>, ICloneable
     #else
-    public partial class MoveScrewParametersSetDataTypeCollection : List<MoveScrewParametersSetDataType>
+    public partial class MoveScrewParamsSetDataTypeCollection : List<MoveScrewParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public MoveScrewParametersSetDataTypeCollection() {}
+        public MoveScrewParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public MoveScrewParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public MoveScrewParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public MoveScrewParametersSetDataTypeCollection(IEnumerable<MoveScrewParametersSetDataType> collection) : base(collection) {}
+        public MoveScrewParamsSetDataTypeCollection(IEnumerable<MoveScrewParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator MoveScrewParametersSetDataTypeCollection(MoveScrewParametersSetDataType[] values)
+        public static implicit operator MoveScrewParamsSetDataTypeCollection(MoveScrewParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new MoveScrewParametersSetDataTypeCollection(values);
+                return new MoveScrewParamsSetDataTypeCollection(values);
             }
 
-            return new MoveScrewParametersSetDataTypeCollection();
+            return new MoveScrewParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator MoveScrewParametersSetDataType[](MoveScrewParametersSetDataTypeCollection values)
+        public static explicit operator MoveScrewParamsSetDataType[](MoveScrewParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -26501,7 +25975,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (MoveScrewParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (MoveScrewParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -26509,11 +25983,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            MoveScrewParametersSetDataTypeCollection clone = new MoveScrewParametersSetDataTypeCollection(this.Count);
+            MoveScrewParamsSetDataTypeCollection clone = new MoveScrewParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((MoveScrewParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((MoveScrewParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -26523,21 +25997,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region MoveThroughToParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_MoveThroughToParametersSetDataType)
+    #region MoveThroughToParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_MoveThroughToParamsSetDataType)
     /// <summary>
     /// Parameters of a MoveThroughTo Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class MoveThroughToParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class MoveThroughToParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public MoveThroughToParametersSetDataType()
+        public MoveThroughToParamsSetDataType()
         {
             Initialize();
         }
@@ -26564,8 +26038,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "MoveStraight", IsRequired = false, Order = 1)]
-        public bool MoveStraight
+        [DataMember(Name = "moveStraight", IsRequired = false, Order = 1)]
+        public bool moveStraight
         {
             get { return m_moveStraight;  }
             set { m_moveStraight = value; }
@@ -26573,10 +26047,9 @@ namespace CRCL
 
         /// <summary>
         /// Waypoint of a MoveThroughTo Command (requires minimum two poses)
-            
         /// </summary>
-        [DataMember(Name = "Waypoint", IsRequired = false, Order = 2)]
-        public CRCL_PoseDataTypeCollection Waypoint
+        [DataMember(Name = "waypoint", IsRequired = false, Order = 2)]
+        public CRCL_PoseDataTypeCollection waypoint
         {
             get
             {
@@ -26595,8 +26068,8 @@ namespace CRCL
         }
 
         /// <remarks />
-        [DataMember(Name = "NumPositions", IsRequired = false, Order = 3)]
-        public int NumPositions
+        [DataMember(Name = "numPositions", IsRequired = false, Order = 3)]
+        public int numPositions
         {
             get { return m_numPositions;  }
             set { m_numPositions = value; }
@@ -26607,19 +26080,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.MoveThroughToParametersSetDataType; }
+            get { return DataTypeIds.MoveThroughToParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.MoveThroughToParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.MoveThroughToParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.MoveThroughToParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.MoveThroughToParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -26629,9 +26102,9 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteBoolean("MoveStraight", MoveStraight);
-            encoder.WriteEncodeableArray("Waypoint", Waypoint.ToArray(), typeof(CRCL_PoseDataType));
-            encoder.WriteInt32("NumPositions", NumPositions);
+            encoder.WriteBoolean("moveStraight", moveStraight);
+            encoder.WriteEncodeableArray("waypoint", waypoint.ToArray(), typeof(CRCL_PoseDataType));
+            encoder.WriteInt32("numPositions", numPositions);
 
             encoder.PopNamespace();
         }
@@ -26643,9 +26116,9 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            MoveStraight = decoder.ReadBoolean("MoveStraight");
-            Waypoint = (CRCL_PoseDataTypeCollection)decoder.ReadEncodeableArray("Waypoint", typeof(CRCL_PoseDataType));
-            NumPositions = decoder.ReadInt32("NumPositions");
+            moveStraight = decoder.ReadBoolean("moveStraight");
+            waypoint = (CRCL_PoseDataTypeCollection)decoder.ReadEncodeableArray("waypoint", typeof(CRCL_PoseDataType));
+            numPositions = decoder.ReadInt32("numPositions");
 
             decoder.PopNamespace();
         }
@@ -26658,7 +26131,7 @@ namespace CRCL
                 return true;
             }
 
-            MoveThroughToParametersSetDataType value = encodeable as MoveThroughToParametersSetDataType;
+            MoveThroughToParamsSetDataType value = encodeable as MoveThroughToParamsSetDataType;
 
             if (value == null)
             {
@@ -26677,14 +26150,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (MoveThroughToParametersSetDataType)this.MemberwiseClone();
+            return (MoveThroughToParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            MoveThroughToParametersSetDataType clone = (MoveThroughToParametersSetDataType)base.MemberwiseClone();
+            MoveThroughToParamsSetDataType clone = (MoveThroughToParamsSetDataType)base.MemberwiseClone();
 
             clone.m_moveStraight = (bool)Utils.Clone(this.m_moveStraight);
             clone.m_waypoint = (CRCL_PoseDataTypeCollection)Utils.Clone(this.m_waypoint);
@@ -26701,54 +26174,54 @@ namespace CRCL
         #endregion
     }
 
-    #region MoveThroughToParametersSetDataTypeCollection Class
+    #region MoveThroughToParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of MoveThroughToParametersSetDataType objects.
+    /// A collection of MoveThroughToParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfMoveThroughToParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "MoveThroughToParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfMoveThroughToParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "MoveThroughToParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class MoveThroughToParametersSetDataTypeCollection : List<MoveThroughToParametersSetDataType>, ICloneable
+    public partial class MoveThroughToParamsSetDataTypeCollection : List<MoveThroughToParamsSetDataType>, ICloneable
     #else
-    public partial class MoveThroughToParametersSetDataTypeCollection : List<MoveThroughToParametersSetDataType>
+    public partial class MoveThroughToParamsSetDataTypeCollection : List<MoveThroughToParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public MoveThroughToParametersSetDataTypeCollection() {}
+        public MoveThroughToParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public MoveThroughToParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public MoveThroughToParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public MoveThroughToParametersSetDataTypeCollection(IEnumerable<MoveThroughToParametersSetDataType> collection) : base(collection) {}
+        public MoveThroughToParamsSetDataTypeCollection(IEnumerable<MoveThroughToParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator MoveThroughToParametersSetDataTypeCollection(MoveThroughToParametersSetDataType[] values)
+        public static implicit operator MoveThroughToParamsSetDataTypeCollection(MoveThroughToParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new MoveThroughToParametersSetDataTypeCollection(values);
+                return new MoveThroughToParamsSetDataTypeCollection(values);
             }
 
-            return new MoveThroughToParametersSetDataTypeCollection();
+            return new MoveThroughToParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator MoveThroughToParametersSetDataType[](MoveThroughToParametersSetDataTypeCollection values)
+        public static explicit operator MoveThroughToParamsSetDataType[](MoveThroughToParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -26766,7 +26239,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (MoveThroughToParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (MoveThroughToParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -26774,11 +26247,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            MoveThroughToParametersSetDataTypeCollection clone = new MoveThroughToParametersSetDataTypeCollection(this.Count);
+            MoveThroughToParamsSetDataTypeCollection clone = new MoveThroughToParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((MoveThroughToParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((MoveThroughToParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -26788,21 +26261,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region DwellParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_DwellParametersSetDataType)
+    #region DwellParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_DwellParamsSetDataType)
     /// <summary>
     /// Parameters of a Dwell Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class DwellParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class DwellParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public DwellParametersSetDataType()
+        public DwellParamsSetDataType()
         {
             Initialize();
         }
@@ -26827,8 +26300,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "DwellTime", IsRequired = false, Order = 1)]
-        public double DwellTime
+        [DataMember(Name = "dwellTime", IsRequired = false, Order = 1)]
+        public double dwellTime
         {
             get { return m_dwellTime;  }
             set { m_dwellTime = value; }
@@ -26839,19 +26312,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.DwellParametersSetDataType; }
+            get { return DataTypeIds.DwellParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.DwellParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.DwellParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.DwellParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.DwellParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -26861,7 +26334,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteDouble("DwellTime", DwellTime);
+            encoder.WriteDouble("dwellTime", dwellTime);
 
             encoder.PopNamespace();
         }
@@ -26873,7 +26346,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            DwellTime = decoder.ReadDouble("DwellTime");
+            dwellTime = decoder.ReadDouble("dwellTime");
 
             decoder.PopNamespace();
         }
@@ -26886,7 +26359,7 @@ namespace CRCL
                 return true;
             }
 
-            DwellParametersSetDataType value = encodeable as DwellParametersSetDataType;
+            DwellParamsSetDataType value = encodeable as DwellParamsSetDataType;
 
             if (value == null)
             {
@@ -26903,14 +26376,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (DwellParametersSetDataType)this.MemberwiseClone();
+            return (DwellParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            DwellParametersSetDataType clone = (DwellParametersSetDataType)base.MemberwiseClone();
+            DwellParamsSetDataType clone = (DwellParamsSetDataType)base.MemberwiseClone();
 
             clone.m_dwellTime = (double)Utils.Clone(this.m_dwellTime);
 
@@ -26923,54 +26396,54 @@ namespace CRCL
         #endregion
     }
 
-    #region DwellParametersSetDataTypeCollection Class
+    #region DwellParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of DwellParametersSetDataType objects.
+    /// A collection of DwellParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfDwellParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "DwellParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfDwellParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "DwellParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class DwellParametersSetDataTypeCollection : List<DwellParametersSetDataType>, ICloneable
+    public partial class DwellParamsSetDataTypeCollection : List<DwellParamsSetDataType>, ICloneable
     #else
-    public partial class DwellParametersSetDataTypeCollection : List<DwellParametersSetDataType>
+    public partial class DwellParamsSetDataTypeCollection : List<DwellParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public DwellParametersSetDataTypeCollection() {}
+        public DwellParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public DwellParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public DwellParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public DwellParametersSetDataTypeCollection(IEnumerable<DwellParametersSetDataType> collection) : base(collection) {}
+        public DwellParamsSetDataTypeCollection(IEnumerable<DwellParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator DwellParametersSetDataTypeCollection(DwellParametersSetDataType[] values)
+        public static implicit operator DwellParamsSetDataTypeCollection(DwellParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new DwellParametersSetDataTypeCollection(values);
+                return new DwellParamsSetDataTypeCollection(values);
             }
 
-            return new DwellParametersSetDataTypeCollection();
+            return new DwellParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator DwellParametersSetDataType[](DwellParametersSetDataTypeCollection values)
+        public static explicit operator DwellParamsSetDataType[](DwellParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -26988,7 +26461,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (DwellParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (DwellParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -26996,11 +26469,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            DwellParametersSetDataTypeCollection clone = new DwellParametersSetDataTypeCollection(this.Count);
+            DwellParamsSetDataTypeCollection clone = new DwellParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((DwellParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((DwellParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -27010,21 +26483,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region ActuateJointsParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_ActuateJointsParametersSetDataType)
+    #region ActuateJointsParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_ActuateJointsParamsSetDataType)
     /// <summary>
     /// Parameters of a ActuateJoints Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class ActuateJointsParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class ActuateJointsParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public ActuateJointsParametersSetDataType()
+        public ActuateJointsParamsSetDataType()
         {
             Initialize();
         }
@@ -27051,10 +26524,9 @@ namespace CRCL
         #region Public Properties
         /// <summary>
         /// Array of ActuateJoint of a ActuateJoints Command
-            
         /// </summary>
-        [DataMember(Name = "ActuateJoint", IsRequired = false, Order = 1)]
-        public CRCL_ActuateJointDataTypeCollection ActuateJoint
+        [DataMember(Name = "actuateJoint", IsRequired = false, Order = 1)]
+        public CRCL_ActuateJointDataTypeCollection actuateJoint
         {
             get
             {
@@ -27074,10 +26546,9 @@ namespace CRCL
 
         /// <summary>
         /// JointTolerances of a ActuateJoints Command
-            
         /// </summary>
-        [DataMember(Name = "JointTolerances", IsRequired = false, Order = 2)]
-        public CRCL_JointPositionsTolerancesDataType JointTolerances
+        [DataMember(Name = "jointTolerances", IsRequired = false, Order = 2)]
+        public CRCL_JointPositionsTolerancesDataType jointTolerances
         {
             get
             {
@@ -27100,19 +26571,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.ActuateJointsParametersSetDataType; }
+            get { return DataTypeIds.ActuateJointsParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.ActuateJointsParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.ActuateJointsParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.ActuateJointsParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.ActuateJointsParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -27122,8 +26593,8 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeableArray("ActuateJoint", ActuateJoint.ToArray(), typeof(CRCL_ActuateJointDataType));
-            encoder.WriteEncodeable("JointTolerances", JointTolerances, typeof(CRCL_JointPositionsTolerancesDataType));
+            encoder.WriteEncodeableArray("actuateJoint", actuateJoint.ToArray(), typeof(CRCL_ActuateJointDataType));
+            encoder.WriteEncodeable("jointTolerances", jointTolerances, typeof(CRCL_JointPositionsTolerancesDataType));
 
             encoder.PopNamespace();
         }
@@ -27135,8 +26606,8 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            ActuateJoint = (CRCL_ActuateJointDataTypeCollection)decoder.ReadEncodeableArray("ActuateJoint", typeof(CRCL_ActuateJointDataType));
-            JointTolerances = (CRCL_JointPositionsTolerancesDataType)decoder.ReadEncodeable("JointTolerances", typeof(CRCL_JointPositionsTolerancesDataType));
+            actuateJoint = (CRCL_ActuateJointDataTypeCollection)decoder.ReadEncodeableArray("actuateJoint", typeof(CRCL_ActuateJointDataType));
+            jointTolerances = (CRCL_JointPositionsTolerancesDataType)decoder.ReadEncodeable("jointTolerances", typeof(CRCL_JointPositionsTolerancesDataType));
 
             decoder.PopNamespace();
         }
@@ -27149,7 +26620,7 @@ namespace CRCL
                 return true;
             }
 
-            ActuateJointsParametersSetDataType value = encodeable as ActuateJointsParametersSetDataType;
+            ActuateJointsParamsSetDataType value = encodeable as ActuateJointsParamsSetDataType;
 
             if (value == null)
             {
@@ -27167,14 +26638,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (ActuateJointsParametersSetDataType)this.MemberwiseClone();
+            return (ActuateJointsParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            ActuateJointsParametersSetDataType clone = (ActuateJointsParametersSetDataType)base.MemberwiseClone();
+            ActuateJointsParamsSetDataType clone = (ActuateJointsParamsSetDataType)base.MemberwiseClone();
 
             clone.m_actuateJoint = (CRCL_ActuateJointDataTypeCollection)Utils.Clone(this.m_actuateJoint);
             clone.m_jointTolerances = (CRCL_JointPositionsTolerancesDataType)Utils.Clone(this.m_jointTolerances);
@@ -27189,54 +26660,54 @@ namespace CRCL
         #endregion
     }
 
-    #region ActuateJointsParametersSetDataTypeCollection Class
+    #region ActuateJointsParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of ActuateJointsParametersSetDataType objects.
+    /// A collection of ActuateJointsParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfActuateJointsParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "ActuateJointsParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfActuateJointsParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "ActuateJointsParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class ActuateJointsParametersSetDataTypeCollection : List<ActuateJointsParametersSetDataType>, ICloneable
+    public partial class ActuateJointsParamsSetDataTypeCollection : List<ActuateJointsParamsSetDataType>, ICloneable
     #else
-    public partial class ActuateJointsParametersSetDataTypeCollection : List<ActuateJointsParametersSetDataType>
+    public partial class ActuateJointsParamsSetDataTypeCollection : List<ActuateJointsParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public ActuateJointsParametersSetDataTypeCollection() {}
+        public ActuateJointsParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public ActuateJointsParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public ActuateJointsParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public ActuateJointsParametersSetDataTypeCollection(IEnumerable<ActuateJointsParametersSetDataType> collection) : base(collection) {}
+        public ActuateJointsParamsSetDataTypeCollection(IEnumerable<ActuateJointsParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator ActuateJointsParametersSetDataTypeCollection(ActuateJointsParametersSetDataType[] values)
+        public static implicit operator ActuateJointsParamsSetDataTypeCollection(ActuateJointsParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new ActuateJointsParametersSetDataTypeCollection(values);
+                return new ActuateJointsParamsSetDataTypeCollection(values);
             }
 
-            return new ActuateJointsParametersSetDataTypeCollection();
+            return new ActuateJointsParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator ActuateJointsParametersSetDataType[](ActuateJointsParametersSetDataTypeCollection values)
+        public static explicit operator ActuateJointsParamsSetDataType[](ActuateJointsParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -27254,7 +26725,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (ActuateJointsParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (ActuateJointsParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -27262,11 +26733,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            ActuateJointsParametersSetDataTypeCollection clone = new ActuateJointsParametersSetDataTypeCollection(this.Count);
+            ActuateJointsParamsSetDataTypeCollection clone = new ActuateJointsParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((ActuateJointsParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((ActuateJointsParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -27276,21 +26747,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region ConfigureJointReportsParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_ConfigureJointReportsParametersSetDataType)
+    #region ConfigureJointReportsParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_ConfigureJointReportsParamsSetDataType)
     /// <summary>
     /// Parameters of a ConfigureJointreports Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class ConfigureJointReportsParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class ConfigureJointReportsParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public ConfigureJointReportsParametersSetDataType()
+        public ConfigureJointReportsParamsSetDataType()
         {
             Initialize();
         }
@@ -27316,8 +26787,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "ResetAll", IsRequired = false, Order = 1)]
-        public bool ResetAll
+        [DataMember(Name = "resetAll", IsRequired = false, Order = 1)]
+        public bool resetAll
         {
             get { return m_resetAll;  }
             set { m_resetAll = value; }
@@ -27325,10 +26796,9 @@ namespace CRCL
 
         /// <summary>
         /// Array of ConfigureJointReport of a ConfigureJointreports Command
-            
         /// </summary>
-        [DataMember(Name = "ConfigureJointReport", IsRequired = false, Order = 2)]
-        public CRCL_ConfigureJointReportDataTypeCollection ConfigureJointReport
+        [DataMember(Name = "configureJointReport", IsRequired = false, Order = 2)]
+        public CRCL_ConfigureJointReportDataTypeCollection configureJointReport
         {
             get
             {
@@ -27351,19 +26821,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.ConfigureJointReportsParametersSetDataType; }
+            get { return DataTypeIds.ConfigureJointReportsParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.ConfigureJointReportsParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.ConfigureJointReportsParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.ConfigureJointReportsParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.ConfigureJointReportsParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -27373,8 +26843,8 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteBoolean("ResetAll", ResetAll);
-            encoder.WriteEncodeableArray("ConfigureJointReport", ConfigureJointReport.ToArray(), typeof(CRCL_ConfigureJointReportDataType));
+            encoder.WriteBoolean("resetAll", resetAll);
+            encoder.WriteEncodeableArray("configureJointReport", configureJointReport.ToArray(), typeof(CRCL_ConfigureJointReportDataType));
 
             encoder.PopNamespace();
         }
@@ -27386,8 +26856,8 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            ResetAll = decoder.ReadBoolean("ResetAll");
-            ConfigureJointReport = (CRCL_ConfigureJointReportDataTypeCollection)decoder.ReadEncodeableArray("ConfigureJointReport", typeof(CRCL_ConfigureJointReportDataType));
+            resetAll = decoder.ReadBoolean("resetAll");
+            configureJointReport = (CRCL_ConfigureJointReportDataTypeCollection)decoder.ReadEncodeableArray("configureJointReport", typeof(CRCL_ConfigureJointReportDataType));
 
             decoder.PopNamespace();
         }
@@ -27400,7 +26870,7 @@ namespace CRCL
                 return true;
             }
 
-            ConfigureJointReportsParametersSetDataType value = encodeable as ConfigureJointReportsParametersSetDataType;
+            ConfigureJointReportsParamsSetDataType value = encodeable as ConfigureJointReportsParamsSetDataType;
 
             if (value == null)
             {
@@ -27418,14 +26888,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (ConfigureJointReportsParametersSetDataType)this.MemberwiseClone();
+            return (ConfigureJointReportsParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            ConfigureJointReportsParametersSetDataType clone = (ConfigureJointReportsParametersSetDataType)base.MemberwiseClone();
+            ConfigureJointReportsParamsSetDataType clone = (ConfigureJointReportsParamsSetDataType)base.MemberwiseClone();
 
             clone.m_resetAll = (bool)Utils.Clone(this.m_resetAll);
             clone.m_configureJointReport = (CRCL_ConfigureJointReportDataTypeCollection)Utils.Clone(this.m_configureJointReport);
@@ -27440,54 +26910,54 @@ namespace CRCL
         #endregion
     }
 
-    #region ConfigureJointReportsParametersSetDataTypeCollection Class
+    #region ConfigureJointReportsParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of ConfigureJointReportsParametersSetDataType objects.
+    /// A collection of ConfigureJointReportsParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfConfigureJointReportsParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "ConfigureJointReportsParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfConfigureJointReportsParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "ConfigureJointReportsParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class ConfigureJointReportsParametersSetDataTypeCollection : List<ConfigureJointReportsParametersSetDataType>, ICloneable
+    public partial class ConfigureJointReportsParamsSetDataTypeCollection : List<ConfigureJointReportsParamsSetDataType>, ICloneable
     #else
-    public partial class ConfigureJointReportsParametersSetDataTypeCollection : List<ConfigureJointReportsParametersSetDataType>
+    public partial class ConfigureJointReportsParamsSetDataTypeCollection : List<ConfigureJointReportsParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public ConfigureJointReportsParametersSetDataTypeCollection() {}
+        public ConfigureJointReportsParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public ConfigureJointReportsParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public ConfigureJointReportsParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public ConfigureJointReportsParametersSetDataTypeCollection(IEnumerable<ConfigureJointReportsParametersSetDataType> collection) : base(collection) {}
+        public ConfigureJointReportsParamsSetDataTypeCollection(IEnumerable<ConfigureJointReportsParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator ConfigureJointReportsParametersSetDataTypeCollection(ConfigureJointReportsParametersSetDataType[] values)
+        public static implicit operator ConfigureJointReportsParamsSetDataTypeCollection(ConfigureJointReportsParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new ConfigureJointReportsParametersSetDataTypeCollection(values);
+                return new ConfigureJointReportsParamsSetDataTypeCollection(values);
             }
 
-            return new ConfigureJointReportsParametersSetDataTypeCollection();
+            return new ConfigureJointReportsParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator ConfigureJointReportsParametersSetDataType[](ConfigureJointReportsParametersSetDataTypeCollection values)
+        public static explicit operator ConfigureJointReportsParamsSetDataType[](ConfigureJointReportsParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -27505,7 +26975,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (ConfigureJointReportsParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (ConfigureJointReportsParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -27513,11 +26983,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            ConfigureJointReportsParametersSetDataTypeCollection clone = new ConfigureJointReportsParametersSetDataTypeCollection(this.Count);
+            ConfigureJointReportsParamsSetDataTypeCollection clone = new ConfigureJointReportsParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((ConfigureJointReportsParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((ConfigureJointReportsParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -27527,21 +26997,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region SetDefaultJointPositionsTolerancesParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_SetDefaultJointPositionsTolerancesParametersSetDataType)
+    #region SetDefaultJointPositionsTolerancesParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_SetDefaultJointPositionsTolerancesParamsSetDataType)
     /// <summary>
     /// Parameters of a SetDefaultJointPositionsTolerances Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class SetDefaultJointPositionsTolerancesParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class SetDefaultJointPositionsTolerancesParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public SetDefaultJointPositionsTolerancesParametersSetDataType()
+        public SetDefaultJointPositionsTolerancesParamsSetDataType()
         {
             Initialize();
         }
@@ -27567,10 +27037,9 @@ namespace CRCL
         #region Public Properties
         /// <summary>
         /// JointTolerances of a SetDefaultJointPositionsTolerances Command
-            
         /// </summary>
-        [DataMember(Name = "JointTolerances", IsRequired = false, Order = 1)]
-        public CRCL_JointPositionsTolerancesDataType JointTolerances
+        [DataMember(Name = "jointTolerances", IsRequired = false, Order = 1)]
+        public CRCL_JointPositionsTolerancesDataType jointTolerances
         {
             get
             {
@@ -27593,19 +27062,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.SetDefaultJointPositionsTolerancesParametersSetDataType; }
+            get { return DataTypeIds.SetDefaultJointPositionsTolerancesParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.SetDefaultJointPositionsTolerancesParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.SetDefaultJointPositionsTolerancesParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.SetDefaultJointPositionsTolerancesParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.SetDefaultJointPositionsTolerancesParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -27615,7 +27084,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeable("JointTolerances", JointTolerances, typeof(CRCL_JointPositionsTolerancesDataType));
+            encoder.WriteEncodeable("jointTolerances", jointTolerances, typeof(CRCL_JointPositionsTolerancesDataType));
 
             encoder.PopNamespace();
         }
@@ -27627,7 +27096,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            JointTolerances = (CRCL_JointPositionsTolerancesDataType)decoder.ReadEncodeable("JointTolerances", typeof(CRCL_JointPositionsTolerancesDataType));
+            jointTolerances = (CRCL_JointPositionsTolerancesDataType)decoder.ReadEncodeable("jointTolerances", typeof(CRCL_JointPositionsTolerancesDataType));
 
             decoder.PopNamespace();
         }
@@ -27640,7 +27109,7 @@ namespace CRCL
                 return true;
             }
 
-            SetDefaultJointPositionsTolerancesParametersSetDataType value = encodeable as SetDefaultJointPositionsTolerancesParametersSetDataType;
+            SetDefaultJointPositionsTolerancesParamsSetDataType value = encodeable as SetDefaultJointPositionsTolerancesParamsSetDataType;
 
             if (value == null)
             {
@@ -27657,14 +27126,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (SetDefaultJointPositionsTolerancesParametersSetDataType)this.MemberwiseClone();
+            return (SetDefaultJointPositionsTolerancesParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetDefaultJointPositionsTolerancesParametersSetDataType clone = (SetDefaultJointPositionsTolerancesParametersSetDataType)base.MemberwiseClone();
+            SetDefaultJointPositionsTolerancesParamsSetDataType clone = (SetDefaultJointPositionsTolerancesParamsSetDataType)base.MemberwiseClone();
 
             clone.m_jointTolerances = (CRCL_JointPositionsTolerancesDataType)Utils.Clone(this.m_jointTolerances);
 
@@ -27677,54 +27146,54 @@ namespace CRCL
         #endregion
     }
 
-    #region SetDefaultJointPositionsTolerancesParametersSetDataTypeCollection Class
+    #region SetDefaultJointPositionsTolerancesParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of SetDefaultJointPositionsTolerancesParametersSetDataType objects.
+    /// A collection of SetDefaultJointPositionsTolerancesParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfSetDefaultJointPositionsTolerancesParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetDefaultJointPositionsTolerancesParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfSetDefaultJointPositionsTolerancesParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetDefaultJointPositionsTolerancesParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class SetDefaultJointPositionsTolerancesParametersSetDataTypeCollection : List<SetDefaultJointPositionsTolerancesParametersSetDataType>, ICloneable
+    public partial class SetDefaultJointPositionsTolerancesParamsSetDataTypeCollection : List<SetDefaultJointPositionsTolerancesParamsSetDataType>, ICloneable
     #else
-    public partial class SetDefaultJointPositionsTolerancesParametersSetDataTypeCollection : List<SetDefaultJointPositionsTolerancesParametersSetDataType>
+    public partial class SetDefaultJointPositionsTolerancesParamsSetDataTypeCollection : List<SetDefaultJointPositionsTolerancesParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public SetDefaultJointPositionsTolerancesParametersSetDataTypeCollection() {}
+        public SetDefaultJointPositionsTolerancesParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public SetDefaultJointPositionsTolerancesParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public SetDefaultJointPositionsTolerancesParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public SetDefaultJointPositionsTolerancesParametersSetDataTypeCollection(IEnumerable<SetDefaultJointPositionsTolerancesParametersSetDataType> collection) : base(collection) {}
+        public SetDefaultJointPositionsTolerancesParamsSetDataTypeCollection(IEnumerable<SetDefaultJointPositionsTolerancesParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator SetDefaultJointPositionsTolerancesParametersSetDataTypeCollection(SetDefaultJointPositionsTolerancesParametersSetDataType[] values)
+        public static implicit operator SetDefaultJointPositionsTolerancesParamsSetDataTypeCollection(SetDefaultJointPositionsTolerancesParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new SetDefaultJointPositionsTolerancesParametersSetDataTypeCollection(values);
+                return new SetDefaultJointPositionsTolerancesParamsSetDataTypeCollection(values);
             }
 
-            return new SetDefaultJointPositionsTolerancesParametersSetDataTypeCollection();
+            return new SetDefaultJointPositionsTolerancesParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator SetDefaultJointPositionsTolerancesParametersSetDataType[](SetDefaultJointPositionsTolerancesParametersSetDataTypeCollection values)
+        public static explicit operator SetDefaultJointPositionsTolerancesParamsSetDataType[](SetDefaultJointPositionsTolerancesParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -27742,7 +27211,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (SetDefaultJointPositionsTolerancesParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (SetDefaultJointPositionsTolerancesParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -27750,11 +27219,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetDefaultJointPositionsTolerancesParametersSetDataTypeCollection clone = new SetDefaultJointPositionsTolerancesParametersSetDataTypeCollection(this.Count);
+            SetDefaultJointPositionsTolerancesParamsSetDataTypeCollection clone = new SetDefaultJointPositionsTolerancesParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((SetDefaultJointPositionsTolerancesParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((SetDefaultJointPositionsTolerancesParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -27764,21 +27233,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region SetRobotParametersParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_SetRobotParametersParametersSetDataType)
+    #region SetRobotParametersParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_SetRobotParametersParamsSetDataType)
     /// <summary>
     /// Parameters of a SetRobotParameters Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class SetRobotParametersParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class SetRobotParametersParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public SetRobotParametersParametersSetDataType()
+        public SetRobotParametersParamsSetDataType()
         {
             Initialize();
         }
@@ -27804,10 +27273,9 @@ namespace CRCL
         #region Public Properties
         /// <summary>
         /// Array of ParameterSetting of a SetRobotParameters Command
-            
         /// </summary>
-        [DataMember(Name = "ParameterSetting", IsRequired = false, Order = 1)]
-        public CRCL_ParameterSettingDataTypeCollection ParameterSetting
+        [DataMember(Name = "parameterSetting", IsRequired = false, Order = 1)]
+        public CRCL_ParameterSettingDataTypeCollection parameterSetting
         {
             get
             {
@@ -27830,19 +27298,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.SetRobotParametersParametersSetDataType; }
+            get { return DataTypeIds.SetRobotParametersParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.SetRobotParametersParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.SetRobotParametersParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.SetRobotParametersParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.SetRobotParametersParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -27852,7 +27320,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeableArray("ParameterSetting", ParameterSetting.ToArray(), typeof(CRCL_ParameterSettingDataType));
+            encoder.WriteEncodeableArray("parameterSetting", parameterSetting.ToArray(), typeof(CRCL_ParameterSettingDataType));
 
             encoder.PopNamespace();
         }
@@ -27864,7 +27332,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            ParameterSetting = (CRCL_ParameterSettingDataTypeCollection)decoder.ReadEncodeableArray("ParameterSetting", typeof(CRCL_ParameterSettingDataType));
+            parameterSetting = (CRCL_ParameterSettingDataTypeCollection)decoder.ReadEncodeableArray("parameterSetting", typeof(CRCL_ParameterSettingDataType));
 
             decoder.PopNamespace();
         }
@@ -27877,7 +27345,7 @@ namespace CRCL
                 return true;
             }
 
-            SetRobotParametersParametersSetDataType value = encodeable as SetRobotParametersParametersSetDataType;
+            SetRobotParametersParamsSetDataType value = encodeable as SetRobotParametersParamsSetDataType;
 
             if (value == null)
             {
@@ -27894,14 +27362,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (SetRobotParametersParametersSetDataType)this.MemberwiseClone();
+            return (SetRobotParametersParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetRobotParametersParametersSetDataType clone = (SetRobotParametersParametersSetDataType)base.MemberwiseClone();
+            SetRobotParametersParamsSetDataType clone = (SetRobotParametersParamsSetDataType)base.MemberwiseClone();
 
             clone.m_parameterSetting = (CRCL_ParameterSettingDataTypeCollection)Utils.Clone(this.m_parameterSetting);
 
@@ -27914,54 +27382,54 @@ namespace CRCL
         #endregion
     }
 
-    #region SetRobotParametersParametersSetDataTypeCollection Class
+    #region SetRobotParametersParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of SetRobotParametersParametersSetDataType objects.
+    /// A collection of SetRobotParametersParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfSetRobotParametersParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetRobotParametersParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfSetRobotParametersParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetRobotParametersParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class SetRobotParametersParametersSetDataTypeCollection : List<SetRobotParametersParametersSetDataType>, ICloneable
+    public partial class SetRobotParametersParamsSetDataTypeCollection : List<SetRobotParametersParamsSetDataType>, ICloneable
     #else
-    public partial class SetRobotParametersParametersSetDataTypeCollection : List<SetRobotParametersParametersSetDataType>
+    public partial class SetRobotParametersParamsSetDataTypeCollection : List<SetRobotParametersParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public SetRobotParametersParametersSetDataTypeCollection() {}
+        public SetRobotParametersParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public SetRobotParametersParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public SetRobotParametersParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public SetRobotParametersParametersSetDataTypeCollection(IEnumerable<SetRobotParametersParametersSetDataType> collection) : base(collection) {}
+        public SetRobotParametersParamsSetDataTypeCollection(IEnumerable<SetRobotParametersParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator SetRobotParametersParametersSetDataTypeCollection(SetRobotParametersParametersSetDataType[] values)
+        public static implicit operator SetRobotParametersParamsSetDataTypeCollection(SetRobotParametersParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new SetRobotParametersParametersSetDataTypeCollection(values);
+                return new SetRobotParametersParamsSetDataTypeCollection(values);
             }
 
-            return new SetRobotParametersParametersSetDataTypeCollection();
+            return new SetRobotParametersParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator SetRobotParametersParametersSetDataType[](SetRobotParametersParametersSetDataTypeCollection values)
+        public static explicit operator SetRobotParametersParamsSetDataType[](SetRobotParametersParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -27979,7 +27447,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (SetRobotParametersParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (SetRobotParametersParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -27987,11 +27455,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetRobotParametersParametersSetDataTypeCollection clone = new SetRobotParametersParametersSetDataTypeCollection(this.Count);
+            SetRobotParametersParamsSetDataTypeCollection clone = new SetRobotParametersParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((SetRobotParametersParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((SetRobotParametersParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -28001,21 +27469,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region SetEndeffectorParametersParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_SetEndeffectorParametersParametersSetDataType)
+    #region SetEndeffectorParametersParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_SetEndeffectorParametersParamsSetDataType)
     /// <summary>
     /// Parameters of a SetEndeffectorParameters Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class SetEndeffectorParametersParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class SetEndeffectorParametersParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public SetEndeffectorParametersParametersSetDataType()
+        public SetEndeffectorParametersParamsSetDataType()
         {
             Initialize();
         }
@@ -28041,10 +27509,9 @@ namespace CRCL
         #region Public Properties
         /// <summary>
         /// Array of ParameterSetting of a SetEndeffectorParameters Command
-            
         /// </summary>
-        [DataMember(Name = "ParameterSetting", IsRequired = false, Order = 1)]
-        public CRCL_ParameterSettingDataTypeCollection ParameterSetting
+        [DataMember(Name = "parameterSetting", IsRequired = false, Order = 1)]
+        public CRCL_ParameterSettingDataTypeCollection parameterSetting
         {
             get
             {
@@ -28067,19 +27534,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.SetEndeffectorParametersParametersSetDataType; }
+            get { return DataTypeIds.SetEndeffectorParametersParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.SetEndeffectorParametersParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.SetEndeffectorParametersParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.SetEndeffectorParametersParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.SetEndeffectorParametersParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -28089,7 +27556,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeableArray("ParameterSetting", ParameterSetting.ToArray(), typeof(CRCL_ParameterSettingDataType));
+            encoder.WriteEncodeableArray("parameterSetting", parameterSetting.ToArray(), typeof(CRCL_ParameterSettingDataType));
 
             encoder.PopNamespace();
         }
@@ -28101,7 +27568,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            ParameterSetting = (CRCL_ParameterSettingDataTypeCollection)decoder.ReadEncodeableArray("ParameterSetting", typeof(CRCL_ParameterSettingDataType));
+            parameterSetting = (CRCL_ParameterSettingDataTypeCollection)decoder.ReadEncodeableArray("parameterSetting", typeof(CRCL_ParameterSettingDataType));
 
             decoder.PopNamespace();
         }
@@ -28114,7 +27581,7 @@ namespace CRCL
                 return true;
             }
 
-            SetEndeffectorParametersParametersSetDataType value = encodeable as SetEndeffectorParametersParametersSetDataType;
+            SetEndeffectorParametersParamsSetDataType value = encodeable as SetEndeffectorParametersParamsSetDataType;
 
             if (value == null)
             {
@@ -28131,14 +27598,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (SetEndeffectorParametersParametersSetDataType)this.MemberwiseClone();
+            return (SetEndeffectorParametersParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetEndeffectorParametersParametersSetDataType clone = (SetEndeffectorParametersParametersSetDataType)base.MemberwiseClone();
+            SetEndeffectorParametersParamsSetDataType clone = (SetEndeffectorParametersParamsSetDataType)base.MemberwiseClone();
 
             clone.m_parameterSetting = (CRCL_ParameterSettingDataTypeCollection)Utils.Clone(this.m_parameterSetting);
 
@@ -28151,54 +27618,54 @@ namespace CRCL
         #endregion
     }
 
-    #region SetEndeffectorParametersParametersSetDataTypeCollection Class
+    #region SetEndeffectorParametersParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of SetEndeffectorParametersParametersSetDataType objects.
+    /// A collection of SetEndeffectorParametersParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfSetEndeffectorParametersParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetEndeffectorParametersParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfSetEndeffectorParametersParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetEndeffectorParametersParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class SetEndeffectorParametersParametersSetDataTypeCollection : List<SetEndeffectorParametersParametersSetDataType>, ICloneable
+    public partial class SetEndeffectorParametersParamsSetDataTypeCollection : List<SetEndeffectorParametersParamsSetDataType>, ICloneable
     #else
-    public partial class SetEndeffectorParametersParametersSetDataTypeCollection : List<SetEndeffectorParametersParametersSetDataType>
+    public partial class SetEndeffectorParametersParamsSetDataTypeCollection : List<SetEndeffectorParametersParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public SetEndeffectorParametersParametersSetDataTypeCollection() {}
+        public SetEndeffectorParametersParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public SetEndeffectorParametersParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public SetEndeffectorParametersParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public SetEndeffectorParametersParametersSetDataTypeCollection(IEnumerable<SetEndeffectorParametersParametersSetDataType> collection) : base(collection) {}
+        public SetEndeffectorParametersParamsSetDataTypeCollection(IEnumerable<SetEndeffectorParametersParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator SetEndeffectorParametersParametersSetDataTypeCollection(SetEndeffectorParametersParametersSetDataType[] values)
+        public static implicit operator SetEndeffectorParametersParamsSetDataTypeCollection(SetEndeffectorParametersParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new SetEndeffectorParametersParametersSetDataTypeCollection(values);
+                return new SetEndeffectorParametersParamsSetDataTypeCollection(values);
             }
 
-            return new SetEndeffectorParametersParametersSetDataTypeCollection();
+            return new SetEndeffectorParametersParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator SetEndeffectorParametersParametersSetDataType[](SetEndeffectorParametersParametersSetDataTypeCollection values)
+        public static explicit operator SetEndeffectorParametersParamsSetDataType[](SetEndeffectorParametersParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -28216,7 +27683,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (SetEndeffectorParametersParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (SetEndeffectorParametersParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -28224,11 +27691,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetEndeffectorParametersParametersSetDataTypeCollection clone = new SetEndeffectorParametersParametersSetDataTypeCollection(this.Count);
+            SetEndeffectorParametersParamsSetDataTypeCollection clone = new SetEndeffectorParametersParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((SetEndeffectorParametersParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((SetEndeffectorParametersParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -28238,21 +27705,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region SetEndeffectorParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_SetEndeffectorParametersSetDataType)
+    #region SetEndeffectorParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_SetEndeffectorParamsSetDataType)
     /// <summary>
     /// Parameters of a SetEndeffector Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class SetEndeffectorParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class SetEndeffectorParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public SetEndeffectorParametersSetDataType()
+        public SetEndeffectorParamsSetDataType()
         {
             Initialize();
         }
@@ -28278,10 +27745,9 @@ namespace CRCL
         #region Public Properties
         /// <summary>
         /// Setting of a SetEndeffector Command
-            
         /// </summary>
-        [DataMember(Name = "Setting", IsRequired = false, Order = 1)]
-        public CRCL_FractionDataType Setting
+        [DataMember(Name = "setting", IsRequired = false, Order = 1)]
+        public CRCL_FractionDataType setting
         {
             get
             {
@@ -28304,19 +27770,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.SetEndeffectorParametersSetDataType; }
+            get { return DataTypeIds.SetEndeffectorParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.SetEndeffectorParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.SetEndeffectorParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.SetEndeffectorParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.SetEndeffectorParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -28326,7 +27792,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeable("Setting", Setting, typeof(CRCL_FractionDataType));
+            encoder.WriteEncodeable("setting", setting, typeof(CRCL_FractionDataType));
 
             encoder.PopNamespace();
         }
@@ -28338,7 +27804,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            Setting = (CRCL_FractionDataType)decoder.ReadEncodeable("Setting", typeof(CRCL_FractionDataType));
+            setting = (CRCL_FractionDataType)decoder.ReadEncodeable("setting", typeof(CRCL_FractionDataType));
 
             decoder.PopNamespace();
         }
@@ -28351,7 +27817,7 @@ namespace CRCL
                 return true;
             }
 
-            SetEndeffectorParametersSetDataType value = encodeable as SetEndeffectorParametersSetDataType;
+            SetEndeffectorParamsSetDataType value = encodeable as SetEndeffectorParamsSetDataType;
 
             if (value == null)
             {
@@ -28368,14 +27834,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (SetEndeffectorParametersSetDataType)this.MemberwiseClone();
+            return (SetEndeffectorParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetEndeffectorParametersSetDataType clone = (SetEndeffectorParametersSetDataType)base.MemberwiseClone();
+            SetEndeffectorParamsSetDataType clone = (SetEndeffectorParamsSetDataType)base.MemberwiseClone();
 
             clone.m_setting = (CRCL_FractionDataType)Utils.Clone(this.m_setting);
 
@@ -28388,54 +27854,54 @@ namespace CRCL
         #endregion
     }
 
-    #region SetEndeffectorParametersSetDataTypeCollection Class
+    #region SetEndeffectorParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of SetEndeffectorParametersSetDataType objects.
+    /// A collection of SetEndeffectorParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfSetEndeffectorParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetEndeffectorParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfSetEndeffectorParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetEndeffectorParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class SetEndeffectorParametersSetDataTypeCollection : List<SetEndeffectorParametersSetDataType>, ICloneable
+    public partial class SetEndeffectorParamsSetDataTypeCollection : List<SetEndeffectorParamsSetDataType>, ICloneable
     #else
-    public partial class SetEndeffectorParametersSetDataTypeCollection : List<SetEndeffectorParametersSetDataType>
+    public partial class SetEndeffectorParamsSetDataTypeCollection : List<SetEndeffectorParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public SetEndeffectorParametersSetDataTypeCollection() {}
+        public SetEndeffectorParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public SetEndeffectorParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public SetEndeffectorParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public SetEndeffectorParametersSetDataTypeCollection(IEnumerable<SetEndeffectorParametersSetDataType> collection) : base(collection) {}
+        public SetEndeffectorParamsSetDataTypeCollection(IEnumerable<SetEndeffectorParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator SetEndeffectorParametersSetDataTypeCollection(SetEndeffectorParametersSetDataType[] values)
+        public static implicit operator SetEndeffectorParamsSetDataTypeCollection(SetEndeffectorParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new SetEndeffectorParametersSetDataTypeCollection(values);
+                return new SetEndeffectorParamsSetDataTypeCollection(values);
             }
 
-            return new SetEndeffectorParametersSetDataTypeCollection();
+            return new SetEndeffectorParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator SetEndeffectorParametersSetDataType[](SetEndeffectorParametersSetDataTypeCollection values)
+        public static explicit operator SetEndeffectorParamsSetDataType[](SetEndeffectorParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -28453,7 +27919,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (SetEndeffectorParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (SetEndeffectorParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -28461,11 +27927,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetEndeffectorParametersSetDataTypeCollection clone = new SetEndeffectorParametersSetDataTypeCollection(this.Count);
+            SetEndeffectorParamsSetDataTypeCollection clone = new SetEndeffectorParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((SetEndeffectorParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((SetEndeffectorParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -28475,21 +27941,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region SetTransSpeedParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_SetTransSpeedParametersSetDataType)
+    #region SetTransSpeedParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_SetTransSpeedParamsSetDataType)
     /// <summary>
     /// Parameters of a SetTransSpeed Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class SetTransSpeedParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class SetTransSpeedParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public SetTransSpeedParametersSetDataType()
+        public SetTransSpeedParamsSetDataType()
         {
             Initialize();
         }
@@ -28515,10 +27981,9 @@ namespace CRCL
         #region Public Properties
         /// <summary>
         /// SetTransSpeed of a SetTransSpeed Command
-            
         /// </summary>
-        [DataMember(Name = "TransSpeed", IsRequired = false, Order = 1)]
-        public CRCL_TransSpeedDataType TransSpeed
+        [DataMember(Name = "transSpeed", IsRequired = false, Order = 1)]
+        public CRCL_TransSpeedDataType transSpeed
         {
             get
             {
@@ -28541,19 +28006,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.SetTransSpeedParametersSetDataType; }
+            get { return DataTypeIds.SetTransSpeedParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.SetTransSpeedParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.SetTransSpeedParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.SetTransSpeedParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.SetTransSpeedParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -28563,7 +28028,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeable("TransSpeed", TransSpeed, typeof(CRCL_TransSpeedDataType));
+            encoder.WriteEncodeable("transSpeed", transSpeed, typeof(CRCL_TransSpeedDataType));
 
             encoder.PopNamespace();
         }
@@ -28575,7 +28040,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            TransSpeed = (CRCL_TransSpeedDataType)decoder.ReadEncodeable("TransSpeed", typeof(CRCL_TransSpeedDataType));
+            transSpeed = (CRCL_TransSpeedDataType)decoder.ReadEncodeable("transSpeed", typeof(CRCL_TransSpeedDataType));
 
             decoder.PopNamespace();
         }
@@ -28588,7 +28053,7 @@ namespace CRCL
                 return true;
             }
 
-            SetTransSpeedParametersSetDataType value = encodeable as SetTransSpeedParametersSetDataType;
+            SetTransSpeedParamsSetDataType value = encodeable as SetTransSpeedParamsSetDataType;
 
             if (value == null)
             {
@@ -28605,14 +28070,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (SetTransSpeedParametersSetDataType)this.MemberwiseClone();
+            return (SetTransSpeedParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetTransSpeedParametersSetDataType clone = (SetTransSpeedParametersSetDataType)base.MemberwiseClone();
+            SetTransSpeedParamsSetDataType clone = (SetTransSpeedParamsSetDataType)base.MemberwiseClone();
 
             clone.m_transSpeed = (CRCL_TransSpeedDataType)Utils.Clone(this.m_transSpeed);
 
@@ -28625,54 +28090,54 @@ namespace CRCL
         #endregion
     }
 
-    #region SetTransSpeedParametersSetDataTypeCollection Class
+    #region SetTransSpeedParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of SetTransSpeedParametersSetDataType objects.
+    /// A collection of SetTransSpeedParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfSetTransSpeedParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetTransSpeedParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfSetTransSpeedParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetTransSpeedParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class SetTransSpeedParametersSetDataTypeCollection : List<SetTransSpeedParametersSetDataType>, ICloneable
+    public partial class SetTransSpeedParamsSetDataTypeCollection : List<SetTransSpeedParamsSetDataType>, ICloneable
     #else
-    public partial class SetTransSpeedParametersSetDataTypeCollection : List<SetTransSpeedParametersSetDataType>
+    public partial class SetTransSpeedParamsSetDataTypeCollection : List<SetTransSpeedParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public SetTransSpeedParametersSetDataTypeCollection() {}
+        public SetTransSpeedParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public SetTransSpeedParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public SetTransSpeedParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public SetTransSpeedParametersSetDataTypeCollection(IEnumerable<SetTransSpeedParametersSetDataType> collection) : base(collection) {}
+        public SetTransSpeedParamsSetDataTypeCollection(IEnumerable<SetTransSpeedParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator SetTransSpeedParametersSetDataTypeCollection(SetTransSpeedParametersSetDataType[] values)
+        public static implicit operator SetTransSpeedParamsSetDataTypeCollection(SetTransSpeedParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new SetTransSpeedParametersSetDataTypeCollection(values);
+                return new SetTransSpeedParamsSetDataTypeCollection(values);
             }
 
-            return new SetTransSpeedParametersSetDataTypeCollection();
+            return new SetTransSpeedParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator SetTransSpeedParametersSetDataType[](SetTransSpeedParametersSetDataTypeCollection values)
+        public static explicit operator SetTransSpeedParamsSetDataType[](SetTransSpeedParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -28690,7 +28155,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (SetTransSpeedParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (SetTransSpeedParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -28698,11 +28163,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetTransSpeedParametersSetDataTypeCollection clone = new SetTransSpeedParametersSetDataTypeCollection(this.Count);
+            SetTransSpeedParamsSetDataTypeCollection clone = new SetTransSpeedParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((SetTransSpeedParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((SetTransSpeedParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -28712,21 +28177,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region SetTransAccelParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_SetTransAccelParametersSetDataType)
+    #region SetTransAccelParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_SetTransAccelParamsSetDataType)
     /// <summary>
     /// Parameters of a SetTransAccel Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class SetTransAccelParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class SetTransAccelParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public SetTransAccelParametersSetDataType()
+        public SetTransAccelParamsSetDataType()
         {
             Initialize();
         }
@@ -28752,10 +28217,9 @@ namespace CRCL
         #region Public Properties
         /// <summary>
         /// TransAccel of a SetTransSpeed Command
-            
         /// </summary>
-        [DataMember(Name = "TransAccel", IsRequired = false, Order = 1)]
-        public CRCL_TransAccelDataType TransAccel
+        [DataMember(Name = "transAccel", IsRequired = false, Order = 1)]
+        public CRCL_TransAccelDataType transAccel
         {
             get
             {
@@ -28778,19 +28242,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.SetTransAccelParametersSetDataType; }
+            get { return DataTypeIds.SetTransAccelParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.SetTransAccelParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.SetTransAccelParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.SetTransAccelParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.SetTransAccelParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -28800,7 +28264,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeable("TransAccel", TransAccel, typeof(CRCL_TransAccelDataType));
+            encoder.WriteEncodeable("transAccel", transAccel, typeof(CRCL_TransAccelDataType));
 
             encoder.PopNamespace();
         }
@@ -28812,7 +28276,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            TransAccel = (CRCL_TransAccelDataType)decoder.ReadEncodeable("TransAccel", typeof(CRCL_TransAccelDataType));
+            transAccel = (CRCL_TransAccelDataType)decoder.ReadEncodeable("transAccel", typeof(CRCL_TransAccelDataType));
 
             decoder.PopNamespace();
         }
@@ -28825,7 +28289,7 @@ namespace CRCL
                 return true;
             }
 
-            SetTransAccelParametersSetDataType value = encodeable as SetTransAccelParametersSetDataType;
+            SetTransAccelParamsSetDataType value = encodeable as SetTransAccelParamsSetDataType;
 
             if (value == null)
             {
@@ -28842,14 +28306,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (SetTransAccelParametersSetDataType)this.MemberwiseClone();
+            return (SetTransAccelParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetTransAccelParametersSetDataType clone = (SetTransAccelParametersSetDataType)base.MemberwiseClone();
+            SetTransAccelParamsSetDataType clone = (SetTransAccelParamsSetDataType)base.MemberwiseClone();
 
             clone.m_transAccel = (CRCL_TransAccelDataType)Utils.Clone(this.m_transAccel);
 
@@ -28862,54 +28326,54 @@ namespace CRCL
         #endregion
     }
 
-    #region SetTransAccelParametersSetDataTypeCollection Class
+    #region SetTransAccelParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of SetTransAccelParametersSetDataType objects.
+    /// A collection of SetTransAccelParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfSetTransAccelParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetTransAccelParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfSetTransAccelParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetTransAccelParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class SetTransAccelParametersSetDataTypeCollection : List<SetTransAccelParametersSetDataType>, ICloneable
+    public partial class SetTransAccelParamsSetDataTypeCollection : List<SetTransAccelParamsSetDataType>, ICloneable
     #else
-    public partial class SetTransAccelParametersSetDataTypeCollection : List<SetTransAccelParametersSetDataType>
+    public partial class SetTransAccelParamsSetDataTypeCollection : List<SetTransAccelParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public SetTransAccelParametersSetDataTypeCollection() {}
+        public SetTransAccelParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public SetTransAccelParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public SetTransAccelParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public SetTransAccelParametersSetDataTypeCollection(IEnumerable<SetTransAccelParametersSetDataType> collection) : base(collection) {}
+        public SetTransAccelParamsSetDataTypeCollection(IEnumerable<SetTransAccelParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator SetTransAccelParametersSetDataTypeCollection(SetTransAccelParametersSetDataType[] values)
+        public static implicit operator SetTransAccelParamsSetDataTypeCollection(SetTransAccelParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new SetTransAccelParametersSetDataTypeCollection(values);
+                return new SetTransAccelParamsSetDataTypeCollection(values);
             }
 
-            return new SetTransAccelParametersSetDataTypeCollection();
+            return new SetTransAccelParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator SetTransAccelParametersSetDataType[](SetTransAccelParametersSetDataTypeCollection values)
+        public static explicit operator SetTransAccelParamsSetDataType[](SetTransAccelParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -28927,7 +28391,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (SetTransAccelParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (SetTransAccelParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -28935,11 +28399,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetTransAccelParametersSetDataTypeCollection clone = new SetTransAccelParametersSetDataTypeCollection(this.Count);
+            SetTransAccelParamsSetDataTypeCollection clone = new SetTransAccelParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((SetTransAccelParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((SetTransAccelParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -28949,21 +28413,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region SetRotSpeedParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_SetRotSpeedParametersSetDataType)
+    #region SetRotSpeedParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_SetRotSpeedParamsSetDataType)
     /// <summary>
     /// Parameters of a SetTransSpeed Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class SetRotSpeedParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class SetRotSpeedParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public SetRotSpeedParametersSetDataType()
+        public SetRotSpeedParamsSetDataType()
         {
             Initialize();
         }
@@ -28989,10 +28453,9 @@ namespace CRCL
         #region Public Properties
         /// <summary>
         /// RotSpeed of a RotSpeed Command
-            
         /// </summary>
-        [DataMember(Name = "RotSpeed", IsRequired = false, Order = 1)]
-        public CRCL_RotSpeedDataType RotSpeed
+        [DataMember(Name = "rotSpeed", IsRequired = false, Order = 1)]
+        public CRCL_RotSpeedDataType rotSpeed
         {
             get
             {
@@ -29015,19 +28478,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.SetRotSpeedParametersSetDataType; }
+            get { return DataTypeIds.SetRotSpeedParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.SetRotSpeedParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.SetRotSpeedParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.SetRotSpeedParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.SetRotSpeedParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -29037,7 +28500,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeable("RotSpeed", RotSpeed, typeof(CRCL_RotSpeedDataType));
+            encoder.WriteEncodeable("rotSpeed", rotSpeed, typeof(CRCL_RotSpeedDataType));
 
             encoder.PopNamespace();
         }
@@ -29049,7 +28512,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            RotSpeed = (CRCL_RotSpeedDataType)decoder.ReadEncodeable("RotSpeed", typeof(CRCL_RotSpeedDataType));
+            rotSpeed = (CRCL_RotSpeedDataType)decoder.ReadEncodeable("rotSpeed", typeof(CRCL_RotSpeedDataType));
 
             decoder.PopNamespace();
         }
@@ -29062,7 +28525,7 @@ namespace CRCL
                 return true;
             }
 
-            SetRotSpeedParametersSetDataType value = encodeable as SetRotSpeedParametersSetDataType;
+            SetRotSpeedParamsSetDataType value = encodeable as SetRotSpeedParamsSetDataType;
 
             if (value == null)
             {
@@ -29079,14 +28542,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (SetRotSpeedParametersSetDataType)this.MemberwiseClone();
+            return (SetRotSpeedParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetRotSpeedParametersSetDataType clone = (SetRotSpeedParametersSetDataType)base.MemberwiseClone();
+            SetRotSpeedParamsSetDataType clone = (SetRotSpeedParamsSetDataType)base.MemberwiseClone();
 
             clone.m_rotSpeed = (CRCL_RotSpeedDataType)Utils.Clone(this.m_rotSpeed);
 
@@ -29099,54 +28562,54 @@ namespace CRCL
         #endregion
     }
 
-    #region SetRotSpeedParametersSetDataTypeCollection Class
+    #region SetRotSpeedParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of SetRotSpeedParametersSetDataType objects.
+    /// A collection of SetRotSpeedParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfSetRotSpeedParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetRotSpeedParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfSetRotSpeedParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetRotSpeedParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class SetRotSpeedParametersSetDataTypeCollection : List<SetRotSpeedParametersSetDataType>, ICloneable
+    public partial class SetRotSpeedParamsSetDataTypeCollection : List<SetRotSpeedParamsSetDataType>, ICloneable
     #else
-    public partial class SetRotSpeedParametersSetDataTypeCollection : List<SetRotSpeedParametersSetDataType>
+    public partial class SetRotSpeedParamsSetDataTypeCollection : List<SetRotSpeedParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public SetRotSpeedParametersSetDataTypeCollection() {}
+        public SetRotSpeedParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public SetRotSpeedParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public SetRotSpeedParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public SetRotSpeedParametersSetDataTypeCollection(IEnumerable<SetRotSpeedParametersSetDataType> collection) : base(collection) {}
+        public SetRotSpeedParamsSetDataTypeCollection(IEnumerable<SetRotSpeedParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator SetRotSpeedParametersSetDataTypeCollection(SetRotSpeedParametersSetDataType[] values)
+        public static implicit operator SetRotSpeedParamsSetDataTypeCollection(SetRotSpeedParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new SetRotSpeedParametersSetDataTypeCollection(values);
+                return new SetRotSpeedParamsSetDataTypeCollection(values);
             }
 
-            return new SetRotSpeedParametersSetDataTypeCollection();
+            return new SetRotSpeedParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator SetRotSpeedParametersSetDataType[](SetRotSpeedParametersSetDataTypeCollection values)
+        public static explicit operator SetRotSpeedParamsSetDataType[](SetRotSpeedParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -29164,7 +28627,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (SetRotSpeedParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (SetRotSpeedParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -29172,11 +28635,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetRotSpeedParametersSetDataTypeCollection clone = new SetRotSpeedParametersSetDataTypeCollection(this.Count);
+            SetRotSpeedParamsSetDataTypeCollection clone = new SetRotSpeedParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((SetRotSpeedParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((SetRotSpeedParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -29186,21 +28649,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region SetRotAccelParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_SetRotAccelParametersSetDataType)
+    #region SetRotAccelParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_SetRotAccelParamsSetDataType)
     /// <summary>
     /// Parameters of a SetRotAccel Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class SetRotAccelParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class SetRotAccelParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public SetRotAccelParametersSetDataType()
+        public SetRotAccelParamsSetDataType()
         {
             Initialize();
         }
@@ -29228,8 +28691,8 @@ namespace CRCL
         /// RotAccel of a SetRotAccel Command
             
         /// </summary>
-        [DataMember(Name = "RotAccel", IsRequired = false, Order = 1)]
-        public CRCL_RotAccelDataType RotAccel
+        [DataMember(Name = "rotAccel", IsRequired = false, Order = 1)]
+        public CRCL_RotAccelDataType rotAccel
         {
             get
             {
@@ -29252,19 +28715,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.SetRotAccelParametersSetDataType; }
+            get { return DataTypeIds.SetRotAccelParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.SetRotAccelParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.SetRotAccelParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.SetRotAccelParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.SetRotAccelParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -29274,7 +28737,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeable("RotAccel", RotAccel, typeof(CRCL_RotAccelDataType));
+            encoder.WriteEncodeable("rotAccel", rotAccel, typeof(CRCL_RotAccelDataType));
 
             encoder.PopNamespace();
         }
@@ -29286,7 +28749,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            RotAccel = (CRCL_RotAccelDataType)decoder.ReadEncodeable("RotAccel", typeof(CRCL_RotAccelDataType));
+            rotAccel = (CRCL_RotAccelDataType)decoder.ReadEncodeable("rotAccel", typeof(CRCL_RotAccelDataType));
 
             decoder.PopNamespace();
         }
@@ -29299,7 +28762,7 @@ namespace CRCL
                 return true;
             }
 
-            SetRotAccelParametersSetDataType value = encodeable as SetRotAccelParametersSetDataType;
+            SetRotAccelParamsSetDataType value = encodeable as SetRotAccelParamsSetDataType;
 
             if (value == null)
             {
@@ -29316,14 +28779,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (SetRotAccelParametersSetDataType)this.MemberwiseClone();
+            return (SetRotAccelParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetRotAccelParametersSetDataType clone = (SetRotAccelParametersSetDataType)base.MemberwiseClone();
+            SetRotAccelParamsSetDataType clone = (SetRotAccelParamsSetDataType)base.MemberwiseClone();
 
             clone.m_rotAccel = (CRCL_RotAccelDataType)Utils.Clone(this.m_rotAccel);
 
@@ -29336,54 +28799,54 @@ namespace CRCL
         #endregion
     }
 
-    #region SetRotAccelParametersSetDataTypeCollection Class
+    #region SetRotAccelParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of SetRotAccelParametersSetDataType objects.
+    /// A collection of SetRotAccelParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfSetRotAccelParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetRotAccelParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfSetRotAccelParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetRotAccelParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class SetRotAccelParametersSetDataTypeCollection : List<SetRotAccelParametersSetDataType>, ICloneable
+    public partial class SetRotAccelParamsSetDataTypeCollection : List<SetRotAccelParamsSetDataType>, ICloneable
     #else
-    public partial class SetRotAccelParametersSetDataTypeCollection : List<SetRotAccelParametersSetDataType>
+    public partial class SetRotAccelParamsSetDataTypeCollection : List<SetRotAccelParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public SetRotAccelParametersSetDataTypeCollection() {}
+        public SetRotAccelParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public SetRotAccelParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public SetRotAccelParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public SetRotAccelParametersSetDataTypeCollection(IEnumerable<SetRotAccelParametersSetDataType> collection) : base(collection) {}
+        public SetRotAccelParamsSetDataTypeCollection(IEnumerable<SetRotAccelParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator SetRotAccelParametersSetDataTypeCollection(SetRotAccelParametersSetDataType[] values)
+        public static implicit operator SetRotAccelParamsSetDataTypeCollection(SetRotAccelParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new SetRotAccelParametersSetDataTypeCollection(values);
+                return new SetRotAccelParamsSetDataTypeCollection(values);
             }
 
-            return new SetRotAccelParametersSetDataTypeCollection();
+            return new SetRotAccelParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator SetRotAccelParametersSetDataType[](SetRotAccelParametersSetDataTypeCollection values)
+        public static explicit operator SetRotAccelParamsSetDataType[](SetRotAccelParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -29401,7 +28864,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (SetRotAccelParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (SetRotAccelParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -29409,11 +28872,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetRotAccelParametersSetDataTypeCollection clone = new SetRotAccelParametersSetDataTypeCollection(this.Count);
+            SetRotAccelParamsSetDataTypeCollection clone = new SetRotAccelParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((SetRotAccelParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((SetRotAccelParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -29423,21 +28886,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region SetAngleUnitsParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_SetAngleUnitsParametersSetDataType)
+    #region SetAngleUnitsParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_SetAngleUnitsParamsSetDataType)
     /// <summary>
     /// Parameters of a SetAngleUnits Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class SetAngleUnitsParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class SetAngleUnitsParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public SetAngleUnitsParametersSetDataType()
+        public SetAngleUnitsParamsSetDataType()
         {
             Initialize();
         }
@@ -29462,8 +28925,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "UnitName", IsRequired = false, Order = 1)]
-        public CRCL_AngleUnitEnumDataType UnitName
+        [DataMember(Name = "unitName", IsRequired = false, Order = 1)]
+        public CRCL_AngleUnitEnumDataType unitName
         {
             get { return m_unitName;  }
             set { m_unitName = value; }
@@ -29474,19 +28937,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.SetAngleUnitsParametersSetDataType; }
+            get { return DataTypeIds.SetAngleUnitsParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.SetAngleUnitsParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.SetAngleUnitsParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.SetAngleUnitsParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.SetAngleUnitsParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -29496,7 +28959,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEnumerated("UnitName", UnitName);
+            encoder.WriteEnumerated("unitName", unitName);
 
             encoder.PopNamespace();
         }
@@ -29508,7 +28971,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            UnitName = (CRCL_AngleUnitEnumDataType)decoder.ReadEnumerated("UnitName", typeof(CRCL_AngleUnitEnumDataType));
+            unitName = (CRCL_AngleUnitEnumDataType)decoder.ReadEnumerated("unitName", typeof(CRCL_AngleUnitEnumDataType));
 
             decoder.PopNamespace();
         }
@@ -29521,7 +28984,7 @@ namespace CRCL
                 return true;
             }
 
-            SetAngleUnitsParametersSetDataType value = encodeable as SetAngleUnitsParametersSetDataType;
+            SetAngleUnitsParamsSetDataType value = encodeable as SetAngleUnitsParamsSetDataType;
 
             if (value == null)
             {
@@ -29538,14 +29001,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (SetAngleUnitsParametersSetDataType)this.MemberwiseClone();
+            return (SetAngleUnitsParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetAngleUnitsParametersSetDataType clone = (SetAngleUnitsParametersSetDataType)base.MemberwiseClone();
+            SetAngleUnitsParamsSetDataType clone = (SetAngleUnitsParamsSetDataType)base.MemberwiseClone();
 
             clone.m_unitName = (CRCL_AngleUnitEnumDataType)Utils.Clone(this.m_unitName);
 
@@ -29558,54 +29021,54 @@ namespace CRCL
         #endregion
     }
 
-    #region SetAngleUnitsParametersSetDataTypeCollection Class
+    #region SetAngleUnitsParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of SetAngleUnitsParametersSetDataType objects.
+    /// A collection of SetAngleUnitsParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfSetAngleUnitsParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetAngleUnitsParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfSetAngleUnitsParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetAngleUnitsParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class SetAngleUnitsParametersSetDataTypeCollection : List<SetAngleUnitsParametersSetDataType>, ICloneable
+    public partial class SetAngleUnitsParamsSetDataTypeCollection : List<SetAngleUnitsParamsSetDataType>, ICloneable
     #else
-    public partial class SetAngleUnitsParametersSetDataTypeCollection : List<SetAngleUnitsParametersSetDataType>
+    public partial class SetAngleUnitsParamsSetDataTypeCollection : List<SetAngleUnitsParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public SetAngleUnitsParametersSetDataTypeCollection() {}
+        public SetAngleUnitsParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public SetAngleUnitsParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public SetAngleUnitsParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public SetAngleUnitsParametersSetDataTypeCollection(IEnumerable<SetAngleUnitsParametersSetDataType> collection) : base(collection) {}
+        public SetAngleUnitsParamsSetDataTypeCollection(IEnumerable<SetAngleUnitsParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator SetAngleUnitsParametersSetDataTypeCollection(SetAngleUnitsParametersSetDataType[] values)
+        public static implicit operator SetAngleUnitsParamsSetDataTypeCollection(SetAngleUnitsParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new SetAngleUnitsParametersSetDataTypeCollection(values);
+                return new SetAngleUnitsParamsSetDataTypeCollection(values);
             }
 
-            return new SetAngleUnitsParametersSetDataTypeCollection();
+            return new SetAngleUnitsParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator SetAngleUnitsParametersSetDataType[](SetAngleUnitsParametersSetDataTypeCollection values)
+        public static explicit operator SetAngleUnitsParamsSetDataType[](SetAngleUnitsParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -29623,7 +29086,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (SetAngleUnitsParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (SetAngleUnitsParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -29631,11 +29094,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetAngleUnitsParametersSetDataTypeCollection clone = new SetAngleUnitsParametersSetDataTypeCollection(this.Count);
+            SetAngleUnitsParamsSetDataTypeCollection clone = new SetAngleUnitsParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((SetAngleUnitsParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((SetAngleUnitsParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -29645,21 +29108,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region SetEndPoseToleranceParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_SetEndPoseToleranceParametersSetDataType)
+    #region SetEndPoseToleranceParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_SetEndPoseToleranceParamsSetDataType)
     /// <summary>
     /// Parameters of a SetEndPoseTolerance Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class SetEndPoseToleranceParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class SetEndPoseToleranceParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public SetEndPoseToleranceParametersSetDataType()
+        public SetEndPoseToleranceParamsSetDataType()
         {
             Initialize();
         }
@@ -29685,10 +29148,9 @@ namespace CRCL
         #region Public Properties
         /// <summary>
         /// Tolerance of a SetEndPoseTolerance Command
-            
         /// </summary>
-        [DataMember(Name = "Tolerance", IsRequired = false, Order = 1)]
-        public CRCL_PoseToleranceDataType Tolerance
+        [DataMember(Name = "tolerance", IsRequired = false, Order = 1)]
+        public CRCL_PoseToleranceDataType tolerance
         {
             get
             {
@@ -29711,19 +29173,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.SetEndPoseToleranceParametersSetDataType; }
+            get { return DataTypeIds.SetEndPoseToleranceParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.SetEndPoseToleranceParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.SetEndPoseToleranceParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.SetEndPoseToleranceParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.SetEndPoseToleranceParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -29733,7 +29195,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeable("Tolerance", Tolerance, typeof(CRCL_PoseToleranceDataType));
+            encoder.WriteEncodeable("tolerance", tolerance, typeof(CRCL_PoseToleranceDataType));
 
             encoder.PopNamespace();
         }
@@ -29745,7 +29207,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            Tolerance = (CRCL_PoseToleranceDataType)decoder.ReadEncodeable("Tolerance", typeof(CRCL_PoseToleranceDataType));
+            tolerance = (CRCL_PoseToleranceDataType)decoder.ReadEncodeable("tolerance", typeof(CRCL_PoseToleranceDataType));
 
             decoder.PopNamespace();
         }
@@ -29758,7 +29220,7 @@ namespace CRCL
                 return true;
             }
 
-            SetEndPoseToleranceParametersSetDataType value = encodeable as SetEndPoseToleranceParametersSetDataType;
+            SetEndPoseToleranceParamsSetDataType value = encodeable as SetEndPoseToleranceParamsSetDataType;
 
             if (value == null)
             {
@@ -29775,14 +29237,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (SetEndPoseToleranceParametersSetDataType)this.MemberwiseClone();
+            return (SetEndPoseToleranceParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetEndPoseToleranceParametersSetDataType clone = (SetEndPoseToleranceParametersSetDataType)base.MemberwiseClone();
+            SetEndPoseToleranceParamsSetDataType clone = (SetEndPoseToleranceParamsSetDataType)base.MemberwiseClone();
 
             clone.m_tolerance = (CRCL_PoseToleranceDataType)Utils.Clone(this.m_tolerance);
 
@@ -29795,54 +29257,54 @@ namespace CRCL
         #endregion
     }
 
-    #region SetEndPoseToleranceParametersSetDataTypeCollection Class
+    #region SetEndPoseToleranceParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of SetEndPoseToleranceParametersSetDataType objects.
+    /// A collection of SetEndPoseToleranceParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfSetEndPoseToleranceParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetEndPoseToleranceParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfSetEndPoseToleranceParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetEndPoseToleranceParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class SetEndPoseToleranceParametersSetDataTypeCollection : List<SetEndPoseToleranceParametersSetDataType>, ICloneable
+    public partial class SetEndPoseToleranceParamsSetDataTypeCollection : List<SetEndPoseToleranceParamsSetDataType>, ICloneable
     #else
-    public partial class SetEndPoseToleranceParametersSetDataTypeCollection : List<SetEndPoseToleranceParametersSetDataType>
+    public partial class SetEndPoseToleranceParamsSetDataTypeCollection : List<SetEndPoseToleranceParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public SetEndPoseToleranceParametersSetDataTypeCollection() {}
+        public SetEndPoseToleranceParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public SetEndPoseToleranceParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public SetEndPoseToleranceParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public SetEndPoseToleranceParametersSetDataTypeCollection(IEnumerable<SetEndPoseToleranceParametersSetDataType> collection) : base(collection) {}
+        public SetEndPoseToleranceParamsSetDataTypeCollection(IEnumerable<SetEndPoseToleranceParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator SetEndPoseToleranceParametersSetDataTypeCollection(SetEndPoseToleranceParametersSetDataType[] values)
+        public static implicit operator SetEndPoseToleranceParamsSetDataTypeCollection(SetEndPoseToleranceParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new SetEndPoseToleranceParametersSetDataTypeCollection(values);
+                return new SetEndPoseToleranceParamsSetDataTypeCollection(values);
             }
 
-            return new SetEndPoseToleranceParametersSetDataTypeCollection();
+            return new SetEndPoseToleranceParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator SetEndPoseToleranceParametersSetDataType[](SetEndPoseToleranceParametersSetDataTypeCollection values)
+        public static explicit operator SetEndPoseToleranceParamsSetDataType[](SetEndPoseToleranceParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -29860,7 +29322,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (SetEndPoseToleranceParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (SetEndPoseToleranceParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -29868,11 +29330,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetEndPoseToleranceParametersSetDataTypeCollection clone = new SetEndPoseToleranceParametersSetDataTypeCollection(this.Count);
+            SetEndPoseToleranceParamsSetDataTypeCollection clone = new SetEndPoseToleranceParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((SetEndPoseToleranceParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((SetEndPoseToleranceParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -29882,21 +29344,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region SetForceUnitsParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_SetForceUnitsParametersSetDataType)
+    #region SetForceUnitsParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_SetForceUnitsParamsSetDataType)
     /// <summary>
     /// Parameters of a SetForceUnits Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class SetForceUnitsParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class SetForceUnitsParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public SetForceUnitsParametersSetDataType()
+        public SetForceUnitsParamsSetDataType()
         {
             Initialize();
         }
@@ -29921,8 +29383,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "UnitName", IsRequired = false, Order = 1)]
-        public CRCL_ForceUnitEnumDataType UnitName
+        [DataMember(Name = "unitName", IsRequired = false, Order = 1)]
+        public CRCL_ForceUnitEnumDataType unitName
         {
             get { return m_unitName;  }
             set { m_unitName = value; }
@@ -29933,19 +29395,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.SetForceUnitsParametersSetDataType; }
+            get { return DataTypeIds.SetForceUnitsParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.SetForceUnitsParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.SetForceUnitsParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.SetForceUnitsParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.SetForceUnitsParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -29955,7 +29417,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEnumerated("UnitName", UnitName);
+            encoder.WriteEnumerated("unitName", unitName);
 
             encoder.PopNamespace();
         }
@@ -29967,7 +29429,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            UnitName = (CRCL_ForceUnitEnumDataType)decoder.ReadEnumerated("UnitName", typeof(CRCL_ForceUnitEnumDataType));
+            unitName = (CRCL_ForceUnitEnumDataType)decoder.ReadEnumerated("unitName", typeof(CRCL_ForceUnitEnumDataType));
 
             decoder.PopNamespace();
         }
@@ -29980,7 +29442,7 @@ namespace CRCL
                 return true;
             }
 
-            SetForceUnitsParametersSetDataType value = encodeable as SetForceUnitsParametersSetDataType;
+            SetForceUnitsParamsSetDataType value = encodeable as SetForceUnitsParamsSetDataType;
 
             if (value == null)
             {
@@ -29997,14 +29459,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (SetForceUnitsParametersSetDataType)this.MemberwiseClone();
+            return (SetForceUnitsParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetForceUnitsParametersSetDataType clone = (SetForceUnitsParametersSetDataType)base.MemberwiseClone();
+            SetForceUnitsParamsSetDataType clone = (SetForceUnitsParamsSetDataType)base.MemberwiseClone();
 
             clone.m_unitName = (CRCL_ForceUnitEnumDataType)Utils.Clone(this.m_unitName);
 
@@ -30017,54 +29479,54 @@ namespace CRCL
         #endregion
     }
 
-    #region SetForceUnitsParametersSetDataTypeCollection Class
+    #region SetForceUnitsParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of SetForceUnitsParametersSetDataType objects.
+    /// A collection of SetForceUnitsParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfSetForceUnitsParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetForceUnitsParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfSetForceUnitsParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetForceUnitsParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class SetForceUnitsParametersSetDataTypeCollection : List<SetForceUnitsParametersSetDataType>, ICloneable
+    public partial class SetForceUnitsParamsSetDataTypeCollection : List<SetForceUnitsParamsSetDataType>, ICloneable
     #else
-    public partial class SetForceUnitsParametersSetDataTypeCollection : List<SetForceUnitsParametersSetDataType>
+    public partial class SetForceUnitsParamsSetDataTypeCollection : List<SetForceUnitsParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public SetForceUnitsParametersSetDataTypeCollection() {}
+        public SetForceUnitsParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public SetForceUnitsParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public SetForceUnitsParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public SetForceUnitsParametersSetDataTypeCollection(IEnumerable<SetForceUnitsParametersSetDataType> collection) : base(collection) {}
+        public SetForceUnitsParamsSetDataTypeCollection(IEnumerable<SetForceUnitsParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator SetForceUnitsParametersSetDataTypeCollection(SetForceUnitsParametersSetDataType[] values)
+        public static implicit operator SetForceUnitsParamsSetDataTypeCollection(SetForceUnitsParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new SetForceUnitsParametersSetDataTypeCollection(values);
+                return new SetForceUnitsParamsSetDataTypeCollection(values);
             }
 
-            return new SetForceUnitsParametersSetDataTypeCollection();
+            return new SetForceUnitsParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator SetForceUnitsParametersSetDataType[](SetForceUnitsParametersSetDataTypeCollection values)
+        public static explicit operator SetForceUnitsParamsSetDataType[](SetForceUnitsParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -30082,7 +29544,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (SetForceUnitsParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (SetForceUnitsParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -30090,11 +29552,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetForceUnitsParametersSetDataTypeCollection clone = new SetForceUnitsParametersSetDataTypeCollection(this.Count);
+            SetForceUnitsParamsSetDataTypeCollection clone = new SetForceUnitsParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((SetForceUnitsParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((SetForceUnitsParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -30104,21 +29566,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region SetIntermediatePoseToleranceParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_SetIntermediatePoseToleranceParametersSetDataType)
+    #region SetIntermediatePoseToleranceParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_SetIntermediatePoseToleranceParamsSetDataType)
     /// <summary>
     /// Parameters of a SetIntermediatePoseTolerance Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class SetIntermediatePoseToleranceParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class SetIntermediatePoseToleranceParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public SetIntermediatePoseToleranceParametersSetDataType()
+        public SetIntermediatePoseToleranceParamsSetDataType()
         {
             Initialize();
         }
@@ -30144,10 +29606,9 @@ namespace CRCL
         #region Public Properties
         /// <summary>
         /// Tolerance of a SetIntermediatePoseTolerance Command
-            
         /// </summary>
-        [DataMember(Name = "Tolerance", IsRequired = false, Order = 1)]
-        public CRCL_PoseToleranceDataType Tolerance
+        [DataMember(Name = "tolerance", IsRequired = false, Order = 1)]
+        public CRCL_PoseToleranceDataType tolerance
         {
             get
             {
@@ -30170,19 +29631,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.SetIntermediatePoseToleranceParametersSetDataType; }
+            get { return DataTypeIds.SetIntermediatePoseToleranceParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.SetIntermediatePoseToleranceParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.SetIntermediatePoseToleranceParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.SetIntermediatePoseToleranceParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.SetIntermediatePoseToleranceParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -30192,7 +29653,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEncodeable("Tolerance", Tolerance, typeof(CRCL_PoseToleranceDataType));
+            encoder.WriteEncodeable("tolerance", tolerance, typeof(CRCL_PoseToleranceDataType));
 
             encoder.PopNamespace();
         }
@@ -30204,7 +29665,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            Tolerance = (CRCL_PoseToleranceDataType)decoder.ReadEncodeable("Tolerance", typeof(CRCL_PoseToleranceDataType));
+            tolerance = (CRCL_PoseToleranceDataType)decoder.ReadEncodeable("tolerance", typeof(CRCL_PoseToleranceDataType));
 
             decoder.PopNamespace();
         }
@@ -30217,7 +29678,7 @@ namespace CRCL
                 return true;
             }
 
-            SetIntermediatePoseToleranceParametersSetDataType value = encodeable as SetIntermediatePoseToleranceParametersSetDataType;
+            SetIntermediatePoseToleranceParamsSetDataType value = encodeable as SetIntermediatePoseToleranceParamsSetDataType;
 
             if (value == null)
             {
@@ -30234,14 +29695,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (SetIntermediatePoseToleranceParametersSetDataType)this.MemberwiseClone();
+            return (SetIntermediatePoseToleranceParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetIntermediatePoseToleranceParametersSetDataType clone = (SetIntermediatePoseToleranceParametersSetDataType)base.MemberwiseClone();
+            SetIntermediatePoseToleranceParamsSetDataType clone = (SetIntermediatePoseToleranceParamsSetDataType)base.MemberwiseClone();
 
             clone.m_tolerance = (CRCL_PoseToleranceDataType)Utils.Clone(this.m_tolerance);
 
@@ -30254,54 +29715,54 @@ namespace CRCL
         #endregion
     }
 
-    #region SetIntermediatePoseToleranceParametersSetDataTypeCollection Class
+    #region SetIntermediatePoseToleranceParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of SetIntermediatePoseToleranceParametersSetDataType objects.
+    /// A collection of SetIntermediatePoseToleranceParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfSetIntermediatePoseToleranceParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetIntermediatePoseToleranceParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfSetIntermediatePoseToleranceParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetIntermediatePoseToleranceParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class SetIntermediatePoseToleranceParametersSetDataTypeCollection : List<SetIntermediatePoseToleranceParametersSetDataType>, ICloneable
+    public partial class SetIntermediatePoseToleranceParamsSetDataTypeCollection : List<SetIntermediatePoseToleranceParamsSetDataType>, ICloneable
     #else
-    public partial class SetIntermediatePoseToleranceParametersSetDataTypeCollection : List<SetIntermediatePoseToleranceParametersSetDataType>
+    public partial class SetIntermediatePoseToleranceParamsSetDataTypeCollection : List<SetIntermediatePoseToleranceParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public SetIntermediatePoseToleranceParametersSetDataTypeCollection() {}
+        public SetIntermediatePoseToleranceParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public SetIntermediatePoseToleranceParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public SetIntermediatePoseToleranceParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public SetIntermediatePoseToleranceParametersSetDataTypeCollection(IEnumerable<SetIntermediatePoseToleranceParametersSetDataType> collection) : base(collection) {}
+        public SetIntermediatePoseToleranceParamsSetDataTypeCollection(IEnumerable<SetIntermediatePoseToleranceParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator SetIntermediatePoseToleranceParametersSetDataTypeCollection(SetIntermediatePoseToleranceParametersSetDataType[] values)
+        public static implicit operator SetIntermediatePoseToleranceParamsSetDataTypeCollection(SetIntermediatePoseToleranceParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new SetIntermediatePoseToleranceParametersSetDataTypeCollection(values);
+                return new SetIntermediatePoseToleranceParamsSetDataTypeCollection(values);
             }
 
-            return new SetIntermediatePoseToleranceParametersSetDataTypeCollection();
+            return new SetIntermediatePoseToleranceParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator SetIntermediatePoseToleranceParametersSetDataType[](SetIntermediatePoseToleranceParametersSetDataTypeCollection values)
+        public static explicit operator SetIntermediatePoseToleranceParamsSetDataType[](SetIntermediatePoseToleranceParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -30319,7 +29780,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (SetIntermediatePoseToleranceParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (SetIntermediatePoseToleranceParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -30327,11 +29788,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetIntermediatePoseToleranceParametersSetDataTypeCollection clone = new SetIntermediatePoseToleranceParametersSetDataTypeCollection(this.Count);
+            SetIntermediatePoseToleranceParamsSetDataTypeCollection clone = new SetIntermediatePoseToleranceParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((SetIntermediatePoseToleranceParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((SetIntermediatePoseToleranceParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -30341,21 +29802,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region SetLengthUnitsParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_SetLengthUnitsParametersSetDataType)
+    #region SetLengthUnitsParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_SetLengthUnitsParamsSetDataType)
     /// <summary>
     /// Parameters of a SetLengthUnits Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class SetLengthUnitsParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class SetLengthUnitsParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public SetLengthUnitsParametersSetDataType()
+        public SetLengthUnitsParamsSetDataType()
         {
             Initialize();
         }
@@ -30380,8 +29841,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "UnitName", IsRequired = false, Order = 1)]
-        public CRCL_LengthUnitEnumDataType UnitName
+        [DataMember(Name = "unitName", IsRequired = false, Order = 1)]
+        public CRCL_LengthUnitEnumDataType unitName
         {
             get { return m_unitName;  }
             set { m_unitName = value; }
@@ -30392,19 +29853,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.SetLengthUnitsParametersSetDataType; }
+            get { return DataTypeIds.SetLengthUnitsParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.SetLengthUnitsParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.SetLengthUnitsParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.SetLengthUnitsParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.SetLengthUnitsParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -30414,7 +29875,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEnumerated("UnitName", UnitName);
+            encoder.WriteEnumerated("unitName", unitName);
 
             encoder.PopNamespace();
         }
@@ -30426,7 +29887,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            UnitName = (CRCL_LengthUnitEnumDataType)decoder.ReadEnumerated("UnitName", typeof(CRCL_LengthUnitEnumDataType));
+            unitName = (CRCL_LengthUnitEnumDataType)decoder.ReadEnumerated("unitName", typeof(CRCL_LengthUnitEnumDataType));
 
             decoder.PopNamespace();
         }
@@ -30439,7 +29900,7 @@ namespace CRCL
                 return true;
             }
 
-            SetLengthUnitsParametersSetDataType value = encodeable as SetLengthUnitsParametersSetDataType;
+            SetLengthUnitsParamsSetDataType value = encodeable as SetLengthUnitsParamsSetDataType;
 
             if (value == null)
             {
@@ -30456,14 +29917,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (SetLengthUnitsParametersSetDataType)this.MemberwiseClone();
+            return (SetLengthUnitsParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetLengthUnitsParametersSetDataType clone = (SetLengthUnitsParametersSetDataType)base.MemberwiseClone();
+            SetLengthUnitsParamsSetDataType clone = (SetLengthUnitsParamsSetDataType)base.MemberwiseClone();
 
             clone.m_unitName = (CRCL_LengthUnitEnumDataType)Utils.Clone(this.m_unitName);
 
@@ -30476,54 +29937,54 @@ namespace CRCL
         #endregion
     }
 
-    #region SetLengthUnitsParametersSetDataTypeCollection Class
+    #region SetLengthUnitsParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of SetLengthUnitsParametersSetDataType objects.
+    /// A collection of SetLengthUnitsParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfSetLengthUnitsParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetLengthUnitsParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfSetLengthUnitsParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetLengthUnitsParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class SetLengthUnitsParametersSetDataTypeCollection : List<SetLengthUnitsParametersSetDataType>, ICloneable
+    public partial class SetLengthUnitsParamsSetDataTypeCollection : List<SetLengthUnitsParamsSetDataType>, ICloneable
     #else
-    public partial class SetLengthUnitsParametersSetDataTypeCollection : List<SetLengthUnitsParametersSetDataType>
+    public partial class SetLengthUnitsParamsSetDataTypeCollection : List<SetLengthUnitsParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public SetLengthUnitsParametersSetDataTypeCollection() {}
+        public SetLengthUnitsParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public SetLengthUnitsParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public SetLengthUnitsParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public SetLengthUnitsParametersSetDataTypeCollection(IEnumerable<SetLengthUnitsParametersSetDataType> collection) : base(collection) {}
+        public SetLengthUnitsParamsSetDataTypeCollection(IEnumerable<SetLengthUnitsParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator SetLengthUnitsParametersSetDataTypeCollection(SetLengthUnitsParametersSetDataType[] values)
+        public static implicit operator SetLengthUnitsParamsSetDataTypeCollection(SetLengthUnitsParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new SetLengthUnitsParametersSetDataTypeCollection(values);
+                return new SetLengthUnitsParamsSetDataTypeCollection(values);
             }
 
-            return new SetLengthUnitsParametersSetDataTypeCollection();
+            return new SetLengthUnitsParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator SetLengthUnitsParametersSetDataType[](SetLengthUnitsParametersSetDataTypeCollection values)
+        public static explicit operator SetLengthUnitsParamsSetDataType[](SetLengthUnitsParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -30541,7 +30002,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (SetLengthUnitsParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (SetLengthUnitsParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -30549,11 +30010,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetLengthUnitsParametersSetDataTypeCollection clone = new SetLengthUnitsParametersSetDataTypeCollection(this.Count);
+            SetLengthUnitsParamsSetDataTypeCollection clone = new SetLengthUnitsParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((SetLengthUnitsParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((SetLengthUnitsParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -30563,21 +30024,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region SetMotionCoordinationParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_SetMotionCoordinationParametersSetDataType)
+    #region SetMotionCoordinationParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_SetMotionCoordinationParamsSetDataType)
     /// <summary>
     /// Parameters of a SetMotionCoordination Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class SetMotionCoordinationParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class SetMotionCoordinationParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public SetMotionCoordinationParametersSetDataType()
+        public SetMotionCoordinationParamsSetDataType()
         {
             Initialize();
         }
@@ -30602,8 +30063,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "Coordinated", IsRequired = false, Order = 1)]
-        public bool Coordinated
+        [DataMember(Name = "coordinated", IsRequired = false, Order = 1)]
+        public bool coordinated
         {
             get { return m_coordinated;  }
             set { m_coordinated = value; }
@@ -30614,19 +30075,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.SetMotionCoordinationParametersSetDataType; }
+            get { return DataTypeIds.SetMotionCoordinationParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.SetMotionCoordinationParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.SetMotionCoordinationParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.SetMotionCoordinationParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.SetMotionCoordinationParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -30636,7 +30097,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteBoolean("Coordinated", Coordinated);
+            encoder.WriteBoolean("coordinated", coordinated);
 
             encoder.PopNamespace();
         }
@@ -30648,7 +30109,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            Coordinated = decoder.ReadBoolean("Coordinated");
+            coordinated = decoder.ReadBoolean("coordinated");
 
             decoder.PopNamespace();
         }
@@ -30661,7 +30122,7 @@ namespace CRCL
                 return true;
             }
 
-            SetMotionCoordinationParametersSetDataType value = encodeable as SetMotionCoordinationParametersSetDataType;
+            SetMotionCoordinationParamsSetDataType value = encodeable as SetMotionCoordinationParamsSetDataType;
 
             if (value == null)
             {
@@ -30678,14 +30139,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (SetMotionCoordinationParametersSetDataType)this.MemberwiseClone();
+            return (SetMotionCoordinationParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetMotionCoordinationParametersSetDataType clone = (SetMotionCoordinationParametersSetDataType)base.MemberwiseClone();
+            SetMotionCoordinationParamsSetDataType clone = (SetMotionCoordinationParamsSetDataType)base.MemberwiseClone();
 
             clone.m_coordinated = (bool)Utils.Clone(this.m_coordinated);
 
@@ -30698,54 +30159,54 @@ namespace CRCL
         #endregion
     }
 
-    #region SetMotionCoordinationParametersSetDataTypeCollection Class
+    #region SetMotionCoordinationParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of SetMotionCoordinationParametersSetDataType objects.
+    /// A collection of SetMotionCoordinationParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfSetMotionCoordinationParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetMotionCoordinationParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfSetMotionCoordinationParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetMotionCoordinationParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class SetMotionCoordinationParametersSetDataTypeCollection : List<SetMotionCoordinationParametersSetDataType>, ICloneable
+    public partial class SetMotionCoordinationParamsSetDataTypeCollection : List<SetMotionCoordinationParamsSetDataType>, ICloneable
     #else
-    public partial class SetMotionCoordinationParametersSetDataTypeCollection : List<SetMotionCoordinationParametersSetDataType>
+    public partial class SetMotionCoordinationParamsSetDataTypeCollection : List<SetMotionCoordinationParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public SetMotionCoordinationParametersSetDataTypeCollection() {}
+        public SetMotionCoordinationParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public SetMotionCoordinationParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public SetMotionCoordinationParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public SetMotionCoordinationParametersSetDataTypeCollection(IEnumerable<SetMotionCoordinationParametersSetDataType> collection) : base(collection) {}
+        public SetMotionCoordinationParamsSetDataTypeCollection(IEnumerable<SetMotionCoordinationParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator SetMotionCoordinationParametersSetDataTypeCollection(SetMotionCoordinationParametersSetDataType[] values)
+        public static implicit operator SetMotionCoordinationParamsSetDataTypeCollection(SetMotionCoordinationParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new SetMotionCoordinationParametersSetDataTypeCollection(values);
+                return new SetMotionCoordinationParamsSetDataTypeCollection(values);
             }
 
-            return new SetMotionCoordinationParametersSetDataTypeCollection();
+            return new SetMotionCoordinationParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator SetMotionCoordinationParametersSetDataType[](SetMotionCoordinationParametersSetDataTypeCollection values)
+        public static explicit operator SetMotionCoordinationParamsSetDataType[](SetMotionCoordinationParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -30763,7 +30224,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (SetMotionCoordinationParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (SetMotionCoordinationParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -30771,11 +30232,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetMotionCoordinationParametersSetDataTypeCollection clone = new SetMotionCoordinationParametersSetDataTypeCollection(this.Count);
+            SetMotionCoordinationParamsSetDataTypeCollection clone = new SetMotionCoordinationParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((SetMotionCoordinationParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((SetMotionCoordinationParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -30785,21 +30246,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region SetTorqueUnitsParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_SetTorqueUnitsParametersSetDataType)
+    #region SetTorqueUnitsParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_SetTorqueUnitsParamsSetDataType)
     /// <summary>
     /// Parameters of a SetTorqueUnits Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class SetTorqueUnitsParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class SetTorqueUnitsParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public SetTorqueUnitsParametersSetDataType()
+        public SetTorqueUnitsParamsSetDataType()
         {
             Initialize();
         }
@@ -30824,8 +30285,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "UnitName", IsRequired = false, Order = 1)]
-        public CRCL_TorqueUnitEnumDataType UnitName
+        [DataMember(Name = "unitName", IsRequired = false, Order = 1)]
+        public CRCL_TorqueUnitEnumDataType unitName
         {
             get { return m_unitName;  }
             set { m_unitName = value; }
@@ -30836,19 +30297,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.SetTorqueUnitsParametersSetDataType; }
+            get { return DataTypeIds.SetTorqueUnitsParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.SetTorqueUnitsParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.SetTorqueUnitsParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.SetTorqueUnitsParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.SetTorqueUnitsParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -30858,7 +30319,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEnumerated("UnitName", UnitName);
+            encoder.WriteEnumerated("unitName", unitName);
 
             encoder.PopNamespace();
         }
@@ -30870,7 +30331,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            UnitName = (CRCL_TorqueUnitEnumDataType)decoder.ReadEnumerated("UnitName", typeof(CRCL_TorqueUnitEnumDataType));
+            unitName = (CRCL_TorqueUnitEnumDataType)decoder.ReadEnumerated("unitName", typeof(CRCL_TorqueUnitEnumDataType));
 
             decoder.PopNamespace();
         }
@@ -30883,7 +30344,7 @@ namespace CRCL
                 return true;
             }
 
-            SetTorqueUnitsParametersSetDataType value = encodeable as SetTorqueUnitsParametersSetDataType;
+            SetTorqueUnitsParamsSetDataType value = encodeable as SetTorqueUnitsParamsSetDataType;
 
             if (value == null)
             {
@@ -30900,14 +30361,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (SetTorqueUnitsParametersSetDataType)this.MemberwiseClone();
+            return (SetTorqueUnitsParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetTorqueUnitsParametersSetDataType clone = (SetTorqueUnitsParametersSetDataType)base.MemberwiseClone();
+            SetTorqueUnitsParamsSetDataType clone = (SetTorqueUnitsParamsSetDataType)base.MemberwiseClone();
 
             clone.m_unitName = (CRCL_TorqueUnitEnumDataType)Utils.Clone(this.m_unitName);
 
@@ -30920,54 +30381,54 @@ namespace CRCL
         #endregion
     }
 
-    #region SetTorqueUnitsParametersSetDataTypeCollection Class
+    #region SetTorqueUnitsParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of SetTorqueUnitsParametersSetDataType objects.
+    /// A collection of SetTorqueUnitsParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfSetTorqueUnitsParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetTorqueUnitsParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfSetTorqueUnitsParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "SetTorqueUnitsParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class SetTorqueUnitsParametersSetDataTypeCollection : List<SetTorqueUnitsParametersSetDataType>, ICloneable
+    public partial class SetTorqueUnitsParamsSetDataTypeCollection : List<SetTorqueUnitsParamsSetDataType>, ICloneable
     #else
-    public partial class SetTorqueUnitsParametersSetDataTypeCollection : List<SetTorqueUnitsParametersSetDataType>
+    public partial class SetTorqueUnitsParamsSetDataTypeCollection : List<SetTorqueUnitsParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public SetTorqueUnitsParametersSetDataTypeCollection() {}
+        public SetTorqueUnitsParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public SetTorqueUnitsParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public SetTorqueUnitsParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public SetTorqueUnitsParametersSetDataTypeCollection(IEnumerable<SetTorqueUnitsParametersSetDataType> collection) : base(collection) {}
+        public SetTorqueUnitsParamsSetDataTypeCollection(IEnumerable<SetTorqueUnitsParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator SetTorqueUnitsParametersSetDataTypeCollection(SetTorqueUnitsParametersSetDataType[] values)
+        public static implicit operator SetTorqueUnitsParamsSetDataTypeCollection(SetTorqueUnitsParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new SetTorqueUnitsParametersSetDataTypeCollection(values);
+                return new SetTorqueUnitsParamsSetDataTypeCollection(values);
             }
 
-            return new SetTorqueUnitsParametersSetDataTypeCollection();
+            return new SetTorqueUnitsParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator SetTorqueUnitsParametersSetDataType[](SetTorqueUnitsParametersSetDataTypeCollection values)
+        public static explicit operator SetTorqueUnitsParamsSetDataType[](SetTorqueUnitsParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -30985,7 +30446,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (SetTorqueUnitsParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (SetTorqueUnitsParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -30993,11 +30454,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            SetTorqueUnitsParametersSetDataTypeCollection clone = new SetTorqueUnitsParametersSetDataTypeCollection(this.Count);
+            SetTorqueUnitsParamsSetDataTypeCollection clone = new SetTorqueUnitsParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((SetTorqueUnitsParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((SetTorqueUnitsParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -31007,21 +30468,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region StopMotionParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_StopMotionParametersSetDataType)
+    #region StopMotionParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_StopMotionParamsSetDataType)
     /// <summary>
     /// Parameters of a StopMotion Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class StopMotionParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class StopMotionParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public StopMotionParametersSetDataType()
+        public StopMotionParamsSetDataType()
         {
             Initialize();
         }
@@ -31046,8 +30507,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "StopCondition", IsRequired = false, Order = 1)]
-        public CRCL_StopConditionEnumDataType StopCondition
+        [DataMember(Name = "stopCondition", IsRequired = false, Order = 1)]
+        public CRCL_StopConditionEnumDataType stopCondition
         {
             get { return m_stopCondition;  }
             set { m_stopCondition = value; }
@@ -31058,19 +30519,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.StopMotionParametersSetDataType; }
+            get { return DataTypeIds.StopMotionParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.StopMotionParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.StopMotionParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.StopMotionParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.StopMotionParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -31080,7 +30541,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteEnumerated("StopCondition", StopCondition);
+            encoder.WriteEnumerated("stopCondition", stopCondition);
 
             encoder.PopNamespace();
         }
@@ -31092,7 +30553,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            StopCondition = (CRCL_StopConditionEnumDataType)decoder.ReadEnumerated("StopCondition", typeof(CRCL_StopConditionEnumDataType));
+            stopCondition = (CRCL_StopConditionEnumDataType)decoder.ReadEnumerated("stopCondition", typeof(CRCL_StopConditionEnumDataType));
 
             decoder.PopNamespace();
         }
@@ -31105,7 +30566,7 @@ namespace CRCL
                 return true;
             }
 
-            StopMotionParametersSetDataType value = encodeable as StopMotionParametersSetDataType;
+            StopMotionParamsSetDataType value = encodeable as StopMotionParamsSetDataType;
 
             if (value == null)
             {
@@ -31122,14 +30583,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (StopMotionParametersSetDataType)this.MemberwiseClone();
+            return (StopMotionParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            StopMotionParametersSetDataType clone = (StopMotionParametersSetDataType)base.MemberwiseClone();
+            StopMotionParamsSetDataType clone = (StopMotionParamsSetDataType)base.MemberwiseClone();
 
             clone.m_stopCondition = (CRCL_StopConditionEnumDataType)Utils.Clone(this.m_stopCondition);
 
@@ -31142,54 +30603,54 @@ namespace CRCL
         #endregion
     }
 
-    #region StopMotionParametersSetDataTypeCollection Class
+    #region StopMotionParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of StopMotionParametersSetDataType objects.
+    /// A collection of StopMotionParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfStopMotionParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "StopMotionParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfStopMotionParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "StopMotionParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class StopMotionParametersSetDataTypeCollection : List<StopMotionParametersSetDataType>, ICloneable
+    public partial class StopMotionParamsSetDataTypeCollection : List<StopMotionParamsSetDataType>, ICloneable
     #else
-    public partial class StopMotionParametersSetDataTypeCollection : List<StopMotionParametersSetDataType>
+    public partial class StopMotionParamsSetDataTypeCollection : List<StopMotionParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public StopMotionParametersSetDataTypeCollection() {}
+        public StopMotionParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public StopMotionParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public StopMotionParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public StopMotionParametersSetDataTypeCollection(IEnumerable<StopMotionParametersSetDataType> collection) : base(collection) {}
+        public StopMotionParamsSetDataTypeCollection(IEnumerable<StopMotionParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator StopMotionParametersSetDataTypeCollection(StopMotionParametersSetDataType[] values)
+        public static implicit operator StopMotionParamsSetDataTypeCollection(StopMotionParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new StopMotionParametersSetDataTypeCollection(values);
+                return new StopMotionParamsSetDataTypeCollection(values);
             }
 
-            return new StopMotionParametersSetDataTypeCollection();
+            return new StopMotionParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator StopMotionParametersSetDataType[](StopMotionParametersSetDataTypeCollection values)
+        public static explicit operator StopMotionParamsSetDataType[](StopMotionParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -31207,7 +30668,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (StopMotionParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (StopMotionParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -31215,11 +30676,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            StopMotionParametersSetDataTypeCollection clone = new StopMotionParametersSetDataTypeCollection(this.Count);
+            StopMotionParamsSetDataTypeCollection clone = new StopMotionParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((StopMotionParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((StopMotionParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -31229,21 +30690,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region ConfigureStatusReportParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_ConfigureStatusReportParametersSetDataType)
+    #region ConfigureStatusReportParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_ConfigureStatusReportParamsSetDataType)
     /// <summary>
     /// Parameters of a ConfigureStatusReport Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class ConfigureStatusReportParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class ConfigureStatusReportParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public ConfigureStatusReportParametersSetDataType()
+        public ConfigureStatusReportParamsSetDataType()
         {
             Initialize();
         }
@@ -31273,48 +30734,48 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "ReportJointStatuses", IsRequired = false, Order = 1)]
-        public bool ReportJointStatuses
+        [DataMember(Name = "reportJointStatuses", IsRequired = false, Order = 1)]
+        public bool reportJointStatuses
         {
             get { return m_reportJointStatuses;  }
             set { m_reportJointStatuses = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "ReportPoseStatus", IsRequired = false, Order = 2)]
-        public bool ReportPoseStatus
+        [DataMember(Name = "reportPoseStatus", IsRequired = false, Order = 2)]
+        public bool reportPoseStatus
         {
             get { return m_reportPoseStatus;  }
             set { m_reportPoseStatus = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "ReportGripperStatus", IsRequired = false, Order = 3)]
-        public bool ReportGripperStatus
+        [DataMember(Name = "reportGripperStatus", IsRequired = false, Order = 3)]
+        public bool reportGripperStatus
         {
             get { return m_reportGripperStatus;  }
             set { m_reportGripperStatus = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "ReportSettingsStatus", IsRequired = false, Order = 4)]
-        public bool ReportSettingsStatus
+        [DataMember(Name = "reportSettingsStatus", IsRequired = false, Order = 4)]
+        public bool reportSettingsStatus
         {
             get { return m_reportSettingsStatus;  }
             set { m_reportSettingsStatus = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "ReportSensorsStatus", IsRequired = false, Order = 5)]
-        public bool ReportSensorsStatus
+        [DataMember(Name = "reportSensorsStatus", IsRequired = false, Order = 5)]
+        public bool reportSensorsStatus
         {
             get { return m_reportSensorsStatus;  }
             set { m_reportSensorsStatus = value; }
         }
 
         /// <remarks />
-        [DataMember(Name = "ReportGuardsStatus", IsRequired = false, Order = 6)]
-        public bool ReportGuardsStatus
+        [DataMember(Name = "reportGuardsStatus", IsRequired = false, Order = 6)]
+        public bool reportGuardsStatus
         {
             get { return m_reportGuardsStatus;  }
             set { m_reportGuardsStatus = value; }
@@ -31325,19 +30786,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.ConfigureStatusReportParametersSetDataType; }
+            get { return DataTypeIds.ConfigureStatusReportParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.ConfigureStatusReportParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.ConfigureStatusReportParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.ConfigureStatusReportParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.ConfigureStatusReportParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -31347,12 +30808,12 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteBoolean("ReportJointStatuses", ReportJointStatuses);
-            encoder.WriteBoolean("ReportPoseStatus", ReportPoseStatus);
-            encoder.WriteBoolean("ReportGripperStatus", ReportGripperStatus);
-            encoder.WriteBoolean("ReportSettingsStatus", ReportSettingsStatus);
-            encoder.WriteBoolean("ReportSensorsStatus", ReportSensorsStatus);
-            encoder.WriteBoolean("ReportGuardsStatus", ReportGuardsStatus);
+            encoder.WriteBoolean("reportJointStatuses", reportJointStatuses);
+            encoder.WriteBoolean("reportPoseStatus", reportPoseStatus);
+            encoder.WriteBoolean("reportGripperStatus", reportGripperStatus);
+            encoder.WriteBoolean("reportSettingsStatus", reportSettingsStatus);
+            encoder.WriteBoolean("reportSensorsStatus", reportSensorsStatus);
+            encoder.WriteBoolean("reportGuardsStatus", reportGuardsStatus);
 
             encoder.PopNamespace();
         }
@@ -31364,12 +30825,12 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            ReportJointStatuses = decoder.ReadBoolean("ReportJointStatuses");
-            ReportPoseStatus = decoder.ReadBoolean("ReportPoseStatus");
-            ReportGripperStatus = decoder.ReadBoolean("ReportGripperStatus");
-            ReportSettingsStatus = decoder.ReadBoolean("ReportSettingsStatus");
-            ReportSensorsStatus = decoder.ReadBoolean("ReportSensorsStatus");
-            ReportGuardsStatus = decoder.ReadBoolean("ReportGuardsStatus");
+            reportJointStatuses = decoder.ReadBoolean("reportJointStatuses");
+            reportPoseStatus = decoder.ReadBoolean("reportPoseStatus");
+            reportGripperStatus = decoder.ReadBoolean("reportGripperStatus");
+            reportSettingsStatus = decoder.ReadBoolean("reportSettingsStatus");
+            reportSensorsStatus = decoder.ReadBoolean("reportSensorsStatus");
+            reportGuardsStatus = decoder.ReadBoolean("reportGuardsStatus");
 
             decoder.PopNamespace();
         }
@@ -31382,7 +30843,7 @@ namespace CRCL
                 return true;
             }
 
-            ConfigureStatusReportParametersSetDataType value = encodeable as ConfigureStatusReportParametersSetDataType;
+            ConfigureStatusReportParamsSetDataType value = encodeable as ConfigureStatusReportParamsSetDataType;
 
             if (value == null)
             {
@@ -31404,14 +30865,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (ConfigureStatusReportParametersSetDataType)this.MemberwiseClone();
+            return (ConfigureStatusReportParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            ConfigureStatusReportParametersSetDataType clone = (ConfigureStatusReportParametersSetDataType)base.MemberwiseClone();
+            ConfigureStatusReportParamsSetDataType clone = (ConfigureStatusReportParamsSetDataType)base.MemberwiseClone();
 
             clone.m_reportJointStatuses = (bool)Utils.Clone(this.m_reportJointStatuses);
             clone.m_reportPoseStatus = (bool)Utils.Clone(this.m_reportPoseStatus);
@@ -31434,54 +30895,54 @@ namespace CRCL
         #endregion
     }
 
-    #region ConfigureStatusReportParametersSetDataTypeCollection Class
+    #region ConfigureStatusReportParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of ConfigureStatusReportParametersSetDataType objects.
+    /// A collection of ConfigureStatusReportParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfConfigureStatusReportParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "ConfigureStatusReportParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfConfigureStatusReportParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "ConfigureStatusReportParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class ConfigureStatusReportParametersSetDataTypeCollection : List<ConfigureStatusReportParametersSetDataType>, ICloneable
+    public partial class ConfigureStatusReportParamsSetDataTypeCollection : List<ConfigureStatusReportParamsSetDataType>, ICloneable
     #else
-    public partial class ConfigureStatusReportParametersSetDataTypeCollection : List<ConfigureStatusReportParametersSetDataType>
+    public partial class ConfigureStatusReportParamsSetDataTypeCollection : List<ConfigureStatusReportParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public ConfigureStatusReportParametersSetDataTypeCollection() {}
+        public ConfigureStatusReportParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public ConfigureStatusReportParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public ConfigureStatusReportParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public ConfigureStatusReportParametersSetDataTypeCollection(IEnumerable<ConfigureStatusReportParametersSetDataType> collection) : base(collection) {}
+        public ConfigureStatusReportParamsSetDataTypeCollection(IEnumerable<ConfigureStatusReportParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator ConfigureStatusReportParametersSetDataTypeCollection(ConfigureStatusReportParametersSetDataType[] values)
+        public static implicit operator ConfigureStatusReportParamsSetDataTypeCollection(ConfigureStatusReportParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new ConfigureStatusReportParametersSetDataTypeCollection(values);
+                return new ConfigureStatusReportParamsSetDataTypeCollection(values);
             }
 
-            return new ConfigureStatusReportParametersSetDataTypeCollection();
+            return new ConfigureStatusReportParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator ConfigureStatusReportParametersSetDataType[](ConfigureStatusReportParametersSetDataTypeCollection values)
+        public static explicit operator ConfigureStatusReportParamsSetDataType[](ConfigureStatusReportParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -31499,7 +30960,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (ConfigureStatusReportParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (ConfigureStatusReportParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -31507,11 +30968,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            ConfigureStatusReportParametersSetDataTypeCollection clone = new ConfigureStatusReportParametersSetDataTypeCollection(this.Count);
+            ConfigureStatusReportParamsSetDataTypeCollection clone = new ConfigureStatusReportParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((ConfigureStatusReportParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((ConfigureStatusReportParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -31521,21 +30982,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region EnableSensorParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_EnableSensorParametersSetDataType)
+    #region EnableSensorParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_EnableSensorParamsSetDataType)
     /// <summary>
     /// Parameters of a EnableSensor Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class EnableSensorParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class EnableSensorParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public EnableSensorParametersSetDataType()
+        public EnableSensorParamsSetDataType()
         {
             Initialize();
         }
@@ -31561,8 +31022,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "SensorID", IsRequired = false, Order = 1)]
-        public string SensorID
+        [DataMember(Name = "sensorID", IsRequired = false, Order = 1)]
+        public string sensorID
         {
             get { return m_sensorID;  }
             set { m_sensorID = value; }
@@ -31570,10 +31031,9 @@ namespace CRCL
 
         /// <summary>
         /// Array of ParameterSetting of a EnableSensor Command
-            
         /// </summary>
-        [DataMember(Name = "SensorOption", IsRequired = false, Order = 2)]
-        public CRCL_ParameterSettingDataTypeCollection SensorOption
+        [DataMember(Name = "sensorOption", IsRequired = false, Order = 2)]
+        public CRCL_ParameterSettingDataTypeCollection sensorOption
         {
             get
             {
@@ -31596,19 +31056,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.EnableSensorParametersSetDataType; }
+            get { return DataTypeIds.EnableSensorParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.EnableSensorParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.EnableSensorParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.EnableSensorParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.EnableSensorParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -31618,8 +31078,8 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteString("SensorID", SensorID);
-            encoder.WriteEncodeableArray("SensorOption", SensorOption.ToArray(), typeof(CRCL_ParameterSettingDataType));
+            encoder.WriteString("sensorID", sensorID);
+            encoder.WriteEncodeableArray("sensorOption", sensorOption.ToArray(), typeof(CRCL_ParameterSettingDataType));
 
             encoder.PopNamespace();
         }
@@ -31631,8 +31091,8 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            SensorID = decoder.ReadString("SensorID");
-            SensorOption = (CRCL_ParameterSettingDataTypeCollection)decoder.ReadEncodeableArray("SensorOption", typeof(CRCL_ParameterSettingDataType));
+            sensorID = decoder.ReadString("sensorID");
+            sensorOption = (CRCL_ParameterSettingDataTypeCollection)decoder.ReadEncodeableArray("sensorOption", typeof(CRCL_ParameterSettingDataType));
 
             decoder.PopNamespace();
         }
@@ -31645,7 +31105,7 @@ namespace CRCL
                 return true;
             }
 
-            EnableSensorParametersSetDataType value = encodeable as EnableSensorParametersSetDataType;
+            EnableSensorParamsSetDataType value = encodeable as EnableSensorParamsSetDataType;
 
             if (value == null)
             {
@@ -31663,14 +31123,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (EnableSensorParametersSetDataType)this.MemberwiseClone();
+            return (EnableSensorParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            EnableSensorParametersSetDataType clone = (EnableSensorParametersSetDataType)base.MemberwiseClone();
+            EnableSensorParamsSetDataType clone = (EnableSensorParamsSetDataType)base.MemberwiseClone();
 
             clone.m_sensorID = (string)Utils.Clone(this.m_sensorID);
             clone.m_sensorOption = (CRCL_ParameterSettingDataTypeCollection)Utils.Clone(this.m_sensorOption);
@@ -31685,54 +31145,54 @@ namespace CRCL
         #endregion
     }
 
-    #region EnableSensorParametersSetDataTypeCollection Class
+    #region EnableSensorParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of EnableSensorParametersSetDataType objects.
+    /// A collection of EnableSensorParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfEnableSensorParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "EnableSensorParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfEnableSensorParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "EnableSensorParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class EnableSensorParametersSetDataTypeCollection : List<EnableSensorParametersSetDataType>, ICloneable
+    public partial class EnableSensorParamsSetDataTypeCollection : List<EnableSensorParamsSetDataType>, ICloneable
     #else
-    public partial class EnableSensorParametersSetDataTypeCollection : List<EnableSensorParametersSetDataType>
+    public partial class EnableSensorParamsSetDataTypeCollection : List<EnableSensorParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public EnableSensorParametersSetDataTypeCollection() {}
+        public EnableSensorParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public EnableSensorParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public EnableSensorParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public EnableSensorParametersSetDataTypeCollection(IEnumerable<EnableSensorParametersSetDataType> collection) : base(collection) {}
+        public EnableSensorParamsSetDataTypeCollection(IEnumerable<EnableSensorParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator EnableSensorParametersSetDataTypeCollection(EnableSensorParametersSetDataType[] values)
+        public static implicit operator EnableSensorParamsSetDataTypeCollection(EnableSensorParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new EnableSensorParametersSetDataTypeCollection(values);
+                return new EnableSensorParamsSetDataTypeCollection(values);
             }
 
-            return new EnableSensorParametersSetDataTypeCollection();
+            return new EnableSensorParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator EnableSensorParametersSetDataType[](EnableSensorParametersSetDataTypeCollection values)
+        public static explicit operator EnableSensorParamsSetDataType[](EnableSensorParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -31750,7 +31210,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (EnableSensorParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (EnableSensorParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -31758,11 +31218,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            EnableSensorParametersSetDataTypeCollection clone = new EnableSensorParametersSetDataTypeCollection(this.Count);
+            EnableSensorParamsSetDataTypeCollection clone = new EnableSensorParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((EnableSensorParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((EnableSensorParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -31772,21 +31232,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region DisableSensorParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_DisableSensorParametersSetDataType)
+    #region DisableSensorParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_DisableSensorParamsSetDataType)
     /// <summary>
     /// Parameters of a DisableSensor Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class DisableSensorParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class DisableSensorParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public DisableSensorParametersSetDataType()
+        public DisableSensorParamsSetDataType()
         {
             Initialize();
         }
@@ -31811,8 +31271,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "SensorID", IsRequired = false, Order = 1)]
-        public string SensorID
+        [DataMember(Name = "sensorID", IsRequired = false, Order = 1)]
+        public string sensorID
         {
             get { return m_sensorID;  }
             set { m_sensorID = value; }
@@ -31823,19 +31283,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.DisableSensorParametersSetDataType; }
+            get { return DataTypeIds.DisableSensorParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.DisableSensorParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.DisableSensorParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.DisableSensorParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.DisableSensorParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -31845,7 +31305,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteString("SensorID", SensorID);
+            encoder.WriteString("sensorID", sensorID);
 
             encoder.PopNamespace();
         }
@@ -31857,7 +31317,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            SensorID = decoder.ReadString("SensorID");
+            sensorID = decoder.ReadString("sensorID");
 
             decoder.PopNamespace();
         }
@@ -31870,7 +31330,7 @@ namespace CRCL
                 return true;
             }
 
-            DisableSensorParametersSetDataType value = encodeable as DisableSensorParametersSetDataType;
+            DisableSensorParamsSetDataType value = encodeable as DisableSensorParamsSetDataType;
 
             if (value == null)
             {
@@ -31887,14 +31347,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (DisableSensorParametersSetDataType)this.MemberwiseClone();
+            return (DisableSensorParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            DisableSensorParametersSetDataType clone = (DisableSensorParametersSetDataType)base.MemberwiseClone();
+            DisableSensorParamsSetDataType clone = (DisableSensorParamsSetDataType)base.MemberwiseClone();
 
             clone.m_sensorID = (string)Utils.Clone(this.m_sensorID);
 
@@ -31907,54 +31367,54 @@ namespace CRCL
         #endregion
     }
 
-    #region DisableSensorParametersSetDataTypeCollection Class
+    #region DisableSensorParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of DisableSensorParametersSetDataType objects.
+    /// A collection of DisableSensorParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfDisableSensorParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "DisableSensorParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfDisableSensorParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "DisableSensorParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class DisableSensorParametersSetDataTypeCollection : List<DisableSensorParametersSetDataType>, ICloneable
+    public partial class DisableSensorParamsSetDataTypeCollection : List<DisableSensorParamsSetDataType>, ICloneable
     #else
-    public partial class DisableSensorParametersSetDataTypeCollection : List<DisableSensorParametersSetDataType>
+    public partial class DisableSensorParamsSetDataTypeCollection : List<DisableSensorParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public DisableSensorParametersSetDataTypeCollection() {}
+        public DisableSensorParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public DisableSensorParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public DisableSensorParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public DisableSensorParametersSetDataTypeCollection(IEnumerable<DisableSensorParametersSetDataType> collection) : base(collection) {}
+        public DisableSensorParamsSetDataTypeCollection(IEnumerable<DisableSensorParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator DisableSensorParametersSetDataTypeCollection(DisableSensorParametersSetDataType[] values)
+        public static implicit operator DisableSensorParamsSetDataTypeCollection(DisableSensorParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new DisableSensorParametersSetDataTypeCollection(values);
+                return new DisableSensorParamsSetDataTypeCollection(values);
             }
 
-            return new DisableSensorParametersSetDataTypeCollection();
+            return new DisableSensorParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator DisableSensorParametersSetDataType[](DisableSensorParametersSetDataTypeCollection values)
+        public static explicit operator DisableSensorParamsSetDataType[](DisableSensorParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -31972,7 +31432,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (DisableSensorParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (DisableSensorParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -31980,11 +31440,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            DisableSensorParametersSetDataTypeCollection clone = new DisableSensorParametersSetDataTypeCollection(this.Count);
+            DisableSensorParamsSetDataTypeCollection clone = new DisableSensorParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((DisableSensorParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((DisableSensorParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -31994,21 +31454,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region EnableGripperParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_EnableGripperParametersSetDataType)
+    #region EnableGripperParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_EnableGripperParamsSetDataType)
     /// <summary>
     /// Parameters of a EnableGripper Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class EnableGripperParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class EnableGripperParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public EnableGripperParametersSetDataType()
+        public EnableGripperParamsSetDataType()
         {
             Initialize();
         }
@@ -32034,8 +31494,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "GripperName", IsRequired = false, Order = 1)]
-        public string GripperName
+        [DataMember(Name = "gripperName", IsRequired = false, Order = 1)]
+        public string gripperName
         {
             get { return m_gripperName;  }
             set { m_gripperName = value; }
@@ -32043,10 +31503,9 @@ namespace CRCL
 
         /// <summary>
         /// Array of ParameterSetting of a EnableGripper Command
-            
         /// </summary>
-        [DataMember(Name = "GripperOption", IsRequired = false, Order = 2)]
-        public CRCL_ParameterSettingDataTypeCollection GripperOption
+        [DataMember(Name = "gripperOption", IsRequired = false, Order = 2)]
+        public CRCL_ParameterSettingDataTypeCollection gripperOption
         {
             get
             {
@@ -32069,19 +31528,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.EnableGripperParametersSetDataType; }
+            get { return DataTypeIds.EnableGripperParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.EnableGripperParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.EnableGripperParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.EnableGripperParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.EnableGripperParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -32091,8 +31550,8 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteString("GripperName", GripperName);
-            encoder.WriteEncodeableArray("GripperOption", GripperOption.ToArray(), typeof(CRCL_ParameterSettingDataType));
+            encoder.WriteString("gripperName", gripperName);
+            encoder.WriteEncodeableArray("gripperOption", gripperOption.ToArray(), typeof(CRCL_ParameterSettingDataType));
 
             encoder.PopNamespace();
         }
@@ -32104,8 +31563,8 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            GripperName = decoder.ReadString("GripperName");
-            GripperOption = (CRCL_ParameterSettingDataTypeCollection)decoder.ReadEncodeableArray("GripperOption", typeof(CRCL_ParameterSettingDataType));
+            gripperName = decoder.ReadString("gripperName");
+            gripperOption = (CRCL_ParameterSettingDataTypeCollection)decoder.ReadEncodeableArray("gripperOption", typeof(CRCL_ParameterSettingDataType));
 
             decoder.PopNamespace();
         }
@@ -32118,7 +31577,7 @@ namespace CRCL
                 return true;
             }
 
-            EnableGripperParametersSetDataType value = encodeable as EnableGripperParametersSetDataType;
+            EnableGripperParamsSetDataType value = encodeable as EnableGripperParamsSetDataType;
 
             if (value == null)
             {
@@ -32136,14 +31595,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (EnableGripperParametersSetDataType)this.MemberwiseClone();
+            return (EnableGripperParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            EnableGripperParametersSetDataType clone = (EnableGripperParametersSetDataType)base.MemberwiseClone();
+            EnableGripperParamsSetDataType clone = (EnableGripperParamsSetDataType)base.MemberwiseClone();
 
             clone.m_gripperName = (string)Utils.Clone(this.m_gripperName);
             clone.m_gripperOption = (CRCL_ParameterSettingDataTypeCollection)Utils.Clone(this.m_gripperOption);
@@ -32158,54 +31617,54 @@ namespace CRCL
         #endregion
     }
 
-    #region EnableGripperParametersSetDataTypeCollection Class
+    #region EnableGripperParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of EnableGripperParametersSetDataType objects.
+    /// A collection of EnableGripperParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfEnableGripperParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "EnableGripperParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfEnableGripperParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "EnableGripperParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class EnableGripperParametersSetDataTypeCollection : List<EnableGripperParametersSetDataType>, ICloneable
+    public partial class EnableGripperParamsSetDataTypeCollection : List<EnableGripperParamsSetDataType>, ICloneable
     #else
-    public partial class EnableGripperParametersSetDataTypeCollection : List<EnableGripperParametersSetDataType>
+    public partial class EnableGripperParamsSetDataTypeCollection : List<EnableGripperParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public EnableGripperParametersSetDataTypeCollection() {}
+        public EnableGripperParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public EnableGripperParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public EnableGripperParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public EnableGripperParametersSetDataTypeCollection(IEnumerable<EnableGripperParametersSetDataType> collection) : base(collection) {}
+        public EnableGripperParamsSetDataTypeCollection(IEnumerable<EnableGripperParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator EnableGripperParametersSetDataTypeCollection(EnableGripperParametersSetDataType[] values)
+        public static implicit operator EnableGripperParamsSetDataTypeCollection(EnableGripperParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new EnableGripperParametersSetDataTypeCollection(values);
+                return new EnableGripperParamsSetDataTypeCollection(values);
             }
 
-            return new EnableGripperParametersSetDataTypeCollection();
+            return new EnableGripperParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator EnableGripperParametersSetDataType[](EnableGripperParametersSetDataTypeCollection values)
+        public static explicit operator EnableGripperParamsSetDataType[](EnableGripperParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -32223,7 +31682,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (EnableGripperParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (EnableGripperParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -32231,11 +31690,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            EnableGripperParametersSetDataTypeCollection clone = new EnableGripperParametersSetDataTypeCollection(this.Count);
+            EnableGripperParamsSetDataTypeCollection clone = new EnableGripperParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((EnableGripperParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((EnableGripperParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -32245,21 +31704,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region DisableGripperParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_DisableGripperParametersSetDataType)
+    #region DisableGripperParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_DisableGripperParamsSetDataType)
     /// <summary>
     /// Parameters of a DisableGripper Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class DisableGripperParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class DisableGripperParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public DisableGripperParametersSetDataType()
+        public DisableGripperParamsSetDataType()
         {
             Initialize();
         }
@@ -32284,8 +31743,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "GripperName", IsRequired = false, Order = 1)]
-        public string GripperName
+        [DataMember(Name = "gripperName", IsRequired = false, Order = 1)]
+        public string gripperName
         {
             get { return m_gripperName;  }
             set { m_gripperName = value; }
@@ -32296,19 +31755,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.DisableGripperParametersSetDataType; }
+            get { return DataTypeIds.DisableGripperParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.DisableGripperParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.DisableGripperParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.DisableGripperParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.DisableGripperParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -32318,7 +31777,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteString("GripperName", GripperName);
+            encoder.WriteString("gripperName", gripperName);
 
             encoder.PopNamespace();
         }
@@ -32330,7 +31789,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            GripperName = decoder.ReadString("GripperName");
+            gripperName = decoder.ReadString("gripperName");
 
             decoder.PopNamespace();
         }
@@ -32343,7 +31802,7 @@ namespace CRCL
                 return true;
             }
 
-            DisableGripperParametersSetDataType value = encodeable as DisableGripperParametersSetDataType;
+            DisableGripperParamsSetDataType value = encodeable as DisableGripperParamsSetDataType;
 
             if (value == null)
             {
@@ -32360,14 +31819,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (DisableGripperParametersSetDataType)this.MemberwiseClone();
+            return (DisableGripperParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            DisableGripperParametersSetDataType clone = (DisableGripperParametersSetDataType)base.MemberwiseClone();
+            DisableGripperParamsSetDataType clone = (DisableGripperParamsSetDataType)base.MemberwiseClone();
 
             clone.m_gripperName = (string)Utils.Clone(this.m_gripperName);
 
@@ -32380,54 +31839,54 @@ namespace CRCL
         #endregion
     }
 
-    #region DisableGripperParametersSetDataTypeCollection Class
+    #region DisableGripperParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of DisableGripperParametersSetDataType objects.
+    /// A collection of DisableGripperParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfDisableGripperParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "DisableGripperParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfDisableGripperParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "DisableGripperParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class DisableGripperParametersSetDataTypeCollection : List<DisableGripperParametersSetDataType>, ICloneable
+    public partial class DisableGripperParamsSetDataTypeCollection : List<DisableGripperParamsSetDataType>, ICloneable
     #else
-    public partial class DisableGripperParametersSetDataTypeCollection : List<DisableGripperParametersSetDataType>
+    public partial class DisableGripperParamsSetDataTypeCollection : List<DisableGripperParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public DisableGripperParametersSetDataTypeCollection() {}
+        public DisableGripperParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public DisableGripperParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public DisableGripperParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public DisableGripperParametersSetDataTypeCollection(IEnumerable<DisableGripperParametersSetDataType> collection) : base(collection) {}
+        public DisableGripperParamsSetDataTypeCollection(IEnumerable<DisableGripperParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator DisableGripperParametersSetDataTypeCollection(DisableGripperParametersSetDataType[] values)
+        public static implicit operator DisableGripperParamsSetDataTypeCollection(DisableGripperParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new DisableGripperParametersSetDataTypeCollection(values);
+                return new DisableGripperParamsSetDataTypeCollection(values);
             }
 
-            return new DisableGripperParametersSetDataTypeCollection();
+            return new DisableGripperParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator DisableGripperParametersSetDataType[](DisableGripperParametersSetDataTypeCollection values)
+        public static explicit operator DisableGripperParamsSetDataType[](DisableGripperParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -32445,7 +31904,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (DisableGripperParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (DisableGripperParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -32453,11 +31912,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            DisableGripperParametersSetDataTypeCollection clone = new DisableGripperParametersSetDataTypeCollection(this.Count);
+            DisableGripperParamsSetDataTypeCollection clone = new DisableGripperParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((DisableGripperParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((DisableGripperParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -32467,21 +31926,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region EnableRobotParameterStatusParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_EnableRobotParameterStatusParametersSetDataType)
+    #region EnableRobotParameterStatusParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_EnableRobotParameterStatusParamsSetDataType)
     /// <summary>
     /// Parameters of a EnableRobotParameterStatus Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class EnableRobotParameterStatusParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class EnableRobotParameterStatusParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public EnableRobotParameterStatusParametersSetDataType()
+        public EnableRobotParameterStatusParamsSetDataType()
         {
             Initialize();
         }
@@ -32506,8 +31965,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "RobotParameterName", IsRequired = false, Order = 1)]
-        public string RobotParameterName
+        [DataMember(Name = "robotParameterName", IsRequired = false, Order = 1)]
+        public string robotParameterName
         {
             get { return m_robotParameterName;  }
             set { m_robotParameterName = value; }
@@ -32518,19 +31977,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.EnableRobotParameterStatusParametersSetDataType; }
+            get { return DataTypeIds.EnableRobotParameterStatusParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.EnableRobotParameterStatusParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.EnableRobotParameterStatusParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.EnableRobotParameterStatusParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.EnableRobotParameterStatusParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -32540,7 +31999,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteString("RobotParameterName", RobotParameterName);
+            encoder.WriteString("robotParameterName", robotParameterName);
 
             encoder.PopNamespace();
         }
@@ -32552,7 +32011,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            RobotParameterName = decoder.ReadString("RobotParameterName");
+            robotParameterName = decoder.ReadString("robotParameterName");
 
             decoder.PopNamespace();
         }
@@ -32565,7 +32024,7 @@ namespace CRCL
                 return true;
             }
 
-            EnableRobotParameterStatusParametersSetDataType value = encodeable as EnableRobotParameterStatusParametersSetDataType;
+            EnableRobotParameterStatusParamsSetDataType value = encodeable as EnableRobotParameterStatusParamsSetDataType;
 
             if (value == null)
             {
@@ -32582,14 +32041,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (EnableRobotParameterStatusParametersSetDataType)this.MemberwiseClone();
+            return (EnableRobotParameterStatusParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            EnableRobotParameterStatusParametersSetDataType clone = (EnableRobotParameterStatusParametersSetDataType)base.MemberwiseClone();
+            EnableRobotParameterStatusParamsSetDataType clone = (EnableRobotParameterStatusParamsSetDataType)base.MemberwiseClone();
 
             clone.m_robotParameterName = (string)Utils.Clone(this.m_robotParameterName);
 
@@ -32602,54 +32061,54 @@ namespace CRCL
         #endregion
     }
 
-    #region EnableRobotParameterStatusParametersSetDataTypeCollection Class
+    #region EnableRobotParameterStatusParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of EnableRobotParameterStatusParametersSetDataType objects.
+    /// A collection of EnableRobotParameterStatusParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfEnableRobotParameterStatusParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "EnableRobotParameterStatusParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfEnableRobotParameterStatusParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "EnableRobotParameterStatusParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class EnableRobotParameterStatusParametersSetDataTypeCollection : List<EnableRobotParameterStatusParametersSetDataType>, ICloneable
+    public partial class EnableRobotParameterStatusParamsSetDataTypeCollection : List<EnableRobotParameterStatusParamsSetDataType>, ICloneable
     #else
-    public partial class EnableRobotParameterStatusParametersSetDataTypeCollection : List<EnableRobotParameterStatusParametersSetDataType>
+    public partial class EnableRobotParameterStatusParamsSetDataTypeCollection : List<EnableRobotParameterStatusParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public EnableRobotParameterStatusParametersSetDataTypeCollection() {}
+        public EnableRobotParameterStatusParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public EnableRobotParameterStatusParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public EnableRobotParameterStatusParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public EnableRobotParameterStatusParametersSetDataTypeCollection(IEnumerable<EnableRobotParameterStatusParametersSetDataType> collection) : base(collection) {}
+        public EnableRobotParameterStatusParamsSetDataTypeCollection(IEnumerable<EnableRobotParameterStatusParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator EnableRobotParameterStatusParametersSetDataTypeCollection(EnableRobotParameterStatusParametersSetDataType[] values)
+        public static implicit operator EnableRobotParameterStatusParamsSetDataTypeCollection(EnableRobotParameterStatusParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new EnableRobotParameterStatusParametersSetDataTypeCollection(values);
+                return new EnableRobotParameterStatusParamsSetDataTypeCollection(values);
             }
 
-            return new EnableRobotParameterStatusParametersSetDataTypeCollection();
+            return new EnableRobotParameterStatusParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator EnableRobotParameterStatusParametersSetDataType[](EnableRobotParameterStatusParametersSetDataTypeCollection values)
+        public static explicit operator EnableRobotParameterStatusParamsSetDataType[](EnableRobotParameterStatusParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -32667,7 +32126,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (EnableRobotParameterStatusParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (EnableRobotParameterStatusParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -32675,11 +32134,11 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            EnableRobotParameterStatusParametersSetDataTypeCollection clone = new EnableRobotParameterStatusParametersSetDataTypeCollection(this.Count);
+            EnableRobotParameterStatusParamsSetDataTypeCollection clone = new EnableRobotParameterStatusParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((EnableRobotParameterStatusParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((EnableRobotParameterStatusParamsSetDataType)Utils.Clone(this[ii]));
             }
 
             return clone;
@@ -32689,21 +32148,21 @@ namespace CRCL
     #endif
     #endregion
 
-    #region DisableRobotParameterStatusParametersSetDataType Class
-    #if (!OPCUA_EXCLUDE_DisableRobotParameterStatusParametersSetDataType)
+    #region DisableRobotParameterStatusParamsSetDataType Class
+    #if (!OPCUA_EXCLUDE_DisableRobotParameterStatusParamsSetDataType)
     /// <summary>
     /// Parameters of a DisableRobotParameterStatus Command.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
     [DataContract(Namespace = CRCL.Namespaces.CRCL)]
-    public partial class DisableRobotParameterStatusParametersSetDataType : CRCLCommandParametersSetDataType
+    public partial class DisableRobotParameterStatusParamsSetDataType : CRCLCommandParamsSetDataType
     {
         #region Constructors
         /// <summary>
         /// The default constructor.
         /// </summary>
-        public DisableRobotParameterStatusParametersSetDataType()
+        public DisableRobotParameterStatusParamsSetDataType()
         {
             Initialize();
         }
@@ -32728,8 +32187,8 @@ namespace CRCL
 
         #region Public Properties
         /// <remarks />
-        [DataMember(Name = "RobotParameterName", IsRequired = false, Order = 1)]
-        public string RobotParameterName
+        [DataMember(Name = "robotParameterName", IsRequired = false, Order = 1)]
+        public string robotParameterName
         {
             get { return m_robotParameterName;  }
             set { m_robotParameterName = value; }
@@ -32740,19 +32199,19 @@ namespace CRCL
         /// <summary cref="IEncodeable.TypeId" />
         public override ExpandedNodeId TypeId
         {
-            get { return DataTypeIds.DisableRobotParameterStatusParametersSetDataType; }
+            get { return DataTypeIds.DisableRobotParameterStatusParamsSetDataType; }
         }
 
         /// <summary cref="IEncodeable.BinaryEncodingId" />
         public override ExpandedNodeId BinaryEncodingId
         {
-            get { return ObjectIds.DisableRobotParameterStatusParametersSetDataType_Encoding_DefaultBinary; }
+            get { return ObjectIds.DisableRobotParameterStatusParamsSetDataType_Encoding_DefaultBinary; }
         }
 
         /// <summary cref="IEncodeable.XmlEncodingId" />
         public override ExpandedNodeId XmlEncodingId
         {
-            get { return ObjectIds.DisableRobotParameterStatusParametersSetDataType_Encoding_DefaultXml; }
+            get { return ObjectIds.DisableRobotParameterStatusParamsSetDataType_Encoding_DefaultXml; }
         }
 
         /// <summary cref="IEncodeable.Encode(IEncoder)" />
@@ -32762,7 +32221,7 @@ namespace CRCL
 
             encoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            encoder.WriteString("RobotParameterName", RobotParameterName);
+            encoder.WriteString("robotParameterName", robotParameterName);
 
             encoder.PopNamespace();
         }
@@ -32774,7 +32233,7 @@ namespace CRCL
 
             decoder.PushNamespace(CRCL.Namespaces.CRCL);
 
-            RobotParameterName = decoder.ReadString("RobotParameterName");
+            robotParameterName = decoder.ReadString("robotParameterName");
 
             decoder.PopNamespace();
         }
@@ -32787,7 +32246,7 @@ namespace CRCL
                 return true;
             }
 
-            DisableRobotParameterStatusParametersSetDataType value = encodeable as DisableRobotParameterStatusParametersSetDataType;
+            DisableRobotParameterStatusParamsSetDataType value = encodeable as DisableRobotParameterStatusParamsSetDataType;
 
             if (value == null)
             {
@@ -32804,14 +32263,14 @@ namespace CRCL
         /// <summary cref="ICloneable.Clone" />
         public override object Clone()
         {
-            return (DisableRobotParameterStatusParametersSetDataType)this.MemberwiseClone();
+            return (DisableRobotParameterStatusParamsSetDataType)this.MemberwiseClone();
         }
         #endif
 
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            DisableRobotParameterStatusParametersSetDataType clone = (DisableRobotParameterStatusParametersSetDataType)base.MemberwiseClone();
+            DisableRobotParameterStatusParamsSetDataType clone = (DisableRobotParameterStatusParamsSetDataType)base.MemberwiseClone();
 
             clone.m_robotParameterName = (string)Utils.Clone(this.m_robotParameterName);
 
@@ -32824,54 +32283,54 @@ namespace CRCL
         #endregion
     }
 
-    #region DisableRobotParameterStatusParametersSetDataTypeCollection Class
+    #region DisableRobotParameterStatusParamsSetDataTypeCollection Class
     /// <summary>
-    /// A collection of DisableRobotParameterStatusParametersSetDataType objects.
+    /// A collection of DisableRobotParameterStatusParamsSetDataType objects.
     /// </summary>
     /// <exclude />
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    [CollectionDataContract(Name = "ListOfDisableRobotParameterStatusParametersSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "DisableRobotParameterStatusParametersSetDataType")]
+    [CollectionDataContract(Name = "ListOfDisableRobotParameterStatusParamsSetDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "DisableRobotParameterStatusParamsSetDataType")]
     #if !NET_STANDARD
-    public partial class DisableRobotParameterStatusParametersSetDataTypeCollection : List<DisableRobotParameterStatusParametersSetDataType>, ICloneable
+    public partial class DisableRobotParameterStatusParamsSetDataTypeCollection : List<DisableRobotParameterStatusParamsSetDataType>, ICloneable
     #else
-    public partial class DisableRobotParameterStatusParametersSetDataTypeCollection : List<DisableRobotParameterStatusParametersSetDataType>
+    public partial class DisableRobotParameterStatusParamsSetDataTypeCollection : List<DisableRobotParameterStatusParamsSetDataType>
     #endif
     {
         #region Constructors
         /// <summary>
         /// Initializes the collection with default values.
         /// </summary>
-        public DisableRobotParameterStatusParametersSetDataTypeCollection() {}
+        public DisableRobotParameterStatusParamsSetDataTypeCollection() {}
 
         /// <summary>
         /// Initializes the collection with an initial capacity.
         /// </summary>
-        public DisableRobotParameterStatusParametersSetDataTypeCollection(int capacity) : base(capacity) {}
+        public DisableRobotParameterStatusParamsSetDataTypeCollection(int capacity) : base(capacity) {}
 
         /// <summary>
         /// Initializes the collection with another collection.
         /// </summary>
-        public DisableRobotParameterStatusParametersSetDataTypeCollection(IEnumerable<DisableRobotParameterStatusParametersSetDataType> collection) : base(collection) {}
+        public DisableRobotParameterStatusParamsSetDataTypeCollection(IEnumerable<DisableRobotParameterStatusParamsSetDataType> collection) : base(collection) {}
         #endregion
 
         #region Static Operators
         /// <summary>
         /// Converts an array to a collection.
         /// </summary>
-        public static implicit operator DisableRobotParameterStatusParametersSetDataTypeCollection(DisableRobotParameterStatusParametersSetDataType[] values)
+        public static implicit operator DisableRobotParameterStatusParamsSetDataTypeCollection(DisableRobotParameterStatusParamsSetDataType[] values)
         {
             if (values != null)
             {
-                return new DisableRobotParameterStatusParametersSetDataTypeCollection(values);
+                return new DisableRobotParameterStatusParamsSetDataTypeCollection(values);
             }
 
-            return new DisableRobotParameterStatusParametersSetDataTypeCollection();
+            return new DisableRobotParameterStatusParamsSetDataTypeCollection();
         }
 
         /// <summary>
         /// Converts a collection to an array.
         /// </summary>
-        public static explicit operator DisableRobotParameterStatusParametersSetDataType[](DisableRobotParameterStatusParametersSetDataTypeCollection values)
+        public static explicit operator DisableRobotParameterStatusParamsSetDataType[](DisableRobotParameterStatusParamsSetDataTypeCollection values)
         {
             if (values != null)
             {
@@ -32889,7 +32348,7 @@ namespace CRCL
         /// </summary>
         public object Clone()
         {
-            return (DisableRobotParameterStatusParametersSetDataTypeCollection)this.MemberwiseClone();
+            return (DisableRobotParameterStatusParamsSetDataTypeCollection)this.MemberwiseClone();
         }
         #endregion
         #endif
@@ -32897,11 +32356,1563 @@ namespace CRCL
         /// <summary cref="Object.MemberwiseClone" />
         public new object MemberwiseClone()
         {
-            DisableRobotParameterStatusParametersSetDataTypeCollection clone = new DisableRobotParameterStatusParametersSetDataTypeCollection(this.Count);
+            DisableRobotParameterStatusParamsSetDataTypeCollection clone = new DisableRobotParameterStatusParamsSetDataTypeCollection(this.Count);
 
             for (int ii = 0; ii < this.Count; ii++)
             {
-                clone.Add((DisableRobotParameterStatusParametersSetDataType)Utils.Clone(this[ii]));
+                clone.Add((DisableRobotParameterStatusParamsSetDataType)Utils.Clone(this[ii]));
+            }
+
+            return clone;
+        }
+    }
+    #endregion
+    #endif
+    #endregion
+
+    #region CRCLCommandsParamsSetsUnionDataType Class
+    #if (!OPCUA_EXCLUDE_CRCLCommandsParamsSetsUnionDataType)
+    /// <summary>
+    /// CRCLCommandsParamsSetsUnionDataType
+    /// </summary>
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    [DataContract(Namespace = CRCL.Namespaces.CRCL)]
+    public partial class CRCLCommandsParamsSetsUnionDataType : Union
+    {
+        #region Constructors
+        /// <summary>
+        /// The default constructor.
+        /// </summary>
+        public CRCLCommandsParamsSetsUnionDataType()
+        {
+            Initialize();
+        }
+
+        /// <summary>
+        /// Called by the .NET framework during deserialization.
+        /// </summary>
+        [OnDeserializing]
+        private void Initialize(StreamingContext context)
+        {
+            Initialize();
+        }
+
+        /// <summary>
+        /// Sets private members to default values.
+        /// </summary>
+        private void Initialize()
+        {
+            m_switchField = (uint)0;
+            m_initCanonParamsSet = new InitCanonParamsSetDataType();
+            m_endCanonParamsSet = new EndCanonParamsSetDataType();
+            m_messageParamsSet = new MessageParamsSetDataType();
+            m_moveToParamsSet = new MoveToParamsSetDataType();
+            m_moveScrewParamsSet = new MoveScrewParamsSetDataType();
+            m_moveThroughToParamsSet = new MoveThroughToParamsSetDataType();
+            m_dwellParamsSet = new DwellParamsSetDataType();
+            m_actuateJointsParamsSet = new ActuateJointsParamsSetDataType();
+            m_configureJointReportsParamsSet = new ConfigureJointReportsParamsSetDataType();
+            m_setDefaultJointPositionsTolerancesParamsSet = new SetDefaultJointPositionsTolerancesParamsSetDataType();
+            m_getStatusParamsSet = new GetStatusParamsSetDataType();
+            m_closeToolChangerParamsSet = new CloseToolChangerParamsSetDataType();
+            m_openToolChangerParamsSet = new OpenToolChangerParamsSetDataType();
+            m_setRobotParametersParamsSet = new SetRobotParametersParamsSetDataType();
+            m_setEndeffectorParametersParamsSet = new SetEndeffectorParametersParamsSetDataType();
+            m_setEndeffectorParamsSet = new SetEndeffectorParamsSetDataType();
+            m_setTransAccelParamsSet = new SetTransAccelParamsSetDataType();
+            m_setTransSpeedParamsSet = new SetTransSpeedParamsSetDataType();
+            m_setRotAccelParamsSet = new SetRotAccelParamsSetDataType();
+            m_setRotSpeedParamsSet = new SetRotSpeedParamsSetDataType();
+            m_setAngleUnitsParamsSet = new SetAngleUnitsParamsSetDataType();
+            m_setEndPoseToleranceParamsSet = new SetEndPoseToleranceParamsSetDataType();
+            m_setForceUnitsParamsSet = new SetForceUnitsParamsSetDataType();
+            m_setIntermediatePoseToleranceParamsSet = new SetIntermediatePoseToleranceParamsSetDataType();
+            m_setLengthUnitsParamsSet = new SetLengthUnitsParamsSetDataType();
+            m_setMotionCoordinationParamsSet = new SetMotionCoordinationParamsSetDataType();
+            m_setTorqueUnitsParamsSet = new SetTorqueUnitsParamsSetDataType();
+            m_stopMotionParamsSet = new StopMotionParamsSetDataType();
+            m_configureStatusReportParamsSet = new ConfigureStatusReportParamsSetDataType();
+            m_enableSensorParamsSet = new EnableSensorParamsSetDataType();
+            m_disableSensorParamsSet = new DisableSensorParamsSetDataType();
+            m_enableGripperParamsSet = new EnableGripperParamsSetDataType();
+            m_disableGripperParamsSet = new DisableGripperParamsSetDataType();
+            m_enableRobotParameterStatusParamsSet = new EnableRobotParameterStatusParamsSetDataType();
+            m_disableRobotParameterStatusParamsSet = new DisableRobotParameterStatusParamsSetDataType();
+        }
+        #endregion
+
+        #region Public Properties
+        /// <remarks />
+        [DataMember(Name = "SwitchField", IsRequired = false, Order = 1)]
+        public uint SwitchField
+        {
+            get { return m_switchField;  }
+            set { m_switchField = value; }
+        }
+
+        /// <summary>
+        /// InitCanonParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "initCanonParamsSet", IsRequired = false, Order = 2)]
+        public InitCanonParamsSetDataType initCanonParamsSet
+        {
+            get
+            {
+                return m_initCanonParamsSet;
+            }
+
+            set
+            {
+                m_initCanonParamsSet = value;
+
+                if (value == null)
+                {
+                    m_initCanonParamsSet = new InitCanonParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// EndCanonParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "endCanonParamsSet", IsRequired = false, Order = 3)]
+        public EndCanonParamsSetDataType endCanonParamsSet
+        {
+            get
+            {
+                return m_endCanonParamsSet;
+            }
+
+            set
+            {
+                m_endCanonParamsSet = value;
+
+                if (value == null)
+                {
+                    m_endCanonParamsSet = new EndCanonParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// MessageParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "messageParamsSet", IsRequired = false, Order = 4)]
+        public MessageParamsSetDataType messageParamsSet
+        {
+            get
+            {
+                return m_messageParamsSet;
+            }
+
+            set
+            {
+                m_messageParamsSet = value;
+
+                if (value == null)
+                {
+                    m_messageParamsSet = new MessageParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// MoveToParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "moveToParamsSet", IsRequired = false, Order = 5)]
+        public MoveToParamsSetDataType moveToParamsSet
+        {
+            get
+            {
+                return m_moveToParamsSet;
+            }
+
+            set
+            {
+                m_moveToParamsSet = value;
+
+                if (value == null)
+                {
+                    m_moveToParamsSet = new MoveToParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// MoveScrewParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "moveScrewParamsSet", IsRequired = false, Order = 6)]
+        public MoveScrewParamsSetDataType moveScrewParamsSet
+        {
+            get
+            {
+                return m_moveScrewParamsSet;
+            }
+
+            set
+            {
+                m_moveScrewParamsSet = value;
+
+                if (value == null)
+                {
+                    m_moveScrewParamsSet = new MoveScrewParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// MoveThroughToParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "moveThroughToParamsSet", IsRequired = false, Order = 7)]
+        public MoveThroughToParamsSetDataType moveThroughToParamsSet
+        {
+            get
+            {
+                return m_moveThroughToParamsSet;
+            }
+
+            set
+            {
+                m_moveThroughToParamsSet = value;
+
+                if (value == null)
+                {
+                    m_moveThroughToParamsSet = new MoveThroughToParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// DwellParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "dwellParamsSet", IsRequired = false, Order = 8)]
+        public DwellParamsSetDataType dwellParamsSet
+        {
+            get
+            {
+                return m_dwellParamsSet;
+            }
+
+            set
+            {
+                m_dwellParamsSet = value;
+
+                if (value == null)
+                {
+                    m_dwellParamsSet = new DwellParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// ActuateJointsParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "actuateJointsParamsSet", IsRequired = false, Order = 9)]
+        public ActuateJointsParamsSetDataType actuateJointsParamsSet
+        {
+            get
+            {
+                return m_actuateJointsParamsSet;
+            }
+
+            set
+            {
+                m_actuateJointsParamsSet = value;
+
+                if (value == null)
+                {
+                    m_actuateJointsParamsSet = new ActuateJointsParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// ConfigureJointReportsParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "configureJointReportsParamsSet", IsRequired = false, Order = 10)]
+        public ConfigureJointReportsParamsSetDataType configureJointReportsParamsSet
+        {
+            get
+            {
+                return m_configureJointReportsParamsSet;
+            }
+
+            set
+            {
+                m_configureJointReportsParamsSet = value;
+
+                if (value == null)
+                {
+                    m_configureJointReportsParamsSet = new ConfigureJointReportsParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// SetDefaultJointPositionsTolerancesParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "setDefaultJointPositionsTolerancesParamsSet", IsRequired = false, Order = 11)]
+        public SetDefaultJointPositionsTolerancesParamsSetDataType setDefaultJointPositionsTolerancesParamsSet
+        {
+            get
+            {
+                return m_setDefaultJointPositionsTolerancesParamsSet;
+            }
+
+            set
+            {
+                m_setDefaultJointPositionsTolerancesParamsSet = value;
+
+                if (value == null)
+                {
+                    m_setDefaultJointPositionsTolerancesParamsSet = new SetDefaultJointPositionsTolerancesParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// GetStatusParamsSet in the CRCLCommandsParamsSetUnionDataType
+        /// </summary>
+        [DataMember(Name = "getStatusParamsSet", IsRequired = false, Order = 12)]
+        public GetStatusParamsSetDataType getStatusParamsSet
+        {
+            get
+            {
+                return m_getStatusParamsSet;
+            }
+
+            set
+            {
+                m_getStatusParamsSet = value;
+
+                if (value == null)
+                {
+                    m_getStatusParamsSet = new GetStatusParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// CloseToolChangerParamsSet in the CRCLCommandsParamsSetUnionDataType
+        /// </summary>
+        [DataMember(Name = "closeToolChangerParamsSet", IsRequired = false, Order = 13)]
+        public CloseToolChangerParamsSetDataType closeToolChangerParamsSet
+        {
+            get
+            {
+                return m_closeToolChangerParamsSet;
+            }
+
+            set
+            {
+                m_closeToolChangerParamsSet = value;
+
+                if (value == null)
+                {
+                    m_closeToolChangerParamsSet = new CloseToolChangerParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// OpenToolChangerParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "openToolChangerParamsSet", IsRequired = false, Order = 14)]
+        public OpenToolChangerParamsSetDataType openToolChangerParamsSet
+        {
+            get
+            {
+                return m_openToolChangerParamsSet;
+            }
+
+            set
+            {
+                m_openToolChangerParamsSet = value;
+
+                if (value == null)
+                {
+                    m_openToolChangerParamsSet = new OpenToolChangerParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// SetRobotParametersParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "setRobotParametersParamsSet", IsRequired = false, Order = 15)]
+        public SetRobotParametersParamsSetDataType setRobotParametersParamsSet
+        {
+            get
+            {
+                return m_setRobotParametersParamsSet;
+            }
+
+            set
+            {
+                m_setRobotParametersParamsSet = value;
+
+                if (value == null)
+                {
+                    m_setRobotParametersParamsSet = new SetRobotParametersParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// SetEndeffectorParametersParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "setEndeffectorParametersParamsSet", IsRequired = false, Order = 16)]
+        public SetEndeffectorParametersParamsSetDataType setEndeffectorParametersParamsSet
+        {
+            get
+            {
+                return m_setEndeffectorParametersParamsSet;
+            }
+
+            set
+            {
+                m_setEndeffectorParametersParamsSet = value;
+
+                if (value == null)
+                {
+                    m_setEndeffectorParametersParamsSet = new SetEndeffectorParametersParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// SetEndeffectorParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "setEndeffectorParamsSet", IsRequired = false, Order = 17)]
+        public SetEndeffectorParamsSetDataType setEndeffectorParamsSet
+        {
+            get
+            {
+                return m_setEndeffectorParamsSet;
+            }
+
+            set
+            {
+                m_setEndeffectorParamsSet = value;
+
+                if (value == null)
+                {
+                    m_setEndeffectorParamsSet = new SetEndeffectorParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// SetTransAccelParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "setTransAccelParamsSet", IsRequired = false, Order = 18)]
+        public SetTransAccelParamsSetDataType setTransAccelParamsSet
+        {
+            get
+            {
+                return m_setTransAccelParamsSet;
+            }
+
+            set
+            {
+                m_setTransAccelParamsSet = value;
+
+                if (value == null)
+                {
+                    m_setTransAccelParamsSet = new SetTransAccelParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// SetTransSpeedParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "setTransSpeedParamsSet", IsRequired = false, Order = 19)]
+        public SetTransSpeedParamsSetDataType setTransSpeedParamsSet
+        {
+            get
+            {
+                return m_setTransSpeedParamsSet;
+            }
+
+            set
+            {
+                m_setTransSpeedParamsSet = value;
+
+                if (value == null)
+                {
+                    m_setTransSpeedParamsSet = new SetTransSpeedParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// SetRotAccelParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "setRotAccelParamsSet", IsRequired = false, Order = 20)]
+        public SetRotAccelParamsSetDataType setRotAccelParamsSet
+        {
+            get
+            {
+                return m_setRotAccelParamsSet;
+            }
+
+            set
+            {
+                m_setRotAccelParamsSet = value;
+
+                if (value == null)
+                {
+                    m_setRotAccelParamsSet = new SetRotAccelParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// SetRotSpeedParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "setRotSpeedParamsSet", IsRequired = false, Order = 21)]
+        public SetRotSpeedParamsSetDataType setRotSpeedParamsSet
+        {
+            get
+            {
+                return m_setRotSpeedParamsSet;
+            }
+
+            set
+            {
+                m_setRotSpeedParamsSet = value;
+
+                if (value == null)
+                {
+                    m_setRotSpeedParamsSet = new SetRotSpeedParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// SetAngleUnitsParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "setAngleUnitsParamsSet", IsRequired = false, Order = 22)]
+        public SetAngleUnitsParamsSetDataType setAngleUnitsParamsSet
+        {
+            get
+            {
+                return m_setAngleUnitsParamsSet;
+            }
+
+            set
+            {
+                m_setAngleUnitsParamsSet = value;
+
+                if (value == null)
+                {
+                    m_setAngleUnitsParamsSet = new SetAngleUnitsParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// SetEndPoseToleranceParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "setEndPoseToleranceParamsSet", IsRequired = false, Order = 23)]
+        public SetEndPoseToleranceParamsSetDataType setEndPoseToleranceParamsSet
+        {
+            get
+            {
+                return m_setEndPoseToleranceParamsSet;
+            }
+
+            set
+            {
+                m_setEndPoseToleranceParamsSet = value;
+
+                if (value == null)
+                {
+                    m_setEndPoseToleranceParamsSet = new SetEndPoseToleranceParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// SetForceUnitsParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "setForceUnitsParamsSet", IsRequired = false, Order = 24)]
+        public SetForceUnitsParamsSetDataType setForceUnitsParamsSet
+        {
+            get
+            {
+                return m_setForceUnitsParamsSet;
+            }
+
+            set
+            {
+                m_setForceUnitsParamsSet = value;
+
+                if (value == null)
+                {
+                    m_setForceUnitsParamsSet = new SetForceUnitsParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// SetIntermediatePoseToleranceParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "setIntermediatePoseToleranceParamsSet", IsRequired = false, Order = 25)]
+        public SetIntermediatePoseToleranceParamsSetDataType setIntermediatePoseToleranceParamsSet
+        {
+            get
+            {
+                return m_setIntermediatePoseToleranceParamsSet;
+            }
+
+            set
+            {
+                m_setIntermediatePoseToleranceParamsSet = value;
+
+                if (value == null)
+                {
+                    m_setIntermediatePoseToleranceParamsSet = new SetIntermediatePoseToleranceParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// SetLengthUnitsParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "setLengthUnitsParamsSet", IsRequired = false, Order = 26)]
+        public SetLengthUnitsParamsSetDataType setLengthUnitsParamsSet
+        {
+            get
+            {
+                return m_setLengthUnitsParamsSet;
+            }
+
+            set
+            {
+                m_setLengthUnitsParamsSet = value;
+
+                if (value == null)
+                {
+                    m_setLengthUnitsParamsSet = new SetLengthUnitsParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// SetMotionCoordinationParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "setMotionCoordinationParamsSet", IsRequired = false, Order = 27)]
+        public SetMotionCoordinationParamsSetDataType setMotionCoordinationParamsSet
+        {
+            get
+            {
+                return m_setMotionCoordinationParamsSet;
+            }
+
+            set
+            {
+                m_setMotionCoordinationParamsSet = value;
+
+                if (value == null)
+                {
+                    m_setMotionCoordinationParamsSet = new SetMotionCoordinationParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// SetTorqueUnitsParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "setTorqueUnitsParamsSet", IsRequired = false, Order = 28)]
+        public SetTorqueUnitsParamsSetDataType setTorqueUnitsParamsSet
+        {
+            get
+            {
+                return m_setTorqueUnitsParamsSet;
+            }
+
+            set
+            {
+                m_setTorqueUnitsParamsSet = value;
+
+                if (value == null)
+                {
+                    m_setTorqueUnitsParamsSet = new SetTorqueUnitsParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// StopMotionParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "stopMotionParamsSet", IsRequired = false, Order = 29)]
+        public StopMotionParamsSetDataType stopMotionParamsSet
+        {
+            get
+            {
+                return m_stopMotionParamsSet;
+            }
+
+            set
+            {
+                m_stopMotionParamsSet = value;
+
+                if (value == null)
+                {
+                    m_stopMotionParamsSet = new StopMotionParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// ConfigureStatusReportParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "configureStatusReportParamsSet", IsRequired = false, Order = 30)]
+        public ConfigureStatusReportParamsSetDataType configureStatusReportParamsSet
+        {
+            get
+            {
+                return m_configureStatusReportParamsSet;
+            }
+
+            set
+            {
+                m_configureStatusReportParamsSet = value;
+
+                if (value == null)
+                {
+                    m_configureStatusReportParamsSet = new ConfigureStatusReportParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// EnableSensorParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "enableSensorParamsSet", IsRequired = false, Order = 31)]
+        public EnableSensorParamsSetDataType enableSensorParamsSet
+        {
+            get
+            {
+                return m_enableSensorParamsSet;
+            }
+
+            set
+            {
+                m_enableSensorParamsSet = value;
+
+                if (value == null)
+                {
+                    m_enableSensorParamsSet = new EnableSensorParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// DisableSensorParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "disableSensorParamsSet", IsRequired = false, Order = 32)]
+        public DisableSensorParamsSetDataType disableSensorParamsSet
+        {
+            get
+            {
+                return m_disableSensorParamsSet;
+            }
+
+            set
+            {
+                m_disableSensorParamsSet = value;
+
+                if (value == null)
+                {
+                    m_disableSensorParamsSet = new DisableSensorParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// EnableGripperParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "enableGripperParamsSet", IsRequired = false, Order = 33)]
+        public EnableGripperParamsSetDataType enableGripperParamsSet
+        {
+            get
+            {
+                return m_enableGripperParamsSet;
+            }
+
+            set
+            {
+                m_enableGripperParamsSet = value;
+
+                if (value == null)
+                {
+                    m_enableGripperParamsSet = new EnableGripperParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// DisableGripperParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "disableGripperParamsSet", IsRequired = false, Order = 34)]
+        public DisableGripperParamsSetDataType disableGripperParamsSet
+        {
+            get
+            {
+                return m_disableGripperParamsSet;
+            }
+
+            set
+            {
+                m_disableGripperParamsSet = value;
+
+                if (value == null)
+                {
+                    m_disableGripperParamsSet = new DisableGripperParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// EnableRobotParameterStatusParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "enableRobotParameterStatusParamsSet", IsRequired = false, Order = 35)]
+        public EnableRobotParameterStatusParamsSetDataType enableRobotParameterStatusParamsSet
+        {
+            get
+            {
+                return m_enableRobotParameterStatusParamsSet;
+            }
+
+            set
+            {
+                m_enableRobotParameterStatusParamsSet = value;
+
+                if (value == null)
+                {
+                    m_enableRobotParameterStatusParamsSet = new EnableRobotParameterStatusParamsSetDataType();
+                }
+            }
+        }
+
+        /// <summary>
+        /// DisableRobotParameterStatusParamsSet in the CRCLCommandsParamsSetsUnionDataType
+        /// </summary>
+        [DataMember(Name = "disableRobotParameterStatusParamsSet", IsRequired = false, Order = 36)]
+        public DisableRobotParameterStatusParamsSetDataType disableRobotParameterStatusParamsSet
+        {
+            get
+            {
+                return m_disableRobotParameterStatusParamsSet;
+            }
+
+            set
+            {
+                m_disableRobotParameterStatusParamsSet = value;
+
+                if (value == null)
+                {
+                    m_disableRobotParameterStatusParamsSet = new DisableRobotParameterStatusParamsSetDataType();
+                }
+            }
+        }
+        #endregion
+
+        #region IEncodeable Members
+        /// <summary cref="IEncodeable.TypeId" />
+        public override ExpandedNodeId TypeId
+        {
+            get { return DataTypeIds.CRCLCommandsParamsSetsUnionDataType; }
+        }
+
+        /// <summary cref="IEncodeable.BinaryEncodingId" />
+        public override ExpandedNodeId BinaryEncodingId
+        {
+            get { return ObjectIds.CRCLCommandsParamsSetsUnionDataType_Encoding_DefaultBinary; }
+        }
+
+        /// <summary cref="IEncodeable.XmlEncodingId" />
+        public override ExpandedNodeId XmlEncodingId
+        {
+            get { return ObjectIds.CRCLCommandsParamsSetsUnionDataType_Encoding_DefaultXml; }
+        }
+
+        /// <summary cref="IEncodeable.Encode(IEncoder)" />
+        public override void Encode(IEncoder encoder)
+        {
+            base.Encode(encoder);
+
+            encoder.PushNamespace(CRCL.Namespaces.CRCL);
+
+            encoder.WriteUInt32("SwitchField", SwitchField);
+            encoder.WriteEncodeable("initCanonParamsSet", initCanonParamsSet, typeof(InitCanonParamsSetDataType));
+            encoder.WriteEncodeable("endCanonParamsSet", endCanonParamsSet, typeof(EndCanonParamsSetDataType));
+            encoder.WriteEncodeable("messageParamsSet", messageParamsSet, typeof(MessageParamsSetDataType));
+            encoder.WriteEncodeable("moveToParamsSet", moveToParamsSet, typeof(MoveToParamsSetDataType));
+            encoder.WriteEncodeable("moveScrewParamsSet", moveScrewParamsSet, typeof(MoveScrewParamsSetDataType));
+            encoder.WriteEncodeable("moveThroughToParamsSet", moveThroughToParamsSet, typeof(MoveThroughToParamsSetDataType));
+            encoder.WriteEncodeable("dwellParamsSet", dwellParamsSet, typeof(DwellParamsSetDataType));
+            encoder.WriteEncodeable("actuateJointsParamsSet", actuateJointsParamsSet, typeof(ActuateJointsParamsSetDataType));
+            encoder.WriteEncodeable("configureJointReportsParamsSet", configureJointReportsParamsSet, typeof(ConfigureJointReportsParamsSetDataType));
+            encoder.WriteEncodeable("setDefaultJointPositionsTolerancesParamsSet", setDefaultJointPositionsTolerancesParamsSet, typeof(SetDefaultJointPositionsTolerancesParamsSetDataType));
+            encoder.WriteEncodeable("getStatusParamsSet", getStatusParamsSet, typeof(GetStatusParamsSetDataType));
+            encoder.WriteEncodeable("closeToolChangerParamsSet", closeToolChangerParamsSet, typeof(CloseToolChangerParamsSetDataType));
+            encoder.WriteEncodeable("openToolChangerParamsSet", openToolChangerParamsSet, typeof(OpenToolChangerParamsSetDataType));
+            encoder.WriteEncodeable("setRobotParametersParamsSet", setRobotParametersParamsSet, typeof(SetRobotParametersParamsSetDataType));
+            encoder.WriteEncodeable("setEndeffectorParametersParamsSet", setEndeffectorParametersParamsSet, typeof(SetEndeffectorParametersParamsSetDataType));
+            encoder.WriteEncodeable("setEndeffectorParamsSet", setEndeffectorParamsSet, typeof(SetEndeffectorParamsSetDataType));
+            encoder.WriteEncodeable("setTransAccelParamsSet", setTransAccelParamsSet, typeof(SetTransAccelParamsSetDataType));
+            encoder.WriteEncodeable("setTransSpeedParamsSet", setTransSpeedParamsSet, typeof(SetTransSpeedParamsSetDataType));
+            encoder.WriteEncodeable("setRotAccelParamsSet", setRotAccelParamsSet, typeof(SetRotAccelParamsSetDataType));
+            encoder.WriteEncodeable("setRotSpeedParamsSet", setRotSpeedParamsSet, typeof(SetRotSpeedParamsSetDataType));
+            encoder.WriteEncodeable("setAngleUnitsParamsSet", setAngleUnitsParamsSet, typeof(SetAngleUnitsParamsSetDataType));
+            encoder.WriteEncodeable("setEndPoseToleranceParamsSet", setEndPoseToleranceParamsSet, typeof(SetEndPoseToleranceParamsSetDataType));
+            encoder.WriteEncodeable("setForceUnitsParamsSet", setForceUnitsParamsSet, typeof(SetForceUnitsParamsSetDataType));
+            encoder.WriteEncodeable("setIntermediatePoseToleranceParamsSet", setIntermediatePoseToleranceParamsSet, typeof(SetIntermediatePoseToleranceParamsSetDataType));
+            encoder.WriteEncodeable("setLengthUnitsParamsSet", setLengthUnitsParamsSet, typeof(SetLengthUnitsParamsSetDataType));
+            encoder.WriteEncodeable("setMotionCoordinationParamsSet", setMotionCoordinationParamsSet, typeof(SetMotionCoordinationParamsSetDataType));
+            encoder.WriteEncodeable("setTorqueUnitsParamsSet", setTorqueUnitsParamsSet, typeof(SetTorqueUnitsParamsSetDataType));
+            encoder.WriteEncodeable("stopMotionParamsSet", stopMotionParamsSet, typeof(StopMotionParamsSetDataType));
+            encoder.WriteEncodeable("configureStatusReportParamsSet", configureStatusReportParamsSet, typeof(ConfigureStatusReportParamsSetDataType));
+            encoder.WriteEncodeable("enableSensorParamsSet", enableSensorParamsSet, typeof(EnableSensorParamsSetDataType));
+            encoder.WriteEncodeable("disableSensorParamsSet", disableSensorParamsSet, typeof(DisableSensorParamsSetDataType));
+            encoder.WriteEncodeable("enableGripperParamsSet", enableGripperParamsSet, typeof(EnableGripperParamsSetDataType));
+            encoder.WriteEncodeable("disableGripperParamsSet", disableGripperParamsSet, typeof(DisableGripperParamsSetDataType));
+            encoder.WriteEncodeable("enableRobotParameterStatusParamsSet", enableRobotParameterStatusParamsSet, typeof(EnableRobotParameterStatusParamsSetDataType));
+            encoder.WriteEncodeable("disableRobotParameterStatusParamsSet", disableRobotParameterStatusParamsSet, typeof(DisableRobotParameterStatusParamsSetDataType));
+
+            encoder.PopNamespace();
+        }
+
+        /// <summary cref="IEncodeable.Decode(IDecoder)" />
+        public override void Decode(IDecoder decoder)
+        {
+            base.Decode(decoder);
+
+            decoder.PushNamespace(CRCL.Namespaces.CRCL);
+
+            SwitchField = decoder.ReadUInt32("SwitchField");
+            initCanonParamsSet = (InitCanonParamsSetDataType)decoder.ReadEncodeable("initCanonParamsSet", typeof(InitCanonParamsSetDataType));
+            endCanonParamsSet = (EndCanonParamsSetDataType)decoder.ReadEncodeable("endCanonParamsSet", typeof(EndCanonParamsSetDataType));
+            messageParamsSet = (MessageParamsSetDataType)decoder.ReadEncodeable("messageParamsSet", typeof(MessageParamsSetDataType));
+            moveToParamsSet = (MoveToParamsSetDataType)decoder.ReadEncodeable("moveToParamsSet", typeof(MoveToParamsSetDataType));
+            moveScrewParamsSet = (MoveScrewParamsSetDataType)decoder.ReadEncodeable("moveScrewParamsSet", typeof(MoveScrewParamsSetDataType));
+            moveThroughToParamsSet = (MoveThroughToParamsSetDataType)decoder.ReadEncodeable("moveThroughToParamsSet", typeof(MoveThroughToParamsSetDataType));
+            dwellParamsSet = (DwellParamsSetDataType)decoder.ReadEncodeable("dwellParamsSet", typeof(DwellParamsSetDataType));
+            actuateJointsParamsSet = (ActuateJointsParamsSetDataType)decoder.ReadEncodeable("actuateJointsParamsSet", typeof(ActuateJointsParamsSetDataType));
+            configureJointReportsParamsSet = (ConfigureJointReportsParamsSetDataType)decoder.ReadEncodeable("configureJointReportsParamsSet", typeof(ConfigureJointReportsParamsSetDataType));
+            setDefaultJointPositionsTolerancesParamsSet = (SetDefaultJointPositionsTolerancesParamsSetDataType)decoder.ReadEncodeable("setDefaultJointPositionsTolerancesParamsSet", typeof(SetDefaultJointPositionsTolerancesParamsSetDataType));
+            getStatusParamsSet = (GetStatusParamsSetDataType)decoder.ReadEncodeable("getStatusParamsSet", typeof(GetStatusParamsSetDataType));
+            closeToolChangerParamsSet = (CloseToolChangerParamsSetDataType)decoder.ReadEncodeable("closeToolChangerParamsSet", typeof(CloseToolChangerParamsSetDataType));
+            openToolChangerParamsSet = (OpenToolChangerParamsSetDataType)decoder.ReadEncodeable("openToolChangerParamsSet", typeof(OpenToolChangerParamsSetDataType));
+            setRobotParametersParamsSet = (SetRobotParametersParamsSetDataType)decoder.ReadEncodeable("setRobotParametersParamsSet", typeof(SetRobotParametersParamsSetDataType));
+            setEndeffectorParametersParamsSet = (SetEndeffectorParametersParamsSetDataType)decoder.ReadEncodeable("setEndeffectorParametersParamsSet", typeof(SetEndeffectorParametersParamsSetDataType));
+            setEndeffectorParamsSet = (SetEndeffectorParamsSetDataType)decoder.ReadEncodeable("setEndeffectorParamsSet", typeof(SetEndeffectorParamsSetDataType));
+            setTransAccelParamsSet = (SetTransAccelParamsSetDataType)decoder.ReadEncodeable("setTransAccelParamsSet", typeof(SetTransAccelParamsSetDataType));
+            setTransSpeedParamsSet = (SetTransSpeedParamsSetDataType)decoder.ReadEncodeable("setTransSpeedParamsSet", typeof(SetTransSpeedParamsSetDataType));
+            setRotAccelParamsSet = (SetRotAccelParamsSetDataType)decoder.ReadEncodeable("setRotAccelParamsSet", typeof(SetRotAccelParamsSetDataType));
+            setRotSpeedParamsSet = (SetRotSpeedParamsSetDataType)decoder.ReadEncodeable("setRotSpeedParamsSet", typeof(SetRotSpeedParamsSetDataType));
+            setAngleUnitsParamsSet = (SetAngleUnitsParamsSetDataType)decoder.ReadEncodeable("setAngleUnitsParamsSet", typeof(SetAngleUnitsParamsSetDataType));
+            setEndPoseToleranceParamsSet = (SetEndPoseToleranceParamsSetDataType)decoder.ReadEncodeable("setEndPoseToleranceParamsSet", typeof(SetEndPoseToleranceParamsSetDataType));
+            setForceUnitsParamsSet = (SetForceUnitsParamsSetDataType)decoder.ReadEncodeable("setForceUnitsParamsSet", typeof(SetForceUnitsParamsSetDataType));
+            setIntermediatePoseToleranceParamsSet = (SetIntermediatePoseToleranceParamsSetDataType)decoder.ReadEncodeable("setIntermediatePoseToleranceParamsSet", typeof(SetIntermediatePoseToleranceParamsSetDataType));
+            setLengthUnitsParamsSet = (SetLengthUnitsParamsSetDataType)decoder.ReadEncodeable("setLengthUnitsParamsSet", typeof(SetLengthUnitsParamsSetDataType));
+            setMotionCoordinationParamsSet = (SetMotionCoordinationParamsSetDataType)decoder.ReadEncodeable("setMotionCoordinationParamsSet", typeof(SetMotionCoordinationParamsSetDataType));
+            setTorqueUnitsParamsSet = (SetTorqueUnitsParamsSetDataType)decoder.ReadEncodeable("setTorqueUnitsParamsSet", typeof(SetTorqueUnitsParamsSetDataType));
+            stopMotionParamsSet = (StopMotionParamsSetDataType)decoder.ReadEncodeable("stopMotionParamsSet", typeof(StopMotionParamsSetDataType));
+            configureStatusReportParamsSet = (ConfigureStatusReportParamsSetDataType)decoder.ReadEncodeable("configureStatusReportParamsSet", typeof(ConfigureStatusReportParamsSetDataType));
+            enableSensorParamsSet = (EnableSensorParamsSetDataType)decoder.ReadEncodeable("enableSensorParamsSet", typeof(EnableSensorParamsSetDataType));
+            disableSensorParamsSet = (DisableSensorParamsSetDataType)decoder.ReadEncodeable("disableSensorParamsSet", typeof(DisableSensorParamsSetDataType));
+            enableGripperParamsSet = (EnableGripperParamsSetDataType)decoder.ReadEncodeable("enableGripperParamsSet", typeof(EnableGripperParamsSetDataType));
+            disableGripperParamsSet = (DisableGripperParamsSetDataType)decoder.ReadEncodeable("disableGripperParamsSet", typeof(DisableGripperParamsSetDataType));
+            enableRobotParameterStatusParamsSet = (EnableRobotParameterStatusParamsSetDataType)decoder.ReadEncodeable("enableRobotParameterStatusParamsSet", typeof(EnableRobotParameterStatusParamsSetDataType));
+            disableRobotParameterStatusParamsSet = (DisableRobotParameterStatusParamsSetDataType)decoder.ReadEncodeable("disableRobotParameterStatusParamsSet", typeof(DisableRobotParameterStatusParamsSetDataType));
+
+            decoder.PopNamespace();
+        }
+
+        /// <summary cref="IEncodeable.IsEqual(IEncodeable)" />
+        public override bool IsEqual(IEncodeable encodeable)
+        {
+            if (Object.ReferenceEquals(this, encodeable))
+            {
+                return true;
+            }
+
+            CRCLCommandsParamsSetsUnionDataType value = encodeable as CRCLCommandsParamsSetsUnionDataType;
+
+            if (value == null)
+            {
+                return false;
+            }
+
+            if (!base.IsEqual(encodeable)) return false;
+            if (!Utils.IsEqual(m_switchField, value.m_switchField)) return false;
+            if (!Utils.IsEqual(m_initCanonParamsSet, value.m_initCanonParamsSet)) return false;
+            if (!Utils.IsEqual(m_endCanonParamsSet, value.m_endCanonParamsSet)) return false;
+            if (!Utils.IsEqual(m_messageParamsSet, value.m_messageParamsSet)) return false;
+            if (!Utils.IsEqual(m_moveToParamsSet, value.m_moveToParamsSet)) return false;
+            if (!Utils.IsEqual(m_moveScrewParamsSet, value.m_moveScrewParamsSet)) return false;
+            if (!Utils.IsEqual(m_moveThroughToParamsSet, value.m_moveThroughToParamsSet)) return false;
+            if (!Utils.IsEqual(m_dwellParamsSet, value.m_dwellParamsSet)) return false;
+            if (!Utils.IsEqual(m_actuateJointsParamsSet, value.m_actuateJointsParamsSet)) return false;
+            if (!Utils.IsEqual(m_configureJointReportsParamsSet, value.m_configureJointReportsParamsSet)) return false;
+            if (!Utils.IsEqual(m_setDefaultJointPositionsTolerancesParamsSet, value.m_setDefaultJointPositionsTolerancesParamsSet)) return false;
+            if (!Utils.IsEqual(m_getStatusParamsSet, value.m_getStatusParamsSet)) return false;
+            if (!Utils.IsEqual(m_closeToolChangerParamsSet, value.m_closeToolChangerParamsSet)) return false;
+            if (!Utils.IsEqual(m_openToolChangerParamsSet, value.m_openToolChangerParamsSet)) return false;
+            if (!Utils.IsEqual(m_setRobotParametersParamsSet, value.m_setRobotParametersParamsSet)) return false;
+            if (!Utils.IsEqual(m_setEndeffectorParametersParamsSet, value.m_setEndeffectorParametersParamsSet)) return false;
+            if (!Utils.IsEqual(m_setEndeffectorParamsSet, value.m_setEndeffectorParamsSet)) return false;
+            if (!Utils.IsEqual(m_setTransAccelParamsSet, value.m_setTransAccelParamsSet)) return false;
+            if (!Utils.IsEqual(m_setTransSpeedParamsSet, value.m_setTransSpeedParamsSet)) return false;
+            if (!Utils.IsEqual(m_setRotAccelParamsSet, value.m_setRotAccelParamsSet)) return false;
+            if (!Utils.IsEqual(m_setRotSpeedParamsSet, value.m_setRotSpeedParamsSet)) return false;
+            if (!Utils.IsEqual(m_setAngleUnitsParamsSet, value.m_setAngleUnitsParamsSet)) return false;
+            if (!Utils.IsEqual(m_setEndPoseToleranceParamsSet, value.m_setEndPoseToleranceParamsSet)) return false;
+            if (!Utils.IsEqual(m_setForceUnitsParamsSet, value.m_setForceUnitsParamsSet)) return false;
+            if (!Utils.IsEqual(m_setIntermediatePoseToleranceParamsSet, value.m_setIntermediatePoseToleranceParamsSet)) return false;
+            if (!Utils.IsEqual(m_setLengthUnitsParamsSet, value.m_setLengthUnitsParamsSet)) return false;
+            if (!Utils.IsEqual(m_setMotionCoordinationParamsSet, value.m_setMotionCoordinationParamsSet)) return false;
+            if (!Utils.IsEqual(m_setTorqueUnitsParamsSet, value.m_setTorqueUnitsParamsSet)) return false;
+            if (!Utils.IsEqual(m_stopMotionParamsSet, value.m_stopMotionParamsSet)) return false;
+            if (!Utils.IsEqual(m_configureStatusReportParamsSet, value.m_configureStatusReportParamsSet)) return false;
+            if (!Utils.IsEqual(m_enableSensorParamsSet, value.m_enableSensorParamsSet)) return false;
+            if (!Utils.IsEqual(m_disableSensorParamsSet, value.m_disableSensorParamsSet)) return false;
+            if (!Utils.IsEqual(m_enableGripperParamsSet, value.m_enableGripperParamsSet)) return false;
+            if (!Utils.IsEqual(m_disableGripperParamsSet, value.m_disableGripperParamsSet)) return false;
+            if (!Utils.IsEqual(m_enableRobotParameterStatusParamsSet, value.m_enableRobotParameterStatusParamsSet)) return false;
+            if (!Utils.IsEqual(m_disableRobotParameterStatusParamsSet, value.m_disableRobotParameterStatusParamsSet)) return false;
+
+            return true;
+        }    
+
+        #if !NET_STANDARD
+        /// <summary cref="ICloneable.Clone" />
+        public override object Clone()
+        {
+            return (CRCLCommandsParamsSetsUnionDataType)this.MemberwiseClone();
+        }
+        #endif
+
+        /// <summary cref="Object.MemberwiseClone" />
+        public new object MemberwiseClone()
+        {
+            CRCLCommandsParamsSetsUnionDataType clone = (CRCLCommandsParamsSetsUnionDataType)base.MemberwiseClone();
+
+            clone.m_switchField = (uint)Utils.Clone(this.m_switchField);
+            clone.m_initCanonParamsSet = (InitCanonParamsSetDataType)Utils.Clone(this.m_initCanonParamsSet);
+            clone.m_endCanonParamsSet = (EndCanonParamsSetDataType)Utils.Clone(this.m_endCanonParamsSet);
+            clone.m_messageParamsSet = (MessageParamsSetDataType)Utils.Clone(this.m_messageParamsSet);
+            clone.m_moveToParamsSet = (MoveToParamsSetDataType)Utils.Clone(this.m_moveToParamsSet);
+            clone.m_moveScrewParamsSet = (MoveScrewParamsSetDataType)Utils.Clone(this.m_moveScrewParamsSet);
+            clone.m_moveThroughToParamsSet = (MoveThroughToParamsSetDataType)Utils.Clone(this.m_moveThroughToParamsSet);
+            clone.m_dwellParamsSet = (DwellParamsSetDataType)Utils.Clone(this.m_dwellParamsSet);
+            clone.m_actuateJointsParamsSet = (ActuateJointsParamsSetDataType)Utils.Clone(this.m_actuateJointsParamsSet);
+            clone.m_configureJointReportsParamsSet = (ConfigureJointReportsParamsSetDataType)Utils.Clone(this.m_configureJointReportsParamsSet);
+            clone.m_setDefaultJointPositionsTolerancesParamsSet = (SetDefaultJointPositionsTolerancesParamsSetDataType)Utils.Clone(this.m_setDefaultJointPositionsTolerancesParamsSet);
+            clone.m_getStatusParamsSet = (GetStatusParamsSetDataType)Utils.Clone(this.m_getStatusParamsSet);
+            clone.m_closeToolChangerParamsSet = (CloseToolChangerParamsSetDataType)Utils.Clone(this.m_closeToolChangerParamsSet);
+            clone.m_openToolChangerParamsSet = (OpenToolChangerParamsSetDataType)Utils.Clone(this.m_openToolChangerParamsSet);
+            clone.m_setRobotParametersParamsSet = (SetRobotParametersParamsSetDataType)Utils.Clone(this.m_setRobotParametersParamsSet);
+            clone.m_setEndeffectorParametersParamsSet = (SetEndeffectorParametersParamsSetDataType)Utils.Clone(this.m_setEndeffectorParametersParamsSet);
+            clone.m_setEndeffectorParamsSet = (SetEndeffectorParamsSetDataType)Utils.Clone(this.m_setEndeffectorParamsSet);
+            clone.m_setTransAccelParamsSet = (SetTransAccelParamsSetDataType)Utils.Clone(this.m_setTransAccelParamsSet);
+            clone.m_setTransSpeedParamsSet = (SetTransSpeedParamsSetDataType)Utils.Clone(this.m_setTransSpeedParamsSet);
+            clone.m_setRotAccelParamsSet = (SetRotAccelParamsSetDataType)Utils.Clone(this.m_setRotAccelParamsSet);
+            clone.m_setRotSpeedParamsSet = (SetRotSpeedParamsSetDataType)Utils.Clone(this.m_setRotSpeedParamsSet);
+            clone.m_setAngleUnitsParamsSet = (SetAngleUnitsParamsSetDataType)Utils.Clone(this.m_setAngleUnitsParamsSet);
+            clone.m_setEndPoseToleranceParamsSet = (SetEndPoseToleranceParamsSetDataType)Utils.Clone(this.m_setEndPoseToleranceParamsSet);
+            clone.m_setForceUnitsParamsSet = (SetForceUnitsParamsSetDataType)Utils.Clone(this.m_setForceUnitsParamsSet);
+            clone.m_setIntermediatePoseToleranceParamsSet = (SetIntermediatePoseToleranceParamsSetDataType)Utils.Clone(this.m_setIntermediatePoseToleranceParamsSet);
+            clone.m_setLengthUnitsParamsSet = (SetLengthUnitsParamsSetDataType)Utils.Clone(this.m_setLengthUnitsParamsSet);
+            clone.m_setMotionCoordinationParamsSet = (SetMotionCoordinationParamsSetDataType)Utils.Clone(this.m_setMotionCoordinationParamsSet);
+            clone.m_setTorqueUnitsParamsSet = (SetTorqueUnitsParamsSetDataType)Utils.Clone(this.m_setTorqueUnitsParamsSet);
+            clone.m_stopMotionParamsSet = (StopMotionParamsSetDataType)Utils.Clone(this.m_stopMotionParamsSet);
+            clone.m_configureStatusReportParamsSet = (ConfigureStatusReportParamsSetDataType)Utils.Clone(this.m_configureStatusReportParamsSet);
+            clone.m_enableSensorParamsSet = (EnableSensorParamsSetDataType)Utils.Clone(this.m_enableSensorParamsSet);
+            clone.m_disableSensorParamsSet = (DisableSensorParamsSetDataType)Utils.Clone(this.m_disableSensorParamsSet);
+            clone.m_enableGripperParamsSet = (EnableGripperParamsSetDataType)Utils.Clone(this.m_enableGripperParamsSet);
+            clone.m_disableGripperParamsSet = (DisableGripperParamsSetDataType)Utils.Clone(this.m_disableGripperParamsSet);
+            clone.m_enableRobotParameterStatusParamsSet = (EnableRobotParameterStatusParamsSetDataType)Utils.Clone(this.m_enableRobotParameterStatusParamsSet);
+            clone.m_disableRobotParameterStatusParamsSet = (DisableRobotParameterStatusParamsSetDataType)Utils.Clone(this.m_disableRobotParameterStatusParamsSet);
+
+            return clone;
+        }
+        #endregion
+
+        #region Private Fields
+        private uint m_switchField;
+        private InitCanonParamsSetDataType m_initCanonParamsSet;
+        private EndCanonParamsSetDataType m_endCanonParamsSet;
+        private MessageParamsSetDataType m_messageParamsSet;
+        private MoveToParamsSetDataType m_moveToParamsSet;
+        private MoveScrewParamsSetDataType m_moveScrewParamsSet;
+        private MoveThroughToParamsSetDataType m_moveThroughToParamsSet;
+        private DwellParamsSetDataType m_dwellParamsSet;
+        private ActuateJointsParamsSetDataType m_actuateJointsParamsSet;
+        private ConfigureJointReportsParamsSetDataType m_configureJointReportsParamsSet;
+        private SetDefaultJointPositionsTolerancesParamsSetDataType m_setDefaultJointPositionsTolerancesParamsSet;
+        private GetStatusParamsSetDataType m_getStatusParamsSet;
+        private CloseToolChangerParamsSetDataType m_closeToolChangerParamsSet;
+        private OpenToolChangerParamsSetDataType m_openToolChangerParamsSet;
+        private SetRobotParametersParamsSetDataType m_setRobotParametersParamsSet;
+        private SetEndeffectorParametersParamsSetDataType m_setEndeffectorParametersParamsSet;
+        private SetEndeffectorParamsSetDataType m_setEndeffectorParamsSet;
+        private SetTransAccelParamsSetDataType m_setTransAccelParamsSet;
+        private SetTransSpeedParamsSetDataType m_setTransSpeedParamsSet;
+        private SetRotAccelParamsSetDataType m_setRotAccelParamsSet;
+        private SetRotSpeedParamsSetDataType m_setRotSpeedParamsSet;
+        private SetAngleUnitsParamsSetDataType m_setAngleUnitsParamsSet;
+        private SetEndPoseToleranceParamsSetDataType m_setEndPoseToleranceParamsSet;
+        private SetForceUnitsParamsSetDataType m_setForceUnitsParamsSet;
+        private SetIntermediatePoseToleranceParamsSetDataType m_setIntermediatePoseToleranceParamsSet;
+        private SetLengthUnitsParamsSetDataType m_setLengthUnitsParamsSet;
+        private SetMotionCoordinationParamsSetDataType m_setMotionCoordinationParamsSet;
+        private SetTorqueUnitsParamsSetDataType m_setTorqueUnitsParamsSet;
+        private StopMotionParamsSetDataType m_stopMotionParamsSet;
+        private ConfigureStatusReportParamsSetDataType m_configureStatusReportParamsSet;
+        private EnableSensorParamsSetDataType m_enableSensorParamsSet;
+        private DisableSensorParamsSetDataType m_disableSensorParamsSet;
+        private EnableGripperParamsSetDataType m_enableGripperParamsSet;
+        private DisableGripperParamsSetDataType m_disableGripperParamsSet;
+        private EnableRobotParameterStatusParamsSetDataType m_enableRobotParameterStatusParamsSet;
+        private DisableRobotParameterStatusParamsSetDataType m_disableRobotParameterStatusParamsSet;
+        #endregion
+    }
+
+    #region CRCLCommandsParamsSetsUnionDataTypeCollection Class
+    /// <summary>
+    /// A collection of CRCLCommandsParamsSetsUnionDataType objects.
+    /// </summary>
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    [CollectionDataContract(Name = "ListOfCRCLCommandsParamsSetsUnionDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "CRCLCommandsParamsSetsUnionDataType")]
+    #if !NET_STANDARD
+    public partial class CRCLCommandsParamsSetsUnionDataTypeCollection : List<CRCLCommandsParamsSetsUnionDataType>, ICloneable
+    #else
+    public partial class CRCLCommandsParamsSetsUnionDataTypeCollection : List<CRCLCommandsParamsSetsUnionDataType>
+    #endif
+    {
+        #region Constructors
+        /// <summary>
+        /// Initializes the collection with default values.
+        /// </summary>
+        public CRCLCommandsParamsSetsUnionDataTypeCollection() {}
+
+        /// <summary>
+        /// Initializes the collection with an initial capacity.
+        /// </summary>
+        public CRCLCommandsParamsSetsUnionDataTypeCollection(int capacity) : base(capacity) {}
+
+        /// <summary>
+        /// Initializes the collection with another collection.
+        /// </summary>
+        public CRCLCommandsParamsSetsUnionDataTypeCollection(IEnumerable<CRCLCommandsParamsSetsUnionDataType> collection) : base(collection) {}
+        #endregion
+
+        #region Static Operators
+        /// <summary>
+        /// Converts an array to a collection.
+        /// </summary>
+        public static implicit operator CRCLCommandsParamsSetsUnionDataTypeCollection(CRCLCommandsParamsSetsUnionDataType[] values)
+        {
+            if (values != null)
+            {
+                return new CRCLCommandsParamsSetsUnionDataTypeCollection(values);
+            }
+
+            return new CRCLCommandsParamsSetsUnionDataTypeCollection();
+        }
+
+        /// <summary>
+        /// Converts a collection to an array.
+        /// </summary>
+        public static explicit operator CRCLCommandsParamsSetsUnionDataType[](CRCLCommandsParamsSetsUnionDataTypeCollection values)
+        {
+            if (values != null)
+            {
+                return values.ToArray();
+            }
+
+            return null;
+        }
+        #endregion
+
+        #if !NET_STANDARD
+        #region ICloneable Methods
+        /// <summary>
+        /// Creates a deep copy of the collection.
+        /// </summary>
+        public object Clone()
+        {
+            return (CRCLCommandsParamsSetsUnionDataTypeCollection)this.MemberwiseClone();
+        }
+        #endregion
+        #endif
+
+        /// <summary cref="Object.MemberwiseClone" />
+        public new object MemberwiseClone()
+        {
+            CRCLCommandsParamsSetsUnionDataTypeCollection clone = new CRCLCommandsParamsSetsUnionDataTypeCollection(this.Count);
+
+            for (int ii = 0; ii < this.Count; ii++)
+            {
+                clone.Add((CRCLCommandsParamsSetsUnionDataType)Utils.Clone(this[ii]));
+            }
+
+            return clone;
+        }
+    }
+    #endregion
+    #endif
+    #endregion
+
+    #region CRCLCommandsParamsSetsBufferDataType Class
+    #if (!OPCUA_EXCLUDE_CRCLCommandsParamsSetsBufferDataType)
+    /// <summary>
+    /// The array of CRCLCommandsParamsSets that allows instantiating CRCLCommands
+    /// </summary>
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    [DataContract(Namespace = CRCL.Namespaces.CRCL)]
+    public partial class CRCLCommandsParamsSetsBufferDataType : CRCL_DataThingDataType
+    {
+        #region Constructors
+        /// <summary>
+        /// The default constructor.
+        /// </summary>
+        public CRCLCommandsParamsSetsBufferDataType()
+        {
+            Initialize();
+        }
+
+        /// <summary>
+        /// Called by the .NET framework during deserialization.
+        /// </summary>
+        [OnDeserializing]
+        private void Initialize(StreamingContext context)
+        {
+            Initialize();
+        }
+
+        /// <summary>
+        /// Sets private members to default values.
+        /// </summary>
+        private void Initialize()
+        {
+            m_crclCommandsParamsSets = new CRCLCommandsParamsSetsUnionDataTypeCollection();
+        }
+        #endregion
+
+        #region Public Properties
+        /// <summary>
+        /// The array of CRCLCommandsParamsSets that allows instantiating CRCLCommands
+        /// </summary>
+        [DataMember(Name = "crclCommandsParamsSets", IsRequired = false, Order = 1)]
+        public CRCLCommandsParamsSetsUnionDataTypeCollection crclCommandsParamsSets
+        {
+            get
+            {
+                return m_crclCommandsParamsSets;
+            }
+
+            set
+            {
+                m_crclCommandsParamsSets = value;
+
+                if (value == null)
+                {
+                    m_crclCommandsParamsSets = new CRCLCommandsParamsSetsUnionDataTypeCollection();
+                }
+            }
+        }
+        #endregion
+
+        #region IEncodeable Members
+        /// <summary cref="IEncodeable.TypeId" />
+        public override ExpandedNodeId TypeId
+        {
+            get { return DataTypeIds.CRCLCommandsParamsSetsBufferDataType; }
+        }
+
+        /// <summary cref="IEncodeable.BinaryEncodingId" />
+        public override ExpandedNodeId BinaryEncodingId
+        {
+            get { return ObjectIds.CRCLCommandsParamsSetsBufferDataType_Encoding_DefaultBinary; }
+        }
+
+        /// <summary cref="IEncodeable.XmlEncodingId" />
+        public override ExpandedNodeId XmlEncodingId
+        {
+            get { return ObjectIds.CRCLCommandsParamsSetsBufferDataType_Encoding_DefaultXml; }
+        }
+
+        /// <summary cref="IEncodeable.Encode(IEncoder)" />
+        public override void Encode(IEncoder encoder)
+        {
+            base.Encode(encoder);
+
+            encoder.PushNamespace(CRCL.Namespaces.CRCL);
+
+            encoder.WriteEncodeableArray("crclCommandsParamsSets", crclCommandsParamsSets.ToArray(), typeof(CRCLCommandsParamsSetsUnionDataType));
+
+            encoder.PopNamespace();
+        }
+
+        /// <summary cref="IEncodeable.Decode(IDecoder)" />
+        public override void Decode(IDecoder decoder)
+        {
+            base.Decode(decoder);
+
+            decoder.PushNamespace(CRCL.Namespaces.CRCL);
+
+            crclCommandsParamsSets = (CRCLCommandsParamsSetsUnionDataTypeCollection)decoder.ReadEncodeableArray("crclCommandsParamsSets", typeof(CRCLCommandsParamsSetsUnionDataType));
+
+            decoder.PopNamespace();
+        }
+
+        /// <summary cref="IEncodeable.IsEqual(IEncodeable)" />
+        public override bool IsEqual(IEncodeable encodeable)
+        {
+            if (Object.ReferenceEquals(this, encodeable))
+            {
+                return true;
+            }
+
+            CRCLCommandsParamsSetsBufferDataType value = encodeable as CRCLCommandsParamsSetsBufferDataType;
+
+            if (value == null)
+            {
+                return false;
+            }
+
+            if (!base.IsEqual(encodeable)) return false;
+            if (!Utils.IsEqual(m_crclCommandsParamsSets, value.m_crclCommandsParamsSets)) return false;
+
+            return true;
+        }    
+
+        #if !NET_STANDARD
+        /// <summary cref="ICloneable.Clone" />
+        public override object Clone()
+        {
+            return (CRCLCommandsParamsSetsBufferDataType)this.MemberwiseClone();
+        }
+        #endif
+
+        /// <summary cref="Object.MemberwiseClone" />
+        public new object MemberwiseClone()
+        {
+            CRCLCommandsParamsSetsBufferDataType clone = (CRCLCommandsParamsSetsBufferDataType)base.MemberwiseClone();
+
+            clone.m_crclCommandsParamsSets = (CRCLCommandsParamsSetsUnionDataTypeCollection)Utils.Clone(this.m_crclCommandsParamsSets);
+
+            return clone;
+        }
+        #endregion
+
+        #region Private Fields
+        private CRCLCommandsParamsSetsUnionDataTypeCollection m_crclCommandsParamsSets;
+        #endregion
+    }
+
+    #region CRCLCommandsParamsSetsBufferDataTypeCollection Class
+    /// <summary>
+    /// A collection of CRCLCommandsParamsSetsBufferDataType objects.
+    /// </summary>
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    [CollectionDataContract(Name = "ListOfCRCLCommandsParamsSetsBufferDataType", Namespace = CRCL.Namespaces.CRCL, ItemName = "CRCLCommandsParamsSetsBufferDataType")]
+    #if !NET_STANDARD
+    public partial class CRCLCommandsParamsSetsBufferDataTypeCollection : List<CRCLCommandsParamsSetsBufferDataType>, ICloneable
+    #else
+    public partial class CRCLCommandsParamsSetsBufferDataTypeCollection : List<CRCLCommandsParamsSetsBufferDataType>
+    #endif
+    {
+        #region Constructors
+        /// <summary>
+        /// Initializes the collection with default values.
+        /// </summary>
+        public CRCLCommandsParamsSetsBufferDataTypeCollection() {}
+
+        /// <summary>
+        /// Initializes the collection with an initial capacity.
+        /// </summary>
+        public CRCLCommandsParamsSetsBufferDataTypeCollection(int capacity) : base(capacity) {}
+
+        /// <summary>
+        /// Initializes the collection with another collection.
+        /// </summary>
+        public CRCLCommandsParamsSetsBufferDataTypeCollection(IEnumerable<CRCLCommandsParamsSetsBufferDataType> collection) : base(collection) {}
+        #endregion
+
+        #region Static Operators
+        /// <summary>
+        /// Converts an array to a collection.
+        /// </summary>
+        public static implicit operator CRCLCommandsParamsSetsBufferDataTypeCollection(CRCLCommandsParamsSetsBufferDataType[] values)
+        {
+            if (values != null)
+            {
+                return new CRCLCommandsParamsSetsBufferDataTypeCollection(values);
+            }
+
+            return new CRCLCommandsParamsSetsBufferDataTypeCollection();
+        }
+
+        /// <summary>
+        /// Converts a collection to an array.
+        /// </summary>
+        public static explicit operator CRCLCommandsParamsSetsBufferDataType[](CRCLCommandsParamsSetsBufferDataTypeCollection values)
+        {
+            if (values != null)
+            {
+                return values.ToArray();
+            }
+
+            return null;
+        }
+        #endregion
+
+        #if !NET_STANDARD
+        #region ICloneable Methods
+        /// <summary>
+        /// Creates a deep copy of the collection.
+        /// </summary>
+        public object Clone()
+        {
+            return (CRCLCommandsParamsSetsBufferDataTypeCollection)this.MemberwiseClone();
+        }
+        #endregion
+        #endif
+
+        /// <summary cref="Object.MemberwiseClone" />
+        public new object MemberwiseClone()
+        {
+            CRCLCommandsParamsSetsBufferDataTypeCollection clone = new CRCLCommandsParamsSetsBufferDataTypeCollection(this.Count);
+
+            for (int ii = 0; ii < this.Count; ii++)
+            {
+                clone.Add((CRCLCommandsParamsSetsBufferDataType)Utils.Clone(this[ii]));
+            }
+
+            return clone;
+        }
+    }
+    #endregion
+    #endif
+    #endregion
+
+    #region CRCLCommandsBufferState Enumeration
+    #if (!OPCUA_EXCLUDE_CRCLCommandsBufferState)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    [DataContract(Namespace = CRCL.Namespaces.CRCL)]
+    public enum CRCLCommandsBufferState
+    {
+        /// <remarks />
+        [EnumMember(Value = "PROCESSING_PENDING_0")]
+        PROCESSING_PENDING = 0,
+
+        /// <remarks />
+        [EnumMember(Value = "PROCESSING_RUNNING_1")]
+        PROCESSING_RUNNING = 1,
+
+        /// <remarks />
+        [EnumMember(Value = "PROCESSING_FAILED_2")]
+        PROCESSING_FAILED = 2,
+
+        /// <remarks />
+        [EnumMember(Value = "AWAITING_3")]
+        AWAITING = 3,
+    }
+
+    #region CRCLCommandsBufferStateCollection Class
+    /// <summary>
+    /// A collection of CRCLCommandsBufferState objects.
+    /// </summary>
+    /// <exclude />
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
+    [CollectionDataContract(Name = "ListOfCRCLCommandsBufferState", Namespace = CRCL.Namespaces.CRCL, ItemName = "CRCLCommandsBufferState")]
+    #if !NET_STANDARD
+    public partial class CRCLCommandsBufferStateCollection : List<CRCLCommandsBufferState>, ICloneable
+    #else
+    public partial class CRCLCommandsBufferStateCollection : List<CRCLCommandsBufferState>
+    #endif
+    {
+        #region Constructors
+        /// <summary>
+        /// Initializes the collection with default values.
+        /// </summary>
+        public CRCLCommandsBufferStateCollection() {}
+
+        /// <summary>
+        /// Initializes the collection with an initial capacity.
+        /// </summary>
+        public CRCLCommandsBufferStateCollection(int capacity) : base(capacity) {}
+
+        /// <summary>
+        /// Initializes the collection with another collection.
+        /// </summary>
+        public CRCLCommandsBufferStateCollection(IEnumerable<CRCLCommandsBufferState> collection) : base(collection) {}
+        #endregion
+
+        #region Static Operators
+        /// <summary>
+        /// Converts an array to a collection.
+        /// </summary>
+        public static implicit operator CRCLCommandsBufferStateCollection(CRCLCommandsBufferState[] values)
+        {
+            if (values != null)
+            {
+                return new CRCLCommandsBufferStateCollection(values);
+            }
+
+            return new CRCLCommandsBufferStateCollection();
+        }
+
+        /// <summary>
+        /// Converts a collection to an array.
+        /// </summary>
+        public static explicit operator CRCLCommandsBufferState[](CRCLCommandsBufferStateCollection values)
+        {
+            if (values != null)
+            {
+                return values.ToArray();
+            }
+
+            return null;
+        }
+        #endregion
+
+        #if !NET_STANDARD
+        #region ICloneable Methods
+        /// <summary>
+        /// Creates a deep copy of the collection.
+        /// </summary>
+        public object Clone()
+        {
+            return (CRCLCommandsBufferStateCollection)this.MemberwiseClone();
+        }
+        #endregion
+        #endif
+
+        /// <summary cref="Object.MemberwiseClone" />
+        public new object MemberwiseClone()
+        {
+            CRCLCommandsBufferStateCollection clone = new CRCLCommandsBufferStateCollection(this.Count);
+
+            for (int ii = 0; ii < this.Count; ii++)
+            {
+                clone.Add((CRCLCommandsBufferState)Utils.Clone(this[ii]));
             }
 
             return clone;

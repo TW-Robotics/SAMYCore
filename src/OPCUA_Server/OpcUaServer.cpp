@@ -1,10 +1,9 @@
-#include <OpcUaServer.h>
-
 #include <open62541/types.h>
 
-#include "helper.hpp"
+#include <OpcUaServer.h>
+#include <helper.hpp>
 #include <utility>
-#include "logging.h"
+#include <logging.h>
 #include <iostream>
 
 namespace SAMY {
@@ -27,15 +26,13 @@ namespace OPCUA {
             throw std::runtime_error("Cannot create server config");
         }
 
-        if (SAMY::OPCUA::initServerConfig(
+        if (initServerConfig(
                 loggerUaServer,
                 serverConfig,
                 parsedServerConfig.appUri,
                 parsedServerConfig.appName,
-                (UA_UInt16) parsedServerConfig.serverPort,
-                parsedServerConfig.encryption,
-                parsedServerConfig.anonymous,
-                parsedServerConfig.certificatesPath) != UA_STATUSCODE_GOOD)
+                (UA_UInt16) parsedServerConfig.serverPort
+		) != UA_STATUSCODE_GOOD)
         {
             throw std::runtime_error("Cannot initialize server config");
         }
@@ -68,7 +65,7 @@ namespace OPCUA {
 
     OpcUaServer::~OpcUaServer()
     {
-        std::lock_guard<std::recursive_mutex> lc(SAMY::OPCUA::serverMutex);
+        std::lock_guard<std::recursive_mutex> lc(serverMutex);
         if (server){
             UA_Server_run_shutdown(server);
             UA_Server_delete(server);
@@ -84,13 +81,13 @@ namespace OPCUA {
 
     void OpcUaServer::iterate(bool waitInternal)
     {
-        std::lock_guard<std::recursive_mutex> lc(SAMY::OPCUA::serverMutex);
+        std::lock_guard<std::recursive_mutex> lc(serverMutex);
         UA_Server_run_iterate(server, waitInternal);
     }
 
     LockedServer OpcUaServer::getLocked()
     {
-        return LockedServer{server, SAMY::OPCUA::serverMutex};
+        return LockedServer{server, serverMutex};
     }
 
     UA_StatusCode OpcUaServer::init( ) {

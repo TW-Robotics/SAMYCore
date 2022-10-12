@@ -8,3 +8,8 @@ sudo docker run       --mount type=bind,source=$(pwd),target=/model/src       --
 In order to directly update the model and make it available in the open62541 server/clients, just use sudo ./CompileModel.sh
 
 
+
+If you use unions, an additional adaption is required, since the OPC UA nodeset compiler does not process correctly unions and the generated files are incomplete
+   1.) Open the generated file in: all_models/Published/<YOUR_MODEL_NAME>/<YOUR_MODEL_NAME.Types.bsd>
+   2.) Look for the types that are an union
+   3.)

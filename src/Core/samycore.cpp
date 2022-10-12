@@ -14,45 +14,128 @@ namespace SAMY {
         }
     }
 
-    SAMYCore::SAMYCore( const std::string& serverConfigFilePath )
-    {
-        logger = SAMY::Logging::LoggerFactory::createLogger("SAMYCore",
-                                                           config.appLoggingLevel,
-                                                           config.logsPath);
+    void SAMYCore::generateSkills( const std::vector< SAMYSkillConfig >& skillsConfigs ){
+        for( auto& skillConfig : skillsConfigs ){
+            skills.emplace_back( SAMYSkill{ skillConfig, logger } );
+        }
+        logger->info("Skills succesfully generated");
+    }
 
+    void SAMYCore::fillConfig( const std::shared_ptr<spdlog::logger>& logger, const std::string& serverConfigFilePath )
+    {
         Parsers::SAMYCoreConfigParser parserConfig{logger};
         parserConfig.parseSAMYCoreConfig( serverConfigFilePath, config );
 
         Parsers::DataBaseParser parserDataBase{logger};
         parserDataBase.parseDataBase( config.pathToDataBaseConfig, dataBaseTypes );
 
-        Parsers::SkillsParser skillsParser{ logger };
-        skillsParser.parseSkills( config.pathToSkillsConfig, skills );
+        Parsers::SkillsParser skillsParser{ config.pathToSkillsConfig, logger };
+        skillsParser.parseSkills( );
+
+        generateSkills( skillsParser.getSkillConfigs() );
+
+        auto skillsConfigs = skillsParser.getSkillConfigs();
 
         Parsers::RobotsParser robotsParser{ logger };
         robotsParser.parseRobots( config.pathToRobotsConfig, skills, robots );
 
         Parsers::InformationSourcesParser infoParser{ logger };
         infoParser.parseInformationSources( config.pathToInformationSourcesConfig, informationSources );
+    }
 
-         std::stringstream msg;
-         msg <<"SKILLS SIZE: "<< skills.size() << "  ROBOTS SIZE: "<<robots.size()<<"   INFO SOURCES SIZE: "
-            << informationSources.size() <<  "  ELEMENTS IN DATABASE: " << dataBaseTypes.size() << std::endl << std::endl;
-         logger->info(msg.str());
+    void SAMYCore::generateThreadsPool(){
+        threadsPool.reset( robots.size() );
+    }
 
-         server = std::make_shared<SAMY::OPCUA::OpcUaServer>( config, logger );
+    void SAMYCore::setThreadsPoolInRobots(){
+        for( auto& robot : robots )
+            robot.setThreadsPool( &threadsPool );
+    }
+
+    void createRegistry(){
+        set_typesids_in_registry_builtin();
+        Reflection::set_typesids_in_registry_crcl();
+        Reflection::set_typesids_in_registry_di();
+        Reflection::set_typesids_in_registry_fortiss_di();
+        Reflection::set_typesids_in_registry_robotics();
+
+        //AUTOMATE THIS WITH SOMETHING SIMILAR TO THE FOLLOWING (AS IT IS DOES NOT WORK)
+        /*
+        UA_DataTypeArray typesArr = server.get()->getServerConfig()->customDataTypes;
+
+        while( typesArr.types ){
+
+            for(int i = 0; i < typesArr.typesSize; ++i ){
+                const UA_DataType dt = typesArr.types[i];
+                std::string name{ dt.typeName };
+                Reflection::NodesIdsRegistry::addNodeId( name, dt.typeId );
+            }
+            typesArr = typesArr.next;
+        }
+*/
+    }
+
+    void SAMYCore::configure( const std::string &serverConfigFilePath )
+    {
+        if(configured){
+            std::stringstream msg;
+            msg << "THERE WAS AN ATTEMPT OF RECONFIGURING THE SAMYCORE DURING RUNTIME. SAMYCORE IS A SINGLETON AND THE CONFIGURE METHOD SHOULD BE USED ONLY ONCE. REVIEW THE CODE." << std::endl << std::endl;
+            msg << "SAMYCORE WILL THROW NOW DUE TO THE PREVIOUS ERROR"  << std::endl << std::endl;
+            logger->error(msg.str());
+            throw;
+        }
+
+        logger = SAMY::Logging::LoggerFactory::createLogger("SAMYCore",
+                                                           config.appLoggingLevel,
+                                                           config.logsPath);
+
+        fillConfig( logger, serverConfigFilePath );
+
+        std::stringstream msg;
+        msg <<"SKILLS SIZE: "<< skills.size() << "  ROBOTS SIZE: "<<robots.size()<<"   INFO SOURCES SIZE: "
+            << informationSources.size() <<  "  ELEMENTS IN DATABASE: " << dataBaseTypes.size();
+        logger->info(msg.str());
+
+
+        generateThreadsPool();
+
+        setThreadsPoolInRobots();
+
+        server = std::make_unique<OPCUA::OpcUaServer>( config, logger );
 
         LockedServer ls = server->getLocked();
 
-        SAMY::SAMYCoreInterfaceGenerator generator{logger};
-        generator.generateSAMYCoreInterface( ls.get(), &robots, &skills, &informationSources, &dataBaseTypes );
+        SAMYCoreInterfaceGenerator generator{logger};
+
+        UA_StatusCode retval = generator.addFixedInformationModels( ls.get(), robots );
+
+        if( retval != UA_STATUSCODE_GOOD )
+            throw;
+
+
+        createRegistry();
+        logger->info("The following types can be used as parameters of the skills. The used naming in the Skill config must match");
+        const auto& availableTypes = Reflection::NodesIdsRegistry::getNodesIds();
+        for( const auto& elem : availableTypes )
+            logger->info( "Available skill parameter type:  {} ", elem.first );
+
+
+        generator.generateSAMYCoreInterface( ls.get(), robots, skills, informationSources, dataBaseTypes );
 
         systemStatusNodesAndNames = generator.getSystemStatusNodesAndNames();
 
-         std::stringstream msg2;
+        std::stringstream msg2;
         msg2 <<"NUMBER OF RELEVANT NODES FOR DESCRIBING SYSTEM STATUS: " << systemStatusNodesAndNames.size() << std::endl << std::endl;
         logger->info(msg2.str());
 
+        retval |= initializeRobots();
+
+        if( retval != UA_STATUSCODE_GOOD )
+            return;
+
+        configured = true;
+
         server->init();
     }
+
 }

@@ -1,5 +1,5 @@
 /* Generated from CRCL.Types.bsd with script /usr/local/share/open62541/tools/generate_datatypes.py
- * on host jbg by user jbg at 2022-03-04 05:03:35 */
+ * on host jbg by user jbg at 2022-10-11 03:44:19 */
 
 #ifndef TYPES_CRCL_GENERATED_HANDLING_H_
 #define TYPES_CRCL_GENERATED_HANDLING_H_
@@ -15,66 +15,35 @@ _UA_BEGIN_DECLS
 #endif
 
 
-/* MessageParametersSetDataType */
+/* GetStatusParamsSetDataType */
 static UA_INLINE void
-UA_MessageParametersSetDataType_init(UA_MessageParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_MessageParametersSetDataType));
+UA_GetStatusParamsSetDataType_init(UA_GetStatusParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_GetStatusParamsSetDataType));
 }
 
-static UA_INLINE UA_MessageParametersSetDataType *
-UA_MessageParametersSetDataType_new(void) {
-    return (UA_MessageParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_MESSAGEPARAMETERSSETDATATYPE]);
+static UA_INLINE UA_GetStatusParamsSetDataType *
+UA_GetStatusParamsSetDataType_new(void) {
+    return (UA_GetStatusParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE UA_StatusCode
-UA_MessageParametersSetDataType_copy(const UA_MessageParametersSetDataType *src, UA_MessageParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_MESSAGEPARAMETERSSETDATATYPE]);
+UA_GetStatusParamsSetDataType_copy(const UA_GetStatusParamsSetDataType *src, UA_GetStatusParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSPARAMSSETDATATYPE]);
 }
 
 UA_DEPRECATED static UA_INLINE void
-UA_MessageParametersSetDataType_deleteMembers(UA_MessageParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MESSAGEPARAMETERSSETDATATYPE]);
+UA_GetStatusParamsSetDataType_deleteMembers(UA_GetStatusParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_MessageParametersSetDataType_clear(UA_MessageParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MESSAGEPARAMETERSSETDATATYPE]);
+UA_GetStatusParamsSetDataType_clear(UA_GetStatusParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_MessageParametersSetDataType_delete(UA_MessageParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MESSAGEPARAMETERSSETDATATYPE]);
-}
-
-/* CRCL_PositiveDecimalDataType */
-static UA_INLINE void
-UA_CRCL_PositiveDecimalDataType_init(UA_CRCL_PositiveDecimalDataType *p) {
-    memset(p, 0, sizeof(UA_CRCL_PositiveDecimalDataType));
-}
-
-static UA_INLINE UA_CRCL_PositiveDecimalDataType *
-UA_CRCL_PositiveDecimalDataType_new(void) {
-    return (UA_CRCL_PositiveDecimalDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_POSITIVEDECIMALDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_CRCL_PositiveDecimalDataType_copy(const UA_CRCL_PositiveDecimalDataType *src, UA_CRCL_PositiveDecimalDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_POSITIVEDECIMALDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_CRCL_PositiveDecimalDataType_deleteMembers(UA_CRCL_PositiveDecimalDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_POSITIVEDECIMALDATATYPE]);
-}
-
-static UA_INLINE void
-UA_CRCL_PositiveDecimalDataType_clear(UA_CRCL_PositiveDecimalDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_POSITIVEDECIMALDATATYPE]);
-}
-
-static UA_INLINE void
-UA_CRCL_PositiveDecimalDataType_delete(UA_CRCL_PositiveDecimalDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_POSITIVEDECIMALDATATYPE]);
+UA_GetStatusParamsSetDataType_delete(UA_GetStatusParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSPARAMSSETDATATYPE]);
 }
 
 /* CRCL_PointDataType */
@@ -108,6 +77,68 @@ UA_CRCL_PointDataType_delete(UA_CRCL_PointDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_POINTDATATYPE]);
 }
 
+/* ConfigureStatusReportParamsSetDataType */
+static UA_INLINE void
+UA_ConfigureStatusReportParamsSetDataType_init(UA_ConfigureStatusReportParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_ConfigureStatusReportParamsSetDataType));
+}
+
+static UA_INLINE UA_ConfigureStatusReportParamsSetDataType *
+UA_ConfigureStatusReportParamsSetDataType_new(void) {
+    return (UA_ConfigureStatusReportParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_ConfigureStatusReportParamsSetDataType_copy(const UA_ConfigureStatusReportParamsSetDataType *src, UA_ConfigureStatusReportParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_ConfigureStatusReportParamsSetDataType_deleteMembers(UA_ConfigureStatusReportParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_ConfigureStatusReportParamsSetDataType_clear(UA_ConfigureStatusReportParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_ConfigureStatusReportParamsSetDataType_delete(UA_ConfigureStatusReportParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMSSETDATATYPE]);
+}
+
+/* SetMotionCoordinationParamsSetDataType */
+static UA_INLINE void
+UA_SetMotionCoordinationParamsSetDataType_init(UA_SetMotionCoordinationParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_SetMotionCoordinationParamsSetDataType));
+}
+
+static UA_INLINE UA_SetMotionCoordinationParamsSetDataType *
+UA_SetMotionCoordinationParamsSetDataType_new(void) {
+    return (UA_SetMotionCoordinationParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_SetMotionCoordinationParamsSetDataType_copy(const UA_SetMotionCoordinationParamsSetDataType *src, UA_SetMotionCoordinationParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_SetMotionCoordinationParamsSetDataType_deleteMembers(UA_SetMotionCoordinationParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetMotionCoordinationParamsSetDataType_clear(UA_SetMotionCoordinationParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetMotionCoordinationParamsSetDataType_delete(UA_SetMotionCoordinationParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMSSETDATATYPE]);
+}
+
 /* CRCL_PoseToleranceDataType */
 static UA_INLINE void
 UA_CRCL_PoseToleranceDataType_init(UA_CRCL_PoseToleranceDataType *p) {
@@ -139,128 +170,35 @@ UA_CRCL_PoseToleranceDataType_delete(UA_CRCL_PoseToleranceDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_POSETOLERANCEDATATYPE]);
 }
 
-/* SetMotionCoordinationParametersSetDataType */
+/* EnableRobotParameterStatusParamsSetDataType */
 static UA_INLINE void
-UA_SetMotionCoordinationParametersSetDataType_init(UA_SetMotionCoordinationParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_SetMotionCoordinationParametersSetDataType));
+UA_EnableRobotParameterStatusParamsSetDataType_init(UA_EnableRobotParameterStatusParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_EnableRobotParameterStatusParamsSetDataType));
 }
 
-static UA_INLINE UA_SetMotionCoordinationParametersSetDataType *
-UA_SetMotionCoordinationParametersSetDataType_new(void) {
-    return (UA_SetMotionCoordinationParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMETERSSETDATATYPE]);
+static UA_INLINE UA_EnableRobotParameterStatusParamsSetDataType *
+UA_EnableRobotParameterStatusParamsSetDataType_new(void) {
+    return (UA_EnableRobotParameterStatusParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE UA_StatusCode
-UA_SetMotionCoordinationParametersSetDataType_copy(const UA_SetMotionCoordinationParametersSetDataType *src, UA_SetMotionCoordinationParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMETERSSETDATATYPE]);
+UA_EnableRobotParameterStatusParamsSetDataType_copy(const UA_EnableRobotParameterStatusParamsSetDataType *src, UA_EnableRobotParameterStatusParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMSSETDATATYPE]);
 }
 
 UA_DEPRECATED static UA_INLINE void
-UA_SetMotionCoordinationParametersSetDataType_deleteMembers(UA_SetMotionCoordinationParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMETERSSETDATATYPE]);
+UA_EnableRobotParameterStatusParamsSetDataType_deleteMembers(UA_EnableRobotParameterStatusParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_SetMotionCoordinationParametersSetDataType_clear(UA_SetMotionCoordinationParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMETERSSETDATATYPE]);
+UA_EnableRobotParameterStatusParamsSetDataType_clear(UA_EnableRobotParameterStatusParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_SetMotionCoordinationParametersSetDataType_delete(UA_SetMotionCoordinationParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETMOTIONCOORDINATIONPARAMETERSSETDATATYPE]);
-}
-
-/* DisableGripperParametersSetDataType */
-static UA_INLINE void
-UA_DisableGripperParametersSetDataType_init(UA_DisableGripperParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_DisableGripperParametersSetDataType));
-}
-
-static UA_INLINE UA_DisableGripperParametersSetDataType *
-UA_DisableGripperParametersSetDataType_new(void) {
-    return (UA_DisableGripperParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_DisableGripperParametersSetDataType_copy(const UA_DisableGripperParametersSetDataType *src, UA_DisableGripperParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_DisableGripperParametersSetDataType_deleteMembers(UA_DisableGripperParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_DisableGripperParametersSetDataType_clear(UA_DisableGripperParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_DisableGripperParametersSetDataType_delete(UA_DisableGripperParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERPARAMETERSSETDATATYPE]);
-}
-
-/* CRCLCommandParametersSetDataType */
-static UA_INLINE void
-UA_CRCLCommandParametersSetDataType_init(UA_CRCLCommandParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_CRCLCommandParametersSetDataType));
-}
-
-static UA_INLINE UA_CRCLCommandParametersSetDataType *
-UA_CRCLCommandParametersSetDataType_new(void) {
-    return (UA_CRCLCommandParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_CRCLCommandParametersSetDataType_copy(const UA_CRCLCommandParametersSetDataType *src, UA_CRCLCommandParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_CRCLCommandParametersSetDataType_deleteMembers(UA_CRCLCommandParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_CRCLCommandParametersSetDataType_clear(UA_CRCLCommandParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_CRCLCommandParametersSetDataType_delete(UA_CRCLCommandParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDPARAMETERSSETDATATYPE]);
-}
-
-/* DisableRobotParameterStatusParametersSetDataType */
-static UA_INLINE void
-UA_DisableRobotParameterStatusParametersSetDataType_init(UA_DisableRobotParameterStatusParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_DisableRobotParameterStatusParametersSetDataType));
-}
-
-static UA_INLINE UA_DisableRobotParameterStatusParametersSetDataType *
-UA_DisableRobotParameterStatusParametersSetDataType_new(void) {
-    return (UA_DisableRobotParameterStatusParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_DisableRobotParameterStatusParametersSetDataType_copy(const UA_DisableRobotParameterStatusParametersSetDataType *src, UA_DisableRobotParameterStatusParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_DisableRobotParameterStatusParametersSetDataType_deleteMembers(UA_DisableRobotParameterStatusParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_DisableRobotParameterStatusParametersSetDataType_clear(UA_DisableRobotParameterStatusParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_DisableRobotParameterStatusParametersSetDataType_delete(UA_DisableRobotParameterStatusParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE]);
+UA_EnableRobotParameterStatusParamsSetDataType_delete(UA_EnableRobotParameterStatusParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMSSETDATATYPE]);
 }
 
 /* CRCL_TransAccelAbsoluteDataType */
@@ -292,37 +230,6 @@ UA_CRCL_TransAccelAbsoluteDataType_clear(UA_CRCL_TransAccelAbsoluteDataType *p) 
 static UA_INLINE void
 UA_CRCL_TransAccelAbsoluteDataType_delete(UA_CRCL_TransAccelAbsoluteDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TRANSACCELABSOLUTEDATATYPE]);
-}
-
-/* OpenToolChangerParametersSetDataType */
-static UA_INLINE void
-UA_OpenToolChangerParametersSetDataType_init(UA_OpenToolChangerParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_OpenToolChangerParametersSetDataType));
-}
-
-static UA_INLINE UA_OpenToolChangerParametersSetDataType *
-UA_OpenToolChangerParametersSetDataType_new(void) {
-    return (UA_OpenToolChangerParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_OPENTOOLCHANGERPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_OpenToolChangerParametersSetDataType_copy(const UA_OpenToolChangerParametersSetDataType *src, UA_OpenToolChangerParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_OPENTOOLCHANGERPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_OpenToolChangerParametersSetDataType_deleteMembers(UA_OpenToolChangerParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_OPENTOOLCHANGERPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_OpenToolChangerParametersSetDataType_clear(UA_OpenToolChangerParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_OPENTOOLCHANGERPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_OpenToolChangerParametersSetDataType_delete(UA_OpenToolChangerParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_OPENTOOLCHANGERPARAMETERSSETDATATYPE]);
 }
 
 /* CRCL_FractionDataType */
@@ -387,6 +294,68 @@ UA_CRCL_JointSpeedAccelDataType_delete(UA_CRCL_JointSpeedAccelDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTSPEEDACCELDATATYPE]);
 }
 
+/* SetEndPoseToleranceParamsSetDataType */
+static UA_INLINE void
+UA_SetEndPoseToleranceParamsSetDataType_init(UA_SetEndPoseToleranceParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_SetEndPoseToleranceParamsSetDataType));
+}
+
+static UA_INLINE UA_SetEndPoseToleranceParamsSetDataType *
+UA_SetEndPoseToleranceParamsSetDataType_new(void) {
+    return (UA_SetEndPoseToleranceParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_SetEndPoseToleranceParamsSetDataType_copy(const UA_SetEndPoseToleranceParamsSetDataType *src, UA_SetEndPoseToleranceParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_SetEndPoseToleranceParamsSetDataType_deleteMembers(UA_SetEndPoseToleranceParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetEndPoseToleranceParamsSetDataType_clear(UA_SetEndPoseToleranceParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetEndPoseToleranceParamsSetDataType_delete(UA_SetEndPoseToleranceParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMSSETDATATYPE]);
+}
+
+/* MessageParamsSetDataType */
+static UA_INLINE void
+UA_MessageParamsSetDataType_init(UA_MessageParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_MessageParamsSetDataType));
+}
+
+static UA_INLINE UA_MessageParamsSetDataType *
+UA_MessageParamsSetDataType_new(void) {
+    return (UA_MessageParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_MESSAGEPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_MessageParamsSetDataType_copy(const UA_MessageParamsSetDataType *src, UA_MessageParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_MESSAGEPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_MessageParamsSetDataType_deleteMembers(UA_MessageParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MESSAGEPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_MessageParamsSetDataType_clear(UA_MessageParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MESSAGEPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_MessageParamsSetDataType_delete(UA_MessageParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MESSAGEPARAMSSETDATATYPE]);
+}
+
 /* CRCL_JointLimitDataType */
 static UA_INLINE void
 UA_CRCL_JointLimitDataType_init(UA_CRCL_JointLimitDataType *p) {
@@ -418,66 +387,66 @@ UA_CRCL_JointLimitDataType_delete(UA_CRCL_JointLimitDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTLIMITDATATYPE]);
 }
 
-/* EnableRobotParameterStatusParametersSetDataType */
+/* DisableGripperParamsSetDataType */
 static UA_INLINE void
-UA_EnableRobotParameterStatusParametersSetDataType_init(UA_EnableRobotParameterStatusParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_EnableRobotParameterStatusParametersSetDataType));
+UA_DisableGripperParamsSetDataType_init(UA_DisableGripperParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_DisableGripperParamsSetDataType));
 }
 
-static UA_INLINE UA_EnableRobotParameterStatusParametersSetDataType *
-UA_EnableRobotParameterStatusParametersSetDataType_new(void) {
-    return (UA_EnableRobotParameterStatusParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE]);
+static UA_INLINE UA_DisableGripperParamsSetDataType *
+UA_DisableGripperParamsSetDataType_new(void) {
+    return (UA_DisableGripperParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE UA_StatusCode
-UA_EnableRobotParameterStatusParametersSetDataType_copy(const UA_EnableRobotParameterStatusParametersSetDataType *src, UA_EnableRobotParameterStatusParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE]);
+UA_DisableGripperParamsSetDataType_copy(const UA_DisableGripperParamsSetDataType *src, UA_DisableGripperParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERPARAMSSETDATATYPE]);
 }
 
 UA_DEPRECATED static UA_INLINE void
-UA_EnableRobotParameterStatusParametersSetDataType_deleteMembers(UA_EnableRobotParameterStatusParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE]);
+UA_DisableGripperParamsSetDataType_deleteMembers(UA_DisableGripperParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_EnableRobotParameterStatusParametersSetDataType_clear(UA_EnableRobotParameterStatusParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE]);
+UA_DisableGripperParamsSetDataType_clear(UA_DisableGripperParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_EnableRobotParameterStatusParametersSetDataType_delete(UA_EnableRobotParameterStatusParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSPARAMETERSSETDATATYPE]);
+UA_DisableGripperParamsSetDataType_delete(UA_DisableGripperParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEGRIPPERPARAMSSETDATATYPE]);
 }
 
-/* ConfigureStatusReportParametersSetDataType */
+/* DisableSensorParamsSetDataType */
 static UA_INLINE void
-UA_ConfigureStatusReportParametersSetDataType_init(UA_ConfigureStatusReportParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_ConfigureStatusReportParametersSetDataType));
+UA_DisableSensorParamsSetDataType_init(UA_DisableSensorParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_DisableSensorParamsSetDataType));
 }
 
-static UA_INLINE UA_ConfigureStatusReportParametersSetDataType *
-UA_ConfigureStatusReportParametersSetDataType_new(void) {
-    return (UA_ConfigureStatusReportParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMETERSSETDATATYPE]);
+static UA_INLINE UA_DisableSensorParamsSetDataType *
+UA_DisableSensorParamsSetDataType_new(void) {
+    return (UA_DisableSensorParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLESENSORPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE UA_StatusCode
-UA_ConfigureStatusReportParametersSetDataType_copy(const UA_ConfigureStatusReportParametersSetDataType *src, UA_ConfigureStatusReportParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMETERSSETDATATYPE]);
+UA_DisableSensorParamsSetDataType_copy(const UA_DisableSensorParamsSetDataType *src, UA_DisableSensorParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLESENSORPARAMSSETDATATYPE]);
 }
 
 UA_DEPRECATED static UA_INLINE void
-UA_ConfigureStatusReportParametersSetDataType_deleteMembers(UA_ConfigureStatusReportParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMETERSSETDATATYPE]);
+UA_DisableSensorParamsSetDataType_deleteMembers(UA_DisableSensorParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLESENSORPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_ConfigureStatusReportParametersSetDataType_clear(UA_ConfigureStatusReportParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMETERSSETDATATYPE]);
+UA_DisableSensorParamsSetDataType_clear(UA_DisableSensorParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLESENSORPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_ConfigureStatusReportParametersSetDataType_delete(UA_ConfigureStatusReportParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGURESTATUSREPORTPARAMETERSSETDATATYPE]);
+UA_DisableSensorParamsSetDataType_delete(UA_DisableSensorParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLESENSORPARAMSSETDATATYPE]);
 }
 
 /* CRCL_DataThingDataType */
@@ -540,6 +509,68 @@ UA_CRCL_TorqueUnitEnumDataType_clear(UA_CRCL_TorqueUnitEnumDataType *p) {
 static UA_INLINE void
 UA_CRCL_TorqueUnitEnumDataType_delete(UA_CRCL_TorqueUnitEnumDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TORQUEUNITENUMDATATYPE]);
+}
+
+/* InitCanonParamsSetDataType */
+static UA_INLINE void
+UA_InitCanonParamsSetDataType_init(UA_InitCanonParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_InitCanonParamsSetDataType));
+}
+
+static UA_INLINE UA_InitCanonParamsSetDataType *
+UA_InitCanonParamsSetDataType_new(void) {
+    return (UA_InitCanonParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_InitCanonParamsSetDataType_copy(const UA_InitCanonParamsSetDataType *src, UA_InitCanonParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_InitCanonParamsSetDataType_deleteMembers(UA_InitCanonParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_InitCanonParamsSetDataType_clear(UA_InitCanonParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_InitCanonParamsSetDataType_delete(UA_InitCanonParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONPARAMSSETDATATYPE]);
+}
+
+/* DwellParamsSetDataType */
+static UA_INLINE void
+UA_DwellParamsSetDataType_init(UA_DwellParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_DwellParamsSetDataType));
+}
+
+static UA_INLINE UA_DwellParamsSetDataType *
+UA_DwellParamsSetDataType_new(void) {
+    return (UA_DwellParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_DWELLPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_DwellParamsSetDataType_copy(const UA_DwellParamsSetDataType *src, UA_DwellParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_DWELLPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_DwellParamsSetDataType_deleteMembers(UA_DwellParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DWELLPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_DwellParamsSetDataType_clear(UA_DwellParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DWELLPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_DwellParamsSetDataType_delete(UA_DwellParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DWELLPARAMSSETDATATYPE]);
 }
 
 /* CRCL_AngleUnitEnumDataType */
@@ -635,35 +666,66 @@ UA_CRCL_TransSpeedAbsoluteDataType_delete(UA_CRCL_TransSpeedAbsoluteDataType *p)
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TRANSSPEEDABSOLUTEDATATYPE]);
 }
 
-/* CloseToolChangerParametersSetDataType */
+/* OpenToolChangerParamsSetDataType */
 static UA_INLINE void
-UA_CloseToolChangerParametersSetDataType_init(UA_CloseToolChangerParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_CloseToolChangerParametersSetDataType));
+UA_OpenToolChangerParamsSetDataType_init(UA_OpenToolChangerParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_OpenToolChangerParamsSetDataType));
 }
 
-static UA_INLINE UA_CloseToolChangerParametersSetDataType *
-UA_CloseToolChangerParametersSetDataType_new(void) {
-    return (UA_CloseToolChangerParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMETERSSETDATATYPE]);
+static UA_INLINE UA_OpenToolChangerParamsSetDataType *
+UA_OpenToolChangerParamsSetDataType_new(void) {
+    return (UA_OpenToolChangerParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_OPENTOOLCHANGERPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE UA_StatusCode
-UA_CloseToolChangerParametersSetDataType_copy(const UA_CloseToolChangerParametersSetDataType *src, UA_CloseToolChangerParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMETERSSETDATATYPE]);
+UA_OpenToolChangerParamsSetDataType_copy(const UA_OpenToolChangerParamsSetDataType *src, UA_OpenToolChangerParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_OPENTOOLCHANGERPARAMSSETDATATYPE]);
 }
 
 UA_DEPRECATED static UA_INLINE void
-UA_CloseToolChangerParametersSetDataType_deleteMembers(UA_CloseToolChangerParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMETERSSETDATATYPE]);
+UA_OpenToolChangerParamsSetDataType_deleteMembers(UA_OpenToolChangerParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_OPENTOOLCHANGERPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_CloseToolChangerParametersSetDataType_clear(UA_CloseToolChangerParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMETERSSETDATATYPE]);
+UA_OpenToolChangerParamsSetDataType_clear(UA_OpenToolChangerParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_OPENTOOLCHANGERPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_CloseToolChangerParametersSetDataType_delete(UA_CloseToolChangerParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMETERSSETDATATYPE]);
+UA_OpenToolChangerParamsSetDataType_delete(UA_OpenToolChangerParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_OPENTOOLCHANGERPARAMSSETDATATYPE]);
+}
+
+/* SetAngleUnitsParamsSetDataType */
+static UA_INLINE void
+UA_SetAngleUnitsParamsSetDataType_init(UA_SetAngleUnitsParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_SetAngleUnitsParamsSetDataType));
+}
+
+static UA_INLINE UA_SetAngleUnitsParamsSetDataType *
+UA_SetAngleUnitsParamsSetDataType_new(void) {
+    return (UA_SetAngleUnitsParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_SetAngleUnitsParamsSetDataType_copy(const UA_SetAngleUnitsParamsSetDataType *src, UA_SetAngleUnitsParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_SetAngleUnitsParamsSetDataType_deleteMembers(UA_SetAngleUnitsParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetAngleUnitsParamsSetDataType_clear(UA_SetAngleUnitsParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetAngleUnitsParamsSetDataType_delete(UA_SetAngleUnitsParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSPARAMSSETDATATYPE]);
 }
 
 /* CRCL_ParameterSettingDataType */
@@ -728,35 +790,35 @@ UA_CRCL_ConfigureJointReportDataType_delete(UA_CRCL_ConfigureJointReportDataType
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_CONFIGUREJOINTREPORTDATATYPE]);
 }
 
-/* SetEndeffectorParametersParametersSetDataType */
+/* CRCLCommandParamsSetDataType */
 static UA_INLINE void
-UA_SetEndeffectorParametersParametersSetDataType_init(UA_SetEndeffectorParametersParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_SetEndeffectorParametersParametersSetDataType));
+UA_CRCLCommandParamsSetDataType_init(UA_CRCLCommandParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_CRCLCommandParamsSetDataType));
 }
 
-static UA_INLINE UA_SetEndeffectorParametersParametersSetDataType *
-UA_SetEndeffectorParametersParametersSetDataType_new(void) {
-    return (UA_SetEndeffectorParametersParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSPARAMETERSSETDATATYPE]);
+static UA_INLINE UA_CRCLCommandParamsSetDataType *
+UA_CRCLCommandParamsSetDataType_new(void) {
+    return (UA_CRCLCommandParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE UA_StatusCode
-UA_SetEndeffectorParametersParametersSetDataType_copy(const UA_SetEndeffectorParametersParametersSetDataType *src, UA_SetEndeffectorParametersParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSPARAMETERSSETDATATYPE]);
+UA_CRCLCommandParamsSetDataType_copy(const UA_CRCLCommandParamsSetDataType *src, UA_CRCLCommandParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDPARAMSSETDATATYPE]);
 }
 
 UA_DEPRECATED static UA_INLINE void
-UA_SetEndeffectorParametersParametersSetDataType_deleteMembers(UA_SetEndeffectorParametersParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSPARAMETERSSETDATATYPE]);
+UA_CRCLCommandParamsSetDataType_deleteMembers(UA_CRCLCommandParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_SetEndeffectorParametersParametersSetDataType_clear(UA_SetEndeffectorParametersParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSPARAMETERSSETDATATYPE]);
+UA_CRCLCommandParamsSetDataType_clear(UA_CRCLCommandParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_SetEndeffectorParametersParametersSetDataType_delete(UA_SetEndeffectorParametersParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSPARAMETERSSETDATATYPE]);
+UA_CRCLCommandParamsSetDataType_delete(UA_CRCLCommandParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDPARAMSSETDATATYPE]);
 }
 
 /* CRCL_JointPositionToleranceSettingDataType */
@@ -821,37 +883,6 @@ UA_CRCL_RotAccelAbsoluteDataType_delete(UA_CRCL_RotAccelAbsoluteDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ROTACCELABSOLUTEDATATYPE]);
 }
 
-/* SetRobotParametersParametersSetDataType */
-static UA_INLINE void
-UA_SetRobotParametersParametersSetDataType_init(UA_SetRobotParametersParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_SetRobotParametersParametersSetDataType));
-}
-
-static UA_INLINE UA_SetRobotParametersParametersSetDataType *
-UA_SetRobotParametersParametersSetDataType_new(void) {
-    return (UA_SetRobotParametersParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETROBOTPARAMETERSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_SetRobotParametersParametersSetDataType_copy(const UA_SetRobotParametersParametersSetDataType *src, UA_SetRobotParametersParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROBOTPARAMETERSPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_SetRobotParametersParametersSetDataType_deleteMembers(UA_SetRobotParametersParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROBOTPARAMETERSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SetRobotParametersParametersSetDataType_clear(UA_SetRobotParametersParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROBOTPARAMETERSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SetRobotParametersParametersSetDataType_delete(UA_SetRobotParametersParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROBOTPARAMETERSPARAMETERSSETDATATYPE]);
-}
-
 /* CRCL_CommandStateEnumDataType */
 static UA_INLINE void
 UA_CRCL_CommandStateEnumDataType_init(UA_CRCL_CommandStateEnumDataType *p) {
@@ -912,37 +943,6 @@ UA_CRCL_LengthUnitEnumDataType_clear(UA_CRCL_LengthUnitEnumDataType *p) {
 static UA_INLINE void
 UA_CRCL_LengthUnitEnumDataType_delete(UA_CRCL_LengthUnitEnumDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_LENGTHUNITENUMDATATYPE]);
-}
-
-/* SetAngleUnitsParametersSetDataType */
-static UA_INLINE void
-UA_SetAngleUnitsParametersSetDataType_init(UA_SetAngleUnitsParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_SetAngleUnitsParametersSetDataType));
-}
-
-static UA_INLINE UA_SetAngleUnitsParametersSetDataType *
-UA_SetAngleUnitsParametersSetDataType_new(void) {
-    return (UA_SetAngleUnitsParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_SetAngleUnitsParametersSetDataType_copy(const UA_SetAngleUnitsParametersSetDataType *src, UA_SetAngleUnitsParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_SetAngleUnitsParametersSetDataType_deleteMembers(UA_SetAngleUnitsParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SetAngleUnitsParametersSetDataType_clear(UA_SetAngleUnitsParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SetAngleUnitsParametersSetDataType_delete(UA_SetAngleUnitsParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSPARAMETERSSETDATATYPE]);
 }
 
 /* CRCL_VectorDataType */
@@ -1007,37 +1007,6 @@ UA_CRCL_GripperStatusDataType_delete(UA_CRCL_GripperStatusDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_GRIPPERSTATUSDATATYPE]);
 }
 
-/* SetLengthUnitsParametersSetDataType */
-static UA_INLINE void
-UA_SetLengthUnitsParametersSetDataType_init(UA_SetLengthUnitsParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_SetLengthUnitsParametersSetDataType));
-}
-
-static UA_INLINE UA_SetLengthUnitsParametersSetDataType *
-UA_SetLengthUnitsParametersSetDataType_new(void) {
-    return (UA_SetLengthUnitsParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_SetLengthUnitsParametersSetDataType_copy(const UA_SetLengthUnitsParametersSetDataType *src, UA_SetLengthUnitsParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_SetLengthUnitsParametersSetDataType_deleteMembers(UA_SetLengthUnitsParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SetLengthUnitsParametersSetDataType_clear(UA_SetLengthUnitsParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SetLengthUnitsParametersSetDataType_delete(UA_SetLengthUnitsParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSPARAMETERSSETDATATYPE]);
-}
-
 /* CRCL_JointForceTorqueDataType */
 static UA_INLINE void
 UA_CRCL_JointForceTorqueDataType_init(UA_CRCL_JointForceTorqueDataType *p) {
@@ -1069,37 +1038,6 @@ UA_CRCL_JointForceTorqueDataType_delete(UA_CRCL_JointForceTorqueDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTFORCETORQUEDATATYPE]);
 }
 
-/* SetTorqueUnitsParametersSetDataType */
-static UA_INLINE void
-UA_SetTorqueUnitsParametersSetDataType_init(UA_SetTorqueUnitsParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_SetTorqueUnitsParametersSetDataType));
-}
-
-static UA_INLINE UA_SetTorqueUnitsParametersSetDataType *
-UA_SetTorqueUnitsParametersSetDataType_new(void) {
-    return (UA_SetTorqueUnitsParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_SetTorqueUnitsParametersSetDataType_copy(const UA_SetTorqueUnitsParametersSetDataType *src, UA_SetTorqueUnitsParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_SetTorqueUnitsParametersSetDataType_deleteMembers(UA_SetTorqueUnitsParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SetTorqueUnitsParametersSetDataType_clear(UA_SetTorqueUnitsParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SetTorqueUnitsParametersSetDataType_delete(UA_SetTorqueUnitsParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSPARAMETERSSETDATATYPE]);
-}
-
 /* CRCL_GuardLimitEnumDataType */
 static UA_INLINE void
 UA_CRCL_GuardLimitEnumDataType_init(UA_CRCL_GuardLimitEnumDataType *p) {
@@ -1129,6 +1067,37 @@ UA_CRCL_GuardLimitEnumDataType_clear(UA_CRCL_GuardLimitEnumDataType *p) {
 static UA_INLINE void
 UA_CRCL_GuardLimitEnumDataType_delete(UA_CRCL_GuardLimitEnumDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_GUARDLIMITENUMDATATYPE]);
+}
+
+/* DisableRobotParameterStatusParamsSetDataType */
+static UA_INLINE void
+UA_DisableRobotParameterStatusParamsSetDataType_init(UA_DisableRobotParameterStatusParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_DisableRobotParameterStatusParamsSetDataType));
+}
+
+static UA_INLINE UA_DisableRobotParameterStatusParamsSetDataType *
+UA_DisableRobotParameterStatusParamsSetDataType_new(void) {
+    return (UA_DisableRobotParameterStatusParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_DisableRobotParameterStatusParamsSetDataType_copy(const UA_DisableRobotParameterStatusParamsSetDataType *src, UA_DisableRobotParameterStatusParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_DisableRobotParameterStatusParamsSetDataType_deleteMembers(UA_DisableRobotParameterStatusParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_DisableRobotParameterStatusParamsSetDataType_clear(UA_DisableRobotParameterStatusParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_DisableRobotParameterStatusParamsSetDataType_delete(UA_DisableRobotParameterStatusParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSPARAMSSETDATATYPE]);
 }
 
 /* CRCL_RotSpeedRelativeDataType */
@@ -1193,37 +1162,6 @@ UA_CRCL_RotAccelRelativeDataType_delete(UA_CRCL_RotAccelRelativeDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ROTACCELRELATIVEDATATYPE]);
 }
 
-/* CRCL_ThreeFingerGripperStatusDataType */
-static UA_INLINE void
-UA_CRCL_ThreeFingerGripperStatusDataType_init(UA_CRCL_ThreeFingerGripperStatusDataType *p) {
-    memset(p, 0, sizeof(UA_CRCL_ThreeFingerGripperStatusDataType));
-}
-
-static UA_INLINE UA_CRCL_ThreeFingerGripperStatusDataType *
-UA_CRCL_ThreeFingerGripperStatusDataType_new(void) {
-    return (UA_CRCL_ThreeFingerGripperStatusDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_THREEFINGERGRIPPERSTATUSDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_CRCL_ThreeFingerGripperStatusDataType_copy(const UA_CRCL_ThreeFingerGripperStatusDataType *src, UA_CRCL_ThreeFingerGripperStatusDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_THREEFINGERGRIPPERSTATUSDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_CRCL_ThreeFingerGripperStatusDataType_deleteMembers(UA_CRCL_ThreeFingerGripperStatusDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_THREEFINGERGRIPPERSTATUSDATATYPE]);
-}
-
-static UA_INLINE void
-UA_CRCL_ThreeFingerGripperStatusDataType_clear(UA_CRCL_ThreeFingerGripperStatusDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_THREEFINGERGRIPPERSTATUSDATATYPE]);
-}
-
-static UA_INLINE void
-UA_CRCL_ThreeFingerGripperStatusDataType_delete(UA_CRCL_ThreeFingerGripperStatusDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_THREEFINGERGRIPPERSTATUSDATATYPE]);
-}
-
 /* CRCL_RotAccelDataType */
 static UA_INLINE void
 UA_CRCL_RotAccelDataType_init(UA_CRCL_RotAccelDataType *p) {
@@ -1255,35 +1193,66 @@ UA_CRCL_RotAccelDataType_delete(UA_CRCL_RotAccelDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ROTACCELDATATYPE]);
 }
 
-/* DisableSensorParametersSetDataType */
+/* CloseToolChangerParamsSetDataType */
 static UA_INLINE void
-UA_DisableSensorParametersSetDataType_init(UA_DisableSensorParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_DisableSensorParametersSetDataType));
+UA_CloseToolChangerParamsSetDataType_init(UA_CloseToolChangerParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_CloseToolChangerParamsSetDataType));
 }
 
-static UA_INLINE UA_DisableSensorParametersSetDataType *
-UA_DisableSensorParametersSetDataType_new(void) {
-    return (UA_DisableSensorParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLESENSORPARAMETERSSETDATATYPE]);
+static UA_INLINE UA_CloseToolChangerParamsSetDataType *
+UA_CloseToolChangerParamsSetDataType_new(void) {
+    return (UA_CloseToolChangerParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE UA_StatusCode
-UA_DisableSensorParametersSetDataType_copy(const UA_DisableSensorParametersSetDataType *src, UA_DisableSensorParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLESENSORPARAMETERSSETDATATYPE]);
+UA_CloseToolChangerParamsSetDataType_copy(const UA_CloseToolChangerParamsSetDataType *src, UA_CloseToolChangerParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMSSETDATATYPE]);
 }
 
 UA_DEPRECATED static UA_INLINE void
-UA_DisableSensorParametersSetDataType_deleteMembers(UA_DisableSensorParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLESENSORPARAMETERSSETDATATYPE]);
+UA_CloseToolChangerParamsSetDataType_deleteMembers(UA_CloseToolChangerParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_DisableSensorParametersSetDataType_clear(UA_DisableSensorParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLESENSORPARAMETERSSETDATATYPE]);
+UA_CloseToolChangerParamsSetDataType_clear(UA_CloseToolChangerParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_DisableSensorParametersSetDataType_delete(UA_DisableSensorParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLESENSORPARAMETERSSETDATATYPE]);
+UA_CloseToolChangerParamsSetDataType_delete(UA_CloseToolChangerParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERPARAMSSETDATATYPE]);
+}
+
+/* SetRobotParametersParamsSetDataType */
+static UA_INLINE void
+UA_SetRobotParametersParamsSetDataType_init(UA_SetRobotParametersParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_SetRobotParametersParamsSetDataType));
+}
+
+static UA_INLINE UA_SetRobotParametersParamsSetDataType *
+UA_SetRobotParametersParamsSetDataType_new(void) {
+    return (UA_SetRobotParametersParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETROBOTPARAMETERSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_SetRobotParametersParamsSetDataType_copy(const UA_SetRobotParametersParamsSetDataType *src, UA_SetRobotParametersParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROBOTPARAMETERSPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_SetRobotParametersParamsSetDataType_deleteMembers(UA_SetRobotParametersParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROBOTPARAMETERSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetRobotParametersParamsSetDataType_clear(UA_SetRobotParametersParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROBOTPARAMETERSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetRobotParametersParamsSetDataType_delete(UA_SetRobotParametersParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROBOTPARAMETERSPARAMSSETDATATYPE]);
 }
 
 /* CRCL_ScalarSensorStatusDataType */
@@ -1317,35 +1286,66 @@ UA_CRCL_ScalarSensorStatusDataType_delete(UA_CRCL_ScalarSensorStatusDataType *p)
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_SCALARSENSORSTATUSDATATYPE]);
 }
 
-/* DwellParametersSetDataType */
+/* EndCanonParamsSetDataType */
 static UA_INLINE void
-UA_DwellParametersSetDataType_init(UA_DwellParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_DwellParametersSetDataType));
+UA_EndCanonParamsSetDataType_init(UA_EndCanonParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_EndCanonParamsSetDataType));
 }
 
-static UA_INLINE UA_DwellParametersSetDataType *
-UA_DwellParametersSetDataType_new(void) {
-    return (UA_DwellParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_DWELLPARAMETERSSETDATATYPE]);
+static UA_INLINE UA_EndCanonParamsSetDataType *
+UA_EndCanonParamsSetDataType_new(void) {
+    return (UA_EndCanonParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE UA_StatusCode
-UA_DwellParametersSetDataType_copy(const UA_DwellParametersSetDataType *src, UA_DwellParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_DWELLPARAMETERSSETDATATYPE]);
+UA_EndCanonParamsSetDataType_copy(const UA_EndCanonParamsSetDataType *src, UA_EndCanonParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONPARAMSSETDATATYPE]);
 }
 
 UA_DEPRECATED static UA_INLINE void
-UA_DwellParametersSetDataType_deleteMembers(UA_DwellParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DWELLPARAMETERSSETDATATYPE]);
+UA_EndCanonParamsSetDataType_deleteMembers(UA_EndCanonParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_DwellParametersSetDataType_clear(UA_DwellParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DWELLPARAMETERSSETDATATYPE]);
+UA_EndCanonParamsSetDataType_clear(UA_EndCanonParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_DwellParametersSetDataType_delete(UA_DwellParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DWELLPARAMETERSSETDATATYPE]);
+UA_EndCanonParamsSetDataType_delete(UA_EndCanonParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONPARAMSSETDATATYPE]);
+}
+
+/* SetIntermediatePoseToleranceParamsSetDataType */
+static UA_INLINE void
+UA_SetIntermediatePoseToleranceParamsSetDataType_init(UA_SetIntermediatePoseToleranceParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_SetIntermediatePoseToleranceParamsSetDataType));
+}
+
+static UA_INLINE UA_SetIntermediatePoseToleranceParamsSetDataType *
+UA_SetIntermediatePoseToleranceParamsSetDataType_new(void) {
+    return (UA_SetIntermediatePoseToleranceParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_SetIntermediatePoseToleranceParamsSetDataType_copy(const UA_SetIntermediatePoseToleranceParamsSetDataType *src, UA_SetIntermediatePoseToleranceParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_SetIntermediatePoseToleranceParamsSetDataType_deleteMembers(UA_SetIntermediatePoseToleranceParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetIntermediatePoseToleranceParamsSetDataType_clear(UA_SetIntermediatePoseToleranceParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetIntermediatePoseToleranceParamsSetDataType_delete(UA_SetIntermediatePoseToleranceParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEPARAMSSETDATATYPE]);
 }
 
 /* CRCL_ForceUnitEnumDataType */
@@ -1379,128 +1379,97 @@ UA_CRCL_ForceUnitEnumDataType_delete(UA_CRCL_ForceUnitEnumDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_FORCEUNITENUMDATATYPE]);
 }
 
-/* GetStatusParametersSetDataType */
+/* SetEndeffectorParamsSetDataType */
 static UA_INLINE void
-UA_GetStatusParametersSetDataType_init(UA_GetStatusParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_GetStatusParametersSetDataType));
+UA_SetEndeffectorParamsSetDataType_init(UA_SetEndeffectorParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_SetEndeffectorParamsSetDataType));
 }
 
-static UA_INLINE UA_GetStatusParametersSetDataType *
-UA_GetStatusParametersSetDataType_new(void) {
-    return (UA_GetStatusParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSPARAMETERSSETDATATYPE]);
+static UA_INLINE UA_SetEndeffectorParamsSetDataType *
+UA_SetEndeffectorParamsSetDataType_new(void) {
+    return (UA_SetEndeffectorParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE UA_StatusCode
-UA_GetStatusParametersSetDataType_copy(const UA_GetStatusParametersSetDataType *src, UA_GetStatusParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSPARAMETERSSETDATATYPE]);
+UA_SetEndeffectorParamsSetDataType_copy(const UA_SetEndeffectorParamsSetDataType *src, UA_SetEndeffectorParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMSSETDATATYPE]);
 }
 
 UA_DEPRECATED static UA_INLINE void
-UA_GetStatusParametersSetDataType_deleteMembers(UA_GetStatusParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSPARAMETERSSETDATATYPE]);
+UA_SetEndeffectorParamsSetDataType_deleteMembers(UA_SetEndeffectorParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_GetStatusParametersSetDataType_clear(UA_GetStatusParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSPARAMETERSSETDATATYPE]);
+UA_SetEndeffectorParamsSetDataType_clear(UA_SetEndeffectorParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_GetStatusParametersSetDataType_delete(UA_GetStatusParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSPARAMETERSSETDATATYPE]);
+UA_SetEndeffectorParamsSetDataType_delete(UA_SetEndeffectorParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMSSETDATATYPE]);
 }
 
-/* SetIntermediatePoseToleranceParametersSetDataType */
+/* EnableSensorParamsSetDataType */
 static UA_INLINE void
-UA_SetIntermediatePoseToleranceParametersSetDataType_init(UA_SetIntermediatePoseToleranceParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_SetIntermediatePoseToleranceParametersSetDataType));
+UA_EnableSensorParamsSetDataType_init(UA_EnableSensorParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_EnableSensorParamsSetDataType));
 }
 
-static UA_INLINE UA_SetIntermediatePoseToleranceParametersSetDataType *
-UA_SetIntermediatePoseToleranceParametersSetDataType_new(void) {
-    return (UA_SetIntermediatePoseToleranceParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEPARAMETERSSETDATATYPE]);
+static UA_INLINE UA_EnableSensorParamsSetDataType *
+UA_EnableSensorParamsSetDataType_new(void) {
+    return (UA_EnableSensorParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE UA_StatusCode
-UA_SetIntermediatePoseToleranceParametersSetDataType_copy(const UA_SetIntermediatePoseToleranceParametersSetDataType *src, UA_SetIntermediatePoseToleranceParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEPARAMETERSSETDATATYPE]);
+UA_EnableSensorParamsSetDataType_copy(const UA_EnableSensorParamsSetDataType *src, UA_EnableSensorParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORPARAMSSETDATATYPE]);
 }
 
 UA_DEPRECATED static UA_INLINE void
-UA_SetIntermediatePoseToleranceParametersSetDataType_deleteMembers(UA_SetIntermediatePoseToleranceParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEPARAMETERSSETDATATYPE]);
+UA_EnableSensorParamsSetDataType_deleteMembers(UA_EnableSensorParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_SetIntermediatePoseToleranceParametersSetDataType_clear(UA_SetIntermediatePoseToleranceParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEPARAMETERSSETDATATYPE]);
+UA_EnableSensorParamsSetDataType_clear(UA_EnableSensorParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_SetIntermediatePoseToleranceParametersSetDataType_delete(UA_SetIntermediatePoseToleranceParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETINTERMEDIATEPOSETOLERANCEPARAMETERSSETDATATYPE]);
+UA_EnableSensorParamsSetDataType_delete(UA_EnableSensorParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORPARAMSSETDATATYPE]);
 }
 
-/* SetEndPoseToleranceParametersSetDataType */
+/* CRCLCommandsBufferState */
 static UA_INLINE void
-UA_SetEndPoseToleranceParametersSetDataType_init(UA_SetEndPoseToleranceParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_SetEndPoseToleranceParametersSetDataType));
+UA_CRCLCommandsBufferState_init(UA_CRCLCommandsBufferState *p) {
+    memset(p, 0, sizeof(UA_CRCLCommandsBufferState));
 }
 
-static UA_INLINE UA_SetEndPoseToleranceParametersSetDataType *
-UA_SetEndPoseToleranceParametersSetDataType_new(void) {
-    return (UA_SetEndPoseToleranceParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMETERSSETDATATYPE]);
+static UA_INLINE UA_CRCLCommandsBufferState *
+UA_CRCLCommandsBufferState_new(void) {
+    return (UA_CRCLCommandsBufferState*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERSTATE]);
 }
 
 static UA_INLINE UA_StatusCode
-UA_SetEndPoseToleranceParametersSetDataType_copy(const UA_SetEndPoseToleranceParametersSetDataType *src, UA_SetEndPoseToleranceParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMETERSSETDATATYPE]);
+UA_CRCLCommandsBufferState_copy(const UA_CRCLCommandsBufferState *src, UA_CRCLCommandsBufferState *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERSTATE]);
 }
 
 UA_DEPRECATED static UA_INLINE void
-UA_SetEndPoseToleranceParametersSetDataType_deleteMembers(UA_SetEndPoseToleranceParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMETERSSETDATATYPE]);
+UA_CRCLCommandsBufferState_deleteMembers(UA_CRCLCommandsBufferState *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERSTATE]);
 }
 
 static UA_INLINE void
-UA_SetEndPoseToleranceParametersSetDataType_clear(UA_SetEndPoseToleranceParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMETERSSETDATATYPE]);
+UA_CRCLCommandsBufferState_clear(UA_CRCLCommandsBufferState *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERSTATE]);
 }
 
 static UA_INLINE void
-UA_SetEndPoseToleranceParametersSetDataType_delete(UA_SetEndPoseToleranceParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEPARAMETERSSETDATATYPE]);
-}
-
-/* PubSubIPAddresses */
-static UA_INLINE void
-UA_PubSubIPAddresses_init(UA_PubSubIPAddresses *p) {
-    memset(p, 0, sizeof(UA_PubSubIPAddresses));
-}
-
-static UA_INLINE UA_PubSubIPAddresses *
-UA_PubSubIPAddresses_new(void) {
-    return (UA_PubSubIPAddresses*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_PUBSUBIPADDRESSES]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_PubSubIPAddresses_copy(const UA_PubSubIPAddresses *src, UA_PubSubIPAddresses *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_PUBSUBIPADDRESSES]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_PubSubIPAddresses_deleteMembers(UA_PubSubIPAddresses *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_PUBSUBIPADDRESSES]);
-}
-
-static UA_INLINE void
-UA_PubSubIPAddresses_clear(UA_PubSubIPAddresses *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_PUBSUBIPADDRESSES]);
-}
-
-static UA_INLINE void
-UA_PubSubIPAddresses_delete(UA_PubSubIPAddresses *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_PUBSUBIPADDRESSES]);
+UA_CRCLCommandsBufferState_delete(UA_CRCLCommandsBufferState *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERSTATE]);
 }
 
 /* CRCL_JointStatusesDataType */
@@ -1565,37 +1534,6 @@ UA_CRCL_StopConditionEnumDataType_delete(UA_CRCL_StopConditionEnumDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_STOPCONDITIONENUMDATATYPE]);
 }
 
-/* EndCanonParametersSetDataType */
-static UA_INLINE void
-UA_EndCanonParametersSetDataType_init(UA_EndCanonParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_EndCanonParametersSetDataType));
-}
-
-static UA_INLINE UA_EndCanonParametersSetDataType *
-UA_EndCanonParametersSetDataType_new(void) {
-    return (UA_EndCanonParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_EndCanonParametersSetDataType_copy(const UA_EndCanonParametersSetDataType *src, UA_EndCanonParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_EndCanonParametersSetDataType_deleteMembers(UA_EndCanonParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_EndCanonParametersSetDataType_clear(UA_EndCanonParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_EndCanonParametersSetDataType_delete(UA_EndCanonParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONPARAMETERSSETDATATYPE]);
-}
-
 /* CRCL_RotSpeedAbsoluteDataType */
 static UA_INLINE void
 UA_CRCL_RotSpeedAbsoluteDataType_init(UA_CRCL_RotSpeedAbsoluteDataType *p) {
@@ -1627,35 +1565,35 @@ UA_CRCL_RotSpeedAbsoluteDataType_delete(UA_CRCL_RotSpeedAbsoluteDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ROTSPEEDABSOLUTEDATATYPE]);
 }
 
-/* InitCanonParametersSetDataType */
+/* SetTorqueUnitsParamsSetDataType */
 static UA_INLINE void
-UA_InitCanonParametersSetDataType_init(UA_InitCanonParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_InitCanonParametersSetDataType));
+UA_SetTorqueUnitsParamsSetDataType_init(UA_SetTorqueUnitsParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_SetTorqueUnitsParamsSetDataType));
 }
 
-static UA_INLINE UA_InitCanonParametersSetDataType *
-UA_InitCanonParametersSetDataType_new(void) {
-    return (UA_InitCanonParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONPARAMETERSSETDATATYPE]);
+static UA_INLINE UA_SetTorqueUnitsParamsSetDataType *
+UA_SetTorqueUnitsParamsSetDataType_new(void) {
+    return (UA_SetTorqueUnitsParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE UA_StatusCode
-UA_InitCanonParametersSetDataType_copy(const UA_InitCanonParametersSetDataType *src, UA_InitCanonParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONPARAMETERSSETDATATYPE]);
+UA_SetTorqueUnitsParamsSetDataType_copy(const UA_SetTorqueUnitsParamsSetDataType *src, UA_SetTorqueUnitsParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSPARAMSSETDATATYPE]);
 }
 
 UA_DEPRECATED static UA_INLINE void
-UA_InitCanonParametersSetDataType_deleteMembers(UA_InitCanonParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONPARAMETERSSETDATATYPE]);
+UA_SetTorqueUnitsParamsSetDataType_deleteMembers(UA_SetTorqueUnitsParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_InitCanonParametersSetDataType_clear(UA_InitCanonParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONPARAMETERSSETDATATYPE]);
+UA_SetTorqueUnitsParamsSetDataType_clear(UA_SetTorqueUnitsParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_InitCanonParametersSetDataType_delete(UA_InitCanonParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_INITCANONPARAMETERSSETDATATYPE]);
+UA_SetTorqueUnitsParamsSetDataType_delete(UA_SetTorqueUnitsParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSPARAMSSETDATATYPE]);
 }
 
 /* CRCL_GuardDataType */
@@ -1782,37 +1720,6 @@ UA_CRCL_ParallelGripperStatusDataType_delete(UA_CRCL_ParallelGripperStatusDataTy
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_PARALLELGRIPPERSTATUSDATATYPE]);
 }
 
-/* SetRotAccelParametersSetDataType */
-static UA_INLINE void
-UA_SetRotAccelParametersSetDataType_init(UA_SetRotAccelParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_SetRotAccelParametersSetDataType));
-}
-
-static UA_INLINE UA_SetRotAccelParametersSetDataType *
-UA_SetRotAccelParametersSetDataType_new(void) {
-    return (UA_SetRotAccelParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTACCELPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_SetRotAccelParametersSetDataType_copy(const UA_SetRotAccelParametersSetDataType *src, UA_SetRotAccelParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTACCELPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_SetRotAccelParametersSetDataType_deleteMembers(UA_SetRotAccelParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTACCELPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SetRotAccelParametersSetDataType_clear(UA_SetRotAccelParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTACCELPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SetRotAccelParametersSetDataType_delete(UA_SetRotAccelParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTACCELPARAMETERSSETDATATYPE]);
-}
-
 /* CRCLCommandDataType */
 static UA_INLINE void
 UA_CRCLCommandDataType_init(UA_CRCLCommandDataType *p) {
@@ -1842,37 +1749,6 @@ UA_CRCLCommandDataType_clear(UA_CRCLCommandDataType *p) {
 static UA_INLINE void
 UA_CRCLCommandDataType_delete(UA_CRCLCommandDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDDATATYPE]);
-}
-
-/* SetEndeffectorParametersSetDataType */
-static UA_INLINE void
-UA_SetEndeffectorParametersSetDataType_init(UA_SetEndeffectorParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_SetEndeffectorParametersSetDataType));
-}
-
-static UA_INLINE UA_SetEndeffectorParametersSetDataType *
-UA_SetEndeffectorParametersSetDataType_new(void) {
-    return (UA_SetEndeffectorParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_SetEndeffectorParametersSetDataType_copy(const UA_SetEndeffectorParametersSetDataType *src, UA_SetEndeffectorParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_SetEndeffectorParametersSetDataType_deleteMembers(UA_SetEndeffectorParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SetEndeffectorParametersSetDataType_clear(UA_SetEndeffectorParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SetEndeffectorParametersSetDataType_delete(UA_SetEndeffectorParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSSETDATATYPE]);
 }
 
 /* SetIntermediatePoseToleranceDataType */
@@ -1999,37 +1875,6 @@ UA_CRCL_OnOffSensorStatusDataType_delete(UA_CRCL_OnOffSensorStatusDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ONOFFSENSORSTATUSDATATYPE]);
 }
 
-/* EnableSensorParametersSetDataType */
-static UA_INLINE void
-UA_EnableSensorParametersSetDataType_init(UA_EnableSensorParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_EnableSensorParametersSetDataType));
-}
-
-static UA_INLINE UA_EnableSensorParametersSetDataType *
-UA_EnableSensorParametersSetDataType_new(void) {
-    return (UA_EnableSensorParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_EnableSensorParametersSetDataType_copy(const UA_EnableSensorParametersSetDataType *src, UA_EnableSensorParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_EnableSensorParametersSetDataType_deleteMembers(UA_EnableSensorParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_EnableSensorParametersSetDataType_clear(UA_EnableSensorParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_EnableSensorParametersSetDataType_delete(UA_EnableSensorParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORPARAMETERSSETDATATYPE]);
-}
-
 /* CRCL_JointDetailsDataType */
 static UA_INLINE void
 UA_CRCL_JointDetailsDataType_init(UA_CRCL_JointDetailsDataType *p) {
@@ -2059,6 +1904,37 @@ UA_CRCL_JointDetailsDataType_clear(UA_CRCL_JointDetailsDataType *p) {
 static UA_INLINE void
 UA_CRCL_JointDetailsDataType_delete(UA_CRCL_JointDetailsDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_JOINTDETAILSDATATYPE]);
+}
+
+/* EnableGripperParamsSetDataType */
+static UA_INLINE void
+UA_EnableGripperParamsSetDataType_init(UA_EnableGripperParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_EnableGripperParamsSetDataType));
+}
+
+static UA_INLINE UA_EnableGripperParamsSetDataType *
+UA_EnableGripperParamsSetDataType_new(void) {
+    return (UA_EnableGripperParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_EnableGripperParamsSetDataType_copy(const UA_EnableGripperParamsSetDataType *src, UA_EnableGripperParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_EnableGripperParamsSetDataType_deleteMembers(UA_EnableGripperParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_EnableGripperParamsSetDataType_clear(UA_EnableGripperParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_EnableGripperParamsSetDataType_delete(UA_EnableGripperParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERPARAMSSETDATATYPE]);
 }
 
 /* CRCL_SensorStatusDataType */
@@ -2092,35 +1968,66 @@ UA_CRCL_SensorStatusDataType_delete(UA_CRCL_SensorStatusDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_SENSORSTATUSDATATYPE]);
 }
 
-/* CRCL_TransAccelRelativeDataType */
+/* CRCL_TwistDataType */
 static UA_INLINE void
-UA_CRCL_TransAccelRelativeDataType_init(UA_CRCL_TransAccelRelativeDataType *p) {
-    memset(p, 0, sizeof(UA_CRCL_TransAccelRelativeDataType));
+UA_CRCL_TwistDataType_init(UA_CRCL_TwistDataType *p) {
+    memset(p, 0, sizeof(UA_CRCL_TwistDataType));
 }
 
-static UA_INLINE UA_CRCL_TransAccelRelativeDataType *
-UA_CRCL_TransAccelRelativeDataType_new(void) {
-    return (UA_CRCL_TransAccelRelativeDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TRANSACCELRELATIVEDATATYPE]);
+static UA_INLINE UA_CRCL_TwistDataType *
+UA_CRCL_TwistDataType_new(void) {
+    return (UA_CRCL_TwistDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TWISTDATATYPE]);
 }
 
 static UA_INLINE UA_StatusCode
-UA_CRCL_TransAccelRelativeDataType_copy(const UA_CRCL_TransAccelRelativeDataType *src, UA_CRCL_TransAccelRelativeDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TRANSACCELRELATIVEDATATYPE]);
+UA_CRCL_TwistDataType_copy(const UA_CRCL_TwistDataType *src, UA_CRCL_TwistDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TWISTDATATYPE]);
 }
 
 UA_DEPRECATED static UA_INLINE void
-UA_CRCL_TransAccelRelativeDataType_deleteMembers(UA_CRCL_TransAccelRelativeDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TRANSACCELRELATIVEDATATYPE]);
+UA_CRCL_TwistDataType_deleteMembers(UA_CRCL_TwistDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TWISTDATATYPE]);
 }
 
 static UA_INLINE void
-UA_CRCL_TransAccelRelativeDataType_clear(UA_CRCL_TransAccelRelativeDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TRANSACCELRELATIVEDATATYPE]);
+UA_CRCL_TwistDataType_clear(UA_CRCL_TwistDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TWISTDATATYPE]);
 }
 
 static UA_INLINE void
-UA_CRCL_TransAccelRelativeDataType_delete(UA_CRCL_TransAccelRelativeDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TRANSACCELRELATIVEDATATYPE]);
+UA_CRCL_TwistDataType_delete(UA_CRCL_TwistDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TWISTDATATYPE]);
+}
+
+/* CRCL_ThreeFingerGripperStatusDataType */
+static UA_INLINE void
+UA_CRCL_ThreeFingerGripperStatusDataType_init(UA_CRCL_ThreeFingerGripperStatusDataType *p) {
+    memset(p, 0, sizeof(UA_CRCL_ThreeFingerGripperStatusDataType));
+}
+
+static UA_INLINE UA_CRCL_ThreeFingerGripperStatusDataType *
+UA_CRCL_ThreeFingerGripperStatusDataType_new(void) {
+    return (UA_CRCL_ThreeFingerGripperStatusDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_THREEFINGERGRIPPERSTATUSDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_CRCL_ThreeFingerGripperStatusDataType_copy(const UA_CRCL_ThreeFingerGripperStatusDataType *src, UA_CRCL_ThreeFingerGripperStatusDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_THREEFINGERGRIPPERSTATUSDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_CRCL_ThreeFingerGripperStatusDataType_deleteMembers(UA_CRCL_ThreeFingerGripperStatusDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_THREEFINGERGRIPPERSTATUSDATATYPE]);
+}
+
+static UA_INLINE void
+UA_CRCL_ThreeFingerGripperStatusDataType_clear(UA_CRCL_ThreeFingerGripperStatusDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_THREEFINGERGRIPPERSTATUSDATATYPE]);
+}
+
+static UA_INLINE void
+UA_CRCL_ThreeFingerGripperStatusDataType_delete(UA_CRCL_ThreeFingerGripperStatusDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_THREEFINGERGRIPPERSTATUSDATATYPE]);
 }
 
 /* CRCL_TransSpeedRelativeDataType */
@@ -2154,35 +2061,66 @@ UA_CRCL_TransSpeedRelativeDataType_delete(UA_CRCL_TransSpeedRelativeDataType *p)
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TRANSSPEEDRELATIVEDATATYPE]);
 }
 
-/* CRCL_TwistDataType */
+/* CRCL_TransAccelRelativeDataType */
 static UA_INLINE void
-UA_CRCL_TwistDataType_init(UA_CRCL_TwistDataType *p) {
-    memset(p, 0, sizeof(UA_CRCL_TwistDataType));
+UA_CRCL_TransAccelRelativeDataType_init(UA_CRCL_TransAccelRelativeDataType *p) {
+    memset(p, 0, sizeof(UA_CRCL_TransAccelRelativeDataType));
 }
 
-static UA_INLINE UA_CRCL_TwistDataType *
-UA_CRCL_TwistDataType_new(void) {
-    return (UA_CRCL_TwistDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TWISTDATATYPE]);
+static UA_INLINE UA_CRCL_TransAccelRelativeDataType *
+UA_CRCL_TransAccelRelativeDataType_new(void) {
+    return (UA_CRCL_TransAccelRelativeDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TRANSACCELRELATIVEDATATYPE]);
 }
 
 static UA_INLINE UA_StatusCode
-UA_CRCL_TwistDataType_copy(const UA_CRCL_TwistDataType *src, UA_CRCL_TwistDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TWISTDATATYPE]);
+UA_CRCL_TransAccelRelativeDataType_copy(const UA_CRCL_TransAccelRelativeDataType *src, UA_CRCL_TransAccelRelativeDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TRANSACCELRELATIVEDATATYPE]);
 }
 
 UA_DEPRECATED static UA_INLINE void
-UA_CRCL_TwistDataType_deleteMembers(UA_CRCL_TwistDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TWISTDATATYPE]);
+UA_CRCL_TransAccelRelativeDataType_deleteMembers(UA_CRCL_TransAccelRelativeDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TRANSACCELRELATIVEDATATYPE]);
 }
 
 static UA_INLINE void
-UA_CRCL_TwistDataType_clear(UA_CRCL_TwistDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TWISTDATATYPE]);
+UA_CRCL_TransAccelRelativeDataType_clear(UA_CRCL_TransAccelRelativeDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TRANSACCELRELATIVEDATATYPE]);
 }
 
 static UA_INLINE void
-UA_CRCL_TwistDataType_delete(UA_CRCL_TwistDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TWISTDATATYPE]);
+UA_CRCL_TransAccelRelativeDataType_delete(UA_CRCL_TransAccelRelativeDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_TRANSACCELRELATIVEDATATYPE]);
+}
+
+/* SetLengthUnitsParamsSetDataType */
+static UA_INLINE void
+UA_SetLengthUnitsParamsSetDataType_init(UA_SetLengthUnitsParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_SetLengthUnitsParamsSetDataType));
+}
+
+static UA_INLINE UA_SetLengthUnitsParamsSetDataType *
+UA_SetLengthUnitsParamsSetDataType_new(void) {
+    return (UA_SetLengthUnitsParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_SetLengthUnitsParamsSetDataType_copy(const UA_SetLengthUnitsParamsSetDataType *src, UA_SetLengthUnitsParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_SetLengthUnitsParamsSetDataType_deleteMembers(UA_SetLengthUnitsParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetLengthUnitsParamsSetDataType_clear(UA_SetLengthUnitsParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetLengthUnitsParamsSetDataType_delete(UA_SetLengthUnitsParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSPARAMSSETDATATYPE]);
 }
 
 /* CRCL_SettingsStatusDataType */
@@ -2340,37 +2278,6 @@ UA_SetEndeffectorDataType_delete(UA_SetEndeffectorDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORDATATYPE]);
 }
 
-/* EnableGripperParametersSetDataType */
-static UA_INLINE void
-UA_EnableGripperParametersSetDataType_init(UA_EnableGripperParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_EnableGripperParametersSetDataType));
-}
-
-static UA_INLINE UA_EnableGripperParametersSetDataType *
-UA_EnableGripperParametersSetDataType_new(void) {
-    return (UA_EnableGripperParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_EnableGripperParametersSetDataType_copy(const UA_EnableGripperParametersSetDataType *src, UA_EnableGripperParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_EnableGripperParametersSetDataType_deleteMembers(UA_EnableGripperParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_EnableGripperParametersSetDataType_clear(UA_EnableGripperParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_EnableGripperParametersSetDataType_delete(UA_EnableGripperParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEGRIPPERPARAMETERSSETDATATYPE]);
-}
-
 /* ConfigureJointReportsDataType */
 static UA_INLINE void
 UA_ConfigureJointReportsDataType_init(UA_ConfigureJointReportsDataType *p) {
@@ -2433,6 +2340,68 @@ UA_CloseToolChangerDataType_delete(UA_CloseToolChangerDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CLOSETOOLCHANGERDATATYPE]);
 }
 
+/* SetRotAccelParamsSetDataType */
+static UA_INLINE void
+UA_SetRotAccelParamsSetDataType_init(UA_SetRotAccelParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_SetRotAccelParamsSetDataType));
+}
+
+static UA_INLINE UA_SetRotAccelParamsSetDataType *
+UA_SetRotAccelParamsSetDataType_new(void) {
+    return (UA_SetRotAccelParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTACCELPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_SetRotAccelParamsSetDataType_copy(const UA_SetRotAccelParamsSetDataType *src, UA_SetRotAccelParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTACCELPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_SetRotAccelParamsSetDataType_deleteMembers(UA_SetRotAccelParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTACCELPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetRotAccelParamsSetDataType_clear(UA_SetRotAccelParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTACCELPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetRotAccelParamsSetDataType_delete(UA_SetRotAccelParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTACCELPARAMSSETDATATYPE]);
+}
+
+/* SetEndeffectorParametersParamsSetDataType */
+static UA_INLINE void
+UA_SetEndeffectorParametersParamsSetDataType_init(UA_SetEndeffectorParametersParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_SetEndeffectorParametersParamsSetDataType));
+}
+
+static UA_INLINE UA_SetEndeffectorParametersParamsSetDataType *
+UA_SetEndeffectorParametersParamsSetDataType_new(void) {
+    return (UA_SetEndeffectorParametersParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_SetEndeffectorParametersParamsSetDataType_copy(const UA_SetEndeffectorParametersParamsSetDataType *src, UA_SetEndeffectorParametersParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_SetEndeffectorParametersParamsSetDataType_deleteMembers(UA_SetEndeffectorParametersParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetEndeffectorParametersParamsSetDataType_clear(UA_SetEndeffectorParametersParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetEndeffectorParametersParamsSetDataType_delete(UA_SetEndeffectorParametersParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDEFFECTORPARAMETERSPARAMSSETDATATYPE]);
+}
+
 /* GetStatusDataType */
 static UA_INLINE void
 UA_GetStatusDataType_init(UA_GetStatusDataType *p) {
@@ -2464,6 +2433,37 @@ UA_GetStatusDataType_delete(UA_GetStatusDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_GETSTATUSDATATYPE]);
 }
 
+/* SetForceUnitsParamsSetDataType */
+static UA_INLINE void
+UA_SetForceUnitsParamsSetDataType_init(UA_SetForceUnitsParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_SetForceUnitsParamsSetDataType));
+}
+
+static UA_INLINE UA_SetForceUnitsParamsSetDataType *
+UA_SetForceUnitsParamsSetDataType_new(void) {
+    return (UA_SetForceUnitsParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_SetForceUnitsParamsSetDataType_copy(const UA_SetForceUnitsParamsSetDataType *src, UA_SetForceUnitsParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_SetForceUnitsParamsSetDataType_deleteMembers(UA_SetForceUnitsParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetForceUnitsParamsSetDataType_clear(UA_SetForceUnitsParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetForceUnitsParamsSetDataType_delete(UA_SetForceUnitsParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSPARAMSSETDATATYPE]);
+}
+
 /* CRCL_WrenchDataType */
 static UA_INLINE void
 UA_CRCL_WrenchDataType_init(UA_CRCL_WrenchDataType *p) {
@@ -2493,6 +2493,37 @@ UA_CRCL_WrenchDataType_clear(UA_CRCL_WrenchDataType *p) {
 static UA_INLINE void
 UA_CRCL_WrenchDataType_delete(UA_CRCL_WrenchDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_WRENCHDATATYPE]);
+}
+
+/* ConfigureJointReportsParamsSetDataType */
+static UA_INLINE void
+UA_ConfigureJointReportsParamsSetDataType_init(UA_ConfigureJointReportsParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_ConfigureJointReportsParamsSetDataType));
+}
+
+static UA_INLINE UA_ConfigureJointReportsParamsSetDataType *
+UA_ConfigureJointReportsParamsSetDataType_new(void) {
+    return (UA_ConfigureJointReportsParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGUREJOINTREPORTSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_ConfigureJointReportsParamsSetDataType_copy(const UA_ConfigureJointReportsParamsSetDataType *src, UA_ConfigureJointReportsParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGUREJOINTREPORTSPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_ConfigureJointReportsParamsSetDataType_deleteMembers(UA_ConfigureJointReportsParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGUREJOINTREPORTSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_ConfigureJointReportsParamsSetDataType_clear(UA_ConfigureJointReportsParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGUREJOINTREPORTSPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_ConfigureJointReportsParamsSetDataType_delete(UA_ConfigureJointReportsParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGUREJOINTREPORTSPARAMSSETDATATYPE]);
 }
 
 /* CRCL_CommandStatusDataType */
@@ -2588,37 +2619,6 @@ UA_DisableRobotParameterStatusDataType_delete(UA_DisableRobotParameterStatusData
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_DISABLEROBOTPARAMETERSTATUSDATATYPE]);
 }
 
-/* ConfigureJointReportsParametersSetDataType */
-static UA_INLINE void
-UA_ConfigureJointReportsParametersSetDataType_init(UA_ConfigureJointReportsParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_ConfigureJointReportsParametersSetDataType));
-}
-
-static UA_INLINE UA_ConfigureJointReportsParametersSetDataType *
-UA_ConfigureJointReportsParametersSetDataType_new(void) {
-    return (UA_ConfigureJointReportsParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGUREJOINTREPORTSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_ConfigureJointReportsParametersSetDataType_copy(const UA_ConfigureJointReportsParametersSetDataType *src, UA_ConfigureJointReportsParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGUREJOINTREPORTSPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_ConfigureJointReportsParametersSetDataType_deleteMembers(UA_ConfigureJointReportsParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGUREJOINTREPORTSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_ConfigureJointReportsParametersSetDataType_clear(UA_ConfigureJointReportsParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGUREJOINTREPORTSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_ConfigureJointReportsParametersSetDataType_delete(UA_ConfigureJointReportsParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CONFIGUREJOINTREPORTSPARAMETERSSETDATATYPE]);
-}
-
 /* CRCL_PoseDataType */
 static UA_INLINE void
 UA_CRCL_PoseDataType_init(UA_CRCL_PoseDataType *p) {
@@ -2710,37 +2710,6 @@ UA_MoveToDataType_clear(UA_MoveToDataType *p) {
 static UA_INLINE void
 UA_MoveToDataType_delete(UA_MoveToDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETODATATYPE]);
-}
-
-/* MoveToParametersSetDataType */
-static UA_INLINE void
-UA_MoveToParametersSetDataType_init(UA_MoveToParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_MoveToParametersSetDataType));
-}
-
-static UA_INLINE UA_MoveToParametersSetDataType *
-UA_MoveToParametersSetDataType_new(void) {
-    return (UA_MoveToParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETOPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_MoveToParametersSetDataType_copy(const UA_MoveToParametersSetDataType *src, UA_MoveToParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETOPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_MoveToParametersSetDataType_deleteMembers(UA_MoveToParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETOPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_MoveToParametersSetDataType_clear(UA_MoveToParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETOPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_MoveToParametersSetDataType_delete(UA_MoveToParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETOPARAMETERSSETDATATYPE]);
 }
 
 /* CRCL_VacuumGripperStatusDataType */
@@ -3053,37 +3022,6 @@ UA_CRCL_SensorStatusesDataType_delete(UA_CRCL_SensorStatusesDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_SENSORSTATUSESDATATYPE]);
 }
 
-/* SetForceUnitsParametersSetDataType */
-static UA_INLINE void
-UA_SetForceUnitsParametersSetDataType_init(UA_SetForceUnitsParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_SetForceUnitsParametersSetDataType));
-}
-
-static UA_INLINE UA_SetForceUnitsParametersSetDataType *
-UA_SetForceUnitsParametersSetDataType_new(void) {
-    return (UA_SetForceUnitsParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_SetForceUnitsParametersSetDataType_copy(const UA_SetForceUnitsParametersSetDataType *src, UA_SetForceUnitsParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_SetForceUnitsParametersSetDataType_deleteMembers(UA_SetForceUnitsParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SetForceUnitsParametersSetDataType_clear(UA_SetForceUnitsParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SetForceUnitsParametersSetDataType_delete(UA_SetForceUnitsParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETFORCEUNITSPARAMETERSSETDATATYPE]);
-}
-
 /* DisableSensorDataType */
 static UA_INLINE void
 UA_DisableSensorDataType_init(UA_DisableSensorDataType *p) {
@@ -3177,37 +3115,6 @@ UA_EnableSensorDataType_delete(UA_EnableSensorDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLESENSORDATATYPE]);
 }
 
-/* SetRotSpeedParametersSetDataType */
-static UA_INLINE void
-UA_SetRotSpeedParametersSetDataType_init(UA_SetRotSpeedParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_SetRotSpeedParametersSetDataType));
-}
-
-static UA_INLINE UA_SetRotSpeedParametersSetDataType *
-UA_SetRotSpeedParametersSetDataType_new(void) {
-    return (UA_SetRotSpeedParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_SetRotSpeedParametersSetDataType_copy(const UA_SetRotSpeedParametersSetDataType *src, UA_SetRotSpeedParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_SetRotSpeedParametersSetDataType_deleteMembers(UA_SetRotSpeedParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SetRotSpeedParametersSetDataType_clear(UA_SetRotSpeedParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SetRotSpeedParametersSetDataType_delete(UA_SetRotSpeedParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDPARAMETERSSETDATATYPE]);
-}
-
 /* SetEndeffectorParametersDataType */
 static UA_INLINE void
 UA_SetEndeffectorParametersDataType_init(UA_SetEndeffectorParametersDataType *p) {
@@ -3270,6 +3177,68 @@ UA_EnableRobotParameterStatusDataType_delete(UA_EnableRobotParameterStatusDataTy
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENABLEROBOTPARAMETERSTATUSDATATYPE]);
 }
 
+/* SetTransSpeedParamsSetDataType */
+static UA_INLINE void
+UA_SetTransSpeedParamsSetDataType_init(UA_SetTransSpeedParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_SetTransSpeedParamsSetDataType));
+}
+
+static UA_INLINE UA_SetTransSpeedParamsSetDataType *
+UA_SetTransSpeedParamsSetDataType_new(void) {
+    return (UA_SetTransSpeedParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_SetTransSpeedParamsSetDataType_copy(const UA_SetTransSpeedParamsSetDataType *src, UA_SetTransSpeedParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_SetTransSpeedParamsSetDataType_deleteMembers(UA_SetTransSpeedParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetTransSpeedParamsSetDataType_clear(UA_SetTransSpeedParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetTransSpeedParamsSetDataType_delete(UA_SetTransSpeedParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDPARAMSSETDATATYPE]);
+}
+
+/* MoveThroughToParamsSetDataType */
+static UA_INLINE void
+UA_MoveThroughToParamsSetDataType_init(UA_MoveThroughToParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_MoveThroughToParamsSetDataType));
+}
+
+static UA_INLINE UA_MoveThroughToParamsSetDataType *
+UA_MoveThroughToParamsSetDataType_new(void) {
+    return (UA_MoveThroughToParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTOPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_MoveThroughToParamsSetDataType_copy(const UA_MoveThroughToParamsSetDataType *src, UA_MoveThroughToParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTOPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_MoveThroughToParamsSetDataType_deleteMembers(UA_MoveThroughToParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTOPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_MoveThroughToParamsSetDataType_clear(UA_MoveThroughToParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTOPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_MoveThroughToParamsSetDataType_delete(UA_MoveThroughToParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTOPARAMSSETDATATYPE]);
+}
+
 /* EndCanonDataType */
 static UA_INLINE void
 UA_EndCanonDataType_init(UA_EndCanonDataType *p) {
@@ -3299,6 +3268,68 @@ UA_EndCanonDataType_clear(UA_EndCanonDataType *p) {
 static UA_INLINE void
 UA_EndCanonDataType_delete(UA_EndCanonDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ENDCANONDATATYPE]);
+}
+
+/* SetEndPoseToleranceDataType */
+static UA_INLINE void
+UA_SetEndPoseToleranceDataType_init(UA_SetEndPoseToleranceDataType *p) {
+    memset(p, 0, sizeof(UA_SetEndPoseToleranceDataType));
+}
+
+static UA_INLINE UA_SetEndPoseToleranceDataType *
+UA_SetEndPoseToleranceDataType_new(void) {
+    return (UA_SetEndPoseToleranceDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_SetEndPoseToleranceDataType_copy(const UA_SetEndPoseToleranceDataType *src, UA_SetEndPoseToleranceDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_SetEndPoseToleranceDataType_deleteMembers(UA_SetEndPoseToleranceDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetEndPoseToleranceDataType_clear(UA_SetEndPoseToleranceDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetEndPoseToleranceDataType_delete(UA_SetEndPoseToleranceDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEDATATYPE]);
+}
+
+/* MoveToParamsSetDataType */
+static UA_INLINE void
+UA_MoveToParamsSetDataType_init(UA_MoveToParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_MoveToParamsSetDataType));
+}
+
+static UA_INLINE UA_MoveToParamsSetDataType *
+UA_MoveToParamsSetDataType_new(void) {
+    return (UA_MoveToParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETOPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_MoveToParamsSetDataType_copy(const UA_MoveToParamsSetDataType *src, UA_MoveToParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETOPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_MoveToParamsSetDataType_deleteMembers(UA_MoveToParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETOPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_MoveToParamsSetDataType_clear(UA_MoveToParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETOPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_MoveToParamsSetDataType_delete(UA_MoveToParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETOPARAMSSETDATATYPE]);
 }
 
 /* SetAngleUnitsDataType */
@@ -3332,37 +3363,6 @@ UA_SetAngleUnitsDataType_delete(UA_SetAngleUnitsDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETANGLEUNITSDATATYPE]);
 }
 
-/* MoveScrewParametersSetDataType */
-static UA_INLINE void
-UA_MoveScrewParametersSetDataType_init(UA_MoveScrewParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_MoveScrewParametersSetDataType));
-}
-
-static UA_INLINE UA_MoveScrewParametersSetDataType *
-UA_MoveScrewParametersSetDataType_new(void) {
-    return (UA_MoveScrewParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_MOVESCREWPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_MoveScrewParametersSetDataType_copy(const UA_MoveScrewParametersSetDataType *src, UA_MoveScrewParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVESCREWPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_MoveScrewParametersSetDataType_deleteMembers(UA_MoveScrewParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVESCREWPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_MoveScrewParametersSetDataType_clear(UA_MoveScrewParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVESCREWPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_MoveScrewParametersSetDataType_delete(UA_MoveScrewParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVESCREWPARAMETERSSETDATATYPE]);
-}
-
 /* SetTorqueUnitsDataType */
 static UA_INLINE void
 UA_SetTorqueUnitsDataType_init(UA_SetTorqueUnitsDataType *p) {
@@ -3394,66 +3394,35 @@ UA_SetTorqueUnitsDataType_delete(UA_SetTorqueUnitsDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTORQUEUNITSDATATYPE]);
 }
 
-/* StopMotionParametersSetDataType */
+/* StopMotionParamsSetDataType */
 static UA_INLINE void
-UA_StopMotionParametersSetDataType_init(UA_StopMotionParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_StopMotionParametersSetDataType));
+UA_StopMotionParamsSetDataType_init(UA_StopMotionParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_StopMotionParamsSetDataType));
 }
 
-static UA_INLINE UA_StopMotionParametersSetDataType *
-UA_StopMotionParametersSetDataType_new(void) {
-    return (UA_StopMotionParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_STOPMOTIONPARAMETERSSETDATATYPE]);
+static UA_INLINE UA_StopMotionParamsSetDataType *
+UA_StopMotionParamsSetDataType_new(void) {
+    return (UA_StopMotionParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_STOPMOTIONPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE UA_StatusCode
-UA_StopMotionParametersSetDataType_copy(const UA_StopMotionParametersSetDataType *src, UA_StopMotionParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_STOPMOTIONPARAMETERSSETDATATYPE]);
+UA_StopMotionParamsSetDataType_copy(const UA_StopMotionParamsSetDataType *src, UA_StopMotionParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_STOPMOTIONPARAMSSETDATATYPE]);
 }
 
 UA_DEPRECATED static UA_INLINE void
-UA_StopMotionParametersSetDataType_deleteMembers(UA_StopMotionParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_STOPMOTIONPARAMETERSSETDATATYPE]);
+UA_StopMotionParamsSetDataType_deleteMembers(UA_StopMotionParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_STOPMOTIONPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_StopMotionParametersSetDataType_clear(UA_StopMotionParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_STOPMOTIONPARAMETERSSETDATATYPE]);
+UA_StopMotionParamsSetDataType_clear(UA_StopMotionParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_STOPMOTIONPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_StopMotionParametersSetDataType_delete(UA_StopMotionParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_STOPMOTIONPARAMETERSSETDATATYPE]);
-}
-
-/* SetEndPoseToleranceDataType */
-static UA_INLINE void
-UA_SetEndPoseToleranceDataType_init(UA_SetEndPoseToleranceDataType *p) {
-    memset(p, 0, sizeof(UA_SetEndPoseToleranceDataType));
-}
-
-static UA_INLINE UA_SetEndPoseToleranceDataType *
-UA_SetEndPoseToleranceDataType_new(void) {
-    return (UA_SetEndPoseToleranceDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_SetEndPoseToleranceDataType_copy(const UA_SetEndPoseToleranceDataType *src, UA_SetEndPoseToleranceDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_SetEndPoseToleranceDataType_deleteMembers(UA_SetEndPoseToleranceDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SetEndPoseToleranceDataType_clear(UA_SetEndPoseToleranceDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SetEndPoseToleranceDataType_delete(UA_SetEndPoseToleranceDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETENDPOSETOLERANCEDATATYPE]);
+UA_StopMotionParamsSetDataType_delete(UA_StopMotionParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_STOPMOTIONPARAMSSETDATATYPE]);
 }
 
 /* MessageDataType */
@@ -3611,6 +3580,68 @@ UA_SetLengthUnitsDataType_delete(UA_SetLengthUnitsDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETLENGTHUNITSDATATYPE]);
 }
 
+/* SetDefaultJointPositionsTolerancesParamsSetDataType */
+static UA_INLINE void
+UA_SetDefaultJointPositionsTolerancesParamsSetDataType_init(UA_SetDefaultJointPositionsTolerancesParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_SetDefaultJointPositionsTolerancesParamsSetDataType));
+}
+
+static UA_INLINE UA_SetDefaultJointPositionsTolerancesParamsSetDataType *
+UA_SetDefaultJointPositionsTolerancesParamsSetDataType_new(void) {
+    return (UA_SetDefaultJointPositionsTolerancesParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_SetDefaultJointPositionsTolerancesParamsSetDataType_copy(const UA_SetDefaultJointPositionsTolerancesParamsSetDataType *src, UA_SetDefaultJointPositionsTolerancesParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_SetDefaultJointPositionsTolerancesParamsSetDataType_deleteMembers(UA_SetDefaultJointPositionsTolerancesParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetDefaultJointPositionsTolerancesParamsSetDataType_clear(UA_SetDefaultJointPositionsTolerancesParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_SetDefaultJointPositionsTolerancesParamsSetDataType_delete(UA_SetDefaultJointPositionsTolerancesParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESPARAMSSETDATATYPE]);
+}
+
+/* MoveScrewParamsSetDataType */
+static UA_INLINE void
+UA_MoveScrewParamsSetDataType_init(UA_MoveScrewParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_MoveScrewParamsSetDataType));
+}
+
+static UA_INLINE UA_MoveScrewParamsSetDataType *
+UA_MoveScrewParamsSetDataType_new(void) {
+    return (UA_MoveScrewParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_MOVESCREWPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_MoveScrewParamsSetDataType_copy(const UA_MoveScrewParamsSetDataType *src, UA_MoveScrewParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVESCREWPARAMSSETDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_MoveScrewParamsSetDataType_deleteMembers(UA_MoveScrewParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVESCREWPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_MoveScrewParamsSetDataType_clear(UA_MoveScrewParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVESCREWPARAMSSETDATATYPE]);
+}
+
+static UA_INLINE void
+UA_MoveScrewParamsSetDataType_delete(UA_MoveScrewParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVESCREWPARAMSSETDATATYPE]);
+}
+
 /* CRCL_ActuateJointDataType */
 static UA_INLINE void
 UA_CRCL_ActuateJointDataType_init(UA_CRCL_ActuateJointDataType *p) {
@@ -3642,35 +3673,35 @@ UA_CRCL_ActuateJointDataType_delete(UA_CRCL_ActuateJointDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_ACTUATEJOINTDATATYPE]);
 }
 
-/* MoveThroughToParametersSetDataType */
+/* ActuateJointsParamsSetDataType */
 static UA_INLINE void
-UA_MoveThroughToParametersSetDataType_init(UA_MoveThroughToParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_MoveThroughToParametersSetDataType));
+UA_ActuateJointsParamsSetDataType_init(UA_ActuateJointsParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_ActuateJointsParamsSetDataType));
 }
 
-static UA_INLINE UA_MoveThroughToParametersSetDataType *
-UA_MoveThroughToParametersSetDataType_new(void) {
-    return (UA_MoveThroughToParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTOPARAMETERSSETDATATYPE]);
+static UA_INLINE UA_ActuateJointsParamsSetDataType *
+UA_ActuateJointsParamsSetDataType_new(void) {
+    return (UA_ActuateJointsParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE UA_StatusCode
-UA_MoveThroughToParametersSetDataType_copy(const UA_MoveThroughToParametersSetDataType *src, UA_MoveThroughToParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTOPARAMETERSSETDATATYPE]);
+UA_ActuateJointsParamsSetDataType_copy(const UA_ActuateJointsParamsSetDataType *src, UA_ActuateJointsParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMSSETDATATYPE]);
 }
 
 UA_DEPRECATED static UA_INLINE void
-UA_MoveThroughToParametersSetDataType_deleteMembers(UA_MoveThroughToParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTOPARAMETERSSETDATATYPE]);
+UA_ActuateJointsParamsSetDataType_deleteMembers(UA_ActuateJointsParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_MoveThroughToParametersSetDataType_clear(UA_MoveThroughToParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTOPARAMETERSSETDATATYPE]);
+UA_ActuateJointsParamsSetDataType_clear(UA_ActuateJointsParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_MoveThroughToParametersSetDataType_delete(UA_MoveThroughToParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_MOVETHROUGHTOPARAMETERSSETDATATYPE]);
+UA_ActuateJointsParamsSetDataType_delete(UA_ActuateJointsParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMSSETDATATYPE]);
 }
 
 /* CRCL_TransAccelDataType */
@@ -3766,66 +3797,35 @@ UA_SetDefaultJointPositionsTolerancesDataType_delete(UA_SetDefaultJointPositions
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESDATATYPE]);
 }
 
-/* SetTransSpeedParametersSetDataType */
+/* SetRotSpeedParamsSetDataType */
 static UA_INLINE void
-UA_SetTransSpeedParametersSetDataType_init(UA_SetTransSpeedParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_SetTransSpeedParametersSetDataType));
+UA_SetRotSpeedParamsSetDataType_init(UA_SetRotSpeedParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_SetRotSpeedParamsSetDataType));
 }
 
-static UA_INLINE UA_SetTransSpeedParametersSetDataType *
-UA_SetTransSpeedParametersSetDataType_new(void) {
-    return (UA_SetTransSpeedParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDPARAMETERSSETDATATYPE]);
+static UA_INLINE UA_SetRotSpeedParamsSetDataType *
+UA_SetRotSpeedParamsSetDataType_new(void) {
+    return (UA_SetRotSpeedParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE UA_StatusCode
-UA_SetTransSpeedParametersSetDataType_copy(const UA_SetTransSpeedParametersSetDataType *src, UA_SetTransSpeedParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDPARAMETERSSETDATATYPE]);
+UA_SetRotSpeedParamsSetDataType_copy(const UA_SetRotSpeedParamsSetDataType *src, UA_SetRotSpeedParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDPARAMSSETDATATYPE]);
 }
 
 UA_DEPRECATED static UA_INLINE void
-UA_SetTransSpeedParametersSetDataType_deleteMembers(UA_SetTransSpeedParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDPARAMETERSSETDATATYPE]);
+UA_SetRotSpeedParamsSetDataType_deleteMembers(UA_SetRotSpeedParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_SetTransSpeedParametersSetDataType_clear(UA_SetTransSpeedParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDPARAMETERSSETDATATYPE]);
+UA_SetRotSpeedParamsSetDataType_clear(UA_SetRotSpeedParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_SetTransSpeedParametersSetDataType_delete(UA_SetTransSpeedParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSSPEEDPARAMETERSSETDATATYPE]);
-}
-
-/* SetDefaultJointPositionsTolerancesParametersSetDataType */
-static UA_INLINE void
-UA_SetDefaultJointPositionsTolerancesParametersSetDataType_init(UA_SetDefaultJointPositionsTolerancesParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_SetDefaultJointPositionsTolerancesParametersSetDataType));
-}
-
-static UA_INLINE UA_SetDefaultJointPositionsTolerancesParametersSetDataType *
-UA_SetDefaultJointPositionsTolerancesParametersSetDataType_new(void) {
-    return (UA_SetDefaultJointPositionsTolerancesParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_SetDefaultJointPositionsTolerancesParametersSetDataType_copy(const UA_SetDefaultJointPositionsTolerancesParametersSetDataType *src, UA_SetDefaultJointPositionsTolerancesParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_SetDefaultJointPositionsTolerancesParametersSetDataType_deleteMembers(UA_SetDefaultJointPositionsTolerancesParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SetDefaultJointPositionsTolerancesParametersSetDataType_clear(UA_SetDefaultJointPositionsTolerancesParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_SetDefaultJointPositionsTolerancesParametersSetDataType_delete(UA_SetDefaultJointPositionsTolerancesParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETDEFAULTJOINTPOSITIONSTOLERANCESPARAMETERSSETDATATYPE]);
+UA_SetRotSpeedParamsSetDataType_delete(UA_SetRotSpeedParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETROTSPEEDPARAMSSETDATATYPE]);
 }
 
 /* CRCLStatusDataType */
@@ -3952,66 +3952,35 @@ UA_CRCL_PoseAndSetDataType_delete(UA_CRCL_PoseAndSetDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCL_POSEANDSETDATATYPE]);
 }
 
-/* SetTransAccelParametersSetDataType */
+/* SetTransAccelParamsSetDataType */
 static UA_INLINE void
-UA_SetTransAccelParametersSetDataType_init(UA_SetTransAccelParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_SetTransAccelParametersSetDataType));
+UA_SetTransAccelParamsSetDataType_init(UA_SetTransAccelParamsSetDataType *p) {
+    memset(p, 0, sizeof(UA_SetTransAccelParamsSetDataType));
 }
 
-static UA_INLINE UA_SetTransAccelParametersSetDataType *
-UA_SetTransAccelParametersSetDataType_new(void) {
-    return (UA_SetTransAccelParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELPARAMETERSSETDATATYPE]);
+static UA_INLINE UA_SetTransAccelParamsSetDataType *
+UA_SetTransAccelParamsSetDataType_new(void) {
+    return (UA_SetTransAccelParamsSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE UA_StatusCode
-UA_SetTransAccelParametersSetDataType_copy(const UA_SetTransAccelParametersSetDataType *src, UA_SetTransAccelParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELPARAMETERSSETDATATYPE]);
+UA_SetTransAccelParamsSetDataType_copy(const UA_SetTransAccelParamsSetDataType *src, UA_SetTransAccelParamsSetDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELPARAMSSETDATATYPE]);
 }
 
 UA_DEPRECATED static UA_INLINE void
-UA_SetTransAccelParametersSetDataType_deleteMembers(UA_SetTransAccelParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELPARAMETERSSETDATATYPE]);
+UA_SetTransAccelParamsSetDataType_deleteMembers(UA_SetTransAccelParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_SetTransAccelParametersSetDataType_clear(UA_SetTransAccelParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELPARAMETERSSETDATATYPE]);
+UA_SetTransAccelParamsSetDataType_clear(UA_SetTransAccelParamsSetDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELPARAMSSETDATATYPE]);
 }
 
 static UA_INLINE void
-UA_SetTransAccelParametersSetDataType_delete(UA_SetTransAccelParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELPARAMETERSSETDATATYPE]);
-}
-
-/* ActuateJointsParametersSetDataType */
-static UA_INLINE void
-UA_ActuateJointsParametersSetDataType_init(UA_ActuateJointsParametersSetDataType *p) {
-    memset(p, 0, sizeof(UA_ActuateJointsParametersSetDataType));
-}
-
-static UA_INLINE UA_ActuateJointsParametersSetDataType *
-UA_ActuateJointsParametersSetDataType_new(void) {
-    return (UA_ActuateJointsParametersSetDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE UA_StatusCode
-UA_ActuateJointsParametersSetDataType_copy(const UA_ActuateJointsParametersSetDataType *src, UA_ActuateJointsParametersSetDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE]);
-}
-
-UA_DEPRECATED static UA_INLINE void
-UA_ActuateJointsParametersSetDataType_deleteMembers(UA_ActuateJointsParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_ActuateJointsParametersSetDataType_clear(UA_ActuateJointsParametersSetDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE]);
-}
-
-static UA_INLINE void
-UA_ActuateJointsParametersSetDataType_delete(UA_ActuateJointsParametersSetDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_ACTUATEJOINTSPARAMETERSSETDATATYPE]);
+UA_SetTransAccelParamsSetDataType_delete(UA_SetTransAccelParamsSetDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELPARAMSSETDATATYPE]);
 }
 
 /* SetTransAccelDataType */
@@ -4045,6 +4014,37 @@ UA_SetTransAccelDataType_delete(UA_SetTransAccelDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SETTRANSACCELDATATYPE]);
 }
 
+/* CRCLCommandsParamsSetsUnionDataType */
+static UA_INLINE void
+UA_CRCLCommandsParamsSetsUnionDataType_init(UA_CRCLCommandsParamsSetsUnionDataType *p) {
+    memset(p, 0, sizeof(UA_CRCLCommandsParamsSetsUnionDataType));
+}
+
+static UA_INLINE UA_CRCLCommandsParamsSetsUnionDataType *
+UA_CRCLCommandsParamsSetsUnionDataType_new(void) {
+    return (UA_CRCLCommandsParamsSetsUnionDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSPARAMSSETSUNIONDATATYPE]);
+}
+
+static UA_INLINE UA_StatusCode
+UA_CRCLCommandsParamsSetsUnionDataType_copy(const UA_CRCLCommandsParamsSetsUnionDataType *src, UA_CRCLCommandsParamsSetsUnionDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSPARAMSSETSUNIONDATATYPE]);
+}
+
+UA_DEPRECATED static UA_INLINE void
+UA_CRCLCommandsParamsSetsUnionDataType_deleteMembers(UA_CRCLCommandsParamsSetsUnionDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSPARAMSSETSUNIONDATATYPE]);
+}
+
+static UA_INLINE void
+UA_CRCLCommandsParamsSetsUnionDataType_clear(UA_CRCLCommandsParamsSetsUnionDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSPARAMSSETSUNIONDATATYPE]);
+}
+
+static UA_INLINE void
+UA_CRCLCommandsParamsSetsUnionDataType_delete(UA_CRCLCommandsParamsSetsUnionDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSPARAMSSETSUNIONDATATYPE]);
+}
+
 /* CRCLCommandsUnionDataType */
 static UA_INLINE void
 UA_CRCLCommandsUnionDataType_init(UA_CRCLCommandsUnionDataType *p) {
@@ -4076,66 +4076,66 @@ UA_CRCLCommandsUnionDataType_delete(UA_CRCLCommandsUnionDataType *p) {
     UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSUNIONDATATYPE]);
 }
 
-/* CRCLSkillDataType */
+/* CRCLCommandsParamsSetsBufferDataType */
 static UA_INLINE void
-UA_CRCLSkillDataType_init(UA_CRCLSkillDataType *p) {
-    memset(p, 0, sizeof(UA_CRCLSkillDataType));
+UA_CRCLCommandsParamsSetsBufferDataType_init(UA_CRCLCommandsParamsSetsBufferDataType *p) {
+    memset(p, 0, sizeof(UA_CRCLCommandsParamsSetsBufferDataType));
 }
 
-static UA_INLINE UA_CRCLSkillDataType *
-UA_CRCLSkillDataType_new(void) {
-    return (UA_CRCLSkillDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE]);
+static UA_INLINE UA_CRCLCommandsParamsSetsBufferDataType *
+UA_CRCLCommandsParamsSetsBufferDataType_new(void) {
+    return (UA_CRCLCommandsParamsSetsBufferDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSPARAMSSETSBUFFERDATATYPE]);
 }
 
 static UA_INLINE UA_StatusCode
-UA_CRCLSkillDataType_copy(const UA_CRCLSkillDataType *src, UA_CRCLSkillDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE]);
+UA_CRCLCommandsParamsSetsBufferDataType_copy(const UA_CRCLCommandsParamsSetsBufferDataType *src, UA_CRCLCommandsParamsSetsBufferDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSPARAMSSETSBUFFERDATATYPE]);
 }
 
 UA_DEPRECATED static UA_INLINE void
-UA_CRCLSkillDataType_deleteMembers(UA_CRCLSkillDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE]);
+UA_CRCLCommandsParamsSetsBufferDataType_deleteMembers(UA_CRCLCommandsParamsSetsBufferDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSPARAMSSETSBUFFERDATATYPE]);
 }
 
 static UA_INLINE void
-UA_CRCLSkillDataType_clear(UA_CRCLSkillDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE]);
+UA_CRCLCommandsParamsSetsBufferDataType_clear(UA_CRCLCommandsParamsSetsBufferDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSPARAMSSETSBUFFERDATATYPE]);
 }
 
 static UA_INLINE void
-UA_CRCLSkillDataType_delete(UA_CRCLSkillDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLSKILLDATATYPE]);
+UA_CRCLCommandsParamsSetsBufferDataType_delete(UA_CRCLCommandsParamsSetsBufferDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSPARAMSSETSBUFFERDATATYPE]);
 }
 
-/* SAMYRobotDataType */
+/* CRCLCommandsBufferDataType */
 static UA_INLINE void
-UA_SAMYRobotDataType_init(UA_SAMYRobotDataType *p) {
-    memset(p, 0, sizeof(UA_SAMYRobotDataType));
+UA_CRCLCommandsBufferDataType_init(UA_CRCLCommandsBufferDataType *p) {
+    memset(p, 0, sizeof(UA_CRCLCommandsBufferDataType));
 }
 
-static UA_INLINE UA_SAMYRobotDataType *
-UA_SAMYRobotDataType_new(void) {
-    return (UA_SAMYRobotDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_SAMYROBOTDATATYPE]);
+static UA_INLINE UA_CRCLCommandsBufferDataType *
+UA_CRCLCommandsBufferDataType_new(void) {
+    return (UA_CRCLCommandsBufferDataType*)UA_new(&UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERDATATYPE]);
 }
 
 static UA_INLINE UA_StatusCode
-UA_SAMYRobotDataType_copy(const UA_SAMYRobotDataType *src, UA_SAMYRobotDataType *dst) {
-    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_SAMYROBOTDATATYPE]);
+UA_CRCLCommandsBufferDataType_copy(const UA_CRCLCommandsBufferDataType *src, UA_CRCLCommandsBufferDataType *dst) {
+    return UA_copy(src, dst, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERDATATYPE]);
 }
 
 UA_DEPRECATED static UA_INLINE void
-UA_SAMYRobotDataType_deleteMembers(UA_SAMYRobotDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SAMYROBOTDATATYPE]);
+UA_CRCLCommandsBufferDataType_deleteMembers(UA_CRCLCommandsBufferDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERDATATYPE]);
 }
 
 static UA_INLINE void
-UA_SAMYRobotDataType_clear(UA_SAMYRobotDataType *p) {
-    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SAMYROBOTDATATYPE]);
+UA_CRCLCommandsBufferDataType_clear(UA_CRCLCommandsBufferDataType *p) {
+    UA_clear(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERDATATYPE]);
 }
 
 static UA_INLINE void
-UA_SAMYRobotDataType_delete(UA_SAMYRobotDataType *p) {
-    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_SAMYROBOTDATATYPE]);
+UA_CRCLCommandsBufferDataType_delete(UA_CRCLCommandsBufferDataType *p) {
+    UA_delete(p, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERDATATYPE]);
 }
 
 #if defined(__GNUC__) && __GNUC__ >= 4 && __GNUC_MINOR__ >= 6

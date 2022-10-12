@@ -1,11 +1,13 @@
+#include <crcl_nodeids.h>
+
 #include <samycoreInterfaceGenerator.h>
 
 namespace SAMY{
 
-    UA_StatusCode SAMYCoreInterfaceGenerator::setContextInRobotSkill( UA_Server* server, const UA_NodeId& skillNode, SAMYRobot* robot )
+    UA_StatusCode SAMYCoreInterfaceGenerator::setRobotAsContextInNode( UA_Server* server, const UA_NodeId& nodeId, SAMYRobot* robot )
     {
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal = UA_Server_setNodeContext( server, skillNode, static_cast<void*>( robot ) );
+        retVal = UA_Server_setNodeContext( server, nodeId, static_cast<void*>( robot ) );
         if ( retVal != UA_STATUSCODE_GOOD) {
             throw std::runtime_error("SETTING SKILL CONTEXT (ROBOT AND SKILL) FOR SKILL FAILED");
         }
@@ -24,7 +26,7 @@ namespace SAMY{
 
     void SAMYCoreInterfaceGenerator::saveSkillStatusNodes( UA_Server* server, SAMYRobot* robot, SAMYSkill* skill ){
         UA_NodeId aux = UA_NODEID_NULL;
-        std::string baseName = "Robot_" + std::string{ reinterpret_cast<char*>( robot->name.data )} + "_Skill_" + skill->getSkillName();
+        std::string baseName = "Robot_" + robot->name + "_Skill_" + skill->getSkillName();
         aux = getComponentNodeByBrowseName( server, skill->getSkillNodeID(), "CurrentState", 0 );
         std::string name = baseName + "_CurrentState";
         systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>( aux,  name ) );
@@ -50,7 +52,7 @@ namespace SAMY{
 
 UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server* server, SAMYRobot* robot ){
     UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-    UA_Int16 robotNS = UA_Server_addNamespace( server, reinterpret_cast<const char*>(robot->name.data) );
+    UA_Int16 robotNS = UA_Server_addNamespace( server, robot->name.c_str() );
     for( int i=0; i < robot->robotSkills.size(); i++ )
     {
        UA_NodeId skillTypeNode = findSkillType( server, robot->robotSkills[i].getSkillName().c_str() );
@@ -61,7 +63,7 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
         retVal |= UA_Server_addNode_begin( server, UA_NODECLASS_OBJECT,
         UA_NODEID_NUMERIC(robotNS, 0),
         findRobotControllerSkillsObject( server, robot ),
-        UA_NODEID_NUMERIC(0, 47LU),
+        UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT),
         UA_QUALIFIEDNAME(robotNS, (char*)robot->robotSkills[i].getSkillName().c_str()),
         skillTypeNode,
         (const UA_NodeAttributes*)&attr, &UA_TYPES[UA_TYPES_OBJECTATTRIBUTES], NULL, &skillInstanceNode);
@@ -74,26 +76,28 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
 
         robot->robotSkills[i].setSkillTypeNodeId( skillTypeNode );
         robot->robotSkills[i].setSkillNodeID( skillInstanceNode );
-        retVal |= setContextInRobotSkill( server, skillInstanceNode, const_cast<SAMYRobot*>(robot) );
+        robot->setSkillInSkillsMap( i, skillInstanceNode );
+
+        retVal |= setRobotAsContextInNode( server, skillInstanceNode, const_cast<SAMYRobot*>(robot) );
         retVal |= setSkillMethodsCallbacks( server, skillInstanceNode, const_cast<SAMYRobot*>(robot) );
 
-        std::string name = "Robot_" + std::string{ reinterpret_cast<char*>( robot->name.data ) } + "_Skill_" +
+        std::string name = "Robot_" + robot->name + "_Skill_" +
                             robot->robotSkills[i].getSkillName();
         systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>(  skillInstanceNode,  name ) );
 
         saveSkillStatusNodes( server, robot, &robot->robotSkills[i] );
     }
-    robot->initializeRobot( server );
 
     return retVal;
 }
 
-    UA_NodeId SAMYCoreInterfaceGenerator::findRobotControllerObject( UA_Server *server, const SAMYRobot* robot ){
-        UA_UInt16 robotNS = UA_Server_addNamespace( server, reinterpret_cast<const char*>(robot->name.data) );
+    UA_NodeId SAMYCoreInterfaceGenerator::findRobotControllerObject( UA_Server *server, const SAMYRobot* robot )
+    {
+        UA_UInt16 robotNS = UA_Server_addNamespace( server, robot->name.c_str() );
         UA_Int16 roboticsNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/Robotics/");
 
         UA_UInt32 length = 2;
-        char *paths[length] = { "Controllers", (char*)robot->name.data };
+        char *paths[length] = { "Controllers", const_cast<char*>( robot->name.c_str() ) };
         UA_UInt32 ids[length] = { UA_NS0ID_HASCOMPONENT, UA_NS0ID_HASCOMPONENT };
         UA_UInt16 ns[length] = { roboticsNS, robotNS };
 
@@ -128,11 +132,11 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
 
     UA_NodeId SAMYCoreInterfaceGenerator::findFolderInRobotMotionSystem( UA_Server* server, const SAMYRobot* robot, char* folderName ){
         UA_UInt16 diNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/DI/");
-        UA_UInt16 robotNS = UA_Server_addNamespace( server, reinterpret_cast<const char*>(robot->name.data) );
+        UA_UInt16 robotNS = UA_Server_addNamespace( server, robot->name.c_str() );
         UA_Int16 roboticsNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/Robotics/");
 
         UA_UInt32 length = 3;
-        char *paths[length] = { "DeviceSet", (char*)robot->name.data, folderName };
+        char *paths[length] = { "DeviceSet", const_cast<char*>( robot->name.c_str() ), folderName };
         UA_UInt32 ids[length] = {UA_NS0ID_ORGANIZES, UA_NS0ID_ORGANIZES, UA_NS0ID_HASCOMPONENT};
         UA_UInt16 ns[length] = { diNS, robotNS, roboticsNS  };
 
@@ -187,22 +191,22 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
     }
 
     UA_StatusCode SAMYCoreInterfaceGenerator::addRobotMotionSystem( UA_Server* server, SAMYRobot* robot ){
-        UA_Int16 robotNS = UA_Server_addNamespace( server, reinterpret_cast<const char*>(robot->name.data) );
+        UA_Int16 robotNS = UA_Server_addNamespace( server, robot->name.c_str() );
         UA_Int16 diNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/DI/");
         UA_Int16 roboticsNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/Robotics/");
 
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
         UA_ObjectAttributes attr = UA_ObjectAttributes_default;
         attr.eventNotifier = true;
-        attr.displayName = UA_LOCALIZEDTEXT( "", (char*)robot->name.data );
+        attr.displayName = UA_LOCALIZEDTEXT( "", const_cast<char*>( robot->name.c_str() ) );
         #ifdef UA_ENABLE_NODESET_COMPILER_DESCRIPTIONS
-        attr.description = UA_LOCALIZEDTEXT( "",  (char*)robot->name.data );
+        attr.description = UA_LOCALIZEDTEXT( "",  const_cast<char*>( robot->name.c_str() ) );
         #endif
         retVal |= UA_Server_addNode_begin( server, UA_NODECLASS_OBJECT,
         UA_NODEID_NUMERIC(robotNS, 15001LU),
         UA_NODEID_NUMERIC(diNS, 5001LU),
-        UA_NODEID_NUMERIC(0, 35LU),
-        UA_QUALIFIEDNAME(robotNS,  (char*)robot->name.data ),
+        UA_NODEID_NUMERIC(0, UA_NS0ID_ORGANIZES),
+        UA_QUALIFIEDNAME(robotNS,  const_cast<char*>( robot->name.c_str() ) ),
         UA_NODEID_NUMERIC(roboticsNS, 1002LU),
         (const UA_NodeAttributes*)&attr, &UA_TYPES[UA_TYPES_OBJECTATTRIBUTES], NULL, NULL);
 
@@ -215,13 +219,13 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
 
     UA_NodeId SAMYCoreInterfaceGenerator::findRobotControllerSkillsObject( UA_Server* server, const SAMYRobot* robot ){
         UA_UInt16 diNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/DI/");
-        UA_UInt16 robotNS = UA_Server_addNamespace( server, reinterpret_cast<const char*>(robot->name.data) );
+        UA_UInt16 robotNS = UA_Server_addNamespace( server, robot->name.c_str() );
         UA_Int16 roboticsNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/Robotics/");
         UA_Int16 fortissDiNS = UA_Server_addNamespace( server, "https://fortiss.org/UA/DI/");
 
         UA_UInt32 length = 5;
-        char *paths[length] = { "DeviceSet", (char*)robot->name.data, "Controllers", (char*)robot->name.data, "Skills" };
-        UA_UInt32 ids[length] = {UA_NS0ID_ORGANIZES, UA_NS0ID_ORGANIZES, UA_NS0ID_HASCOMPONENT, UA_NS0ID_HASCOMPONENT, UA_NS0ID_HASCOMPONENT};
+        char *paths[length] = { "DeviceSet", const_cast<char*>( robot->name.c_str() ), "Controllers", const_cast<char*>( robot->name.c_str() ), "Skills" };
+        UA_UInt32 ids[length] = { UA_NS0ID_ORGANIZES, UA_NS0ID_ORGANIZES, UA_NS0ID_HASCOMPONENT, UA_NS0ID_HASCOMPONENT, UA_NS0ID_HASCOMPONENT};
         UA_UInt16 ns[length] = { diNS, robotNS, roboticsNS, robotNS, fortissDiNS };
 
         UA_BrowsePath browsePath;
@@ -246,18 +250,18 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
     }
 
     UA_StatusCode SAMYCoreInterfaceGenerator::addRobotMotionDevice( UA_Server* server, const SAMYRobot* robot ){
-        UA_Int16 robotNS = UA_Server_addNamespace( server, reinterpret_cast<const char*>(robot->name.data) );
+        UA_Int16 robotNS = UA_Server_addNamespace( server, robot->name.c_str() );
         UA_Int16 diNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/DI/");
         UA_Int16 fortissRoboticsNS = UA_Server_addNamespace( server, "https://fortiss.org/UA/Robotics/");
 
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
         UA_ObjectAttributes attr = UA_ObjectAttributes_default;
-        attr.displayName = UA_LOCALIZEDTEXT("",  reinterpret_cast<char*>(robot->name.data));
+        attr.displayName = UA_LOCALIZEDTEXT("",  const_cast<char*>( robot->name.c_str() ) );
         retVal |= UA_Server_addNode_begin( server, UA_NODECLASS_OBJECT,
         UA_NODEID_NUMERIC(robotNS, 15488LU),
         findFolderInRobotMotionSystem( server, robot, "MotionDevices"),
-        UA_NODEID_NUMERIC(0, 47LU),
-        UA_QUALIFIEDNAME(robotNS,   (char*)robot->name.data),
+        UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT),
+        UA_QUALIFIEDNAME(robotNS,   const_cast<char*>( robot->name.c_str() ) ),
         UA_NODEID_NUMERIC(fortissRoboticsNS, 15768LU),
         (const UA_NodeAttributes*)&attr, &UA_TYPES[UA_TYPES_OBJECTATTRIBUTES],NULL, NULL);
 
@@ -267,7 +271,7 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
     }
 
     UA_StatusCode SAMYCoreInterfaceGenerator::addRobotPosition( UA_Server* server, const SAMYRobot* robot ){
-        UA_Int16 robotNS = UA_Server_addNamespace( server, reinterpret_cast<const char*>(robot->name.data) );
+        UA_Int16 robotNS = UA_Server_addNamespace( server, robot->name.c_str() );
 
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
         UA_VariableAttributes attr = UA_VariableAttributes_default;
@@ -285,14 +289,14 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
         retVal |= UA_Server_addNode_begin( server, UA_NODECLASS_VARIABLE,
         UA_NODEID_NUMERIC(robotNS, 16296LU),
         UA_NODEID_NUMERIC(robotNS, 15488LU),
-        UA_NODEID_NUMERIC(0, 47LU),
+        UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT),
         UA_QUALIFIEDNAME(robotNS, "Position"),
         UA_NODEID_NUMERIC(0, 18791LU),
         (const UA_NodeAttributes*)&attr, &UA_TYPES[UA_TYPES_VARIABLEATTRIBUTES],NULL, NULL);
 
         retVal |= UA_Server_addNode_finish( server, UA_NODEID_NUMERIC(robotNS, 16296LU));
 
-        std::string name = "Robot_" + std::string{ reinterpret_cast<char*>( robot->name.data ) } + "_Position";
+        std::string name = "Robot_" + robot->name + "_Position";
         systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>(  UA_NODEID_NUMERIC(robotNS, 16296LU),  name ) );
 
         return retVal;
@@ -300,7 +304,7 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
 
 
     UA_StatusCode SAMYCoreInterfaceGenerator::addRobotCRCLStatus( UA_Server* server, const SAMYRobot* robot ){
-        UA_Int16 robotNS = UA_Server_addNamespace( server, reinterpret_cast<const char*>(robot->name.data) );
+        UA_Int16 robotNS = UA_Server_addNamespace( server, robot->name.c_str() );
         UA_Int16 crclNS = UA_Server_addNamespace( server, "https://crcl.org" );
 
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
@@ -320,72 +324,34 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
         retVal |= UA_Server_addNode_begin( server, UA_NODECLASS_VARIABLE,
         UA_NODEID_NUMERIC(robotNS, 0),
         UA_NODEID_NUMERIC(robotNS, 15488LU),
-        UA_NODEID_NUMERIC(0, 47LU),
+        UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT),
         UA_QUALIFIEDNAME(robotNS, "RobotStatus"),
         UA_NODEID_NUMERIC(0, UA_NS0ID_PROPERTYTYPE),
         (const UA_NodeAttributes*)&attr, &UA_TYPES[UA_TYPES_VARIABLEATTRIBUTES],NULL, &tempNode);
 
         retVal |= UA_Server_addNode_finish( server, tempNode );
 
-        std::string name = "Robot_" + std::string{ reinterpret_cast<char*>( robot->name.data ) } + "_CRCLStatus";
+        std::string name = "Robot_" + robot->name + "_CRCLStatus";
         systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>(  tempNode,  name ) );
-
-        return retVal;
-    }
-
-    UA_StatusCode SAMYCoreInterfaceGenerator::addRobotNextSkill( UA_Server* server, SAMYRobot* robot ){
-        UA_Int16 robotNS = UA_Server_addNamespace( server, reinterpret_cast<const char*>(robot->name.data) );
-
-        UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        UA_VariableAttributes attr = UA_VariableAttributes_default;
-        attr.minimumSamplingInterval = 0.000000;
-        attr.userAccessLevel = 1;
-        attr.accessLevel = UA_ACCESSLEVELMASK_READ | UA_ACCESSLEVELMASK_WRITE;
-        /*attr.accessLevel = UA_ACCESSLEVELMASK_READ;*/
-        /* Value rank inherited */
-        attr.valueRank = -1;
-        attr.dataType = UA_NODEID_NUMERIC(0, 17);
-        attr.displayName = UA_LOCALIZEDTEXT("", "NextSkillNodeId");
-        attr.displayName = UA_LOCALIZEDTEXT("", "NextSkillNodeId");
-        #ifdef UA_ENABLE_NODESET_COMPILER_DESCRIPTIONS
-        attr.description = UA_LOCALIZEDTEXT("", "The nodeid of the next skill to be executed by the robot");
-        #endif
-
-        UA_NodeId nextSkillNodeId = UA_NODEID_NULL;
-        retVal |= UA_Server_addNode_begin(
-        server,
-        UA_NODECLASS_VARIABLE,
-        UA_NODEID_NUMERIC(robotNS, 0),
-        UA_NODEID_NUMERIC(robotNS, 16428LU),
-        UA_NODEID_NUMERIC(0, 47LU),
-        UA_QUALIFIEDNAME(robotNS, "NextSkillNodeId"),
-        UA_NODEID_NUMERIC(0, 68),
-        (const UA_NodeAttributes*)&attr, &UA_TYPES[UA_TYPES_VARIABLEATTRIBUTES], NULL, &nextSkillNodeId );
-
-        retVal |= UA_Server_addNode_finish( server, nextSkillNodeId);
-
-        robot->robotNextSkillNodeId = nextSkillNodeId;
-
-        std::string name = "Robot_" + std::string{ reinterpret_cast<char*>( robot->name.data ) } + "_nextSkillNodeId";
-        systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>(  nextSkillNodeId,  name ) );
 
         return retVal;
     }
 
     /* Robot Controller NodeId -> robotNS 16428LU */
         UA_StatusCode SAMYCoreInterfaceGenerator::addRobotController( UA_Server* server, SAMYRobot* robot ){
-            UA_Int16 robotNS = UA_Server_addNamespace( server, reinterpret_cast<const char*>(robot->name.data) );
+            UA_Int16 robotNS = UA_Server_addNamespace( server, robot->name.c_str() );
             UA_Int16 roboticsNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/Robotics/");
             UA_Int16 fortissDiNS = UA_Server_addNamespace( server, "https://fortiss.org/UA/DI/");
 
             UA_StatusCode retVal = UA_STATUSCODE_GOOD;
             UA_ObjectAttributes attr = UA_ObjectAttributes_default;
-            attr.displayName = UA_LOCALIZEDTEXT("", (char*)robot->name.data );
+            attr.displayName = UA_LOCALIZEDTEXT("", const_cast<char*>( robot->name.c_str() ) );
+
             retVal |= UA_Server_addNode_begin( server, UA_NODECLASS_OBJECT,
             UA_NODEID_NUMERIC(robotNS, 16428LU),
             findFolderInRobotMotionSystem( server, robot, "Controllers"),
-            UA_NODEID_NUMERIC(0, 47LU),
-            UA_QUALIFIEDNAME(robotNS, (char*)robot->name.data ),
+            UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT),
+            UA_QUALIFIEDNAME(robotNS, const_cast<char*>( robot->name.c_str() ) ),
             UA_NODEID_NUMERIC(roboticsNS, 1003LU),
             (const UA_NodeAttributes*)&attr, &UA_TYPES[UA_TYPES_OBJECTATTRIBUTES],NULL, NULL);
             retVal |= UA_Server_addReference( server, UA_NODEID_NUMERIC(robotNS, 16428LU), UA_NODEID_NUMERIC(0, 17603LU),
@@ -393,14 +359,91 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
 
             retVal |= UA_Server_addNode_finish( server, UA_NODEID_NUMERIC(robotNS, 16428LU));
 
-            retVal = UA_Server_setNodeContext( server, UA_NODEID_NUMERIC(robotNS, 16428LU), static_cast<void*>( robot ) );
+            retVal |= setRobotAsContextInNode( server, UA_NODEID_NUMERIC(robotNS, 16428LU), robot );
+
+            return retVal;
+        }
+
+        UA_StatusCode SAMYCoreInterfaceGenerator::addRobotCommandsBuffer( UA_Server* server, SAMYRobot* robot )
+        {
+            UA_Int16 robotNS = UA_Server_addNamespace( server, robot->name.c_str() );
+
+            UA_VariableAttributes vattr = UA_VariableAttributes_default;
+            vattr.valueRank = UA_VALUERANK_SCALAR;
+            vattr.accessLevel = UA_ACCESSLEVELMASK_READ | UA_ACCESSLEVELMASK_WRITE;
+
+            #ifdef UA_ENABLE_NODESET_COMPILER_DESCRIPTIONS
+            vattr.description = UA_LOCALIZEDTEXT("", "Buffer of commands to be executed by the robot");
+            #endif
+            vattr.displayName = UA_LOCALIZEDTEXT("", "CommandsBuffer");
+
+            UA_NodeId_init( &vattr.dataType );
+            vattr.dataType = UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSPARAMSSETSBUFFERDATATYPE].typeId;
+
+            UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+
+            UA_NodeId CommandsBufferNodeId = UA_NODEID_NULL;
+            retVal |= UA_Server_addVariableNode( server,
+                                                 UA_NODEID_NUMERIC(robotNS, 0),
+                                                 UA_NODEID_NUMERIC(robotNS, 16428LU),
+                                                 UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT), // referenceTypeId HasParent reverse (I think)
+                                                 UA_QUALIFIEDNAME(robotNS, "CommandsBuffer"),
+                                                 UA_NODEID_NUMERIC(0, UA_NS0ID_PROPERTYTYPE),
+                                                 vattr, NULL, &CommandsBufferNodeId
+                                                 );
+
+            robot->commandsBufferNodeId = CommandsBufferNodeId;
+
+            return retVal;
+        }
+
+
+        UA_StatusCode SAMYCoreInterfaceGenerator::addRobotCommandsBufferState( UA_Server* server, SAMYRobot* robot )
+        {
+            UA_Int16 robotNS = UA_Server_addNamespace( server, robot->name.c_str() );
+
+            UA_VariableAttributes vattr = UA_VariableAttributes_default;
+            vattr.valueRank = UA_VALUERANK_SCALAR;
+            vattr.accessLevel = UA_ACCESSLEVELMASK_READ | UA_ACCESSLEVELMASK_WRITE;
+
+            #ifdef UA_ENABLE_NODESET_COMPILER_DESCRIPTIONS
+            vattr.description = UA_LOCALIZEDTEXT("", "State of the buffer of commands indicating whether is ready to be read and executed by the robot");
+            #endif
+            vattr.displayName = UA_LOCALIZEDTEXT("", "CommandsBufferState");
+
+            UA_NodeId_init( &vattr.dataType );
+            vattr.dataType = UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSBUFFERSTATE].typeId;
+
+            UA_StatusCode retVal = UA_STATUSCODE_GOOD;
+
+            UA_NodeId CommandsBufferStateNodeId = UA_NODEID_NULL;
+            retVal |= UA_Server_addVariableNode( server,
+                                                 UA_NODEID_NUMERIC(robotNS, 0),
+                                                 UA_NODEID_NUMERIC(robotNS, 16428LU),
+                                                 UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT), // referenceTypeId HasParent reverse (I think)
+                                                 UA_QUALIFIEDNAME(robotNS, "CommandsBufferState"),
+                                                 UA_NODEID_NUMERIC(0, UA_NS0ID_PROPERTYTYPE),
+                                                 vattr, NULL, &CommandsBufferStateNodeId
+                                                 );
+
+            robot->commandsBufferStateNodeId = CommandsBufferStateNodeId;
+
+            retVal |= setRobotAsContextInNode( server, CommandsBufferStateNodeId, const_cast<SAMYRobot*>(robot) );
+
+            // Every time the commandsBufferState node changes, we act accordingly. Coordination mechanism between SAMYCore and SAMYPlugin
+            UA_MonitoredItemCreateRequest monRequest = UA_MonitoredItemCreateRequest_default( robot->commandsBufferStateNodeId );
+            monRequest.requestedParameters.samplingInterval = 10.0; // 10 ms interval
+            UA_MonitoredItemCreateResult monResp = UA_Server_createDataChangeMonitoredItem( server, UA_TIMESTAMPSTORETURN_SOURCE, monRequest,
+                                                     const_cast<SAMYRobot*>(robot), &SAMYRobot::onBufferedCommandsStateChange );
+
+            retVal |= monResp.statusCode;
 
             return retVal;
         }
 
 
         UA_StatusCode SAMYCoreInterfaceGenerator::addRobotCurrentState( UA_Server* server, SAMYRobot* robot ){
-            UA_Int16 robotNS = UA_Server_addNamespace( server, reinterpret_cast<const char*>(robot->name.data) );
+            UA_Int16 robotNS = UA_Server_addNamespace( server, robot->name.c_str() );
 
             UA_StatusCode retVal = UA_STATUSCODE_GOOD;
             UA_VariableAttributes attr = UA_VariableAttributes_default;
@@ -411,7 +454,6 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
             /* Value rank inherited */
             attr.valueRank = -1;
             attr.dataType = UA_TYPES[UA_TYPES_LOCALIZEDTEXT].typeId;
-            attr.displayName = UA_LOCALIZEDTEXT("", "CurrentState");
             attr.displayName = UA_LOCALIZEDTEXT("", "CurrentState");
             #ifdef UA_ENABLE_NODESET_COMPILER_DESCRIPTIONS
             attr.description = UA_LOCALIZEDTEXT("", "The current state of the robot, that corresponds to the"
@@ -426,19 +468,19 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
             UA_NODEID_NUMERIC(robotNS, 16428LU),
             UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT),
             UA_QUALIFIEDNAME(robotNS, "CurrentState"),
-            UA_NODEID_NUMERIC(0, 68),
+            UA_NODEID_NUMERIC(0, UA_NS0ID_PROPERTYTYPE),
             (const UA_NodeAttributes*)&attr, &UA_TYPES[UA_TYPES_VARIABLEATTRIBUTES], NULL, &tempNodeId );
 
             retVal |= UA_Server_addNode_finish( server, tempNodeId);
 
             robot->currentStateNodeId = tempNodeId;
-            std::string name = "Robot_" + std::string{ reinterpret_cast<char*>( robot->name.data ) } + "_CurrentState";
+            std::string name = "Robot_" + robot->name + "_CurrentState";
             systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>(  tempNodeId,  name ) );
 
             return retVal;
         }
         UA_StatusCode SAMYCoreInterfaceGenerator::addRobotLastTransition(UA_Server* server, SAMYRobot* robot ){
-            UA_Int16 robotNS = UA_Server_addNamespace( server, reinterpret_cast<const char*>(robot->name.data) );
+            UA_Int16 robotNS = UA_Server_addNamespace( server, robot->name.c_str() );
 
             UA_StatusCode retVal = UA_STATUSCODE_GOOD;
             UA_VariableAttributes attr = UA_VariableAttributes_default;
@@ -470,14 +512,14 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
             retVal |= UA_Server_addNode_finish( server, tempNodeId);
 
             robot->lastTransitionNodeId = tempNodeId;
-            std::string name = "Robot_" + std::string{ reinterpret_cast<char*>( robot->name.data ) } + "_LastTransition";
+            std::string name = "Robot_" + robot->name + "_LastTransition";
             systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>(  tempNodeId,  name ) );
 
             return retVal;
         }
 
         UA_StatusCode SAMYCoreInterfaceGenerator::addRobotExecutedSkills(UA_Server* server, SAMYRobot* robot ){
-            UA_Int16 robotNS = UA_Server_addNamespace( server, reinterpret_cast<const char*>(robot->name.data) );
+            UA_Int16 robotNS = UA_Server_addNamespace( server, robot->name.c_str() );
             UA_StatusCode retVal = UA_STATUSCODE_GOOD;
             const size_t array_size = 100;
 
@@ -504,13 +546,13 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
             UA_NODEID_NUMERIC(robotNS, 16428LU),
             UA_NODEID_NUMERIC(0, UA_NS0ID_HASCOMPONENT),
             UA_QUALIFIEDNAME(robotNS, "ExecutedSkills"),
-            UA_NODEID_NUMERIC(0, UA_NS0ID_PROPERTYTYPE),
+            UA_NODEID_NUMERIC(0, UA_NS0ID_BASEDATAVARIABLETYPE),
             (const UA_NodeAttributes*)&attr, &UA_TYPES[UA_TYPES_VARIABLEATTRIBUTES], NULL, &tempNodeId );
 
             retVal |= UA_Server_addNode_finish( server, tempNodeId);
 
             robot->executedSkillsNodeId = tempNodeId;
-            std::string name = "Robot_" + std::string{ reinterpret_cast<char*>( robot->name.data ) } + "_ExecutedSkills";
+            std::string name = "Robot_" + robot->name + "_ExecutedSkills";
             systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>(  tempNodeId,  name ) );
 
             return retVal;
@@ -519,58 +561,59 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
 
     UA_StatusCode SAMYCoreInterfaceGenerator::addSAMYRobotToServer( UA_Server* server, SAMYRobot* robot ){
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        std::stringstream msg1;
-        msg1 << "Processing Robot: " << robot->name.data;
-        logger->info( msg1.str() );
-
         retVal |= addRobotMotionSystem( server, robot );
-        logOfNodesAdditionToServer( "Robot MotionSystem ", retVal );
+        logOnAddingError( "Robot MotionSystem ", retVal );
 
         retVal |= addRobotMotionDevice( server, robot );
-        logOfNodesAdditionToServer( "Specific Motion Device", retVal );
+        logOnAddingError( "Specific Motion Device", retVal );
 
         retVal |= addRobotController( server, robot );
-        logOfNodesAdditionToServer( "Robot Specific Controller", retVal );
+        logOnAddingError( "Robot Specific Controller", retVal );
 
         retVal |= addRobotCurrentState( server, robot );
-        logOfNodesAdditionToServer( "Robot Current State", retVal );
+        logOnAddingError( "Robot Current State", retVal );
 
         retVal |= addRobotLastTransition( server, robot );
-        logOfNodesAdditionToServer( "Robot Last Transition", retVal );
+        logOnAddingError( "Robot Last Transition", retVal );
 
         retVal |= addRobotExecutedSkills( server, robot );
-        logOfNodesAdditionToServer( "Robot Executed Skills", retVal );
+        logOnAddingError( "Robot Executed Skills", retVal );
 
         retVal |= addRobotPosition( server, robot );
-        logOfNodesAdditionToServer( "Robot Motion Device Position", retVal );
+        logOnAddingError( "Robot Motion Device Position", retVal );
 
         retVal |= addRobotCRCLStatus( server, robot );
-        logOfNodesAdditionToServer( "Robot Motion Device CRCLStatus", retVal );
+        logOnAddingError( "Robot Motion Device CRCLStatus", retVal );
 
         retVal |= addSkillsToRobotController( server, robot );
-        logOfNodesAdditionToServer( "Skills to Robot Specific Controller", retVal );
+        logOnAddingError( "Skills to Robot Specific Controller", retVal );
 
-        retVal |= addRobotNextSkill( server, robot );
-        logOfNodesAdditionToServer( "Robot Motion Device Next Skill", retVal );
+        retVal |= addRobotCommandsBuffer( server, robot );
+        logOnAddingError( "Robot CommandsBuffer ", retVal );
+
+        retVal |= addRobotCommandsBufferState( server, robot );
+        logOnAddingError( "Robot CommandsBufferState ", retVal );
 
         std::stringstream msg;
-        msg << "Finished Processing Robot: " << robot->name.data << std::endl << std::endl;
+        msg << "Finished Processing Robot: " << robot->name;
         logger->info( msg.str() );
 
         return retVal;
     }
 
-    UA_StatusCode SAMYCoreInterfaceGenerator::addSAMYRobotsToServer( UA_Server* server, std::vector<SAMYRobot>* robots ){
+    UA_StatusCode SAMYCoreInterfaceGenerator::addSAMYRobotsToServer( UA_Server* server, std::vector<SAMYRobot>& robots ){
 
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
         std::stringstream msg1;
-        msg1 << "Start Processing Robots " << std::endl << std::endl;
+        msg1 << "Start processing Robots ";
         logger->info( msg1.str() );
 
-        for( int i = 0; i < robots->size(); i++ ){
-            retVal |= addSAMYRobotToServer( server, &(*robots)[i] );
+        for( auto& robot : robots ){
+            robot.server = server;
+            retVal |= addSAMYRobotToServer( server, &robot );
         }
         return retVal;
     }
 
 } /*SAMY*/
+

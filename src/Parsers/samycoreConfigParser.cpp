@@ -2,7 +2,8 @@
 
 namespace SAMY {
 
-bool Parsers::SAMYCoreConfigParser::parseSAMYCoreConfig(const std::string& filepath, SAMYCoreConfig &config ){
+bool Parsers::SAMYCoreConfigParser::parseSAMYCoreConfig(const std::string& filepath, SAMYCoreConfig &config )
+{
     std::ifstream stream(filepath);
     std::stringstream strStream;
     strStream << stream.rdbuf();
@@ -45,8 +46,11 @@ bool Parsers::SAMYCoreConfigParser::parseSAMYCoreConfig(const std::string& filep
         config.pathToInformationSourcesConfig = configFiles["InformationSourcesFile"].as<std::string>();
         config.pathToDataBaseConfig = configFiles["DataBaseFile"].as<std::string>();
 
+        logger->info("SAMYCore Configuration file correctly parsed");
+
         return true;
     }
+    logger->error("SAMYCore Configuration could not be parsed. Review the file");
     return false;
 }
 

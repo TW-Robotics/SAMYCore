@@ -8,40 +8,39 @@ namespace SAMY{
 
      std::vector< std::pair<UA_NodeId, std::string> > SAMYCoreInterfaceGenerator::getSystemStatusNodesAndNames(){ return systemStatusNodesAndNames; }
 
-    void SAMYCoreInterfaceGenerator::logOfNodesAdditionToServer( const std::string& element, UA_StatusCode retVal ){
+    void SAMYCoreInterfaceGenerator::logOnAddingError( const std::string& element, UA_StatusCode retVal ){
         std::string auxFail = "Could not add " + element + " to server.";
-        std::string auxSuc = "Adding " +  element + " succeeded.";
         if( retVal != UA_STATUSCODE_GOOD ){
             logger->error( auxFail );
-        }else{ logger->info( auxSuc ); }
+        }
     }
 
-    UA_StatusCode SAMYCoreInterfaceGenerator::addFixedInformationModels( UA_Server* server, std::vector<SAMYRobot>* robots ){
+    UA_StatusCode SAMYCoreInterfaceGenerator::addFixedInformationModels( UA_Server* server, std::vector<SAMYRobot>& robots ){
         std::stringstream msg1;
-        msg1 << "Adding fixed information models to the SAMYCore Server " << std::endl << std::endl;
+        msg1 << "Setting up information models...";
         logger->info( msg1.str() );
 
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
         retVal |= namespace_crcl_generated( server );
-        logOfNodesAdditionToServer( "CRCL Nodeset", retVal );
+        logOnAddingError( "CRCL Nodeset", retVal );
 
         retVal |= namespace_di_generated( server );
-        logOfNodesAdditionToServer( "DI Nodeset", retVal );
+        logOnAddingError( "DI Nodeset", retVal );
 
         retVal |= namespace_robotics_generated( server );
-        logOfNodesAdditionToServer( "Robotics Nodeset", retVal );
+        logOnAddingError( "Robotics Nodeset", retVal );
 
         retVal |= namespace_fortiss_di_generated( server );
-        logOfNodesAdditionToServer( "Fortiss DI Nodeset", retVal );
+        logOnAddingError( "Fortiss DI Nodeset", retVal );
 
         retVal |= namespace_fortiss_robotics_generated( server );
-        logOfNodesAdditionToServer( "Fortiss Robotics Nodeset", retVal );
+        logOnAddingError( "Fortiss Robotics Nodeset", retVal );
 
         return retVal;
     }
 
     UA_StatusCode SAMYCoreInterfaceGenerator::addInformationSourcesToServer(
-                                            UA_Server* server, std::vector<InformationSource>* infoSources ){
+                                            UA_Server* server, std::vector<InformationSource>& infoSources ){
          UA_Int16 infoSourcesNS = UA_Server_addNamespace( server, "http://SAMY.org/InformationSources");
          UA_StatusCode retVal = UA_STATUSCODE_GOOD;
 
@@ -58,7 +57,7 @@ namespace SAMY{
 
          retVal |= UA_Server_addNode_finish( server, infoSourcesFolder );
 
-         for( InformationSource& infoSource : *infoSources ){
+         for( InformationSource& infoSource : infoSources ){
              UA_NodeId infoSourceNodeId = UA_NODEID_NULL;
              UA_ObjectAttributes attr = UA_ObjectAttributes_default;
              attr.displayName = UA_LOCALIZEDTEXT("", const_cast<char*>(infoSource.getName().c_str()) );
@@ -118,7 +117,7 @@ namespace SAMY{
 
 
     UA_StatusCode SAMYCoreInterfaceGenerator::addDataBaseNodesToServer( UA_Server* server,
-                                            std::vector< std::tuple<std::string, UA_UInt16, std::string> >* dataBaseTypes ){
+                                            std::vector< std::tuple<std::string, UA_UInt16, std::string> >& dataBaseTypes ){
          UA_Int16 dataBaseNS = UA_Server_addNamespace( server, "http://SAMY.org/DataBase");
          UA_StatusCode retVal = UA_STATUSCODE_GOOD;
 
@@ -135,7 +134,7 @@ namespace SAMY{
 
          retVal |= UA_Server_addNode_finish( server, dataBaseFolder );
 
-         for( std::tuple<std::string, UA_UInt16, std::string>& entry : *dataBaseTypes ){
+         for( std::tuple<std::string, UA_UInt16, std::string>& entry : dataBaseTypes ){
                 std::string auxName = std::get<2>(entry);
                 UA_NodeId tempNodeId = UA_NODEID_NULL;
 
@@ -145,6 +144,8 @@ namespace SAMY{
                 attr.accessLevel = UA_ACCESSLEVELMASK_READ | UA_ACCESSLEVELMASK_WRITE;
                 /* Value rank inherited */
                 attr.valueRank = -1;
+
+// Template this so is independent of the used information models???
                 if( std::get<0>(entry) == "UA_TYPES_CRCL" )
                    attr.dataType = UA_TYPES_CRCL[std::get<1>(entry)].typeId;
                 else if( std::get<0>(entry) == "UA_TYPES" )
@@ -174,39 +175,17 @@ namespace SAMY{
     }
 
     UA_StatusCode SAMYCoreInterfaceGenerator::generateSAMYCoreInterface(UA_Server* server,
-                                                               std::vector<SAMYRobot>* robots,
-                                                               std::vector<SAMYSkill>* skills,
-                                                               std::vector<InformationSource>* informationSources,
-                                                               std::vector< std::tuple<std::string, UA_UInt16, std::string> >* dataBaseTypes){
+                                                               std::vector<SAMYRobot>& robots,
+                                                               std::vector<SAMYSkill>& skills,
+                                                               std::vector<InformationSource>& informationSources,
+                                                               std::vector< std::tuple<std::string, UA_UInt16, std::string> >& dataBaseTypes){
 
         UA_StatusCode retVal = UA_STATUSCODE_GOOD;
-        retVal |= addFixedInformationModels( server,     robots );
-        if( retVal != UA_STATUSCODE_GOOD ){
-            logger->error( "Could not add the fixed nodesets!" );
-        }else{ logger->info("DI, Robotics, Fortiss DI, Fortiss Robotics, CRCL nodesets correctly added\n\n"); }
-
         retVal |= addSkillTypesToServer( server, skills );
-        if( retVal != UA_STATUSCODE_GOOD ){
-            logger->error( "Could not add all the skill types nodesets!" );
-        }else{ logger->info("Skill types nodes correctly added\n\n"); }
-
         retVal |= addSAMYRobotsToServer( server, robots );
-        if( retVal != UA_STATUSCODE_GOOD ){
-            logger->error( "Could not add the Robots nodesets!" );
-        }else{ logger->info("Robots nodes correctly added\n\n"); }
-
         retVal |= addInformationSourcesToServer( server, informationSources );
-        if( retVal != UA_STATUSCODE_GOOD ){ logger->error( "Could not add the information sources nodes!" );
-        }else{ logger->info("Information source nodes correctly added\n\n"); }
-
         retVal |= addDataBaseNodesToServer( server, dataBaseTypes );
-        if( retVal != UA_STATUSCODE_GOOD ){ logger->error( "Could not add the DataBase nodes!" );
-        }else{ logger->info("DataBase nodes correctly added\n\n"); }
-
         retVal |= addSystemStatusNodesToServer( server );
-        if( retVal != UA_STATUSCODE_GOOD ){ logger->error( "Could not add the System Status nodes!" );
-        }else{ logger->info("System Status nodes correctly added\n\n"); }
-
         return retVal;
     }
 } /*SAMY*/
