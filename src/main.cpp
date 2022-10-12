@@ -13,7 +13,9 @@ int main(int argc, char** argv){
 
     if (argc != 2) return -1;
 
-    SAMY::SAMYCore core{argv[1]};
+    SAMY::SAMYCore& core = SAMY::SAMYCore::getInstance();
+    core.configure( argv[1] );
+
     core.run( running );
 
     return 0;

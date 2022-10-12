@@ -4,17 +4,17 @@
 #include <iostream>
 #include <fstream>
 #include <tuple>
-#include "string.h"
-//#include "crcl_nodeids.h"
-#include <namespace_crcl_generated.h>
-#include "types_crcl_generated.h"
+#include <string.h>
+#include <filesystem>
+
 #include <samyskill.h>
 #include <yaml-cpp/yaml.h>
 #include <algorithm>
 #include <vector>
-#include "SAMYRobot.h"
-#include "informationSource.h"
+#include <SAMYRobot.h>
+#include <informationSource.h>
 #include <samycoreConfig.h>
+#include <skillConfig.h>
 
 namespace SAMY {
 
@@ -22,7 +22,22 @@ namespace Parsers {
 
     class SkillsParser{
     public:
-        SkillsParser( std::shared_ptr<spdlog::logger> logger_ );
+        SkillsParser( const std::shared_ptr<spdlog::logger>& logger_ );
+        SkillsParser( const std::filesystem::path& skillsFolderPath_, const std::shared_ptr<spdlog::logger>& logger_ );
+        bool parseSkills( );
+        bool parseIndividualSkill(const std::filesystem::path& skillFolderPath);
+
+        std::vector< SAMYSkillConfig > getSkillConfigs(){ return skillConfigs; }
+    private:
+        std::filesystem::path skillsFolderPath;
+        std::shared_ptr<spdlog::logger> logger;
+        std::vector< SAMYSkillConfig > skillConfigs;
+    };
+
+
+    class SkillsParser_Orig{
+    public:
+        SkillsParser_Orig( std::shared_ptr<spdlog::logger> logger_ );
         bool parseSkills(const std::string& filepath, std::vector<SAMYSkill>& parsedSkills );
     private:
         std::shared_ptr<spdlog::logger> logger;
@@ -37,7 +52,6 @@ namespace Parsers {
 
     };
 
-
     class InformationSourcesParser{
     public:
         InformationSourcesParser( std::shared_ptr<spdlog::logger> logger_ );
@@ -47,7 +61,6 @@ namespace Parsers {
         std::shared_ptr<spdlog::logger> logger;
 
     };
-
 
     class SAMYCoreConfigParser{
     public:

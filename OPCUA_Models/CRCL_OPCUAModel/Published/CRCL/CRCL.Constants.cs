@@ -91,11 +91,6 @@ namespace CRCL
         public const uint CRCL_PoseDataType = 15013;
 
         /// <summary>
-        /// The identifier for the CRCL_PositiveDecimalDataType DataType.
-        /// </summary>
-        public const uint CRCL_PositiveDecimalDataType = 15014;
-
-        /// <summary>
         /// The identifier for the CRCL_TorqueUnitEnumDataType DataType.
         /// </summary>
         public const uint CRCL_TorqueUnitEnumDataType = 15015;
@@ -511,204 +506,209 @@ namespace CRCL
         public const uint CRCLStatusDataType = 15100;
 
         /// <summary>
-        /// The identifier for the PubSubIPAddresses DataType.
-        /// </summary>
-        public const uint PubSubIPAddresses = 15101;
-
-        /// <summary>
-        /// The identifier for the SAMYRobotDataType DataType.
-        /// </summary>
-        public const uint SAMYRobotDataType = 15102;
-
-        /// <summary>
         /// The identifier for the CRCLCommandsUnionDataType DataType.
         /// </summary>
         public const uint CRCLCommandsUnionDataType = 15103;
 
         /// <summary>
-        /// The identifier for the CRCLSkillDataType DataType.
+        /// The identifier for the CRCLCommandsBufferDataType DataType.
         /// </summary>
-        public const uint CRCLSkillDataType = 15104;
+        public const uint CRCLCommandsBufferDataType = 16276;
 
         /// <summary>
-        /// The identifier for the CRCLCommandParametersSetDataType DataType.
+        /// The identifier for the CRCLCommandParamsSetDataType DataType.
         /// </summary>
-        public const uint CRCLCommandParametersSetDataType = 15107;
+        public const uint CRCLCommandParamsSetDataType = 15101;
 
         /// <summary>
-        /// The identifier for the InitCanonParametersSetDataType DataType.
+        /// The identifier for the InitCanonParamsSetDataType DataType.
         /// </summary>
-        public const uint InitCanonParametersSetDataType = 15108;
+        public const uint InitCanonParamsSetDataType = 15102;
 
         /// <summary>
-        /// The identifier for the EndCanonParametersSetDataType DataType.
+        /// The identifier for the EndCanonParamsSetDataType DataType.
         /// </summary>
-        public const uint EndCanonParametersSetDataType = 15109;
+        public const uint EndCanonParamsSetDataType = 15104;
 
         /// <summary>
-        /// The identifier for the GetStatusParametersSetDataType DataType.
+        /// The identifier for the GetStatusParamsSetDataType DataType.
         /// </summary>
-        public const uint GetStatusParametersSetDataType = 15110;
+        public const uint GetStatusParamsSetDataType = 15228;
 
         /// <summary>
-        /// The identifier for the CloseToolChangerParametersSetDataType DataType.
+        /// The identifier for the CloseToolChangerParamsSetDataType DataType.
         /// </summary>
-        public const uint CloseToolChangerParametersSetDataType = 15111;
+        public const uint CloseToolChangerParamsSetDataType = 15229;
 
         /// <summary>
-        /// The identifier for the OpenToolChangerParametersSetDataType DataType.
+        /// The identifier for the OpenToolChangerParamsSetDataType DataType.
         /// </summary>
-        public const uint OpenToolChangerParametersSetDataType = 15112;
+        public const uint OpenToolChangerParamsSetDataType = 15231;
 
         /// <summary>
-        /// The identifier for the MessageParametersSetDataType DataType.
+        /// The identifier for the MessageParamsSetDataType DataType.
         /// </summary>
-        public const uint MessageParametersSetDataType = 15113;
+        public const uint MessageParamsSetDataType = 15527;
 
         /// <summary>
-        /// The identifier for the MoveToParametersSetDataType DataType.
+        /// The identifier for the MoveToParamsSetDataType DataType.
         /// </summary>
-        public const uint MoveToParametersSetDataType = 15114;
+        public const uint MoveToParamsSetDataType = 15528;
 
         /// <summary>
-        /// The identifier for the MoveScrewParametersSetDataType DataType.
+        /// The identifier for the MoveScrewParamsSetDataType DataType.
         /// </summary>
-        public const uint MoveScrewParametersSetDataType = 15115;
+        public const uint MoveScrewParamsSetDataType = 15529;
 
         /// <summary>
-        /// The identifier for the MoveThroughToParametersSetDataType DataType.
+        /// The identifier for the MoveThroughToParamsSetDataType DataType.
         /// </summary>
-        public const uint MoveThroughToParametersSetDataType = 15116;
+        public const uint MoveThroughToParamsSetDataType = 15530;
 
         /// <summary>
-        /// The identifier for the DwellParametersSetDataType DataType.
+        /// The identifier for the DwellParamsSetDataType DataType.
         /// </summary>
-        public const uint DwellParametersSetDataType = 15117;
+        public const uint DwellParamsSetDataType = 15531;
 
         /// <summary>
-        /// The identifier for the ActuateJointsParametersSetDataType DataType.
+        /// The identifier for the ActuateJointsParamsSetDataType DataType.
         /// </summary>
-        public const uint ActuateJointsParametersSetDataType = 15118;
+        public const uint ActuateJointsParamsSetDataType = 15532;
 
         /// <summary>
-        /// The identifier for the ConfigureJointReportsParametersSetDataType DataType.
+        /// The identifier for the ConfigureJointReportsParamsSetDataType DataType.
         /// </summary>
-        public const uint ConfigureJointReportsParametersSetDataType = 15119;
+        public const uint ConfigureJointReportsParamsSetDataType = 15536;
 
         /// <summary>
-        /// The identifier for the SetDefaultJointPositionsTolerancesParametersSetDataType DataType.
+        /// The identifier for the SetDefaultJointPositionsTolerancesParamsSetDataType DataType.
         /// </summary>
-        public const uint SetDefaultJointPositionsTolerancesParametersSetDataType = 15120;
+        public const uint SetDefaultJointPositionsTolerancesParamsSetDataType = 15537;
 
         /// <summary>
-        /// The identifier for the SetRobotParametersParametersSetDataType DataType.
+        /// The identifier for the SetRobotParametersParamsSetDataType DataType.
         /// </summary>
-        public const uint SetRobotParametersParametersSetDataType = 15121;
+        public const uint SetRobotParametersParamsSetDataType = 15538;
 
         /// <summary>
-        /// The identifier for the SetEndeffectorParametersParametersSetDataType DataType.
+        /// The identifier for the SetEndeffectorParametersParamsSetDataType DataType.
         /// </summary>
-        public const uint SetEndeffectorParametersParametersSetDataType = 15122;
+        public const uint SetEndeffectorParametersParamsSetDataType = 15732;
 
         /// <summary>
-        /// The identifier for the SetEndeffectorParametersSetDataType DataType.
+        /// The identifier for the SetEndeffectorParamsSetDataType DataType.
         /// </summary>
-        public const uint SetEndeffectorParametersSetDataType = 15123;
+        public const uint SetEndeffectorParamsSetDataType = 15733;
 
         /// <summary>
-        /// The identifier for the SetTransSpeedParametersSetDataType DataType.
+        /// The identifier for the SetTransSpeedParamsSetDataType DataType.
         /// </summary>
-        public const uint SetTransSpeedParametersSetDataType = 15124;
+        public const uint SetTransSpeedParamsSetDataType = 15735;
 
         /// <summary>
-        /// The identifier for the SetTransAccelParametersSetDataType DataType.
+        /// The identifier for the SetTransAccelParamsSetDataType DataType.
         /// </summary>
-        public const uint SetTransAccelParametersSetDataType = 15125;
+        public const uint SetTransAccelParamsSetDataType = 16031;
 
         /// <summary>
-        /// The identifier for the SetRotSpeedParametersSetDataType DataType.
+        /// The identifier for the SetRotSpeedParamsSetDataType DataType.
         /// </summary>
-        public const uint SetRotSpeedParametersSetDataType = 15126;
+        public const uint SetRotSpeedParamsSetDataType = 16032;
 
         /// <summary>
-        /// The identifier for the SetRotAccelParametersSetDataType DataType.
+        /// The identifier for the SetRotAccelParamsSetDataType DataType.
         /// </summary>
-        public const uint SetRotAccelParametersSetDataType = 15127;
+        public const uint SetRotAccelParamsSetDataType = 16033;
 
         /// <summary>
-        /// The identifier for the SetAngleUnitsParametersSetDataType DataType.
+        /// The identifier for the SetAngleUnitsParamsSetDataType DataType.
         /// </summary>
-        public const uint SetAngleUnitsParametersSetDataType = 15128;
+        public const uint SetAngleUnitsParamsSetDataType = 16034;
 
         /// <summary>
-        /// The identifier for the SetEndPoseToleranceParametersSetDataType DataType.
+        /// The identifier for the SetEndPoseToleranceParamsSetDataType DataType.
         /// </summary>
-        public const uint SetEndPoseToleranceParametersSetDataType = 15129;
+        public const uint SetEndPoseToleranceParamsSetDataType = 16035;
 
         /// <summary>
-        /// The identifier for the SetForceUnitsParametersSetDataType DataType.
+        /// The identifier for the SetForceUnitsParamsSetDataType DataType.
         /// </summary>
-        public const uint SetForceUnitsParametersSetDataType = 15130;
+        public const uint SetForceUnitsParamsSetDataType = 16036;
 
         /// <summary>
-        /// The identifier for the SetIntermediatePoseToleranceParametersSetDataType DataType.
+        /// The identifier for the SetIntermediatePoseToleranceParamsSetDataType DataType.
         /// </summary>
-        public const uint SetIntermediatePoseToleranceParametersSetDataType = 15131;
+        public const uint SetIntermediatePoseToleranceParamsSetDataType = 16040;
 
         /// <summary>
-        /// The identifier for the SetLengthUnitsParametersSetDataType DataType.
+        /// The identifier for the SetLengthUnitsParamsSetDataType DataType.
         /// </summary>
-        public const uint SetLengthUnitsParametersSetDataType = 15132;
+        public const uint SetLengthUnitsParamsSetDataType = 16041;
 
         /// <summary>
-        /// The identifier for the SetMotionCoordinationParametersSetDataType DataType.
+        /// The identifier for the SetMotionCoordinationParamsSetDataType DataType.
         /// </summary>
-        public const uint SetMotionCoordinationParametersSetDataType = 15133;
+        public const uint SetMotionCoordinationParamsSetDataType = 16042;
 
         /// <summary>
-        /// The identifier for the SetTorqueUnitsParametersSetDataType DataType.
+        /// The identifier for the SetTorqueUnitsParamsSetDataType DataType.
         /// </summary>
-        public const uint SetTorqueUnitsParametersSetDataType = 15134;
+        public const uint SetTorqueUnitsParamsSetDataType = 16236;
 
         /// <summary>
-        /// The identifier for the StopMotionParametersSetDataType DataType.
+        /// The identifier for the StopMotionParamsSetDataType DataType.
         /// </summary>
-        public const uint StopMotionParametersSetDataType = 15135;
+        public const uint StopMotionParamsSetDataType = 16237;
 
         /// <summary>
-        /// The identifier for the ConfigureStatusReportParametersSetDataType DataType.
+        /// The identifier for the ConfigureStatusReportParamsSetDataType DataType.
         /// </summary>
-        public const uint ConfigureStatusReportParametersSetDataType = 15136;
+        public const uint ConfigureStatusReportParamsSetDataType = 16239;
 
         /// <summary>
-        /// The identifier for the EnableSensorParametersSetDataType DataType.
+        /// The identifier for the EnableSensorParamsSetDataType DataType.
         /// </summary>
-        public const uint EnableSensorParametersSetDataType = 15137;
+        public const uint EnableSensorParamsSetDataType = 16286;
 
         /// <summary>
-        /// The identifier for the DisableSensorParametersSetDataType DataType.
+        /// The identifier for the DisableSensorParamsSetDataType DataType.
         /// </summary>
-        public const uint DisableSensorParametersSetDataType = 15138;
+        public const uint DisableSensorParamsSetDataType = 16287;
 
         /// <summary>
-        /// The identifier for the EnableGripperParametersSetDataType DataType.
+        /// The identifier for the EnableGripperParamsSetDataType DataType.
         /// </summary>
-        public const uint EnableGripperParametersSetDataType = 15139;
+        public const uint EnableGripperParamsSetDataType = 16288;
 
         /// <summary>
-        /// The identifier for the DisableGripperParametersSetDataType DataType.
+        /// The identifier for the DisableGripperParamsSetDataType DataType.
         /// </summary>
-        public const uint DisableGripperParametersSetDataType = 15140;
+        public const uint DisableGripperParamsSetDataType = 16289;
 
         /// <summary>
-        /// The identifier for the EnableRobotParameterStatusParametersSetDataType DataType.
+        /// The identifier for the EnableRobotParameterStatusParamsSetDataType DataType.
         /// </summary>
-        public const uint EnableRobotParameterStatusParametersSetDataType = 15141;
+        public const uint EnableRobotParameterStatusParamsSetDataType = 16290;
 
         /// <summary>
-        /// The identifier for the DisableRobotParameterStatusParametersSetDataType DataType.
+        /// The identifier for the DisableRobotParameterStatusParamsSetDataType DataType.
         /// </summary>
-        public const uint DisableRobotParameterStatusParametersSetDataType = 15142;
+        public const uint DisableRobotParameterStatusParamsSetDataType = 16291;
+
+        /// <summary>
+        /// The identifier for the CRCLCommandsParamsSetsUnionDataType DataType.
+        /// </summary>
+        public const uint CRCLCommandsParamsSetsUnionDataType = 15115;
+
+        /// <summary>
+        /// The identifier for the CRCLCommandsParamsSetsBufferDataType DataType.
+        /// </summary>
+        public const uint CRCLCommandsParamsSetsBufferDataType = 15105;
+
+        /// <summary>
+        /// The identifier for the CRCLCommandsBufferState DataType.
+        /// </summary>
+        public const uint CRCLCommandsBufferState = 15014;
     }
     #endregion
 
@@ -1146,204 +1146,204 @@ namespace CRCL
         public const uint CRCLStatusDataType_Encoding_DefaultBinary = 15227;
 
         /// <summary>
-        /// The identifier for the PubSubIPAddresses_Encoding_DefaultBinary Object.
-        /// </summary>
-        public const uint PubSubIPAddresses_Encoding_DefaultBinary = 15228;
-
-        /// <summary>
-        /// The identifier for the SAMYRobotDataType_Encoding_DefaultBinary Object.
-        /// </summary>
-        public const uint SAMYRobotDataType_Encoding_DefaultBinary = 15229;
-
-        /// <summary>
         /// The identifier for the CRCLCommandsUnionDataType_Encoding_DefaultBinary Object.
         /// </summary>
         public const uint CRCLCommandsUnionDataType_Encoding_DefaultBinary = 15230;
 
         /// <summary>
-        /// The identifier for the CRCLSkillDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the CRCLCommandsBufferDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint CRCLSkillDataType_Encoding_DefaultBinary = 15231;
+        public const uint CRCLCommandsBufferDataType_Encoding_DefaultBinary = 16277;
 
         /// <summary>
-        /// The identifier for the CRCLCommandParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the CRCLCommandParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint CRCLCommandParametersSetDataType_Encoding_DefaultBinary = 15232;
+        public const uint CRCLCommandParamsSetDataType_Encoding_DefaultBinary = 16293;
 
         /// <summary>
-        /// The identifier for the InitCanonParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the InitCanonParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint InitCanonParametersSetDataType_Encoding_DefaultBinary = 15233;
+        public const uint InitCanonParamsSetDataType_Encoding_DefaultBinary = 16294;
 
         /// <summary>
-        /// The identifier for the EndCanonParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the EndCanonParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint EndCanonParametersSetDataType_Encoding_DefaultBinary = 15234;
+        public const uint EndCanonParamsSetDataType_Encoding_DefaultBinary = 16295;
 
         /// <summary>
-        /// The identifier for the GetStatusParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the GetStatusParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint GetStatusParametersSetDataType_Encoding_DefaultBinary = 15235;
+        public const uint GetStatusParamsSetDataType_Encoding_DefaultBinary = 16296;
 
         /// <summary>
-        /// The identifier for the CloseToolChangerParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the CloseToolChangerParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint CloseToolChangerParametersSetDataType_Encoding_DefaultBinary = 15236;
+        public const uint CloseToolChangerParamsSetDataType_Encoding_DefaultBinary = 16297;
 
         /// <summary>
-        /// The identifier for the OpenToolChangerParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the OpenToolChangerParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint OpenToolChangerParametersSetDataType_Encoding_DefaultBinary = 15237;
+        public const uint OpenToolChangerParamsSetDataType_Encoding_DefaultBinary = 16298;
 
         /// <summary>
-        /// The identifier for the MessageParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the MessageParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint MessageParametersSetDataType_Encoding_DefaultBinary = 15238;
+        public const uint MessageParamsSetDataType_Encoding_DefaultBinary = 16299;
 
         /// <summary>
-        /// The identifier for the MoveToParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the MoveToParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint MoveToParametersSetDataType_Encoding_DefaultBinary = 15239;
+        public const uint MoveToParamsSetDataType_Encoding_DefaultBinary = 16300;
 
         /// <summary>
-        /// The identifier for the MoveScrewParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the MoveScrewParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint MoveScrewParametersSetDataType_Encoding_DefaultBinary = 15240;
+        public const uint MoveScrewParamsSetDataType_Encoding_DefaultBinary = 16301;
 
         /// <summary>
-        /// The identifier for the MoveThroughToParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the MoveThroughToParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint MoveThroughToParametersSetDataType_Encoding_DefaultBinary = 15241;
+        public const uint MoveThroughToParamsSetDataType_Encoding_DefaultBinary = 16302;
 
         /// <summary>
-        /// The identifier for the DwellParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the DwellParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint DwellParametersSetDataType_Encoding_DefaultBinary = 15242;
+        public const uint DwellParamsSetDataType_Encoding_DefaultBinary = 16303;
 
         /// <summary>
-        /// The identifier for the ActuateJointsParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the ActuateJointsParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint ActuateJointsParametersSetDataType_Encoding_DefaultBinary = 15243;
+        public const uint ActuateJointsParamsSetDataType_Encoding_DefaultBinary = 16304;
 
         /// <summary>
-        /// The identifier for the ConfigureJointReportsParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the ConfigureJointReportsParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint ConfigureJointReportsParametersSetDataType_Encoding_DefaultBinary = 15244;
+        public const uint ConfigureJointReportsParamsSetDataType_Encoding_DefaultBinary = 16305;
 
         /// <summary>
-        /// The identifier for the SetDefaultJointPositionsTolerancesParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetDefaultJointPositionsTolerancesParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint SetDefaultJointPositionsTolerancesParametersSetDataType_Encoding_DefaultBinary = 15245;
+        public const uint SetDefaultJointPositionsTolerancesParamsSetDataType_Encoding_DefaultBinary = 16306;
 
         /// <summary>
-        /// The identifier for the SetRobotParametersParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetRobotParametersParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint SetRobotParametersParametersSetDataType_Encoding_DefaultBinary = 15246;
+        public const uint SetRobotParametersParamsSetDataType_Encoding_DefaultBinary = 16307;
 
         /// <summary>
-        /// The identifier for the SetEndeffectorParametersParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetEndeffectorParametersParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint SetEndeffectorParametersParametersSetDataType_Encoding_DefaultBinary = 15247;
+        public const uint SetEndeffectorParametersParamsSetDataType_Encoding_DefaultBinary = 16308;
 
         /// <summary>
-        /// The identifier for the SetEndeffectorParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetEndeffectorParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint SetEndeffectorParametersSetDataType_Encoding_DefaultBinary = 15248;
+        public const uint SetEndeffectorParamsSetDataType_Encoding_DefaultBinary = 16309;
 
         /// <summary>
-        /// The identifier for the SetTransSpeedParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetTransSpeedParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint SetTransSpeedParametersSetDataType_Encoding_DefaultBinary = 15249;
+        public const uint SetTransSpeedParamsSetDataType_Encoding_DefaultBinary = 16310;
 
         /// <summary>
-        /// The identifier for the SetTransAccelParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetTransAccelParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint SetTransAccelParametersSetDataType_Encoding_DefaultBinary = 15250;
+        public const uint SetTransAccelParamsSetDataType_Encoding_DefaultBinary = 16311;
 
         /// <summary>
-        /// The identifier for the SetRotSpeedParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetRotSpeedParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint SetRotSpeedParametersSetDataType_Encoding_DefaultBinary = 15251;
+        public const uint SetRotSpeedParamsSetDataType_Encoding_DefaultBinary = 16312;
 
         /// <summary>
-        /// The identifier for the SetRotAccelParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetRotAccelParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint SetRotAccelParametersSetDataType_Encoding_DefaultBinary = 15252;
+        public const uint SetRotAccelParamsSetDataType_Encoding_DefaultBinary = 16313;
 
         /// <summary>
-        /// The identifier for the SetAngleUnitsParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetAngleUnitsParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint SetAngleUnitsParametersSetDataType_Encoding_DefaultBinary = 15253;
+        public const uint SetAngleUnitsParamsSetDataType_Encoding_DefaultBinary = 16314;
 
         /// <summary>
-        /// The identifier for the SetEndPoseToleranceParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetEndPoseToleranceParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint SetEndPoseToleranceParametersSetDataType_Encoding_DefaultBinary = 15254;
+        public const uint SetEndPoseToleranceParamsSetDataType_Encoding_DefaultBinary = 16315;
 
         /// <summary>
-        /// The identifier for the SetForceUnitsParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetForceUnitsParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint SetForceUnitsParametersSetDataType_Encoding_DefaultBinary = 15255;
+        public const uint SetForceUnitsParamsSetDataType_Encoding_DefaultBinary = 16316;
 
         /// <summary>
-        /// The identifier for the SetIntermediatePoseToleranceParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetIntermediatePoseToleranceParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint SetIntermediatePoseToleranceParametersSetDataType_Encoding_DefaultBinary = 15256;
+        public const uint SetIntermediatePoseToleranceParamsSetDataType_Encoding_DefaultBinary = 16317;
 
         /// <summary>
-        /// The identifier for the SetLengthUnitsParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetLengthUnitsParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint SetLengthUnitsParametersSetDataType_Encoding_DefaultBinary = 15257;
+        public const uint SetLengthUnitsParamsSetDataType_Encoding_DefaultBinary = 16318;
 
         /// <summary>
-        /// The identifier for the SetMotionCoordinationParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetMotionCoordinationParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint SetMotionCoordinationParametersSetDataType_Encoding_DefaultBinary = 15258;
+        public const uint SetMotionCoordinationParamsSetDataType_Encoding_DefaultBinary = 16319;
 
         /// <summary>
-        /// The identifier for the SetTorqueUnitsParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetTorqueUnitsParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint SetTorqueUnitsParametersSetDataType_Encoding_DefaultBinary = 15259;
+        public const uint SetTorqueUnitsParamsSetDataType_Encoding_DefaultBinary = 16320;
 
         /// <summary>
-        /// The identifier for the StopMotionParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the StopMotionParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint StopMotionParametersSetDataType_Encoding_DefaultBinary = 15260;
+        public const uint StopMotionParamsSetDataType_Encoding_DefaultBinary = 16321;
 
         /// <summary>
-        /// The identifier for the ConfigureStatusReportParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the ConfigureStatusReportParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint ConfigureStatusReportParametersSetDataType_Encoding_DefaultBinary = 15261;
+        public const uint ConfigureStatusReportParamsSetDataType_Encoding_DefaultBinary = 16322;
 
         /// <summary>
-        /// The identifier for the EnableSensorParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the EnableSensorParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint EnableSensorParametersSetDataType_Encoding_DefaultBinary = 15262;
+        public const uint EnableSensorParamsSetDataType_Encoding_DefaultBinary = 16323;
 
         /// <summary>
-        /// The identifier for the DisableSensorParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the DisableSensorParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint DisableSensorParametersSetDataType_Encoding_DefaultBinary = 15263;
+        public const uint DisableSensorParamsSetDataType_Encoding_DefaultBinary = 16324;
 
         /// <summary>
-        /// The identifier for the EnableGripperParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the EnableGripperParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint EnableGripperParametersSetDataType_Encoding_DefaultBinary = 15264;
+        public const uint EnableGripperParamsSetDataType_Encoding_DefaultBinary = 16325;
 
         /// <summary>
-        /// The identifier for the DisableGripperParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the DisableGripperParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint DisableGripperParametersSetDataType_Encoding_DefaultBinary = 15265;
+        public const uint DisableGripperParamsSetDataType_Encoding_DefaultBinary = 16326;
 
         /// <summary>
-        /// The identifier for the EnableRobotParameterStatusParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the EnableRobotParameterStatusParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint EnableRobotParameterStatusParametersSetDataType_Encoding_DefaultBinary = 15266;
+        public const uint EnableRobotParameterStatusParamsSetDataType_Encoding_DefaultBinary = 16327;
 
         /// <summary>
-        /// The identifier for the DisableRobotParameterStatusParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the DisableRobotParameterStatusParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public const uint DisableRobotParameterStatusParametersSetDataType_Encoding_DefaultBinary = 15267;
+        public const uint DisableRobotParameterStatusParamsSetDataType_Encoding_DefaultBinary = 16328;
+
+        /// <summary>
+        /// The identifier for the CRCLCommandsParamsSetsUnionDataType_Encoding_DefaultBinary Object.
+        /// </summary>
+        public const uint CRCLCommandsParamsSetsUnionDataType_Encoding_DefaultBinary = 15116;
+
+        /// <summary>
+        /// The identifier for the CRCLCommandsParamsSetsBufferDataType_Encoding_DefaultBinary Object.
+        /// </summary>
+        public const uint CRCLCommandsParamsSetsBufferDataType_Encoding_DefaultBinary = 15106;
 
         /// <summary>
         /// The identifier for the CRCL_FractionDataType_Encoding_DefaultXml Object.
@@ -1771,204 +1771,204 @@ namespace CRCL
         public const uint CRCLStatusDataType_Encoding_DefaultXml = 15731;
 
         /// <summary>
-        /// The identifier for the PubSubIPAddresses_Encoding_DefaultXml Object.
-        /// </summary>
-        public const uint PubSubIPAddresses_Encoding_DefaultXml = 15732;
-
-        /// <summary>
-        /// The identifier for the SAMYRobotDataType_Encoding_DefaultXml Object.
-        /// </summary>
-        public const uint SAMYRobotDataType_Encoding_DefaultXml = 15733;
-
-        /// <summary>
         /// The identifier for the CRCLCommandsUnionDataType_Encoding_DefaultXml Object.
         /// </summary>
         public const uint CRCLCommandsUnionDataType_Encoding_DefaultXml = 15734;
 
         /// <summary>
-        /// The identifier for the CRCLSkillDataType_Encoding_DefaultXml Object.
+        /// The identifier for the CRCLCommandsBufferDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint CRCLSkillDataType_Encoding_DefaultXml = 15735;
+        public const uint CRCLCommandsBufferDataType_Encoding_DefaultXml = 16281;
 
         /// <summary>
-        /// The identifier for the CRCLCommandParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the CRCLCommandParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint CRCLCommandParametersSetDataType_Encoding_DefaultXml = 15736;
+        public const uint CRCLCommandParamsSetDataType_Encoding_DefaultXml = 16441;
 
         /// <summary>
-        /// The identifier for the InitCanonParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the InitCanonParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint InitCanonParametersSetDataType_Encoding_DefaultXml = 15737;
+        public const uint InitCanonParamsSetDataType_Encoding_DefaultXml = 16442;
 
         /// <summary>
-        /// The identifier for the EndCanonParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the EndCanonParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint EndCanonParametersSetDataType_Encoding_DefaultXml = 15738;
+        public const uint EndCanonParamsSetDataType_Encoding_DefaultXml = 16443;
 
         /// <summary>
-        /// The identifier for the GetStatusParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the GetStatusParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint GetStatusParametersSetDataType_Encoding_DefaultXml = 15739;
+        public const uint GetStatusParamsSetDataType_Encoding_DefaultXml = 16444;
 
         /// <summary>
-        /// The identifier for the CloseToolChangerParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the CloseToolChangerParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint CloseToolChangerParametersSetDataType_Encoding_DefaultXml = 15740;
+        public const uint CloseToolChangerParamsSetDataType_Encoding_DefaultXml = 16445;
 
         /// <summary>
-        /// The identifier for the OpenToolChangerParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the OpenToolChangerParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint OpenToolChangerParametersSetDataType_Encoding_DefaultXml = 15741;
+        public const uint OpenToolChangerParamsSetDataType_Encoding_DefaultXml = 16446;
 
         /// <summary>
-        /// The identifier for the MessageParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the MessageParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint MessageParametersSetDataType_Encoding_DefaultXml = 15742;
+        public const uint MessageParamsSetDataType_Encoding_DefaultXml = 16447;
 
         /// <summary>
-        /// The identifier for the MoveToParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the MoveToParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint MoveToParametersSetDataType_Encoding_DefaultXml = 15743;
+        public const uint MoveToParamsSetDataType_Encoding_DefaultXml = 16448;
 
         /// <summary>
-        /// The identifier for the MoveScrewParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the MoveScrewParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint MoveScrewParametersSetDataType_Encoding_DefaultXml = 15744;
+        public const uint MoveScrewParamsSetDataType_Encoding_DefaultXml = 16449;
 
         /// <summary>
-        /// The identifier for the MoveThroughToParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the MoveThroughToParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint MoveThroughToParametersSetDataType_Encoding_DefaultXml = 15745;
+        public const uint MoveThroughToParamsSetDataType_Encoding_DefaultXml = 16450;
 
         /// <summary>
-        /// The identifier for the DwellParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the DwellParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint DwellParametersSetDataType_Encoding_DefaultXml = 15746;
+        public const uint DwellParamsSetDataType_Encoding_DefaultXml = 16451;
 
         /// <summary>
-        /// The identifier for the ActuateJointsParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the ActuateJointsParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint ActuateJointsParametersSetDataType_Encoding_DefaultXml = 15747;
+        public const uint ActuateJointsParamsSetDataType_Encoding_DefaultXml = 16452;
 
         /// <summary>
-        /// The identifier for the ConfigureJointReportsParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the ConfigureJointReportsParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint ConfigureJointReportsParametersSetDataType_Encoding_DefaultXml = 15748;
+        public const uint ConfigureJointReportsParamsSetDataType_Encoding_DefaultXml = 16453;
 
         /// <summary>
-        /// The identifier for the SetDefaultJointPositionsTolerancesParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetDefaultJointPositionsTolerancesParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint SetDefaultJointPositionsTolerancesParametersSetDataType_Encoding_DefaultXml = 15749;
+        public const uint SetDefaultJointPositionsTolerancesParamsSetDataType_Encoding_DefaultXml = 16454;
 
         /// <summary>
-        /// The identifier for the SetRobotParametersParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetRobotParametersParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint SetRobotParametersParametersSetDataType_Encoding_DefaultXml = 15750;
+        public const uint SetRobotParametersParamsSetDataType_Encoding_DefaultXml = 16455;
 
         /// <summary>
-        /// The identifier for the SetEndeffectorParametersParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetEndeffectorParametersParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint SetEndeffectorParametersParametersSetDataType_Encoding_DefaultXml = 15751;
+        public const uint SetEndeffectorParametersParamsSetDataType_Encoding_DefaultXml = 16456;
 
         /// <summary>
-        /// The identifier for the SetEndeffectorParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetEndeffectorParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint SetEndeffectorParametersSetDataType_Encoding_DefaultXml = 15752;
+        public const uint SetEndeffectorParamsSetDataType_Encoding_DefaultXml = 16457;
 
         /// <summary>
-        /// The identifier for the SetTransSpeedParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetTransSpeedParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint SetTransSpeedParametersSetDataType_Encoding_DefaultXml = 15753;
+        public const uint SetTransSpeedParamsSetDataType_Encoding_DefaultXml = 16458;
 
         /// <summary>
-        /// The identifier for the SetTransAccelParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetTransAccelParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint SetTransAccelParametersSetDataType_Encoding_DefaultXml = 15754;
+        public const uint SetTransAccelParamsSetDataType_Encoding_DefaultXml = 16459;
 
         /// <summary>
-        /// The identifier for the SetRotSpeedParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetRotSpeedParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint SetRotSpeedParametersSetDataType_Encoding_DefaultXml = 15755;
+        public const uint SetRotSpeedParamsSetDataType_Encoding_DefaultXml = 16460;
 
         /// <summary>
-        /// The identifier for the SetRotAccelParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetRotAccelParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint SetRotAccelParametersSetDataType_Encoding_DefaultXml = 15756;
+        public const uint SetRotAccelParamsSetDataType_Encoding_DefaultXml = 16461;
 
         /// <summary>
-        /// The identifier for the SetAngleUnitsParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetAngleUnitsParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint SetAngleUnitsParametersSetDataType_Encoding_DefaultXml = 15757;
+        public const uint SetAngleUnitsParamsSetDataType_Encoding_DefaultXml = 16462;
 
         /// <summary>
-        /// The identifier for the SetEndPoseToleranceParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetEndPoseToleranceParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint SetEndPoseToleranceParametersSetDataType_Encoding_DefaultXml = 15758;
+        public const uint SetEndPoseToleranceParamsSetDataType_Encoding_DefaultXml = 16463;
 
         /// <summary>
-        /// The identifier for the SetForceUnitsParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetForceUnitsParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint SetForceUnitsParametersSetDataType_Encoding_DefaultXml = 15759;
+        public const uint SetForceUnitsParamsSetDataType_Encoding_DefaultXml = 16464;
 
         /// <summary>
-        /// The identifier for the SetIntermediatePoseToleranceParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetIntermediatePoseToleranceParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint SetIntermediatePoseToleranceParametersSetDataType_Encoding_DefaultXml = 15760;
+        public const uint SetIntermediatePoseToleranceParamsSetDataType_Encoding_DefaultXml = 16465;
 
         /// <summary>
-        /// The identifier for the SetLengthUnitsParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetLengthUnitsParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint SetLengthUnitsParametersSetDataType_Encoding_DefaultXml = 15761;
+        public const uint SetLengthUnitsParamsSetDataType_Encoding_DefaultXml = 16466;
 
         /// <summary>
-        /// The identifier for the SetMotionCoordinationParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetMotionCoordinationParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint SetMotionCoordinationParametersSetDataType_Encoding_DefaultXml = 15762;
+        public const uint SetMotionCoordinationParamsSetDataType_Encoding_DefaultXml = 16467;
 
         /// <summary>
-        /// The identifier for the SetTorqueUnitsParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetTorqueUnitsParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint SetTorqueUnitsParametersSetDataType_Encoding_DefaultXml = 15763;
+        public const uint SetTorqueUnitsParamsSetDataType_Encoding_DefaultXml = 16468;
 
         /// <summary>
-        /// The identifier for the StopMotionParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the StopMotionParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint StopMotionParametersSetDataType_Encoding_DefaultXml = 15764;
+        public const uint StopMotionParamsSetDataType_Encoding_DefaultXml = 16469;
 
         /// <summary>
-        /// The identifier for the ConfigureStatusReportParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the ConfigureStatusReportParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint ConfigureStatusReportParametersSetDataType_Encoding_DefaultXml = 15765;
+        public const uint ConfigureStatusReportParamsSetDataType_Encoding_DefaultXml = 16470;
 
         /// <summary>
-        /// The identifier for the EnableSensorParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the EnableSensorParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint EnableSensorParametersSetDataType_Encoding_DefaultXml = 15766;
+        public const uint EnableSensorParamsSetDataType_Encoding_DefaultXml = 16471;
 
         /// <summary>
-        /// The identifier for the DisableSensorParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the DisableSensorParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint DisableSensorParametersSetDataType_Encoding_DefaultXml = 15767;
+        public const uint DisableSensorParamsSetDataType_Encoding_DefaultXml = 16472;
 
         /// <summary>
-        /// The identifier for the EnableGripperParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the EnableGripperParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint EnableGripperParametersSetDataType_Encoding_DefaultXml = 15768;
+        public const uint EnableGripperParamsSetDataType_Encoding_DefaultXml = 16473;
 
         /// <summary>
-        /// The identifier for the DisableGripperParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the DisableGripperParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint DisableGripperParametersSetDataType_Encoding_DefaultXml = 15769;
+        public const uint DisableGripperParamsSetDataType_Encoding_DefaultXml = 16474;
 
         /// <summary>
-        /// The identifier for the EnableRobotParameterStatusParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the EnableRobotParameterStatusParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint EnableRobotParameterStatusParametersSetDataType_Encoding_DefaultXml = 15770;
+        public const uint EnableRobotParameterStatusParamsSetDataType_Encoding_DefaultXml = 16475;
 
         /// <summary>
-        /// The identifier for the DisableRobotParameterStatusParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the DisableRobotParameterStatusParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public const uint DisableRobotParameterStatusParametersSetDataType_Encoding_DefaultXml = 15771;
+        public const uint DisableRobotParameterStatusParamsSetDataType_Encoding_DefaultXml = 16476;
+
+        /// <summary>
+        /// The identifier for the CRCLCommandsParamsSetsUnionDataType_Encoding_DefaultXml Object.
+        /// </summary>
+        public const uint CRCLCommandsParamsSetsUnionDataType_Encoding_DefaultXml = 15120;
+
+        /// <summary>
+        /// The identifier for the CRCLCommandsParamsSetsBufferDataType_Encoding_DefaultXml Object.
+        /// </summary>
+        public const uint CRCLCommandsParamsSetsBufferDataType_Encoding_DefaultXml = 15110;
 
         /// <summary>
         /// The identifier for the CRCL_FractionDataType_Encoding_DefaultJson Object.
@@ -2396,219 +2396,204 @@ namespace CRCL
         public const uint CRCLStatusDataType_Encoding_DefaultJson = 16235;
 
         /// <summary>
-        /// The identifier for the PubSubIPAddresses_Encoding_DefaultJson Object.
-        /// </summary>
-        public const uint PubSubIPAddresses_Encoding_DefaultJson = 16236;
-
-        /// <summary>
-        /// The identifier for the SAMYRobotDataType_Encoding_DefaultJson Object.
-        /// </summary>
-        public const uint SAMYRobotDataType_Encoding_DefaultJson = 16237;
-
-        /// <summary>
         /// The identifier for the CRCLCommandsUnionDataType_Encoding_DefaultJson Object.
         /// </summary>
         public const uint CRCLCommandsUnionDataType_Encoding_DefaultJson = 16238;
 
         /// <summary>
-        /// The identifier for the CRCLSkillDataType_Encoding_DefaultJson Object.
+        /// The identifier for the CRCLCommandsBufferDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint CRCLSkillDataType_Encoding_DefaultJson = 16239;
+        public const uint CRCLCommandsBufferDataType_Encoding_DefaultJson = 16285;
 
         /// <summary>
-        /// The identifier for the CRCLCommandParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the CRCLCommandParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint CRCLCommandParametersSetDataType_Encoding_DefaultJson = 16240;
+        public const uint CRCLCommandParamsSetDataType_Encoding_DefaultJson = 16589;
 
         /// <summary>
-        /// The identifier for the InitCanonParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the InitCanonParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint InitCanonParametersSetDataType_Encoding_DefaultJson = 16241;
+        public const uint InitCanonParamsSetDataType_Encoding_DefaultJson = 16590;
 
         /// <summary>
-        /// The identifier for the EndCanonParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the EndCanonParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint EndCanonParametersSetDataType_Encoding_DefaultJson = 16242;
+        public const uint EndCanonParamsSetDataType_Encoding_DefaultJson = 16591;
 
         /// <summary>
-        /// The identifier for the GetStatusParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the GetStatusParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint GetStatusParametersSetDataType_Encoding_DefaultJson = 16243;
+        public const uint GetStatusParamsSetDataType_Encoding_DefaultJson = 16592;
 
         /// <summary>
-        /// The identifier for the CloseToolChangerParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the CloseToolChangerParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint CloseToolChangerParametersSetDataType_Encoding_DefaultJson = 16244;
+        public const uint CloseToolChangerParamsSetDataType_Encoding_DefaultJson = 16593;
 
         /// <summary>
-        /// The identifier for the OpenToolChangerParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the OpenToolChangerParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint OpenToolChangerParametersSetDataType_Encoding_DefaultJson = 16245;
+        public const uint OpenToolChangerParamsSetDataType_Encoding_DefaultJson = 16594;
 
         /// <summary>
-        /// The identifier for the MessageParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the MessageParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint MessageParametersSetDataType_Encoding_DefaultJson = 16246;
+        public const uint MessageParamsSetDataType_Encoding_DefaultJson = 16595;
 
         /// <summary>
-        /// The identifier for the MoveToParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the MoveToParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint MoveToParametersSetDataType_Encoding_DefaultJson = 16247;
+        public const uint MoveToParamsSetDataType_Encoding_DefaultJson = 16596;
 
         /// <summary>
-        /// The identifier for the MoveScrewParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the MoveScrewParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint MoveScrewParametersSetDataType_Encoding_DefaultJson = 16248;
+        public const uint MoveScrewParamsSetDataType_Encoding_DefaultJson = 16597;
 
         /// <summary>
-        /// The identifier for the MoveThroughToParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the MoveThroughToParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint MoveThroughToParametersSetDataType_Encoding_DefaultJson = 16249;
+        public const uint MoveThroughToParamsSetDataType_Encoding_DefaultJson = 16598;
 
         /// <summary>
-        /// The identifier for the DwellParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the DwellParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint DwellParametersSetDataType_Encoding_DefaultJson = 16250;
+        public const uint DwellParamsSetDataType_Encoding_DefaultJson = 16599;
 
         /// <summary>
-        /// The identifier for the ActuateJointsParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the ActuateJointsParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint ActuateJointsParametersSetDataType_Encoding_DefaultJson = 16251;
+        public const uint ActuateJointsParamsSetDataType_Encoding_DefaultJson = 16600;
 
         /// <summary>
-        /// The identifier for the ConfigureJointReportsParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the ConfigureJointReportsParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint ConfigureJointReportsParametersSetDataType_Encoding_DefaultJson = 16252;
+        public const uint ConfigureJointReportsParamsSetDataType_Encoding_DefaultJson = 16601;
 
         /// <summary>
-        /// The identifier for the SetDefaultJointPositionsTolerancesParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetDefaultJointPositionsTolerancesParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint SetDefaultJointPositionsTolerancesParametersSetDataType_Encoding_DefaultJson = 16253;
+        public const uint SetDefaultJointPositionsTolerancesParamsSetDataType_Encoding_DefaultJson = 16602;
 
         /// <summary>
-        /// The identifier for the SetRobotParametersParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetRobotParametersParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint SetRobotParametersParametersSetDataType_Encoding_DefaultJson = 16254;
+        public const uint SetRobotParametersParamsSetDataType_Encoding_DefaultJson = 16603;
 
         /// <summary>
-        /// The identifier for the SetEndeffectorParametersParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetEndeffectorParametersParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint SetEndeffectorParametersParametersSetDataType_Encoding_DefaultJson = 16255;
+        public const uint SetEndeffectorParametersParamsSetDataType_Encoding_DefaultJson = 16604;
 
         /// <summary>
-        /// The identifier for the SetEndeffectorParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetEndeffectorParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint SetEndeffectorParametersSetDataType_Encoding_DefaultJson = 16256;
+        public const uint SetEndeffectorParamsSetDataType_Encoding_DefaultJson = 16605;
 
         /// <summary>
-        /// The identifier for the SetTransSpeedParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetTransSpeedParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint SetTransSpeedParametersSetDataType_Encoding_DefaultJson = 16257;
+        public const uint SetTransSpeedParamsSetDataType_Encoding_DefaultJson = 16606;
 
         /// <summary>
-        /// The identifier for the SetTransAccelParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetTransAccelParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint SetTransAccelParametersSetDataType_Encoding_DefaultJson = 16258;
+        public const uint SetTransAccelParamsSetDataType_Encoding_DefaultJson = 16607;
 
         /// <summary>
-        /// The identifier for the SetRotSpeedParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetRotSpeedParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint SetRotSpeedParametersSetDataType_Encoding_DefaultJson = 16259;
+        public const uint SetRotSpeedParamsSetDataType_Encoding_DefaultJson = 16608;
 
         /// <summary>
-        /// The identifier for the SetRotAccelParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetRotAccelParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint SetRotAccelParametersSetDataType_Encoding_DefaultJson = 16260;
+        public const uint SetRotAccelParamsSetDataType_Encoding_DefaultJson = 16609;
 
         /// <summary>
-        /// The identifier for the SetAngleUnitsParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetAngleUnitsParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint SetAngleUnitsParametersSetDataType_Encoding_DefaultJson = 16261;
+        public const uint SetAngleUnitsParamsSetDataType_Encoding_DefaultJson = 16610;
 
         /// <summary>
-        /// The identifier for the SetEndPoseToleranceParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetEndPoseToleranceParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint SetEndPoseToleranceParametersSetDataType_Encoding_DefaultJson = 16262;
+        public const uint SetEndPoseToleranceParamsSetDataType_Encoding_DefaultJson = 16611;
 
         /// <summary>
-        /// The identifier for the SetForceUnitsParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetForceUnitsParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint SetForceUnitsParametersSetDataType_Encoding_DefaultJson = 16263;
+        public const uint SetForceUnitsParamsSetDataType_Encoding_DefaultJson = 16612;
 
         /// <summary>
-        /// The identifier for the SetIntermediatePoseToleranceParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetIntermediatePoseToleranceParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint SetIntermediatePoseToleranceParametersSetDataType_Encoding_DefaultJson = 16264;
+        public const uint SetIntermediatePoseToleranceParamsSetDataType_Encoding_DefaultJson = 16613;
 
         /// <summary>
-        /// The identifier for the SetLengthUnitsParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetLengthUnitsParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint SetLengthUnitsParametersSetDataType_Encoding_DefaultJson = 16265;
+        public const uint SetLengthUnitsParamsSetDataType_Encoding_DefaultJson = 16614;
 
         /// <summary>
-        /// The identifier for the SetMotionCoordinationParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetMotionCoordinationParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint SetMotionCoordinationParametersSetDataType_Encoding_DefaultJson = 16266;
+        public const uint SetMotionCoordinationParamsSetDataType_Encoding_DefaultJson = 16615;
 
         /// <summary>
-        /// The identifier for the SetTorqueUnitsParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetTorqueUnitsParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint SetTorqueUnitsParametersSetDataType_Encoding_DefaultJson = 16267;
+        public const uint SetTorqueUnitsParamsSetDataType_Encoding_DefaultJson = 16616;
 
         /// <summary>
-        /// The identifier for the StopMotionParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the StopMotionParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint StopMotionParametersSetDataType_Encoding_DefaultJson = 16268;
+        public const uint StopMotionParamsSetDataType_Encoding_DefaultJson = 16617;
 
         /// <summary>
-        /// The identifier for the ConfigureStatusReportParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the ConfigureStatusReportParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint ConfigureStatusReportParametersSetDataType_Encoding_DefaultJson = 16269;
+        public const uint ConfigureStatusReportParamsSetDataType_Encoding_DefaultJson = 16618;
 
         /// <summary>
-        /// The identifier for the EnableSensorParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the EnableSensorParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint EnableSensorParametersSetDataType_Encoding_DefaultJson = 16270;
+        public const uint EnableSensorParamsSetDataType_Encoding_DefaultJson = 16619;
 
         /// <summary>
-        /// The identifier for the DisableSensorParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the DisableSensorParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint DisableSensorParametersSetDataType_Encoding_DefaultJson = 16271;
+        public const uint DisableSensorParamsSetDataType_Encoding_DefaultJson = 16620;
 
         /// <summary>
-        /// The identifier for the EnableGripperParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the EnableGripperParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint EnableGripperParametersSetDataType_Encoding_DefaultJson = 16272;
+        public const uint EnableGripperParamsSetDataType_Encoding_DefaultJson = 16621;
 
         /// <summary>
-        /// The identifier for the DisableGripperParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the DisableGripperParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint DisableGripperParametersSetDataType_Encoding_DefaultJson = 16273;
+        public const uint DisableGripperParamsSetDataType_Encoding_DefaultJson = 16622;
 
         /// <summary>
-        /// The identifier for the EnableRobotParameterStatusParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the EnableRobotParameterStatusParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint EnableRobotParameterStatusParametersSetDataType_Encoding_DefaultJson = 16274;
+        public const uint EnableRobotParameterStatusParamsSetDataType_Encoding_DefaultJson = 16623;
 
         /// <summary>
-        /// The identifier for the DisableRobotParameterStatusParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the DisableRobotParameterStatusParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint DisableRobotParameterStatusParametersSetDataType_Encoding_DefaultJson = 16275;
-    }
-    #endregion
+        public const uint DisableRobotParameterStatusParamsSetDataType_Encoding_DefaultJson = 16624;
 
-    #region ObjectType Identifiers
-    /// <summary>
-    /// A class that declares constants for all ObjectTypes in the Model Design.
-    /// </summary>
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public static partial class ObjectTypes
-    {
         /// <summary>
-        /// The identifier for the ISkillParameter ObjectType.
+        /// The identifier for the CRCLCommandsParamsSetsUnionDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public const uint ISkillParameter = 15105;
+        public const uint CRCLCommandsParamsSetsUnionDataType_Encoding_DefaultJson = 15124;
+
+        /// <summary>
+        /// The identifier for the CRCLCommandsParamsSetsBufferDataType_Encoding_DefaultJson Object.
+        /// </summary>
+        public const uint CRCLCommandsParamsSetsBufferDataType_Encoding_DefaultJson = 15114;
     }
     #endregion
 
@@ -2656,9 +2641,9 @@ namespace CRCL
         public const uint CRCL_CommandStateEnumDataType_EnumStrings = 15083;
 
         /// <summary>
-        /// The identifier for the ISkillParameter_ReadParameterAtExecutionTime Variable.
+        /// The identifier for the CRCLCommandsBufferState_EnumStrings Variable.
         /// </summary>
-        public const uint ISkillParameter_ReadParameterAtExecutionTime = 15106;
+        public const uint CRCLCommandsBufferState_EnumStrings = 15125;
 
         /// <summary>
         /// The identifier for the CRCL_BinarySchema Variable.
@@ -3101,204 +3086,204 @@ namespace CRCL
         public const uint CRCL_BinarySchema_CRCLStatusDataType = 15524;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_PubSubIPAddresses Variable.
-        /// </summary>
-        public const uint CRCL_BinarySchema_PubSubIPAddresses = 15527;
-
-        /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SAMYRobotDataType Variable.
-        /// </summary>
-        public const uint CRCL_BinarySchema_SAMYRobotDataType = 15530;
-
-        /// <summary>
         /// The identifier for the CRCL_BinarySchema_CRCLCommandsUnionDataType Variable.
         /// </summary>
         public const uint CRCL_BinarySchema_CRCLCommandsUnionDataType = 15533;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_CRCLSkillDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_CRCLCommandsBufferDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_CRCLSkillDataType = 15536;
+        public const uint CRCL_BinarySchema_CRCLCommandsBufferDataType = 16278;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_CRCLCommandParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_CRCLCommandParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_CRCLCommandParametersSetDataType = 15539;
+        public const uint CRCL_BinarySchema_CRCLCommandParamsSetDataType = 16330;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_InitCanonParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_InitCanonParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_InitCanonParametersSetDataType = 15542;
+        public const uint CRCL_BinarySchema_InitCanonParamsSetDataType = 16333;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_EndCanonParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_EndCanonParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_EndCanonParametersSetDataType = 15545;
+        public const uint CRCL_BinarySchema_EndCanonParamsSetDataType = 16336;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_GetStatusParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_GetStatusParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_GetStatusParametersSetDataType = 15548;
+        public const uint CRCL_BinarySchema_GetStatusParamsSetDataType = 16339;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_CloseToolChangerParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_CloseToolChangerParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_CloseToolChangerParametersSetDataType = 15551;
+        public const uint CRCL_BinarySchema_CloseToolChangerParamsSetDataType = 16342;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_OpenToolChangerParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_OpenToolChangerParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_OpenToolChangerParametersSetDataType = 15554;
+        public const uint CRCL_BinarySchema_OpenToolChangerParamsSetDataType = 16345;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_MessageParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_MessageParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_MessageParametersSetDataType = 15557;
+        public const uint CRCL_BinarySchema_MessageParamsSetDataType = 16348;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_MoveToParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_MoveToParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_MoveToParametersSetDataType = 15560;
+        public const uint CRCL_BinarySchema_MoveToParamsSetDataType = 16351;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_MoveScrewParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_MoveScrewParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_MoveScrewParametersSetDataType = 15563;
+        public const uint CRCL_BinarySchema_MoveScrewParamsSetDataType = 16354;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_MoveThroughToParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_MoveThroughToParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_MoveThroughToParametersSetDataType = 15566;
+        public const uint CRCL_BinarySchema_MoveThroughToParamsSetDataType = 16357;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_DwellParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_DwellParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_DwellParametersSetDataType = 15569;
+        public const uint CRCL_BinarySchema_DwellParamsSetDataType = 16360;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_ActuateJointsParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_ActuateJointsParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_ActuateJointsParametersSetDataType = 15572;
+        public const uint CRCL_BinarySchema_ActuateJointsParamsSetDataType = 16363;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_ConfigureJointReportsParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_ConfigureJointReportsParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_ConfigureJointReportsParametersSetDataType = 15575;
+        public const uint CRCL_BinarySchema_ConfigureJointReportsParamsSetDataType = 16366;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetDefaultJointPositionsTolerancesParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetDefaultJointPositionsTolerancesParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_SetDefaultJointPositionsTolerancesParametersSetDataType = 15578;
+        public const uint CRCL_BinarySchema_SetDefaultJointPositionsTolerancesParamsSetDataType = 16369;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetRobotParametersParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetRobotParametersParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_SetRobotParametersParametersSetDataType = 15581;
+        public const uint CRCL_BinarySchema_SetRobotParametersParamsSetDataType = 16372;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetEndeffectorParametersParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetEndeffectorParametersParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_SetEndeffectorParametersParametersSetDataType = 15584;
+        public const uint CRCL_BinarySchema_SetEndeffectorParametersParamsSetDataType = 16375;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetEndeffectorParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetEndeffectorParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_SetEndeffectorParametersSetDataType = 15587;
+        public const uint CRCL_BinarySchema_SetEndeffectorParamsSetDataType = 16378;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetTransSpeedParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetTransSpeedParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_SetTransSpeedParametersSetDataType = 15590;
+        public const uint CRCL_BinarySchema_SetTransSpeedParamsSetDataType = 16381;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetTransAccelParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetTransAccelParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_SetTransAccelParametersSetDataType = 15593;
+        public const uint CRCL_BinarySchema_SetTransAccelParamsSetDataType = 16384;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetRotSpeedParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetRotSpeedParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_SetRotSpeedParametersSetDataType = 15596;
+        public const uint CRCL_BinarySchema_SetRotSpeedParamsSetDataType = 16387;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetRotAccelParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetRotAccelParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_SetRotAccelParametersSetDataType = 15599;
+        public const uint CRCL_BinarySchema_SetRotAccelParamsSetDataType = 16390;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetAngleUnitsParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetAngleUnitsParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_SetAngleUnitsParametersSetDataType = 15602;
+        public const uint CRCL_BinarySchema_SetAngleUnitsParamsSetDataType = 16393;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetEndPoseToleranceParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetEndPoseToleranceParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_SetEndPoseToleranceParametersSetDataType = 15605;
+        public const uint CRCL_BinarySchema_SetEndPoseToleranceParamsSetDataType = 16396;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetForceUnitsParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetForceUnitsParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_SetForceUnitsParametersSetDataType = 15608;
+        public const uint CRCL_BinarySchema_SetForceUnitsParamsSetDataType = 16399;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetIntermediatePoseToleranceParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetIntermediatePoseToleranceParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_SetIntermediatePoseToleranceParametersSetDataType = 15611;
+        public const uint CRCL_BinarySchema_SetIntermediatePoseToleranceParamsSetDataType = 16402;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetLengthUnitsParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetLengthUnitsParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_SetLengthUnitsParametersSetDataType = 15614;
+        public const uint CRCL_BinarySchema_SetLengthUnitsParamsSetDataType = 16405;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetMotionCoordinationParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetMotionCoordinationParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_SetMotionCoordinationParametersSetDataType = 15617;
+        public const uint CRCL_BinarySchema_SetMotionCoordinationParamsSetDataType = 16408;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetTorqueUnitsParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetTorqueUnitsParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_SetTorqueUnitsParametersSetDataType = 15620;
+        public const uint CRCL_BinarySchema_SetTorqueUnitsParamsSetDataType = 16411;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_StopMotionParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_StopMotionParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_StopMotionParametersSetDataType = 15623;
+        public const uint CRCL_BinarySchema_StopMotionParamsSetDataType = 16414;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_ConfigureStatusReportParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_ConfigureStatusReportParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_ConfigureStatusReportParametersSetDataType = 15626;
+        public const uint CRCL_BinarySchema_ConfigureStatusReportParamsSetDataType = 16417;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_EnableSensorParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_EnableSensorParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_EnableSensorParametersSetDataType = 15629;
+        public const uint CRCL_BinarySchema_EnableSensorParamsSetDataType = 16420;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_DisableSensorParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_DisableSensorParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_DisableSensorParametersSetDataType = 15632;
+        public const uint CRCL_BinarySchema_DisableSensorParamsSetDataType = 16423;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_EnableGripperParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_EnableGripperParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_EnableGripperParametersSetDataType = 15635;
+        public const uint CRCL_BinarySchema_EnableGripperParamsSetDataType = 16426;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_DisableGripperParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_DisableGripperParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_DisableGripperParametersSetDataType = 15638;
+        public const uint CRCL_BinarySchema_DisableGripperParamsSetDataType = 16429;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_EnableRobotParameterStatusParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_EnableRobotParameterStatusParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_EnableRobotParameterStatusParametersSetDataType = 15641;
+        public const uint CRCL_BinarySchema_EnableRobotParameterStatusParamsSetDataType = 16432;
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_DisableRobotParameterStatusParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_DisableRobotParameterStatusParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_BinarySchema_DisableRobotParameterStatusParametersSetDataType = 15644;
+        public const uint CRCL_BinarySchema_DisableRobotParameterStatusParamsSetDataType = 16435;
+
+        /// <summary>
+        /// The identifier for the CRCL_BinarySchema_CRCLCommandsParamsSetsUnionDataType Variable.
+        /// </summary>
+        public const uint CRCL_BinarySchema_CRCLCommandsParamsSetsUnionDataType = 15117;
+
+        /// <summary>
+        /// The identifier for the CRCL_BinarySchema_CRCLCommandsParamsSetsBufferDataType Variable.
+        /// </summary>
+        public const uint CRCL_BinarySchema_CRCLCommandsParamsSetsBufferDataType = 15107;
 
         /// <summary>
         /// The identifier for the CRCL_XmlSchema Variable.
@@ -3741,204 +3726,204 @@ namespace CRCL
         public const uint CRCL_XmlSchema_CRCLStatusDataType = 16028;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_PubSubIPAddresses Variable.
-        /// </summary>
-        public const uint CRCL_XmlSchema_PubSubIPAddresses = 16031;
-
-        /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SAMYRobotDataType Variable.
-        /// </summary>
-        public const uint CRCL_XmlSchema_SAMYRobotDataType = 16034;
-
-        /// <summary>
         /// The identifier for the CRCL_XmlSchema_CRCLCommandsUnionDataType Variable.
         /// </summary>
         public const uint CRCL_XmlSchema_CRCLCommandsUnionDataType = 16037;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_CRCLSkillDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_CRCLCommandsBufferDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_CRCLSkillDataType = 16040;
+        public const uint CRCL_XmlSchema_CRCLCommandsBufferDataType = 16282;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_CRCLCommandParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_CRCLCommandParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_CRCLCommandParametersSetDataType = 16043;
+        public const uint CRCL_XmlSchema_CRCLCommandParamsSetDataType = 16478;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_InitCanonParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_InitCanonParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_InitCanonParametersSetDataType = 16046;
+        public const uint CRCL_XmlSchema_InitCanonParamsSetDataType = 16481;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_EndCanonParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_EndCanonParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_EndCanonParametersSetDataType = 16049;
+        public const uint CRCL_XmlSchema_EndCanonParamsSetDataType = 16484;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_GetStatusParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_GetStatusParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_GetStatusParametersSetDataType = 16052;
+        public const uint CRCL_XmlSchema_GetStatusParamsSetDataType = 16487;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_CloseToolChangerParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_CloseToolChangerParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_CloseToolChangerParametersSetDataType = 16055;
+        public const uint CRCL_XmlSchema_CloseToolChangerParamsSetDataType = 16490;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_OpenToolChangerParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_OpenToolChangerParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_OpenToolChangerParametersSetDataType = 16058;
+        public const uint CRCL_XmlSchema_OpenToolChangerParamsSetDataType = 16493;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_MessageParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_MessageParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_MessageParametersSetDataType = 16061;
+        public const uint CRCL_XmlSchema_MessageParamsSetDataType = 16496;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_MoveToParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_MoveToParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_MoveToParametersSetDataType = 16064;
+        public const uint CRCL_XmlSchema_MoveToParamsSetDataType = 16499;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_MoveScrewParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_MoveScrewParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_MoveScrewParametersSetDataType = 16067;
+        public const uint CRCL_XmlSchema_MoveScrewParamsSetDataType = 16502;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_MoveThroughToParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_MoveThroughToParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_MoveThroughToParametersSetDataType = 16070;
+        public const uint CRCL_XmlSchema_MoveThroughToParamsSetDataType = 16505;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_DwellParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_DwellParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_DwellParametersSetDataType = 16073;
+        public const uint CRCL_XmlSchema_DwellParamsSetDataType = 16508;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_ActuateJointsParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_ActuateJointsParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_ActuateJointsParametersSetDataType = 16076;
+        public const uint CRCL_XmlSchema_ActuateJointsParamsSetDataType = 16511;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_ConfigureJointReportsParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_ConfigureJointReportsParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_ConfigureJointReportsParametersSetDataType = 16079;
+        public const uint CRCL_XmlSchema_ConfigureJointReportsParamsSetDataType = 16514;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetDefaultJointPositionsTolerancesParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetDefaultJointPositionsTolerancesParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_SetDefaultJointPositionsTolerancesParametersSetDataType = 16082;
+        public const uint CRCL_XmlSchema_SetDefaultJointPositionsTolerancesParamsSetDataType = 16517;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetRobotParametersParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetRobotParametersParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_SetRobotParametersParametersSetDataType = 16085;
+        public const uint CRCL_XmlSchema_SetRobotParametersParamsSetDataType = 16520;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetEndeffectorParametersParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetEndeffectorParametersParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_SetEndeffectorParametersParametersSetDataType = 16088;
+        public const uint CRCL_XmlSchema_SetEndeffectorParametersParamsSetDataType = 16523;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetEndeffectorParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetEndeffectorParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_SetEndeffectorParametersSetDataType = 16091;
+        public const uint CRCL_XmlSchema_SetEndeffectorParamsSetDataType = 16526;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetTransSpeedParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetTransSpeedParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_SetTransSpeedParametersSetDataType = 16094;
+        public const uint CRCL_XmlSchema_SetTransSpeedParamsSetDataType = 16529;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetTransAccelParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetTransAccelParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_SetTransAccelParametersSetDataType = 16097;
+        public const uint CRCL_XmlSchema_SetTransAccelParamsSetDataType = 16532;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetRotSpeedParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetRotSpeedParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_SetRotSpeedParametersSetDataType = 16100;
+        public const uint CRCL_XmlSchema_SetRotSpeedParamsSetDataType = 16535;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetRotAccelParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetRotAccelParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_SetRotAccelParametersSetDataType = 16103;
+        public const uint CRCL_XmlSchema_SetRotAccelParamsSetDataType = 16538;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetAngleUnitsParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetAngleUnitsParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_SetAngleUnitsParametersSetDataType = 16106;
+        public const uint CRCL_XmlSchema_SetAngleUnitsParamsSetDataType = 16541;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetEndPoseToleranceParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetEndPoseToleranceParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_SetEndPoseToleranceParametersSetDataType = 16109;
+        public const uint CRCL_XmlSchema_SetEndPoseToleranceParamsSetDataType = 16544;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetForceUnitsParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetForceUnitsParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_SetForceUnitsParametersSetDataType = 16112;
+        public const uint CRCL_XmlSchema_SetForceUnitsParamsSetDataType = 16547;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetIntermediatePoseToleranceParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetIntermediatePoseToleranceParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_SetIntermediatePoseToleranceParametersSetDataType = 16115;
+        public const uint CRCL_XmlSchema_SetIntermediatePoseToleranceParamsSetDataType = 16550;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetLengthUnitsParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetLengthUnitsParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_SetLengthUnitsParametersSetDataType = 16118;
+        public const uint CRCL_XmlSchema_SetLengthUnitsParamsSetDataType = 16553;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetMotionCoordinationParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetMotionCoordinationParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_SetMotionCoordinationParametersSetDataType = 16121;
+        public const uint CRCL_XmlSchema_SetMotionCoordinationParamsSetDataType = 16556;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetTorqueUnitsParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetTorqueUnitsParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_SetTorqueUnitsParametersSetDataType = 16124;
+        public const uint CRCL_XmlSchema_SetTorqueUnitsParamsSetDataType = 16559;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_StopMotionParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_StopMotionParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_StopMotionParametersSetDataType = 16127;
+        public const uint CRCL_XmlSchema_StopMotionParamsSetDataType = 16562;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_ConfigureStatusReportParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_ConfigureStatusReportParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_ConfigureStatusReportParametersSetDataType = 16130;
+        public const uint CRCL_XmlSchema_ConfigureStatusReportParamsSetDataType = 16565;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_EnableSensorParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_EnableSensorParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_EnableSensorParametersSetDataType = 16133;
+        public const uint CRCL_XmlSchema_EnableSensorParamsSetDataType = 16568;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_DisableSensorParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_DisableSensorParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_DisableSensorParametersSetDataType = 16136;
+        public const uint CRCL_XmlSchema_DisableSensorParamsSetDataType = 16571;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_EnableGripperParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_EnableGripperParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_EnableGripperParametersSetDataType = 16139;
+        public const uint CRCL_XmlSchema_EnableGripperParamsSetDataType = 16574;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_DisableGripperParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_DisableGripperParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_DisableGripperParametersSetDataType = 16142;
+        public const uint CRCL_XmlSchema_DisableGripperParamsSetDataType = 16577;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_EnableRobotParameterStatusParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_EnableRobotParameterStatusParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_EnableRobotParameterStatusParametersSetDataType = 16145;
+        public const uint CRCL_XmlSchema_EnableRobotParameterStatusParamsSetDataType = 16580;
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_DisableRobotParameterStatusParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_DisableRobotParameterStatusParamsSetDataType Variable.
         /// </summary>
-        public const uint CRCL_XmlSchema_DisableRobotParameterStatusParametersSetDataType = 16148;
+        public const uint CRCL_XmlSchema_DisableRobotParameterStatusParamsSetDataType = 16583;
+
+        /// <summary>
+        /// The identifier for the CRCL_XmlSchema_CRCLCommandsParamsSetsUnionDataType Variable.
+        /// </summary>
+        public const uint CRCL_XmlSchema_CRCLCommandsParamsSetsUnionDataType = 15121;
+
+        /// <summary>
+        /// The identifier for the CRCL_XmlSchema_CRCLCommandsParamsSetsBufferDataType Variable.
+        /// </summary>
+        public const uint CRCL_XmlSchema_CRCLCommandsParamsSetsBufferDataType = 15111;
     }
     #endregion
 
@@ -3994,11 +3979,6 @@ namespace CRCL
         /// The identifier for the CRCL_PoseDataType DataType.
         /// </summary>
         public static readonly ExpandedNodeId CRCL_PoseDataType = new ExpandedNodeId(CRCL.DataTypes.CRCL_PoseDataType, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the CRCL_PositiveDecimalDataType DataType.
-        /// </summary>
-        public static readonly ExpandedNodeId CRCL_PositiveDecimalDataType = new ExpandedNodeId(CRCL.DataTypes.CRCL_PositiveDecimalDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
         /// The identifier for the CRCL_TorqueUnitEnumDataType DataType.
@@ -4416,204 +4396,209 @@ namespace CRCL
         public static readonly ExpandedNodeId CRCLStatusDataType = new ExpandedNodeId(CRCL.DataTypes.CRCLStatusDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the PubSubIPAddresses DataType.
-        /// </summary>
-        public static readonly ExpandedNodeId PubSubIPAddresses = new ExpandedNodeId(CRCL.DataTypes.PubSubIPAddresses, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the SAMYRobotDataType DataType.
-        /// </summary>
-        public static readonly ExpandedNodeId SAMYRobotDataType = new ExpandedNodeId(CRCL.DataTypes.SAMYRobotDataType, CRCL.Namespaces.CRCL);
-
-        /// <summary>
         /// The identifier for the CRCLCommandsUnionDataType DataType.
         /// </summary>
         public static readonly ExpandedNodeId CRCLCommandsUnionDataType = new ExpandedNodeId(CRCL.DataTypes.CRCLCommandsUnionDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCLSkillDataType DataType.
+        /// The identifier for the CRCLCommandsBufferDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId CRCLSkillDataType = new ExpandedNodeId(CRCL.DataTypes.CRCLSkillDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCLCommandsBufferDataType = new ExpandedNodeId(CRCL.DataTypes.CRCLCommandsBufferDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCLCommandParametersSetDataType DataType.
+        /// The identifier for the CRCLCommandParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId CRCLCommandParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.CRCLCommandParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCLCommandParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.CRCLCommandParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the InitCanonParametersSetDataType DataType.
+        /// The identifier for the InitCanonParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId InitCanonParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.InitCanonParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId InitCanonParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.InitCanonParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the EndCanonParametersSetDataType DataType.
+        /// The identifier for the EndCanonParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId EndCanonParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.EndCanonParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId EndCanonParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.EndCanonParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the GetStatusParametersSetDataType DataType.
+        /// The identifier for the GetStatusParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId GetStatusParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.GetStatusParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId GetStatusParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.GetStatusParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CloseToolChangerParametersSetDataType DataType.
+        /// The identifier for the CloseToolChangerParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId CloseToolChangerParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.CloseToolChangerParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CloseToolChangerParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.CloseToolChangerParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the OpenToolChangerParametersSetDataType DataType.
+        /// The identifier for the OpenToolChangerParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId OpenToolChangerParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.OpenToolChangerParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId OpenToolChangerParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.OpenToolChangerParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the MessageParametersSetDataType DataType.
+        /// The identifier for the MessageParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId MessageParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.MessageParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId MessageParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.MessageParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the MoveToParametersSetDataType DataType.
+        /// The identifier for the MoveToParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId MoveToParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.MoveToParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId MoveToParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.MoveToParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the MoveScrewParametersSetDataType DataType.
+        /// The identifier for the MoveScrewParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId MoveScrewParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.MoveScrewParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId MoveScrewParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.MoveScrewParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the MoveThroughToParametersSetDataType DataType.
+        /// The identifier for the MoveThroughToParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId MoveThroughToParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.MoveThroughToParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId MoveThroughToParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.MoveThroughToParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the DwellParametersSetDataType DataType.
+        /// The identifier for the DwellParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId DwellParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.DwellParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId DwellParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.DwellParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the ActuateJointsParametersSetDataType DataType.
+        /// The identifier for the ActuateJointsParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId ActuateJointsParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.ActuateJointsParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId ActuateJointsParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.ActuateJointsParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the ConfigureJointReportsParametersSetDataType DataType.
+        /// The identifier for the ConfigureJointReportsParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId ConfigureJointReportsParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.ConfigureJointReportsParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId ConfigureJointReportsParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.ConfigureJointReportsParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetDefaultJointPositionsTolerancesParametersSetDataType DataType.
+        /// The identifier for the SetDefaultJointPositionsTolerancesParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId SetDefaultJointPositionsTolerancesParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetDefaultJointPositionsTolerancesParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetDefaultJointPositionsTolerancesParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetDefaultJointPositionsTolerancesParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetRobotParametersParametersSetDataType DataType.
+        /// The identifier for the SetRobotParametersParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId SetRobotParametersParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetRobotParametersParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetRobotParametersParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetRobotParametersParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetEndeffectorParametersParametersSetDataType DataType.
+        /// The identifier for the SetEndeffectorParametersParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId SetEndeffectorParametersParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetEndeffectorParametersParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetEndeffectorParametersParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetEndeffectorParametersParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetEndeffectorParametersSetDataType DataType.
+        /// The identifier for the SetEndeffectorParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId SetEndeffectorParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetEndeffectorParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetEndeffectorParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetEndeffectorParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetTransSpeedParametersSetDataType DataType.
+        /// The identifier for the SetTransSpeedParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId SetTransSpeedParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetTransSpeedParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetTransSpeedParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetTransSpeedParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetTransAccelParametersSetDataType DataType.
+        /// The identifier for the SetTransAccelParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId SetTransAccelParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetTransAccelParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetTransAccelParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetTransAccelParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetRotSpeedParametersSetDataType DataType.
+        /// The identifier for the SetRotSpeedParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId SetRotSpeedParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetRotSpeedParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetRotSpeedParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetRotSpeedParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetRotAccelParametersSetDataType DataType.
+        /// The identifier for the SetRotAccelParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId SetRotAccelParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetRotAccelParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetRotAccelParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetRotAccelParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetAngleUnitsParametersSetDataType DataType.
+        /// The identifier for the SetAngleUnitsParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId SetAngleUnitsParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetAngleUnitsParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetAngleUnitsParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetAngleUnitsParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetEndPoseToleranceParametersSetDataType DataType.
+        /// The identifier for the SetEndPoseToleranceParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId SetEndPoseToleranceParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetEndPoseToleranceParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetEndPoseToleranceParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetEndPoseToleranceParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetForceUnitsParametersSetDataType DataType.
+        /// The identifier for the SetForceUnitsParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId SetForceUnitsParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetForceUnitsParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetForceUnitsParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetForceUnitsParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetIntermediatePoseToleranceParametersSetDataType DataType.
+        /// The identifier for the SetIntermediatePoseToleranceParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId SetIntermediatePoseToleranceParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetIntermediatePoseToleranceParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetIntermediatePoseToleranceParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetIntermediatePoseToleranceParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetLengthUnitsParametersSetDataType DataType.
+        /// The identifier for the SetLengthUnitsParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId SetLengthUnitsParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetLengthUnitsParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetLengthUnitsParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetLengthUnitsParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetMotionCoordinationParametersSetDataType DataType.
+        /// The identifier for the SetMotionCoordinationParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId SetMotionCoordinationParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetMotionCoordinationParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetMotionCoordinationParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetMotionCoordinationParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetTorqueUnitsParametersSetDataType DataType.
+        /// The identifier for the SetTorqueUnitsParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId SetTorqueUnitsParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetTorqueUnitsParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetTorqueUnitsParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.SetTorqueUnitsParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the StopMotionParametersSetDataType DataType.
+        /// The identifier for the StopMotionParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId StopMotionParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.StopMotionParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId StopMotionParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.StopMotionParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the ConfigureStatusReportParametersSetDataType DataType.
+        /// The identifier for the ConfigureStatusReportParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId ConfigureStatusReportParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.ConfigureStatusReportParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId ConfigureStatusReportParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.ConfigureStatusReportParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the EnableSensorParametersSetDataType DataType.
+        /// The identifier for the EnableSensorParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId EnableSensorParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.EnableSensorParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId EnableSensorParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.EnableSensorParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the DisableSensorParametersSetDataType DataType.
+        /// The identifier for the DisableSensorParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId DisableSensorParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.DisableSensorParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId DisableSensorParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.DisableSensorParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the EnableGripperParametersSetDataType DataType.
+        /// The identifier for the EnableGripperParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId EnableGripperParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.EnableGripperParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId EnableGripperParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.EnableGripperParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the DisableGripperParametersSetDataType DataType.
+        /// The identifier for the DisableGripperParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId DisableGripperParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.DisableGripperParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId DisableGripperParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.DisableGripperParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the EnableRobotParameterStatusParametersSetDataType DataType.
+        /// The identifier for the EnableRobotParameterStatusParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId EnableRobotParameterStatusParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.EnableRobotParameterStatusParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId EnableRobotParameterStatusParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.EnableRobotParameterStatusParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the DisableRobotParameterStatusParametersSetDataType DataType.
+        /// The identifier for the DisableRobotParameterStatusParamsSetDataType DataType.
         /// </summary>
-        public static readonly ExpandedNodeId DisableRobotParameterStatusParametersSetDataType = new ExpandedNodeId(CRCL.DataTypes.DisableRobotParameterStatusParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId DisableRobotParameterStatusParamsSetDataType = new ExpandedNodeId(CRCL.DataTypes.DisableRobotParameterStatusParamsSetDataType, CRCL.Namespaces.CRCL);
+
+        /// <summary>
+        /// The identifier for the CRCLCommandsParamsSetsUnionDataType DataType.
+        /// </summary>
+        public static readonly ExpandedNodeId CRCLCommandsParamsSetsUnionDataType = new ExpandedNodeId(CRCL.DataTypes.CRCLCommandsParamsSetsUnionDataType, CRCL.Namespaces.CRCL);
+
+        /// <summary>
+        /// The identifier for the CRCLCommandsParamsSetsBufferDataType DataType.
+        /// </summary>
+        public static readonly ExpandedNodeId CRCLCommandsParamsSetsBufferDataType = new ExpandedNodeId(CRCL.DataTypes.CRCLCommandsParamsSetsBufferDataType, CRCL.Namespaces.CRCL);
+
+        /// <summary>
+        /// The identifier for the CRCLCommandsBufferState DataType.
+        /// </summary>
+        public static readonly ExpandedNodeId CRCLCommandsBufferState = new ExpandedNodeId(CRCL.DataTypes.CRCLCommandsBufferState, CRCL.Namespaces.CRCL);
     }
     #endregion
 
@@ -5051,204 +5036,204 @@ namespace CRCL
         public static readonly ExpandedNodeId CRCLStatusDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.CRCLStatusDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the PubSubIPAddresses_Encoding_DefaultBinary Object.
-        /// </summary>
-        public static readonly ExpandedNodeId PubSubIPAddresses_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.PubSubIPAddresses_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the SAMYRobotDataType_Encoding_DefaultBinary Object.
-        /// </summary>
-        public static readonly ExpandedNodeId SAMYRobotDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SAMYRobotDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
-
-        /// <summary>
         /// The identifier for the CRCLCommandsUnionDataType_Encoding_DefaultBinary Object.
         /// </summary>
         public static readonly ExpandedNodeId CRCLCommandsUnionDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.CRCLCommandsUnionDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCLSkillDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the CRCLCommandsBufferDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId CRCLSkillDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.CRCLSkillDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCLCommandsBufferDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.CRCLCommandsBufferDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCLCommandParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the CRCLCommandParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId CRCLCommandParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.CRCLCommandParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCLCommandParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.CRCLCommandParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the InitCanonParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the InitCanonParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId InitCanonParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.InitCanonParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId InitCanonParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.InitCanonParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the EndCanonParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the EndCanonParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId EndCanonParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.EndCanonParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId EndCanonParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.EndCanonParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the GetStatusParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the GetStatusParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId GetStatusParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.GetStatusParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId GetStatusParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.GetStatusParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CloseToolChangerParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the CloseToolChangerParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId CloseToolChangerParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.CloseToolChangerParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CloseToolChangerParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.CloseToolChangerParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the OpenToolChangerParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the OpenToolChangerParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId OpenToolChangerParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.OpenToolChangerParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId OpenToolChangerParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.OpenToolChangerParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the MessageParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the MessageParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId MessageParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.MessageParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId MessageParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.MessageParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the MoveToParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the MoveToParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId MoveToParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.MoveToParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId MoveToParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.MoveToParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the MoveScrewParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the MoveScrewParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId MoveScrewParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.MoveScrewParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId MoveScrewParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.MoveScrewParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the MoveThroughToParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the MoveThroughToParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId MoveThroughToParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.MoveThroughToParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId MoveThroughToParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.MoveThroughToParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the DwellParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the DwellParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId DwellParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.DwellParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId DwellParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.DwellParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the ActuateJointsParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the ActuateJointsParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId ActuateJointsParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.ActuateJointsParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId ActuateJointsParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.ActuateJointsParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the ConfigureJointReportsParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the ConfigureJointReportsParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId ConfigureJointReportsParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.ConfigureJointReportsParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId ConfigureJointReportsParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.ConfigureJointReportsParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetDefaultJointPositionsTolerancesParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetDefaultJointPositionsTolerancesParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetDefaultJointPositionsTolerancesParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetDefaultJointPositionsTolerancesParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetDefaultJointPositionsTolerancesParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetDefaultJointPositionsTolerancesParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetRobotParametersParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetRobotParametersParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetRobotParametersParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetRobotParametersParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetRobotParametersParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetRobotParametersParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetEndeffectorParametersParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetEndeffectorParametersParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetEndeffectorParametersParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetEndeffectorParametersParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetEndeffectorParametersParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetEndeffectorParametersParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetEndeffectorParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetEndeffectorParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetEndeffectorParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetEndeffectorParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetEndeffectorParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetEndeffectorParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetTransSpeedParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetTransSpeedParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetTransSpeedParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetTransSpeedParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetTransSpeedParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetTransSpeedParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetTransAccelParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetTransAccelParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetTransAccelParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetTransAccelParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetTransAccelParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetTransAccelParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetRotSpeedParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetRotSpeedParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetRotSpeedParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetRotSpeedParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetRotSpeedParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetRotSpeedParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetRotAccelParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetRotAccelParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetRotAccelParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetRotAccelParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetRotAccelParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetRotAccelParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetAngleUnitsParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetAngleUnitsParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetAngleUnitsParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetAngleUnitsParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetAngleUnitsParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetAngleUnitsParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetEndPoseToleranceParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetEndPoseToleranceParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetEndPoseToleranceParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetEndPoseToleranceParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetEndPoseToleranceParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetEndPoseToleranceParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetForceUnitsParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetForceUnitsParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetForceUnitsParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetForceUnitsParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetForceUnitsParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetForceUnitsParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetIntermediatePoseToleranceParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetIntermediatePoseToleranceParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetIntermediatePoseToleranceParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetIntermediatePoseToleranceParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetIntermediatePoseToleranceParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetIntermediatePoseToleranceParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetLengthUnitsParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetLengthUnitsParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetLengthUnitsParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetLengthUnitsParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetLengthUnitsParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetLengthUnitsParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetMotionCoordinationParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetMotionCoordinationParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetMotionCoordinationParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetMotionCoordinationParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetMotionCoordinationParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetMotionCoordinationParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetTorqueUnitsParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the SetTorqueUnitsParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetTorqueUnitsParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetTorqueUnitsParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetTorqueUnitsParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.SetTorqueUnitsParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the StopMotionParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the StopMotionParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId StopMotionParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.StopMotionParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId StopMotionParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.StopMotionParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the ConfigureStatusReportParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the ConfigureStatusReportParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId ConfigureStatusReportParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.ConfigureStatusReportParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId ConfigureStatusReportParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.ConfigureStatusReportParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the EnableSensorParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the EnableSensorParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId EnableSensorParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.EnableSensorParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId EnableSensorParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.EnableSensorParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the DisableSensorParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the DisableSensorParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId DisableSensorParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.DisableSensorParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId DisableSensorParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.DisableSensorParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the EnableGripperParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the EnableGripperParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId EnableGripperParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.EnableGripperParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId EnableGripperParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.EnableGripperParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the DisableGripperParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the DisableGripperParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId DisableGripperParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.DisableGripperParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId DisableGripperParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.DisableGripperParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the EnableRobotParameterStatusParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the EnableRobotParameterStatusParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId EnableRobotParameterStatusParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.EnableRobotParameterStatusParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId EnableRobotParameterStatusParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.EnableRobotParameterStatusParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the DisableRobotParameterStatusParametersSetDataType_Encoding_DefaultBinary Object.
+        /// The identifier for the DisableRobotParameterStatusParamsSetDataType_Encoding_DefaultBinary Object.
         /// </summary>
-        public static readonly ExpandedNodeId DisableRobotParameterStatusParametersSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.DisableRobotParameterStatusParametersSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId DisableRobotParameterStatusParamsSetDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.DisableRobotParameterStatusParamsSetDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+
+        /// <summary>
+        /// The identifier for the CRCLCommandsParamsSetsUnionDataType_Encoding_DefaultBinary Object.
+        /// </summary>
+        public static readonly ExpandedNodeId CRCLCommandsParamsSetsUnionDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.CRCLCommandsParamsSetsUnionDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
+
+        /// <summary>
+        /// The identifier for the CRCLCommandsParamsSetsBufferDataType_Encoding_DefaultBinary Object.
+        /// </summary>
+        public static readonly ExpandedNodeId CRCLCommandsParamsSetsBufferDataType_Encoding_DefaultBinary = new ExpandedNodeId(CRCL.Objects.CRCLCommandsParamsSetsBufferDataType_Encoding_DefaultBinary, CRCL.Namespaces.CRCL);
 
         /// <summary>
         /// The identifier for the CRCL_FractionDataType_Encoding_DefaultXml Object.
@@ -5676,204 +5661,204 @@ namespace CRCL
         public static readonly ExpandedNodeId CRCLStatusDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.CRCLStatusDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the PubSubIPAddresses_Encoding_DefaultXml Object.
-        /// </summary>
-        public static readonly ExpandedNodeId PubSubIPAddresses_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.PubSubIPAddresses_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the SAMYRobotDataType_Encoding_DefaultXml Object.
-        /// </summary>
-        public static readonly ExpandedNodeId SAMYRobotDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SAMYRobotDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
-
-        /// <summary>
         /// The identifier for the CRCLCommandsUnionDataType_Encoding_DefaultXml Object.
         /// </summary>
         public static readonly ExpandedNodeId CRCLCommandsUnionDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.CRCLCommandsUnionDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCLSkillDataType_Encoding_DefaultXml Object.
+        /// The identifier for the CRCLCommandsBufferDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId CRCLSkillDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.CRCLSkillDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCLCommandsBufferDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.CRCLCommandsBufferDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCLCommandParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the CRCLCommandParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId CRCLCommandParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.CRCLCommandParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCLCommandParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.CRCLCommandParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the InitCanonParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the InitCanonParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId InitCanonParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.InitCanonParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId InitCanonParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.InitCanonParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the EndCanonParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the EndCanonParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId EndCanonParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.EndCanonParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId EndCanonParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.EndCanonParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the GetStatusParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the GetStatusParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId GetStatusParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.GetStatusParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId GetStatusParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.GetStatusParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CloseToolChangerParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the CloseToolChangerParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId CloseToolChangerParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.CloseToolChangerParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CloseToolChangerParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.CloseToolChangerParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the OpenToolChangerParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the OpenToolChangerParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId OpenToolChangerParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.OpenToolChangerParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId OpenToolChangerParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.OpenToolChangerParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the MessageParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the MessageParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId MessageParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.MessageParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId MessageParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.MessageParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the MoveToParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the MoveToParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId MoveToParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.MoveToParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId MoveToParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.MoveToParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the MoveScrewParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the MoveScrewParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId MoveScrewParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.MoveScrewParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId MoveScrewParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.MoveScrewParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the MoveThroughToParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the MoveThroughToParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId MoveThroughToParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.MoveThroughToParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId MoveThroughToParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.MoveThroughToParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the DwellParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the DwellParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId DwellParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.DwellParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId DwellParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.DwellParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the ActuateJointsParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the ActuateJointsParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId ActuateJointsParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.ActuateJointsParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId ActuateJointsParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.ActuateJointsParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the ConfigureJointReportsParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the ConfigureJointReportsParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId ConfigureJointReportsParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.ConfigureJointReportsParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId ConfigureJointReportsParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.ConfigureJointReportsParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetDefaultJointPositionsTolerancesParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetDefaultJointPositionsTolerancesParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetDefaultJointPositionsTolerancesParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetDefaultJointPositionsTolerancesParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetDefaultJointPositionsTolerancesParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetDefaultJointPositionsTolerancesParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetRobotParametersParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetRobotParametersParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetRobotParametersParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetRobotParametersParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetRobotParametersParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetRobotParametersParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetEndeffectorParametersParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetEndeffectorParametersParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetEndeffectorParametersParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetEndeffectorParametersParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetEndeffectorParametersParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetEndeffectorParametersParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetEndeffectorParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetEndeffectorParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetEndeffectorParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetEndeffectorParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetEndeffectorParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetEndeffectorParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetTransSpeedParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetTransSpeedParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetTransSpeedParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetTransSpeedParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetTransSpeedParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetTransSpeedParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetTransAccelParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetTransAccelParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetTransAccelParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetTransAccelParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetTransAccelParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetTransAccelParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetRotSpeedParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetRotSpeedParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetRotSpeedParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetRotSpeedParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetRotSpeedParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetRotSpeedParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetRotAccelParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetRotAccelParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetRotAccelParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetRotAccelParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetRotAccelParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetRotAccelParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetAngleUnitsParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetAngleUnitsParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetAngleUnitsParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetAngleUnitsParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetAngleUnitsParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetAngleUnitsParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetEndPoseToleranceParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetEndPoseToleranceParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetEndPoseToleranceParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetEndPoseToleranceParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetEndPoseToleranceParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetEndPoseToleranceParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetForceUnitsParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetForceUnitsParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetForceUnitsParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetForceUnitsParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetForceUnitsParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetForceUnitsParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetIntermediatePoseToleranceParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetIntermediatePoseToleranceParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetIntermediatePoseToleranceParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetIntermediatePoseToleranceParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetIntermediatePoseToleranceParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetIntermediatePoseToleranceParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetLengthUnitsParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetLengthUnitsParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetLengthUnitsParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetLengthUnitsParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetLengthUnitsParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetLengthUnitsParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetMotionCoordinationParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetMotionCoordinationParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetMotionCoordinationParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetMotionCoordinationParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetMotionCoordinationParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetMotionCoordinationParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetTorqueUnitsParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the SetTorqueUnitsParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetTorqueUnitsParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetTorqueUnitsParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetTorqueUnitsParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.SetTorqueUnitsParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the StopMotionParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the StopMotionParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId StopMotionParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.StopMotionParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId StopMotionParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.StopMotionParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the ConfigureStatusReportParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the ConfigureStatusReportParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId ConfigureStatusReportParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.ConfigureStatusReportParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId ConfigureStatusReportParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.ConfigureStatusReportParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the EnableSensorParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the EnableSensorParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId EnableSensorParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.EnableSensorParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId EnableSensorParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.EnableSensorParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the DisableSensorParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the DisableSensorParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId DisableSensorParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.DisableSensorParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId DisableSensorParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.DisableSensorParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the EnableGripperParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the EnableGripperParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId EnableGripperParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.EnableGripperParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId EnableGripperParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.EnableGripperParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the DisableGripperParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the DisableGripperParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId DisableGripperParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.DisableGripperParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId DisableGripperParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.DisableGripperParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the EnableRobotParameterStatusParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the EnableRobotParameterStatusParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId EnableRobotParameterStatusParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.EnableRobotParameterStatusParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId EnableRobotParameterStatusParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.EnableRobotParameterStatusParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the DisableRobotParameterStatusParametersSetDataType_Encoding_DefaultXml Object.
+        /// The identifier for the DisableRobotParameterStatusParamsSetDataType_Encoding_DefaultXml Object.
         /// </summary>
-        public static readonly ExpandedNodeId DisableRobotParameterStatusParametersSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.DisableRobotParameterStatusParametersSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId DisableRobotParameterStatusParamsSetDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.DisableRobotParameterStatusParamsSetDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+
+        /// <summary>
+        /// The identifier for the CRCLCommandsParamsSetsUnionDataType_Encoding_DefaultXml Object.
+        /// </summary>
+        public static readonly ExpandedNodeId CRCLCommandsParamsSetsUnionDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.CRCLCommandsParamsSetsUnionDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
+
+        /// <summary>
+        /// The identifier for the CRCLCommandsParamsSetsBufferDataType_Encoding_DefaultXml Object.
+        /// </summary>
+        public static readonly ExpandedNodeId CRCLCommandsParamsSetsBufferDataType_Encoding_DefaultXml = new ExpandedNodeId(CRCL.Objects.CRCLCommandsParamsSetsBufferDataType_Encoding_DefaultXml, CRCL.Namespaces.CRCL);
 
         /// <summary>
         /// The identifier for the CRCL_FractionDataType_Encoding_DefaultJson Object.
@@ -6301,219 +6286,204 @@ namespace CRCL
         public static readonly ExpandedNodeId CRCLStatusDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.CRCLStatusDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the PubSubIPAddresses_Encoding_DefaultJson Object.
-        /// </summary>
-        public static readonly ExpandedNodeId PubSubIPAddresses_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.PubSubIPAddresses_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the SAMYRobotDataType_Encoding_DefaultJson Object.
-        /// </summary>
-        public static readonly ExpandedNodeId SAMYRobotDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SAMYRobotDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
-
-        /// <summary>
         /// The identifier for the CRCLCommandsUnionDataType_Encoding_DefaultJson Object.
         /// </summary>
         public static readonly ExpandedNodeId CRCLCommandsUnionDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.CRCLCommandsUnionDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCLSkillDataType_Encoding_DefaultJson Object.
+        /// The identifier for the CRCLCommandsBufferDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId CRCLSkillDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.CRCLSkillDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCLCommandsBufferDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.CRCLCommandsBufferDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCLCommandParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the CRCLCommandParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId CRCLCommandParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.CRCLCommandParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCLCommandParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.CRCLCommandParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the InitCanonParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the InitCanonParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId InitCanonParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.InitCanonParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId InitCanonParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.InitCanonParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the EndCanonParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the EndCanonParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId EndCanonParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.EndCanonParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId EndCanonParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.EndCanonParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the GetStatusParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the GetStatusParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId GetStatusParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.GetStatusParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId GetStatusParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.GetStatusParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CloseToolChangerParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the CloseToolChangerParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId CloseToolChangerParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.CloseToolChangerParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CloseToolChangerParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.CloseToolChangerParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the OpenToolChangerParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the OpenToolChangerParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId OpenToolChangerParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.OpenToolChangerParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId OpenToolChangerParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.OpenToolChangerParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the MessageParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the MessageParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId MessageParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.MessageParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId MessageParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.MessageParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the MoveToParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the MoveToParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId MoveToParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.MoveToParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId MoveToParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.MoveToParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the MoveScrewParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the MoveScrewParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId MoveScrewParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.MoveScrewParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId MoveScrewParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.MoveScrewParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the MoveThroughToParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the MoveThroughToParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId MoveThroughToParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.MoveThroughToParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId MoveThroughToParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.MoveThroughToParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the DwellParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the DwellParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId DwellParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.DwellParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId DwellParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.DwellParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the ActuateJointsParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the ActuateJointsParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId ActuateJointsParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.ActuateJointsParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId ActuateJointsParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.ActuateJointsParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the ConfigureJointReportsParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the ConfigureJointReportsParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId ConfigureJointReportsParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.ConfigureJointReportsParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId ConfigureJointReportsParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.ConfigureJointReportsParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetDefaultJointPositionsTolerancesParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetDefaultJointPositionsTolerancesParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetDefaultJointPositionsTolerancesParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetDefaultJointPositionsTolerancesParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetDefaultJointPositionsTolerancesParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetDefaultJointPositionsTolerancesParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetRobotParametersParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetRobotParametersParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetRobotParametersParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetRobotParametersParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetRobotParametersParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetRobotParametersParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetEndeffectorParametersParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetEndeffectorParametersParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetEndeffectorParametersParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetEndeffectorParametersParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetEndeffectorParametersParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetEndeffectorParametersParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetEndeffectorParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetEndeffectorParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetEndeffectorParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetEndeffectorParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetEndeffectorParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetEndeffectorParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetTransSpeedParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetTransSpeedParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetTransSpeedParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetTransSpeedParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetTransSpeedParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetTransSpeedParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetTransAccelParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetTransAccelParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetTransAccelParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetTransAccelParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetTransAccelParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetTransAccelParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetRotSpeedParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetRotSpeedParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetRotSpeedParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetRotSpeedParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetRotSpeedParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetRotSpeedParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetRotAccelParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetRotAccelParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetRotAccelParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetRotAccelParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetRotAccelParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetRotAccelParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetAngleUnitsParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetAngleUnitsParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetAngleUnitsParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetAngleUnitsParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetAngleUnitsParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetAngleUnitsParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetEndPoseToleranceParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetEndPoseToleranceParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetEndPoseToleranceParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetEndPoseToleranceParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetEndPoseToleranceParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetEndPoseToleranceParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetForceUnitsParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetForceUnitsParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetForceUnitsParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetForceUnitsParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetForceUnitsParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetForceUnitsParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetIntermediatePoseToleranceParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetIntermediatePoseToleranceParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetIntermediatePoseToleranceParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetIntermediatePoseToleranceParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetIntermediatePoseToleranceParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetIntermediatePoseToleranceParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetLengthUnitsParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetLengthUnitsParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetLengthUnitsParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetLengthUnitsParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetLengthUnitsParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetLengthUnitsParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetMotionCoordinationParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetMotionCoordinationParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetMotionCoordinationParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetMotionCoordinationParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetMotionCoordinationParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetMotionCoordinationParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the SetTorqueUnitsParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the SetTorqueUnitsParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId SetTorqueUnitsParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetTorqueUnitsParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId SetTorqueUnitsParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.SetTorqueUnitsParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the StopMotionParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the StopMotionParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId StopMotionParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.StopMotionParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId StopMotionParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.StopMotionParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the ConfigureStatusReportParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the ConfigureStatusReportParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId ConfigureStatusReportParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.ConfigureStatusReportParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId ConfigureStatusReportParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.ConfigureStatusReportParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the EnableSensorParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the EnableSensorParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId EnableSensorParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.EnableSensorParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId EnableSensorParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.EnableSensorParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the DisableSensorParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the DisableSensorParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId DisableSensorParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.DisableSensorParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId DisableSensorParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.DisableSensorParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the EnableGripperParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the EnableGripperParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId EnableGripperParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.EnableGripperParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId EnableGripperParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.EnableGripperParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the DisableGripperParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the DisableGripperParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId DisableGripperParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.DisableGripperParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId DisableGripperParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.DisableGripperParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the EnableRobotParameterStatusParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the EnableRobotParameterStatusParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId EnableRobotParameterStatusParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.EnableRobotParameterStatusParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId EnableRobotParameterStatusParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.EnableRobotParameterStatusParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the DisableRobotParameterStatusParametersSetDataType_Encoding_DefaultJson Object.
+        /// The identifier for the DisableRobotParameterStatusParamsSetDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId DisableRobotParameterStatusParametersSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.DisableRobotParameterStatusParametersSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
-    }
-    #endregion
+        public static readonly ExpandedNodeId DisableRobotParameterStatusParamsSetDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.DisableRobotParameterStatusParamsSetDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
 
-    #region ObjectType Node Identifiers
-    /// <summary>
-    /// A class that declares constants for all ObjectTypes in the Model Design.
-    /// </summary>
-    /// <exclude />
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Opc.Ua.ModelCompiler", "1.0.0.0")]
-    public static partial class ObjectTypeIds
-    {
         /// <summary>
-        /// The identifier for the ISkillParameter ObjectType.
+        /// The identifier for the CRCLCommandsParamsSetsUnionDataType_Encoding_DefaultJson Object.
         /// </summary>
-        public static readonly ExpandedNodeId ISkillParameter = new ExpandedNodeId(CRCL.ObjectTypes.ISkillParameter, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCLCommandsParamsSetsUnionDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.CRCLCommandsParamsSetsUnionDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
+
+        /// <summary>
+        /// The identifier for the CRCLCommandsParamsSetsBufferDataType_Encoding_DefaultJson Object.
+        /// </summary>
+        public static readonly ExpandedNodeId CRCLCommandsParamsSetsBufferDataType_Encoding_DefaultJson = new ExpandedNodeId(CRCL.Objects.CRCLCommandsParamsSetsBufferDataType_Encoding_DefaultJson, CRCL.Namespaces.CRCL);
     }
     #endregion
 
@@ -6561,9 +6531,9 @@ namespace CRCL
         public static readonly ExpandedNodeId CRCL_CommandStateEnumDataType_EnumStrings = new ExpandedNodeId(CRCL.Variables.CRCL_CommandStateEnumDataType_EnumStrings, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the ISkillParameter_ReadParameterAtExecutionTime Variable.
+        /// The identifier for the CRCLCommandsBufferState_EnumStrings Variable.
         /// </summary>
-        public static readonly ExpandedNodeId ISkillParameter_ReadParameterAtExecutionTime = new ExpandedNodeId(CRCL.Variables.ISkillParameter_ReadParameterAtExecutionTime, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCLCommandsBufferState_EnumStrings = new ExpandedNodeId(CRCL.Variables.CRCLCommandsBufferState_EnumStrings, CRCL.Namespaces.CRCL);
 
         /// <summary>
         /// The identifier for the CRCL_BinarySchema Variable.
@@ -7006,204 +6976,204 @@ namespace CRCL
         public static readonly ExpandedNodeId CRCL_BinarySchema_CRCLStatusDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_CRCLStatusDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_PubSubIPAddresses Variable.
-        /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_PubSubIPAddresses = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_PubSubIPAddresses, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SAMYRobotDataType Variable.
-        /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_SAMYRobotDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SAMYRobotDataType, CRCL.Namespaces.CRCL);
-
-        /// <summary>
         /// The identifier for the CRCL_BinarySchema_CRCLCommandsUnionDataType Variable.
         /// </summary>
         public static readonly ExpandedNodeId CRCL_BinarySchema_CRCLCommandsUnionDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_CRCLCommandsUnionDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_CRCLSkillDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_CRCLCommandsBufferDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_CRCLSkillDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_CRCLSkillDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_CRCLCommandsBufferDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_CRCLCommandsBufferDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_CRCLCommandParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_CRCLCommandParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_CRCLCommandParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_CRCLCommandParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_CRCLCommandParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_CRCLCommandParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_InitCanonParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_InitCanonParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_InitCanonParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_InitCanonParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_InitCanonParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_InitCanonParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_EndCanonParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_EndCanonParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_EndCanonParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_EndCanonParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_EndCanonParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_EndCanonParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_GetStatusParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_GetStatusParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_GetStatusParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_GetStatusParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_GetStatusParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_GetStatusParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_CloseToolChangerParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_CloseToolChangerParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_CloseToolChangerParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_CloseToolChangerParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_CloseToolChangerParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_CloseToolChangerParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_OpenToolChangerParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_OpenToolChangerParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_OpenToolChangerParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_OpenToolChangerParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_OpenToolChangerParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_OpenToolChangerParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_MessageParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_MessageParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_MessageParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_MessageParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_MessageParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_MessageParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_MoveToParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_MoveToParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_MoveToParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_MoveToParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_MoveToParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_MoveToParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_MoveScrewParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_MoveScrewParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_MoveScrewParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_MoveScrewParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_MoveScrewParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_MoveScrewParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_MoveThroughToParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_MoveThroughToParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_MoveThroughToParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_MoveThroughToParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_MoveThroughToParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_MoveThroughToParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_DwellParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_DwellParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_DwellParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_DwellParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_DwellParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_DwellParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_ActuateJointsParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_ActuateJointsParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_ActuateJointsParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_ActuateJointsParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_ActuateJointsParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_ActuateJointsParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_ConfigureJointReportsParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_ConfigureJointReportsParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_ConfigureJointReportsParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_ConfigureJointReportsParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_ConfigureJointReportsParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_ConfigureJointReportsParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetDefaultJointPositionsTolerancesParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetDefaultJointPositionsTolerancesParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_SetDefaultJointPositionsTolerancesParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetDefaultJointPositionsTolerancesParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_SetDefaultJointPositionsTolerancesParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetDefaultJointPositionsTolerancesParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetRobotParametersParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetRobotParametersParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_SetRobotParametersParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetRobotParametersParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_SetRobotParametersParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetRobotParametersParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetEndeffectorParametersParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetEndeffectorParametersParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_SetEndeffectorParametersParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetEndeffectorParametersParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_SetEndeffectorParametersParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetEndeffectorParametersParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetEndeffectorParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetEndeffectorParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_SetEndeffectorParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetEndeffectorParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_SetEndeffectorParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetEndeffectorParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetTransSpeedParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetTransSpeedParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_SetTransSpeedParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetTransSpeedParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_SetTransSpeedParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetTransSpeedParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetTransAccelParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetTransAccelParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_SetTransAccelParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetTransAccelParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_SetTransAccelParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetTransAccelParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetRotSpeedParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetRotSpeedParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_SetRotSpeedParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetRotSpeedParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_SetRotSpeedParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetRotSpeedParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetRotAccelParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetRotAccelParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_SetRotAccelParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetRotAccelParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_SetRotAccelParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetRotAccelParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetAngleUnitsParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetAngleUnitsParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_SetAngleUnitsParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetAngleUnitsParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_SetAngleUnitsParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetAngleUnitsParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetEndPoseToleranceParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetEndPoseToleranceParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_SetEndPoseToleranceParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetEndPoseToleranceParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_SetEndPoseToleranceParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetEndPoseToleranceParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetForceUnitsParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetForceUnitsParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_SetForceUnitsParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetForceUnitsParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_SetForceUnitsParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetForceUnitsParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetIntermediatePoseToleranceParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetIntermediatePoseToleranceParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_SetIntermediatePoseToleranceParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetIntermediatePoseToleranceParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_SetIntermediatePoseToleranceParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetIntermediatePoseToleranceParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetLengthUnitsParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetLengthUnitsParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_SetLengthUnitsParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetLengthUnitsParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_SetLengthUnitsParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetLengthUnitsParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetMotionCoordinationParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetMotionCoordinationParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_SetMotionCoordinationParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetMotionCoordinationParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_SetMotionCoordinationParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetMotionCoordinationParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_SetTorqueUnitsParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_SetTorqueUnitsParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_SetTorqueUnitsParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetTorqueUnitsParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_SetTorqueUnitsParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_SetTorqueUnitsParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_StopMotionParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_StopMotionParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_StopMotionParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_StopMotionParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_StopMotionParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_StopMotionParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_ConfigureStatusReportParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_ConfigureStatusReportParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_ConfigureStatusReportParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_ConfigureStatusReportParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_ConfigureStatusReportParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_ConfigureStatusReportParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_EnableSensorParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_EnableSensorParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_EnableSensorParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_EnableSensorParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_EnableSensorParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_EnableSensorParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_DisableSensorParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_DisableSensorParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_DisableSensorParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_DisableSensorParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_DisableSensorParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_DisableSensorParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_EnableGripperParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_EnableGripperParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_EnableGripperParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_EnableGripperParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_EnableGripperParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_EnableGripperParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_DisableGripperParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_DisableGripperParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_DisableGripperParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_DisableGripperParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_DisableGripperParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_DisableGripperParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_EnableRobotParameterStatusParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_EnableRobotParameterStatusParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_EnableRobotParameterStatusParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_EnableRobotParameterStatusParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_EnableRobotParameterStatusParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_EnableRobotParameterStatusParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_BinarySchema_DisableRobotParameterStatusParametersSetDataType Variable.
+        /// The identifier for the CRCL_BinarySchema_DisableRobotParameterStatusParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_BinarySchema_DisableRobotParameterStatusParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_DisableRobotParameterStatusParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_BinarySchema_DisableRobotParameterStatusParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_DisableRobotParameterStatusParamsSetDataType, CRCL.Namespaces.CRCL);
+
+        /// <summary>
+        /// The identifier for the CRCL_BinarySchema_CRCLCommandsParamsSetsUnionDataType Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CRCL_BinarySchema_CRCLCommandsParamsSetsUnionDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_CRCLCommandsParamsSetsUnionDataType, CRCL.Namespaces.CRCL);
+
+        /// <summary>
+        /// The identifier for the CRCL_BinarySchema_CRCLCommandsParamsSetsBufferDataType Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CRCL_BinarySchema_CRCLCommandsParamsSetsBufferDataType = new ExpandedNodeId(CRCL.Variables.CRCL_BinarySchema_CRCLCommandsParamsSetsBufferDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
         /// The identifier for the CRCL_XmlSchema Variable.
@@ -7646,204 +7616,204 @@ namespace CRCL
         public static readonly ExpandedNodeId CRCL_XmlSchema_CRCLStatusDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_CRCLStatusDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_PubSubIPAddresses Variable.
-        /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_PubSubIPAddresses = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_PubSubIPAddresses, CRCL.Namespaces.CRCL);
-
-        /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SAMYRobotDataType Variable.
-        /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_SAMYRobotDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SAMYRobotDataType, CRCL.Namespaces.CRCL);
-
-        /// <summary>
         /// The identifier for the CRCL_XmlSchema_CRCLCommandsUnionDataType Variable.
         /// </summary>
         public static readonly ExpandedNodeId CRCL_XmlSchema_CRCLCommandsUnionDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_CRCLCommandsUnionDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_CRCLSkillDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_CRCLCommandsBufferDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_CRCLSkillDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_CRCLSkillDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_CRCLCommandsBufferDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_CRCLCommandsBufferDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_CRCLCommandParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_CRCLCommandParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_CRCLCommandParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_CRCLCommandParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_CRCLCommandParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_CRCLCommandParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_InitCanonParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_InitCanonParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_InitCanonParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_InitCanonParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_InitCanonParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_InitCanonParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_EndCanonParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_EndCanonParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_EndCanonParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_EndCanonParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_EndCanonParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_EndCanonParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_GetStatusParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_GetStatusParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_GetStatusParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_GetStatusParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_GetStatusParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_GetStatusParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_CloseToolChangerParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_CloseToolChangerParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_CloseToolChangerParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_CloseToolChangerParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_CloseToolChangerParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_CloseToolChangerParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_OpenToolChangerParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_OpenToolChangerParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_OpenToolChangerParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_OpenToolChangerParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_OpenToolChangerParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_OpenToolChangerParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_MessageParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_MessageParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_MessageParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_MessageParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_MessageParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_MessageParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_MoveToParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_MoveToParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_MoveToParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_MoveToParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_MoveToParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_MoveToParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_MoveScrewParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_MoveScrewParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_MoveScrewParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_MoveScrewParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_MoveScrewParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_MoveScrewParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_MoveThroughToParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_MoveThroughToParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_MoveThroughToParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_MoveThroughToParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_MoveThroughToParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_MoveThroughToParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_DwellParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_DwellParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_DwellParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_DwellParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_DwellParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_DwellParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_ActuateJointsParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_ActuateJointsParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_ActuateJointsParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_ActuateJointsParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_ActuateJointsParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_ActuateJointsParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_ConfigureJointReportsParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_ConfigureJointReportsParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_ConfigureJointReportsParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_ConfigureJointReportsParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_ConfigureJointReportsParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_ConfigureJointReportsParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetDefaultJointPositionsTolerancesParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetDefaultJointPositionsTolerancesParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_SetDefaultJointPositionsTolerancesParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetDefaultJointPositionsTolerancesParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_SetDefaultJointPositionsTolerancesParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetDefaultJointPositionsTolerancesParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetRobotParametersParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetRobotParametersParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_SetRobotParametersParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetRobotParametersParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_SetRobotParametersParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetRobotParametersParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetEndeffectorParametersParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetEndeffectorParametersParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_SetEndeffectorParametersParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetEndeffectorParametersParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_SetEndeffectorParametersParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetEndeffectorParametersParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetEndeffectorParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetEndeffectorParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_SetEndeffectorParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetEndeffectorParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_SetEndeffectorParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetEndeffectorParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetTransSpeedParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetTransSpeedParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_SetTransSpeedParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetTransSpeedParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_SetTransSpeedParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetTransSpeedParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetTransAccelParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetTransAccelParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_SetTransAccelParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetTransAccelParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_SetTransAccelParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetTransAccelParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetRotSpeedParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetRotSpeedParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_SetRotSpeedParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetRotSpeedParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_SetRotSpeedParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetRotSpeedParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetRotAccelParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetRotAccelParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_SetRotAccelParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetRotAccelParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_SetRotAccelParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetRotAccelParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetAngleUnitsParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetAngleUnitsParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_SetAngleUnitsParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetAngleUnitsParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_SetAngleUnitsParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetAngleUnitsParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetEndPoseToleranceParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetEndPoseToleranceParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_SetEndPoseToleranceParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetEndPoseToleranceParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_SetEndPoseToleranceParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetEndPoseToleranceParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetForceUnitsParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetForceUnitsParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_SetForceUnitsParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetForceUnitsParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_SetForceUnitsParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetForceUnitsParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetIntermediatePoseToleranceParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetIntermediatePoseToleranceParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_SetIntermediatePoseToleranceParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetIntermediatePoseToleranceParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_SetIntermediatePoseToleranceParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetIntermediatePoseToleranceParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetLengthUnitsParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetLengthUnitsParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_SetLengthUnitsParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetLengthUnitsParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_SetLengthUnitsParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetLengthUnitsParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetMotionCoordinationParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetMotionCoordinationParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_SetMotionCoordinationParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetMotionCoordinationParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_SetMotionCoordinationParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetMotionCoordinationParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_SetTorqueUnitsParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_SetTorqueUnitsParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_SetTorqueUnitsParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetTorqueUnitsParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_SetTorqueUnitsParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_SetTorqueUnitsParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_StopMotionParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_StopMotionParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_StopMotionParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_StopMotionParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_StopMotionParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_StopMotionParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_ConfigureStatusReportParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_ConfigureStatusReportParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_ConfigureStatusReportParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_ConfigureStatusReportParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_ConfigureStatusReportParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_ConfigureStatusReportParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_EnableSensorParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_EnableSensorParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_EnableSensorParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_EnableSensorParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_EnableSensorParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_EnableSensorParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_DisableSensorParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_DisableSensorParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_DisableSensorParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_DisableSensorParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_DisableSensorParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_DisableSensorParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_EnableGripperParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_EnableGripperParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_EnableGripperParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_EnableGripperParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_EnableGripperParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_EnableGripperParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_DisableGripperParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_DisableGripperParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_DisableGripperParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_DisableGripperParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_DisableGripperParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_DisableGripperParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_EnableRobotParameterStatusParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_EnableRobotParameterStatusParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_EnableRobotParameterStatusParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_EnableRobotParameterStatusParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_EnableRobotParameterStatusParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_EnableRobotParameterStatusParamsSetDataType, CRCL.Namespaces.CRCL);
 
         /// <summary>
-        /// The identifier for the CRCL_XmlSchema_DisableRobotParameterStatusParametersSetDataType Variable.
+        /// The identifier for the CRCL_XmlSchema_DisableRobotParameterStatusParamsSetDataType Variable.
         /// </summary>
-        public static readonly ExpandedNodeId CRCL_XmlSchema_DisableRobotParameterStatusParametersSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_DisableRobotParameterStatusParametersSetDataType, CRCL.Namespaces.CRCL);
+        public static readonly ExpandedNodeId CRCL_XmlSchema_DisableRobotParameterStatusParamsSetDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_DisableRobotParameterStatusParamsSetDataType, CRCL.Namespaces.CRCL);
+
+        /// <summary>
+        /// The identifier for the CRCL_XmlSchema_CRCLCommandsParamsSetsUnionDataType Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CRCL_XmlSchema_CRCLCommandsParamsSetsUnionDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_CRCLCommandsParamsSetsUnionDataType, CRCL.Namespaces.CRCL);
+
+        /// <summary>
+        /// The identifier for the CRCL_XmlSchema_CRCLCommandsParamsSetsBufferDataType Variable.
+        /// </summary>
+        public static readonly ExpandedNodeId CRCL_XmlSchema_CRCLCommandsParamsSetsBufferDataType = new ExpandedNodeId(CRCL.Variables.CRCL_XmlSchema_CRCLCommandsParamsSetsBufferDataType, CRCL.Namespaces.CRCL);
     }
     #endregion
 
@@ -7860,9 +7830,9 @@ namespace CRCL
         public const string ActuateJointsDataType = "ActuateJointsDataType";
 
         /// <summary>
-        /// The BrowseName for the ActuateJointsParametersSetDataType component.
+        /// The BrowseName for the ActuateJointsParamsSetDataType component.
         /// </summary>
-        public const string ActuateJointsParametersSetDataType = "ActuateJointsParametersSetDataType";
+        public const string ActuateJointsParamsSetDataType = "ActuateJointsParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the CloseToolChangerDataType component.
@@ -7870,9 +7840,9 @@ namespace CRCL
         public const string CloseToolChangerDataType = "CloseToolChangerDataType";
 
         /// <summary>
-        /// The BrowseName for the CloseToolChangerParametersSetDataType component.
+        /// The BrowseName for the CloseToolChangerParamsSetDataType component.
         /// </summary>
-        public const string CloseToolChangerParametersSetDataType = "CloseToolChangerParametersSetDataType";
+        public const string CloseToolChangerParamsSetDataType = "CloseToolChangerParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the ConfigureJointReportsDataType component.
@@ -7880,9 +7850,9 @@ namespace CRCL
         public const string ConfigureJointReportsDataType = "ConfigureJointReportsDataType";
 
         /// <summary>
-        /// The BrowseName for the ConfigureJointReportsParametersSetDataType component.
+        /// The BrowseName for the ConfigureJointReportsParamsSetDataType component.
         /// </summary>
-        public const string ConfigureJointReportsParametersSetDataType = "ConfigureJointReportsParametersSetDataType";
+        public const string ConfigureJointReportsParamsSetDataType = "ConfigureJointReportsParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the ConfigureStatusReportDataType component.
@@ -7890,9 +7860,9 @@ namespace CRCL
         public const string ConfigureStatusReportDataType = "ConfigureStatusReportDataType";
 
         /// <summary>
-        /// The BrowseName for the ConfigureStatusReportParametersSetDataType component.
+        /// The BrowseName for the ConfigureStatusReportParamsSetDataType component.
         /// </summary>
-        public const string ConfigureStatusReportParametersSetDataType = "ConfigureStatusReportParametersSetDataType";
+        public const string ConfigureStatusReportParamsSetDataType = "ConfigureStatusReportParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the CRCL_ActuateJointDataType component.
@@ -8050,11 +8020,6 @@ namespace CRCL
         public const string CRCL_PoseToleranceDataType = "CRCL_PoseToleranceDataType";
 
         /// <summary>
-        /// The BrowseName for the CRCL_PositiveDecimalDataType component.
-        /// </summary>
-        public const string CRCL_PositiveDecimalDataType = "CRCL_PositiveDecimalDataType";
-
-        /// <summary>
         /// The BrowseName for the CRCL_RotAccelAbsoluteDataType component.
         /// </summary>
         public const string CRCL_RotAccelAbsoluteDataType = "CRCL_RotAccelAbsoluteDataType";
@@ -8180,19 +8145,34 @@ namespace CRCL
         public const string CRCLCommandDataType = "CRCLCommandDataType";
 
         /// <summary>
-        /// The BrowseName for the CRCLCommandParametersSetDataType component.
+        /// The BrowseName for the CRCLCommandParamsSetDataType component.
         /// </summary>
-        public const string CRCLCommandParametersSetDataType = "CRCLCommandParametersSetDataType";
+        public const string CRCLCommandParamsSetDataType = "CRCLCommandParamsSetDataType";
+
+        /// <summary>
+        /// The BrowseName for the CRCLCommandsBufferDataType component.
+        /// </summary>
+        public const string CRCLCommandsBufferDataType = "CRCLCommandsBufferDataType";
+
+        /// <summary>
+        /// The BrowseName for the CRCLCommandsBufferState component.
+        /// </summary>
+        public const string CRCLCommandsBufferState = "CRCLCommandsBufferState";
+
+        /// <summary>
+        /// The BrowseName for the CRCLCommandsParamsSetsBufferDataType component.
+        /// </summary>
+        public const string CRCLCommandsParamsSetsBufferDataType = "CRCLCommandsParamsSetsBufferDataType";
+
+        /// <summary>
+        /// The BrowseName for the CRCLCommandsParamsSetsUnionDataType component.
+        /// </summary>
+        public const string CRCLCommandsParamsSetsUnionDataType = "CRCLCommandsParamsSetsUnionDataType";
 
         /// <summary>
         /// The BrowseName for the CRCLCommandsUnionDataType component.
         /// </summary>
         public const string CRCLCommandsUnionDataType = "CRCLCommandsUnionDataType";
-
-        /// <summary>
-        /// The BrowseName for the CRCLSkillDataType component.
-        /// </summary>
-        public const string CRCLSkillDataType = "CRCLSkillDataType";
 
         /// <summary>
         /// The BrowseName for the CRCLStatusDataType component.
@@ -8205,9 +8185,9 @@ namespace CRCL
         public const string DisableGripperDataType = "DisableGripperDataType";
 
         /// <summary>
-        /// The BrowseName for the DisableGripperParametersSetDataType component.
+        /// The BrowseName for the DisableGripperParamsSetDataType component.
         /// </summary>
-        public const string DisableGripperParametersSetDataType = "DisableGripperParametersSetDataType";
+        public const string DisableGripperParamsSetDataType = "DisableGripperParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the DisableRobotParameterStatusDataType component.
@@ -8215,9 +8195,9 @@ namespace CRCL
         public const string DisableRobotParameterStatusDataType = "DisableRobotParameterStatusDataType";
 
         /// <summary>
-        /// The BrowseName for the DisableRobotParameterStatusParametersSetDataType component.
+        /// The BrowseName for the DisableRobotParameterStatusParamsSetDataType component.
         /// </summary>
-        public const string DisableRobotParameterStatusParametersSetDataType = "DisableRobotParameterStatusParametersSetDataType";
+        public const string DisableRobotParameterStatusParamsSetDataType = "DisableRobotParameterStatusParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the DisableSensorDataType component.
@@ -8225,9 +8205,9 @@ namespace CRCL
         public const string DisableSensorDataType = "DisableSensorDataType";
 
         /// <summary>
-        /// The BrowseName for the DisableSensorParametersSetDataType component.
+        /// The BrowseName for the DisableSensorParamsSetDataType component.
         /// </summary>
-        public const string DisableSensorParametersSetDataType = "DisableSensorParametersSetDataType";
+        public const string DisableSensorParamsSetDataType = "DisableSensorParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the DwellDataType component.
@@ -8235,9 +8215,9 @@ namespace CRCL
         public const string DwellDataType = "DwellDataType";
 
         /// <summary>
-        /// The BrowseName for the DwellParametersSetDataType component.
+        /// The BrowseName for the DwellParamsSetDataType component.
         /// </summary>
-        public const string DwellParametersSetDataType = "DwellParametersSetDataType";
+        public const string DwellParamsSetDataType = "DwellParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the EnableGripperDataType component.
@@ -8245,9 +8225,9 @@ namespace CRCL
         public const string EnableGripperDataType = "EnableGripperDataType";
 
         /// <summary>
-        /// The BrowseName for the EnableGripperParametersSetDataType component.
+        /// The BrowseName for the EnableGripperParamsSetDataType component.
         /// </summary>
-        public const string EnableGripperParametersSetDataType = "EnableGripperParametersSetDataType";
+        public const string EnableGripperParamsSetDataType = "EnableGripperParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the EnableRobotParameterStatusDataType component.
@@ -8255,9 +8235,9 @@ namespace CRCL
         public const string EnableRobotParameterStatusDataType = "EnableRobotParameterStatusDataType";
 
         /// <summary>
-        /// The BrowseName for the EnableRobotParameterStatusParametersSetDataType component.
+        /// The BrowseName for the EnableRobotParameterStatusParamsSetDataType component.
         /// </summary>
-        public const string EnableRobotParameterStatusParametersSetDataType = "EnableRobotParameterStatusParametersSetDataType";
+        public const string EnableRobotParameterStatusParamsSetDataType = "EnableRobotParameterStatusParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the EnableSensorDataType component.
@@ -8265,9 +8245,9 @@ namespace CRCL
         public const string EnableSensorDataType = "EnableSensorDataType";
 
         /// <summary>
-        /// The BrowseName for the EnableSensorParametersSetDataType component.
+        /// The BrowseName for the EnableSensorParamsSetDataType component.
         /// </summary>
-        public const string EnableSensorParametersSetDataType = "EnableSensorParametersSetDataType";
+        public const string EnableSensorParamsSetDataType = "EnableSensorParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the EndCanonDataType component.
@@ -8275,9 +8255,9 @@ namespace CRCL
         public const string EndCanonDataType = "EndCanonDataType";
 
         /// <summary>
-        /// The BrowseName for the EndCanonParametersSetDataType component.
+        /// The BrowseName for the EndCanonParamsSetDataType component.
         /// </summary>
-        public const string EndCanonParametersSetDataType = "EndCanonParametersSetDataType";
+        public const string EndCanonParamsSetDataType = "EndCanonParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the GetStatusDataType component.
@@ -8285,9 +8265,9 @@ namespace CRCL
         public const string GetStatusDataType = "GetStatusDataType";
 
         /// <summary>
-        /// The BrowseName for the GetStatusParametersSetDataType component.
+        /// The BrowseName for the GetStatusParamsSetDataType component.
         /// </summary>
-        public const string GetStatusParametersSetDataType = "GetStatusParametersSetDataType";
+        public const string GetStatusParamsSetDataType = "GetStatusParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the InitCanonDataType component.
@@ -8295,14 +8275,9 @@ namespace CRCL
         public const string InitCanonDataType = "InitCanonDataType";
 
         /// <summary>
-        /// The BrowseName for the InitCanonParametersSetDataType component.
+        /// The BrowseName for the InitCanonParamsSetDataType component.
         /// </summary>
-        public const string InitCanonParametersSetDataType = "InitCanonParametersSetDataType";
-
-        /// <summary>
-        /// The BrowseName for the ISkillParameter component.
-        /// </summary>
-        public const string ISkillParameter = "ISkillParameter";
+        public const string InitCanonParamsSetDataType = "InitCanonParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the MessageDataType component.
@@ -8310,9 +8285,9 @@ namespace CRCL
         public const string MessageDataType = "MessageDataType";
 
         /// <summary>
-        /// The BrowseName for the MessageParametersSetDataType component.
+        /// The BrowseName for the MessageParamsSetDataType component.
         /// </summary>
-        public const string MessageParametersSetDataType = "MessageParametersSetDataType";
+        public const string MessageParamsSetDataType = "MessageParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the MiddleCommandDataType component.
@@ -8325,9 +8300,9 @@ namespace CRCL
         public const string MoveScrewDataType = "MoveScrewDataType";
 
         /// <summary>
-        /// The BrowseName for the MoveScrewParametersSetDataType component.
+        /// The BrowseName for the MoveScrewParamsSetDataType component.
         /// </summary>
-        public const string MoveScrewParametersSetDataType = "MoveScrewParametersSetDataType";
+        public const string MoveScrewParamsSetDataType = "MoveScrewParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the MoveThroughToDataType component.
@@ -8335,9 +8310,9 @@ namespace CRCL
         public const string MoveThroughToDataType = "MoveThroughToDataType";
 
         /// <summary>
-        /// The BrowseName for the MoveThroughToParametersSetDataType component.
+        /// The BrowseName for the MoveThroughToParamsSetDataType component.
         /// </summary>
-        public const string MoveThroughToParametersSetDataType = "MoveThroughToParametersSetDataType";
+        public const string MoveThroughToParamsSetDataType = "MoveThroughToParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the MoveToDataType component.
@@ -8345,9 +8320,9 @@ namespace CRCL
         public const string MoveToDataType = "MoveToDataType";
 
         /// <summary>
-        /// The BrowseName for the MoveToParametersSetDataType component.
+        /// The BrowseName for the MoveToParamsSetDataType component.
         /// </summary>
-        public const string MoveToParametersSetDataType = "MoveToParametersSetDataType";
+        public const string MoveToParamsSetDataType = "MoveToParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the OpenToolChangerDataType component.
@@ -8355,19 +8330,9 @@ namespace CRCL
         public const string OpenToolChangerDataType = "OpenToolChangerDataType";
 
         /// <summary>
-        /// The BrowseName for the OpenToolChangerParametersSetDataType component.
+        /// The BrowseName for the OpenToolChangerParamsSetDataType component.
         /// </summary>
-        public const string OpenToolChangerParametersSetDataType = "OpenToolChangerParametersSetDataType";
-
-        /// <summary>
-        /// The BrowseName for the PubSubIPAddresses component.
-        /// </summary>
-        public const string PubSubIPAddresses = "PubSubIPAddresses";
-
-        /// <summary>
-        /// The BrowseName for the ReadParameterAtExecutionTime component.
-        /// </summary>
-        public const string ReadParameterAtExecutionTime = "ReadParameterAtExecutionTime";
+        public const string OpenToolChangerParamsSetDataType = "OpenToolChangerParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the RunProgramDataType component.
@@ -8375,19 +8340,14 @@ namespace CRCL
         public const string RunProgramDataType = "RunProgramDataType";
 
         /// <summary>
-        /// The BrowseName for the SAMYRobotDataType component.
-        /// </summary>
-        public const string SAMYRobotDataType = "SAMYRobotDataType";
-
-        /// <summary>
         /// The BrowseName for the SetAngleUnitsDataType component.
         /// </summary>
         public const string SetAngleUnitsDataType = "SetAngleUnitsDataType";
 
         /// <summary>
-        /// The BrowseName for the SetAngleUnitsParametersSetDataType component.
+        /// The BrowseName for the SetAngleUnitsParamsSetDataType component.
         /// </summary>
-        public const string SetAngleUnitsParametersSetDataType = "SetAngleUnitsParametersSetDataType";
+        public const string SetAngleUnitsParamsSetDataType = "SetAngleUnitsParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the SetDefaultJointPositionsTolerancesDataType component.
@@ -8395,9 +8355,9 @@ namespace CRCL
         public const string SetDefaultJointPositionsTolerancesDataType = "SetDefaultJointPositionsTolerancesDataType";
 
         /// <summary>
-        /// The BrowseName for the SetDefaultJointPositionsTolerancesParametersSetDataType component.
+        /// The BrowseName for the SetDefaultJointPositionsTolerancesParamsSetDataType component.
         /// </summary>
-        public const string SetDefaultJointPositionsTolerancesParametersSetDataType = "SetDefaultJointPositionsTolerancesParametersSetDataType";
+        public const string SetDefaultJointPositionsTolerancesParamsSetDataType = "SetDefaultJointPositionsTolerancesParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the SetEndeffectorDataType component.
@@ -8410,14 +8370,14 @@ namespace CRCL
         public const string SetEndeffectorParametersDataType = "SetEndeffectorParametersDataType";
 
         /// <summary>
-        /// The BrowseName for the SetEndeffectorParametersParametersSetDataType component.
+        /// The BrowseName for the SetEndeffectorParametersParamsSetDataType component.
         /// </summary>
-        public const string SetEndeffectorParametersParametersSetDataType = "SetEndeffectorParametersParametersSetDataType";
+        public const string SetEndeffectorParametersParamsSetDataType = "SetEndeffectorParametersParamsSetDataType";
 
         /// <summary>
-        /// The BrowseName for the SetEndeffectorParametersSetDataType component.
+        /// The BrowseName for the SetEndeffectorParamsSetDataType component.
         /// </summary>
-        public const string SetEndeffectorParametersSetDataType = "SetEndeffectorParametersSetDataType";
+        public const string SetEndeffectorParamsSetDataType = "SetEndeffectorParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the SetEndPoseToleranceDataType component.
@@ -8425,9 +8385,9 @@ namespace CRCL
         public const string SetEndPoseToleranceDataType = "SetEndPoseToleranceDataType";
 
         /// <summary>
-        /// The BrowseName for the SetEndPoseToleranceParametersSetDataType component.
+        /// The BrowseName for the SetEndPoseToleranceParamsSetDataType component.
         /// </summary>
-        public const string SetEndPoseToleranceParametersSetDataType = "SetEndPoseToleranceParametersSetDataType";
+        public const string SetEndPoseToleranceParamsSetDataType = "SetEndPoseToleranceParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the SetForceUnitsDataType component.
@@ -8435,9 +8395,9 @@ namespace CRCL
         public const string SetForceUnitsDataType = "SetForceUnitsDataType";
 
         /// <summary>
-        /// The BrowseName for the SetForceUnitsParametersSetDataType component.
+        /// The BrowseName for the SetForceUnitsParamsSetDataType component.
         /// </summary>
-        public const string SetForceUnitsParametersSetDataType = "SetForceUnitsParametersSetDataType";
+        public const string SetForceUnitsParamsSetDataType = "SetForceUnitsParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the SetIntermediatePoseToleranceDataType component.
@@ -8445,9 +8405,9 @@ namespace CRCL
         public const string SetIntermediatePoseToleranceDataType = "SetIntermediatePoseToleranceDataType";
 
         /// <summary>
-        /// The BrowseName for the SetIntermediatePoseToleranceParametersSetDataType component.
+        /// The BrowseName for the SetIntermediatePoseToleranceParamsSetDataType component.
         /// </summary>
-        public const string SetIntermediatePoseToleranceParametersSetDataType = "SetIntermediatePoseToleranceParametersSetDataType";
+        public const string SetIntermediatePoseToleranceParamsSetDataType = "SetIntermediatePoseToleranceParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the SetLengthUnitsDataType component.
@@ -8455,9 +8415,9 @@ namespace CRCL
         public const string SetLengthUnitsDataType = "SetLengthUnitsDataType";
 
         /// <summary>
-        /// The BrowseName for the SetLengthUnitsParametersSetDataType component.
+        /// The BrowseName for the SetLengthUnitsParamsSetDataType component.
         /// </summary>
-        public const string SetLengthUnitsParametersSetDataType = "SetLengthUnitsParametersSetDataType";
+        public const string SetLengthUnitsParamsSetDataType = "SetLengthUnitsParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the SetMotionCoordinationDataType component.
@@ -8465,9 +8425,9 @@ namespace CRCL
         public const string SetMotionCoordinationDataType = "SetMotionCoordinationDataType";
 
         /// <summary>
-        /// The BrowseName for the SetMotionCoordinationParametersSetDataType component.
+        /// The BrowseName for the SetMotionCoordinationParamsSetDataType component.
         /// </summary>
-        public const string SetMotionCoordinationParametersSetDataType = "SetMotionCoordinationParametersSetDataType";
+        public const string SetMotionCoordinationParamsSetDataType = "SetMotionCoordinationParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the SetRobotParametersDataType component.
@@ -8475,9 +8435,9 @@ namespace CRCL
         public const string SetRobotParametersDataType = "SetRobotParametersDataType";
 
         /// <summary>
-        /// The BrowseName for the SetRobotParametersParametersSetDataType component.
+        /// The BrowseName for the SetRobotParametersParamsSetDataType component.
         /// </summary>
-        public const string SetRobotParametersParametersSetDataType = "SetRobotParametersParametersSetDataType";
+        public const string SetRobotParametersParamsSetDataType = "SetRobotParametersParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the SetRotAccelDataType component.
@@ -8485,9 +8445,9 @@ namespace CRCL
         public const string SetRotAccelDataType = "SetRotAccelDataType";
 
         /// <summary>
-        /// The BrowseName for the SetRotAccelParametersSetDataType component.
+        /// The BrowseName for the SetRotAccelParamsSetDataType component.
         /// </summary>
-        public const string SetRotAccelParametersSetDataType = "SetRotAccelParametersSetDataType";
+        public const string SetRotAccelParamsSetDataType = "SetRotAccelParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the SetRotSpeedDataType component.
@@ -8495,9 +8455,9 @@ namespace CRCL
         public const string SetRotSpeedDataType = "SetRotSpeedDataType";
 
         /// <summary>
-        /// The BrowseName for the SetRotSpeedParametersSetDataType component.
+        /// The BrowseName for the SetRotSpeedParamsSetDataType component.
         /// </summary>
-        public const string SetRotSpeedParametersSetDataType = "SetRotSpeedParametersSetDataType";
+        public const string SetRotSpeedParamsSetDataType = "SetRotSpeedParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the SetTorqueUnitsDataType component.
@@ -8505,9 +8465,9 @@ namespace CRCL
         public const string SetTorqueUnitsDataType = "SetTorqueUnitsDataType";
 
         /// <summary>
-        /// The BrowseName for the SetTorqueUnitsParametersSetDataType component.
+        /// The BrowseName for the SetTorqueUnitsParamsSetDataType component.
         /// </summary>
-        public const string SetTorqueUnitsParametersSetDataType = "SetTorqueUnitsParametersSetDataType";
+        public const string SetTorqueUnitsParamsSetDataType = "SetTorqueUnitsParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the SetTransAccelDataType component.
@@ -8515,9 +8475,9 @@ namespace CRCL
         public const string SetTransAccelDataType = "SetTransAccelDataType";
 
         /// <summary>
-        /// The BrowseName for the SetTransAccelParametersSetDataType component.
+        /// The BrowseName for the SetTransAccelParamsSetDataType component.
         /// </summary>
-        public const string SetTransAccelParametersSetDataType = "SetTransAccelParametersSetDataType";
+        public const string SetTransAccelParamsSetDataType = "SetTransAccelParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the SetTransSpeedDataType component.
@@ -8525,9 +8485,9 @@ namespace CRCL
         public const string SetTransSpeedDataType = "SetTransSpeedDataType";
 
         /// <summary>
-        /// The BrowseName for the SetTransSpeedParametersSetDataType component.
+        /// The BrowseName for the SetTransSpeedParamsSetDataType component.
         /// </summary>
-        public const string SetTransSpeedParametersSetDataType = "SetTransSpeedParametersSetDataType";
+        public const string SetTransSpeedParamsSetDataType = "SetTransSpeedParamsSetDataType";
 
         /// <summary>
         /// The BrowseName for the StopMotionDataType component.
@@ -8535,9 +8495,9 @@ namespace CRCL
         public const string StopMotionDataType = "StopMotionDataType";
 
         /// <summary>
-        /// The BrowseName for the StopMotionParametersSetDataType component.
+        /// The BrowseName for the StopMotionParamsSetDataType component.
         /// </summary>
-        public const string StopMotionParametersSetDataType = "StopMotionParametersSetDataType";
+        public const string StopMotionParamsSetDataType = "StopMotionParamsSetDataType";
     }
     #endregion
 

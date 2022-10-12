@@ -97,7 +97,7 @@ bool RobotsParser::parseRobots(const std::string& filepath, std::vector<SAMYSkil
                             }
                         }
                 }
-                robotAux.name = UA_STRING_ALLOC(const_cast<char*>(auxName.c_str()));
+                robotAux.name = auxName;
                // robotAux.requested_skill = 0;
                 //robotAux.SAMYRobotVariableNodeId = UA_NODEID_STRING(2, const_cast<char*>(auxName.c_str()));
                 robotAux.robotSkills = parsedRobotSkills;

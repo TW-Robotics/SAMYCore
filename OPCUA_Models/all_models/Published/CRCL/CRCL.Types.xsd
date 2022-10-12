@@ -176,8 +176,6 @@
   </xs:complexType>
   <xs:element name="ListOfCRCL_PoseDataType" type="tns:ListOfCRCL_PoseDataType" nillable="true"></xs:element>
 
-  <xs:element name="CRCL_PositiveDecimalDataType" type="ua:Variant" />
-
   <xs:simpleType  name="CRCL_TorqueUnitEnumDataType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="NEWTONMETER_0" />
@@ -334,8 +332,8 @@
       <xs:extension base="ua:Union">
         <xs:sequence>
           <xs:element name="SwitchField" type="xs:unsignedInt" minOccurs="0" />
-          <xs:element name="RotAccelAbsoluteDataType" type="tns:CRCL_RotAccelAbsoluteDataType" minOccurs="0" nillable="true" />
-          <xs:element name="RotAccelRelativeDataType" type="tns:CRCL_RotAccelRelativeDataType" minOccurs="0" nillable="true" />
+          <xs:element name="rotAccelAbsoluteDataType" type="tns:CRCL_RotAccelAbsoluteDataType" minOccurs="0" nillable="true" />
+          <xs:element name="rotAccelRelativeDataType" type="tns:CRCL_RotAccelRelativeDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -399,8 +397,8 @@
       <xs:extension base="ua:Union">
         <xs:sequence>
           <xs:element name="SwitchField" type="xs:unsignedInt" minOccurs="0" />
-          <xs:element name="RotSpeedAbsoluteDataType" type="tns:CRCL_RotSpeedAbsoluteDataType" minOccurs="0" nillable="true" />
-          <xs:element name="RotSpeedRelativeDataType" type="tns:CRCL_RotSpeedRelativeDataType" minOccurs="0" nillable="true" />
+          <xs:element name="rotSpeedAbsoluteDataType" type="tns:CRCL_RotSpeedAbsoluteDataType" minOccurs="0" nillable="true" />
+          <xs:element name="rotSpeedRelativeDataType" type="tns:CRCL_RotSpeedRelativeDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -464,8 +462,8 @@
       <xs:extension base="ua:Union">
         <xs:sequence>
           <xs:element name="SwitchField" type="xs:unsignedInt" minOccurs="0" />
-          <xs:element name="TransAccelAbsoluteDataType" type="tns:CRCL_TransAccelAbsoluteDataType" minOccurs="0" nillable="true" />
-          <xs:element name="TransAccelRelativeDataType" type="tns:CRCL_TransAccelRelativeDataType" minOccurs="0" nillable="true" />
+          <xs:element name="transAccelAbsoluteDataType" type="tns:CRCL_TransAccelAbsoluteDataType" minOccurs="0" nillable="true" />
+          <xs:element name="transAccelRelativeDataType" type="tns:CRCL_TransAccelRelativeDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -529,8 +527,8 @@
       <xs:extension base="ua:Union">
         <xs:sequence>
           <xs:element name="SwitchField" type="xs:unsignedInt" minOccurs="0" />
-          <xs:element name="TransSpeedAbsoluteDataType" type="tns:CRCL_TransSpeedAbsoluteDataType" minOccurs="0" nillable="true" />
-          <xs:element name="TransSpeedRelativeDataType" type="tns:CRCL_TransSpeedRelativeDataType" minOccurs="0" nillable="true" />
+          <xs:element name="transSpeedAbsoluteDataType" type="tns:CRCL_TransSpeedAbsoluteDataType" minOccurs="0" nillable="true" />
+          <xs:element name="transSpeedRelativeDataType" type="tns:CRCL_TransSpeedRelativeDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -551,10 +549,10 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:CRCL_DataThingDataType">
         <xs:sequence>
-          <xs:element name="JointNumber" type="xs:int" minOccurs="0" />
-          <xs:element name="ReportPosition" type="xs:boolean" minOccurs="0" />
-          <xs:element name="ReportTorqueOrForce" type="xs:boolean" minOccurs="0" />
-          <xs:element name="ReportVelocity" type="xs:boolean" minOccurs="0" />
+          <xs:element name="jointNumber" type="xs:int" minOccurs="0" />
+          <xs:element name="reportPosition" type="xs:boolean" minOccurs="0" />
+          <xs:element name="reportTorqueOrForce" type="xs:boolean" minOccurs="0" />
+          <xs:element name="reportVelocity" type="xs:boolean" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -620,8 +618,8 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:CRCL_DataThingDataType">
         <xs:sequence>
-          <xs:element name="JointNumber" type="xs:int" minOccurs="0" />
-          <xs:element name="JointPositionTolerance" type="xs:double" minOccurs="0" />
+          <xs:element name="jointNumber" type="xs:int" minOccurs="0" />
+          <xs:element name="jointPositionTolerance" type="xs:double" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -642,7 +640,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:CRCL_DataThingDataType">
         <xs:sequence>
-          <xs:element name="Setting" type="tns:ListOfCRCL_JointPositionToleranceSettingDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setting" type="tns:ListOfCRCL_JointPositionToleranceSettingDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -663,12 +661,12 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:CRCL_PoseDataType">
         <xs:sequence>
-          <xs:element name="Coordinated" type="xs:boolean" minOccurs="0" />
-          <xs:element name="TransSpeed" type="tns:CRCL_TransSpeedDataType" minOccurs="0" nillable="true" />
-          <xs:element name="RotSpeed" type="tns:CRCL_RotSpeedDataType" minOccurs="0" nillable="true" />
-          <xs:element name="TransAccel" type="tns:CRCL_TransAccelDataType" minOccurs="0" nillable="true" />
-          <xs:element name="RotAccel" type="tns:CRCL_RotAccelDataType" minOccurs="0" nillable="true" />
-          <xs:element name="PoseTolerance" type="tns:CRCL_PoseToleranceDataType" minOccurs="0" nillable="true" />
+          <xs:element name="coordinated" type="xs:boolean" minOccurs="0" />
+          <xs:element name="transSpeed" type="tns:CRCL_TransSpeedDataType" minOccurs="0" nillable="true" />
+          <xs:element name="rotSpeed" type="tns:CRCL_RotSpeedDataType" minOccurs="0" nillable="true" />
+          <xs:element name="transAccel" type="tns:CRCL_TransAccelDataType" minOccurs="0" nillable="true" />
+          <xs:element name="rotAccel" type="tns:CRCL_RotAccelDataType" minOccurs="0" nillable="true" />
+          <xs:element name="poseTolerance" type="tns:CRCL_PoseToleranceDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -690,9 +688,9 @@
       <xs:extension base="tns:CRCL_DataThingDataType">
         <xs:sequence>
           <xs:element name="commandID" type="xs:unsignedInt" minOccurs="0" />
-          <xs:element name="RealTimeCommand" type="xs:boolean" minOccurs="0" />
-          <xs:element name="RealTimeParameterNode" type="ua:NodeId" minOccurs="0" nillable="true" />
-          <xs:element name="Guard" type="tns:ListOfCRCL_GuardDataType" minOccurs="0" nillable="true" />
+          <xs:element name="realTimeCommand" type="xs:boolean" minOccurs="0" />
+          <xs:element name="realTimeParameterNode" type="ua:NodeId" minOccurs="0" nillable="true" />
+          <xs:element name="guard" type="tns:ListOfCRCL_GuardDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -774,8 +772,8 @@
       <xs:extension base="ua:Union">
         <xs:sequence>
           <xs:element name="SwitchField" type="xs:unsignedInt" minOccurs="0" />
-          <xs:element name="JointSpeedAccel" type="tns:CRCL_JointSpeedAccelDataType" minOccurs="0" nillable="true" />
-          <xs:element name="JointForceTorque" type="tns:CRCL_JointForceTorqueDataType" minOccurs="0" nillable="true" />
+          <xs:element name="jointSpeedAccel" type="tns:CRCL_JointSpeedAccelDataType" minOccurs="0" nillable="true" />
+          <xs:element name="jointForceTorque" type="tns:CRCL_JointForceTorqueDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -796,9 +794,9 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:CRCL_DataThingDataType">
         <xs:sequence>
-          <xs:element name="JointNumber" type="xs:int" minOccurs="0" />
-          <xs:element name="JointPosition" type="xs:double" minOccurs="0" />
-          <xs:element name="JointDetails" type="tns:CRCL_JointDetailsDataType" minOccurs="0" nillable="true" />
+          <xs:element name="jointNumber" type="xs:int" minOccurs="0" />
+          <xs:element name="jointPosition" type="xs:double" minOccurs="0" />
+          <xs:element name="jointDetails" type="tns:CRCL_JointDetailsDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -819,8 +817,8 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:CRCL_DataThingDataType">
         <xs:sequence>
-          <xs:element name="Setting" type="xs:double" minOccurs="0" />
-          <xs:element name="ChangeRate" type="xs:double" minOccurs="0" />
+          <xs:element name="setting" type="xs:double" minOccurs="0" />
+          <xs:element name="changeRate" type="xs:double" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -841,8 +839,8 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:CRCL_DataThingDataType">
         <xs:sequence>
-          <xs:element name="JointSpeed" type="xs:double" minOccurs="0" />
-          <xs:element name="JointAccel" type="xs:double" minOccurs="0" />
+          <xs:element name="jointSpeed" type="xs:double" minOccurs="0" />
+          <xs:element name="jointAccel" type="xs:double" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -863,8 +861,8 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="ActuateJoint" type="tns:ListOfCRCL_ActuateJointDataType" minOccurs="0" nillable="true" />
-          <xs:element name="JointTolerances" type="tns:CRCL_JointPositionsTolerancesDataType" minOccurs="0" nillable="true" />
+          <xs:element name="actuateJoint" type="tns:ListOfCRCL_ActuateJointDataType" minOccurs="0" nillable="true" />
+          <xs:element name="jointTolerances" type="tns:CRCL_JointPositionsTolerancesDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -885,8 +883,8 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="MoveStraight" type="xs:boolean" minOccurs="0" />
-          <xs:element name="EndPosition" type="tns:CRCL_PoseDataType" minOccurs="0" nillable="true" />
+          <xs:element name="moveStraight" type="xs:boolean" minOccurs="0" />
+          <xs:element name="endPosition" type="tns:CRCL_PoseDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -927,7 +925,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="DwellTime" type="xs:double" minOccurs="0" />
+          <xs:element name="dwellTime" type="xs:double" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -968,7 +966,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="Message" type="xs:string" minOccurs="0" nillable="true" />
+          <xs:element name="message" type="xs:string" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -989,11 +987,11 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="StartPosition" type="tns:CRCL_PoseDataType" minOccurs="0" nillable="true" />
-          <xs:element name="AxisPoint" type="tns:CRCL_PointDataType" minOccurs="0" nillable="true" />
-          <xs:element name="AxialDistanceFree" type="xs:double" minOccurs="0" />
-          <xs:element name="AxialDistanceScrew" type="xs:double" minOccurs="0" />
-          <xs:element name="Turn" type="xs:double" minOccurs="0" />
+          <xs:element name="startPosition" type="tns:CRCL_PoseDataType" minOccurs="0" nillable="true" />
+          <xs:element name="axisPoint" type="tns:CRCL_PointDataType" minOccurs="0" nillable="true" />
+          <xs:element name="axialDistanceFree" type="xs:double" minOccurs="0" />
+          <xs:element name="axialDistanceScrew" type="xs:double" minOccurs="0" />
+          <xs:element name="turn" type="xs:double" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1014,9 +1012,9 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="MoveStraight" type="xs:boolean" minOccurs="0" />
-          <xs:element name="Waypoint" type="tns:ListOfCRCL_PoseDataType" minOccurs="0" nillable="true" />
-          <xs:element name="NumPositions" type="xs:unsignedInt" minOccurs="0" />
+          <xs:element name="moveStraight" type="xs:boolean" minOccurs="0" />
+          <xs:element name="waypoint" type="tns:ListOfCRCL_PoseDataType" minOccurs="0" nillable="true" />
+          <xs:element name="numPositions" type="xs:unsignedInt" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1057,7 +1055,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="ProgramText" type="xs:string" minOccurs="0" nillable="true" />
+          <xs:element name="programText" type="xs:string" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1078,7 +1076,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="UnitName" type="tns:CRCL_AngleUnitEnumDataType" minOccurs="0" />
+          <xs:element name="unitName" type="tns:CRCL_AngleUnitEnumDataType" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1099,7 +1097,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="ParameterSetting" type="tns:ListOfCRCL_ParameterSettingDataType" minOccurs="0" nillable="true" />
+          <xs:element name="parameterSetting" type="tns:ListOfCRCL_ParameterSettingDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1120,7 +1118,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="Setting" type="tns:CRCL_FractionDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setting" type="tns:CRCL_FractionDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1141,7 +1139,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="Tolerance" type="tns:CRCL_PoseToleranceDataType" minOccurs="0" nillable="true" />
+          <xs:element name="tolerance" type="tns:CRCL_PoseToleranceDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1162,7 +1160,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="UnitName" type="tns:CRCL_ForceUnitEnumDataType" minOccurs="0" />
+          <xs:element name="unitName" type="tns:CRCL_ForceUnitEnumDataType" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1183,7 +1181,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="Tolerance" type="tns:CRCL_PoseToleranceDataType" minOccurs="0" nillable="true" />
+          <xs:element name="tolerance" type="tns:CRCL_PoseToleranceDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1204,7 +1202,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="UnitName" type="tns:CRCL_LengthUnitEnumDataType" minOccurs="0" />
+          <xs:element name="unitName" type="tns:CRCL_LengthUnitEnumDataType" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1225,7 +1223,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="Coordinated" type="xs:boolean" minOccurs="0" />
+          <xs:element name="coordinated" type="xs:boolean" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1246,7 +1244,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="ParameterSetting" type="tns:ListOfCRCL_ParameterSettingDataType" minOccurs="0" nillable="true" />
+          <xs:element name="parameterSetting" type="tns:ListOfCRCL_ParameterSettingDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1267,7 +1265,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="UnitName" type="tns:CRCL_TorqueUnitEnumDataType" minOccurs="0" />
+          <xs:element name="unitName" type="tns:CRCL_TorqueUnitEnumDataType" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1288,7 +1286,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="StopCondition" type="tns:CRCL_StopConditionEnumDataType" minOccurs="0" />
+          <xs:element name="stopCondition" type="tns:CRCL_StopConditionEnumDataType" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1309,12 +1307,12 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="ReportJointStatuses" type="xs:boolean" minOccurs="0" />
-          <xs:element name="ReportPoseStatus" type="xs:boolean" minOccurs="0" />
-          <xs:element name="ReportGripperStatus" type="xs:boolean" minOccurs="0" />
-          <xs:element name="ReportSettingsStatus" type="xs:boolean" minOccurs="0" />
-          <xs:element name="ReportSensorsStatus" type="xs:boolean" minOccurs="0" />
-          <xs:element name="ReportGuardsStatus" type="xs:boolean" minOccurs="0" />
+          <xs:element name="reportJointStatuses" type="xs:boolean" minOccurs="0" />
+          <xs:element name="reportPoseStatus" type="xs:boolean" minOccurs="0" />
+          <xs:element name="reportGripperStatus" type="xs:boolean" minOccurs="0" />
+          <xs:element name="reportSettingsStatus" type="xs:boolean" minOccurs="0" />
+          <xs:element name="reportSensorsStatus" type="xs:boolean" minOccurs="0" />
+          <xs:element name="reportGuardsStatus" type="xs:boolean" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1335,8 +1333,8 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="SensorID" type="xs:string" minOccurs="0" nillable="true" />
-          <xs:element name="SensorOption" type="tns:ListOfCRCL_ParameterSettingDataType" minOccurs="0" nillable="true" />
+          <xs:element name="sensorID" type="xs:string" minOccurs="0" nillable="true" />
+          <xs:element name="sensorOption" type="tns:ListOfCRCL_ParameterSettingDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1357,7 +1355,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="SensorID" type="xs:string" minOccurs="0" nillable="true" />
+          <xs:element name="sensorID" type="xs:string" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1378,8 +1376,8 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="GripperName" type="xs:string" minOccurs="0" nillable="true" />
-          <xs:element name="GripperOption" type="tns:ListOfCRCL_ParameterSettingDataType" minOccurs="0" nillable="true" />
+          <xs:element name="gripperName" type="xs:string" minOccurs="0" nillable="true" />
+          <xs:element name="gripperOption" type="tns:ListOfCRCL_ParameterSettingDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1400,7 +1398,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="GripperName" type="xs:string" minOccurs="0" nillable="true" />
+          <xs:element name="gripperName" type="xs:string" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1421,7 +1419,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="RobotParameterName" type="xs:string" minOccurs="0" nillable="true" />
+          <xs:element name="robotParameterName" type="xs:string" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1442,7 +1440,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="RobotParameterName" type="xs:string" minOccurs="0" nillable="true" />
+          <xs:element name="robotParameterName" type="xs:string" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1463,7 +1461,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="JointTolerances" type="tns:CRCL_JointPositionsTolerancesDataType" minOccurs="0" nillable="true" />
+          <xs:element name="jointTolerances" type="tns:CRCL_JointPositionsTolerancesDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1484,7 +1482,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="RotAccel" type="tns:CRCL_RotAccelDataType" minOccurs="0" nillable="true" />
+          <xs:element name="rotAccel" type="tns:CRCL_RotAccelDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1505,7 +1503,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="TransAccel" type="tns:CRCL_TransAccelDataType" minOccurs="0" nillable="true" />
+          <xs:element name="transAccel" type="tns:CRCL_TransAccelDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1526,7 +1524,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="RotSpeed" type="tns:CRCL_RotSpeedDataType" minOccurs="0" nillable="true" />
+          <xs:element name="rotSpeed" type="tns:CRCL_RotSpeedDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1547,7 +1545,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="TransSpeed" type="tns:CRCL_TransSpeedDataType" minOccurs="0" nillable="true" />
+          <xs:element name="transSpeed" type="tns:CRCL_TransSpeedDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1568,8 +1566,8 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:MiddleCommandDataType">
         <xs:sequence>
-          <xs:element name="ResetAll" type="xs:boolean" minOccurs="0" />
-          <xs:element name="ConfigureJointReport" type="tns:ListOfCRCL_ConfigureJointReportDataType" minOccurs="0" nillable="true" />
+          <xs:element name="resetAll" type="xs:boolean" minOccurs="0" />
+          <xs:element name="configureJointReport" type="tns:ListOfCRCL_ConfigureJointReportDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2017,49 +2015,6 @@
   </xs:complexType>
   <xs:element name="ListOfCRCLStatusDataType" type="tns:ListOfCRCLStatusDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="PubSubIPAddresses">
-    <xs:annotation>
-      <xs:documentation>PubSub IP addresses: IPAddress_Skill is the address where the SAMYCore is Publishing and the SAMYPlugIn is Subscribed; IPAddress_Status is the address where the SAMYCore is Subscribed and the SAMYCore is Publishing</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="IPAddress_Skill" type="xs:string" minOccurs="0" nillable="true" />
-      <xs:element name="IPAddress_Status" type="xs:string" minOccurs="0" nillable="true" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="PubSubIPAddresses" type="tns:PubSubIPAddresses" />
-
-  <xs:complexType name="ListOfPubSubIPAddresses">
-    <xs:sequence>
-      <xs:element name="PubSubIPAddresses" type="tns:PubSubIPAddresses" minOccurs="0" maxOccurs="unbounded" nillable="true" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ListOfPubSubIPAddresses" type="tns:ListOfPubSubIPAddresses" nillable="true"></xs:element>
-
-  <xs:complexType name="SAMYRobotDataType">
-    <xs:annotation>
-      <xs:documentation>CRCLProgramm</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCL_DataThingDataType">
-        <xs:sequence>
-          <xs:element name="Requested_Skill" type="tns:CRCLSkillDataType" minOccurs="0" nillable="true" />
-          <xs:element name="Requested_Skill_Success" type="xs:boolean" minOccurs="0" />
-          <xs:element name="Active" type="xs:boolean" minOccurs="0" />
-          <xs:element name="Online" type="xs:boolean" minOccurs="0" />
-          <xs:element name="IPAddresses" type="tns:PubSubIPAddresses" minOccurs="0" nillable="true" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="SAMYRobotDataType" type="tns:SAMYRobotDataType" />
-
-  <xs:complexType name="ListOfSAMYRobotDataType">
-    <xs:sequence>
-      <xs:element name="SAMYRobotDataType" type="tns:SAMYRobotDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ListOfSAMYRobotDataType" type="tns:ListOfSAMYRobotDataType" nillable="true"></xs:element>
-
   <xs:complexType name="CRCLCommandsUnionDataType">
     <xs:annotation>
       <xs:documentation>CRCLCommandsUnionDataType</xs:documentation>
@@ -2068,41 +2023,41 @@
       <xs:extension base="ua:Union">
         <xs:sequence>
           <xs:element name="SwitchField" type="xs:unsignedInt" minOccurs="0" />
-          <xs:element name="InitCanonCommand" type="tns:InitCanonDataType" minOccurs="0" nillable="true" />
-          <xs:element name="EndCanonCommand" type="tns:EndCanonDataType" minOccurs="0" nillable="true" />
-          <xs:element name="MessageCommand" type="tns:MessageDataType" minOccurs="0" nillable="true" />
-          <xs:element name="MoveToCommand" type="tns:MoveToDataType" minOccurs="0" nillable="true" />
-          <xs:element name="MoveScrewCommand" type="tns:MoveScrewDataType" minOccurs="0" nillable="true" />
-          <xs:element name="MoveThroughToCommand" type="tns:MoveThroughToDataType" minOccurs="0" nillable="true" />
-          <xs:element name="DwellCommand" type="tns:DwellDataType" minOccurs="0" nillable="true" />
-          <xs:element name="ActuateJointsCommand" type="tns:ActuateJointsDataType" minOccurs="0" nillable="true" />
-          <xs:element name="ConfigureJointReportsCommand" type="tns:ConfigureJointReportsDataType" minOccurs="0" nillable="true" />
-          <xs:element name="SetDefaultJointPositionsTolerancesCommand" type="tns:SetDefaultJointPositionsTolerancesDataType" minOccurs="0" nillable="true" />
-          <xs:element name="GetStatusCommand" type="tns:GetStatusDataType" minOccurs="0" nillable="true" />
-          <xs:element name="CloseToolChangerCommand" type="tns:CloseToolChangerDataType" minOccurs="0" nillable="true" />
-          <xs:element name="OpenToolChangerCommand" type="tns:OpenToolChangerDataType" minOccurs="0" nillable="true" />
-          <xs:element name="SetRobotParametersCommand" type="tns:SetRobotParametersDataType" minOccurs="0" nillable="true" />
-          <xs:element name="SetEndeffectorParametersCommand" type="tns:SetEndeffectorParametersDataType" minOccurs="0" nillable="true" />
-          <xs:element name="SetEndeffectorCommand" type="tns:SetEndeffectorDataType" minOccurs="0" nillable="true" />
-          <xs:element name="SetTransAccelCommand" type="tns:SetTransAccelDataType" minOccurs="0" nillable="true" />
-          <xs:element name="SetTransSpeedCommand" type="tns:SetTransSpeedDataType" minOccurs="0" nillable="true" />
-          <xs:element name="SetRotAccelCommand" type="tns:SetRotAccelDataType" minOccurs="0" nillable="true" />
-          <xs:element name="SetRotSpeedCommand" type="tns:SetRotSpeedDataType" minOccurs="0" nillable="true" />
-          <xs:element name="SetAngleUnitsCommand" type="tns:SetAngleUnitsDataType" minOccurs="0" nillable="true" />
-          <xs:element name="SetEndPoseToleranceCommand" type="tns:SetEndPoseToleranceDataType" minOccurs="0" nillable="true" />
-          <xs:element name="SetForceUnitsCommand" type="tns:SetForceUnitsDataType" minOccurs="0" nillable="true" />
-          <xs:element name="SetIntermediatePoseToleranceCommand" type="tns:SetIntermediatePoseToleranceDataType" minOccurs="0" nillable="true" />
-          <xs:element name="SetLengthUnitsCommand" type="tns:SetLengthUnitsDataType" minOccurs="0" nillable="true" />
-          <xs:element name="SetMotionCoordinationCommand" type="tns:SetMotionCoordinationDataType" minOccurs="0" nillable="true" />
-          <xs:element name="SetTorqueUnitsCommand" type="tns:SetTorqueUnitsDataType" minOccurs="0" nillable="true" />
-          <xs:element name="StopMotionCommand" type="tns:StopMotionDataType" minOccurs="0" nillable="true" />
-          <xs:element name="ConfigureStatusReportCommand" type="tns:ConfigureStatusReportDataType" minOccurs="0" nillable="true" />
-          <xs:element name="EnableSensorCommand" type="tns:EnableSensorDataType" minOccurs="0" nillable="true" />
-          <xs:element name="DisableSensorCommand" type="tns:DisableSensorDataType" minOccurs="0" nillable="true" />
-          <xs:element name="EnableGripperCommand" type="tns:EnableGripperDataType" minOccurs="0" nillable="true" />
-          <xs:element name="DisableGripperCommand" type="tns:DisableGripperDataType" minOccurs="0" nillable="true" />
-          <xs:element name="EnableRobotParameterStatusCommand" type="tns:EnableRobotParameterStatusDataType" minOccurs="0" nillable="true" />
-          <xs:element name="DisableRobotParameterStatusCommand" type="tns:DisableRobotParameterStatusDataType" minOccurs="0" nillable="true" />
+          <xs:element name="initCanonCommand" type="tns:InitCanonDataType" minOccurs="0" nillable="true" />
+          <xs:element name="endCanonCommand" type="tns:EndCanonDataType" minOccurs="0" nillable="true" />
+          <xs:element name="messageCommand" type="tns:MessageDataType" minOccurs="0" nillable="true" />
+          <xs:element name="moveToCommand" type="tns:MoveToDataType" minOccurs="0" nillable="true" />
+          <xs:element name="moveScrewCommand" type="tns:MoveScrewDataType" minOccurs="0" nillable="true" />
+          <xs:element name="moveThroughToCommand" type="tns:MoveThroughToDataType" minOccurs="0" nillable="true" />
+          <xs:element name="dwellCommand" type="tns:DwellDataType" minOccurs="0" nillable="true" />
+          <xs:element name="actuateJointsCommand" type="tns:ActuateJointsDataType" minOccurs="0" nillable="true" />
+          <xs:element name="configureJointReportsCommand" type="tns:ConfigureJointReportsDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setDefaultJointPositionsTolerancesCommand" type="tns:SetDefaultJointPositionsTolerancesDataType" minOccurs="0" nillable="true" />
+          <xs:element name="getStatusCommand" type="tns:GetStatusDataType" minOccurs="0" nillable="true" />
+          <xs:element name="closeToolChangerCommand" type="tns:CloseToolChangerDataType" minOccurs="0" nillable="true" />
+          <xs:element name="openToolChangerCommand" type="tns:OpenToolChangerDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setRobotParametersCommand" type="tns:SetRobotParametersDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setEndeffectorParametersCommand" type="tns:SetEndeffectorParametersDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setEndeffectorCommand" type="tns:SetEndeffectorDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setTransAccelCommand" type="tns:SetTransAccelDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setTransSpeedCommand" type="tns:SetTransSpeedDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setRotAccelCommand" type="tns:SetRotAccelDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setRotSpeedCommand" type="tns:SetRotSpeedDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setAngleUnitsCommand" type="tns:SetAngleUnitsDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setEndPoseToleranceCommand" type="tns:SetEndPoseToleranceDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setForceUnitsCommand" type="tns:SetForceUnitsDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setIntermediatePoseToleranceCommand" type="tns:SetIntermediatePoseToleranceDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setLengthUnitsCommand" type="tns:SetLengthUnitsDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setMotionCoordinationCommand" type="tns:SetMotionCoordinationDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setTorqueUnitsCommand" type="tns:SetTorqueUnitsDataType" minOccurs="0" nillable="true" />
+          <xs:element name="stopMotionCommand" type="tns:StopMotionDataType" minOccurs="0" nillable="true" />
+          <xs:element name="configureStatusReportCommand" type="tns:ConfigureStatusReportDataType" minOccurs="0" nillable="true" />
+          <xs:element name="enableSensorCommand" type="tns:EnableSensorDataType" minOccurs="0" nillable="true" />
+          <xs:element name="disableSensorCommand" type="tns:DisableSensorDataType" minOccurs="0" nillable="true" />
+          <xs:element name="enableGripperCommand" type="tns:EnableGripperDataType" minOccurs="0" nillable="true" />
+          <xs:element name="disableGripperCommand" type="tns:DisableGripperDataType" minOccurs="0" nillable="true" />
+          <xs:element name="enableRobotParameterStatusCommand" type="tns:EnableRobotParameterStatusDataType" minOccurs="0" nillable="true" />
+          <xs:element name="disableRobotParameterStatusCommand" type="tns:DisableRobotParameterStatusDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2116,789 +2071,884 @@
   </xs:complexType>
   <xs:element name="ListOfCRCLCommandsUnionDataType" type="tns:ListOfCRCLCommandsUnionDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="CRCLSkillDataType">
+  <xs:complexType name="CRCLCommandsBufferDataType">
     <xs:annotation>
       <xs:documentation>CRCLProgramm</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
       <xs:extension base="tns:CRCL_DataThingDataType">
         <xs:sequence>
-          <xs:element name="CRCLCommands" type="tns:ListOfCRCLCommandsUnionDataType" minOccurs="0" nillable="true" />
+          <xs:element name="crclCommands" type="tns:ListOfCRCLCommandsUnionDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="CRCLSkillDataType" type="tns:CRCLSkillDataType" />
+  <xs:element name="CRCLCommandsBufferDataType" type="tns:CRCLCommandsBufferDataType" />
 
-  <xs:complexType name="ListOfCRCLSkillDataType">
+  <xs:complexType name="ListOfCRCLCommandsBufferDataType">
     <xs:sequence>
-      <xs:element name="CRCLSkillDataType" type="tns:CRCLSkillDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="CRCLCommandsBufferDataType" type="tns:CRCLCommandsBufferDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfCRCLSkillDataType" type="tns:ListOfCRCLSkillDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfCRCLCommandsBufferDataType" type="tns:ListOfCRCLCommandsBufferDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="CRCLCommandParametersSetDataType">
+  <xs:complexType name="CRCLCommandParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a CRCL Command.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="Name" type="xs:string" minOccurs="0" nillable="true" />
-      <xs:element name="RealTimeParameter" type="xs:boolean" minOccurs="0" />
+      <xs:element name="name" type="xs:string" minOccurs="0" nillable="true" />
+      <xs:element name="realTimeParameter" type="xs:boolean" minOccurs="0" />
+      <xs:element name="realTimeParameterNodeID" type="ua:NodeId" minOccurs="0" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="CRCLCommandParametersSetDataType" type="tns:CRCLCommandParametersSetDataType" />
+  <xs:element name="CRCLCommandParamsSetDataType" type="tns:CRCLCommandParamsSetDataType" />
 
-  <xs:complexType name="ListOfCRCLCommandParametersSetDataType">
+  <xs:complexType name="ListOfCRCLCommandParamsSetDataType">
     <xs:sequence>
-      <xs:element name="CRCLCommandParametersSetDataType" type="tns:CRCLCommandParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="CRCLCommandParamsSetDataType" type="tns:CRCLCommandParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfCRCLCommandParametersSetDataType" type="tns:ListOfCRCLCommandParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfCRCLCommandParamsSetDataType" type="tns:ListOfCRCLCommandParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="InitCanonParametersSetDataType">
+  <xs:complexType name="InitCanonParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of an Init Command (does not require parameters).</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="InitCanonParametersSetDataType" type="tns:InitCanonParametersSetDataType" />
+  <xs:element name="InitCanonParamsSetDataType" type="tns:InitCanonParamsSetDataType" />
 
-  <xs:complexType name="ListOfInitCanonParametersSetDataType">
+  <xs:complexType name="ListOfInitCanonParamsSetDataType">
     <xs:sequence>
-      <xs:element name="InitCanonParametersSetDataType" type="tns:InitCanonParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="InitCanonParamsSetDataType" type="tns:InitCanonParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfInitCanonParametersSetDataType" type="tns:ListOfInitCanonParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfInitCanonParamsSetDataType" type="tns:ListOfInitCanonParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="EndCanonParametersSetDataType">
+  <xs:complexType name="EndCanonParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of an EndCanon Command (does not require parameters).</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="EndCanonParametersSetDataType" type="tns:EndCanonParametersSetDataType" />
+  <xs:element name="EndCanonParamsSetDataType" type="tns:EndCanonParamsSetDataType" />
 
-  <xs:complexType name="ListOfEndCanonParametersSetDataType">
+  <xs:complexType name="ListOfEndCanonParamsSetDataType">
     <xs:sequence>
-      <xs:element name="EndCanonParametersSetDataType" type="tns:EndCanonParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="EndCanonParamsSetDataType" type="tns:EndCanonParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfEndCanonParametersSetDataType" type="tns:ListOfEndCanonParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfEndCanonParamsSetDataType" type="tns:ListOfEndCanonParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="GetStatusParametersSetDataType">
+  <xs:complexType name="GetStatusParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a GetStatus Command (does not require parameters).</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="GetStatusParametersSetDataType" type="tns:GetStatusParametersSetDataType" />
+  <xs:element name="GetStatusParamsSetDataType" type="tns:GetStatusParamsSetDataType" />
 
-  <xs:complexType name="ListOfGetStatusParametersSetDataType">
+  <xs:complexType name="ListOfGetStatusParamsSetDataType">
     <xs:sequence>
-      <xs:element name="GetStatusParametersSetDataType" type="tns:GetStatusParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="GetStatusParamsSetDataType" type="tns:GetStatusParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfGetStatusParametersSetDataType" type="tns:ListOfGetStatusParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfGetStatusParamsSetDataType" type="tns:ListOfGetStatusParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="CloseToolChangerParametersSetDataType">
+  <xs:complexType name="CloseToolChangerParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a CloseToolChanger Command (does not require parameters).</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="CloseToolChangerParametersSetDataType" type="tns:CloseToolChangerParametersSetDataType" />
+  <xs:element name="CloseToolChangerParamsSetDataType" type="tns:CloseToolChangerParamsSetDataType" />
 
-  <xs:complexType name="ListOfCloseToolChangerParametersSetDataType">
+  <xs:complexType name="ListOfCloseToolChangerParamsSetDataType">
     <xs:sequence>
-      <xs:element name="CloseToolChangerParametersSetDataType" type="tns:CloseToolChangerParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="CloseToolChangerParamsSetDataType" type="tns:CloseToolChangerParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfCloseToolChangerParametersSetDataType" type="tns:ListOfCloseToolChangerParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfCloseToolChangerParamsSetDataType" type="tns:ListOfCloseToolChangerParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="OpenToolChangerParametersSetDataType">
+  <xs:complexType name="OpenToolChangerParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a OpenToolChanger Command (does not require parameters).</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="OpenToolChangerParametersSetDataType" type="tns:OpenToolChangerParametersSetDataType" />
+  <xs:element name="OpenToolChangerParamsSetDataType" type="tns:OpenToolChangerParamsSetDataType" />
 
-  <xs:complexType name="ListOfOpenToolChangerParametersSetDataType">
+  <xs:complexType name="ListOfOpenToolChangerParamsSetDataType">
     <xs:sequence>
-      <xs:element name="OpenToolChangerParametersSetDataType" type="tns:OpenToolChangerParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="OpenToolChangerParamsSetDataType" type="tns:OpenToolChangerParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfOpenToolChangerParametersSetDataType" type="tns:ListOfOpenToolChangerParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfOpenToolChangerParamsSetDataType" type="tns:ListOfOpenToolChangerParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="MessageParametersSetDataType">
+  <xs:complexType name="MessageParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a Message Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="Message" type="xs:string" minOccurs="0" nillable="true" />
+          <xs:element name="message" type="xs:string" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="MessageParametersSetDataType" type="tns:MessageParametersSetDataType" />
+  <xs:element name="MessageParamsSetDataType" type="tns:MessageParamsSetDataType" />
 
-  <xs:complexType name="ListOfMessageParametersSetDataType">
+  <xs:complexType name="ListOfMessageParamsSetDataType">
     <xs:sequence>
-      <xs:element name="MessageParametersSetDataType" type="tns:MessageParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="MessageParamsSetDataType" type="tns:MessageParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfMessageParametersSetDataType" type="tns:ListOfMessageParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfMessageParamsSetDataType" type="tns:ListOfMessageParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="MoveToParametersSetDataType">
+  <xs:complexType name="MoveToParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a MoveToCommand.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="MoveStraight" type="xs:boolean" minOccurs="0" />
-          <xs:element name="EndPosition" type="tns:CRCL_PoseDataType" minOccurs="0" nillable="true" />
+          <xs:element name="moveStraight" type="xs:boolean" minOccurs="0" />
+          <xs:element name="endPosition" type="tns:CRCL_PoseDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="MoveToParametersSetDataType" type="tns:MoveToParametersSetDataType" />
+  <xs:element name="MoveToParamsSetDataType" type="tns:MoveToParamsSetDataType" />
 
-  <xs:complexType name="ListOfMoveToParametersSetDataType">
+  <xs:complexType name="ListOfMoveToParamsSetDataType">
     <xs:sequence>
-      <xs:element name="MoveToParametersSetDataType" type="tns:MoveToParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="MoveToParamsSetDataType" type="tns:MoveToParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfMoveToParametersSetDataType" type="tns:ListOfMoveToParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfMoveToParamsSetDataType" type="tns:ListOfMoveToParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="MoveScrewParametersSetDataType">
+  <xs:complexType name="MoveScrewParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a MoveScrew Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="StartPosition" type="tns:CRCL_PoseDataType" minOccurs="0" nillable="true" />
-          <xs:element name="AxisPoint" type="tns:CRCL_PointDataType" minOccurs="0" nillable="true" />
-          <xs:element name="AxialDistanceFree" type="xs:double" minOccurs="0" />
-          <xs:element name="AxialDistanceScrew" type="xs:double" minOccurs="0" />
-          <xs:element name="Turn" type="xs:double" minOccurs="0" />
+          <xs:element name="startPosition" type="tns:CRCL_PoseDataType" minOccurs="0" nillable="true" />
+          <xs:element name="axisPoint" type="tns:CRCL_PointDataType" minOccurs="0" nillable="true" />
+          <xs:element name="axialDistanceFree" type="xs:double" minOccurs="0" />
+          <xs:element name="axialDistanceScrew" type="xs:double" minOccurs="0" />
+          <xs:element name="turn" type="xs:double" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="MoveScrewParametersSetDataType" type="tns:MoveScrewParametersSetDataType" />
+  <xs:element name="MoveScrewParamsSetDataType" type="tns:MoveScrewParamsSetDataType" />
 
-  <xs:complexType name="ListOfMoveScrewParametersSetDataType">
+  <xs:complexType name="ListOfMoveScrewParamsSetDataType">
     <xs:sequence>
-      <xs:element name="MoveScrewParametersSetDataType" type="tns:MoveScrewParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="MoveScrewParamsSetDataType" type="tns:MoveScrewParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfMoveScrewParametersSetDataType" type="tns:ListOfMoveScrewParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfMoveScrewParamsSetDataType" type="tns:ListOfMoveScrewParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="MoveThroughToParametersSetDataType">
+  <xs:complexType name="MoveThroughToParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a MoveThroughTo Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="MoveStraight" type="xs:boolean" minOccurs="0" />
-          <xs:element name="Waypoint" type="tns:ListOfCRCL_PoseDataType" minOccurs="0" nillable="true" />
-          <xs:element name="NumPositions" type="xs:int" minOccurs="0" />
+          <xs:element name="moveStraight" type="xs:boolean" minOccurs="0" />
+          <xs:element name="waypoint" type="tns:ListOfCRCL_PoseDataType" minOccurs="0" nillable="true" />
+          <xs:element name="numPositions" type="xs:int" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="MoveThroughToParametersSetDataType" type="tns:MoveThroughToParametersSetDataType" />
+  <xs:element name="MoveThroughToParamsSetDataType" type="tns:MoveThroughToParamsSetDataType" />
 
-  <xs:complexType name="ListOfMoveThroughToParametersSetDataType">
+  <xs:complexType name="ListOfMoveThroughToParamsSetDataType">
     <xs:sequence>
-      <xs:element name="MoveThroughToParametersSetDataType" type="tns:MoveThroughToParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="MoveThroughToParamsSetDataType" type="tns:MoveThroughToParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfMoveThroughToParametersSetDataType" type="tns:ListOfMoveThroughToParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfMoveThroughToParamsSetDataType" type="tns:ListOfMoveThroughToParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="DwellParametersSetDataType">
+  <xs:complexType name="DwellParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a Dwell Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="DwellTime" type="xs:double" minOccurs="0" />
+          <xs:element name="dwellTime" type="xs:double" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="DwellParametersSetDataType" type="tns:DwellParametersSetDataType" />
+  <xs:element name="DwellParamsSetDataType" type="tns:DwellParamsSetDataType" />
 
-  <xs:complexType name="ListOfDwellParametersSetDataType">
+  <xs:complexType name="ListOfDwellParamsSetDataType">
     <xs:sequence>
-      <xs:element name="DwellParametersSetDataType" type="tns:DwellParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="DwellParamsSetDataType" type="tns:DwellParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfDwellParametersSetDataType" type="tns:ListOfDwellParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfDwellParamsSetDataType" type="tns:ListOfDwellParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="ActuateJointsParametersSetDataType">
+  <xs:complexType name="ActuateJointsParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a ActuateJoints Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="ActuateJoint" type="tns:ListOfCRCL_ActuateJointDataType" minOccurs="0" nillable="true" />
-          <xs:element name="JointTolerances" type="tns:CRCL_JointPositionsTolerancesDataType" minOccurs="0" nillable="true" />
+          <xs:element name="actuateJoint" type="tns:ListOfCRCL_ActuateJointDataType" minOccurs="0" nillable="true" />
+          <xs:element name="jointTolerances" type="tns:CRCL_JointPositionsTolerancesDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="ActuateJointsParametersSetDataType" type="tns:ActuateJointsParametersSetDataType" />
+  <xs:element name="ActuateJointsParamsSetDataType" type="tns:ActuateJointsParamsSetDataType" />
 
-  <xs:complexType name="ListOfActuateJointsParametersSetDataType">
+  <xs:complexType name="ListOfActuateJointsParamsSetDataType">
     <xs:sequence>
-      <xs:element name="ActuateJointsParametersSetDataType" type="tns:ActuateJointsParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="ActuateJointsParamsSetDataType" type="tns:ActuateJointsParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfActuateJointsParametersSetDataType" type="tns:ListOfActuateJointsParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfActuateJointsParamsSetDataType" type="tns:ListOfActuateJointsParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="ConfigureJointReportsParametersSetDataType">
+  <xs:complexType name="ConfigureJointReportsParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a ConfigureJointreports Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="ResetAll" type="xs:boolean" minOccurs="0" />
-          <xs:element name="ConfigureJointReport" type="tns:ListOfCRCL_ConfigureJointReportDataType" minOccurs="0" nillable="true" />
+          <xs:element name="resetAll" type="xs:boolean" minOccurs="0" />
+          <xs:element name="configureJointReport" type="tns:ListOfCRCL_ConfigureJointReportDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="ConfigureJointReportsParametersSetDataType" type="tns:ConfigureJointReportsParametersSetDataType" />
+  <xs:element name="ConfigureJointReportsParamsSetDataType" type="tns:ConfigureJointReportsParamsSetDataType" />
 
-  <xs:complexType name="ListOfConfigureJointReportsParametersSetDataType">
+  <xs:complexType name="ListOfConfigureJointReportsParamsSetDataType">
     <xs:sequence>
-      <xs:element name="ConfigureJointReportsParametersSetDataType" type="tns:ConfigureJointReportsParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="ConfigureJointReportsParamsSetDataType" type="tns:ConfigureJointReportsParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfConfigureJointReportsParametersSetDataType" type="tns:ListOfConfigureJointReportsParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfConfigureJointReportsParamsSetDataType" type="tns:ListOfConfigureJointReportsParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="SetDefaultJointPositionsTolerancesParametersSetDataType">
+  <xs:complexType name="SetDefaultJointPositionsTolerancesParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a SetDefaultJointPositionsTolerances Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="JointTolerances" type="tns:CRCL_JointPositionsTolerancesDataType" minOccurs="0" nillable="true" />
+          <xs:element name="jointTolerances" type="tns:CRCL_JointPositionsTolerancesDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="SetDefaultJointPositionsTolerancesParametersSetDataType" type="tns:SetDefaultJointPositionsTolerancesParametersSetDataType" />
+  <xs:element name="SetDefaultJointPositionsTolerancesParamsSetDataType" type="tns:SetDefaultJointPositionsTolerancesParamsSetDataType" />
 
-  <xs:complexType name="ListOfSetDefaultJointPositionsTolerancesParametersSetDataType">
+  <xs:complexType name="ListOfSetDefaultJointPositionsTolerancesParamsSetDataType">
     <xs:sequence>
-      <xs:element name="SetDefaultJointPositionsTolerancesParametersSetDataType" type="tns:SetDefaultJointPositionsTolerancesParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="SetDefaultJointPositionsTolerancesParamsSetDataType" type="tns:SetDefaultJointPositionsTolerancesParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfSetDefaultJointPositionsTolerancesParametersSetDataType" type="tns:ListOfSetDefaultJointPositionsTolerancesParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfSetDefaultJointPositionsTolerancesParamsSetDataType" type="tns:ListOfSetDefaultJointPositionsTolerancesParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="SetRobotParametersParametersSetDataType">
+  <xs:complexType name="SetRobotParametersParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a SetRobotParameters Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="ParameterSetting" type="tns:ListOfCRCL_ParameterSettingDataType" minOccurs="0" nillable="true" />
+          <xs:element name="parameterSetting" type="tns:ListOfCRCL_ParameterSettingDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="SetRobotParametersParametersSetDataType" type="tns:SetRobotParametersParametersSetDataType" />
+  <xs:element name="SetRobotParametersParamsSetDataType" type="tns:SetRobotParametersParamsSetDataType" />
 
-  <xs:complexType name="ListOfSetRobotParametersParametersSetDataType">
+  <xs:complexType name="ListOfSetRobotParametersParamsSetDataType">
     <xs:sequence>
-      <xs:element name="SetRobotParametersParametersSetDataType" type="tns:SetRobotParametersParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="SetRobotParametersParamsSetDataType" type="tns:SetRobotParametersParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfSetRobotParametersParametersSetDataType" type="tns:ListOfSetRobotParametersParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfSetRobotParametersParamsSetDataType" type="tns:ListOfSetRobotParametersParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="SetEndeffectorParametersParametersSetDataType">
+  <xs:complexType name="SetEndeffectorParametersParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a SetEndeffectorParameters Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="ParameterSetting" type="tns:ListOfCRCL_ParameterSettingDataType" minOccurs="0" nillable="true" />
+          <xs:element name="parameterSetting" type="tns:ListOfCRCL_ParameterSettingDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="SetEndeffectorParametersParametersSetDataType" type="tns:SetEndeffectorParametersParametersSetDataType" />
+  <xs:element name="SetEndeffectorParametersParamsSetDataType" type="tns:SetEndeffectorParametersParamsSetDataType" />
 
-  <xs:complexType name="ListOfSetEndeffectorParametersParametersSetDataType">
+  <xs:complexType name="ListOfSetEndeffectorParametersParamsSetDataType">
     <xs:sequence>
-      <xs:element name="SetEndeffectorParametersParametersSetDataType" type="tns:SetEndeffectorParametersParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="SetEndeffectorParametersParamsSetDataType" type="tns:SetEndeffectorParametersParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfSetEndeffectorParametersParametersSetDataType" type="tns:ListOfSetEndeffectorParametersParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfSetEndeffectorParametersParamsSetDataType" type="tns:ListOfSetEndeffectorParametersParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="SetEndeffectorParametersSetDataType">
+  <xs:complexType name="SetEndeffectorParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a SetEndeffector Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="Setting" type="tns:CRCL_FractionDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setting" type="tns:CRCL_FractionDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="SetEndeffectorParametersSetDataType" type="tns:SetEndeffectorParametersSetDataType" />
+  <xs:element name="SetEndeffectorParamsSetDataType" type="tns:SetEndeffectorParamsSetDataType" />
 
-  <xs:complexType name="ListOfSetEndeffectorParametersSetDataType">
+  <xs:complexType name="ListOfSetEndeffectorParamsSetDataType">
     <xs:sequence>
-      <xs:element name="SetEndeffectorParametersSetDataType" type="tns:SetEndeffectorParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="SetEndeffectorParamsSetDataType" type="tns:SetEndeffectorParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfSetEndeffectorParametersSetDataType" type="tns:ListOfSetEndeffectorParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfSetEndeffectorParamsSetDataType" type="tns:ListOfSetEndeffectorParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="SetTransSpeedParametersSetDataType">
+  <xs:complexType name="SetTransSpeedParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a SetTransSpeed Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="TransSpeed" type="tns:CRCL_TransSpeedDataType" minOccurs="0" nillable="true" />
+          <xs:element name="transSpeed" type="tns:CRCL_TransSpeedDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="SetTransSpeedParametersSetDataType" type="tns:SetTransSpeedParametersSetDataType" />
+  <xs:element name="SetTransSpeedParamsSetDataType" type="tns:SetTransSpeedParamsSetDataType" />
 
-  <xs:complexType name="ListOfSetTransSpeedParametersSetDataType">
+  <xs:complexType name="ListOfSetTransSpeedParamsSetDataType">
     <xs:sequence>
-      <xs:element name="SetTransSpeedParametersSetDataType" type="tns:SetTransSpeedParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="SetTransSpeedParamsSetDataType" type="tns:SetTransSpeedParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfSetTransSpeedParametersSetDataType" type="tns:ListOfSetTransSpeedParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfSetTransSpeedParamsSetDataType" type="tns:ListOfSetTransSpeedParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="SetTransAccelParametersSetDataType">
+  <xs:complexType name="SetTransAccelParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a SetTransAccel Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="TransAccel" type="tns:CRCL_TransAccelDataType" minOccurs="0" nillable="true" />
+          <xs:element name="transAccel" type="tns:CRCL_TransAccelDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="SetTransAccelParametersSetDataType" type="tns:SetTransAccelParametersSetDataType" />
+  <xs:element name="SetTransAccelParamsSetDataType" type="tns:SetTransAccelParamsSetDataType" />
 
-  <xs:complexType name="ListOfSetTransAccelParametersSetDataType">
+  <xs:complexType name="ListOfSetTransAccelParamsSetDataType">
     <xs:sequence>
-      <xs:element name="SetTransAccelParametersSetDataType" type="tns:SetTransAccelParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="SetTransAccelParamsSetDataType" type="tns:SetTransAccelParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfSetTransAccelParametersSetDataType" type="tns:ListOfSetTransAccelParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfSetTransAccelParamsSetDataType" type="tns:ListOfSetTransAccelParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="SetRotSpeedParametersSetDataType">
+  <xs:complexType name="SetRotSpeedParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a SetTransSpeed Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="RotSpeed" type="tns:CRCL_RotSpeedDataType" minOccurs="0" nillable="true" />
+          <xs:element name="rotSpeed" type="tns:CRCL_RotSpeedDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="SetRotSpeedParametersSetDataType" type="tns:SetRotSpeedParametersSetDataType" />
+  <xs:element name="SetRotSpeedParamsSetDataType" type="tns:SetRotSpeedParamsSetDataType" />
 
-  <xs:complexType name="ListOfSetRotSpeedParametersSetDataType">
+  <xs:complexType name="ListOfSetRotSpeedParamsSetDataType">
     <xs:sequence>
-      <xs:element name="SetRotSpeedParametersSetDataType" type="tns:SetRotSpeedParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="SetRotSpeedParamsSetDataType" type="tns:SetRotSpeedParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfSetRotSpeedParametersSetDataType" type="tns:ListOfSetRotSpeedParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfSetRotSpeedParamsSetDataType" type="tns:ListOfSetRotSpeedParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="SetRotAccelParametersSetDataType">
+  <xs:complexType name="SetRotAccelParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a SetRotAccel Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="RotAccel" type="tns:CRCL_RotAccelDataType" minOccurs="0" nillable="true" />
+          <xs:element name="rotAccel" type="tns:CRCL_RotAccelDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="SetRotAccelParametersSetDataType" type="tns:SetRotAccelParametersSetDataType" />
+  <xs:element name="SetRotAccelParamsSetDataType" type="tns:SetRotAccelParamsSetDataType" />
 
-  <xs:complexType name="ListOfSetRotAccelParametersSetDataType">
+  <xs:complexType name="ListOfSetRotAccelParamsSetDataType">
     <xs:sequence>
-      <xs:element name="SetRotAccelParametersSetDataType" type="tns:SetRotAccelParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="SetRotAccelParamsSetDataType" type="tns:SetRotAccelParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfSetRotAccelParametersSetDataType" type="tns:ListOfSetRotAccelParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfSetRotAccelParamsSetDataType" type="tns:ListOfSetRotAccelParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="SetAngleUnitsParametersSetDataType">
+  <xs:complexType name="SetAngleUnitsParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a SetAngleUnits Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="UnitName" type="tns:CRCL_AngleUnitEnumDataType" minOccurs="0" />
+          <xs:element name="unitName" type="tns:CRCL_AngleUnitEnumDataType" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="SetAngleUnitsParametersSetDataType" type="tns:SetAngleUnitsParametersSetDataType" />
+  <xs:element name="SetAngleUnitsParamsSetDataType" type="tns:SetAngleUnitsParamsSetDataType" />
 
-  <xs:complexType name="ListOfSetAngleUnitsParametersSetDataType">
+  <xs:complexType name="ListOfSetAngleUnitsParamsSetDataType">
     <xs:sequence>
-      <xs:element name="SetAngleUnitsParametersSetDataType" type="tns:SetAngleUnitsParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="SetAngleUnitsParamsSetDataType" type="tns:SetAngleUnitsParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfSetAngleUnitsParametersSetDataType" type="tns:ListOfSetAngleUnitsParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfSetAngleUnitsParamsSetDataType" type="tns:ListOfSetAngleUnitsParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="SetEndPoseToleranceParametersSetDataType">
+  <xs:complexType name="SetEndPoseToleranceParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a SetEndPoseTolerance Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="Tolerance" type="tns:CRCL_PoseToleranceDataType" minOccurs="0" nillable="true" />
+          <xs:element name="tolerance" type="tns:CRCL_PoseToleranceDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="SetEndPoseToleranceParametersSetDataType" type="tns:SetEndPoseToleranceParametersSetDataType" />
+  <xs:element name="SetEndPoseToleranceParamsSetDataType" type="tns:SetEndPoseToleranceParamsSetDataType" />
 
-  <xs:complexType name="ListOfSetEndPoseToleranceParametersSetDataType">
+  <xs:complexType name="ListOfSetEndPoseToleranceParamsSetDataType">
     <xs:sequence>
-      <xs:element name="SetEndPoseToleranceParametersSetDataType" type="tns:SetEndPoseToleranceParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="SetEndPoseToleranceParamsSetDataType" type="tns:SetEndPoseToleranceParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfSetEndPoseToleranceParametersSetDataType" type="tns:ListOfSetEndPoseToleranceParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfSetEndPoseToleranceParamsSetDataType" type="tns:ListOfSetEndPoseToleranceParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="SetForceUnitsParametersSetDataType">
+  <xs:complexType name="SetForceUnitsParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a SetForceUnits Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="UnitName" type="tns:CRCL_ForceUnitEnumDataType" minOccurs="0" />
+          <xs:element name="unitName" type="tns:CRCL_ForceUnitEnumDataType" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="SetForceUnitsParametersSetDataType" type="tns:SetForceUnitsParametersSetDataType" />
+  <xs:element name="SetForceUnitsParamsSetDataType" type="tns:SetForceUnitsParamsSetDataType" />
 
-  <xs:complexType name="ListOfSetForceUnitsParametersSetDataType">
+  <xs:complexType name="ListOfSetForceUnitsParamsSetDataType">
     <xs:sequence>
-      <xs:element name="SetForceUnitsParametersSetDataType" type="tns:SetForceUnitsParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="SetForceUnitsParamsSetDataType" type="tns:SetForceUnitsParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfSetForceUnitsParametersSetDataType" type="tns:ListOfSetForceUnitsParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfSetForceUnitsParamsSetDataType" type="tns:ListOfSetForceUnitsParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="SetIntermediatePoseToleranceParametersSetDataType">
+  <xs:complexType name="SetIntermediatePoseToleranceParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a SetIntermediatePoseTolerance Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="Tolerance" type="tns:CRCL_PoseToleranceDataType" minOccurs="0" nillable="true" />
+          <xs:element name="tolerance" type="tns:CRCL_PoseToleranceDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="SetIntermediatePoseToleranceParametersSetDataType" type="tns:SetIntermediatePoseToleranceParametersSetDataType" />
+  <xs:element name="SetIntermediatePoseToleranceParamsSetDataType" type="tns:SetIntermediatePoseToleranceParamsSetDataType" />
 
-  <xs:complexType name="ListOfSetIntermediatePoseToleranceParametersSetDataType">
+  <xs:complexType name="ListOfSetIntermediatePoseToleranceParamsSetDataType">
     <xs:sequence>
-      <xs:element name="SetIntermediatePoseToleranceParametersSetDataType" type="tns:SetIntermediatePoseToleranceParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="SetIntermediatePoseToleranceParamsSetDataType" type="tns:SetIntermediatePoseToleranceParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfSetIntermediatePoseToleranceParametersSetDataType" type="tns:ListOfSetIntermediatePoseToleranceParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfSetIntermediatePoseToleranceParamsSetDataType" type="tns:ListOfSetIntermediatePoseToleranceParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="SetLengthUnitsParametersSetDataType">
+  <xs:complexType name="SetLengthUnitsParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a SetLengthUnits Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="UnitName" type="tns:CRCL_LengthUnitEnumDataType" minOccurs="0" />
+          <xs:element name="unitName" type="tns:CRCL_LengthUnitEnumDataType" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="SetLengthUnitsParametersSetDataType" type="tns:SetLengthUnitsParametersSetDataType" />
+  <xs:element name="SetLengthUnitsParamsSetDataType" type="tns:SetLengthUnitsParamsSetDataType" />
 
-  <xs:complexType name="ListOfSetLengthUnitsParametersSetDataType">
+  <xs:complexType name="ListOfSetLengthUnitsParamsSetDataType">
     <xs:sequence>
-      <xs:element name="SetLengthUnitsParametersSetDataType" type="tns:SetLengthUnitsParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="SetLengthUnitsParamsSetDataType" type="tns:SetLengthUnitsParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfSetLengthUnitsParametersSetDataType" type="tns:ListOfSetLengthUnitsParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfSetLengthUnitsParamsSetDataType" type="tns:ListOfSetLengthUnitsParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="SetMotionCoordinationParametersSetDataType">
+  <xs:complexType name="SetMotionCoordinationParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a SetMotionCoordination Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="Coordinated" type="xs:boolean" minOccurs="0" />
+          <xs:element name="coordinated" type="xs:boolean" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="SetMotionCoordinationParametersSetDataType" type="tns:SetMotionCoordinationParametersSetDataType" />
+  <xs:element name="SetMotionCoordinationParamsSetDataType" type="tns:SetMotionCoordinationParamsSetDataType" />
 
-  <xs:complexType name="ListOfSetMotionCoordinationParametersSetDataType">
+  <xs:complexType name="ListOfSetMotionCoordinationParamsSetDataType">
     <xs:sequence>
-      <xs:element name="SetMotionCoordinationParametersSetDataType" type="tns:SetMotionCoordinationParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="SetMotionCoordinationParamsSetDataType" type="tns:SetMotionCoordinationParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfSetMotionCoordinationParametersSetDataType" type="tns:ListOfSetMotionCoordinationParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfSetMotionCoordinationParamsSetDataType" type="tns:ListOfSetMotionCoordinationParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="SetTorqueUnitsParametersSetDataType">
+  <xs:complexType name="SetTorqueUnitsParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a SetTorqueUnits Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="UnitName" type="tns:CRCL_TorqueUnitEnumDataType" minOccurs="0" />
+          <xs:element name="unitName" type="tns:CRCL_TorqueUnitEnumDataType" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="SetTorqueUnitsParametersSetDataType" type="tns:SetTorqueUnitsParametersSetDataType" />
+  <xs:element name="SetTorqueUnitsParamsSetDataType" type="tns:SetTorqueUnitsParamsSetDataType" />
 
-  <xs:complexType name="ListOfSetTorqueUnitsParametersSetDataType">
+  <xs:complexType name="ListOfSetTorqueUnitsParamsSetDataType">
     <xs:sequence>
-      <xs:element name="SetTorqueUnitsParametersSetDataType" type="tns:SetTorqueUnitsParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="SetTorqueUnitsParamsSetDataType" type="tns:SetTorqueUnitsParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfSetTorqueUnitsParametersSetDataType" type="tns:ListOfSetTorqueUnitsParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfSetTorqueUnitsParamsSetDataType" type="tns:ListOfSetTorqueUnitsParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="StopMotionParametersSetDataType">
+  <xs:complexType name="StopMotionParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a StopMotion Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="StopCondition" type="tns:CRCL_StopConditionEnumDataType" minOccurs="0" />
+          <xs:element name="stopCondition" type="tns:CRCL_StopConditionEnumDataType" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="StopMotionParametersSetDataType" type="tns:StopMotionParametersSetDataType" />
+  <xs:element name="StopMotionParamsSetDataType" type="tns:StopMotionParamsSetDataType" />
 
-  <xs:complexType name="ListOfStopMotionParametersSetDataType">
+  <xs:complexType name="ListOfStopMotionParamsSetDataType">
     <xs:sequence>
-      <xs:element name="StopMotionParametersSetDataType" type="tns:StopMotionParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="StopMotionParamsSetDataType" type="tns:StopMotionParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfStopMotionParametersSetDataType" type="tns:ListOfStopMotionParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfStopMotionParamsSetDataType" type="tns:ListOfStopMotionParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="ConfigureStatusReportParametersSetDataType">
+  <xs:complexType name="ConfigureStatusReportParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a ConfigureStatusReport Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="ReportJointStatuses" type="xs:boolean" minOccurs="0" />
-          <xs:element name="ReportPoseStatus" type="xs:boolean" minOccurs="0" />
-          <xs:element name="ReportGripperStatus" type="xs:boolean" minOccurs="0" />
-          <xs:element name="ReportSettingsStatus" type="xs:boolean" minOccurs="0" />
-          <xs:element name="ReportSensorsStatus" type="xs:boolean" minOccurs="0" />
-          <xs:element name="ReportGuardsStatus" type="xs:boolean" minOccurs="0" />
+          <xs:element name="reportJointStatuses" type="xs:boolean" minOccurs="0" />
+          <xs:element name="reportPoseStatus" type="xs:boolean" minOccurs="0" />
+          <xs:element name="reportGripperStatus" type="xs:boolean" minOccurs="0" />
+          <xs:element name="reportSettingsStatus" type="xs:boolean" minOccurs="0" />
+          <xs:element name="reportSensorsStatus" type="xs:boolean" minOccurs="0" />
+          <xs:element name="reportGuardsStatus" type="xs:boolean" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="ConfigureStatusReportParametersSetDataType" type="tns:ConfigureStatusReportParametersSetDataType" />
+  <xs:element name="ConfigureStatusReportParamsSetDataType" type="tns:ConfigureStatusReportParamsSetDataType" />
 
-  <xs:complexType name="ListOfConfigureStatusReportParametersSetDataType">
+  <xs:complexType name="ListOfConfigureStatusReportParamsSetDataType">
     <xs:sequence>
-      <xs:element name="ConfigureStatusReportParametersSetDataType" type="tns:ConfigureStatusReportParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="ConfigureStatusReportParamsSetDataType" type="tns:ConfigureStatusReportParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfConfigureStatusReportParametersSetDataType" type="tns:ListOfConfigureStatusReportParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfConfigureStatusReportParamsSetDataType" type="tns:ListOfConfigureStatusReportParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="EnableSensorParametersSetDataType">
+  <xs:complexType name="EnableSensorParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a EnableSensor Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="SensorID" type="xs:string" minOccurs="0" nillable="true" />
-          <xs:element name="SensorOption" type="tns:ListOfCRCL_ParameterSettingDataType" minOccurs="0" nillable="true" />
+          <xs:element name="sensorID" type="xs:string" minOccurs="0" nillable="true" />
+          <xs:element name="sensorOption" type="tns:ListOfCRCL_ParameterSettingDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="EnableSensorParametersSetDataType" type="tns:EnableSensorParametersSetDataType" />
+  <xs:element name="EnableSensorParamsSetDataType" type="tns:EnableSensorParamsSetDataType" />
 
-  <xs:complexType name="ListOfEnableSensorParametersSetDataType">
+  <xs:complexType name="ListOfEnableSensorParamsSetDataType">
     <xs:sequence>
-      <xs:element name="EnableSensorParametersSetDataType" type="tns:EnableSensorParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="EnableSensorParamsSetDataType" type="tns:EnableSensorParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfEnableSensorParametersSetDataType" type="tns:ListOfEnableSensorParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfEnableSensorParamsSetDataType" type="tns:ListOfEnableSensorParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="DisableSensorParametersSetDataType">
+  <xs:complexType name="DisableSensorParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a DisableSensor Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="SensorID" type="xs:string" minOccurs="0" nillable="true" />
+          <xs:element name="sensorID" type="xs:string" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="DisableSensorParametersSetDataType" type="tns:DisableSensorParametersSetDataType" />
+  <xs:element name="DisableSensorParamsSetDataType" type="tns:DisableSensorParamsSetDataType" />
 
-  <xs:complexType name="ListOfDisableSensorParametersSetDataType">
+  <xs:complexType name="ListOfDisableSensorParamsSetDataType">
     <xs:sequence>
-      <xs:element name="DisableSensorParametersSetDataType" type="tns:DisableSensorParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="DisableSensorParamsSetDataType" type="tns:DisableSensorParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfDisableSensorParametersSetDataType" type="tns:ListOfDisableSensorParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfDisableSensorParamsSetDataType" type="tns:ListOfDisableSensorParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="EnableGripperParametersSetDataType">
+  <xs:complexType name="EnableGripperParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a EnableGripper Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="GripperName" type="xs:string" minOccurs="0" nillable="true" />
-          <xs:element name="GripperOption" type="tns:ListOfCRCL_ParameterSettingDataType" minOccurs="0" nillable="true" />
+          <xs:element name="gripperName" type="xs:string" minOccurs="0" nillable="true" />
+          <xs:element name="gripperOption" type="tns:ListOfCRCL_ParameterSettingDataType" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="EnableGripperParametersSetDataType" type="tns:EnableGripperParametersSetDataType" />
+  <xs:element name="EnableGripperParamsSetDataType" type="tns:EnableGripperParamsSetDataType" />
 
-  <xs:complexType name="ListOfEnableGripperParametersSetDataType">
+  <xs:complexType name="ListOfEnableGripperParamsSetDataType">
     <xs:sequence>
-      <xs:element name="EnableGripperParametersSetDataType" type="tns:EnableGripperParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="EnableGripperParamsSetDataType" type="tns:EnableGripperParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfEnableGripperParametersSetDataType" type="tns:ListOfEnableGripperParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfEnableGripperParamsSetDataType" type="tns:ListOfEnableGripperParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="DisableGripperParametersSetDataType">
+  <xs:complexType name="DisableGripperParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a DisableGripper Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="GripperName" type="xs:string" minOccurs="0" nillable="true" />
+          <xs:element name="gripperName" type="xs:string" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="DisableGripperParametersSetDataType" type="tns:DisableGripperParametersSetDataType" />
+  <xs:element name="DisableGripperParamsSetDataType" type="tns:DisableGripperParamsSetDataType" />
 
-  <xs:complexType name="ListOfDisableGripperParametersSetDataType">
+  <xs:complexType name="ListOfDisableGripperParamsSetDataType">
     <xs:sequence>
-      <xs:element name="DisableGripperParametersSetDataType" type="tns:DisableGripperParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="DisableGripperParamsSetDataType" type="tns:DisableGripperParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfDisableGripperParametersSetDataType" type="tns:ListOfDisableGripperParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfDisableGripperParamsSetDataType" type="tns:ListOfDisableGripperParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="EnableRobotParameterStatusParametersSetDataType">
+  <xs:complexType name="EnableRobotParameterStatusParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a EnableRobotParameterStatus Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="RobotParameterName" type="xs:string" minOccurs="0" nillable="true" />
+          <xs:element name="robotParameterName" type="xs:string" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="EnableRobotParameterStatusParametersSetDataType" type="tns:EnableRobotParameterStatusParametersSetDataType" />
+  <xs:element name="EnableRobotParameterStatusParamsSetDataType" type="tns:EnableRobotParameterStatusParamsSetDataType" />
 
-  <xs:complexType name="ListOfEnableRobotParameterStatusParametersSetDataType">
+  <xs:complexType name="ListOfEnableRobotParameterStatusParamsSetDataType">
     <xs:sequence>
-      <xs:element name="EnableRobotParameterStatusParametersSetDataType" type="tns:EnableRobotParameterStatusParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="EnableRobotParameterStatusParamsSetDataType" type="tns:EnableRobotParameterStatusParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfEnableRobotParameterStatusParametersSetDataType" type="tns:ListOfEnableRobotParameterStatusParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfEnableRobotParameterStatusParamsSetDataType" type="tns:ListOfEnableRobotParameterStatusParamsSetDataType" nillable="true"></xs:element>
 
-  <xs:complexType name="DisableRobotParameterStatusParametersSetDataType">
+  <xs:complexType name="DisableRobotParameterStatusParamsSetDataType">
     <xs:annotation>
       <xs:documentation>Parameters of a DisableRobotParameterStatus Command.</xs:documentation>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:CRCLCommandParametersSetDataType">
+      <xs:extension base="tns:CRCLCommandParamsSetDataType">
         <xs:sequence>
-          <xs:element name="RobotParameterName" type="xs:string" minOccurs="0" nillable="true" />
+          <xs:element name="robotParameterName" type="xs:string" minOccurs="0" nillable="true" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="DisableRobotParameterStatusParametersSetDataType" type="tns:DisableRobotParameterStatusParametersSetDataType" />
+  <xs:element name="DisableRobotParameterStatusParamsSetDataType" type="tns:DisableRobotParameterStatusParamsSetDataType" />
 
-  <xs:complexType name="ListOfDisableRobotParameterStatusParametersSetDataType">
+  <xs:complexType name="ListOfDisableRobotParameterStatusParamsSetDataType">
     <xs:sequence>
-      <xs:element name="DisableRobotParameterStatusParametersSetDataType" type="tns:DisableRobotParameterStatusParametersSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+      <xs:element name="DisableRobotParameterStatusParamsSetDataType" type="tns:DisableRobotParameterStatusParamsSetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ListOfDisableRobotParameterStatusParametersSetDataType" type="tns:ListOfDisableRobotParameterStatusParametersSetDataType" nillable="true"></xs:element>
+  <xs:element name="ListOfDisableRobotParameterStatusParamsSetDataType" type="tns:ListOfDisableRobotParameterStatusParamsSetDataType" nillable="true"></xs:element>
+
+  <xs:complexType name="CRCLCommandsParamsSetsUnionDataType">
+    <xs:annotation>
+      <xs:documentation>CRCLCommandsParamsSetsUnionDataType</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="ua:Union">
+        <xs:sequence>
+          <xs:element name="SwitchField" type="xs:unsignedInt" minOccurs="0" />
+          <xs:element name="initCanonParamsSet" type="tns:InitCanonParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="endCanonParamsSet" type="tns:EndCanonParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="messageParamsSet" type="tns:MessageParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="moveToParamsSet" type="tns:MoveToParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="moveScrewParamsSet" type="tns:MoveScrewParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="moveThroughToParamsSet" type="tns:MoveThroughToParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="dwellParamsSet" type="tns:DwellParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="actuateJointsParamsSet" type="tns:ActuateJointsParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="configureJointReportsParamsSet" type="tns:ConfigureJointReportsParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setDefaultJointPositionsTolerancesParamsSet" type="tns:SetDefaultJointPositionsTolerancesParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="getStatusParamsSet" type="tns:GetStatusParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="closeToolChangerParamsSet" type="tns:CloseToolChangerParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="openToolChangerParamsSet" type="tns:OpenToolChangerParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setRobotParametersParamsSet" type="tns:SetRobotParametersParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setEndeffectorParametersParamsSet" type="tns:SetEndeffectorParametersParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setEndeffectorParamsSet" type="tns:SetEndeffectorParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setTransAccelParamsSet" type="tns:SetTransAccelParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setTransSpeedParamsSet" type="tns:SetTransSpeedParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setRotAccelParamsSet" type="tns:SetRotAccelParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setRotSpeedParamsSet" type="tns:SetRotSpeedParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setAngleUnitsParamsSet" type="tns:SetAngleUnitsParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setEndPoseToleranceParamsSet" type="tns:SetEndPoseToleranceParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setForceUnitsParamsSet" type="tns:SetForceUnitsParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setIntermediatePoseToleranceParamsSet" type="tns:SetIntermediatePoseToleranceParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setLengthUnitsParamsSet" type="tns:SetLengthUnitsParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setMotionCoordinationParamsSet" type="tns:SetMotionCoordinationParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="setTorqueUnitsParamsSet" type="tns:SetTorqueUnitsParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="stopMotionParamsSet" type="tns:StopMotionParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="configureStatusReportParamsSet" type="tns:ConfigureStatusReportParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="enableSensorParamsSet" type="tns:EnableSensorParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="disableSensorParamsSet" type="tns:DisableSensorParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="enableGripperParamsSet" type="tns:EnableGripperParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="disableGripperParamsSet" type="tns:DisableGripperParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="enableRobotParameterStatusParamsSet" type="tns:EnableRobotParameterStatusParamsSetDataType" minOccurs="0" nillable="true" />
+          <xs:element name="disableRobotParameterStatusParamsSet" type="tns:DisableRobotParameterStatusParamsSetDataType" minOccurs="0" nillable="true" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CRCLCommandsParamsSetsUnionDataType" type="tns:CRCLCommandsParamsSetsUnionDataType" />
+
+  <xs:complexType name="ListOfCRCLCommandsParamsSetsUnionDataType">
+    <xs:sequence>
+      <xs:element name="CRCLCommandsParamsSetsUnionDataType" type="tns:CRCLCommandsParamsSetsUnionDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListOfCRCLCommandsParamsSetsUnionDataType" type="tns:ListOfCRCLCommandsParamsSetsUnionDataType" nillable="true"></xs:element>
+
+  <xs:complexType name="CRCLCommandsParamsSetsBufferDataType">
+    <xs:annotation>
+      <xs:documentation>The array of CRCLCommandsParamsSets that allows instantiating CRCLCommands</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CRCL_DataThingDataType">
+        <xs:sequence>
+          <xs:element name="crclCommandsParamsSets" type="tns:ListOfCRCLCommandsParamsSetsUnionDataType" minOccurs="0" nillable="true" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CRCLCommandsParamsSetsBufferDataType" type="tns:CRCLCommandsParamsSetsBufferDataType" />
+
+  <xs:complexType name="ListOfCRCLCommandsParamsSetsBufferDataType">
+    <xs:sequence>
+      <xs:element name="CRCLCommandsParamsSetsBufferDataType" type="tns:CRCLCommandsParamsSetsBufferDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListOfCRCLCommandsParamsSetsBufferDataType" type="tns:ListOfCRCLCommandsParamsSetsBufferDataType" nillable="true"></xs:element>
+
+  <xs:simpleType  name="CRCLCommandsBufferState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PROCESSING_PENDING_0" />
+      <xs:enumeration value="PROCESSING_RUNNING_1" />
+      <xs:enumeration value="PROCESSING_FAILED_2" />
+      <xs:enumeration value="AWAITING_3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CRCLCommandsBufferState" type="tns:CRCLCommandsBufferState" />
+
+  <xs:complexType name="ListOfCRCLCommandsBufferState">
+    <xs:sequence>
+      <xs:element name="CRCLCommandsBufferState" type="tns:CRCLCommandsBufferState" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListOfCRCLCommandsBufferState" type="tns:ListOfCRCLCommandsBufferState" nillable="true"></xs:element>
 
 </xs:schema>

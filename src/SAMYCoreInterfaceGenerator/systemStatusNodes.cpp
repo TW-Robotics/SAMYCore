@@ -122,7 +122,7 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSystemStatusObject(UA_Server *serve
         return retVal;
 
     systemStatusObjectNodeId = systemStatusNodeId;
-    logger->info("SystemStatus node succesfully added: ns={} i={}", systemStatusNodeId.namespaceIndex, systemStatusNodeId.identifier.numeric);
+
     return retVal;
 }
 

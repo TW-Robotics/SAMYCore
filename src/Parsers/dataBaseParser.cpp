@@ -1,4 +1,7 @@
 #include <yaml_parsers.h>
+#include <types_crcl_generated.h>
+#include <types_di_generated.h>
+#include <types_robotics_generated.h>
 
 namespace SAMY {
 namespace Parsers {
@@ -67,8 +70,7 @@ void DataBaseParser::iterateDataTypesArray( const std::string& type,
             if( !dataBaseNode["name"] && !dataBaseNode["Name"]  ){
                 found = true;
                 std::string elementName = dataTypeName + std::to_string(elementsCounter);
-                logger->warn("AN ELEMENT IN THE DATABASE FILE WITH TYPE {} DOES NOT HAVE A NAME."
-                             " A NODE WITH A DEFAULT THE DEFAULT NAME {} WAS ADDED.", dataTypeName, elementName );
+                logger->warn("AN ELEMENT IN THE DATABASE FILE WITH TYPE {} DOES NOT HAVE A NAME. DEFAULT NAME ASSIGNED:  {}", dataTypeName, elementName );
                 typesIndexes.emplace_back( std::tuple<std::string,
                                            UA_UInt16, std::string>( type, dataType.typeIndex,  elementName ) );
                 break;

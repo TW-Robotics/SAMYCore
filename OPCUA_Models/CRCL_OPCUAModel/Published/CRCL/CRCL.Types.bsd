@@ -71,9 +71,6 @@
     <opc:Field Name="zAxis" TypeName="tns:CRCL_VectorDataType" />
   </opc:StructuredType>
 
-  <opc:OpaqueType Name="CRCL_PositiveDecimalDataType">
-  </opc:OpaqueType>
-
   <opc:EnumeratedType Name="CRCL_TorqueUnitEnumDataType" LengthInBits="32">
     <opc:EnumeratedValue Name="NEWTONMETER" Value="0" />
     <opc:EnumeratedValue Name="FOOTPOUND" Value="1" />
@@ -131,8 +128,8 @@
   <opc:StructuredType Name="CRCL_RotAccelDataType" BaseType="ua:Union">
     <opc:Documentation>CRCL RotAccel DataType</opc:Documentation>
     <opc:Field Name="SwitchField" TypeName="opc:UInt32" />
-    <opc:Field Name="RotAccelAbsoluteDataType" TypeName="tns:CRCL_RotAccelAbsoluteDataType" />
-    <opc:Field Name="RotAccelRelativeDataType" TypeName="tns:CRCL_RotAccelRelativeDataType" />
+    <opc:Field Name="rotAccelAbsoluteDataType" TypeName="tns:CRCL_RotAccelAbsoluteDataType" />
+    <opc:Field Name="rotAccelRelativeDataType" TypeName="tns:CRCL_RotAccelRelativeDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="CRCL_RotSpeedAbsoluteDataType" BaseType="tns:CRCL_DataThingDataType">
@@ -152,8 +149,8 @@
   <opc:StructuredType Name="CRCL_RotSpeedDataType" BaseType="ua:Union">
     <opc:Documentation>CRCL RotSpeedDataType DataType</opc:Documentation>
     <opc:Field Name="SwitchField" TypeName="opc:UInt32" />
-    <opc:Field Name="RotSpeedAbsoluteDataType" TypeName="tns:CRCL_RotSpeedAbsoluteDataType" />
-    <opc:Field Name="RotSpeedRelativeDataType" TypeName="tns:CRCL_RotSpeedRelativeDataType" />
+    <opc:Field Name="rotSpeedAbsoluteDataType" TypeName="tns:CRCL_RotSpeedAbsoluteDataType" />
+    <opc:Field Name="rotSpeedRelativeDataType" TypeName="tns:CRCL_RotSpeedRelativeDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="CRCL_TransAccelAbsoluteDataType" BaseType="tns:CRCL_DataThingDataType">
@@ -173,8 +170,8 @@
   <opc:StructuredType Name="CRCL_TransAccelDataType" BaseType="ua:Union">
     <opc:Documentation>CRCL TransAccel DataType  (relative or absolute)</opc:Documentation>
     <opc:Field Name="SwitchField" TypeName="opc:UInt32" />
-    <opc:Field Name="TransAccelAbsoluteDataType" TypeName="tns:CRCL_TransAccelAbsoluteDataType" />
-    <opc:Field Name="TransAccelRelativeDataType" TypeName="tns:CRCL_TransAccelRelativeDataType" />
+    <opc:Field Name="transAccelAbsoluteDataType" TypeName="tns:CRCL_TransAccelAbsoluteDataType" />
+    <opc:Field Name="transAccelRelativeDataType" TypeName="tns:CRCL_TransAccelRelativeDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="CRCL_TransSpeedAbsoluteDataType" BaseType="tns:CRCL_DataThingDataType">
@@ -194,18 +191,18 @@
   <opc:StructuredType Name="CRCL_TransSpeedDataType" BaseType="ua:Union">
     <opc:Documentation>CRCL TransSpeed DataType (relative or absolute)</opc:Documentation>
     <opc:Field Name="SwitchField" TypeName="opc:UInt32" />
-    <opc:Field Name="TransSpeedAbsoluteDataType" TypeName="tns:CRCL_TransSpeedAbsoluteDataType" />
-    <opc:Field Name="TransSpeedRelativeDataType" TypeName="tns:CRCL_TransSpeedRelativeDataType" />
+    <opc:Field Name="transSpeedAbsoluteDataType" TypeName="tns:CRCL_TransSpeedAbsoluteDataType" />
+    <opc:Field Name="transSpeedRelativeDataType" TypeName="tns:CRCL_TransSpeedRelativeDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="CRCL_ConfigureJointReportDataType" BaseType="tns:CRCL_DataThingDataType">
     <opc:Documentation>CRCL ConfigureJointReportDataType</opc:Documentation>
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
-    <opc:Field Name="JointNumber" TypeName="opc:Int32" />
-    <opc:Field Name="ReportPosition" TypeName="opc:Boolean" />
-    <opc:Field Name="ReportTorqueOrForce" TypeName="opc:Boolean" />
-    <opc:Field Name="ReportVelocity" TypeName="opc:Boolean" />
+    <opc:Field Name="jointNumber" TypeName="opc:Int32" />
+    <opc:Field Name="reportPosition" TypeName="opc:Boolean" />
+    <opc:Field Name="reportTorqueOrForce" TypeName="opc:Boolean" />
+    <opc:Field Name="reportVelocity" TypeName="opc:Boolean" />
   </opc:StructuredType>
 
   <opc:EnumeratedType Name="CRCL_GuardLimitEnumDataType" LengthInBits="32">
@@ -233,16 +230,16 @@
     <opc:Documentation>CRCL JointPositionToleranceSettingDataType DataType</opc:Documentation>
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
-    <opc:Field Name="JointNumber" TypeName="opc:Int32" />
-    <opc:Field Name="JointPositionTolerance" TypeName="opc:Double" />
+    <opc:Field Name="jointNumber" TypeName="opc:Int32" />
+    <opc:Field Name="jointPositionTolerance" TypeName="opc:Double" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="CRCL_JointPositionsTolerancesDataType" BaseType="tns:CRCL_DataThingDataType">
     <opc:Documentation>CRCL CRCL_JointPositionsTolerancesDataType DataType</opc:Documentation>
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
-    <opc:Field Name="NoOfSetting" TypeName="opc:Int32" />
-    <opc:Field Name="Setting" TypeName="tns:CRCL_JointPositionToleranceSettingDataType" LengthField="NoOfSetting" />
+    <opc:Field Name="NoOfsetting" TypeName="opc:Int32" />
+    <opc:Field Name="setting" TypeName="tns:CRCL_JointPositionToleranceSettingDataType" LengthField="NoOfsetting" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="CRCL_PoseAndSetDataType" BaseType="tns:CRCL_PoseDataType">
@@ -252,12 +249,12 @@
     <opc:Field Name="point" TypeName="tns:CRCL_PointDataType" SourceType="tns:CRCL_PoseDataType" />
     <opc:Field Name="xAxis" TypeName="tns:CRCL_VectorDataType" SourceType="tns:CRCL_PoseDataType" />
     <opc:Field Name="zAxis" TypeName="tns:CRCL_VectorDataType" SourceType="tns:CRCL_PoseDataType" />
-    <opc:Field Name="Coordinated" TypeName="opc:Boolean" />
-    <opc:Field Name="TransSpeed" TypeName="tns:CRCL_TransSpeedDataType" />
-    <opc:Field Name="RotSpeed" TypeName="tns:CRCL_RotSpeedDataType" />
-    <opc:Field Name="TransAccel" TypeName="tns:CRCL_TransAccelDataType" />
-    <opc:Field Name="RotAccel" TypeName="tns:CRCL_RotAccelDataType" />
-    <opc:Field Name="PoseTolerance" TypeName="tns:CRCL_PoseToleranceDataType" />
+    <opc:Field Name="coordinated" TypeName="opc:Boolean" />
+    <opc:Field Name="transSpeed" TypeName="tns:CRCL_TransSpeedDataType" />
+    <opc:Field Name="rotSpeed" TypeName="tns:CRCL_RotSpeedDataType" />
+    <opc:Field Name="transAccel" TypeName="tns:CRCL_TransAccelDataType" />
+    <opc:Field Name="rotAccel" TypeName="tns:CRCL_RotAccelDataType" />
+    <opc:Field Name="poseTolerance" TypeName="tns:CRCL_PoseToleranceDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="CRCLCommandDataType" BaseType="tns:CRCL_DataThingDataType">
@@ -265,10 +262,10 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="MiddleCommandDataType" BaseType="tns:CRCLCommandDataType">
@@ -276,10 +273,10 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="EndCanonDataType" BaseType="tns:CRCLCommandDataType">
@@ -287,10 +284,10 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="InitCanonDataType" BaseType="tns:CRCLCommandDataType">
@@ -298,42 +295,42 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="CRCL_JointDetailsDataType" BaseType="ua:Union">
     <opc:Documentation>CRCL JointDetailsType</opc:Documentation>
     <opc:Field Name="SwitchField" TypeName="opc:UInt32" />
-    <opc:Field Name="JointSpeedAccel" TypeName="tns:CRCL_JointSpeedAccelDataType" />
-    <opc:Field Name="JointForceTorque" TypeName="tns:CRCL_JointForceTorqueDataType" />
+    <opc:Field Name="jointSpeedAccel" TypeName="tns:CRCL_JointSpeedAccelDataType" />
+    <opc:Field Name="jointForceTorque" TypeName="tns:CRCL_JointForceTorqueDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="CRCL_ActuateJointDataType" BaseType="tns:CRCL_DataThingDataType">
     <opc:Documentation>CRCL ActuateJointType</opc:Documentation>
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
-    <opc:Field Name="JointNumber" TypeName="opc:Int32" />
-    <opc:Field Name="JointPosition" TypeName="opc:Double" />
-    <opc:Field Name="JointDetails" TypeName="tns:CRCL_JointDetailsDataType" />
+    <opc:Field Name="jointNumber" TypeName="opc:Int32" />
+    <opc:Field Name="jointPosition" TypeName="opc:Double" />
+    <opc:Field Name="jointDetails" TypeName="tns:CRCL_JointDetailsDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="CRCL_JointForceTorqueDataType" BaseType="tns:CRCL_DataThingDataType">
     <opc:Documentation>CRCL JointForceTorqueDataType</opc:Documentation>
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
-    <opc:Field Name="Setting" TypeName="opc:Double" />
-    <opc:Field Name="ChangeRate" TypeName="opc:Double" />
+    <opc:Field Name="setting" TypeName="opc:Double" />
+    <opc:Field Name="changeRate" TypeName="opc:Double" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="CRCL_JointSpeedAccelDataType" BaseType="tns:CRCL_DataThingDataType">
     <opc:Documentation>CRCL JointSpeedAccelDataType</opc:Documentation>
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
-    <opc:Field Name="JointSpeed" TypeName="opc:Double" />
-    <opc:Field Name="JointAccel" TypeName="opc:Double" />
+    <opc:Field Name="jointSpeed" TypeName="opc:Double" />
+    <opc:Field Name="jointAccel" TypeName="opc:Double" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="ActuateJointsDataType" BaseType="tns:MiddleCommandDataType">
@@ -341,13 +338,13 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="NoOfActuateJoint" TypeName="opc:Int32" />
-    <opc:Field Name="ActuateJoint" TypeName="tns:CRCL_ActuateJointDataType" LengthField="NoOfActuateJoint" />
-    <opc:Field Name="JointTolerances" TypeName="tns:CRCL_JointPositionsTolerancesDataType" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="NoOfactuateJoint" TypeName="opc:Int32" />
+    <opc:Field Name="actuateJoint" TypeName="tns:CRCL_ActuateJointDataType" LengthField="NoOfactuateJoint" />
+    <opc:Field Name="jointTolerances" TypeName="tns:CRCL_JointPositionsTolerancesDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="MoveToDataType" BaseType="tns:MiddleCommandDataType">
@@ -355,12 +352,12 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="MoveStraight" TypeName="opc:Boolean" />
-    <opc:Field Name="EndPosition" TypeName="tns:CRCL_PoseDataType" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="moveStraight" TypeName="opc:Boolean" />
+    <opc:Field Name="endPosition" TypeName="tns:CRCL_PoseDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="CloseToolChangerDataType" BaseType="tns:MiddleCommandDataType">
@@ -368,10 +365,10 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="DwellDataType" BaseType="tns:MiddleCommandDataType">
@@ -379,11 +376,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="DwellTime" TypeName="opc:Double" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="dwellTime" TypeName="opc:Double" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="GetStatusDataType" BaseType="tns:MiddleCommandDataType">
@@ -391,10 +388,10 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="MessageDataType" BaseType="tns:MiddleCommandDataType">
@@ -402,11 +399,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="Message" TypeName="opc:String" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="message" TypeName="opc:String" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="MoveScrewDataType" BaseType="tns:MiddleCommandDataType">
@@ -414,15 +411,15 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="StartPosition" TypeName="tns:CRCL_PoseDataType" />
-    <opc:Field Name="AxisPoint" TypeName="tns:CRCL_PointDataType" />
-    <opc:Field Name="AxialDistanceFree" TypeName="opc:Double" />
-    <opc:Field Name="AxialDistanceScrew" TypeName="opc:Double" />
-    <opc:Field Name="Turn" TypeName="opc:Double" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="startPosition" TypeName="tns:CRCL_PoseDataType" />
+    <opc:Field Name="axisPoint" TypeName="tns:CRCL_PointDataType" />
+    <opc:Field Name="axialDistanceFree" TypeName="opc:Double" />
+    <opc:Field Name="axialDistanceScrew" TypeName="opc:Double" />
+    <opc:Field Name="turn" TypeName="opc:Double" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="MoveThroughToDataType" BaseType="tns:MiddleCommandDataType">
@@ -430,14 +427,14 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="MoveStraight" TypeName="opc:Boolean" />
-    <opc:Field Name="NoOfWaypoint" TypeName="opc:Int32" />
-    <opc:Field Name="Waypoint" TypeName="tns:CRCL_PoseDataType" LengthField="NoOfWaypoint" />
-    <opc:Field Name="NumPositions" TypeName="opc:UInt32" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="moveStraight" TypeName="opc:Boolean" />
+    <opc:Field Name="NoOfwaypoint" TypeName="opc:Int32" />
+    <opc:Field Name="waypoint" TypeName="tns:CRCL_PoseDataType" LengthField="NoOfwaypoint" />
+    <opc:Field Name="numPositions" TypeName="opc:UInt32" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="OpenToolChangerDataType" BaseType="tns:MiddleCommandDataType">
@@ -445,10 +442,10 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="RunProgramDataType" BaseType="tns:MiddleCommandDataType">
@@ -456,11 +453,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="ProgramText" TypeName="opc:String" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="programText" TypeName="opc:String" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="SetAngleUnitsDataType" BaseType="tns:MiddleCommandDataType">
@@ -468,11 +465,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="UnitName" TypeName="tns:CRCL_AngleUnitEnumDataType" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="unitName" TypeName="tns:CRCL_AngleUnitEnumDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="SetEndeffectorParametersDataType" BaseType="tns:MiddleCommandDataType">
@@ -480,12 +477,12 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="NoOfParameterSetting" TypeName="opc:Int32" />
-    <opc:Field Name="ParameterSetting" TypeName="tns:CRCL_ParameterSettingDataType" LengthField="NoOfParameterSetting" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="NoOfparameterSetting" TypeName="opc:Int32" />
+    <opc:Field Name="parameterSetting" TypeName="tns:CRCL_ParameterSettingDataType" LengthField="NoOfparameterSetting" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="SetEndeffectorDataType" BaseType="tns:MiddleCommandDataType">
@@ -493,11 +490,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="Setting" TypeName="tns:CRCL_FractionDataType" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="setting" TypeName="tns:CRCL_FractionDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="SetEndPoseToleranceDataType" BaseType="tns:MiddleCommandDataType">
@@ -505,11 +502,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="Tolerance" TypeName="tns:CRCL_PoseToleranceDataType" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="tolerance" TypeName="tns:CRCL_PoseToleranceDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="SetForceUnitsDataType" BaseType="tns:MiddleCommandDataType">
@@ -517,11 +514,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="UnitName" TypeName="tns:CRCL_ForceUnitEnumDataType" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="unitName" TypeName="tns:CRCL_ForceUnitEnumDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="SetIntermediatePoseToleranceDataType" BaseType="tns:MiddleCommandDataType">
@@ -529,11 +526,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="Tolerance" TypeName="tns:CRCL_PoseToleranceDataType" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="tolerance" TypeName="tns:CRCL_PoseToleranceDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="SetLengthUnitsDataType" BaseType="tns:MiddleCommandDataType">
@@ -541,11 +538,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="UnitName" TypeName="tns:CRCL_LengthUnitEnumDataType" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="unitName" TypeName="tns:CRCL_LengthUnitEnumDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="SetMotionCoordinationDataType" BaseType="tns:MiddleCommandDataType">
@@ -553,11 +550,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="Coordinated" TypeName="opc:Boolean" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="coordinated" TypeName="opc:Boolean" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="SetRobotParametersDataType" BaseType="tns:MiddleCommandDataType">
@@ -565,12 +562,12 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="NoOfParameterSetting" TypeName="opc:Int32" />
-    <opc:Field Name="ParameterSetting" TypeName="tns:CRCL_ParameterSettingDataType" LengthField="NoOfParameterSetting" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="NoOfparameterSetting" TypeName="opc:Int32" />
+    <opc:Field Name="parameterSetting" TypeName="tns:CRCL_ParameterSettingDataType" LengthField="NoOfparameterSetting" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="SetTorqueUnitsDataType" BaseType="tns:MiddleCommandDataType">
@@ -578,11 +575,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="UnitName" TypeName="tns:CRCL_TorqueUnitEnumDataType" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="unitName" TypeName="tns:CRCL_TorqueUnitEnumDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="StopMotionDataType" BaseType="tns:MiddleCommandDataType">
@@ -590,11 +587,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="StopCondition" TypeName="tns:CRCL_StopConditionEnumDataType" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="stopCondition" TypeName="tns:CRCL_StopConditionEnumDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="ConfigureStatusReportDataType" BaseType="tns:MiddleCommandDataType">
@@ -602,16 +599,16 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="ReportJointStatuses" TypeName="opc:Boolean" />
-    <opc:Field Name="ReportPoseStatus" TypeName="opc:Boolean" />
-    <opc:Field Name="ReportGripperStatus" TypeName="opc:Boolean" />
-    <opc:Field Name="ReportSettingsStatus" TypeName="opc:Boolean" />
-    <opc:Field Name="ReportSensorsStatus" TypeName="opc:Boolean" />
-    <opc:Field Name="ReportGuardsStatus" TypeName="opc:Boolean" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="reportJointStatuses" TypeName="opc:Boolean" />
+    <opc:Field Name="reportPoseStatus" TypeName="opc:Boolean" />
+    <opc:Field Name="reportGripperStatus" TypeName="opc:Boolean" />
+    <opc:Field Name="reportSettingsStatus" TypeName="opc:Boolean" />
+    <opc:Field Name="reportSensorsStatus" TypeName="opc:Boolean" />
+    <opc:Field Name="reportGuardsStatus" TypeName="opc:Boolean" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="EnableSensorDataType" BaseType="tns:MiddleCommandDataType">
@@ -619,13 +616,13 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="SensorID" TypeName="opc:String" />
-    <opc:Field Name="NoOfSensorOption" TypeName="opc:Int32" />
-    <opc:Field Name="SensorOption" TypeName="tns:CRCL_ParameterSettingDataType" LengthField="NoOfSensorOption" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="sensorID" TypeName="opc:String" />
+    <opc:Field Name="NoOfsensorOption" TypeName="opc:Int32" />
+    <opc:Field Name="sensorOption" TypeName="tns:CRCL_ParameterSettingDataType" LengthField="NoOfsensorOption" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="DisableSensorDataType" BaseType="tns:MiddleCommandDataType">
@@ -633,11 +630,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="SensorID" TypeName="opc:String" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="sensorID" TypeName="opc:String" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="EnableGripperDataType" BaseType="tns:MiddleCommandDataType">
@@ -645,13 +642,13 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="GripperName" TypeName="opc:String" />
-    <opc:Field Name="NoOfGripperOption" TypeName="opc:Int32" />
-    <opc:Field Name="GripperOption" TypeName="tns:CRCL_ParameterSettingDataType" LengthField="NoOfGripperOption" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="gripperName" TypeName="opc:String" />
+    <opc:Field Name="NoOfgripperOption" TypeName="opc:Int32" />
+    <opc:Field Name="gripperOption" TypeName="tns:CRCL_ParameterSettingDataType" LengthField="NoOfgripperOption" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="DisableGripperDataType" BaseType="tns:MiddleCommandDataType">
@@ -659,11 +656,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="GripperName" TypeName="opc:String" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="gripperName" TypeName="opc:String" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="EnableRobotParameterStatusDataType" BaseType="tns:MiddleCommandDataType">
@@ -671,11 +668,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="RobotParameterName" TypeName="opc:String" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="robotParameterName" TypeName="opc:String" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="DisableRobotParameterStatusDataType" BaseType="tns:MiddleCommandDataType">
@@ -683,11 +680,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="RobotParameterName" TypeName="opc:String" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="robotParameterName" TypeName="opc:String" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="SetDefaultJointPositionsTolerancesDataType" BaseType="tns:MiddleCommandDataType">
@@ -695,11 +692,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="JointTolerances" TypeName="tns:CRCL_JointPositionsTolerancesDataType" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="jointTolerances" TypeName="tns:CRCL_JointPositionsTolerancesDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="SetRotAccelDataType" BaseType="tns:MiddleCommandDataType">
@@ -707,11 +704,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="RotAccel" TypeName="tns:CRCL_RotAccelDataType" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="rotAccel" TypeName="tns:CRCL_RotAccelDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="SetTransAccelDataType" BaseType="tns:MiddleCommandDataType">
@@ -719,11 +716,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="TransAccel" TypeName="tns:CRCL_TransAccelDataType" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="transAccel" TypeName="tns:CRCL_TransAccelDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="SetRotSpeedDataType" BaseType="tns:MiddleCommandDataType">
@@ -731,11 +728,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="RotSpeed" TypeName="tns:CRCL_RotSpeedDataType" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="rotSpeed" TypeName="tns:CRCL_RotSpeedDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="SetTransSpeedDataType" BaseType="tns:MiddleCommandDataType">
@@ -743,11 +740,11 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="TransSpeed" TypeName="tns:CRCL_TransSpeedDataType" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="transSpeed" TypeName="tns:CRCL_TransSpeedDataType" />
   </opc:StructuredType>
 
   <opc:StructuredType Name="ConfigureJointReportsDataType" BaseType="tns:MiddleCommandDataType">
@@ -755,13 +752,13 @@
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="commandID" TypeName="opc:UInt32" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="RealTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
-    <opc:Field Name="NoOfGuard" TypeName="opc:Int32" />
-    <opc:Field Name="Guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfGuard" />
-    <opc:Field Name="ResetAll" TypeName="opc:Boolean" />
-    <opc:Field Name="NoOfConfigureJointReport" TypeName="opc:Int32" />
-    <opc:Field Name="ConfigureJointReport" TypeName="tns:CRCL_ConfigureJointReportDataType" LengthField="NoOfConfigureJointReport" />
+    <opc:Field Name="realTimeCommand" TypeName="opc:Boolean" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="realTimeParameterNode" TypeName="ua:NodeId" SourceType="tns:CRCLCommandDataType" />
+    <opc:Field Name="NoOfguard" TypeName="opc:Int32" />
+    <opc:Field Name="guard" TypeName="tns:CRCL_GuardDataType" LengthField="NoOfguard" />
+    <opc:Field Name="resetAll" TypeName="opc:Boolean" />
+    <opc:Field Name="NoOfconfigureJointReport" TypeName="opc:Int32" />
+    <opc:Field Name="configureJointReport" TypeName="tns:CRCL_ConfigureJointReportDataType" LengthField="NoOfconfigureJointReport" />
   </opc:StructuredType>
 
   <opc:EnumeratedType Name="CRCL_CommandStateEnumDataType" LengthInBits="32">
@@ -992,338 +989,412 @@
     <opc:Field Name="sensorStatuses" TypeName="tns:CRCL_SensorStatusesDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="PubSubIPAddresses" BaseType="ua:ExtensionObject">
-    <opc:Documentation>PubSub IP addresses: IPAddress_Skill is the address where the SAMYCore is Publishing and the SAMYPlugIn is Subscribed; IPAddress_Status is the address where the SAMYCore is Subscribed and the SAMYCore is Publishing</opc:Documentation>
-    <opc:Field Name="IPAddress_Skill" TypeName="opc:String" />
-    <opc:Field Name="IPAddress_Status" TypeName="opc:String" />
-  </opc:StructuredType>
-
-  <opc:StructuredType Name="SAMYRobotDataType" BaseType="tns:CRCL_DataThingDataType">
-    <opc:Documentation>CRCLProgramm</opc:Documentation>
-    <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
-    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
-    <opc:Field Name="Requested_Skill" TypeName="tns:CRCLSkillDataType" />
-    <opc:Field Name="Requested_Skill_Success" TypeName="opc:Boolean" />
-    <opc:Field Name="Active" TypeName="opc:Boolean" />
-    <opc:Field Name="Online" TypeName="opc:Boolean" />
-    <opc:Field Name="IPAddresses" TypeName="tns:PubSubIPAddresses" />
-  </opc:StructuredType>
-
   <opc:StructuredType Name="CRCLCommandsUnionDataType" BaseType="ua:Union">
     <opc:Documentation>CRCLCommandsUnionDataType</opc:Documentation>
     <opc:Field Name="SwitchField" TypeName="opc:UInt32" />
-    <opc:Field Name="InitCanonCommand" TypeName="tns:InitCanonDataType" />
-    <opc:Field Name="EndCanonCommand" TypeName="tns:EndCanonDataType" />
-    <opc:Field Name="MessageCommand" TypeName="tns:MessageDataType" />
-    <opc:Field Name="MoveToCommand" TypeName="tns:MoveToDataType" />
-    <opc:Field Name="MoveScrewCommand" TypeName="tns:MoveScrewDataType" />
-    <opc:Field Name="MoveThroughToCommand" TypeName="tns:MoveThroughToDataType" />
-    <opc:Field Name="DwellCommand" TypeName="tns:DwellDataType" />
-    <opc:Field Name="ActuateJointsCommand" TypeName="tns:ActuateJointsDataType" />
-    <opc:Field Name="ConfigureJointReportsCommand" TypeName="tns:ConfigureJointReportsDataType" />
-    <opc:Field Name="SetDefaultJointPositionsTolerancesCommand" TypeName="tns:SetDefaultJointPositionsTolerancesDataType" />
-    <opc:Field Name="GetStatusCommand" TypeName="tns:GetStatusDataType" />
-    <opc:Field Name="CloseToolChangerCommand" TypeName="tns:CloseToolChangerDataType" />
-    <opc:Field Name="OpenToolChangerCommand" TypeName="tns:OpenToolChangerDataType" />
-    <opc:Field Name="SetRobotParametersCommand" TypeName="tns:SetRobotParametersDataType" />
-    <opc:Field Name="SetEndeffectorParametersCommand" TypeName="tns:SetEndeffectorParametersDataType" />
-    <opc:Field Name="SetEndeffectorCommand" TypeName="tns:SetEndeffectorDataType" />
-    <opc:Field Name="SetTransAccelCommand" TypeName="tns:SetTransAccelDataType" />
-    <opc:Field Name="SetTransSpeedCommand" TypeName="tns:SetTransSpeedDataType" />
-    <opc:Field Name="SetRotAccelCommand" TypeName="tns:SetRotAccelDataType" />
-    <opc:Field Name="SetRotSpeedCommand" TypeName="tns:SetRotSpeedDataType" />
-    <opc:Field Name="SetAngleUnitsCommand" TypeName="tns:SetAngleUnitsDataType" />
-    <opc:Field Name="SetEndPoseToleranceCommand" TypeName="tns:SetEndPoseToleranceDataType" />
-    <opc:Field Name="SetForceUnitsCommand" TypeName="tns:SetForceUnitsDataType" />
-    <opc:Field Name="SetIntermediatePoseToleranceCommand" TypeName="tns:SetIntermediatePoseToleranceDataType" />
-    <opc:Field Name="SetLengthUnitsCommand" TypeName="tns:SetLengthUnitsDataType" />
-    <opc:Field Name="SetMotionCoordinationCommand" TypeName="tns:SetMotionCoordinationDataType" />
-    <opc:Field Name="SetTorqueUnitsCommand" TypeName="tns:SetTorqueUnitsDataType" />
-    <opc:Field Name="StopMotionCommand" TypeName="tns:StopMotionDataType" />
-    <opc:Field Name="ConfigureStatusReportCommand" TypeName="tns:ConfigureStatusReportDataType" />
-    <opc:Field Name="EnableSensorCommand" TypeName="tns:EnableSensorDataType" />
-    <opc:Field Name="DisableSensorCommand" TypeName="tns:DisableSensorDataType" />
-    <opc:Field Name="EnableGripperCommand" TypeName="tns:EnableGripperDataType" />
-    <opc:Field Name="DisableGripperCommand" TypeName="tns:DisableGripperDataType" />
-    <opc:Field Name="EnableRobotParameterStatusCommand" TypeName="tns:EnableRobotParameterStatusDataType" />
-    <opc:Field Name="DisableRobotParameterStatusCommand" TypeName="tns:DisableRobotParameterStatusDataType" />
+    <opc:Field Name="initCanonCommand" TypeName="tns:InitCanonDataType" />
+    <opc:Field Name="endCanonCommand" TypeName="tns:EndCanonDataType" />
+    <opc:Field Name="messageCommand" TypeName="tns:MessageDataType" />
+    <opc:Field Name="moveToCommand" TypeName="tns:MoveToDataType" />
+    <opc:Field Name="moveScrewCommand" TypeName="tns:MoveScrewDataType" />
+    <opc:Field Name="moveThroughToCommand" TypeName="tns:MoveThroughToDataType" />
+    <opc:Field Name="dwellCommand" TypeName="tns:DwellDataType" />
+    <opc:Field Name="actuateJointsCommand" TypeName="tns:ActuateJointsDataType" />
+    <opc:Field Name="configureJointReportsCommand" TypeName="tns:ConfigureJointReportsDataType" />
+    <opc:Field Name="setDefaultJointPositionsTolerancesCommand" TypeName="tns:SetDefaultJointPositionsTolerancesDataType" />
+    <opc:Field Name="getStatusCommand" TypeName="tns:GetStatusDataType" />
+    <opc:Field Name="closeToolChangerCommand" TypeName="tns:CloseToolChangerDataType" />
+    <opc:Field Name="openToolChangerCommand" TypeName="tns:OpenToolChangerDataType" />
+    <opc:Field Name="setRobotParametersCommand" TypeName="tns:SetRobotParametersDataType" />
+    <opc:Field Name="setEndeffectorParametersCommand" TypeName="tns:SetEndeffectorParametersDataType" />
+    <opc:Field Name="setEndeffectorCommand" TypeName="tns:SetEndeffectorDataType" />
+    <opc:Field Name="setTransAccelCommand" TypeName="tns:SetTransAccelDataType" />
+    <opc:Field Name="setTransSpeedCommand" TypeName="tns:SetTransSpeedDataType" />
+    <opc:Field Name="setRotAccelCommand" TypeName="tns:SetRotAccelDataType" />
+    <opc:Field Name="setRotSpeedCommand" TypeName="tns:SetRotSpeedDataType" />
+    <opc:Field Name="setAngleUnitsCommand" TypeName="tns:SetAngleUnitsDataType" />
+    <opc:Field Name="setEndPoseToleranceCommand" TypeName="tns:SetEndPoseToleranceDataType" />
+    <opc:Field Name="setForceUnitsCommand" TypeName="tns:SetForceUnitsDataType" />
+    <opc:Field Name="setIntermediatePoseToleranceCommand" TypeName="tns:SetIntermediatePoseToleranceDataType" />
+    <opc:Field Name="setLengthUnitsCommand" TypeName="tns:SetLengthUnitsDataType" />
+    <opc:Field Name="setMotionCoordinationCommand" TypeName="tns:SetMotionCoordinationDataType" />
+    <opc:Field Name="setTorqueUnitsCommand" TypeName="tns:SetTorqueUnitsDataType" />
+    <opc:Field Name="stopMotionCommand" TypeName="tns:StopMotionDataType" />
+    <opc:Field Name="configureStatusReportCommand" TypeName="tns:ConfigureStatusReportDataType" />
+    <opc:Field Name="enableSensorCommand" TypeName="tns:EnableSensorDataType" />
+    <opc:Field Name="disableSensorCommand" TypeName="tns:DisableSensorDataType" />
+    <opc:Field Name="enableGripperCommand" TypeName="tns:EnableGripperDataType" />
+    <opc:Field Name="disableGripperCommand" TypeName="tns:DisableGripperDataType" />
+    <opc:Field Name="enableRobotParameterStatusCommand" TypeName="tns:EnableRobotParameterStatusDataType" />
+    <opc:Field Name="disableRobotParameterStatusCommand" TypeName="tns:DisableRobotParameterStatusDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="CRCLSkillDataType" BaseType="tns:CRCL_DataThingDataType">
+  <opc:StructuredType Name="CRCLCommandsBufferDataType" BaseType="tns:CRCL_DataThingDataType">
     <opc:Documentation>CRCLProgramm</opc:Documentation>
     <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
     <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
-    <opc:Field Name="NoOfCRCLCommands" TypeName="opc:Int32" />
-    <opc:Field Name="CRCLCommands" TypeName="tns:CRCLCommandsUnionDataType" LengthField="NoOfCRCLCommands" />
+    <opc:Field Name="NoOfcrclCommands" TypeName="opc:Int32" />
+    <opc:Field Name="crclCommands" TypeName="tns:CRCLCommandsUnionDataType" LengthField="NoOfcrclCommands" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="CRCLCommandParametersSetDataType" BaseType="ua:ExtensionObject">
+  <opc:StructuredType Name="CRCLCommandParamsSetDataType" BaseType="ua:ExtensionObject">
     <opc:Documentation>Parameters of a CRCL Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" />
+    <opc:Field Name="name" TypeName="opc:String" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="InitCanonParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="InitCanonParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of an Init Command (does not require parameters).</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="EndCanonParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="EndCanonParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of an EndCanon Command (does not require parameters).</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="GetStatusParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="GetStatusParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a GetStatus Command (does not require parameters).</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="CloseToolChangerParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="CloseToolChangerParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a CloseToolChanger Command (does not require parameters).</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="OpenToolChangerParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="OpenToolChangerParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a OpenToolChanger Command (does not require parameters).</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="MessageParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="MessageParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a Message Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="Message" TypeName="opc:String" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="message" TypeName="opc:String" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="MoveToParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="MoveToParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a MoveToCommand.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="MoveStraight" TypeName="opc:Boolean" />
-    <opc:Field Name="EndPosition" TypeName="tns:CRCL_PoseDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="moveStraight" TypeName="opc:Boolean" />
+    <opc:Field Name="endPosition" TypeName="tns:CRCL_PoseDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="MoveScrewParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="MoveScrewParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a MoveScrew Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="StartPosition" TypeName="tns:CRCL_PoseDataType" />
-    <opc:Field Name="AxisPoint" TypeName="tns:CRCL_PointDataType" />
-    <opc:Field Name="AxialDistanceFree" TypeName="opc:Double" />
-    <opc:Field Name="AxialDistanceScrew" TypeName="opc:Double" />
-    <opc:Field Name="Turn" TypeName="opc:Double" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="startPosition" TypeName="tns:CRCL_PoseDataType" />
+    <opc:Field Name="axisPoint" TypeName="tns:CRCL_PointDataType" />
+    <opc:Field Name="axialDistanceFree" TypeName="opc:Double" />
+    <opc:Field Name="axialDistanceScrew" TypeName="opc:Double" />
+    <opc:Field Name="turn" TypeName="opc:Double" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="MoveThroughToParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="MoveThroughToParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a MoveThroughTo Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="MoveStraight" TypeName="opc:Boolean" />
-    <opc:Field Name="NoOfWaypoint" TypeName="opc:Int32" />
-    <opc:Field Name="Waypoint" TypeName="tns:CRCL_PoseDataType" LengthField="NoOfWaypoint" />
-    <opc:Field Name="NumPositions" TypeName="opc:Int32" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="moveStraight" TypeName="opc:Boolean" />
+    <opc:Field Name="NoOfwaypoint" TypeName="opc:Int32" />
+    <opc:Field Name="waypoint" TypeName="tns:CRCL_PoseDataType" LengthField="NoOfwaypoint" />
+    <opc:Field Name="numPositions" TypeName="opc:Int32" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="DwellParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="DwellParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a Dwell Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="DwellTime" TypeName="opc:Double" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="dwellTime" TypeName="opc:Double" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="ActuateJointsParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="ActuateJointsParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a ActuateJoints Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="NoOfActuateJoint" TypeName="opc:Int32" />
-    <opc:Field Name="ActuateJoint" TypeName="tns:CRCL_ActuateJointDataType" LengthField="NoOfActuateJoint" />
-    <opc:Field Name="JointTolerances" TypeName="tns:CRCL_JointPositionsTolerancesDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="NoOfactuateJoint" TypeName="opc:Int32" />
+    <opc:Field Name="actuateJoint" TypeName="tns:CRCL_ActuateJointDataType" LengthField="NoOfactuateJoint" />
+    <opc:Field Name="jointTolerances" TypeName="tns:CRCL_JointPositionsTolerancesDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="ConfigureJointReportsParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="ConfigureJointReportsParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a ConfigureJointreports Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="ResetAll" TypeName="opc:Boolean" />
-    <opc:Field Name="NoOfConfigureJointReport" TypeName="opc:Int32" />
-    <opc:Field Name="ConfigureJointReport" TypeName="tns:CRCL_ConfigureJointReportDataType" LengthField="NoOfConfigureJointReport" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="resetAll" TypeName="opc:Boolean" />
+    <opc:Field Name="NoOfconfigureJointReport" TypeName="opc:Int32" />
+    <opc:Field Name="configureJointReport" TypeName="tns:CRCL_ConfigureJointReportDataType" LengthField="NoOfconfigureJointReport" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="SetDefaultJointPositionsTolerancesParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="SetDefaultJointPositionsTolerancesParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a SetDefaultJointPositionsTolerances Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="JointTolerances" TypeName="tns:CRCL_JointPositionsTolerancesDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="jointTolerances" TypeName="tns:CRCL_JointPositionsTolerancesDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="SetRobotParametersParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="SetRobotParametersParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a SetRobotParameters Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="NoOfParameterSetting" TypeName="opc:Int32" />
-    <opc:Field Name="ParameterSetting" TypeName="tns:CRCL_ParameterSettingDataType" LengthField="NoOfParameterSetting" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="NoOfparameterSetting" TypeName="opc:Int32" />
+    <opc:Field Name="parameterSetting" TypeName="tns:CRCL_ParameterSettingDataType" LengthField="NoOfparameterSetting" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="SetEndeffectorParametersParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="SetEndeffectorParametersParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a SetEndeffectorParameters Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="NoOfParameterSetting" TypeName="opc:Int32" />
-    <opc:Field Name="ParameterSetting" TypeName="tns:CRCL_ParameterSettingDataType" LengthField="NoOfParameterSetting" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="NoOfparameterSetting" TypeName="opc:Int32" />
+    <opc:Field Name="parameterSetting" TypeName="tns:CRCL_ParameterSettingDataType" LengthField="NoOfparameterSetting" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="SetEndeffectorParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="SetEndeffectorParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a SetEndeffector Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="Setting" TypeName="tns:CRCL_FractionDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="setting" TypeName="tns:CRCL_FractionDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="SetTransSpeedParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="SetTransSpeedParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a SetTransSpeed Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="TransSpeed" TypeName="tns:CRCL_TransSpeedDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="transSpeed" TypeName="tns:CRCL_TransSpeedDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="SetTransAccelParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="SetTransAccelParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a SetTransAccel Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="TransAccel" TypeName="tns:CRCL_TransAccelDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="transAccel" TypeName="tns:CRCL_TransAccelDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="SetRotSpeedParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="SetRotSpeedParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a SetTransSpeed Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RotSpeed" TypeName="tns:CRCL_RotSpeedDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="rotSpeed" TypeName="tns:CRCL_RotSpeedDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="SetRotAccelParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="SetRotAccelParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a SetRotAccel Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RotAccel" TypeName="tns:CRCL_RotAccelDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="rotAccel" TypeName="tns:CRCL_RotAccelDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="SetAngleUnitsParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="SetAngleUnitsParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a SetAngleUnits Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="UnitName" TypeName="tns:CRCL_AngleUnitEnumDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="unitName" TypeName="tns:CRCL_AngleUnitEnumDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="SetEndPoseToleranceParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="SetEndPoseToleranceParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a SetEndPoseTolerance Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="Tolerance" TypeName="tns:CRCL_PoseToleranceDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="tolerance" TypeName="tns:CRCL_PoseToleranceDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="SetForceUnitsParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="SetForceUnitsParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a SetForceUnits Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="UnitName" TypeName="tns:CRCL_ForceUnitEnumDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="unitName" TypeName="tns:CRCL_ForceUnitEnumDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="SetIntermediatePoseToleranceParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="SetIntermediatePoseToleranceParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a SetIntermediatePoseTolerance Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="Tolerance" TypeName="tns:CRCL_PoseToleranceDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="tolerance" TypeName="tns:CRCL_PoseToleranceDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="SetLengthUnitsParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="SetLengthUnitsParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a SetLengthUnits Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="UnitName" TypeName="tns:CRCL_LengthUnitEnumDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="unitName" TypeName="tns:CRCL_LengthUnitEnumDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="SetMotionCoordinationParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="SetMotionCoordinationParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a SetMotionCoordination Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="Coordinated" TypeName="opc:Boolean" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="coordinated" TypeName="opc:Boolean" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="SetTorqueUnitsParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="SetTorqueUnitsParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a SetTorqueUnits Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="UnitName" TypeName="tns:CRCL_TorqueUnitEnumDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="unitName" TypeName="tns:CRCL_TorqueUnitEnumDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="StopMotionParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="StopMotionParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a StopMotion Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="StopCondition" TypeName="tns:CRCL_StopConditionEnumDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="stopCondition" TypeName="tns:CRCL_StopConditionEnumDataType" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="ConfigureStatusReportParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="ConfigureStatusReportParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a ConfigureStatusReport Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="ReportJointStatuses" TypeName="opc:Boolean" />
-    <opc:Field Name="ReportPoseStatus" TypeName="opc:Boolean" />
-    <opc:Field Name="ReportGripperStatus" TypeName="opc:Boolean" />
-    <opc:Field Name="ReportSettingsStatus" TypeName="opc:Boolean" />
-    <opc:Field Name="ReportSensorsStatus" TypeName="opc:Boolean" />
-    <opc:Field Name="ReportGuardsStatus" TypeName="opc:Boolean" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="reportJointStatuses" TypeName="opc:Boolean" />
+    <opc:Field Name="reportPoseStatus" TypeName="opc:Boolean" />
+    <opc:Field Name="reportGripperStatus" TypeName="opc:Boolean" />
+    <opc:Field Name="reportSettingsStatus" TypeName="opc:Boolean" />
+    <opc:Field Name="reportSensorsStatus" TypeName="opc:Boolean" />
+    <opc:Field Name="reportGuardsStatus" TypeName="opc:Boolean" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="EnableSensorParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="EnableSensorParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a EnableSensor Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="SensorID" TypeName="opc:String" />
-    <opc:Field Name="NoOfSensorOption" TypeName="opc:Int32" />
-    <opc:Field Name="SensorOption" TypeName="tns:CRCL_ParameterSettingDataType" LengthField="NoOfSensorOption" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="sensorID" TypeName="opc:String" />
+    <opc:Field Name="NoOfsensorOption" TypeName="opc:Int32" />
+    <opc:Field Name="sensorOption" TypeName="tns:CRCL_ParameterSettingDataType" LengthField="NoOfsensorOption" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="DisableSensorParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="DisableSensorParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a DisableSensor Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="SensorID" TypeName="opc:String" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="sensorID" TypeName="opc:String" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="EnableGripperParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="EnableGripperParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a EnableGripper Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="GripperName" TypeName="opc:String" />
-    <opc:Field Name="NoOfGripperOption" TypeName="opc:Int32" />
-    <opc:Field Name="GripperOption" TypeName="tns:CRCL_ParameterSettingDataType" LengthField="NoOfGripperOption" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="gripperName" TypeName="opc:String" />
+    <opc:Field Name="NoOfgripperOption" TypeName="opc:Int32" />
+    <opc:Field Name="gripperOption" TypeName="tns:CRCL_ParameterSettingDataType" LengthField="NoOfgripperOption" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="DisableGripperParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="DisableGripperParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a DisableGripper Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="GripperName" TypeName="opc:String" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="gripperName" TypeName="opc:String" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="EnableRobotParameterStatusParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="EnableRobotParameterStatusParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a EnableRobotParameterStatus Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RobotParameterName" TypeName="opc:String" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="robotParameterName" TypeName="opc:String" />
   </opc:StructuredType>
 
-  <opc:StructuredType Name="DisableRobotParameterStatusParametersSetDataType" BaseType="tns:CRCLCommandParametersSetDataType">
+  <opc:StructuredType Name="DisableRobotParameterStatusParamsSetDataType" BaseType="tns:CRCLCommandParamsSetDataType">
     <opc:Documentation>Parameters of a DisableRobotParameterStatus Command.</opc:Documentation>
-    <opc:Field Name="Name" TypeName="opc:String" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RealTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParametersSetDataType" />
-    <opc:Field Name="RobotParameterName" TypeName="opc:String" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameter" TypeName="opc:Boolean" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="realTimeParameterNodeID" TypeName="ua:NodeId" SourceType="tns:CRCLCommandParamsSetDataType" />
+    <opc:Field Name="robotParameterName" TypeName="opc:String" />
   </opc:StructuredType>
+
+  <opc:StructuredType Name="CRCLCommandsParamsSetsUnionDataType" BaseType="ua:Union">
+    <opc:Documentation>CRCLCommandsParamsSetsUnionDataType</opc:Documentation>
+    <opc:Field Name="SwitchField" TypeName="opc:UInt32" />
+    <opc:Field Name="initCanonParamsSet" TypeName="tns:InitCanonParamsSetDataType" />
+    <opc:Field Name="endCanonParamsSet" TypeName="tns:EndCanonParamsSetDataType" />
+    <opc:Field Name="messageParamsSet" TypeName="tns:MessageParamsSetDataType" />
+    <opc:Field Name="moveToParamsSet" TypeName="tns:MoveToParamsSetDataType" />
+    <opc:Field Name="moveScrewParamsSet" TypeName="tns:MoveScrewParamsSetDataType" />
+    <opc:Field Name="moveThroughToParamsSet" TypeName="tns:MoveThroughToParamsSetDataType" />
+    <opc:Field Name="dwellParamsSet" TypeName="tns:DwellParamsSetDataType" />
+    <opc:Field Name="actuateJointsParamsSet" TypeName="tns:ActuateJointsParamsSetDataType" />
+    <opc:Field Name="configureJointReportsParamsSet" TypeName="tns:ConfigureJointReportsParamsSetDataType" />
+    <opc:Field Name="setDefaultJointPositionsTolerancesParamsSet" TypeName="tns:SetDefaultJointPositionsTolerancesParamsSetDataType" />
+    <opc:Field Name="getStatusParamsSet" TypeName="tns:GetStatusParamsSetDataType" />
+    <opc:Field Name="closeToolChangerParamsSet" TypeName="tns:CloseToolChangerParamsSetDataType" />
+    <opc:Field Name="openToolChangerParamsSet" TypeName="tns:OpenToolChangerParamsSetDataType" />
+    <opc:Field Name="setRobotParametersParamsSet" TypeName="tns:SetRobotParametersParamsSetDataType" />
+    <opc:Field Name="setEndeffectorParametersParamsSet" TypeName="tns:SetEndeffectorParametersParamsSetDataType" />
+    <opc:Field Name="setEndeffectorParamsSet" TypeName="tns:SetEndeffectorParamsSetDataType" />
+    <opc:Field Name="setTransAccelParamsSet" TypeName="tns:SetTransAccelParamsSetDataType" />
+    <opc:Field Name="setTransSpeedParamsSet" TypeName="tns:SetTransSpeedParamsSetDataType" />
+    <opc:Field Name="setRotAccelParamsSet" TypeName="tns:SetRotAccelParamsSetDataType" />
+    <opc:Field Name="setRotSpeedParamsSet" TypeName="tns:SetRotSpeedParamsSetDataType" />
+    <opc:Field Name="setAngleUnitsParamsSet" TypeName="tns:SetAngleUnitsParamsSetDataType" />
+    <opc:Field Name="setEndPoseToleranceParamsSet" TypeName="tns:SetEndPoseToleranceParamsSetDataType" />
+    <opc:Field Name="setForceUnitsParamsSet" TypeName="tns:SetForceUnitsParamsSetDataType" />
+    <opc:Field Name="setIntermediatePoseToleranceParamsSet" TypeName="tns:SetIntermediatePoseToleranceParamsSetDataType" />
+    <opc:Field Name="setLengthUnitsParamsSet" TypeName="tns:SetLengthUnitsParamsSetDataType" />
+    <opc:Field Name="setMotionCoordinationParamsSet" TypeName="tns:SetMotionCoordinationParamsSetDataType" />
+    <opc:Field Name="setTorqueUnitsParamsSet" TypeName="tns:SetTorqueUnitsParamsSetDataType" />
+    <opc:Field Name="stopMotionParamsSet" TypeName="tns:StopMotionParamsSetDataType" />
+    <opc:Field Name="configureStatusReportParamsSet" TypeName="tns:ConfigureStatusReportParamsSetDataType" />
+    <opc:Field Name="enableSensorParamsSet" TypeName="tns:EnableSensorParamsSetDataType" />
+    <opc:Field Name="disableSensorParamsSet" TypeName="tns:DisableSensorParamsSetDataType" />
+    <opc:Field Name="enableGripperParamsSet" TypeName="tns:EnableGripperParamsSetDataType" />
+    <opc:Field Name="disableGripperParamsSet" TypeName="tns:DisableGripperParamsSetDataType" />
+    <opc:Field Name="enableRobotParameterStatusParamsSet" TypeName="tns:EnableRobotParameterStatusParamsSetDataType" />
+    <opc:Field Name="disableRobotParameterStatusParamsSet" TypeName="tns:DisableRobotParameterStatusParamsSetDataType" />
+  </opc:StructuredType>
+
+  <opc:StructuredType Name="CRCLCommandsParamsSetsBufferDataType" BaseType="tns:CRCL_DataThingDataType">
+    <opc:Documentation>The array of CRCLCommandsParamsSets that allows instantiating CRCLCommands</opc:Documentation>
+    <opc:Field Name="id" TypeName="opc:UInt32" SourceType="tns:CRCL_DataThingDataType" />
+    <opc:Field Name="name" TypeName="opc:String" SourceType="tns:CRCL_DataThingDataType" />
+    <opc:Field Name="NoOfcrclCommandsParamsSets" TypeName="opc:Int32" />
+    <opc:Field Name="crclCommandsParamsSets" TypeName="tns:CRCLCommandsParamsSetsUnionDataType" LengthField="NoOfcrclCommandsParamsSets" />
+  </opc:StructuredType>
+
+  <opc:EnumeratedType Name="CRCLCommandsBufferState" LengthInBits="32">
+    <opc:EnumeratedValue Name="PROCESSING_PENDING" Value="0" />
+    <opc:EnumeratedValue Name="PROCESSING_RUNNING" Value="1" />
+    <opc:EnumeratedValue Name="PROCESSING_FAILED" Value="2" />
+    <opc:EnumeratedValue Name="AWAITING" Value="3" />
+  </opc:EnumeratedType>
 
 </opc:TypeDictionary>
