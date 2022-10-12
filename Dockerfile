@@ -56,3 +56,4 @@ EXPOSE 4840
 #CMD ["-f","/dev/null"]
 CMD ["/usr/src/samy/build/SAMYCore", "/usr/src/samy/configFiles_examples/SAMYCoreConfig.yaml"]
 
+
