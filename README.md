@@ -20,16 +20,14 @@ git clone --recursive https://github.com/open62541/open62541.git -b 1.2 --single
       -DUA_ENABLE_NODEMANAGEMENT=ON \
       -DUA_ENABLE_ENCRYPTION=OFF \
       .. \
-&& make -j7 && make install \
-&& cd /usr/src/samy && rm -rf ./open62541
+&& make -j7 && make install
 ```
 
 #### Catch2 v2.13.4 (testing)
 ```
 git clone https://github.com/catchorg/Catch2.git -b v2.13.4 --single-branch \
 && cd Catch2 && mkdir build && cd build \
-&& cmake .. && make -j7 && make install \
-&& cd /usr/src/samy && rm -rf ./Catch2
+&& cmake .. && make -j7 && make install
 ```
 
 #### SPDLog v1.5.0 (Logging)
@@ -60,8 +58,7 @@ Eventually can be built from source: https://github.com/jbeder/yaml-cpp.git
 ```
 git clone --recursive https://github.com/jbeder/yaml-cpp.git -b yaml-cpp-0.6.2 --single-branch \
 && cd yaml-cpp && mkdir build && cd build \
-&& cmake -DBUILD_SHARED_LIBS=ON .. && make -j7 && make install \
-&& cd /usr/src/samy && rm -rf ./yaml-cpp
+&& cmake -DBUILD_SHARED_LIBS=ON .. && make -j7 && make install
 ```
 
 
