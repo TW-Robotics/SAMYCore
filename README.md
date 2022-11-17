@@ -90,3 +90,6 @@ git clone --recursive https://github.com/jbeder/yaml-cpp.git -b yaml-cpp-0.6.2 -
  - **Windows:** Start the Windows Powershell and navigate to the root directory of the repository
  - **Ubuntu:** Navigate to the root directory of the repository
  - To build the SAMY Core execute the command: <code>$docker build -t core . </code>
+ - After the build has finished, the SAMY-Core can be started within a docker-compose file of the Uscases.
+ 
+ > Notice: It's not recommended to start SAMY-Core manually. 
