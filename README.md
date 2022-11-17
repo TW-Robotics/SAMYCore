@@ -71,3 +71,22 @@ git clone --recursive https://github.com/jbeder/yaml-cpp.git -b yaml-cpp-0.6.2 -
  - ThirdPart: External header-only libraries
  - Tools: Scripts for different purposes
  - Skills: Place in this folder you scripted skills. The SAMYCore will automatically look for them and load them (more info coming)
+ 
+ # How to set up with Docker
+ In this section of the readme a step by step instruction is given to set up the samycore with docker.
+ 
+ ### Installing docker(Windows)
+ - To install docker on Windows go to the [Docker Install Site for Windows](https://docs.docker.com/desktop/install/windows-install/)
+ - Download the latest version of the Docker Desktop for Windows
+ - To run Docker on Windows you need to also enable Virtualisation in the UEFI/BIOS of your computer
+ - Furthermore the Docker Setup will prompt you to install the WSL2 Feature
+ - After the Setup the computer will need a restart
+ 
+ ### Installing docker (Ubuntu)
+ - Follow the instructions on the [Docker Install Site for Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+ 
+ ### Get the docker image running
+ - First, clone this repository with the main branch
+ - **Windows:** Start the Windows Powershell and navigate to the root directory of the repository
+ - **Ubuntu:** Navigate to the root directory of the repository
+ - To build the SAMY Core execute the command: <code>$docker build -t core . </code>
