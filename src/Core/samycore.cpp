@@ -3,6 +3,10 @@
 #include <open62541/server_config_default.h>
 
 #include <samycore.h>
+#include <crcl_Reflection.h>
+#include <di_Reflection.h>
+#include<robotics_Reflection.h>
+#include <fortiss_di_Reflection.h>
 
 namespace SAMY {
 

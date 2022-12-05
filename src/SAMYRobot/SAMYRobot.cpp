@@ -109,7 +109,8 @@ UA_StatusCode SAMYRobot::readSkillLastTransitionId(
     return UA_STATUSCODE_BADINTERNALERROR;
 }
 
-UA_StatusCode SAMYRobot::writeBufferedCommands(){
+UA_StatusCode SAMYRobot::writeBufferedCommands()
+{
     UA_Variant value;
     UA_Variant_init(&value);
 
@@ -122,6 +123,9 @@ UA_StatusCode SAMYRobot::writeBufferedCommands(){
     UA_Variant_setScalar( &value, &buf, &UA_TYPES_CRCL[UA_TYPES_CRCL_CRCLCOMMANDSPARAMSSETSBUFFERDATATYPE] );
 
     UA_StatusCode retval = UA_Server_writeValue(server, commandsBufferNodeId, value);
+    if( retval != UA_STATUSCODE_GOOD ){
+        logger->error("Failed writting BufferedCommands");
+    }
 
     return retval;
 }
@@ -138,7 +142,7 @@ UA_StatusCode SAMYRobot::writeBufferedCommandsState( UA_CRCLCommandsBufferState 
     UA_StatusCode retval = UA_Server_writeValue(server, commandsBufferStateNodeId, value);
 
     if( retval != UA_STATUSCODE_GOOD ){
-        std::cout << "ERROR IN writeBufferedCommandsState" << std::endl;
+        logger->error("Failed writting BufferedCommandsState");
         commandsBufferState = previous;
     }
 
@@ -146,8 +150,14 @@ UA_StatusCode SAMYRobot::writeBufferedCommandsState( UA_CRCLCommandsBufferState 
 }
 
 UA_StatusCode SAMYRobot::writeBufferedCommandsAndUpdateState(){
-    writeBufferedCommands();
-    writeBufferedCommandsState( UA_CRCLCOMMANDSBUFFERSTATE_PROCESSING_PENDING );
+    auto retval = writeBufferedCommands();
+    if(retval != UA_STATUSCODE_GOOD){
+        logger->error("Step writeBufferedCommands in writeBufferedCommandsAndUpdateState failed. The problem could be generated because not everything is correctly initialized in your scripted skill...");
+        return retval;
+    }
+
+    retval |= writeBufferedCommandsState( UA_CRCLCOMMANDSBUFFERSTATE_PROCESSING_PENDING );
+    return retval;
 }
 
 bool SAMYRobot::executeSkill( uint32_t skillIdx ){
@@ -159,7 +169,6 @@ bool SAMYRobot::executeSkill( uint32_t skillIdx ){
 // Function executed by the thread pool. Better use a conditional_variable here and on onBufferedCommandsStateChange!!
 bool SAMYRobot::waitForCommandsBufferDone()
 {
-    std::cout << "waitForCommandsBufferDone enters, commandsBufferState value: " << commandsBufferState << std::endl;
     // waits until the SAMYPlugin finishes executing the buffer and sets its commandBufferState to UA_CRCLCOMMANDSBUFFERSTATE_AWAITING or UA_CRCLCOMMANDSBUFFERSTATE_PROCESSING_FAILED
     while ( commandsBufferState == UA_CRCLCOMMANDSBUFFERSTATE_PROCESSING_RUNNING ||
             commandsBufferState == UA_CRCLCOMMANDSBUFFERSTATE_PROCESSING_PENDING )
@@ -167,12 +176,12 @@ bool SAMYRobot::waitForCommandsBufferDone()
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
 
-    std::cout << "waitForCommandsBufferDone enters exit, commandsBufferState " << commandsBufferState << std::endl;
-
-    if( commandsBufferState == UA_CRCLCOMMANDSBUFFERSTATE_PROCESSING_FAILED )
+    if( commandsBufferState == UA_CRCLCOMMANDSBUFFERSTATE_PROCESSING_FAILED ){
+        logger->error("The agent failed executing the commands");
         return false;
-    else
+    }else{
         return true;
+    }
 }
 
 void SAMYRobot::onBufferedCommandsStateChange(UA_Server *server,
@@ -194,7 +203,7 @@ void SAMYRobot::onBufferedCommandsStateChange(UA_Server *server,
 
     UA_CRCLCommandsBufferState * const state = static_cast<UA_CRCLCommandsBufferState* const>( value->value.data );
 
-    std::cout << "onBufferedCommandsStateChange " << *state << std::endl;
+    robot->logger->info("BufferCommandsState changed to {}", *state);
 
     switch (*state){
     case UA_CRCLCOMMANDSBUFFERSTATE_PROCESSING_PENDING: // Buffer was updated but not yet processed by the SAMYPlugin
@@ -221,14 +230,6 @@ void SAMYRobot::onBufferedCommandsStateChange(UA_Server *server,
         break;
     }
 }
-
-/*
-bool SAMYRobot::waitForCommandsBufferDone()
-{
-    bool retval = executingFuture.get();
-    return retval;
-}
-*/
 
 UA_StatusCode SAMYRobot::initializeRobotSkills()
 {

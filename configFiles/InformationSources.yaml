@@ -1,0 +1,54 @@
+InformationSourcesDescriptions:
+      # - InformationSourceDescription:
+      #         InformationSourceName: "LightBarrierStorage1"
+      #         DataTypes:
+      #               - Boolean
+      # - InformationSourceDescription:
+      #         InformationSourceName: "LightBarrierStorage2"
+      #         DataTypes:
+      #               - Boolean
+      # - InformationSourceDescription:
+      #         InformationSourceName: "CameraPose"
+      #         DataTypes:
+      #               - MoveToParamsSetDataType
+      # - InformationSourceDescription:
+      #         InformationSourceName: "YellowPartDetected"
+      #         DataTypes:
+      #               - Boolean
+      # - InformationSourceDescription:
+      #         InformationSourceName: "GreyPartDetected"
+      #         DataTypes:
+      #               - Boolean
+InformationSources:
+      - InformationSource:
+              InformationSourceName: "LightBarrierStorage1"
+              DataTypes:
+                    - Boolean
+      - InformationSource:
+              InformationSourceName: "LightBarrierStorage2"
+              DataTypes:
+                    - Boolean
+      - InformationSource:
+              InformationSourceName: "CameraPose"
+              DataTypes:
+                    - MoveToParamsSetDataType
+      - InformationSource:
+              InformationSourceName: "YellowPartDetected"
+              DataTypes:
+                    - Boolean
+      - InformationSource:
+              InformationSourceName: "GreyPartDetected"
+              DataTypes:
+                    - Boolean
+      - InformationSource:
+              InformationSourceName: "GridPosition"
+              DataTypes:
+                    - UInt32
+# - InformationSource:
+#       InformationSourceName: "DistanceSensor1"
+#       DataTypes:
+#             - Double
+# - InformationSource:
+#       InformationSourceName: "DistanceSensor2"
+#       DataTypes:
+#             - Double

@@ -1,0 +1,18 @@
+SAMYCoreConfig:
+   AppURI: "AppURItest"
+   AppName: "Vereinzelung"
+   Server:
+      Port: 4840
+      Encryption: false
+      Anonymous: true
+      CertificatesPath: ""
+   Logging:
+      Level:
+         App: "error"
+         OPCUA: "error"
+      Path: "logs"
+   ConfigFiles:
+      SkillsFile: "/home/jbg/Desktop/PUBLISHING_REPOS_PREPARATION/SAMYCore_V2.0/configFiles/Skills" 
+      RobotsFile: "/home/jbg/Desktop/PUBLISHING_REPOS_PREPARATION/SAMYCore_V2.0/configFiles/RobotsConfiguration.yaml"
+      InformationSourcesFile: "/home/jbg/Desktop/PUBLISHING_REPOS_PREPARATION/SAMYCore_V2.0/configFiles/InformationSources.yaml"
+      DataBaseFile: "/home/jbg/Desktop/PUBLISHING_REPOS_PREPARATION/SAMYCore_V2.0/configFiles/DataBaseFile.yaml"

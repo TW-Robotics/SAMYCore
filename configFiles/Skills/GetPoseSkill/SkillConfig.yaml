@@ -1,0 +1,8 @@
+SAMYSkillConfig:
+   SkillName: "GetPoseSkill"
+   Language: "C++"
+   EntryFile: "GetPoseSkill.cpp"
+   EntryFunction: "getPoseSkill"
+   Parameters:
+      - Name: "dummy"
+        DataType: UInt32
