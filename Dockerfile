@@ -45,8 +45,7 @@ COPY . ./
 RUN cd /usr/src/samy && rm -rf ./build;mkdir build && cd build && cmake .. && make -j7
 
 # BUILDING SKILLS (just for testing, this will be automated) ";" means execute even if previous command fails
-RUN cd /usr/src/samy/Skills/Skill_1 && mkdir build && cd build && cmake .. && make -j7 &&  mv libtestFunction2.so.1.0 ../libtestFunction2.so  \
-&& cd /usr/src/samy/Skills/Test_skill && rm -rf build;mkdir build && cd build && cmake .. && make -j7 && mv libSkill_1.so.1.0 ../libtestFunction.so
+RUN cd ./configFiles && chmod +x ./compileSkills.sh && ./compileSkills.sh && cd ..
 
 EXPOSE 4840
 
@@ -54,6 +53,6 @@ EXPOSE 4840
 
 #ENTRYPOINT ["tail"]
 #CMD ["-f","/dev/null"]
-CMD ["/usr/src/samy/build/SAMYCore", "/usr/src/samy/configFiles_examples/SAMYCoreConfig.yaml"]
+CMD ["/usr/src/samy/build/SAMYCore", "/usr/src/samy/configFiles/SAMYCoreConfig.yaml"]
 
 
