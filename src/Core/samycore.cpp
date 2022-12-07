@@ -126,10 +126,10 @@ namespace SAMY {
 
         generator.generateSAMYCoreInterface( ls.get(), robots, skills, informationSources, dataBaseTypes );
 
-        systemStatusNodesAndNames = generator.getSystemStatusNodesAndNames();
+        systemStatusNamesNodesMap = generator.getSystemStatusNamesNodesMap();
 
         std::stringstream msg2;
-        msg2 <<"NUMBER OF RELEVANT NODES FOR DESCRIBING SYSTEM STATUS: " << systemStatusNodesAndNames.size() << std::endl << std::endl;
+        msg2 <<"NUMBER OF RELEVANT NODES FOR DESCRIBING SYSTEM STATUS: " << systemStatusNamesNodesMap.size() << std::endl << std::endl;
         logger->info(msg2.str());
 
         retval |= initializeRobots();
@@ -141,5 +141,52 @@ namespace SAMY {
 
         server->init();
     }
+
+    void* SAMYCore::readSystemStatusNode( const std::string& nodeName )
+    {
+        auto search = systemStatusNamesNodesMap.find(nodeName);
+        if( search == systemStatusNamesNodesMap.end() ){
+            return nullptr;
+        }
+
+        LockedServer ls = server->getLocked();
+
+        UA_Variant var;
+        UA_Variant_init(&var);
+     
+        auto retval = UA_Server_readValue(ls.get(), search->second, &var ); // Reads the node that we want to read
+        if( !retval == UA_STATUSCODE_GOOD){
+            return nullptr;
+        }
+
+        return var.data;
+    }
+
+/*
+    bool SAMYCore::writeSystemStatusNode( const std::string& nodeName, void** val )
+    {
+        if( !systemStatusNamesNodesMap.contains(nodeName) ){
+            return false;
+        }
+
+        LockedServer ls = server->getLocked();
+
+        UA_Variant var;
+        UA_Variant_init(&var);
+        auto retval = UA_Server_readValue(ls.get(), systemStatusNamesNodesMap[nodeName], &var ); // Reads the node that we want to read
+        if( !retval == UA_STATUSCODE_GOOD){
+            return false;
+        }
+
+        UA_NodeId* valNode = static_cast<UA_NodeId*>(var.data);
+        UA_Variant_init(&var);
+        auto |= UA_Server_writeValue(ls.get(), *valNode, *val ); // Reads the value of the node
+        if( !retval == UA_STATUSCODE_GOOD){
+            return false;
+        }
+
+        return true;
+    }
+*/
 
 }

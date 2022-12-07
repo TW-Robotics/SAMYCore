@@ -4,7 +4,7 @@
 
 #include <SAMYRobot.h>
 #include <samycore.h>
-
+#include <CastersRegistry.h>
 
     extern "C" {
         /*FOR WINDOWS I WILL HAVE TO ADD __declspec(dllexport)*/
@@ -68,10 +68,8 @@
         bool sendCommandsAndWait(); /* Sends the buffered commands and wait for them to be executed */
 
         //  Use the dynamic casting (CastersRegister) stuff here
-     //   template< typename T >
-     //   T readNode( const UA_NodeId& node ){
 
-//        }
+	void* readNode( const std::string& nodeName );
 
      //   template< typename T >
  //       void writeNode( const UA_NodeId& targetNode, const std::string& typeName, void* data ){

@@ -20,7 +20,7 @@ namespace SAMY{
                 std::move( UA_Server_getNodeComponents( server, parametersNode ) );
         for( const auto& param : parameters ){
             std::string auxStr2 = baseName + "_Parameter_" + param.first;
-            systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>( param.second,  auxStr2 ) );
+            systemStatusNamesNodesMap.insert( { auxStr2, param.second } );
         }
     }
 
@@ -29,11 +29,11 @@ namespace SAMY{
         std::string baseName = "Robot_" + robot->name + "_Skill_" + skill->getSkillName();
         aux = getComponentNodeByBrowseName( server, skill->getSkillNodeID(), "CurrentState", 0 );
         std::string name = baseName + "_CurrentState";
-        systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>( aux,  name ) );
+        systemStatusNamesNodesMap.insert( { name, aux } );
 
         aux = getComponentNodeByBrowseName( server, skill->getSkillNodeID(), "LastTransition", 0 );
         name = baseName + "_LastTransition";
-        systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>( aux,  name ) );
+        systemStatusNamesNodesMap.insert( { name, aux } );
 
         UA_Int16 diNS = UA_Server_addNamespace( server, "http://opcfoundation.org/UA/DI/");
         aux = getComponentNodeByBrowseName( server, skill->getSkillNodeID(), "ParameterSet", diNS );
@@ -83,7 +83,7 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
 
         std::string name = "Robot_" + robot->name + "_Skill_" +
                             robot->robotSkills[i].getSkillName();
-        systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>(  skillInstanceNode,  name ) );
+        systemStatusNamesNodesMap.insert( { name, skillInstanceNode } );
 
         saveSkillStatusNodes( server, robot, &robot->robotSkills[i] );
     }
@@ -297,7 +297,7 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
         retVal |= UA_Server_addNode_finish( server, UA_NODEID_NUMERIC(robotNS, 16296LU));
 
         std::string name = "Robot_" + robot->name + "_Position";
-        systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>(  UA_NODEID_NUMERIC(robotNS, 16296LU),  name ) );
+        systemStatusNamesNodesMap.insert( { name, UA_NODEID_NUMERIC(robotNS, 16296LU) } );
 
         return retVal;
     }
@@ -332,7 +332,7 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
         retVal |= UA_Server_addNode_finish( server, tempNode );
 
         std::string name = "Robot_" + robot->name + "_CRCLStatus";
-        systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>(  tempNode,  name ) );
+        systemStatusNamesNodesMap.insert( { name, tempNode } );
 
         return retVal;
     }
@@ -475,7 +475,7 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
 
             robot->currentStateNodeId = tempNodeId;
             std::string name = "Robot_" + robot->name + "_CurrentState";
-            systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>(  tempNodeId,  name ) );
+            systemStatusNamesNodesMap.insert( {  name, tempNodeId } );
 
             return retVal;
         }
@@ -513,7 +513,7 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
 
             robot->lastTransitionNodeId = tempNodeId;
             std::string name = "Robot_" + robot->name + "_LastTransition";
-            systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>(  tempNodeId,  name ) );
+            systemStatusNamesNodesMap.insert( { name, tempNodeId } );
 
             return retVal;
         }
@@ -553,7 +553,7 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSkillsToRobotController( UA_Server*
 
             robot->executedSkillsNodeId = tempNodeId;
             std::string name = "Robot_" + robot->name + "_ExecutedSkills";
-            systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>(  tempNodeId,  name ) );
+            systemStatusNamesNodesMap.insert( { name, tempNodeId } );
 
             return retVal;
         }

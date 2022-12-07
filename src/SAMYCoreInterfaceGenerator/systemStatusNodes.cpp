@@ -52,7 +52,7 @@ UA_StatusCode SAMYCoreInterfaceGenerator::writeStatusVariableCallback(
 
 
 UA_StatusCode SAMYCoreInterfaceGenerator::addDataSourcesToSystemStatusVariable( UA_Server *server,
-                                                                                std::pair<UA_NodeId, std::string>& nodeAndName ){
+                                                                                std::pair<UA_NodeId, std::string>& nameAndNode ){
     UA_Int16 systemStatusNS = UA_Server_addNamespace( server, "http://SAMY.org/SystemStatus");
     UA_StatusCode retval = UA_STATUSCODE_GOOD;
 
@@ -61,13 +61,13 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addDataSourcesToSystemStatusVariable( 
     vattr.accessLevel = UA_ACCESSLEVELMASK_READ | UA_ACCESSLEVELMASK_WRITE;
     UA_LocalizedText_init( &vattr.description );
     UA_LocalizedText_init( &vattr.displayName );
-    vattr.description = UA_LOCALIZEDTEXT("", const_cast<char*>( nodeAndName.second.c_str() ) );
-    vattr.displayName = UA_LOCALIZEDTEXT("", const_cast<char*>( nodeAndName.second.c_str() ) );
-    retval |= UA_Server_readDataType( server, nodeAndName.first, &vattr.dataType );
+    vattr.description = UA_LOCALIZEDTEXT("", const_cast<char*>( nameAndNode.first.c_str() ) );
+    vattr.displayName = UA_LOCALIZEDTEXT("", const_cast<char*>( nameAndNode.first.c_str() ) );
+    retval |= UA_Server_readDataType( server, nameAndNode.second, &vattr.dataType );
     if( retval != UA_STATUSCODE_GOOD )
         return UA_STATUSCODE_BADINTERNALERROR;
 
-    UA_QualifiedName browseName = UA_QUALIFIEDNAME(systemStatusNS, const_cast<char*>( nodeAndName.second.c_str() ) );
+    UA_QualifiedName browseName = UA_QUALIFIEDNAME(systemStatusNS, const_cast<char*>( nameAndNode.first.c_str() ) );
     UA_NodeId parentNodeId = systemStatusObjectNodeId;
     UA_NodeId parentReferenceNodeId = UA_NODEID_NUMERIC( 0, UA_NS0ID_HASCOMPONENT );
     UA_NodeId variableTypeNodeId = UA_NODEID_NUMERIC(0, UA_NS0ID_PROPERTYTYPE);
@@ -87,7 +87,7 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addDataSourcesToSystemStatusVariable( 
                                         &variableNodeId
                                         );
 
-        retval |= UA_Server_setNodeContext(server, variableNodeId, reinterpret_cast<void*>( &nodeAndName.first ) );
+        retval |= UA_Server_setNodeContext(server, variableNodeId, reinterpret_cast<void*>( &nameAndNode.second ) );
     if (retval != UA_STATUSCODE_GOOD)
         return retval;
     retval = UA_Server_setVariableNode_dataSource(server, variableNodeId, dataSource);
@@ -132,10 +132,11 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSystemStatusNodesToServer( UA_Serve
     retval |= addSystemStatusObject( server );
     UA_Int16 systemStatusNS = UA_Server_addNamespace( server, "http://SAMY.org/SystemStatus");
 
-    for( auto& nodeAndName : systemStatusNodesAndNames ){
+    for( auto& nameAndNode : systemStatusNamesNodesMap )
+    {
          std::stringstream msg2;
-         msg2 <<"NSIndex: " << nodeAndName.first.namespaceIndex << "   "
-              << nodeAndName.first.identifier.numeric << "   " << nodeAndName.second;
+         msg2 <<"NSIndex: " << nameAndNode.second.namespaceIndex << "   "
+              << nameAndNode.second.identifier.numeric << "   " << nameAndNode.first;
 
          logger->debug(msg2.str());
 
@@ -144,15 +145,15 @@ UA_StatusCode SAMYCoreInterfaceGenerator::addSystemStatusNodesToServer( UA_Serve
          vattr.accessLevel = UA_ACCESSLEVELMASK_READ;
          UA_LocalizedText_init( &vattr.description );
          UA_LocalizedText_init( &vattr.displayName );
-         vattr.description = UA_LOCALIZEDTEXT("", const_cast<char*>( nodeAndName.second.c_str() ) );
-         vattr.displayName = UA_LOCALIZEDTEXT("", const_cast<char*>( nodeAndName.second.c_str() ) );
+         vattr.description = UA_LOCALIZEDTEXT("", const_cast<char*>( nameAndNode.first.c_str() ) );
+         vattr.displayName = UA_LOCALIZEDTEXT("", const_cast<char*>( nameAndNode.first.c_str() ) );
          vattr.dataType = UA_TYPES[UA_TYPES_NODEID].typeId;
-         UA_Variant_setScalar(  &vattr.value, &nodeAndName.first, &UA_TYPES[UA_TYPES_NODEID]);
+         UA_Variant_setScalar(  &vattr.value, &nameAndNode.second, &UA_TYPES[UA_TYPES_NODEID]);
 
          if( retval != UA_STATUSCODE_GOOD )
              return UA_STATUSCODE_BADINTERNALERROR;
 
-         UA_QualifiedName browseName = UA_QUALIFIEDNAME(systemStatusNS, const_cast<char*>( nodeAndName.second.c_str() ) );
+         UA_QualifiedName browseName = UA_QUALIFIEDNAME(systemStatusNS, const_cast<char*>( nameAndNode.first.c_str() ) );
          UA_NodeId parentNodeId = systemStatusObjectNodeId;
          UA_NodeId parentReferenceNodeId = UA_NODEID_NUMERIC( 0, UA_NS0ID_HASCOMPONENT );
          UA_NodeId variableTypeNodeId = UA_NODEID_NUMERIC(0, UA_NS0ID_PROPERTYTYPE);

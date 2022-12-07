@@ -34,11 +34,10 @@ namespace SAMY{
                                                                     std::vector<SAMYSkill> &skills,
                                                                     std::vector<InformationSource> &informationSources ,
                                                                     std::vector<std::tuple<std::string, UA_UInt16, std::string> > &dataBaseTypes);
-        std::vector<std::pair<UA_NodeId, std::string> > getSystemStatusNodesAndNames();
         UA_StatusCode addFixedInformationModels(UA_Server* server, std::vector<SAMYRobot> &robots );
-
+        std::unordered_map< std::string, UA_NodeId > getSystemStatusNamesNodesMap() const { return systemStatusNamesNodesMap; }
     private:
-        std::vector< std::pair<UA_NodeId, std::string> > systemStatusNodesAndNames;
+        std::unordered_map< std::string, UA_NodeId > systemStatusNamesNodesMap;
         std::shared_ptr<spdlog::logger> logger = nullptr;
         UA_NodeId systemStatusObjectNodeId = UA_NODEID_NULL;
 

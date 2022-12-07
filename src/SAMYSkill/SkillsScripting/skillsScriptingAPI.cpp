@@ -64,8 +64,16 @@ extern "C"{
             UA_StatusCode retval = robot->writeBufferedCommandsAndUpdateState();
             if( retval == UA_STATUSCODE_GOOD ){
                 return robot->waitForCommandsBufferDone();
-            }else
+            }else{
+                std::cout << "sendCommandsAndWait failed!!: in particular robot->writeBufferedCommandsAndUpdateState()" << std::endl;
                 return false;
+	    }
+    }
+
+    void* readNode( const std::string& nodeName )
+    {
+        SAMY::SAMYCore& core = SAMY::SAMYCore::getInstance();
+        return core.readSystemStatusNode(nodeName);
     }
 
     /* We stop processing the scripted skill until we get feedback from the agent */

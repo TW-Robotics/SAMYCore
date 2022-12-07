@@ -6,8 +6,6 @@ namespace SAMY{
         logger(appLogger_)
     {}
 
-     std::vector< std::pair<UA_NodeId, std::string> > SAMYCoreInterfaceGenerator::getSystemStatusNodesAndNames(){ return systemStatusNodesAndNames; }
-
     void SAMYCoreInterfaceGenerator::logOnAddingError( const std::string& element, UA_StatusCode retVal ){
         std::string auxFail = "Could not add " + element + " to server.";
         if( retVal != UA_STATUSCODE_GOOD ){
@@ -109,7 +107,7 @@ namespace SAMY{
 
 
                 std::string name = std::string{"InformationSource_"} + auxName;
-                systemStatusNodesAndNames.emplace_back( std::pair<UA_NodeId, std::string>(  tempNodeId,  name ) );
+                systemStatusNamesNodesMap.insert( { name, tempNodeId } );
              }
          }
         return retVal;

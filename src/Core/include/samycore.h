@@ -14,11 +14,6 @@
 #include <logging.h>
 #include <logging_opcua.h>
 
-#include <crcl_Reflection.h>
-#include <di_Reflection.h>
-#include<robotics_Reflection.h>
-#include <fortiss_di_Reflection.h>
-
 namespace SAMY {
 
     /* SAMYCore is a singleton, in order for the API to be able to use the SAMYCore without having to pass it as variable nor being a global, so the API is transparent.
@@ -42,8 +37,11 @@ namespace SAMY {
 
         inline SAMYRobot* getRobotFromThreadID( std::thread::id threadID ){ return threadToRobotMap.at( threadID ); }
         inline void setThreadIDtoRobot( std::thread::id threadID, SAMYRobot* robotPtr ){ threadToRobotMap[ threadID ] = robotPtr; }
-
+        const std::unordered_map< std::string, UA_NodeId >& getSystemStatusNamesNodesMap() const { return systemStatusNamesNodesMap; }
         std::shared_ptr<spdlog::logger> getLogger();
+
+        void* readSystemStatusNode( const std::string& nodeName );
+
         void run(bool &running);
     private:
         SAMYCore( ) = default;
@@ -52,7 +50,7 @@ namespace SAMY {
         std::unique_ptr<Python::CPythonInstance> python;
 
         SAMYCoreConfig config;
-        std::vector< std::pair<UA_NodeId, std::string> > systemStatusNodesAndNames;
+        std::unordered_map< std::string, UA_NodeId > systemStatusNamesNodesMap;
         std::vector<SAMYRobot> robots;
         std::vector<SAMYSkill> skills;
         std::vector<InformationSource> informationSources;
@@ -72,6 +70,7 @@ namespace SAMY {
         void setThreadsPoolInRobots();
         inline UA_StatusCode initializeRobots(){ UA_StatusCode retval = UA_STATUSCODE_GOOD; for( auto& robot : robots ) retval |= robot.initializeRobot(); return retval; }
 
+        bool writeSystemStatusNode( void** val );
     };
 
 }

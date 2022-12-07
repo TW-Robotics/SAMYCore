@@ -23,10 +23,16 @@ extern "C"{ // This is important, since avoid name mangling of the symbols, so t
 	but for the moment should be fine like this.
     */
     void moveTo2Skill( UA_CRCL_PoseDataType const * const goalPose,
-					  UA_CRCL_ParameterSettingDataType const * const moveType ){
-        UA_CRCL_PoseDataType pose = *goalPose;
-		UA_CRCL_ParameterSettingDataType move = *moveType;
-        std::vector<UA_CRCLCommandsParamsSetsUnionDataType> commands;
+					  UA_CRCL_ParameterSettingDataType const * const moveType )
+    {
+            void* valPtr = readNode("InformationSource_CameraPose_0");
+	    UA_MoveToParamsSetDataType val = *(static_cast<UA_MoveToParamsSetDataType*>(valPtr));
+
+	    std::cout << val.endPosition.point.x << std::endl;
+
+            UA_CRCL_PoseDataType pose = *goalPose;
+	    UA_CRCL_ParameterSettingDataType move = *moveType;
+            std::vector<UA_CRCLCommandsParamsSetsUnionDataType> commands;
 
 	    UA_MoveToParamsSetDataType moveTo;
 	    moveTo.name = UA_STRING( "UA_MoveToParamsSetDataType" );
