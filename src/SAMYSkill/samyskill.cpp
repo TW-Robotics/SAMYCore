@@ -42,12 +42,16 @@ namespace SAMY{
          * correct. I infer the order based on the name and I add them to the vector using [] operator, so I need first to create a vector filled with empty UA_NodeIds */
         nodes.assign( parametersTypesNames.size(), UA_NodeId() );
 
+ 
+
         UA_BrowseDescription bd;
         UA_BrowseDescription_init(&bd);
         bd.nodeId = startNode;
         bd.browseDirection = UA_BROWSEDIRECTION_FORWARD;
         bd.nodeClassMask = UA_BROWSERESULTMASK_ALL;
         bd.referenceTypeId = UA_NODEID_NUMERIC( 0, UA_NS0ID_HASORDEREDCOMPONENT );
+
+ 
 
         UA_BrowseResult br = UA_Server_browse(server, 0, &bd);
         UA_StatusCode res = br.statusCode;
@@ -57,15 +61,31 @@ namespace SAMY{
             return res;
         }
 
+
         if( br.referencesSize > 0 )
         {
+        std::cout << skillConfig.skillName << std::endl;
             UA_QualifiedName paramName;
             UA_QualifiedName_init( &paramName );
             for(int i=0; i < br.referencesSize; i++){
                 UA_Server_readBrowseName( server, br.references[i].nodeId.nodeId, &paramName);
-                nodes[i] = br.references[i].nodeId.nodeId;
+        for( int j = 0; j < skillConfig.skillParams.size(); ++j ){
+
+ 
+
+            if(  std::string(reinterpret_cast<const char*>(paramName.name.data)) == skillConfig.skillParams[j].name ){
+                nodes[j] = br.references[i].nodeId.nodeId;
+            } 
+        }
+                std::cout << "SAMYSkill::setSkillParametersFromObjectComponentNodes____________________________________________ paramName.name   " << paramName.name.data << std::endl;
+                std::cout << "SAMYSkill::setSkillParametersFromObjectComponentNodes____________________________________________" << parametersTypesNames[i] << std::endl;
+                std::cout << "SAMYSkill::setSkillParametersFromObjectComponentNodes____________________________________________" << br.references[i].nodeId.nodeId.identifier.numeric << std::endl;
+
+ 
+
                 UA_QualifiedName_clear(&paramName);
             }
+        std::cout << std::endl << std::endl << std::endl;
         }
         return retVal;
     }
